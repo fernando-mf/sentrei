@@ -1,3 +1,9 @@
+## [3.3.2](https://github.com/sentrei/sentrei/compare/v3.3.1...v3.3.2) (2020-04-03)
+
+### Bug Fixes
+
+- 🐛 change to git fix gha ([86be439](https://github.com/sentrei/sentrei/commit/86be4394156f0458543ce1bf1e27ed0e79f50f4a))
+
 ## [3.3.1](https://github.com/sentrei/sentrei/compare/v3.3.0...v3.3.1) (2020-04-03)
 
 ### Bug Fixes
