@@ -50,7 +50,7 @@ jobs:
         if: github.event.client_payload.pull_request != null
         working-directory: sentrei
         run: |
-          yarn run ${{ github.event.client_payload.pull_request.base.ref }}
+          yarn run staging-${{ github.event.client_payload.pull_request.base.ref }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deploy to firebase
@@ -70,4 +70,4 @@ jobs:
           reaction-type: hooray
           edit-mode: replace
           body: |
-            Doc updated on https://${{ github.event.client_payload.pull_request.base.ref }}.docs.sentrei.com
+            Doc updated on https://staging.${{ github.event.client_payload.pull_request.base.ref }}.docs.sentrei.com
