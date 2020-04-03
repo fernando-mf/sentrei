@@ -1,14 +1,27 @@
 {
   "projects": {
-    "default": "sentrei-master"
+    "alpha": "sentrei-alpha",
+    "beta": "sentrei-beta",
+    "master": "sentrei-master"
   },
   "targets": {
+    "sentrei-alpha": {
+      "hosting": {
+        "docs": [
+          "sentrei-alpha-docs"
+        ]
+      }
+    },
+    "sentrei-beta": {
+      "hosting": {
+        "docs": [
+          "sentrei-beta-docs"
+        ]
+      }
+    },
     "sentrei-master": {
       "hosting": {
         "docs": [
-          "sentrei-docs"
-        ],
-        "masterdocs": [
           "sentrei-master-docs"
         ]
       }
