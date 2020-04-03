@@ -3,6 +3,7 @@ android/.bundle
 android/vendor
 ios/.bundle
 ios/vendor
+firebase.json
 
 # Miscellaneous
 *.class
