@@ -9,6 +9,9 @@
       "hosting": {
         "docs": [
           "sentrei-alpha-docs"
+        ],
+        "staging-docs": [
+          "sentrei-staging-alpha-docs"
         ]
       }
     },
@@ -16,6 +19,9 @@
       "hosting": {
         "docs": [
           "sentrei-beta-docs"
+        ],
+        "staging-docs": [
+          "sentrei-staging-beta-docs"
         ]
       }
     },
@@ -23,6 +29,9 @@
       "hosting": {
         "docs": [
           "sentrei-master-docs"
+        ],
+        "staging-docs": [
+          "sentrei-staging-master-docs"
         ]
       }
     }
