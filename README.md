@@ -16,13 +16,14 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/sentrei/sentrei)
 [![Join the chat at https://gitter.im/sentrei/sentrei](https://badges.gitter.im/sentrei/sentrei.svg)](https://gitter.im/sentrei/sentrei?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 <!-- prettier-ignore-end -->
-## Beta testing
+
+## Getting Started 🚀
 
 | Version | Android | iOS | Docs |
 | ------- | ------- | --- | ---- |
-| alpha | [LINK](https://appdistribution.firebase.dev/i/dfq8XRGe) | [LINK](https://appdistribution.firebase.dev/i/QxDsYNoB) | https://alpha.sentrei.com |
-| beta | [LINK](https://appdistribution.firebase.dev/i/hReUCAJq) | [LINK](https://appdistribution.firebase.dev/i/NbqaJdfa) | https://beta.sentrei.com |
-| master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.sentrei.com |
+| alpha | [LINK](https://appdistribution.firebase.dev/i/dfq8XRGe) | [LINK](https://appdistribution.firebase.dev/i/QxDsYNoB) | https://alpha.docs.sentrei.com |
+| beta | [LINK](https://appdistribution.firebase.dev/i/hReUCAJq) | [LINK](https://appdistribution.firebase.dev/i/NbqaJdfa) | https://beta.docs.sentrei.com |
+| master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.docs.sentrei.com |
 
 ## Contributors ✨
 
@@ -43,6 +44,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
-## Stargazers over time
+## Stargazers over time 🌟
 
 [![Stargazers over time](https://starchart.cc/sentrei/sentrei.svg)](https://starchart.cc/sentrei/sentrei)
