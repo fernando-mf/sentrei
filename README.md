@@ -20,9 +20,9 @@
 
 | Version | Android | iOS | Docs |
 | ------- | ------- | --- | ---- |
-| alpha | [LINK](https://appdistribution.firebase.dev/i/dfq8XRGe) | [LINK](https://appdistribution.firebase.dev/i/QxDsYNoB) | https://alpha.sentrei.com |
-| beta | [LINK](https://appdistribution.firebase.dev/i/hReUCAJq) | [LINK](https://appdistribution.firebase.dev/i/NbqaJdfa) | https://beta.sentrei.com |
-| master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.sentrei.com |
+| alpha | [LINK](https://appdistribution.firebase.dev/i/dfq8XRGe) | [LINK](https://appdistribution.firebase.dev/i/QxDsYNoB) | https://alpha.docs.sentrei.com |
+| beta | [LINK](https://appdistribution.firebase.dev/i/hReUCAJq) | [LINK](https://appdistribution.firebase.dev/i/NbqaJdfa) | https://beta.docs.sentrei.com |
+| master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.docs.sentrei.com |
 
 ## Contributors ✨
 
