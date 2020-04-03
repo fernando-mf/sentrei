@@ -14,6 +14,7 @@
 [![mergify-status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei&style=flat)](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei&style=flat)
 [![dependabot-status](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/sentrei/sentrei)
+[![Join the chat at https://gitter.im/sentrei/sentrei](https://badges.gitter.im/sentrei/sentrei.svg)](https://gitter.im/sentrei/sentrei?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 <!-- prettier-ignore-end -->
 ## Beta testing
 
