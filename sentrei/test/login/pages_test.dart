@@ -8,8 +8,6 @@ void main() {
   var map = Map<String, Widget>();
   map['login_page'] = LoginPage();
 
-  // The clickable target size of the page is not detected here because it does not match. . .
-
   group('login => Detect whether page clickable targets have semantics', () {
     ThemeData themeData = ThemeProvider().getTheme();
     map.forEach((name, page) {

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:flustars/flustars.dart';
 
 import 'package:sentrei/app/app.dart';
 import 'package:sentrei/const/const.dart';
@@ -63,7 +62,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: ThemeUtils.getBackgroundColor(context),
+      color: ThemeUtil.getBackgroundColor(context),
       child: Text('Splash Page'),
     );
   }
