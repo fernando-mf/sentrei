@@ -6,9 +6,8 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flustars/flustars.dart';
-
 import 'package:sentrei/const/const.dart';
+import 'package:sentrei/utils/utils.dart';
 
 class ThemeProvider extends ChangeNotifier {
   static const Map<ThemeMode, String> themes = {
