@@ -29,6 +29,7 @@ class SpUtil {
     return _singleton;
   }
 
+  /// `SpUtil` named constructor.
   SpUtil._();
 
   /// Loads the `SharedPreferences` object.
