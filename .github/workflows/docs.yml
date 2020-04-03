@@ -36,9 +36,16 @@ jobs:
           firebase deploy --only hosting:${{ github.event.client_payload.pull_request.base.ref }}docs --token $FIREBASE_TOKEN
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Extract branch name
+        if: github.event_name == 'push'
+        id: branch
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       - name: Deploy to firebase
+        if: github.event_name == 'push'
         working-directory: sentrei
         run: |
+          firebase deploy --only hosting:${{ steps.branch.outputs.branch }}docs --token $FIREBASE_TOKEN
           echo $GITHUB_CONTEXT
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
