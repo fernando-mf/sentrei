@@ -67,6 +67,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - run: git fetch --quiet
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: "2.x"
@@ -109,7 +110,8 @@ jobs:
           echo "##[set-output name=version;]$version"
       - name: Extract branch name
         id: branch
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       - name: Extract upload_url
         id: get_url
         run: |
