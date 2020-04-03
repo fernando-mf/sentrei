@@ -1,3 +1,13 @@
+# [3.4.0](https://github.com/sentrei/sentrei/compare/v3.3.2...v3.4.0) (2020-04-03)
+
+### Bug Fixes
+
+- 🐛 change to head.ref ([37dc108](https://github.com/sentrei/sentrei/commit/37dc1085fdcaea48b5cf8f6060a4740a0991a4c1))
+
+### Features
+
+- 🎸 add original sp utils ([587ab97](https://github.com/sentrei/sentrei/commit/587ab97f02713edba0e6694695f13223e67d71b7))
+
 ## [3.3.2](https://github.com/sentrei/sentrei/compare/v3.3.1...v3.3.2) (2020-04-03)
 
 ### Bug Fixes
