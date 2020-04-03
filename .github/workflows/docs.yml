@@ -29,9 +29,20 @@ jobs:
         run: |
           flutter pub global activate dartdoc
           flutter pub global run dartdoc:dartdoc --exclude 'dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart:ui,dart:ffi,dart:html,dart:js,dart:js_util'
+      - name: Deploy to firebase
+        if: github.event.client_payload.pull_request != null
+        working-directory: sentrei
+        run: |
           firebase deploy --only hosting:${{ github.event.client_payload.pull_request.base.ref }}docs --token $FIREBASE_TOKEN
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Deploy to firebase
+        working-directory: sentrei
+        run: |
+          echo $GITHUB_CONTEXT
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          GITHUB_CONTEXT: ${{ toJson(github) }}
       - name: Comment url
         if: github.event.client_payload.pull_request != null
         uses: peter-evans/create-or-update-comment@v1
