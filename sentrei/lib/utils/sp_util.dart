@@ -19,7 +19,6 @@ class SpUtil {
     if (_singleton == null) {
       await _lock.synchronized(() async {
         if (_singleton == null) {
-          // Keep local instance until it is fully initialized.
           var singleton = SpUtil._();
           await singleton._init();
           _singleton = singleton;
