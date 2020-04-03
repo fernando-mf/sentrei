@@ -11,6 +11,18 @@
           "destination": "/index.html"
         }
       ]
+    },
+    {
+      "site": "sentrei-staging-master-docs",
+      "target": "docs",
+      "public": "doc/api",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }
