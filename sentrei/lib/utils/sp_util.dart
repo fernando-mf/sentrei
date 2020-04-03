@@ -14,7 +14,7 @@ class SpUtil {
 
   /// Gets instance of a singleton `SharedPreferences` object.
   ///
-  /// If singleton is null, a new object is initialized.
+  /// If `singleton` is null, a new object is initialized.
   static Future<SpUtil> getInstance() async {
     if (_singleton == null) {
       await _lock.synchronized(() async {
