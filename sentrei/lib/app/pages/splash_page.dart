@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:sentrei/app/app.dart';
 import 'package:sentrei/const/const.dart';
 import 'package:sentrei/login/login.dart';
 import 'package:sentrei/utils/utils.dart';
+import 'package:sentrei/widgets/widgets.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -41,7 +43,7 @@ class _SplashPageState extends State<SplashPage> {
 
   void _initSplash() {
     _subscription =
-        Stream.value(1).delay(Duration(milliseconds: 300)).listen((_) {
+        Stream.value(1).delay(Duration(milliseconds: 3000)).listen((_) {
       if (SpUtil.getBool(Common.keyGuide, defValue: true)) {
         SpUtil.putBool(Common.keyGuide, false);
         _initGuide();
@@ -63,7 +65,19 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Material(
       color: ThemeUtil.getBackgroundColor(context),
-      child: _isLoading ? Text('Loading...') : Text('Guide Page'),
+      child: _isLoading
+          ? FractionallyAlignedSizedBox(
+              heightFactor: 0.3,
+              widthFactor: 0.33,
+              leftFactor: 0.33,
+              bottomFactor: 0,
+              child: Image(
+                image: AssetImage(
+                  'assets/images/logo.png',
+                ),
+              ),
+            )
+          : Text('Guide Page'),
     );
   }
 }
