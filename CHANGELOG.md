@@ -1,3 +1,13 @@
+# [3.6.0](https://github.com/sentrei/sentrei/compare/v3.5.0...v3.6.0) (2020-04-04)
+
+### Bug Fixes
+
+- 🐛 remove export 'google_button.dart'; ([6ce932a](https://github.com/sentrei/sentrei/commit/6ce932a530e639ab72a3b0cddbe4de706b13846d))
+
+### Features
+
+- 🎸 add social auth buttons ([f5cb164](https://github.com/sentrei/sentrei/commit/f5cb1645d7527ba019774962a4c0ff01d01cfa3e))
+
 # [3.5.0](https://github.com/sentrei/sentrei/compare/v3.4.0...v3.5.0) (2020-04-04)
 
 ### Bug Fixes
