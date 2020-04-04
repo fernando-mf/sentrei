@@ -1,3 +1,17 @@
+# [3.5.0](https://github.com/sentrei/sentrei/compare/v3.4.0...v3.5.0) (2020-04-04)
+
+### Bug Fixes
+
+- 🐛 add flr ([75331f8](https://github.com/sentrei/sentrei/commit/75331f8383a61fc0854e7b305129b567866784ed))
+- 🐛 add logo png ([ff4fc07](https://github.com/sentrei/sentrei/commit/ff4fc07c65cde3ae0912ff2975474bd8a4185cc5))
+- 🐛 added assets/images ([880119b](https://github.com/sentrei/sentrei/commit/880119b3b819295d231907eee789a94e8044fd37))
+- 🐛 init guide page ([112ea46](https://github.com/sentrei/sentrei/commit/112ea463f86dca340eb9ed30af26c4c3651a6b91))
+- 🐛 prettier ([8435ea7](https://github.com/sentrei/sentrei/commit/8435ea76dd35755272a664774d99eda4887b9344))
+
+### Features
+
+- 🎸 add splash screen flare ([d514df3](https://github.com/sentrei/sentrei/commit/d514df3b59c523d0e65bb421de8696e655aff6e7))
+
 # [3.4.0](https://github.com/sentrei/sentrei/compare/v3.3.2...v3.4.0) (2020-04-03)
 
 ### Bug Fixes
