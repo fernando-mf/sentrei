@@ -1,5 +1,4 @@
 import 'package:fluro/fluro.dart';
-
 import 'package:sentrei/app/app.dart';
 import 'package:sentrei/login/login.dart';
 

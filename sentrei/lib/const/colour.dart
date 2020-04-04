@@ -1,7 +1,6 @@
-/// Reference: https://github.com/simplezhli/flutter_deer/blob/a89b6cc4edb0197a4dfd0f830c54b873015d077f/lib/res/colors.dart
-
 import 'package:flutter/material.dart';
 
+/// Reference: https://github.com/simplezhli/flutter_deer/blob/a89b6cc4edb0197a4dfd0f830c54b873015d077f/lib/res/colors.dart
 class Colour {
   static const Color app_main = Color(0xFF4688FA);
   static const Color dark_app_main = Color(0xFF3F7AE0);

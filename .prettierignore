@@ -1,6 +1,7 @@
 sentrei/android/key/api.json
 sentrei/android/key/key.jks
 sentrei/android/key/key.properties
+sentrei/android/vendor/bundle
 sentrei/android/firebase/sentre-alpha.json
 sentrei/android/firebase/sentre-beta.json
 sentrei/android/firebase/sentre-master.json

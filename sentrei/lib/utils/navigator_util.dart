@@ -1,12 +1,9 @@
-/// Reference: https://github.com/simplezhli/flutter_deer/blob/master/lib/routers/fluro_navigator.dart
-
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:sentrei/app/app.dart';
 
-import 'application.dart';
-import 'routers.dart';
-
-class NavigatorUtils {
+/// Reference: https://github.com/simplezhli/flutter_deer/blob/master/lib/routers/fluro_navigator.dart
+class NavigatorUtil {
   static push(BuildContext context, String path,
       {bool replace = false, bool clearStack = false}) {
     FocusScope.of(context).unfocus();

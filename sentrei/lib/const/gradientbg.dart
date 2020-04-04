@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:sentrei/const/const.dart';
 
 class GradientBg {

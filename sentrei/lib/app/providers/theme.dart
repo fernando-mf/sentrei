@@ -1,14 +1,11 @@
-/// References:
-/// https://github.com/stefanJi/Flutter4GitLab/blob/master/lib/providers/theme.dart
-/// https://github.com/simplezhli/flutter_deer/blob/b95c6cd4085edcf6364da0d0755d0a785f26db1e/lib/provider/theme_provider.dart
-
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:sentrei/const/const.dart';
 import 'package:sentrei/utils/utils.dart';
 
+/// References:
+/// https://github.com/stefanJi/Flutter4GitLab/blob/master/lib/providers/theme.dart
 class ThemeProvider extends ChangeNotifier {
   static const Map<ThemeMode, String> themes = {
     ThemeMode.dark: 'Dark',
@@ -66,12 +63,10 @@ class ThemeProvider extends ChangeNotifier {
 
           /// Text text style
           body1: isDarkMode ? Style.textDark : Style.text,
-          subtitle:
-              isDarkMode ? Style.textDarkGray12 : Style.textGray12,
+          subtitle: isDarkMode ? Style.textDarkGray12 : Style.textGray12,
         ),
         inputDecorationTheme: InputDecorationTheme(
-          hintStyle:
-              isDarkMode ? Style.textHint14 : Style.textDarkGray14,
+          hintStyle: isDarkMode ? Style.textHint14 : Style.textDarkGray14,
         ),
         appBarTheme: AppBarTheme(
           elevation: 0.0,
