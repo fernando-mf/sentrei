@@ -2,10 +2,6 @@ default_platform(:ios)
 
 TMP_KEYCHAIN_NAME_DEFAULT = "fastlane_flutter"
 TMP_KEYCHAN_PASSWORD_DEFAULT = "tmppassword"
-APP_ID = ENV['FIREBASE_IOS_APPID']
-BUILD_NUMBER = ENV['GITHUB_RUN_NUMBER']
-FIREBASE_TOKEN = ENV['FIREBASE_CI_TOKEN']
-GITHUB_BRANCH = ENV['GITHUB_REF']
 
 def delete_tmp_keychain(name)
   delete_keychain(
@@ -71,7 +67,7 @@ platform :ios do
       groups: "alpha",
       app: "1:280671636932:ios:0df6c23796b69f57cd6891",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
-      release_notes: changelog_from_git_commits,
+      release_notes: ENV['GITHUB_RUN_NUMBER'],
       ipa_path: "./build/Runner/alpha.ipa",
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
@@ -110,7 +106,7 @@ platform :ios do
       groups: "beta",
       app: "1:258612152633:ios:8cca4783fefba001ff40e8",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
-      release_notes: changelog_from_git_commits,
+      release_notes: ENV['GITHUB_RUN_NUMBER'],
       ipa_path: "./build/Runner/beta.ipa",
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
@@ -146,7 +142,7 @@ platform :ios do
       groups: "master",
       app: "1:721847679884:ios:ef9040472124b4715bb4a9",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
-      release_notes: changelog_from_git_commits,
+      release_notes: ENV['GITHUB_RUN_NUMBER'],
       ipa_path: "./build/Runner/master.ipa",
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
