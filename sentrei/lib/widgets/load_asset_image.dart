@@ -27,7 +27,6 @@ class LoadAssetImage extends StatelessWidget {
       width: width,
       fit: fit,
       color: color,
-      excludeFromSemantics: true,
     );
   }
 }

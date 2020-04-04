@@ -6,7 +6,7 @@ import 'package:sentrei/login/login.dart';
 
 void main() {
   var map = Map<String, Widget>();
-  map['login_page'] = LoginPage();
+  map['login_page'] = LoginPageBuilder();
 
   group('login => Detect whether page clickable targets have semantics', () {
     ThemeData themeData = ThemeProvider().getTheme();
