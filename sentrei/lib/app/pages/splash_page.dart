@@ -71,11 +71,7 @@ class _SplashPageState extends State<SplashPage> {
               widthFactor: 0.33,
               leftFactor: 0.33,
               bottomFactor: 0,
-              child: Image(
-                image: AssetImage(
-                  'assets/images/logo.png',
-                ),
-              ),
+              child: LoadAssetImage('logo'),
             )
           : Text('Guide Page'),
     );
