@@ -39,46 +39,38 @@ class ThemeProvider extends ChangeNotifier {
 
   getTheme({bool isDarkMode = false}) {
     return ThemeData(
-        errorColor: isDarkMode ? Colour.dark_red : Colour.red,
+      errorColor: isDarkMode ? Colour.red_dark : Colour.red,
+      brightness: isDarkMode ? Brightness.dark : Brightness.light,
+      primaryColor: isDarkMode ? Colour.app_main_dark : Colour.app_main,
+      accentColor: isDarkMode ? Colour.app_main_dark : Colour.app_main,
+      indicatorColor: isDarkMode ? Colour.app_main_dark : Colour.app_main,
+      scaffoldBackgroundColor:
+          isDarkMode ? Colour.bg_color_dark : Colour.bg_color_light,
+      canvasColor:
+          isDarkMode ? Colour.material_bg_dark : Colour.material_bg_light,
+      textSelectionColor: Colour.app_main.withAlpha(70),
+      textSelectionHandleColor: Colour.app_main,
+      textTheme: TextTheme(
+        subhead: isDarkMode ? Style.textDark : Style.text,
+        body1: isDarkMode ? Style.textDark : Style.text,
+        subtitle: isDarkMode ? Style.textGrayDark12 : Style.textGray12,
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        hintStyle: isDarkMode ? Style.textHint14 : Style.textHintDark14,
+      ),
+      appBarTheme: AppBarTheme(
+        elevation: 0.0,
+        color: isDarkMode ? Colour.bg_color_dark : Colour.bg_color_light,
         brightness: isDarkMode ? Brightness.dark : Brightness.light,
-        primaryColor: isDarkMode ? Colour.dark_app_main : Colour.app_main,
-        accentColor: isDarkMode ? Colour.dark_app_main : Colour.app_main,
-
-        /// Tab indicator color
-        indicatorColor: isDarkMode ? Colour.dark_app_main : Colour.app_main,
-
-        /// Page background color
-        scaffoldBackgroundColor:
-            isDarkMode ? Colour.dark_bg_color : Colour.white,
-
-        /// Mainly used for Material background color
-        canvasColor: isDarkMode ? Colour.dark_material_bg : Colour.white,
-
-        /// Text selection color (input box copy and paste menu)
-        textSelectionColor: Colour.app_main.withAlpha(70),
-        textSelectionHandleColor: Colour.app_main,
-        textTheme: TextTheme(
-          /// TextField input text color
-          subhead: isDarkMode ? Style.textDark : Style.text,
-
-          /// Text text style
-          body1: isDarkMode ? Style.textDark : Style.text,
-          subtitle: isDarkMode ? Style.textDarkGray12 : Style.textGray12,
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          hintStyle: isDarkMode ? Style.textHint14 : Style.textDarkGray14,
-        ),
-        appBarTheme: AppBarTheme(
-          elevation: 0.0,
-          color: isDarkMode ? Colour.dark_bg_color : Colour.white,
-          brightness: isDarkMode ? Brightness.dark : Brightness.light,
-        ),
-        dividerTheme: DividerThemeData(
-            color: isDarkMode ? Colour.dark_line : Colour.line,
-            space: 0.6,
-            thickness: 0.6),
-        cupertinoOverrideTheme: CupertinoThemeData(
-          brightness: isDarkMode ? Brightness.dark : Brightness.light,
-        ));
+      ),
+      dividerTheme: DividerThemeData(
+        color: isDarkMode ? Colour.line_dark : Colour.line,
+        space: 0.6,
+        thickness: 0.6,
+      ),
+      cupertinoOverrideTheme: CupertinoThemeData(
+        brightness: isDarkMode ? Brightness.dark : Brightness.light,
+      ),
+    );
   }
 }

@@ -17,6 +17,24 @@ class Style {
     fontSize: 32.0,
   );
 
+  static const TextStyle textHighlight = TextStyle(
+    color: Colour.red,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const TextStyle text = TextStyle(
+    fontSize: 14.0,
+    color: Colour.text,
+    // https://github.com/flutter/flutter/issues/40248
+    textBaseline: TextBaseline.alphabetic,
+  );
+
+  static const TextStyle textDark = TextStyle(
+    fontSize: 14.0,
+    color: Colour.text_dark,
+    textBaseline: TextBaseline.alphabetic,
+  );
+
   static const TextStyle textBlack = TextStyle(color: Colour.black);
 
   static const TextStyle textBlackUnderline = TextStyle(
@@ -24,77 +42,73 @@ class Style {
     decoration: TextDecoration.underline,
   );
 
-  static const TextStyle textHighlight = TextStyle(
-    color: Colour.red,
+  static const TextStyle textSize12 = TextStyle(
+    fontSize: 12.0,
+  );
+
+  static const TextStyle textSize16 = TextStyle(
+    fontSize: 16.0,
+  );
+
+  static const TextStyle textBold14 = TextStyle(
+    fontSize: 14.0,
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle textSize12 = TextStyle(
-    fontSize: Dimension.font_sp12,
-  );
-  static const TextStyle textSize16 = TextStyle(
-    fontSize: Dimension.font_sp16,
-  );
-  static const TextStyle textBold14 = TextStyle(
-    fontSize: Dimension.font_sp14,
-    fontWeight: FontWeight.bold,
-  );
   static const TextStyle textBold16 = TextStyle(
-    fontSize: Dimension.font_sp16,
+    fontSize: 16.0,
     fontWeight: FontWeight.bold,
   );
+
   static const TextStyle textBold18 = TextStyle(
-    fontSize: Dimension.font_sp18,
+    fontSize: 18.0,
     fontWeight: FontWeight.bold,
   );
+
   static const TextStyle textBold24 = TextStyle(
     fontSize: 24.0,
     fontWeight: FontWeight.bold,
   );
+
   static const TextStyle textBold26 = TextStyle(
     fontSize: 26.0,
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle textGray14 = TextStyle(
-    fontSize: Dimension.font_sp14,
-    color: Colour.text_gray,
-  );
-  static const TextStyle textDarkGray14 = TextStyle(
-    fontSize: Dimension.font_sp14,
-    color: Colour.dark_text_gray,
-  );
-
-  static const TextStyle textWhite14 = TextStyle(
-    fontSize: Dimension.font_sp14,
-    color: Colors.white,
-  );
-
-  static const TextStyle text = TextStyle(
-    fontSize: Dimension.font_sp14,
-    color: Colour.text,
-    // https://github.com/flutter/flutter/issues/40248
-    textBaseline: TextBaseline.alphabetic,
-  );
-  static const TextStyle textDark = TextStyle(
-    fontSize: Dimension.font_sp14,
-    color: Colour.dark_text,
-    textBaseline: TextBaseline.alphabetic,
-  );
-
   static const TextStyle textGray12 = TextStyle(
-    fontSize: Dimension.font_sp12,
+    fontSize: 12.0,
     color: Colour.text_gray,
     fontWeight: FontWeight.normal,
   );
-  static const TextStyle textDarkGray12 = TextStyle(
-    fontSize: Dimension.font_sp12,
-    color: Colour.dark_text_gray,
+
+  static const TextStyle textGrayDark12 = TextStyle(
+    fontSize: 12.0,
+    color: Colour.text_gray_dark,
     fontWeight: FontWeight.normal,
+  );
+
+  static const TextStyle textGray14 = TextStyle(
+    fontSize: 14.0,
+    color: Colour.text_gray,
+  );
+
+  static const TextStyle textGrayDark14 = TextStyle(
+    fontSize: 14.0,
+    color: Colour.text_gray_dark,
   );
 
   static const TextStyle textHint14 = TextStyle(
-    fontSize: Dimension.font_sp14,
-    color: Colour.dark_unselected_item_color,
+    fontSize: 14.0,
+    color: Colour.text_gray_dark,
+  );
+
+  static const TextStyle textHintDark14 = TextStyle(
+    fontSize: 14.0,
+    color: Colour.unselected_item_color_dark,
+  );
+
+  static const TextStyle textWhite14 = TextStyle(
+    fontSize: 14.0,
+    color: Colors.white,
   );
 }
