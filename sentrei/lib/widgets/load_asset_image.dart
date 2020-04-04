@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sentrei/utils/utils.dart';
 
-/// 加载本地资源图片
+/// Load local resource image
 class LoadAssetImage extends StatelessWidget {
   const LoadAssetImage(this.image,
       {Key key,

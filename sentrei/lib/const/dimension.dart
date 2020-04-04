@@ -1,5 +1,4 @@
 /// Reference: https://github.com/simplezhli/flutter_deer/blob/f0520043a9a33422447f1de699350d47c440c59c/lib/res/dimens.dart
-
 class Dimension {
   static const double font_sp10 = 10.0;
   static const double font_sp12 = 12.0;
