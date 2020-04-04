@@ -13,6 +13,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  bool _isLoading = true;
   StreamSubscription _subscription;
 
   @override
@@ -22,10 +23,6 @@ class _SplashPageState extends State<SplashPage> {
       await SpUtil.getInstance();
       // Because SpUtil is not initialized, MaterialApp obtains the default theme configuration. Sync here
       Provider.of<ThemeProvider>(context, listen: false).syncTheme();
-      if (SpUtil.getBool(Common.keyGuide, defValue: true)) {
-        // TODO: Change to initial screen
-        _initSplash();
-      }
       _initSplash();
     });
   }
@@ -36,13 +33,18 @@ class _SplashPageState extends State<SplashPage> {
     super.dispose();
   }
 
+  void _initGuide() {
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
   void _initSplash() {
     _subscription =
         Stream.value(1).delay(Duration(milliseconds: 300)).listen((_) {
       if (SpUtil.getBool(Common.keyGuide, defValue: true)) {
         SpUtil.putBool(Common.keyGuide, false);
-        // TODO: Change to initial screen
-        _goLogin();
+        _initGuide();
       } else {
         _goLogin();
       }
@@ -61,7 +63,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Material(
       color: ThemeUtil.getBackgroundColor(context),
-      child: Text('Splash Page'),
+      child: _isLoading ? Text('Loading...') : Text('Guide Page'),
     );
   }
 }
