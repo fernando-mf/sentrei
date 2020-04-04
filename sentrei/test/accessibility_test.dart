@@ -1,7 +1,7 @@
-import 'login/login_test.dart' as login;
+import 'home/home_test.dart' as home;
 import 'utils/utils_test.dart' as utils;
 
 void main() {
-  login.main();
+  home.main();
   utils.main();
 }

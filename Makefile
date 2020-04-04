@@ -15,6 +15,9 @@ encrypt:
 	gpg --symmetric --cipher-algo AES256 sentrei/android/firebase/sentrei-beta.json
 	gpg --symmetric --cipher-algo AES256 sentrei/android/firebase/sentrei-master.json
 
+export:
+	keytool -exportcert -alias key -keystore sentrei/android/key/key.jks | openssl sha1 -binary | openssl base64
+
 format:
 	flutter format lib
 

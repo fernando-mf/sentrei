@@ -8,6 +8,6 @@ class LoginRouter implements IRouterProvider {
   @override
   void initRouter(Router router) {
     router.define(loginPage,
-        handler: Handler(handlerFunc: (_, params) => LoginPage()));
+        handler: Handler(handlerFunc: (_, params) => LoginPageBuilder()));
   }
 }

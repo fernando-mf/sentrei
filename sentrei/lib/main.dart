@@ -9,6 +9,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:provider/provider.dart';
 import 'package:nested/nested.dart';
 import 'package:sentrei/app/app.dart';
+import 'package:sentrei/login/login.dart';
 
 void main() {
   Crashlytics.instance.enableInDevMode = true;
@@ -36,6 +37,12 @@ class App extends StatelessWidget {
     return [
       ChangeNotifierProvider(create: (_) => ThemeProvider()),
       ChangeNotifierProvider(create: (_) => PackageInfoProvider()),
+      Provider<AuthService>(
+        create: (_) => AuthServiceAdapter(
+          initialAuthServiceType: AuthServiceType.firebase,
+        ),
+        dispose: (_, AuthService authService) => authService.dispose(),
+      )
     ];
   }
 
@@ -51,21 +58,25 @@ class App extends StatelessWidget {
       providers: _buildProviders(context),
       child: Consumer<ThemeProvider>(
         builder: (_, provider, __) {
-          return MaterialApp(
-            title: 'sentrei',
-            theme: provider.getTheme(),
-            darkTheme: provider.getTheme(isDarkMode: true),
-            themeMode: provider.getThemeMode(),
-            onGenerateRoute: Application.router.generator,
-            home: home ?? SplashPage(),
-            navigatorObservers: [
-              FirebaseAnalyticsObserver(analytics: analytics),
-            ],
-            builder: (context, child) {
-              // Guarantee text size is not affected by phone system settings https://www.kikt.top/posts/flutter/layout/dynamic-text/
-              return MediaQuery(
-                data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-                child: child,
+          return AuthPageBuilder(
+            builder: (BuildContext context, AsyncSnapshot<User> userSnapshot) {
+              return MaterialApp(
+                title: 'sentrei',
+                theme: provider.getTheme(),
+                darkTheme: provider.getTheme(isDarkMode: true),
+                themeMode: provider.getThemeMode(),
+                onGenerateRoute: Application.router.generator,
+                home: home ?? AuthPage(userSnapshot: userSnapshot),
+                navigatorObservers: [
+                  FirebaseAnalyticsObserver(analytics: analytics),
+                ],
+                builder: (context, child) {
+                  // Guarantee text size is not affected by phone system settings https://www.kikt.top/posts/flutter/layout/dynamic-text/
+                  return MediaQuery(
+                    data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+                    child: child,
+                  );
+                },
               );
             },
           );
