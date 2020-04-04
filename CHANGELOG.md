@@ -1,3 +1,15 @@
+# [3.7.0](https://github.com/sentrei/sentrei/compare/v3.6.1...v3.7.0) (2020-04-04)
+
+### Bug Fixes
+
+- 🐛 add home ([82adb19](https://github.com/sentrei/sentrei/commit/82adb1909bd2114c2556a91deaa4a5add82df223))
+- 🐛 style ([225185f](https://github.com/sentrei/sentrei/commit/225185f1b843fc3f7cede07d946ca5429851b214))
+- 🐛 test ([2f88fdd](https://github.com/sentrei/sentrei/commit/2f88fdd03fc370e56085e43b3c64df2fcc6d73d3))
+
+### Features
+
+- 🎸 add social login ([874658c](https://github.com/sentrei/sentrei/commit/874658c5e60dfe0ca651f1653d426ec40e9e592c))
+
 ## [3.6.1](https://github.com/sentrei/sentrei/compare/v3.6.0...v3.6.1) (2020-04-04)
 
 ### Bug Fixes
