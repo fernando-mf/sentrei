@@ -1,3 +1,9 @@
+## [3.6.1](https://github.com/sentrei/sentrei/compare/v3.6.0...v3.6.1) (2020-04-04)
+
+### Bug Fixes
+
+- 🐛 fastlane GITHUB_RUN_NUMBER ([1d3219c](https://github.com/sentrei/sentrei/commit/1d3219c895c5ae49577e6f969077ea029d6e7b5e))
+
 # [3.6.0](https://github.com/sentrei/sentrei/compare/v3.5.0...v3.6.0) (2020-04-04)
 
 ### Bug Fixes
