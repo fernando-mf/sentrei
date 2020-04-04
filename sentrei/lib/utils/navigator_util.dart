@@ -3,10 +3,9 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
-import 'application.dart';
-import 'routers.dart';
+import 'package:sentrei/app/app.dart';
 
-class NavigatorUtils {
+class NavigatorUtil {
   static push(BuildContext context, String path,
       {bool replace = false, bool clearStack = false}) {
     FocusScope.of(context).unfocus();

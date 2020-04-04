@@ -1,9 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 import 'package:rxdart/rxdart.dart';
-
 import 'package:sentrei/app/app.dart';
 import 'package:sentrei/const/const.dart';
 import 'package:sentrei/login/login.dart';
@@ -52,7 +50,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   _goLogin() {
-    NavigatorUtils.push(
+    NavigatorUtil.push(
       context,
       LoginRouter.loginPage,
       replace: true,
