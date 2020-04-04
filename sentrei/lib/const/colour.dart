@@ -2,6 +2,23 @@ import 'package:flutter/material.dart';
 
 /// Reference: https://github.com/simplezhli/flutter_deer/blob/a89b6cc4edb0197a4dfd0f830c54b873015d077f/lib/res/colors.dart
 class Colour {
+  static const Color black = Color(0xff353535);
+  static const Color black_opaque = Colors.black12;
+  static const Color blue = Color(0xffabecd6);
+  static const Color blue_deep = Color(0xffA8CBFD);
+  static const Color blue_light = Color(0xffAED3EA);
+  static const Color green = Color(0xffc7e5b4);
+  static const Color gray = Color(0xff434343);
+  static const Color orange = Color(0xffffc2a1);
+  static const Color orange_light = Color(0xffFFC3A0);
+  static const Color purple = Color(0xffccc3fc);
+  static const Color red = Color(0xffF2A7B3);
+  static const Color red_light = Color(0xffffb1bb);
+  static const Color text_black = Color(0xFF353535);
+  static const Color text_black_light = Color(0xFF34323D);
+  static const Color yellow = Color(0xfffbed96);
+  static const Color yellow_light = Color(0xfffbed96);
+
   static const Color app_main = Color(0xFF4688FA);
   static const Color dark_app_main = Color(0xFF3F7AE0);
 
@@ -26,8 +43,7 @@ class Colour {
   static const Color line = Color(0xFFEEEEEE);
   static const Color dark_line = Color(0xFF3A3C3D);
 
-  static const Color red = Color(0xFFFF4759);
-  static const Color dark_red = Color(0xFFE03E4E);
+  static const Color dark_red = Color(0xffF2A7B3);
 
   static const Color text_disabled = Color(0xFFD4E2FA);
   static const Color dark_text_disabled = Color(0xFFCEDBF2);
