@@ -1,3 +1,10 @@
+## [3.8.9](https://github.com/sentrei/sentrei/compare/v3.8.8...v3.8.9) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 add play store ([5601d2a](https://github.com/sentrei/sentrei/commit/5601d2a3345fb33dcf0179a54b2f013bf4740752))
+- 🐛 ready ([4b3d9b0](https://github.com/sentrei/sentrei/commit/4b3d9b0f73fbdef1e6061a4ad866e9529037e3b1))
+
 ## [3.8.8](https://github.com/sentrei/sentrei/compare/v3.8.7...v3.8.8) (2020-04-05)
 
 ### Bug Fixes
