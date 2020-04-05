@@ -1,2 +1,2 @@
-json_key_file "../key/api.json"
+json_key_file "key/api.json"
 package_name "com.sentrei.sentrei"

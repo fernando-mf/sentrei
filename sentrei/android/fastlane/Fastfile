@@ -41,7 +41,12 @@ platform :android do
       track: 'internal',
       version_code: ENV['VERSION'],
       track_promote_to: 'alpha',
-      aab: '../build/app/outputs/bundle/alphaRelease/app-alpha-release.aab',
+      # apk_paths: [
+      #   "../build/app/outputs/apk/alpha/release/app-alpha-armeabi-v7a-release.apk",
+      #   "../build/app/outputs/apk/alpha/release/app-alpha-arm64-v8a-release.apk",
+      #   "../build/app/outputs/apk/alpha/release/app-alpha-x86_64-release.apk",
+      # ],
+      aab: "../build/app/outputs/bundle/alphaRelease/app-alpha-release.aab",
       skip_upload_screenshots: true,
       skip_upload_images: true,
     )
@@ -87,7 +92,12 @@ platform :android do
       track: 'alpha',
       version_code: ENV['VERSION'],
       track_promote_to: 'beta',
-      aab: '../build/app/outputs/bundle/betaRelease/app-beta-release.aab',
+      # apk_paths: [
+      #   "../build/app/outputs/apk/beta/release/app-beta-armeabi-v7a-release.apk",
+      #   "../build/app/outputs/apk/beta/release/app-beta-arm64-v8a-release.apk",
+      #   "../build/app/outputs/apk/beta/release/app-beta-x86_64-release.apk",
+      # ],
+      aab: "../build/app/outputs/bundle/betaRelease/app-beta-release.aab",
       skip_upload_screenshots: true,
       skip_upload_images: true,
     )
@@ -129,7 +139,12 @@ platform :android do
       track: 'beta',
       version_code: ENV['VERSION'],
       track_promote_to: 'production',
-      aab: '../build/app/outputs/bundle/masterRelease/app-master-release.aab',
+      # apk_paths: [
+      #   "../build/app/outputs/apk/master/release/app-master-armeabi-v7a-release.apk",
+      #   "../build/app/outputs/apk/master/release/app-master-arm64-v8a-release.apk",
+      #   "../build/app/outputs/apk/master/release/app-master-x86_64-release.apk",
+      # ],
+      aab: "../build/app/outputs/bundle/masterRelease/app-master-release.aab",
       skip_upload_screenshots: true,
       skip_upload_images: true,
     )

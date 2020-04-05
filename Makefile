@@ -2,8 +2,7 @@ auth:
 	keytool -list -v -alias key -keystore sentrei/android/key/key.jks
 
 delete:
-	keytool --delete -v -keystore sentrei/android/key/key.jks -alias key
-	rm -rf sentrei/android/key/key.jks
+	keytool --delete -v -alias key -keystore sentrei/android/key/key.jks
 
 encrypt:
 	keytool -genkey -v -keystore sentrei/android/key/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
