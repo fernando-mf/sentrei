@@ -129,6 +129,7 @@ jobs:
           ./key.sh
         env:
           APP_SIGN_PWD: ${{ secrets.APP_SIGN_PWD }}
+          BRANCH: ${{ steps.branch.outputs.branch }}
       - name: Run flutter android
         if: matrix.platform == 'android'
         working-directory: sentrei
