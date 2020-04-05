@@ -39,7 +39,7 @@ platform :android do
     )
     upload_to_play_store(
       track: 'internal',
-      version_code: ENV['VERSION'],
+      version_code: ENV['VERSION'].to_i,
       track_promote_to: 'alpha',
       # apk_paths: [
       #   "../build/app/outputs/apk/alpha/release/app-alpha-armeabi-v7a-release.apk",
@@ -90,7 +90,7 @@ platform :android do
     )
     upload_to_play_store(
       track: 'alpha',
-      version_code: ENV['VERSION'],
+      version_code: ENV['VERSION'].to_i,
       track_promote_to: 'beta',
       # apk_paths: [
       #   "../build/app/outputs/apk/beta/release/app-beta-armeabi-v7a-release.apk",
@@ -137,7 +137,7 @@ platform :android do
     )
     upload_to_play_store(
       track: 'beta',
-      version_code: ENV['VERSION'],
+      version_code: ENV['VERSION'].to_i,
       track_promote_to: 'production',
       # apk_paths: [
       #   "../build/app/outputs/apk/master/release/app-master-armeabi-v7a-release.apk",
