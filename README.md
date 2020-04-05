@@ -2,7 +2,6 @@
   <img src="assets/banner.png">
 </p>
 
-<!-- prettier-ignore-start -->
 [![Effective Dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)
 [![Flutter](https://img.shields.io/badge/built%20with-Flutter-brightgreen)](https://flutter.dev/docs)
 [![Issues](https://img.shields.io/github/issues/sentrei/sentrei)](https://github.com/sentrei/sentrei/issues)
@@ -15,31 +14,29 @@
 [![dependabot-status](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/sentrei/sentrei)
 [![Join the chat at https://gitter.im/sentrei/sentrei](https://badges.gitter.im/sentrei/sentrei.svg)](https://gitter.im/sentrei/sentrei?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-<!-- prettier-ignore-end -->
 
 ## Getting Started 🚀
 
+<!-- prettier-ignore-start -->
 | Version | Android | iOS | Docs |
 | ------- | ------- | --- | ---- |
 | alpha | [LINK](https://appdistribution.firebase.dev/i/dfq8XRGe) | [LINK](https://appdistribution.firebase.dev/i/QxDsYNoB) | https://alpha.docs.sentrei.com |
 | beta | [LINK](https://appdistribution.firebase.dev/i/hReUCAJq) | [LINK](https://appdistribution.firebase.dev/i/NbqaJdfa) | https://beta.docs.sentrei.com |
 | master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.docs.sentrei.com |
+<!-- prettier-ignore-end -->
 
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
+
 <table>
   <tr>
     <td align="center"><a href="https://www.shunkakinoki.com/"><img src="https://avatars0.githubusercontent.com/u/39187513?v=4" width="100px;" alt=""/><br /><sub><b>Shun Kakinoki</b></sub></a><br /><a href="https://github.com/sentrei/sentrei/commits?author=shunkakinoki" title="Code">💻</a> <a href="#projectManagement-shunkakinoki" title="Project Management">📆</a> <a href="#ideas-shunkakinoki" title="Ideas, Planning, & Feedback">🤔</a> <a href="#business-shunkakinoki" title="Business development">💼</a> <a href="#infra-shunkakinoki" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
