@@ -129,10 +129,17 @@ jobs:
           ./key.sh
         env:
           APP_SIGN_PWD: ${{ secrets.APP_SIGN_PWD }}
-      - name: Run flutter
+      - name: Run flutter android
+        if: matrix.platform == 'android'
         working-directory: sentrei
         run: |
-          flutter pub get
+          flutter build apk --flavor ${{ steps.branch.outputs.branch }}
+          flutter build appbundle --flavor ${{ steps.branch.outputs.branch }}
+      - name: Run flutter ios
+        if: matrix.platform == 'ios'
+        working-directory: sentrei
+        run: |
+          flutter build ios --no-codesign --release --flavor ${{ steps.branch.outputs.branch }}
       - name: Run fastlane
         working-directory: sentrei/${{ matrix.platform }}
         run: |
