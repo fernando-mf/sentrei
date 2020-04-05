@@ -1,3 +1,10 @@
+## [3.8.3](https://github.com/sentrei/sentrei/compare/v3.8.2...v3.8.3) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 add firebase app ([8e54964](https://github.com/sentrei/sentrei/commit/8e549640510d2f3c90e2f049bdb24fc5540ec563))
+- 🐛 style ([72ec5c7](https://github.com/sentrei/sentrei/commit/72ec5c754e93709f760b39b8d6389163e5c9d31d))
+
 ## [3.8.2](https://github.com/sentrei/sentrei/compare/v3.8.1...v3.8.2) (2020-04-05)
 
 ### Bug Fixes
