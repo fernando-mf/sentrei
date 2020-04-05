@@ -76,7 +76,7 @@ jobs:
         run: |
           ./key.sh
         env:
-          ANDROID_SIGN_PWD: ${{ secrets.ANDROID_SIGN_PWD }}
+          APP_SIGN_PWD: ${{ secrets.APP_SIGN_PWD }}
       - name: Run fastlane test
         if: matrix.platform == 'android'
         run: |
