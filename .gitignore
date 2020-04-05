@@ -10,6 +10,7 @@ sentrei/android/key/master/sentrei-master.json
 sentrei/android/key.properties
 sentrei/android/key/api.json
 sentrei/android/key/key.jks
+sentrei/android/key/upload_cert.der
 sentrei/android/vendor
 
 sentrei/ios/.bundle
