@@ -4,6 +4,9 @@ sentrei/android/.bundle
 sentrei/android/firebase/alpha/google-services.json
 sentrei/android/firebase/beta/google-services.json
 sentrei/android/firebase/master/google-services.json
+sentrei/android/key/alpha/sentrei-alpha.json
+sentrei/android/key/beta/sentrei-beta.json
+sentrei/android/key/master/sentrei-master.json
 sentrei/android/key.properties
 sentrei/android/key/api.json
 sentrei/android/key/key.jks

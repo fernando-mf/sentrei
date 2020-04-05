@@ -129,20 +129,10 @@ jobs:
           ./key.sh
         env:
           APP_SIGN_PWD: ${{ secrets.APP_SIGN_PWD }}
-      - name: Run android apk
-        if: matrix.platform == 'android'
-        working-directory: sentrei
-        run: |
-          flutter build apk --flavor ${{ steps.branch.outputs.branch }}
-          flutter build appbundle --flavor ${{ steps.branch.outputs.branch }}
-      - name: Run ios ipa
-        if: matrix.platform == 'ios'
-        working-directory: sentrei
-        run: |
-          flutter build ios --no-codesign --release --flavor ${{ steps.branch.outputs.branch }}
       - name: Run fastlane
         working-directory: sentrei/${{ matrix.platform }}
         run: |
+          flutter pub get
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
