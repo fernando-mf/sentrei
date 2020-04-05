@@ -1,3 +1,9 @@
+## [3.8.12](https://github.com/sentrei/sentrei/compare/v3.8.11...v3.8.12) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 add ready action ([8449f00](https://github.com/sentrei/sentrei/commit/8449f002d4cd424306025eb6b60c74d5708aa476))
+
 ## [3.8.11](https://github.com/sentrei/sentrei/compare/v3.8.10...v3.8.11) (2020-04-05)
 
 ### Bug Fixes
