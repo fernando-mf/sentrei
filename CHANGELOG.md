@@ -1,3 +1,9 @@
+## [3.8.7](https://github.com/sentrei/sentrei/compare/v3.8.6...v3.8.7) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 default path apk & ipa ([d9bc1be](https://github.com/sentrei/sentrei/commit/d9bc1beebdc7bb096a849a5e0e4bca1a2ac803e1))
+
 ## [3.8.6](https://github.com/sentrei/sentrei/compare/v3.8.5...v3.8.6) (2020-04-05)
 
 ### Bug Fixes
