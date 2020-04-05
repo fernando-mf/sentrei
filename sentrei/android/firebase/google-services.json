@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "721847679884",
+    "firebase_url": "https://sentrei-master.firebaseio.com",
+    "project_id": "sentrei-master",
+    "storage_bucket": "sentrei-master.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721847679884:android:1935b57831163cda5bb4a9",
+        "android_client_info": {
+          "package_name": "com.sentrei.sentrei"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721847679884-s5ic0hb45s3k36is0sjp3bhus1gub7ua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfCvED_6wk5pNAVpKmqqsnqojouOsYmjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721847679884-8dt075fnrfpkt17csv0i65mjm3op7pkq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "721847679884-gvqumkg7s6b0jumbgefv9qgh0jk4phf0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sentrei.sentrei"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
