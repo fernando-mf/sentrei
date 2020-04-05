@@ -1,3 +1,9 @@
+## [3.8.4](https://github.com/sentrei/sentrei/compare/v3.8.3...v3.8.4) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 add flutter pub get ([082799a](https://github.com/sentrei/sentrei/commit/082799a976fab0be6d09f923927f5956930602ae))
+
 ## [3.8.3](https://github.com/sentrei/sentrei/compare/v3.8.2...v3.8.3) (2020-04-05)
 
 ### Bug Fixes
