@@ -1,3 +1,14 @@
+# [3.8.0](https://github.com/sentrei/sentrei/compare/v3.7.0...v3.8.0) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 logo path ([5911bc6](https://github.com/sentrei/sentrei/commit/5911bc6531d708231320e074f4295224cae1950b))
+- 🐛 refactore ([9e7a027](https://github.com/sentrei/sentrei/commit/9e7a0270160535a6fe6f2127ce3752f753cc302c))
+
+### Features
+
+- 🎸 add onboarding screen ([77df92a](https://github.com/sentrei/sentrei/commit/77df92afa120913396e0882123216b64504fc935))
+
 # [3.7.0](https://github.com/sentrei/sentrei/compare/v3.6.1...v3.7.0) (2020-04-04)
 
 ### Bug Fixes
