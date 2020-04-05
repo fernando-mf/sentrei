@@ -21,15 +21,29 @@ platform :android do
       glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
     )
     gradle(
+      task: "assemble",
+      flavor: "alpha",
+      build_type: "Release",
+    )
+    gradle(
       task: "bundle",
       flavor: "alpha",
-      build_type: "Release"
+      build_type: "Release",
     )
     firebase_app_distribution(
       groups: "alpha",
       app: "1:280671636932:android:69407d4e605d5e60cd6891",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
+      app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
+    )
+    upload_to_play_store(
+      track: 'internal',
+      version_code: flutter_version()["version_code"],
+      track_promote_to: 'alpha',
+      aab: '../build/app/outputs/bundle/alphaRelease/app-alpha-release.aab',
+      skip_upload_screenshots: true,
+      skip_upload_images: true,
     )
     firebase_test_lab_android(
       project_id: "sentrei-alpha",
@@ -41,7 +55,7 @@ platform :android do
           version: "29"
         }
       ],
-      app_apk: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
+      app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
       download_dir: "results",
     )
   end
@@ -53,15 +67,29 @@ platform :android do
       glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
     )
     gradle(
+      task: "assemble",
+      flavor: "beta",
+      build_type: "Release",
+    )
+    gradle(
       task: "bundle",
       flavor: "beta",
-      build_type: "Release"
+      build_type: "Release",
     )
     firebase_app_distribution(
       groups: "beta",
       app: "1:258612152633:android:0344f8ed2ff95c50ff40e8",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
+      app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
+    )
+    upload_to_play_store(
+      track: 'alpha',
+      version_code: flutter_version()["version_code"],
+      track_promote_to: 'beta',
+      aab: '../build/app/outputs/bundle/betaRelease/app-beta-release.aab',
+      skip_upload_screenshots: true,
+      skip_upload_images: true,
     )
     firebase_test_lab_android(
       project_id: "sentrei-beta",
@@ -73,7 +101,7 @@ platform :android do
           version: "29"
         }
       ],
-      app_apk: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
+      app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
       download_dir: "results",
     )
   end
@@ -81,15 +109,29 @@ platform :android do
   desc "Submit a new master build to firebase"
   lane :master do
     gradle(
+      task: "assemble",
+      flavor: "master",
+      build_type: "Release",
+    )
+    gradle(
       task: "bundle",
       flavor: "master",
-      build_type: "Release"
+      build_type: "Release",
     )
     firebase_app_distribution(
       groups: "master",
       app: "1:721847679884:android:1935b57831163cda5bb4a9",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
+      apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk",
+    )
+    upload_to_play_store(
+      track: 'beta',
+      version_code: flutter_version()["version_code"],
+      track_promote_to: 'production',
+      aab: '../build/app/outputs/bundle/masterRelease/app-master-release.aab',
+      skip_upload_screenshots: true,
+      skip_upload_images: true,
     )
     firebase_test_lab_android(
       project_id: "sentrei-master",
@@ -101,7 +143,7 @@ platform :android do
           version: "29"
         }
       ],
-      app_apk: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
+      apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk",
       download_dir: "results",
     )
   end
@@ -123,7 +165,7 @@ platform :android do
             version: "29"
           }
         ],
-        app_apk: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
+        app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
         github_owner: "sentrei",
         github_repository: "sentrei",
         github_pr_number: ENV["PR_NUMBER"],
@@ -147,7 +189,7 @@ platform :android do
             version: "29"
           }
         ],
-        app_apk: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
+        app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
         github_owner: "sentrei",
         github_repository: "sentrei",
         github_pr_number: ENV["PR_NUMBER"],
@@ -171,7 +213,7 @@ platform :android do
             version: "29"
           }
         ],
-        app_apk: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
+        app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk",
         github_owner: "sentrei",
         github_repository: "sentrei",
         github_pr_number: ENV["PR_NUMBER"],
@@ -184,23 +226,38 @@ platform :android do
   lane :local do |options|
     if options[:alpha]
       gradle(
+        task: "assemble",
+        flavor: "alpha",
+        build_type: "Release",
+      )
+      gradle(
         task: "bundle",
         flavor: "alpha",
-        build_type: "Release"
+        build_type: "Release",
       )
     end
     if options[:beta]
       gradle(
+        task: "assemble",
+        flavor: "beta",
+        build_type: "Release",
+      )
+      gradle(
         task: "bundle",
         flavor: "beta",
-        build_type: "Release"
+        build_type: "Release",
       )
     end
     if options[:master]
       gradle(
+        task: "assemble",
+        flavor: "master",
+        build_type: "Release",
+      )
+      gradle(
         task: "bundle",
         flavor: "master",
-        build_type: "Release"
+        build_type: "Release",
       )
     end
   end
