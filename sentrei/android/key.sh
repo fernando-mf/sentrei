@@ -21,7 +21,3 @@ gpg --quiet --batch --yes --decrypt --passphrase="$APP_SIGN_PWD" \
 echo "storePassword=$APP_SIGN_PWD" >> key.properties
 echo "keyPassword=$APP_SIGN_PWD" >> key.properties
 echo "keyAlias=key" >> key.properties
-
-rm -f fastlane/Appfile
-echo "json_key_file \"key/api.json\"" >> fastlane/Appfile
-echo "package_name \"com.sentrei.sentrei\"" >> fastlane/Appfile
