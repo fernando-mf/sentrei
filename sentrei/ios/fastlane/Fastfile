@@ -147,4 +147,37 @@ platform :ios do
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
+
+  lane :local do |options|
+    if options[:alpha]
+      build_ios_app(
+        scheme: "alpha",
+        export_options: {
+            method: "ad-hoc",
+        },
+        output_directory: "./build/Runner",
+        output_name: "alpha.ipa",
+      )
+    end
+    if options[:beta]
+      build_ios_app(
+        scheme: "beta",
+        export_options: {
+            method: "ad-hoc",
+        },
+        output_directory: "./build/Runner",
+        output_name: "beta.ipa",
+      )
+    end
+    if options[:master]
+      build_ios_app(
+        scheme: "master",
+        export_options: {
+            method: "ad-hoc",
+        },
+        output_directory: "./build/Runner",
+        output_name: "master.ipa",
+      )
+    end
+  end
 end

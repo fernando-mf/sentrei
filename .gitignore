@@ -1,3 +1,27 @@
+sentrei/doc/.firebase
+
+sentrei/android/.bundle
+sentrei/android/firebase/alpha/google-services.json
+sentrei/android/firebase/beta/google-services.json
+sentrei/android/firebase/master/google-services.json
+sentrei/android/key.properties
+sentrei/android/key/api.json
+sentrei/android/key/key.jks
+sentrei/android/vendor
+
+sentrei/ios/.bundle
+sentrei/ios/.symlinks/
+sentrei/ios/build/
+sentrei/ios/Firebase/alpha/GoogleService-Info.plist
+sentrei/ios/Firebase/beta/GoogleService-Info.plist
+sentrei/ios/Firebase/master/GoogleService-Info.plist
+sentrei/ios/Flutter/
+sentrei/ios/Pods/
+sentrei/ios/Runner/GoogleService-Info.plist
+sentrei/ios/vendor
+
+sentrei/firebase.json
+
 # Miscellaneous
 *.class
 *.log
@@ -228,14 +252,6 @@ dist
 
 
 secring.*
-
-
-ios/Runner/GoogleService-Info.plist
-ios/.bundle/
-ios/.symlinks/
-ios/build/
-ios/Pods/
-ios/Flutter/
 
 
 # Local .terraform directories
