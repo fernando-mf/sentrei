@@ -23,12 +23,5 @@ echo "keyPassword=$APP_SIGN_PWD" >> key.properties
 echo "keyAlias=key" >> key.properties
 
 rm -f fastlane/Appfile
-echo "json_key_file \"../key/api.json\"" >> fastlane/Appfile
-
-if [ "${BRANCH}" == "alpha" ]; then
-    echo "package_name \"com.sentrei.sentrei.alpha\"" >> fastlane/Appfile
-    elif [ "${BRANCH}" == "beta" ]; then
-    echo "package_name \"com.sentrei.sentrei.beta\"" >> fastlane/Appfile
-    elif [ "${BRANCH}" == "master" ]; then
-    echo "package_name \"com.sentrei.sentrei\"" >> fastlane/Appfile
-fi
+echo "json_key_file \"key/api.json\"" >> fastlane/Appfile
+echo "package_name \"com.sentrei.sentrei\"" >> fastlane/Appfile
