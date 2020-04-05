@@ -17,6 +17,7 @@ jobs:
               labels: ['ready-to-merge'],
             })
       - uses: actions/github-script@0.9.0
+        if: github.actor != 'shunkakinoki'
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
