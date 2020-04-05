@@ -1,3 +1,10 @@
+## [3.8.1](https://github.com/sentrei/sentrei/compare/v3.8.0...v3.8.1) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 readme all contributors ([baebe58](https://github.com/sentrei/sentrei/commit/baebe582d00b0c9c1f35e37487fbb56f8505d935))
+- 🐛 refactor config path ([517daa9](https://github.com/sentrei/sentrei/commit/517daa96b008bb43a2d8e7c34184b1016b7ba28c))
+
 # [3.8.0](https://github.com/sentrei/sentrei/compare/v3.7.0...v3.8.0) (2020-04-05)
 
 ### Bug Fixes
