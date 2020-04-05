@@ -1,3 +1,9 @@
+## [3.8.14](https://github.com/sentrei/sentrei/compare/v3.8.13...v3.8.14) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 appfile ([d1c336d](https://github.com/sentrei/sentrei/commit/d1c336d6735816c4904ee3cbd250c765d3ca4379))
+
 ## [3.8.13](https://github.com/sentrei/sentrei/compare/v3.8.12...v3.8.13) (2020-04-05)
 
 ### Bug Fixes
