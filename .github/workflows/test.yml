@@ -71,8 +71,7 @@ jobs:
           version: ${{ steps.version.outputs.version }}
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Decrypt android secrets
-        if: matrix.platform == 'android'
+      - name: Decrypt ${{ matrix.platform }} secrets
         working-directory: sentrei/${{ matrix.platform }}
         run: |
           ./key.sh

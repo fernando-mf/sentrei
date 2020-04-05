@@ -30,7 +30,7 @@ platform :android do
     )
     firebase_test_lab_android(
       project_id: "sentrei-alpha",
-      gcloud_service_key_file: "firebase/sentrei-alpha.json",
+      gcloud_service_key_file: "firebase/alpha/google-services.json",
       type: "robo",
       devices: [
         {
@@ -59,7 +59,7 @@ platform :android do
     )
     firebase_test_lab_android(
       project_id: "sentrei-beta",
-      gcloud_service_key_file: "firebase/sentrei-beta.json",
+      gcloud_service_key_file: "firebase/beta/google-services.json",
       type: "robo",
       devices: [
         {
@@ -84,7 +84,7 @@ platform :android do
     )
     firebase_test_lab_android(
       project_id: "sentrei-master",
-      gcloud_service_key_file: "firebase/sentrei-master.json",
+      gcloud_service_key_file: "firebase/master/google-services.json",
       type: "robo",
       devices: [
         {
@@ -96,12 +96,13 @@ platform :android do
       download_dir: "results",
     )
   end
+
   lane :test do |options|
     if options[:alpha]
       sh("cd ../.. && flutter build apk --flavor alpha")
       firebase_test_lab_android(
         project_id: "sentrei-alpha",
-        gcloud_service_key_file: "firebase/sentrei-alpha.json",
+        gcloud_service_key_file: "firebase/alpha/google-services.json",
         type: "robo",
         devices: [
           {
@@ -121,7 +122,7 @@ platform :android do
       sh("cd ../.. && flutter build apk --flavor beta")
       firebase_test_lab_android(
         project_id: "sentrei-beta",
-        gcloud_service_key_file: "firebase/sentrei-beta.json",
+        gcloud_service_key_file: "firebase/beta/google-services.json",
         type: "robo",
         devices: [
           {
@@ -141,7 +142,7 @@ platform :android do
       sh("cd ../.. && flutter build apk --flavor master")
       firebase_test_lab_android(
         project_id: "sentrei-master",
-        gcloud_service_key_file: "firebase/sentrei-master.json",
+        gcloud_service_key_file: "firebase/master/google-services.json",
         type: "robo",
         devices: [
           {
@@ -155,6 +156,30 @@ platform :android do
         github_pr_number: ENV["PR_NUMBER"],
         github_api_token: ENV["GITHUB_TOKEN"],
         download_dir: "results",
+      )
+    end
+  end
+
+  lane :local do |options|
+    if options[:alpha]
+      gradle(
+        task: "bundle",
+        flavor: "alpha",
+        build_type: "Release"
+      )
+    end
+    if options[:beta]
+      gradle(
+        task: "bundle",
+        flavor: "beta",
+        build_type: "Release"
+      )
+    end
+    if options[:master]
+      gradle(
+        task: "bundle",
+        flavor: "master",
+        build_type: "Release"
       )
     end
   end
