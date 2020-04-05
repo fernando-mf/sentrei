@@ -1,3 +1,9 @@
+## [3.8.6](https://github.com/sentrei/sentrei/compare/v3.8.5...v3.8.6) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 refactor key.sh ([f615692](https://github.com/sentrei/sentrei/commit/f6156929c5870bab6b3c89661bc8b9c6e43c798c))
+
 ## [3.8.5](https://github.com/sentrei/sentrei/compare/v3.8.4...v3.8.5) (2020-04-05)
 
 ### Bug Fixes
