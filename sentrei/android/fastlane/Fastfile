@@ -20,17 +20,21 @@ platform :android do
       dark: true,
       glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
     )
-    sh("cd ../.. && flutter build apk --flavor alpha")
+    gradle(
+      task: "bundle",
+      flavor: "alpha",
+      build_type: "Release"
+    )
     firebase_app_distribution(
       groups: "alpha",
       app: "1:280671636932:android:69407d4e605d5e60cd6891",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
-      apk_path: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk"
+      apk_path: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
     )
     firebase_test_lab_android(
       project_id: "sentrei-alpha",
-      gcloud_service_key_file: "firebase/alpha/google-services.json",
+      gcloud_service_key_file: "key/alpha/sentrei-alpha.json",
       type: "robo",
       devices: [
         {
@@ -38,7 +42,7 @@ platform :android do
           version: "29"
         }
       ],
-      app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
+      app_apk: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
       download_dir: "results",
     )
   end
@@ -49,17 +53,21 @@ platform :android do
       dark: true,
       glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
     )
-    sh("cd ../.. && flutter build apk --flavor beta")
+    gradle(
+      task: "bundle",
+      flavor: "beta",
+      build_type: "Release"
+    )
     firebase_app_distribution(
       groups: "beta",
       app: "1:258612152633:android:0344f8ed2ff95c50ff40e8",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
-      apk_path: "../build/app/outputs/apk/beta/release/app-beta-release.apk"
+      apk_path: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
     )
     firebase_test_lab_android(
       project_id: "sentrei-beta",
-      gcloud_service_key_file: "firebase/beta/google-services.json",
+      gcloud_service_key_file: "key/beta/sentrei-beta.json",
       type: "robo",
       devices: [
         {
@@ -67,24 +75,28 @@ platform :android do
           version: "29"
         }
       ],
-      app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
+      app_apk: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
       download_dir: "results",
     )
   end
 
   desc "Submit a new master build to firebase"
   lane :master do
-    sh("cd ../.. && flutter build apk --flavor master")
+    gradle(
+      task: "bundle",
+      flavor: "master",
+      build_type: "Release"
+    )
     firebase_app_distribution(
       groups: "master",
       app: "1:721847679884:android:1935b57831163cda5bb4a9",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
-      apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk",
+      apk_path: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
     )
     firebase_test_lab_android(
       project_id: "sentrei-master",
-      gcloud_service_key_file: "firebase/master/google-services.json",
+      gcloud_service_key_file: "key/master/sentrei-master.json",
       type: "robo",
       devices: [
         {
@@ -92,17 +104,21 @@ platform :android do
           version: "29"
         }
       ],
-      app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk",
+      app_apk: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
       download_dir: "results",
     )
   end
 
   lane :test do |options|
     if options[:alpha]
-      sh("cd ../.. && flutter build apk --flavor alpha")
+      gradle(
+        task: "bundle",
+        flavor: "alpha",
+        build_type: "Release"
+      )
       firebase_test_lab_android(
         project_id: "sentrei-alpha",
-        gcloud_service_key_file: "firebase/alpha/google-services.json",
+        gcloud_service_key_file: "key/alpha/sentrei-alpha.json",
         type: "robo",
         devices: [
           {
@@ -110,7 +126,7 @@ platform :android do
             version: "29"
           }
         ],
-        app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
+        app_apk: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
         github_owner: "sentrei",
         github_repository: "sentrei",
         github_pr_number: ENV["PR_NUMBER"],
@@ -119,10 +135,14 @@ platform :android do
       )
     end
     if options[:beta]
-      sh("cd ../.. && flutter build apk --flavor beta")
+      gradle(
+        task: "bundle",
+        flavor: "beta",
+        build_type: "Release"
+      )
       firebase_test_lab_android(
         project_id: "sentrei-beta",
-        gcloud_service_key_file: "firebase/beta/google-services.json",
+        gcloud_service_key_file: "key/beta/sentrei-beta.json",
         type: "robo",
         devices: [
           {
@@ -130,7 +150,7 @@ platform :android do
             version: "29"
           }
         ],
-        app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
+        app_apk: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
         github_owner: "sentrei",
         github_repository: "sentrei",
         github_pr_number: ENV["PR_NUMBER"],
@@ -139,10 +159,14 @@ platform :android do
       )
     end
     if options[:master]
-      sh("cd ../.. && flutter build apk --flavor master")
+      gradle(
+        task: "bundle",
+        flavor: "master",
+        build_type: "Release"
+      )
       firebase_test_lab_android(
         project_id: "sentrei-master",
-        gcloud_service_key_file: "firebase/master/google-services.json",
+        gcloud_service_key_file: "key/master/sentrei-master.json",
         type: "robo",
         devices: [
           {
@@ -150,7 +174,7 @@ platform :android do
             version: "29"
           }
         ],
-        app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk",
+        app_apk: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
         github_owner: "sentrei",
         github_repository: "sentrei",
         github_pr_number: ENV["PR_NUMBER"],

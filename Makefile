@@ -12,6 +12,9 @@ encrypt:
 	gpg --symmetric --cipher-algo AES256 sentrei/android/firebase/alpha/google-services.json
 	gpg --symmetric --cipher-algo AES256 sentrei/android/firebase/beta/google-services.json
 	gpg --symmetric --cipher-algo AES256 sentrei/android/firebase/master/google-services.json
+	gpg --symmetric --cipher-algo AES256 sentrei/android/key/alpha/sentrei-alpha.json
+	gpg --symmetric --cipher-algo AES256 sentrei/android/key/beta/sentrei-beta.json
+	gpg --symmetric --cipher-algo AES256 sentrei/android/key/master/sentrei-master.json
 	gpg --symmetric --cipher-algo AES256 sentrei/ios/Firebase/alpha/GoogleService-Info.plist
 	gpg --symmetric --cipher-algo AES256 sentrei/ios/Firebase/beta/GoogleService-Info.plist
 	gpg --symmetric --cipher-algo AES256 sentrei/ios/Firebase/master/GoogleService-Info.plist
