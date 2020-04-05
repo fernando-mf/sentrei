@@ -1,3 +1,9 @@
+## [3.8.15](https://github.com/sentrei/sentrei/compare/v3.8.14...v3.8.15) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 remove Appfile from key.sh ([332bc36](https://github.com/sentrei/sentrei/commit/332bc3609916a1453b1eea2e1c2fac54e7aef60d))
+
 ## [3.8.14](https://github.com/sentrei/sentrei/compare/v3.8.13...v3.8.14) (2020-04-05)
 
 ### Bug Fixes
