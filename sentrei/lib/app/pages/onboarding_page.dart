@@ -1,6 +1,5 @@
 import 'package:fancy_on_boarding/fancy_on_boarding.dart';
 import 'package:flutter/material.dart';
-import 'package:sentrei/app/app.dart';
 import 'package:sentrei/login/login.dart';
 import 'package:sentrei/utils/utils.dart';
 

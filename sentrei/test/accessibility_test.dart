@@ -1,7 +1,7 @@
-import 'home/home_test.dart' as home;
+import 'app/app_test.dart' as app;
 import 'utils/utils_test.dart' as utils;
 
 void main() {
-  home.main();
+  app.main();
   utils.main();
 }
