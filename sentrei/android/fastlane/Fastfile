@@ -30,7 +30,6 @@ platform :android do
       app: "1:280671636932:android:69407d4e605d5e60cd6891",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
-      apk_path: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
     )
     firebase_test_lab_android(
       project_id: "sentrei-alpha",
@@ -63,7 +62,6 @@ platform :android do
       app: "1:258612152633:android:0344f8ed2ff95c50ff40e8",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
-      apk_path: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
     )
     firebase_test_lab_android(
       project_id: "sentrei-beta",
@@ -92,7 +90,6 @@ platform :android do
       app: "1:721847679884:android:1935b57831163cda5bb4a9",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
-      apk_path: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
     )
     firebase_test_lab_android(
       project_id: "sentrei-master",

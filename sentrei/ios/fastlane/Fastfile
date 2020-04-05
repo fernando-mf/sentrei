@@ -68,7 +68,6 @@ platform :ios do
       app: "1:280671636932:ios:0df6c23796b69f57cd6891",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
-      ipa_path: lane_context[SharedValues::IPA_OUTPUT_PATH],
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
@@ -107,7 +106,6 @@ platform :ios do
       app: "1:258612152633:ios:8cca4783fefba001ff40e8",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
-      ipa_path: lane_context[SharedValues::IPA_OUTPUT_PATH],
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
@@ -143,7 +141,6 @@ platform :ios do
       app: "1:721847679884:ios:ef9040472124b4715bb4a9",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
-      ipa_path: lane_context[SharedValues::IPA_OUTPUT_PATH],
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
