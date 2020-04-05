@@ -129,10 +129,13 @@ jobs:
           ./key.sh
         env:
           APP_SIGN_PWD: ${{ secrets.APP_SIGN_PWD }}
+      - name: Run flutter
+        working-directory: sentrei
+        run: |
+          flutter pub get
       - name: Run fastlane
         working-directory: sentrei/${{ matrix.platform }}
         run: |
-          flutter pub get
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
