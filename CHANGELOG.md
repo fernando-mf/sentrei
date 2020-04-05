@@ -1,3 +1,9 @@
+## [3.8.13](https://github.com/sentrei/sentrei/compare/v3.8.12...v3.8.13) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 change to not shunkakinoki ([5c805e1](https://github.com/sentrei/sentrei/commit/5c805e1a8244523487525ec13282d252830da374))
+
 ## [3.8.12](https://github.com/sentrei/sentrei/compare/v3.8.11...v3.8.12) (2020-04-05)
 
 ### Bug Fixes
