@@ -1,3 +1,9 @@
+## [3.8.2](https://github.com/sentrei/sentrei/compare/v3.8.1...v3.8.2) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 add APP_SIGN_PWD ([a687afe](https://github.com/sentrei/sentrei/commit/a687afe7acac8ec331d9cc7fac35268a26e9f525))
+
 ## [3.8.1](https://github.com/sentrei/sentrei/compare/v3.8.0...v3.8.1) (2020-04-05)
 
 ### Bug Fixes
