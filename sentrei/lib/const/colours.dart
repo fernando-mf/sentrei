@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Reference: https://github.com/simplezhli/flutter_deer/blob/a89b6cc4edb0197a4dfd0f830c54b873015d077f/lib/res/colors.dart
-class Colour {
+class Colours {
   static const Color app_main = Color(0xFF4688FA);
   static const Color app_main_dark = Color(0xFF3F7AE0);
   static const Color bg_color = Color(0xfff1f1f1);
@@ -29,6 +29,7 @@ class Colour {
   static const Color orange = Color(0xffffc2a1);
   static const Color orange_light = Color(0xffFFC3A0);
   static const Color purple = Color(0xffccc3fc);
+  static const Color purple_dark = Color(0xFF5B16D0);
   static const Color red = Color(0xffF2A7B3);
   static const Color red_dark = Color(0xffF2A7B3);
   static const Color red_light = Color(0xffffb1bb);

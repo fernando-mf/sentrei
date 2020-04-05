@@ -44,8 +44,8 @@ class _SplashPageState extends State<SplashPage> {
   void _initSplash() {
     _subscription =
         Stream.value(1).delay(Duration(milliseconds: 3000)).listen((_) {
-      if (SpUtil.getBool(Common.keyGuide, defValue: true)) {
-        SpUtil.putBool(Common.keyGuide, false);
+      if (SpUtil.getBool(Commons.keyGuide, defValue: true)) {
+        SpUtil.putBool(Commons.keyGuide, false);
         _initGuide();
       } else {
         _goLogin();
@@ -73,7 +73,7 @@ class _SplashPageState extends State<SplashPage> {
               bottomFactor: 0,
               child: LoadAssetImage('logo'),
             )
-          : Text('Guide Page'),
+          : OnboardingPage(),
     );
   }
 }
