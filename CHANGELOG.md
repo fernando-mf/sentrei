@@ -1,3 +1,9 @@
+## [3.8.5](https://github.com/sentrei/sentrei/compare/v3.8.4...v3.8.5) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 flutter build ([b5f9be4](https://github.com/sentrei/sentrei/commit/b5f9be4b9f2a803e8fc8096d0f2f1915eff4b0a6))
+
 ## [3.8.4](https://github.com/sentrei/sentrei/compare/v3.8.3...v3.8.4) (2020-04-05)
 
 ### Bug Fixes
