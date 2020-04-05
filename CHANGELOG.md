@@ -1,3 +1,9 @@
+## [3.8.11](https://github.com/sentrei/sentrei/compare/v3.8.10...v3.8.11) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 add version integer ([052d28f](https://github.com/sentrei/sentrei/commit/052d28f7b5a522465ad061290571076c64990c37))
+
 ## [3.8.10](https://github.com/sentrei/sentrei/compare/v3.8.9...v3.8.10) (2020-04-05)
 
 ### Bug Fixes
