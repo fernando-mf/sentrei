@@ -1,3 +1,10 @@
+## [3.8.10](https://github.com/sentrei/sentrei/compare/v3.8.9...v3.8.10) (2020-04-05)
+
+### Bug Fixes
+
+- 🐛 add appbundle apk ([60b289f](https://github.com/sentrei/sentrei/commit/60b289f3bfd9db649958a56e31c9903d5d05f67e))
+- 🐛 version ([dd5382b](https://github.com/sentrei/sentrei/commit/dd5382b24dfed4eacefba111d7a4d331d41ffbea))
+
 ## [3.8.9](https://github.com/sentrei/sentrei/compare/v3.8.8...v3.8.9) (2020-04-05)
 
 ### Bug Fixes
