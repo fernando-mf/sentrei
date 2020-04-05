@@ -40,14 +40,6 @@ class MockAuthService implements AuthService {
   }
 
   @override
-  Future<User> signInWithFacebook() async {
-    await Future<void>.delayed(responseTime);
-    final User user = User(uid: random.randomAlphaNumeric(32));
-    _add(user);
-    return user;
-  }
-
-  @override
   Future<User> signInWithGoogle() async {
     await Future<void>.delayed(responseTime);
     final User user = User(uid: random.randomAlphaNumeric(32));

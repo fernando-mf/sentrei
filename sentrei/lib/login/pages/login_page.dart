@@ -26,22 +26,12 @@ class LoginPage extends StatelessWidget {
     }
   }
 
-  Future<void> _signInWithFacebook(BuildContext context) async {
-    try {
-      await manager.signInWithFacebook();
-    } on PlatformException catch (e) {
-      if (e.code != 'ERROR_ABORTED_BY_USER') {
-        print(e);
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 64.0),
-        decoration: BoxDecoration(gradient: GradientBg.signup_background),
+        decoration: BoxDecoration(gradient: GradientBgs.signup_background),
         child: ListView(
           physics: BouncingScrollPhysics(),
           children: <Widget>[
@@ -66,7 +56,7 @@ class LoginPage extends StatelessWidget {
               margin: EdgeInsets.only(left: 32.0, right: 32.0, top: 12.0),
               child: GoogleSignInButton(
                 onPressed: isLoading ? null : () => _signInWithGoogle(context),
-                splashColor: Colour.black_opaque,
+                splashColor: Colours.black_opaque,
                 text: 'Log in with Google',
               ),
             ),
@@ -74,15 +64,8 @@ class LoginPage extends StatelessWidget {
               margin: EdgeInsets.only(left: 32.0, right: 32.0, top: 12.0),
               child: TwitterSignInButton(
                 onPressed: () {},
+                splashColor: Colours.black_opaque,
                 text: 'Log in with Twitter',
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 32.0, right: 32.0, top: 12.0),
-              child: FacebookSignInButton(
-                onPressed:
-                    isLoading ? null : () => _signInWithFacebook(context),
-                text: 'Log in with Facebook',
               ),
             ),
             signupWidget(),

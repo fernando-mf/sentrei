@@ -14,19 +14,19 @@ class ThemeProvider extends ChangeNotifier {
   };
 
   void syncTheme() {
-    String theme = SpUtil.getString(Common.theme);
+    String theme = SpUtil.getString(Commons.theme);
     if (theme.isNotEmpty && theme != themes[ThemeMode.system]) {
       notifyListeners();
     }
   }
 
   void setTheme(ThemeMode themeMode) {
-    SpUtil.putString(Common.theme, themes[themeMode]);
+    SpUtil.putString(Commons.theme, themes[themeMode]);
     notifyListeners();
   }
 
   ThemeMode getThemeMode() {
-    String theme = SpUtil.getString(Common.theme);
+    String theme = SpUtil.getString(Commons.theme);
     switch (theme) {
       case 'Dark':
         return ThemeMode.dark;
@@ -39,32 +39,32 @@ class ThemeProvider extends ChangeNotifier {
 
   getTheme({bool isDarkMode = false}) {
     return ThemeData(
-      errorColor: isDarkMode ? Colour.red_dark : Colour.red,
+      errorColor: isDarkMode ? Colours.red_dark : Colours.red,
       brightness: isDarkMode ? Brightness.dark : Brightness.light,
-      primaryColor: isDarkMode ? Colour.app_main_dark : Colour.app_main,
-      accentColor: isDarkMode ? Colour.app_main_dark : Colour.app_main,
-      indicatorColor: isDarkMode ? Colour.app_main_dark : Colour.app_main,
+      primaryColor: isDarkMode ? Colours.app_main_dark : Colours.app_main,
+      accentColor: isDarkMode ? Colours.app_main_dark : Colours.app_main,
+      indicatorColor: isDarkMode ? Colours.app_main_dark : Colours.app_main,
       scaffoldBackgroundColor:
-          isDarkMode ? Colour.bg_color_dark : Colour.bg_color_light,
+          isDarkMode ? Colours.bg_color_dark : Colours.bg_color_light,
       canvasColor:
-          isDarkMode ? Colour.material_bg_dark : Colour.material_bg_light,
-      textSelectionColor: Colour.app_main.withAlpha(70),
-      textSelectionHandleColor: Colour.app_main,
+          isDarkMode ? Colours.material_bg_dark : Colours.material_bg_light,
+      textSelectionColor: Colours.app_main.withAlpha(70),
+      textSelectionHandleColor: Colours.app_main,
       textTheme: TextTheme(
-        subhead: isDarkMode ? Style.textDark : Style.text,
-        body1: isDarkMode ? Style.textDark : Style.text,
-        subtitle: isDarkMode ? Style.textGrayDark12 : Style.textGray12,
+        subhead: isDarkMode ? Styles.textDark : Styles.text,
+        body1: isDarkMode ? Styles.textDark : Styles.text,
+        subtitle: isDarkMode ? Styles.textGrayDark12 : Styles.textGray12,
       ),
       inputDecorationTheme: InputDecorationTheme(
-        hintStyle: isDarkMode ? Style.textHint14 : Style.textHintDark14,
+        hintStyle: isDarkMode ? Styles.textHint14 : Styles.textHintDark14,
       ),
       appBarTheme: AppBarTheme(
         elevation: 0.0,
-        color: isDarkMode ? Colour.bg_color_dark : Colour.bg_color_light,
+        color: isDarkMode ? Colours.bg_color_dark : Colours.bg_color_light,
         brightness: isDarkMode ? Brightness.dark : Brightness.light,
       ),
       dividerTheme: DividerThemeData(
-        color: isDarkMode ? Colour.line_dark : Colour.line,
+        color: isDarkMode ? Colours.line_dark : Colours.line,
         space: 0.6,
         thickness: 0.6,
       ),

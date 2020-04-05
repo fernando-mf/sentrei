@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sentrei/app/app.dart';
-import 'package:sentrei/home/home.dart';
 
 void main() {
   var map = Map<String, Widget>();
-  map['home_page'] = HomePage();
+  map['onboarding_page'] = OnboardingPage();
 
   group('login => Detect whether page clickable targets have semantics', () {
     ThemeData themeData = ThemeProvider().getTheme();

@@ -66,9 +66,6 @@ class AuthServiceAdapter implements AuthService {
   Future<User> currentUser() => authService.currentUser();
 
   @override
-  Future<User> signInWithFacebook() => authService.signInWithFacebook();
-
-  @override
   Future<User> signInWithGoogle() => authService.signInWithGoogle();
 
   @override

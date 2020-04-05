@@ -21,8 +21,4 @@ class LoginManager {
   Future<void> signInWithGoogle() async {
     return await _signIn(auth.signInWithGoogle);
   }
-
-  Future<void> signInWithFacebook() async {
-    return await _signIn(auth.signInWithFacebook);
-  }
 }
