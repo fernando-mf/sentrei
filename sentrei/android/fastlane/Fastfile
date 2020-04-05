@@ -39,7 +39,7 @@ platform :android do
     )
     upload_to_play_store(
       track: 'internal',
-      version_code: flutter_version()["version_code"],
+      version_code: ENV['VERSION'],
       track_promote_to: 'alpha',
       aab: '../build/app/outputs/bundle/alphaRelease/app-alpha-release.aab',
       skip_upload_screenshots: true,
@@ -85,7 +85,7 @@ platform :android do
     )
     upload_to_play_store(
       track: 'alpha',
-      version_code: flutter_version()["version_code"],
+      version_code: ENV['VERSION'],
       track_promote_to: 'beta',
       aab: '../build/app/outputs/bundle/betaRelease/app-beta-release.aab',
       skip_upload_screenshots: true,
@@ -127,7 +127,7 @@ platform :android do
     )
     upload_to_play_store(
       track: 'beta',
-      version_code: flutter_version()["version_code"],
+      version_code: ENV['VERSION'],
       track_promote_to: 'production',
       aab: '../build/app/outputs/bundle/masterRelease/app-master-release.aab',
       skip_upload_screenshots: true,

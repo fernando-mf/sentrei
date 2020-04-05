@@ -150,6 +150,7 @@ jobs:
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          VERSION: ${{ steps.version.outputs.version }}
       - name: Upload android asset
         if: matrix.platform == 'android'
         uses: actions/upload-release-asset@v1
