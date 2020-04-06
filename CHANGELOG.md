@@ -1,3 +1,9 @@
+## [3.8.18](https://github.com/sentrei/sentrei/compare/v3.8.17...v3.8.18) (2020-04-06)
+
+### Bug Fixes
+
+- 🐛 add bundle pathh ([bcb5bbb](https://github.com/sentrei/sentrei/commit/bcb5bbbbfd69207875856d95dc2927bc8472a398))
+
 ## [3.8.17](https://github.com/sentrei/sentrei/compare/v3.8.16...v3.8.17) (2020-04-06)
 
 ### Bug Fixes
