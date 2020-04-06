@@ -63,9 +63,10 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "alpha.ipa",
     )
+    upload_to_testflight(skip_submission: true)
     firebase_app_distribution(
       groups: "alpha",
-      app: "1:280671636932:ios:0df6c23796b69f57cd6891",
+      app: "1:280671636932:ios:759af222a982abe4cd6891",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
     )
@@ -101,9 +102,10 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "beta.ipa",
     )
+    upload_to_testflight(skip_submission: true)
     firebase_app_distribution(
       groups: "beta",
-      app: "1:258612152633:ios:8cca4783fefba001ff40e8",
+      app: "1:258612152633:ios:bc4dc6098eda5af3ff40e8",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
     )
@@ -112,22 +114,22 @@ platform :ios do
 
   desc "Submit a new master build to firebase"
   lane :master do
-    disable_automatic_code_signing(
-      path: "./Runner.xcodeproj",
-      team_id: "8CW7HSL79U",
-      profile_name: "match AdHoc com.sentrei.sentrei",
-      code_sign_identity: "iPhone Distribution",
-    )
-    ensure_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT, TMP_KEYCHAN_PASSWORD_DEFAULT)
-    match(
-      app_identifier: "com.sentrei.sentrei",
-      type: "adhoc",
-      readonly: is_ci,
-      keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
-      keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
-      git_url: "https://github.com/shunkakinoki/ios-certificates.git",
-      git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}"),
-    )
+    # disable_automatic_code_signing(
+    #   path: "./Runner.xcodeproj",
+    #   team_id: "8CW7HSL79U",
+    #   profile_name: "match AdHoc com.sentrei.sentrei",
+    #   code_sign_identity: "iPhone Distribution",
+    # )
+    # ensure_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT, TMP_KEYCHAN_PASSWORD_DEFAULT)
+    # match(
+    #   app_identifier: "com.sentrei.sentrei",
+    #   type: "adhoc",
+    #   readonly: is_ci,
+    #   keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
+    #   keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
+    #   git_url: "https://github.com/shunkakinoki/ios-certificates.git",
+    #   git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}"),
+    # )
     build_ios_app(
       scheme: "master",
       export_options: {
@@ -136,6 +138,7 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "master.ipa",
     )
+    upload_to_testflight(skip_submission: true)
     firebase_app_distribution(
       groups: "master",
       app: "1:721847679884:ios:ef9040472124b4715bb4a9",

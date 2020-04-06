@@ -130,6 +130,7 @@ jobs:
         env:
           APP_SIGN_PWD: ${{ secrets.APP_SIGN_PWD }}
           BRANCH: ${{ steps.branch.outputs.branch }}
+          GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       - name: Run flutter android
         if: matrix.platform == 'android'
         working-directory: sentrei

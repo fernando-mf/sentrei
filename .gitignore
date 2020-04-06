@@ -1,9 +1,6 @@
 sentrei/doc/.firebase
 
 sentrei/android/.bundle
-sentrei/android/firebase/alpha/google-services.json
-sentrei/android/firebase/beta/google-services.json
-sentrei/android/firebase/master/google-services.json
 sentrei/android/key/alpha/sentrei-alpha.json
 sentrei/android/key/beta/sentrei-beta.json
 sentrei/android/key/master/sentrei-master.json
@@ -16,12 +13,8 @@ sentrei/android/vendor
 sentrei/ios/.bundle
 sentrei/ios/.symlinks/
 sentrei/ios/build/
-sentrei/ios/Firebase/alpha/GoogleService-Info.plist
-sentrei/ios/Firebase/beta/GoogleService-Info.plist
-sentrei/ios/Firebase/master/GoogleService-Info.plist
 sentrei/ios/Flutter/
 sentrei/ios/Pods/
-sentrei/ios/Runner/GoogleService-Info.plist
 sentrei/ios/vendor
 
 sentrei/firebase.json
