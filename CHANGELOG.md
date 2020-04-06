@@ -1,3 +1,9 @@
+## [3.8.17](https://github.com/sentrei/sentrei/compare/v3.8.16...v3.8.17) (2020-04-06)
+
+### Bug Fixes
+
+- 🐛 build app bundle ([2888f88](https://github.com/sentrei/sentrei/commit/2888f884e661a5e78c47d7f3d1971b4e366ca67f))
+
 ## [3.8.16](https://github.com/sentrei/sentrei/compare/v3.8.15...v3.8.16) (2020-04-06)
 
 ### Bug Fixes
