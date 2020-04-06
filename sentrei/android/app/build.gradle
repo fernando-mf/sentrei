@@ -79,17 +79,14 @@ android {
         alpha {
             dimension "app"
             resValue "string", "app_name", "sentrei alpha"
-            applicationId "com.sentrei.sentrei.alpha"
         }
         beta {
             dimension "app"
             resValue "string", "app_name", "sentrei beta"
-            applicationId "com.sentrei.sentrei.beta"
         }
         master {
             dimension "app"
             resValue "string", "app_name", "sentrei"
-            applicationId "com.sentrei.sentrei"
         }
     }
 }

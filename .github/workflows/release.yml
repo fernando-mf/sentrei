@@ -150,7 +150,7 @@ jobs:
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-      - name: Upload android asset
+      - name: Upload android apk
         if: matrix.platform == 'android'
         uses: actions/upload-release-asset@v1
         env:
@@ -160,7 +160,17 @@ jobs:
           asset_path: sentrei/build/app/outputs/apk/${{ steps.branch.outputs.branch }}/release/app-${{ steps.branch.outputs.branch }}-release.apk
           asset_name: ${{ steps.branch.outputs.branch }}.apk
           asset_content_type: application/vnd.android.package-archive
-      - name: Upload ios asset
+      - name: Upload android aab
+        if: matrix.platform == 'android'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.get_url.outputs.upload_url }}
+          asset_path: sentrei/build/app/outputs/bundle/${{ steps.branch.outputs.branch }}Release/app-${{ steps.branch.outputs.branch }}-release.aab
+          asset_name: ${{ steps.branch.outputs.branch }}.aab
+          asset_content_type: application/vnd.android.package-archive
+      - name: Upload ios ipa
         if: matrix.platform == 'ios'
         uses: actions/upload-release-asset@v1
         env:
