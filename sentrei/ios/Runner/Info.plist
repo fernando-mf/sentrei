@@ -94,5 +94,7 @@
 			</array>
 		</dict>
 	</array>
+	<!-- Define Export Compliance metadata -->
+	<key>ITSAppUsesNonExemptEncryption</key><false/>
 </dict>
 </plist>
