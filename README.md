@@ -6,6 +6,7 @@
 [![Flutter](https://img.shields.io/badge/built%20with-Flutter-brightgreen)](https://flutter.dev/docs)
 [![Issues](https://img.shields.io/github/issues/sentrei/sentrei)](https://github.com/sentrei/sentrei/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/sentrei/sentrei)](https://github.com/sentrei/sentrei/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)
 [![License](https://img.shields.io/github/license/sentrei/sentrei)](https://github.com/sentrei/sentrei/blob/master/LICENSE.md)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/sentrei/sentrei/graphs/commit-activity)
 [![Star on GitHub](https://img.shields.io/github/stars/sentrei/sentrei.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/sentrei/sentrei)
@@ -14,7 +15,6 @@
 [![dependabot-status](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/sentrei/sentrei)
 [![Join the chat at https://gitter.im/sentrei/sentrei](https://badges.gitter.im/sentrei/sentrei.svg)](https://gitter.im/sentrei/sentrei?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="PRs Welcome")](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="PRs Welcome)
 
 ## Getting Started 🚀
 
