@@ -1,3 +1,9 @@
+## [3.8.32](https://github.com/sentrei/sentrei/compare/v3.8.31...v3.8.32) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 PRs Welcome ([43909c5](https://github.com/sentrei/sentrei/commit/43909c591f64756b9db7a826262d7377d629f566))
+
 ## [3.8.31](https://github.com/sentrei/sentrei/compare/v3.8.30...v3.8.31) (2020-04-07)
 
 ### Bug Fixes
