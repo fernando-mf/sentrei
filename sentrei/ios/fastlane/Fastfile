@@ -70,7 +70,7 @@ platform :ios do
       release_notes: ENV['GITHUB_RUN_NUMBER'],
     )
     upload_to_testflight(
-      username: "shunkakinoki@gmail.com",
+      username: "shunkakinoki@sentrei.com",
       app_identifier: "com.sentrei.sentrei.alpha",
       beta_app_feedback_email: "shunkakinoki@sentrei.com",
       beta_app_description: "sentrei master",
@@ -81,7 +81,7 @@ platform :ios do
       notify_external_testers: true,
       groups: "alpha",
       beta_app_review_info: {
-        contact_email: "shunkakinoki@gmail.com",
+        contact_email: "shunkakinoki@sentrei.com",
         contact_first_name: "Shun",
         contact_last_name: "Kakinoki",
         contact_phone: "333-333-333",
@@ -132,7 +132,7 @@ platform :ios do
       release_notes: ENV['GITHUB_RUN_NUMBER'],
     )
     upload_to_testflight(
-      username: "shunkakinoki@gmail.com",
+      username: "shunkakinoki@sentrei.com",
       app_identifier: "com.sentrei.sentrei.beta",
       beta_app_feedback_email: "shunkakinoki@sentrei.com",
       beta_app_description: "sentrei master",
@@ -143,7 +143,7 @@ platform :ios do
       notify_external_testers: true,
       groups: "beta",
       beta_app_review_info: {
-        contact_email: "shunkakinoki@gmail.com",
+        contact_email: "shunkakinoki@sentrei.com",
         contact_first_name: "Shun",
         contact_last_name: "Kakinoki",
         contact_phone: "333-333-333",
@@ -191,7 +191,7 @@ platform :ios do
       release_notes: ENV['GITHUB_RUN_NUMBER'],
     )
     upload_to_testflight(
-      username: "shunkakinoki@gmail.com",
+      username: "shunkakinoki@sentrei.com",
       app_identifier: "com.sentrei.sentrei",
       beta_app_feedback_email: "shunkakinoki@sentrei.com",
       beta_app_description: "sentrei master",
@@ -202,7 +202,7 @@ platform :ios do
       notify_external_testers: true,
       groups: "master",
       beta_app_review_info: {
-        contact_email: "shunkakinoki@gmail.com",
+        contact_email: "shunkakinoki@sentrei.com",
         contact_first_name: "Shun",
         contact_last_name: "Kakinoki",
         contact_phone: "333-333-333",
