@@ -14,6 +14,7 @@
 [![dependabot-status](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/sentrei/sentrei)
 [![Join the chat at https://gitter.im/sentrei/sentrei](https://badges.gitter.im/sentrei/sentrei.svg)](https://gitter.im/sentrei/sentrei?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="PRs Welcome")](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="PRs Welcome)
 
 ## Getting Started 🚀
 
