@@ -1,3 +1,10 @@
+## [3.8.27](https://github.com/sentrei/sentrei/compare/v3.8.26...v3.8.27) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 add pullrequest number ([3ac7727](https://github.com/sentrei/sentrei/commit/3ac772754d07398998faa8f837e1abb66cb19e25))
+- 🐛 ios env token ([88f9362](https://github.com/sentrei/sentrei/commit/88f9362f4a8f567f61a5be52533035269710d566))
+
 ## [3.8.26](https://github.com/sentrei/sentrei/compare/v3.8.25...v3.8.26) (2020-04-07)
 
 ### Bug Fixes
