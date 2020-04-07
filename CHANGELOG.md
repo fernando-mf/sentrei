@@ -1,3 +1,9 @@
+## [3.8.20](https://github.com/sentrei/sentrei/compare/v3.8.19...v3.8.20) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 add ios certificates ([2623d3f](https://github.com/sentrei/sentrei/commit/2623d3f03d58db234ea06dc08e3249de989f2a73))
+
 ## [3.8.19](https://github.com/sentrei/sentrei/compare/v3.8.18...v3.8.19) (2020-04-07)
 
 ### Bug Fixes
