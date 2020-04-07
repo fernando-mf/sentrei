@@ -46,7 +46,8 @@ jobs:
         if: |
           github.event.pull_request != null && contains(toJson(github.event.pull_request.title), '[sentrei-auto-pr]') && (github.actor == 'shunkakinoki') ||
           github.actor == 'dependabot[bot]' ||
-          github.actor == 'dependabot-preview[bot]'
+          github.actor == 'dependabot-preview[bot]' ||
+          github.actor == 'mergify[bot]'
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:

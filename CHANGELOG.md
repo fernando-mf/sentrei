@@ -1,3 +1,9 @@
+## [3.8.28](https://github.com/sentrei/sentrei/compare/v3.8.27...v3.8.28) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 remove ipad support ([edab102](https://github.com/sentrei/sentrei/commit/edab102d611338e9e0c2b5d306dc3b1702ec0143))
+
 ## [3.8.27](https://github.com/sentrei/sentrei/compare/v3.8.26...v3.8.27) (2020-04-07)
 
 ### Bug Fixes
