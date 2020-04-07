@@ -1,3 +1,9 @@
+# [3.9.0](https://github.com/sentrei/sentrei/compare/v3.8.37...v3.9.0) (2020-04-07)
+
+### Features
+
+- 🎸 add fastlane messaging ([c4d7b94](https://github.com/sentrei/sentrei/commit/c4d7b9420ae5a06f4b595aad2bf88f3440992fab))
+
 ## [3.8.37](https://github.com/sentrei/sentrei/compare/v3.8.36...v3.8.37) (2020-04-07)
 
 ### Bug Fixes
