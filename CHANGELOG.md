@@ -1,3 +1,10 @@
+## [3.8.36](https://github.com/sentrei/sentrei/compare/v3.8.35...v3.8.36) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 add new podfile.lock ([5cbd78d](https://github.com/sentrei/sentrei/commit/5cbd78d84ddf15a7fc78c2620a7d6239033c7158))
+- 🐛 ios scheme latest ([80a77dd](https://github.com/sentrei/sentrei/commit/80a77dd647668e08442c2e7d23df3642bc5c5e44))
+
 ## [3.8.35](https://github.com/sentrei/sentrei/compare/v3.8.34...v3.8.35) (2020-04-07)
 
 ### Bug Fixes
