@@ -1,3 +1,9 @@
+## [3.8.30](https://github.com/sentrei/sentrei/compare/v3.8.29...v3.8.30) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 android & ios ([3ec08e1](https://github.com/sentrei/sentrei/commit/3ec08e1a23d9ae442da19eedffca535ffc003abd))
+
 ## [3.8.29](https://github.com/sentrei/sentrei/compare/v3.8.28...v3.8.29) (2020-04-07)
 
 ### Bug Fixes
