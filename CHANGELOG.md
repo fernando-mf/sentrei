@@ -1,3 +1,9 @@
+## [3.8.22](https://github.com/sentrei/sentrei/compare/v3.8.21...v3.8.22) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 ios certificates v4 ([415e941](https://github.com/sentrei/sentrei/commit/415e941f3bb1082ead5f824991321e1d39de9859))
+
 ## [3.8.21](https://github.com/sentrei/sentrei/compare/v3.8.20...v3.8.21) (2020-04-07)
 
 ### Bug Fixes
