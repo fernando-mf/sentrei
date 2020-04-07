@@ -1,3 +1,9 @@
+## [3.8.21](https://github.com/sentrei/sentrei/compare/v3.8.20...v3.8.21) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 GITHUB_ACCESS_TOKEN path ([1d6b748](https://github.com/sentrei/sentrei/commit/1d6b748bc6f151c2f9cc53ac18a10b0eddc8b07a))
+
 ## [3.8.20](https://github.com/sentrei/sentrei/compare/v3.8.19...v3.8.20) (2020-04-07)
 
 ### Bug Fixes
