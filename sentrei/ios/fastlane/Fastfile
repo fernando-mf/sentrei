@@ -42,13 +42,13 @@ platform :ios do
     disable_automatic_code_signing(
       path: "./Runner.xcodeproj",
       team_id: "8CW7HSL79U",
-      profile_name: "match AdHoc com.sentrei.sentrei.alpha",
+      profile_name: "match AppStore com.sentrei.sentrei.alpha",
       code_sign_identity: "iPhone Distribution",
     )
     ensure_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT, TMP_KEYCHAN_PASSWORD_DEFAULT)
     match(
       app_identifier: "com.sentrei.sentrei.alpha",
-      type: "adhoc",
+      type: "appstore",
       readonly: is_ci,
       keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
       keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
@@ -58,7 +58,7 @@ platform :ios do
     build_ios_app(
       scheme: "alpha",
       export_options: {
-          method: "ad-hoc"
+          method: "app-store",
       },
       output_directory: "./build/Runner",
       output_name: "alpha.ipa",
@@ -76,7 +76,7 @@ platform :ios do
       beta_app_description: "sentrei master",
       demo_account_required: true,
       notify_external_testers: true,
-      changelog: ENV['GITHUB_RUN_NUMBER'],
+      changelog: "Bug fixes and performance improvements",
       distribute_external: true,
       notify_external_testers: true,
       groups: "alpha",
@@ -104,13 +104,13 @@ platform :ios do
     disable_automatic_code_signing(
       path: "./Runner.xcodeproj",
       team_id: "8CW7HSL79U",
-      profile_name: "match AdHoc com.sentrei.sentrei.beta",
+      profile_name: "match AppStore com.sentrei.sentrei.beta",
       code_sign_identity: "iPhone Distribution",
     )
     ensure_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT, TMP_KEYCHAN_PASSWORD_DEFAULT)
     match(
       app_identifier: "com.sentrei.sentrei.beta",
-      type: "adhoc",
+      type: "appstore",
       readonly: is_ci,
       keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
       keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
@@ -120,7 +120,7 @@ platform :ios do
     build_ios_app(
       scheme: "beta",
       export_options: {
-          method: "ad-hoc"
+          method: "app-store",
       },
       output_directory: "./build/Runner",
       output_name: "beta.ipa",
@@ -138,7 +138,7 @@ platform :ios do
       beta_app_description: "sentrei master",
       demo_account_required: true,
       notify_external_testers: true,
-      changelog: ENV['GITHUB_RUN_NUMBER'],
+      changelog: "Bug fixes and performance improvements",
       distribute_external: true,
       notify_external_testers: true,
       groups: "beta",
@@ -163,13 +163,13 @@ platform :ios do
     disable_automatic_code_signing(
       path: "./Runner.xcodeproj",
       team_id: "8CW7HSL79U",
-      profile_name: "match AdHoc com.sentrei.sentrei",
+      profile_name: "match AppStore com.sentrei.sentrei",
       code_sign_identity: "iPhone Distribution",
     )
     ensure_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT, TMP_KEYCHAN_PASSWORD_DEFAULT)
     match(
       app_identifier: "com.sentrei.sentrei",
-      type: "adhoc",
+      type: "appstore",
       readonly: is_ci,
       keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
       keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
@@ -179,7 +179,7 @@ platform :ios do
     build_ios_app(
       scheme: "master",
       export_options: {
-          method: "ad-hoc",
+          method: "app-store",
       },
       output_directory: "./build/Runner",
       output_name: "master.ipa",
@@ -197,7 +197,7 @@ platform :ios do
       beta_app_description: "sentrei master",
       demo_account_required: true,
       notify_external_testers: true,
-      changelog: ENV['GITHUB_RUN_NUMBER'],
+      changelog: "Bug fixes and performance improvements",
       distribute_external: true,
       notify_external_testers: true,
       groups: "master",
@@ -222,7 +222,7 @@ platform :ios do
       build_ios_app(
         scheme: "alpha",
         export_options: {
-            method: "ad-hoc",
+            method: "app-store",
         },
         output_directory: "./build/Runner",
         output_name: "alpha.ipa",
@@ -232,7 +232,7 @@ platform :ios do
       build_ios_app(
         scheme: "beta",
         export_options: {
-            method: "ad-hoc",
+            method: "app-store",
         },
         output_directory: "./build/Runner",
         output_name: "beta.ipa",
@@ -242,7 +242,7 @@ platform :ios do
       build_ios_app(
         scheme: "master",
         export_options: {
-            method: "ad-hoc",
+            method: "app-store",
         },
         output_directory: "./build/Runner",
         output_name: "master.ipa",
