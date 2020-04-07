@@ -1,3 +1,10 @@
+## [3.8.23](https://github.com/sentrei/sentrei/compare/v3.8.22...v3.8.23) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 fastlane password ([2fbd6ed](https://github.com/sentrei/sentrei/commit/2fbd6ed4daf80d1296cffdc6e0c3fb1b010f5af9))
+- 🐛 google play version code ([d9032de](https://github.com/sentrei/sentrei/commit/d9032de9c299a5bb0c20218189047a9f3805a67e))
+
 ## [3.8.22](https://github.com/sentrei/sentrei/compare/v3.8.21...v3.8.22) (2020-04-07)
 
 ### Bug Fixes
