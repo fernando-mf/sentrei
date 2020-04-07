@@ -1,3 +1,9 @@
+## [3.8.24](https://github.com/sentrei/sentrei/compare/v3.8.23...v3.8.24) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 ios 7 version ([40a512d](https://github.com/sentrei/sentrei/commit/40a512de605281c94a20533d5f8b19e144ee88ea))
+
 ## [3.8.23](https://github.com/sentrei/sentrei/compare/v3.8.22...v3.8.23) (2020-04-07)
 
 ### Bug Fixes
