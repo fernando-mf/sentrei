@@ -149,7 +149,7 @@ jobs:
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
         env:
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
-          FIREBASE_PASSWORD: ${{ secrets.FIREBASE_PASSWORD }}
+          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
           FASTLANE_SESSION: $FASTLANE_SESSION
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
