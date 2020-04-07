@@ -1,3 +1,9 @@
+## [3.8.29](https://github.com/sentrei/sentrei/compare/v3.8.28...v3.8.29) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 testflight ([1b4c6d6](https://github.com/sentrei/sentrei/commit/1b4c6d65996b628d1ee50a9bf40ab9a059e8f351))
+
 ## [3.8.28](https://github.com/sentrei/sentrei/compare/v3.8.27...v3.8.28) (2020-04-07)
 
 ### Bug Fixes
