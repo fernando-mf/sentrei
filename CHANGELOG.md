@@ -1,3 +1,10 @@
+## [3.8.37](https://github.com/sentrei/sentrei/compare/v3.8.36...v3.8.37) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 add not encryption ([f63f971](https://github.com/sentrei/sentrei/commit/f63f97170b645aac43d58391ce1771a5b9d60b7d))
+- 🐛 fastfile ios dir ([7bf6aa9](https://github.com/sentrei/sentrei/commit/7bf6aa9efba10be2d4ead1197f8938a49030d82e))
+
 ## [3.8.36](https://github.com/sentrei/sentrei/compare/v3.8.35...v3.8.36) (2020-04-07)
 
 ### Bug Fixes
