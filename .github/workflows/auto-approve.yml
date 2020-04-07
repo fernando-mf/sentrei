@@ -6,7 +6,6 @@ jobs:
     steps:
       - uses: hmarr/auto-approve-action@v2.0.0
         if: |
-          github.actor == 'shunkakinoki' ||
           github.actor == 'github-actions[bot]' ||
           github.actor == 'dependabot[bot]' ||
           github.actor == 'dependabot-preview[bot]' ||
@@ -26,7 +25,10 @@ jobs:
     steps:
       - name: comment PR
         uses: unsplash/comment-on-pr@master
-        if: github.event.pull_request != null && contains(toJson(github.event.pull_request.title), '[sentrei-auto-pr]') && (github.actor == 'shunkakinoki')
+        if: |
+          github.event.pull_request != null && contains(toJson(github.event.pull_request.title), '[sentrei-auto-pr]') && (github.actor == 'shunkakinoki') ||
+          github.actor == 'dependabot[bot]' ||
+          github.actor == 'dependabot-preview[bot]'
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
