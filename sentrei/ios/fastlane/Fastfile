@@ -63,12 +63,35 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "alpha.ipa",
     )
-    upload_to_testflight(skip_submission: true)
     firebase_app_distribution(
       groups: "alpha",
       app: "1:280671636932:ios:759af222a982abe4cd6891",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
+    )
+    upload_to_testflight(
+      username: "shunkakinoki@gmail.com",
+      app_identifier: "com.sentrei.sentrei.alpha",
+      beta_app_feedback_email: "shunkakinoki@sentrei.com",
+      beta_app_description: "sentrei master",
+      demo_account_required: true,
+      notify_external_testers: true,
+      changelog: ENV['GITHUB_RUN_NUMBER'],
+      distribute_external: true,
+      notify_external_testers: true,
+      groups: "alpha",
+      beta_app_review_info: {
+        contact_email: "shunkakinoki@gmail.com",
+        contact_first_name: "Shun",
+        contact_last_name: "Kakinoki",
+        contact_phone: "333-333-333",
+        notes: "This is review note for the reviewer <3 Thank you for reviewing",
+      },
+    )
+    upload_symbols_to_crashlytics(
+      app_id: "1:280671636932:ios:759af222a982abe4cd6891",
+      dsym_path: "./alpha.app.dSYM.zip",
+      gsp_path: "Firebase/alpha/GoogleService-Info.plist",
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
@@ -102,34 +125,57 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "beta.ipa",
     )
-    upload_to_testflight(skip_submission: true)
     firebase_app_distribution(
       groups: "beta",
       app: "1:258612152633:ios:bc4dc6098eda5af3ff40e8",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
     )
+    upload_to_testflight(
+      username: "shunkakinoki@gmail.com",
+      app_identifier: "com.sentrei.sentrei.beta",
+      beta_app_feedback_email: "shunkakinoki@sentrei.com",
+      beta_app_description: "sentrei master",
+      demo_account_required: true,
+      notify_external_testers: true,
+      changelog: ENV['GITHUB_RUN_NUMBER'],
+      distribute_external: true,
+      notify_external_testers: true,
+      groups: "beta",
+      beta_app_review_info: {
+        contact_email: "shunkakinoki@gmail.com",
+        contact_first_name: "Shun",
+        contact_last_name: "Kakinoki",
+        contact_phone: "333-333-333",
+        notes: "This is review note for the reviewer <3 Thank you for reviewing"
+      },
+    )
+    upload_symbols_to_crashlytics(
+      app_id: "1:258612152633:ios:bc4dc6098eda5af3ff40e8",
+      dsym_path: "./beta.app.dSYM.zip",
+      gsp_path: "Firebase/beta/GoogleService-Info.plist",
+    )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 
   desc "Submit a new master build to firebase"
   lane :master do
-    # disable_automatic_code_signing(
-    #   path: "./Runner.xcodeproj",
-    #   team_id: "8CW7HSL79U",
-    #   profile_name: "match AdHoc com.sentrei.sentrei",
-    #   code_sign_identity: "iPhone Distribution",
-    # )
-    # ensure_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT, TMP_KEYCHAN_PASSWORD_DEFAULT)
-    # match(
-    #   app_identifier: "com.sentrei.sentrei",
-    #   type: "adhoc",
-    #   readonly: is_ci,
-    #   keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
-    #   keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
-    #   git_url: "https://github.com/shunkakinoki/ios-certificates.git",
-    #   git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}"),
-    # )
+    disable_automatic_code_signing(
+      path: "./Runner.xcodeproj",
+      team_id: "8CW7HSL79U",
+      profile_name: "match AdHoc com.sentrei.sentrei",
+      code_sign_identity: "iPhone Distribution",
+    )
+    ensure_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT, TMP_KEYCHAN_PASSWORD_DEFAULT)
+    match(
+      app_identifier: "com.sentrei.sentrei",
+      type: "adhoc",
+      readonly: is_ci,
+      keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
+      keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
+      git_url: "https://github.com/shunkakinoki/ios-certificates.git",
+      git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}"),
+    )
     build_ios_app(
       scheme: "master",
       export_options: {
@@ -138,12 +184,35 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "master.ipa",
     )
-    upload_to_testflight(skip_submission: true)
     firebase_app_distribution(
       groups: "master",
       app: "1:721847679884:ios:ef9040472124b4715bb4a9",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
+    )
+    upload_to_testflight(
+      username: "shunkakinoki@gmail.com",
+      app_identifier: "com.sentrei.sentrei",
+      beta_app_feedback_email: "shunkakinoki@sentrei.com",
+      beta_app_description: "sentrei master",
+      demo_account_required: true,
+      notify_external_testers: true,
+      changelog: ENV['GITHUB_RUN_NUMBER'],
+      distribute_external: true,
+      notify_external_testers: true,
+      groups: "master",
+      beta_app_review_info: {
+        contact_email: "shunkakinoki@gmail.com",
+        contact_first_name: "Shun",
+        contact_last_name: "Kakinoki",
+        contact_phone: "333-333-333",
+        notes: "This is review note for the reviewer <3 Thank you for reviewing",
+      },
+    )
+    upload_symbols_to_crashlytics(
+      app_id: "1:721847679884:ios:ef9040472124b4715bb4a9",
+      dsym_path: "./master.app.dSYM.zip",
+      gsp_path: "Firebase/master/GoogleService-Info.plist",
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
