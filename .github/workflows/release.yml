@@ -128,6 +128,7 @@ jobs:
         working-directory: sentrei/${{ matrix.platform }}
         run: |
           ./key.sh
+          echo $FASTLANE_SESSION
         env:
           APP_SIGN_PWD: ${{ secrets.APP_SIGN_PWD }}
           BRANCH: ${{ steps.branch.outputs.branch }}
