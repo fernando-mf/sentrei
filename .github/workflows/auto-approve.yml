@@ -4,16 +4,33 @@ jobs:
   auto-approve:
     runs-on: ubuntu-latest
     steps:
-      - uses: hmarr/auto-approve-action@v2.0.0
+      - uses: actions/github-script@0.9.0
+        if: github.actor == 'shunkakinoki'
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.pulls.createReview({
+              pull_number: ${{ github.event.client_payload.pull_request.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              event: 'APPROVE',
+            })
+      - uses: actions/github-script@0.9.0
         if: |
-          github.actor == 'shunkakinoki' ||
           github.actor == 'github-actions[bot]' ||
           github.actor == 'dependabot[bot]' ||
           github.actor == 'dependabot-preview[bot]' ||
           github.actor == 'imgbot' ||
           github.actor == 'imgbot[bot]'
         with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          script: |
+            github.pulls.createReview({
+              pull_number: ${{ github.event.client_payload.pull_request.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              event: 'APPROVE',
+            })
   context:
     runs-on: ubuntu-latest
     steps:
@@ -31,6 +48,6 @@ jobs:
           github.actor == 'dependabot[bot]' ||
           github.actor == 'dependabot-preview[bot]'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
           msg: "/ready"
