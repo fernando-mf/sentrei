@@ -1,3 +1,9 @@
+## [3.8.35](https://github.com/sentrei/sentrei/compare/v3.8.34...v3.8.35) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 Always Embed Swift Standard Library ([1b05a24](https://github.com/sentrei/sentrei/commit/1b05a24245cadf54672185e1f14b10c4fcc3823f))
+
 ## [3.8.34](https://github.com/sentrei/sentrei/compare/v3.8.33...v3.8.34) (2020-04-07)
 
 ### Bug Fixes
