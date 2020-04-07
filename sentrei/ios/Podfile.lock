@@ -23,6 +23,9 @@ PODS:
   - Firebase/DynamicLinks (6.20.0):
     - Firebase/CoreOnly
     - FirebaseDynamicLinks (~> 4.0.7)
+  - Firebase/Messaging (6.20.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 4.3.0)
   - Firebase/Performance (6.20.0):
     - Firebase/CoreOnly
     - FirebasePerformance (~> 3.1.10)
@@ -57,6 +60,10 @@ PODS:
     - Flutter
   - firebase_dynamic_links (0.1.0):
     - Firebase/DynamicLinks
+    - Flutter
+  - firebase_messaging (0.0.1):
+    - Firebase/Core
+    - Firebase/Messaging
     - Flutter
   - firebase_performance (0.0.1):
     - Firebase/Core
@@ -117,6 +124,15 @@ PODS:
     - FirebaseInstallations (~> 1.0)
     - GoogleUtilities/Environment (~> 6.5)
     - GoogleUtilities/UserDefaults (~> 6.5)
+  - FirebaseMessaging (4.3.0):
+    - FirebaseAnalyticsInterop (~> 1.5)
+    - FirebaseCore (~> 6.6)
+    - FirebaseInstanceID (~> 4.3)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.5)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Reachability (~> 6.5)
+    - GoogleUtilities/UserDefaults (~> 6.5)
+    - Protobuf (>= 3.9.2, ~> 3.9)
   - FirebasePerformance (3.1.10):
     - FirebaseCore (~> 6.6)
     - FirebaseInstanceID (~> 4.3)
@@ -228,6 +244,7 @@ DEPENDENCIES:
   - firebase_crashlytics (from `.symlinks/plugins/firebase_crashlytics/ios`)
   - firebase_database (from `.symlinks/plugins/firebase_database/ios`)
   - firebase_dynamic_links (from `.symlinks/plugins/firebase_dynamic_links/ios`)
+  - firebase_messaging (from `.symlinks/plugins/firebase_messaging/ios`)
   - firebase_performance (from `.symlinks/plugins/firebase_performance/ios`)
   - firebase_remote_config (from `.symlinks/plugins/firebase_remote_config/ios`)
   - firebase_storage (from `.symlinks/plugins/firebase_storage/ios`)
@@ -276,6 +293,8 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Protobuf
+  trunk:
+    - FirebaseMessaging
 
 EXTERNAL SOURCES:
   firebase_analytics:
@@ -294,6 +313,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_database/ios"
   firebase_dynamic_links:
     :path: ".symlinks/plugins/firebase_dynamic_links/ios"
+  firebase_messaging:
+    :path: ".symlinks/plugins/firebase_messaging/ios"
   firebase_performance:
     :path: ".symlinks/plugins/firebase_performance/ios"
   firebase_remote_config:
@@ -334,6 +355,7 @@ SPEC CHECKSUMS:
   firebase_crashlytics: bd8c58df07f107cb7e1a20cb190b9a468e0a69fd
   firebase_database: 8724d18445b3f77073e71237ca2048261e9d588f
   firebase_dynamic_links: 7aaa8cbd086b55de330e34912dd144687e7d5c47
+  firebase_messaging: cffb57ce40958c6204f03fb0c81713e4cd1e240c
   firebase_performance: 96d9912b36a93e55201c24e386915d2a0dac1be9
   firebase_remote_config: f3581c5addecc691a968f2a7f2bcdf0878509bfd
   firebase_storage: 5e931af5cdef32331676c659bdd1ebcaba9dc78a
@@ -349,6 +371,7 @@ SPEC CHECKSUMS:
   FirebaseDynamicLinks: b3338d0c0423ee3d409f5ecc0fb774a9baa6537b
   FirebaseInstallations: 575cd32f2aec0feeb0e44f5d0110a09e5e60b47b
   FirebaseInstanceID: 7ee0d6777013bb952f377b41965bf132b6a075be
+  FirebaseMessaging: 4ec33842d36b3319e062e51fb8b35a74f726950d
   FirebasePerformance: a9b0985f80d2a5cf780cf9bd4db920b45c200507
   FirebaseRemoteConfig: 47abf7a04a9082091955ea555aa79cfdd249b19c
   FirebaseStorage: b43ee271294227e1a3225544b073f3b49b427f46
