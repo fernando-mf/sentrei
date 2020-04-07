@@ -1,3 +1,10 @@
+## [3.8.19](https://github.com/sentrei/sentrei/compare/v3.8.18...v3.8.19) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 add upload_app_store and upload_symbols_to_crashlytics ([c50e72d](https://github.com/sentrei/sentrei/commit/c50e72d65a46984013686aa9708f11d21db6f2ac))
+- 🐛 testflight ios certificates ([971c6c0](https://github.com/sentrei/sentrei/commit/971c6c0ce12d7a07c58841fcf63daa79a8d379d3))
+
 ## [3.8.18](https://github.com/sentrei/sentrei/compare/v3.8.17...v3.8.18) (2020-04-06)
 
 ### Bug Fixes
