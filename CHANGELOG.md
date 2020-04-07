@@ -1,3 +1,9 @@
+## [3.8.33](https://github.com/sentrei/sentrei/compare/v3.8.32...v3.8.33) (2020-04-07)
+
+### Bug Fixes
+
+- 🐛 podfile ([46d0ff2](https://github.com/sentrei/sentrei/commit/46d0ff29fa470b0de7208df6275c77bbd2c8592b))
+
 ## [3.8.32](https://github.com/sentrei/sentrei/compare/v3.8.31...v3.8.32) (2020-04-07)
 
 ### Bug Fixes
