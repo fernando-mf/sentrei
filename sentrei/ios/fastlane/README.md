@@ -28,6 +28,14 @@ fastlane ios icon
 
 Set appicons
 
+### ios alpha
+
+```
+fastlane ios alpha
+```
+
+Submit a new alpha build to firebase
+
 ### ios beta
 
 ```
@@ -44,6 +52,14 @@ fastlane ios master
 
 Submit a new master build to firebase
 
+### ios local
+
+```
+fastlane ios local
+```
+
 ---
 
-This README.md is auto-generated and will be re-generated every time [fastlane](https://fastlane.tools) is run. More information about fastlane can be found on [fastlane.tools](https://fastlane.tools). The documentation of fastlane can be found on [docs.fastlane.tools](https://docs.fastlane.tools).
+This README.md is auto-generated and will be re-generated every time [fastlane](https://fastlane.tools) is run.
+More information about fastlane can be found on [fastlane.tools](https://fastlane.tools).
+The documentation of fastlane can be found on [docs.fastlane.tools](https://docs.fastlane.tools).

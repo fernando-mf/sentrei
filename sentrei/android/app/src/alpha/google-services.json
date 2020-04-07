@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:280671636932:android:69407d4e605d5e60cd6891",
+        "mobilesdk_app_id": "1:280671636932:android:8aa8cd9d2466636fcd6891",
         "android_client_info": {
-          "package_name": "com.sentrei.sentrei.alpha"
+          "package_name": "com.sentrei.sentrei"
         }
       },
       "oauth_client": [
@@ -21,21 +21,21 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD_dDNVOmCCjE91IyeXfmsjRxbmJ2sC_ME"
+          "current_key": "AIzaSyA0DYvW2y5Vx3WogaipT9pPD_Gkjcek2Ww"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "280671636932-r1lsh6fqqvssa9dd5gmmmm8sp7e4lalb.apps.googleusercontent.com",
+              "client_id": "280671636932-io3got4ehcijp36864ku4l5ujkuqf8f4.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "280671636932-blu8erseuspmhmjp0sdiqolt16isppcf.apps.googleusercontent.com",
+              "client_id": "280671636932-gguoaabmoo1bchudjvi4l4oliufp4i12.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.sentrei.sentrei.alpha"
+                "bundle_id": "com.sentrei.sentrei"
               }
             }
           ]

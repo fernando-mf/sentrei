@@ -1,8 +1,4 @@
 #!/bin/bash
 
-gpg --quiet --batch --yes --decrypt --passphrase="$APP_SIGN_PWD" \
---output Firebase/alpha/GoogleService-Info.plist Firebase/alpha/GoogleService-Info.plist.gpg
-gpg --quiet --batch --yes --decrypt --passphrase="$APP_SIGN_PWD" \
---output Firebase/beta/GoogleService-Info.plist Firebase/beta/GoogleService-Info.plist.gpg
-gpg --quiet --batch --yes --decrypt --passphrase="$APP_SIGN_PWD" \
---output Firebase/master/GoogleService-Info.plist Firebase/master/GoogleService-Info.plist.gpg
+git clone "https://$GITHUB_ACCESS_TOKEN@github.com/shunkakinoki/ios-certificates.git
+echo ::set-env name=FASTLANE_SESSION::$(< ios-certificates/cookie.txt)

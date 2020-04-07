@@ -93,7 +93,7 @@ platform :android do
     )
     firebase_app_distribution(
       groups: "beta",
-      app: "1:258612152633:android:0344f8ed2ff95c50ff40e8",
+      app: "1:258612152633:android:c60ef5d4f54ab97eff40e8",
       firebase_cli_token: ENV["FIREBASE_TOKEN"],
       release_notes: ENV["GITHUB_RUN_NUMBER"],
       apk_path: "../build/app/outputs/apk/beta/release/app-beta-release.apk",

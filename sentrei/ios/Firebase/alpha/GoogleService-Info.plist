@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>280671636932-blu8erseuspmhmjp0sdiqolt16isppcf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.280671636932-blu8erseuspmhmjp0sdiqolt16isppcf</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>280671636932-pnt8cbbt163i5khhbv7f5obmqt9otfsq.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDTuyyIHH72u1nNx0BOuT72-3uOAZvZphc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>280671636932</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sentrei.sentrei.alpha</string>
+	<key>PROJECT_ID</key>
+	<string>sentrei-alpha</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sentrei-alpha.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:280671636932:ios:759af222a982abe4cd6891</string>
+	<key>DATABASE_URL</key>
+	<string>https://sentrei-alpha.firebaseio.com</string>
+</dict>
+</plist>
