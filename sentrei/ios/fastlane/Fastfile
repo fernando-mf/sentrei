@@ -40,7 +40,7 @@ platform :ios do
       dark: true,
     )
     disable_automatic_code_signing(
-      path: "./Runner.xcodeproj",
+      path: "Runner.xcodeproj",
       team_id: "8CW7HSL79U",
       profile_name: "match AppStore com.sentrei.sentrei.alpha",
       code_sign_identity: "iPhone Distribution",
@@ -60,8 +60,13 @@ platform :ios do
       export_options: {
           method: "app-store",
       },
-      output_directory: "./build/Runner",
+      output_directory: "build/Runner",
       output_name: "alpha.ipa",
+    )
+    upload_symbols_to_crashlytics(
+      app_id: "1:280671636932:ios:759af222a982abe4cd6891",
+      dsym_path: "build/Runner/alpha.app.dSYM.zip",
+      gsp_path: "Firebase/alpha/GoogleService-Info.plist",
     )
     firebase_app_distribution(
       groups: "alpha",
@@ -88,11 +93,6 @@ platform :ios do
         notes: "This is review note for the reviewer <3 Thank you for reviewing",
       },
     )
-    upload_symbols_to_crashlytics(
-      app_id: "1:280671636932:ios:759af222a982abe4cd6891",
-      dsym_path: "./alpha.app.dSYM.zip",
-      gsp_path: "Firebase/alpha/GoogleService-Info.plist",
-    )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 
@@ -102,7 +102,7 @@ platform :ios do
       dark: true,
     )
     disable_automatic_code_signing(
-      path: "./Runner.xcodeproj",
+      path: "Runner.xcodeproj",
       team_id: "8CW7HSL79U",
       profile_name: "match AppStore com.sentrei.sentrei.beta",
       code_sign_identity: "iPhone Distribution",
@@ -122,8 +122,13 @@ platform :ios do
       export_options: {
           method: "app-store",
       },
-      output_directory: "./build/Runner",
+      output_directory: "build/Runner",
       output_name: "beta.ipa",
+    )
+    upload_symbols_to_crashlytics(
+      app_id: "1:258612152633:ios:bc4dc6098eda5af3ff40e8",
+      dsym_path: "build/Runner/beta.app.dSYM.zip",
+      gsp_path: "Firebase/beta/GoogleService-Info.plist",
     )
     firebase_app_distribution(
       groups: "beta",
@@ -150,18 +155,13 @@ platform :ios do
         notes: "This is review note for the reviewer <3 Thank you for reviewing"
       },
     )
-    upload_symbols_to_crashlytics(
-      app_id: "1:258612152633:ios:bc4dc6098eda5af3ff40e8",
-      dsym_path: "./beta.app.dSYM.zip",
-      gsp_path: "Firebase/beta/GoogleService-Info.plist",
-    )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 
   desc "Submit a new master build to firebase"
   lane :master do
     disable_automatic_code_signing(
-      path: "./Runner.xcodeproj",
+      path: "Runner.xcodeproj",
       team_id: "8CW7HSL79U",
       profile_name: "match AppStore com.sentrei.sentrei",
       code_sign_identity: "iPhone Distribution",
@@ -181,8 +181,13 @@ platform :ios do
       export_options: {
           method: "app-store",
       },
-      output_directory: "./build/Runner",
+      output_directory: "build/Runner",
       output_name: "master.ipa",
+    )
+    upload_symbols_to_crashlytics(
+      app_id: "1:721847679884:ios:ef9040472124b4715bb4a9",
+      dsym_path: "build/Runner/master.app.dSYM.zip",
+      gsp_path: "Firebase/master/GoogleService-Info.plist",
     )
     firebase_app_distribution(
       groups: "master",
@@ -209,11 +214,6 @@ platform :ios do
         notes: "This is review note for the reviewer <3 Thank you for reviewing",
       },
     )
-    upload_symbols_to_crashlytics(
-      app_id: "1:721847679884:ios:ef9040472124b4715bb4a9",
-      dsym_path: "./master.app.dSYM.zip",
-      gsp_path: "Firebase/master/GoogleService-Info.plist",
-    )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 
@@ -224,7 +224,7 @@ platform :ios do
         export_options: {
             method: "app-store",
         },
-        output_directory: "./build/Runner",
+        output_directory: "build/Runner",
         output_name: "alpha.ipa",
       )
     end
@@ -234,7 +234,7 @@ platform :ios do
         export_options: {
             method: "app-store",
         },
-        output_directory: "./build/Runner",
+        output_directory: "build/Runner",
         output_name: "beta.ipa",
       )
     end
@@ -244,7 +244,7 @@ platform :ios do
         export_options: {
             method: "app-store",
         },
-        output_directory: "./build/Runner",
+        output_directory: "build/Runner",
         output_name: "master.ipa",
       )
     end
