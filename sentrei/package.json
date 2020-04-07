@@ -18,6 +18,6 @@
     "swap-master": "cp master.firebase.json firebase.json"
   },
   "dependencies": {
-    "firebase-tools": "^8.0.1"
+    "firebase-tools": "^8.0.2"
   }
 }
