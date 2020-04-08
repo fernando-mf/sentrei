@@ -59,8 +59,10 @@ jobs:
           title: "chore: [sentrei-auto-pr]"
         env:
           HUSKY_SKIP_HOOKS: 1
-  deploy:
-    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
+  fastlane:
+    if: |
+      contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true ||
+      github.event.client_payload != null
     runs-on: macos-latest
     needs: [release]
     strategy:
@@ -161,7 +163,7 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
       - name: Upload android apk
-        if: matrix.platform == 'android'
+        if: matrix.platform == 'android' && github.event_name == 'push'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -171,7 +173,7 @@ jobs:
           asset_name: ${{ steps.branch.outputs.branch }}.apk
           asset_content_type: application/vnd.android.package-archive
       - name: Upload android aab
-        if: matrix.platform == 'android'
+        if: matrix.platform == 'android' && github.event_name == 'push'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -181,7 +183,7 @@ jobs:
           asset_name: ${{ steps.branch.outputs.branch }}.aab
           asset_content_type: application/vnd.android.package-archive
       - name: Upload ios ipa
-        if: matrix.platform == 'ios'
+        if: matrix.platform == 'ios' && github.event_name == 'push'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
