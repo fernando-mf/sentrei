@@ -12,4 +12,4 @@ jobs:
           reaction-token: ${{ secrets.GITHUB_TOKEN }}
           reactions: true
           config-from-file: .github/chatops.json
-          commands: docs, ready, release sync, test
+          commands: docs, fix, ready, release sync, test
