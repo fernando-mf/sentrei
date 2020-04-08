@@ -1,6 +1,6 @@
 FROM gitpod/workspace-full:latest
 
-ENV FLUTTER_VERSION="v1.12.13+hotfix.8-stable"
+ENV FLUTTER_VERSION="v1.12.13+hotfix.9-stable"
 
 RUN mkdir -p /home/gitpod/development
 

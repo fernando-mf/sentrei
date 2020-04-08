@@ -9,7 +9,7 @@ on:
     types: [release-cmd]
 env:
   flutter_channel: "stable"
-  flutter_version: "1.12.13+hotfix.8"
+  flutter_version: "1.12.13+hotfix.9"
 jobs:
   context:
     runs-on: ubuntu-latest
