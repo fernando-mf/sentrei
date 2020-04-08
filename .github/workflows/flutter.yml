@@ -2,7 +2,7 @@ name: Flutter
 on: pull_request
 env:
   flutter_channel: "stable"
-  flutter_version: "1.12.13+hotfix.8"
+  flutter_version: "1.12.13+hotfix.9"
 jobs:
   flutter:
     runs-on: ubuntu-latest
