@@ -1,7 +1,7 @@
 name: Fix
 on:
   repository_dispatch:
-    types: [ready-cmd]
+    types: [fix-cmd]
 jobs:
   fix:
     runs-on: ubuntu-latest
