@@ -1,3 +1,9 @@
+## [3.9.9](https://github.com/sentrei/sentrei/compare/v3.9.8...v3.9.9) (2020-04-08)
+
+### Bug Fixes
+
+- 🐛 syntax for |options| ([9a17e20](https://github.com/sentrei/sentrei/commit/9a17e20abb52aaa6b153d86dea8160975915b09b))
+
 ## [3.9.8](https://github.com/sentrei/sentrei/compare/v3.9.7...v3.9.8) (2020-04-08)
 
 ### Bug Fixes
