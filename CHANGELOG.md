@@ -1,3 +1,9 @@
+## [3.9.6](https://github.com/sentrei/sentrei/compare/v3.9.5...v3.9.6) (2020-04-08)
+
+### Bug Fixes
+
+- 🐛 fastlane github event ([28a2015](https://github.com/sentrei/sentrei/commit/28a20152d4ee43a8539b45f10eee70aee9c49232))
+
 ## [3.9.5](https://github.com/sentrei/sentrei/compare/v3.9.4...v3.9.5) (2020-04-08)
 
 ### Bug Fixes
