@@ -13,15 +13,13 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
-      - name: Cache node modules
-        id: cache
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: node-v1-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            node-v1-
-      - run: yarn run fix
+      - name: Install dependencies with yarn
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          yarn install
+      - name: Run yarn fix
+        run: |
+          yarn run fix
       - uses: gr2m/create-or-update-pull-request-action@v1.2.10
         env:
           branch: ${{ github.event.client_payload.pull_request.head.ref }}
