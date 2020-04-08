@@ -5,11 +5,14 @@ on:
       - alpha
       - beta
       - master
+  repository_dispatch:
+    types: [release-cmd]
 env:
   flutter_channel: "stable"
   flutter_version: "1.12.13+hotfix.8"
 jobs:
   release:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -67,6 +70,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.slash_command.arg1 }}
       - run: git fetch --quiet
       - uses: actions/setup-ruby@v1
         with:
