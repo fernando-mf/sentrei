@@ -1,3 +1,10 @@
+## [3.9.4](https://github.com/sentrei/sentrei/compare/v3.9.3...v3.9.4) (2020-04-08)
+
+### Bug Fixes
+
+- 🐛 add dockerfile ([4284f07](https://github.com/sentrei/sentrei/commit/4284f07f502740edcc64d2d39471f6b496a027b3))
+- 🐛 upgrade flutter version ([180ceb5](https://github.com/sentrei/sentrei/commit/180ceb5bf47247a00ee9ee8363821969fca82ec9))
+
 ## [3.9.3](https://github.com/sentrei/sentrei/compare/v3.9.2...v3.9.3) (2020-04-08)
 
 ### Bug Fixes
