@@ -96,5 +96,10 @@
 	</array>
 	<!-- Define Export Compliance metadata -->
 	<key>ITSAppUsesNonExemptEncryption</key><false/>
+	<!-- Define Architecture metadata -->
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+	</array>
 </dict>
 </plist>
