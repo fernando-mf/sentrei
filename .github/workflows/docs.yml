@@ -47,17 +47,17 @@ jobs:
           flutter pub global activate dartdoc
           flutter pub global run dartdoc:dartdoc --exclude 'dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart:ui,dart:ffi,dart:html,dart:js,dart:js_util'
       - name: Deploy to firebase
-        if: github.event.client_payload.pull_request != null
-        working-directory: sentrei
-        run: |
-          yarn run staging-${{ github.event.client_payload.pull_request.base.ref }}
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - name: Deploy to firebase
         if: github.event_name == 'push'
         working-directory: sentrei
         run: |
           yarn run ${{ steps.branch.outputs.branch }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Deploy to firebase
+        if: github.event.client_payload.pull_request != null
+        working-directory: sentrei
+        run: |
+          yarn run staging-${{ github.event.client_payload.pull_request.base.ref }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Comment url

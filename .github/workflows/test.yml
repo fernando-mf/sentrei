@@ -7,107 +7,12 @@ env:
   flutter_version: "1.12.13+hotfix.8"
 jobs:
   test:
-    runs-on: macos-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        platform: [android, ios]
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - run: git fetch --quiet
-      - uses: actions/setup-ruby@v1
+      - name: Dispatch event
+        if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
+        uses: peter-evans/repository-dispatch@v1
         with:
-          ruby-version: "2.x"
-      - uses: actions/setup-java@v1
-        with:
-          java-version: "12.x"
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "12.x"
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: ${{ env.flutter_channel }}
-          flutter-version: ${{ env.flutter_version }}
-      - name: Install brew
-        working-directory: sentrei
-        run: |
-          ./brew.sh
-      - name: Install bundler
-        run: |
-          gem install bundler
-      - name: Install bundler ${{ matrix.platform }}
-        working-directory: sentrei/${{ matrix.platform }}
-        run: |
-          bundle update --bundler
-          bundle config path ./vendor/bundle
-          bundle install --jobs 4 --retry 3
-      - name: Install firebase
-        run: |
-          npm install -g firebase-tools
-      - name: Install gcloud
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
-      - name: Install pub
-        working-directory: sentrei
-        run: |
-          flutter pub get
-      - name: Extract version semver
-        id: version
-        run: |
-          version=$(node -pe "require('./package.json').version")
-          echo "##[set-output name=version;]$version"
-      - name: Extract branch name
-        id: branch
-        run: |
-          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-      - name: Extract upload_url
-        id: get_url
-        run: |
-          api_url="https://api.github.com/repos/$GITHUB_REPOSITORY/releases"
-          release_id="$(curl -H "Authorization: token $GITHUB_TOKEN" "$api_url/tags/v$version" | jq -r '.id | select(. != null)')"
-          upload_url="https://uploads.github.com/repos/$GITHUB_REPOSITORY/releases/$release_id/assets{?name,label}"
-          echo "##[set-output name=upload_url;]$upload_url"
-        env:
-          version: ${{ steps.version.outputs.version }}
-          GITHUB_REPOSITORY: $GITHUB_REPOSITORY
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Decrypt ${{ matrix.platform }} secrets
-        working-directory: sentrei/${{ matrix.platform }}
-        run: |
-          ./key.sh
-        env:
-          APP_SIGN_PWD: ${{ secrets.APP_SIGN_PWD }}
-      - name: Run flutter android
-        if: matrix.platform == 'android'
-        working-directory: sentrei
-        run: |
-          flutter build apk --flavor ${{ steps.branch.outputs.branch }}
-          flutter build appbundle --flavor ${{ steps.branch.outputs.branch }}
-      - name: Run flutter ios
-        if: matrix.platform == 'ios'
-        working-directory: sentrei
-        run: |
-          flutter build ios --no-codesign --release --flavor ${{ steps.branch.outputs.branch }}
-      - name: Run fastlane test
-        if: matrix.platform == 'android'
-        working-directory: sentrei/${{ matrix.platform }}
-        run: |
-          bundle exec fastlane test ${{ github.event.client_payload.pull_request.base.ref }}:true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.client_payload.pull_request.number }}
-      - uses: actions/upload-artifact@v1
-        if: matrix.platform == 'android'
-        with:
-          name: Results
-          path: sentrei/${{ matrix.platform }}/results
-      - uses: actions/github-script@0.9.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            github.issues.addLabels({
-              issue_number: ${{ github.event.client_payload.pull_request.number }},
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: ['ready-to-merge']
-            })
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: fastlane-cmd
+          client-payload: '{"branch": "${{ github.event.client_payload.pull_request.base.ref }}", "event_name": "test", "pull_request_number": "${{ github.event.client_payload.pull_request.number }}"}'

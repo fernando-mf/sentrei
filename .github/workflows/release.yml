@@ -66,136 +66,20 @@ jobs:
           title: "chore: [sentrei-auto-pr]"
         env:
           HUSKY_SKIP_HOOKS: 1
+      - name: Dispatch fastlane event
+        if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: fastlane-cmd
+          client-payload: '{"branch": "${{ steps.branch.outputs.branch }}", "event_name": "release", "release": "false"}'
   fastlane:
-    if: |
-      contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true ||
-      github.event.action == 'release-cmd'
-    runs-on: macos-latest
-    needs: [release]
-    strategy:
-      fail-fast: false
-      matrix:
-        platform: [android, ios]
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Dispatch fastlane event
+        if: github.event.client_payload != null
+        uses: peter-evans/repository-dispatch@v1
         with:
-          ref: ${{ github.event.client_payload.slash_command.arg1 }}
-      - run: git fetch --quiet
-      - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: "2.x"
-      - uses: actions/setup-java@v1
-        with:
-          java-version: "12.x"
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "12.x"
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: ${{ env.flutter_channel }}
-          flutter-version: ${{ env.flutter_version }}
-      - name: Install brew
-        working-directory: sentrei
-        run: |
-          ./brew.sh
-      - name: Install bundler
-        run: |
-          gem install bundler
-      - name: Install bundler ${{ matrix.platform }}
-        working-directory: sentrei/${{ matrix.platform }}
-        run: |
-          bundle update --bundler
-          bundle config path ./vendor/bundle
-          bundle install --jobs 4 --retry 3
-      - name: Install firebase
-        run: |
-          npm install -g firebase-tools
-      - name: Install gcloud
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
-      - name: Install pub
-        working-directory: sentrei
-        run: |
-          flutter pub get
-      - name: Extract version semver
-        id: version
-        run: |
-          version=$(node -pe "require('./package.json').version")
-          echo "##[set-output name=version;]$version"
-      - name: Extract branch name
-        id: branch
-        run: |
-          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-      - name: Extract upload_url
-        id: get_url
-        run: |
-          api_url="https://api.github.com/repos/$GITHUB_REPOSITORY/releases"
-          release_id="$(curl -H "Authorization: token $GITHUB_TOKEN" "$api_url/tags/v$version" | jq -r '.id | select(. != null)')"
-          upload_url="https://uploads.github.com/repos/$GITHUB_REPOSITORY/releases/$release_id/assets{?name,label}"
-          echo "##[set-output name=upload_url;]$upload_url"
-        env:
-          version: ${{ steps.version.outputs.version }}
-          GITHUB_REPOSITORY: $GITHUB_REPOSITORY
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Decrypt secrets ${{ matrix.platform }}
-        id: secret
-        working-directory: sentrei/${{ matrix.platform }}
-        run: |
-          ./key.sh
-        env:
-          APP_SIGN_PWD: ${{ secrets.APP_SIGN_PWD }}
-          BRANCH: ${{ steps.branch.outputs.branch }}
-          GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      - name: Run flutter android
-        if: matrix.platform == 'android'
-        working-directory: sentrei
-        run: |
-          flutter build apk --flavor ${{ steps.branch.outputs.branch }} --target-platform android-arm,android-arm64,android-x64 --split-per-abi
-          flutter build appbundle --flavor ${{ steps.branch.outputs.branch }} --target-platform android-arm,android-arm64,android-x64
-      - name: Run flutter ios
-        if: matrix.platform == 'ios'
-        working-directory: sentrei
-        run: |
-          flutter build ios --no-codesign --release --flavor ${{ steps.branch.outputs.branch }}
-      - name: Run fastlane ${{ matrix.platform }}
-        working-directory: sentrei/${{ matrix.platform }}
-        run: |
-          bundle exec fastlane ${{ steps.branch.outputs.branch }}
-        env:
-          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
-          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-          FASTLANE_SESSION: ${{ env.FASTLANE_SESSION }}
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
-          GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-      - name: Upload android apk
-        if: matrix.platform == 'android' && github.event_name == 'push'
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_url.outputs.upload_url }}
-          asset_path: sentrei/build/app/outputs/apk/${{ steps.branch.outputs.branch }}/release/app-${{ steps.branch.outputs.branch }}-release.apk
-          asset_name: ${{ steps.branch.outputs.branch }}.apk
-          asset_content_type: application/vnd.android.package-archive
-      - name: Upload android aab
-        if: matrix.platform == 'android' && github.event_name == 'push'
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_url.outputs.upload_url }}
-          asset_path: sentrei/build/app/outputs/bundle/${{ steps.branch.outputs.branch }}Release/app-${{ steps.branch.outputs.branch }}-release.aab
-          asset_name: ${{ steps.branch.outputs.branch }}.aab
-          asset_content_type: application/vnd.android.package-archive
-      - name: Upload ios ipa
-        if: matrix.platform == 'ios' && github.event_name == 'push'
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_url.outputs.upload_url }}
-          asset_path: sentrei/ios/build/Runner/${{ steps.branch.outputs.branch }}.ipa
-          asset_name: ${{ steps.branch.outputs.branch }}.ipa
-          asset_content_type: application/octet-stream
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: fastlane-cmd
+          client-payload: '{"branch": "${{ github.event.client_payload.slash_command.arg1 }}", "event_name": "release", "release": "false"}'
