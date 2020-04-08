@@ -1,3 +1,9 @@
+## [3.9.11](https://github.com/sentrei/sentrei/compare/v3.9.10...v3.9.11) (2020-04-08)
+
+### Bug Fixes
+
+- 🐛 add git autopush ([07d9727](https://github.com/sentrei/sentrei/commit/07d9727f07ce25bfa552eb4b7c1af677f8865032))
+
 ## [3.9.10](https://github.com/sentrei/sentrei/compare/v3.9.9...v3.9.10) (2020-04-08)
 
 ### Bug Fixes
