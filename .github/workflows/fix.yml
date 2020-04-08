@@ -20,10 +20,9 @@ jobs:
       - name: Run yarn fix
         run: |
           yarn run fix
-      - uses: gr2m/create-or-update-pull-request-action@v1.2.10
-        env:
-          branch: ${{ github.event.client_payload.pull_request.head.ref }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Git auto push
+        run: |
+          git add -A && git commit -m "chore: sentrei-auto-fix" && git push
       - name: Comment fix completed
         if: github.event.client_payload.pull_request != null
         uses: peter-evans/create-or-update-comment@v1
