@@ -11,6 +11,13 @@ env:
   flutter_channel: "stable"
   flutter_version: "1.12.13+hotfix.8"
 jobs:
+  context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo $GITHUB_CONTEXT
   release:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
