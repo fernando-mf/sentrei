@@ -1,3 +1,9 @@
+## [3.9.12](https://github.com/sentrei/sentrei/compare/v3.9.11...v3.9.12) (2020-04-08)
+
+### Bug Fixes
+
+- 🐛 add fix gha ([029bbaa](https://github.com/sentrei/sentrei/commit/029bbaa88af910eefbae4022c0fb6a3a5ca7e9c5))
+
 ## [3.9.11](https://github.com/sentrei/sentrei/compare/v3.9.10...v3.9.11) (2020-04-08)
 
 ### Bug Fixes
