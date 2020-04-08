@@ -1,3 +1,9 @@
+## [3.9.8](https://github.com/sentrei/sentrei/compare/v3.9.7...v3.9.8) (2020-04-08)
+
+### Bug Fixes
+
+- 🐛 fastfile manual frelease ([b5ada3d](https://github.com/sentrei/sentrei/commit/b5ada3dd5a1fa2063e3416f910ad71794fe92a90))
+
 ## [3.9.7](https://github.com/sentrei/sentrei/compare/v3.9.6...v3.9.7) (2020-04-08)
 
 ### Bug Fixes
