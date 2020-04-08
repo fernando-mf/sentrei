@@ -1,3 +1,9 @@
+## [3.9.1](https://github.com/sentrei/sentrei/compare/v3.9.0...v3.9.1) (2020-04-08)
+
+### Bug Fixes
+
+- 🐛 terraform path ([e302a1a](https://github.com/sentrei/sentrei/commit/e302a1a0c3e65d44b9fd87c3ee57ec3c3b9de709))
+
 # [3.9.0](https://github.com/sentrei/sentrei/compare/v3.8.37...v3.9.0) (2020-04-07)
 
 ### Features
