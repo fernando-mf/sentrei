@@ -1,3 +1,9 @@
+## [3.9.2](https://github.com/sentrei/sentrei/compare/v3.9.1...v3.9.2) (2020-04-08)
+
+### Bug Fixes
+
+- 🐛 add chatops release ([106096a](https://github.com/sentrei/sentrei/commit/106096a286d535cd151e9e45da0487ee060aa1ab))
+
 ## [3.9.1](https://github.com/sentrei/sentrei/compare/v3.9.0...v3.9.1) (2020-04-08)
 
 ### Bug Fixes
