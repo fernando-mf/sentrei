@@ -29,8 +29,7 @@ platform :android do
   end
 
   desc "Submit a new alpha build to firebase"
-  lane :alpha do
-    bump_version_code()
+  lane :alpha do |options|
     add_badge(
       alpha: true,
       dark: true,
@@ -53,14 +52,6 @@ platform :android do
       release_notes: ENV["GITHUB_RUN_NUMBER"],
       apk_path: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
     )
-    upload_to_play_store(
-      track: "internal",
-      track_promote_to: "alpha",
-      release_status: "draft",
-      aab: "../build/app/outputs/bundle/alphaRelease/app-alpha-release.aab",
-      skip_upload_screenshots: true,
-      skip_upload_images: true,
-    )
     firebase_test_lab_android(
       project_id: "sentrei-alpha",
       gcloud_service_key_file: "key/alpha/sentrei-alpha.json",
@@ -74,11 +65,20 @@ platform :android do
       app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
       download_dir: "results",
     )
+    if options[:release]
+      bump_version_code()
+      upload_to_play_store(
+        track: "alpha",
+        release_status: "draft",
+        aab: "../build/app/outputs/bundle/alphaRelease/app-alpha-release.aab",
+        skip_upload_screenshots: true,
+        skip_upload_images: true,
+      )
+    end
   end
 
   desc "Submit a new beta build to firebase"
-  lane :beta do
-    bump_version_code()
+  lane :beta do |options|
     add_badge(
       dark: true,
       glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
@@ -100,14 +100,6 @@ platform :android do
       release_notes: ENV["GITHUB_RUN_NUMBER"],
       apk_path: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
     )
-    upload_to_play_store(
-      track: "alpha",
-      track_promote_to: "beta",
-      release_status: "draft",
-      aab: "../build/app/outputs/bundle/betaRelease/app-beta-release.aab",
-      skip_upload_screenshots: true,
-      skip_upload_images: true,
-    )
     firebase_test_lab_android(
       project_id: "sentrei-beta",
       gcloud_service_key_file: "key/beta/sentrei-beta.json",
@@ -121,11 +113,20 @@ platform :android do
       app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
       download_dir: "results",
     )
+    if options[:release]
+      bump_version_code()
+      upload_to_play_store(
+        track: "beta",
+        release_status: "draft",
+        aab: "../build/app/outputs/bundle/betaRelease/app-beta-release.aab",
+        skip_upload_screenshots: true,
+        skip_upload_images: true,
+      )
+    end
   end
 
   desc "Submit a new master build to firebase"
-  lane :master do
-    bump_version_code()
+  lane :master do |options|
     gradle(
       task: "assemble",
       flavor: "master",
@@ -143,14 +144,6 @@ platform :android do
       release_notes: ENV["GITHUB_RUN_NUMBER"],
       apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk",
     )
-    upload_to_play_store(
-      track: "beta",
-      track_promote_to: "production",
-      release_status: "draft",
-      aab: "../build/app/outputs/bundle/masterRelease/app-master-release.aab",
-      skip_upload_screenshots: true,
-      skip_upload_images: true,
-    )
     firebase_test_lab_android(
       project_id: "sentrei-master",
       gcloud_service_key_file: "key/master/sentrei-master.json",
@@ -164,6 +157,16 @@ platform :android do
       app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk",
       download_dir: "results",
     )
+    if options[:release]
+      bump_version_code()
+      upload_to_play_store(
+        track: "production",
+        release_status: "draft",
+        aab: "../build/app/outputs/bundle/masterRelease/app-master-release.aab",
+        skip_upload_screenshots: true,
+        skip_upload_images: true,
+      )
+    end
   end
 
   lane :test do |options|
