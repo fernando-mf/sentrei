@@ -1,3 +1,9 @@
+## [3.9.13](https://github.com/sentrei/sentrei/compare/v3.9.12...v3.9.13) (2020-04-08)
+
+### Bug Fixes
+
+- 🐛 refactor secret path ([46e2d1e](https://github.com/sentrei/sentrei/commit/46e2d1ed329ed2c0d3d487aa1ebf2177a84fc8ab))
+
 ## [3.9.12](https://github.com/sentrei/sentrei/compare/v3.9.11...v3.9.12) (2020-04-08)
 
 ### Bug Fixes
