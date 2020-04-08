@@ -1,3 +1,9 @@
+## [3.9.3](https://github.com/sentrei/sentrei/compare/v3.9.2...v3.9.3) (2020-04-08)
+
+### Bug Fixes
+
+- 🐛 release ([b1ae785](https://github.com/sentrei/sentrei/commit/b1ae785ea3af425d60a0f256e6c188533c8c3805))
+
 ## [3.9.2](https://github.com/sentrei/sentrei/compare/v3.9.1...v3.9.2) (2020-04-08)
 
 ### Bug Fixes
