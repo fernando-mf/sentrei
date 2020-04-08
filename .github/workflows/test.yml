@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Dispatch event
-        if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}

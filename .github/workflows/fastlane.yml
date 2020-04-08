@@ -8,7 +8,6 @@ env:
 jobs:
   fastlane:
     runs-on: macos-latest
-    needs: [release]
     strategy:
       fail-fast: false
       matrix:
