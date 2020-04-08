@@ -22,7 +22,7 @@ resource "github_branch_protection" "alpha" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "context", "flutter", "ready", "terraform", "yarn", "Semantic Pull Request", "WIP"]
+    contexts = ["auto-approve", "fix", "flutter", "ready", "terraform", "yarn", "Semantic Pull Request", "WIP"]
   }
 }
 
@@ -38,7 +38,7 @@ resource "github_branch_protection" "beta" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "context", "flutter", "ready", "terraform", "yarn", "Semantic Pull Request", "WIP"]
+    contexts = ["auto-approve", "fix", "flutter", "ready", "terraform", "yarn", "Semantic Pull Request", "WIP"]
   }
 }
 
@@ -55,6 +55,6 @@ resource "github_branch_protection" "master" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "context", "flutter", "ready", "terraform (master)", "yarn", "atlas/sentrei/sentrei-master", "Semantic Pull Request", "WIP"]
+    contexts = ["auto-approve", "fix", "flutter", "ready", "terraform (master)", "yarn", "atlas/sentrei/sentrei-master", "Semantic Pull Request", "WIP"]
   }
 }
