@@ -1,3 +1,9 @@
+## [3.9.5](https://github.com/sentrei/sentrei/compare/v3.9.4...v3.9.5) (2020-04-08)
+
+### Bug Fixes
+
+- 🐛 fastlane dependency gha ([d1c3dbd](https://github.com/sentrei/sentrei/commit/d1c3dbdf8ee75cc70485035abe1e483d4bdb5c52))
+
 ## [3.9.4](https://github.com/sentrei/sentrei/compare/v3.9.3...v3.9.4) (2020-04-08)
 
 ### Bug Fixes
