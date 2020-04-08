@@ -1,0 +1,28 @@
+name: Fix
+on:
+  repository_dispatch:
+    types: [ready-cmd]
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.pull_request.head.ref }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Cache node modules
+        id: cache
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: node-v1-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            node-v1-
+      - run: yarn run fix
+      - uses: gr2m/create-or-update-pull-request-action@v1.2.10
+        env:
+          branch: ${{ github.event.client_payload.pull_request.head.ref }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
