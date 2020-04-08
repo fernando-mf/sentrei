@@ -74,25 +74,28 @@ platform :ios do
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
     )
-    upload_to_testflight(
-      username: "shunkakinoki@gmail.com",
-      app_identifier: "com.sentrei.sentrei.alpha",
-      beta_app_feedback_email: "shunkakinoki@sentrei.com",
-      beta_app_description: "sentrei master",
-      demo_account_required: true,
-      notify_external_testers: true,
-      changelog: "Bug fixes and performance improvements",
-      distribute_external: true,
-      notify_external_testers: true,
-      groups: "alpha",
-      beta_app_review_info: {
-        contact_email: "shunkakinoki@sentrei.com",
-        contact_first_name: "Shun",
-        contact_last_name: "Kakinoki",
-        contact_phone: "333-333-333",
-        notes: "This is review note for the reviewer <3 Thank you for reviewing",
-      },
-    )
+    if options[:release]
+      upload_to_testflight(
+        username: "shunkakinoki@gmail.com",
+        app_identifier: "com.sentrei.sentrei.alpha",
+        beta_app_feedback_email: "shunkakinoki@sentrei.com",
+        beta_app_description: "sentrei alpha",
+        demo_account_required: true,
+        notify_external_testers: true,
+        changelog: "Bug fixes and performance improvements",
+        distribute_external: true,
+        notify_external_testers: true,
+        reject_build_waiting_for_review: true,
+        groups: "alpha",
+        beta_app_review_info: {
+          contact_email: "shunkakinoki@sentrei.com",
+          contact_first_name: "Shun",
+          contact_last_name: "Kakinoki",
+          contact_phone: "333-333-333",
+          notes: "This is review note for the reviewer <3 Thank you for reviewing",
+        },
+      )
+    end
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 
@@ -136,25 +139,28 @@ platform :ios do
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
     )
-    upload_to_testflight(
-      username: "shunkakinoki@gmail.com",
-      app_identifier: "com.sentrei.sentrei.beta",
-      beta_app_feedback_email: "shunkakinoki@sentrei.com",
-      beta_app_description: "sentrei master",
-      demo_account_required: true,
-      notify_external_testers: true,
-      changelog: "Bug fixes and performance improvements",
-      distribute_external: true,
-      notify_external_testers: true,
-      groups: "beta",
-      beta_app_review_info: {
-        contact_email: "shunkakinoki@sentrei.com",
-        contact_first_name: "Shun",
-        contact_last_name: "Kakinoki",
-        contact_phone: "333-333-333",
-        notes: "This is review note for the reviewer <3 Thank you for reviewing"
-      },
-    )
+    if options[:release]
+      upload_to_testflight(
+        username: "shunkakinoki@gmail.com",
+        app_identifier: "com.sentrei.sentrei.beta",
+        beta_app_feedback_email: "shunkakinoki@sentrei.com",
+        beta_app_description: "sentrei beta",
+        demo_account_required: false,
+        notify_external_testers: true,
+        changelog: "Bug fixes and performance improvements",
+        distribute_external: true,
+        notify_external_testers: true,
+        reject_build_waiting_for_review: true,
+        groups: "beta",
+        beta_app_review_info: {
+          contact_email: "shunkakinoki@sentrei.com",
+          contact_first_name: "Shun",
+          contact_last_name: "Kakinoki",
+          contact_phone: "333-333-333",
+          notes: "This is review note for the reviewer <3 Thank you for reviewing"
+        },
+      )
+    end
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 
@@ -195,25 +201,28 @@ platform :ios do
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: ENV['GITHUB_RUN_NUMBER'],
     )
-    upload_to_testflight(
-      username: "shunkakinoki@gmail.com",
-      app_identifier: "com.sentrei.sentrei",
-      beta_app_feedback_email: "shunkakinoki@sentrei.com",
-      beta_app_description: "sentrei master",
-      demo_account_required: true,
-      notify_external_testers: true,
-      changelog: "Bug fixes and performance improvements",
-      distribute_external: true,
-      notify_external_testers: true,
-      groups: "master",
-      beta_app_review_info: {
-        contact_email: "shunkakinoki@sentrei.com",
-        contact_first_name: "Shun",
-        contact_last_name: "Kakinoki",
-        contact_phone: "333-333-333",
-        notes: "This is review note for the reviewer <3 Thank you for reviewing",
-      },
-    )
+    if options[:release]
+      upload_to_testflight(
+        username: "shunkakinoki@gmail.com",
+        app_identifier: "com.sentrei.sentrei",
+        beta_app_feedback_email: "shunkakinoki@sentrei.com",
+        beta_app_description: "sentrei master",
+        demo_account_required: false,
+        notify_external_testers: true,
+        changelog: "Bug fixes and performance improvements",
+        distribute_external: true,
+        notify_external_testers: true,
+        reject_build_waiting_for_review: true,
+        groups: "master",
+        beta_app_review_info: {
+          contact_email: "shunkakinoki@sentrei.com",
+          contact_first_name: "Shun",
+          contact_last_name: "Kakinoki",
+          contact_phone: "333-333-333",
+          notes: "This is review note for the reviewer <3 Thank you for reviewing",
+        },
+      )
+    end
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 
