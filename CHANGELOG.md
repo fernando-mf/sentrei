@@ -1,3 +1,9 @@
+## [3.9.7](https://github.com/sentrei/sentrei/compare/v3.9.6...v3.9.7) (2020-04-08)
+
+### Bug Fixes
+
+- 🐛 permissions test flight ([b1dc400](https://github.com/sentrei/sentrei/commit/b1dc4001fd43e3965de5f5eecd93b97fc778335a))
+
 ## [3.9.6](https://github.com/sentrei/sentrei/compare/v3.9.5...v3.9.6) (2020-04-08)
 
 ### Bug Fixes
