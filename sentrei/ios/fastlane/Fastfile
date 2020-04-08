@@ -34,7 +34,7 @@ platform :ios do
   end
 
   desc "Submit a new alpha build to firebase"
-  lane :alpha do
+  lane :alpha do |options|
     add_badge(
       alpha: true,
       dark: true,
@@ -100,7 +100,7 @@ platform :ios do
   end
 
   desc "Submit a new beta build to firebase"
-  lane :beta do
+  lane :beta do |options|
     add_badge(
       dark: true,
     )
@@ -165,7 +165,7 @@ platform :ios do
   end
 
   desc "Submit a new master build to firebase"
-  lane :master do
+  lane :master do |options|
     disable_automatic_code_signing(
       path: "Runner.xcodeproj",
       team_id: "8CW7HSL79U",
