@@ -1,9 +1,13 @@
 {
-  "name": "@sentrei/lotus",
+  "name": "@sentrei/sentrei",
   "author": "Shun Kakinoki",
   "license": "MIT",
   "version": "1.0.0",
   "dependencies": {
     "@sentrei/common": "file:../common"
+  },
+  "scripts": {
+    "release": "semantic-release",
+    "release-test": "semantic-release -d"
   }
 }

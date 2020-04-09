@@ -1,6 +1,6 @@
 {
-  "packages": ["packages/common", "packages/lotus", "sentrei/sentrei"],
-  "version": "fixed",
+  "packages": ["packages/common", "packages/sentrei", "sentrei"],
+  "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true
 }
