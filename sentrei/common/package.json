@@ -9,12 +9,7 @@
   },
   "license": "MIT",
   "author": "Shun Kakinoki",
-  "scripts": {
-    "release": "semantic-release",
-    "release-test": "semantic-release -d"
-  },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "147f45d1ccbd98bf1bd86c2ba256e52e0026ba90"
+  }
 }

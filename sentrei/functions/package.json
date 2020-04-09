@@ -9,10 +9,6 @@
   },
   "license": "MIT",
   "author": "Shun Kakinoki",
-  "scripts": {
-    "release": "semantic-release",
-    "release-test": "semantic-release -d"
-  },
   "dependencies": {
     "firebase-admin": "^8.10.0",
     "firebase-functions": "^3.6.0"
@@ -24,6 +20,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "147f45d1ccbd98bf1bd86c2ba256e52e0026ba90"
+  }
 }
