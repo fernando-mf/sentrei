@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/common", "packages/sentrei", "sentrei"],
+  "packages": ["sentrei/*"],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true

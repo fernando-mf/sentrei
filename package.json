@@ -37,8 +37,9 @@
     }
   },
   "workspaces": [
-    "packages/common",
-    "packages/sentrei",
-    "sentrei"
+    "sentrei/common",
+    "sentrei/functions",
+    "sentrei/mobile",
+    "sentrei/web"
   ]
 }
