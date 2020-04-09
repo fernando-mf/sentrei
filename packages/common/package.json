@@ -1,3 +1,6 @@
 {
-  "name": "@sentrei/common"
+  "name": "@sentrei/common",
+  "author": "Shun Kakinoki",
+  "license": "MIT",
+  "version": "1.0.0"
 }

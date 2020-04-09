@@ -1,6 +1,8 @@
 {
   "name": "@sentrei/sentrei",
+  "author": "Shun Kakinoki",
   "license": "MIT",
+  "version": "1.0.0",
   "homepage": "https://github.com/sentrei/sentrei/sentrei",
   "repository": {
     "type": "git",
