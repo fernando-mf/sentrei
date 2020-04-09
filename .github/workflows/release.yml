@@ -65,6 +65,7 @@ jobs:
           yarn run fix
       - name: Publish
         run: |
+          npm whoami
           git fetch --depth=1 origin +refs/tags/*:refs/tags/*
           git stash && yarn run publish && git stash pop || true
       - name: Create a pull request if updated
