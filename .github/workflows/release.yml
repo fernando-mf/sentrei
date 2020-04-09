@@ -48,12 +48,6 @@ jobs:
           yarn run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish
-        run: |
-          git pull --tags
-          git stash && yarn run publish && git stash pop || true
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Restore yarn.lock
         run: |
           git restore yarn.lock
@@ -64,6 +58,12 @@ jobs:
       - name: Run yarn fix
         run: |
           yarn run fix
+      - name: Publish
+        run: |
+          git pull --tags
+          git stash && yarn run publish && git stash pop || true
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create a pull request if updated
         uses: peter-evans/create-pull-request@v2
         with:
