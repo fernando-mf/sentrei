@@ -50,7 +50,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish
         run: |
-          git fetch --quiet && git stash && yarn run publish && git stash pop || true
+          git pull --tags
+          git stash && yarn run publish && git stash pop || true
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Restore yarn.lock
