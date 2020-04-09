@@ -1,6 +1,6 @@
 {
   "packages": ["sentrei/*"],
-  "version": "independent",
+  "version": "3.9.17",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "command": {
