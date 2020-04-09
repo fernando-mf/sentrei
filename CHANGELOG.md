@@ -1,3 +1,10 @@
+## [3.9.35](https://github.com/sentrei/sentrei/compare/v3.9.34...v3.9.35) (2020-04-09)
+
+### Bug Fixes
+
+- 🐛 chore ([4e9a1e8](https://github.com/sentrei/sentrei/commit/4e9a1e8b362e47910567c586735ac19539898f18))
+- 🐛 lerna ([f0b28af](https://github.com/sentrei/sentrei/commit/f0b28af9c98c4a6368ed8d35190eb0da70d47d8d))
+
 ## [3.9.23](https://github.com/sentrei/sentrei/compare/v3.9.22...v3.9.23) (2020-04-09)
 
 ### Bug Fixes
