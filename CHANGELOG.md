@@ -1,3 +1,9 @@
+## [3.9.22](https://github.com/sentrei/sentrei/compare/v3.9.21...v3.9.22) (2020-04-09)
+
+### Bug Fixes
+
+- 🐛 lerna packaged v14 ([b9f0444](https://github.com/sentrei/sentrei/commit/b9f044425ee1a1af592894c140ecf1e22016bd6e))
+
 ## [3.9.21](https://github.com/sentrei/sentrei/compare/v3.9.20...v3.9.21) (2020-04-09)
 
 ### Bug Fixes
