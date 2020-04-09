@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/web",
-  "version": "1.0.0",
+  "version": "3.9.23",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -13,11 +13,7 @@
     "release": "semantic-release",
     "release-test": "semantic-release -d"
   },
-  "dependencies": {
-    "@sentrei/common": "^undefined"
-  },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "9e16a4fa311b33328808756bdd1497b7d1778c89"
+  }
 }
