@@ -60,6 +60,10 @@ jobs:
         run: |
           version=$(node -pe "require('./package.json').version")
           sed -i -e "s/^version: .*/version: $version/" sentrei/mobile/pubspec.yaml
+          for i in $(find sentrei -name package.json)
+          do
+            sed  -i '/version/s/[^.]*$/'"$version\"/" i
+          done
       - name: Run yarn fix
         run: |
           yarn run fix
