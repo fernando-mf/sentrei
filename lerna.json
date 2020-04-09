@@ -1,5 +1,10 @@
 {
-  "packages": ["sentrei/*"],
+  "packages": [
+    "sentrei/common",
+    "sentrei/functions",
+    "sentrei/mobile",
+    "sentrei/web"
+  ],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true
