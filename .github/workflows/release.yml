@@ -48,8 +48,15 @@ jobs:
           yarn run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish
+        run: |
+          git stash
+          yarn run publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Restore yarn.lock
         run: |
+          git stash pop
           git restore yarn.lock
       - name: Refactor pubspec.yaml
         run: |
@@ -66,11 +73,6 @@ jobs:
           title: "chore: [sentrei-auto-pr]"
         env:
           HUSKY_SKIP_HOOKS: 1
-      - name: Publish
-        run: |
-          yarn run publish
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Dispatch fastlane event
         if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
         uses: peter-evans/repository-dispatch@v1
