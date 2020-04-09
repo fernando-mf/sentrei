@@ -1,3 +1,9 @@
+## [3.9.37](https://github.com/sentrei/sentrei/compare/v3.9.36...v3.9.37) (2020-04-09)
+
+### Bug Fixes
+
+- 🐛 add ios/Flutter to git ([de3a55c](https://github.com/sentrei/sentrei/commit/de3a55c0f73eb10d2874f409df78700bef2a778f))
+
 ## [3.9.36](https://github.com/sentrei/sentrei/compare/v3.9.35...v3.9.36) (2020-04-09)
 
 ### Bug Fixes
