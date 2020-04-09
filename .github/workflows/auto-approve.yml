@@ -31,42 +31,16 @@ jobs:
               repo: context.repo.repo,
               event: 'APPROVE',
             })
-  fix:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "12.x"
-      - name: Cache node modules
-        id: cache
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: node-v1-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            node-v1-
-      - name: Install dependencies with yarn
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          yarn install
-      - name: Run yarn fix
-        run: |
-          yarn run fix
-      - name: Push modified files
-        run: |
-          git fetch --quiet
-          git config --global user.name 'Shun Kakinoki'
-          git config --global user.email 'shunkakinoki@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}
-          git commit -am "[sentrei-auto-fix]" && git push || true
-  ready:
+  context:
     runs-on: ubuntu-latest
     steps:
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+  ready:
+    runs-on: ubuntu-latest
+    steps:
       - name: comment PR
         uses: unsplash/comment-on-pr@master
         if: |
