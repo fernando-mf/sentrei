@@ -48,19 +48,14 @@ jobs:
       - name: Run yarn fix
         run: |
           yarn run fix
-      - name: Check for modified files
-        id: check
-        run: echo ::set-output name=check::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
-      - name: Push changes
-        if: steps.check.outputs.check == 'true'
+      - name: Push modified files
         run: |
-          echo ${{ steps.check.outputs.check }}
           git fetch --quiet
           git config --global user.name 'Shun Kakinoki'
           git config --global user.email 'shunkakinoki@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}
           git commit -am "[sentrei-auto-fix]"
-          git push
+          git push || true
   ready:
     runs-on: ubuntu-latest
     steps:
