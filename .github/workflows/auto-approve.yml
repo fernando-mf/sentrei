@@ -49,11 +49,12 @@ jobs:
         run: |
           yarn run fix
       - name: Check for modified files
-        id: git-check
-        run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
+        id: check
+        run: echo ::set-output name=check::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
       - name: Push changes
-        if: steps.git-check.outputs.modified == 'true'
+        if: steps.check.outputs.check == 'true'
         run: |
+          echo ${{ steps.check.outputs.check }}
           git fetch --quiet
           git config --global user.name 'Shun Kakinoki'
           git config --global user.email 'shunkakinoki@users.noreply.github.com'
