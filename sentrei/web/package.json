@@ -13,9 +13,10 @@
     "release-test": "semantic-release -d"
   },
   "dependencies": {
-    "@sentrei/common": "file:../common"
+    "@sentrei/common": "^undefined"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "9e16a4fa311b33328808756bdd1497b7d1778c89"
 }
