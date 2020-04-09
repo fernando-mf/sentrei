@@ -31,7 +31,7 @@ jobs:
           registry-url: https://registry.npmjs.org
           scope: "@sentrei"
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Cache node modules
         id: yarn
         uses: actions/cache@v1
@@ -68,6 +68,8 @@ jobs:
           npm whoami
           git fetch --depth=1 origin +refs/tags/*:refs/tags/*
           git stash && yarn run publish && git stash pop || true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create a pull request if updated
         uses: peter-evans/create-pull-request@v2
         with:
