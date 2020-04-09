@@ -1247,9 +1247,6 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
-"@sentrei/common@file:packages/common":
-  version "1.0.0"
-
 "@tootallnate/once@1":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.0.0.tgz#9c13c2574c92d4503b005feca8f2e16cc1611506"
