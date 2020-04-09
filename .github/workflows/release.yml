@@ -47,8 +47,12 @@ jobs:
         run: |
           yarn run release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish
+        run: |
+          yarn run publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Restore yarn.lock
         run: |
           git restore yarn.lock
