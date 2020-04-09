@@ -1,3 +1,9 @@
+## [3.9.17](https://github.com/sentrei/sentrei/compare/v3.9.16...v3.9.17) (2020-04-09)
+
+### Bug Fixes
+
+- 🐛 add lerna packages ([9eb7997](https://github.com/sentrei/sentrei/commit/9eb7997a36aa8126a89c6fdd1fe14decdc4433e4))
+
 ## [3.9.14](https://github.com/sentrei/sentrei/compare/v3.9.13...v3.9.14) (2020-04-09)
 
 ### Bug Fixes
