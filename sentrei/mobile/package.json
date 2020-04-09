@@ -3,11 +3,11 @@
   "author": "Shun Kakinoki",
   "license": "MIT",
   "version": "1.0.0",
-  "homepage": "https://github.com/sentrei/sentrei/sentrei",
+  "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/sentrei/sentrei.git",
-    "directory": "sentrei"
+    "directory": "sentrei/mobile"
   },
   "scripts": {
     "release": "semantic-release",
