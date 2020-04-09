@@ -11,7 +11,7 @@
   },
   "scripts": {
     "test": "yarn lint && yarn release-test",
-    "publish": "lerna publish",
+    "publish": "lerna publish from-git --no-git-reset --yes",
     "release": "semantic-release",
     "release-test": "semantic-release -d",
     "lint": "yarn eclint-check && yarn prettier-check",
