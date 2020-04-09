@@ -51,12 +51,12 @@ jobs:
       - name: Publish
         run: |
           git stash
-          yarn run publish
+          git fetch --quiet && yarn run publish
+          git stash pop
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Restore yarn.lock
         run: |
-          git stash pop
           git restore yarn.lock
       - name: Refactor pubspec.yaml
         run: |
