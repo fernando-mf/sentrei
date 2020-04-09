@@ -1,3 +1,10 @@
+## [3.9.14](https://github.com/sentrei/sentrei/compare/v3.9.13...v3.9.14) (2020-04-09)
+
+### Bug Fixes
+
+- 🐛 auto fix ([823f1a3](https://github.com/sentrei/sentrei/commit/823f1a3a1016326142ebd1a568a7953de32b5850))
+- 🐛 terraform ([befc062](https://github.com/sentrei/sentrei/commit/befc06226476b8a83f0fccccacd49193aed89f1b))
+
 ## [3.9.13](https://github.com/sentrei/sentrei/compare/v3.9.12...v3.9.13) (2020-04-08)
 
 ### Bug Fixes
