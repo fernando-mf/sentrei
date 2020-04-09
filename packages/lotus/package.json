@@ -1,0 +1,6 @@
+{
+  "name": "@sentrei/lotus",
+  "dependencies": {
+    "@sentrei/common": "file:../common"
+  }
+}

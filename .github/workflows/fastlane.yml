@@ -111,7 +111,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.client_payload.pull_request_number }}
       - name: Upload android apk
-        if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.slash_command.arg == null
+        if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -121,7 +121,7 @@ jobs:
           asset_name: ${{ github.event.client_payload.branch }}.apk
           asset_content_type: application/vnd.android.package-archive
       - name: Upload android aab
-        if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.slash_command.arg == null
+        if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -131,7 +131,7 @@ jobs:
           asset_name: ${{ github.event.client_payload.branch }}.aab
           asset_content_type: application/vnd.android.package-archive
       - name: Upload ios ipa
-        if: matrix.platform == 'ios' && github.event.client_payload.event_name == 'release' && github.event.client_payload.slash_command.arg == null
+        if: matrix.platform == 'ios' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
