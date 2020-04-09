@@ -1,11 +1,16 @@
 {
-  "packages": [
-    "sentrei/common",
-    "sentrei/functions",
-    "sentrei/mobile",
-    "sentrei/web"
-  ],
+  "packages": ["sentrei/*"],
   "version": "independent",
   "npmClient": "yarn",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "createRelease": "github",
+      "conventionalCommits": true,
+      "message": "chore: Release %s"
+    },
+    "version": {
+      "push": false
+    }
+  }
 }
