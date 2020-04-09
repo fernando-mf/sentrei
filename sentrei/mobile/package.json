@@ -1,5 +1,6 @@
 {
   "name": "@sentrei/mobile",
+  "version": "1.0.0",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
