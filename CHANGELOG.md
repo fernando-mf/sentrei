@@ -1,3 +1,9 @@
+## [3.9.21](https://github.com/sentrei/sentrei/compare/v3.9.20...v3.9.21) (2020-04-09)
+
+### Bug Fixes
+
+- 🐛 readme ([a023dbd](https://github.com/sentrei/sentrei/commit/a023dbde52bed359085e891d41510253fa39d5c8))
+
 ## [3.9.20](https://github.com/sentrei/sentrei/compare/v3.9.19...v3.9.20) (2020-04-09)
 
 ### Bug Fixes
