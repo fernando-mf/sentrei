@@ -40,7 +40,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         working-directory: sentrei/mobile
         run: |
-          yarn install
+          yarn install --frozen-lockfile
       - name: Generate docs
         working-directory: sentrei/mobile
         run: |
