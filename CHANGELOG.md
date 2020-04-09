@@ -1,3 +1,9 @@
+## [3.9.19](https://github.com/sentrei/sentrei/compare/v3.9.18...v3.9.19) (2020-04-09)
+
+### Bug Fixes
+
+- 🐛 lerna ([2f6acc8](https://github.com/sentrei/sentrei/commit/2f6acc89fe6e801784f93db3c2416b11e4c64b52))
+
 ## [3.9.17](https://github.com/sentrei/sentrei/compare/v3.9.16...v3.9.17) (2020-04-09)
 
 ### Bug Fixes
