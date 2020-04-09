@@ -50,6 +50,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish
         run: |
+          git tag | tail -1
           git pull --tags
           git stash && yarn run publish && git stash pop || true
         env:
