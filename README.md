@@ -7,6 +7,7 @@
 [![Issues](https://img.shields.io/github/issues/sentrei/sentrei)](https://github.com/sentrei/sentrei/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/sentrei/sentrei)](https://github.com/sentrei/sentrei/pulls)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)
+[![Commitzen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)
 [![License](https://img.shields.io/github/license/sentrei/sentrei)](https://github.com/sentrei/sentrei/blob/master/LICENSE.md)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/sentrei/sentrei/graphs/commit-activity)
 [![Star on GitHub](https://img.shields.io/github/stars/sentrei/sentrei.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/sentrei/sentrei)
