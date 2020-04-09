@@ -56,13 +56,12 @@ jobs:
       - name: Restore yarn.lock
         run: |
           git restore yarn.lock
-      - name: Refactor pubspec.yaml
+      - name: Update package.json version
         run: |
           version=$(node -pe "require('./package.json').version")
           sed -i -e "s/^version: .*/version: $version/" sentrei/mobile/pubspec.yaml
-          for i in $(find sentrei -name package.json)
-          do
-            sed  -i '/version/s/[^.]*$/'"$version\"/" i
+          for i in $(find sentrei -name package.json); do
+            sed -i -e "s/^\"version\": .*/"version": "$version"/" $i
           done
       - name: Run yarn fix
         run: |
