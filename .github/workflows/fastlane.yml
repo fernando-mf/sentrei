@@ -32,14 +32,14 @@ jobs:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
       - name: Install brew
-        working-directory: sentrei
+        working-directory: sentrei/mobile
         run: |
           ./brew.sh
       - name: Install bundler
         run: |
           gem install bundler
       - name: Install bundler ${{ matrix.platform }}
-        working-directory: sentrei/${{ matrix.platform }}
+        working-directory: sentrei/mobile/${{ matrix.platform }}
         run: |
           bundle update --bundler
           bundle config path ./vendor/bundle
@@ -50,7 +50,7 @@ jobs:
       - name: Install gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       - name: Install pub
-        working-directory: sentrei
+        working-directory: sentrei/mobile
         run: |
           flutter pub get
       - name: Extract version semver
@@ -71,7 +71,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Decrypt secrets ${{ matrix.platform }}
         id: secret
-        working-directory: sentrei/${{ matrix.platform }}
+        working-directory: sentrei/mobile/${{ matrix.platform }}
         run: |
           ./key.sh
         env:
@@ -80,18 +80,18 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       - name: Run flutter android
         if: matrix.platform == 'android'
-        working-directory: sentrei
+        working-directory: sentrei/mobile
         run: |
           flutter build apk --flavor ${{ github.event.client_payload.branch }} --target-platform android-arm,android-arm64,android-x64 --split-per-abi
           flutter build appbundle --flavor ${{ github.event.client_payload.branch }} --target-platform android-arm,android-arm64,android-x64
       - name: Run flutter ios
         if: matrix.platform == 'ios'
-        working-directory: sentrei
+        working-directory: sentrei/mobile
         run: |
           flutter build ios --no-codesign --release --flavor ${{ github.event.client_payload.branch }}
       - name: Run fastlane ${{ matrix.platform }}
         if: github.event.client_payload.event_name == 'release'
-        working-directory: sentrei/${{ matrix.platform }}
+        working-directory: sentrei/mobile/${{ matrix.platform }}
         run: |
           bundle exec fastlane ${{ github.event.client_payload.branch }} release:${{ github.event.client_payload.release }}
         env:
@@ -104,39 +104,39 @@ jobs:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
       - name: Run fastlane test
         if: matrix.platform == 'android' && github.event.client_payload.event_name == 'test'
-        working-directory: sentrei/${{ matrix.platform }}
+        working-directory: sentrei/mobile/${{ matrix.platform }}
         run: |
           bundle exec fastlane test ${{ github.event.client_payload.branch }}:true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.client_payload.pull_request_number }}
       - name: Upload android apk
-        if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.slash_command.arg == null
+        if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.get_url.outputs.upload_url }}
-          asset_path: sentrei/build/app/outputs/apk/${{ github.event.client_payload.branch }}/release/app-${{ github.event.client_payload.branch }}-release.apk
+          asset_path: sentrei/mobile/build/app/outputs/apk/${{ github.event.client_payload.branch }}/release/app-${{ github.event.client_payload.branch }}-release.apk
           asset_name: ${{ github.event.client_payload.branch }}.apk
           asset_content_type: application/vnd.android.package-archive
       - name: Upload android aab
-        if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.slash_command.arg == null
+        if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.get_url.outputs.upload_url }}
-          asset_path: sentrei/build/app/outputs/bundle/${{ github.event.client_payload.branch }}Release/app-${{ github.event.client_payload.branch }}-release.aab
+          asset_path: sentrei/mobile/build/app/outputs/bundle/${{ github.event.client_payload.branch }}Release/app-${{ github.event.client_payload.branch }}-release.aab
           asset_name: ${{ github.event.client_payload.branch }}.aab
           asset_content_type: application/vnd.android.package-archive
       - name: Upload ios ipa
-        if: matrix.platform == 'ios' && github.event.client_payload.event_name == 'release' && github.event.client_payload.slash_command.arg == null
+        if: matrix.platform == 'ios' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.get_url.outputs.upload_url }}
-          asset_path: sentrei/ios/build/Runner/${{ github.event.client_payload.branch }}.ipa
+          asset_path: sentrei/mobile/ios/build/Runner/${{ github.event.client_payload.branch }}.ipa
           asset_name: ${{ github.event.client_payload.branch }}.ipa
           asset_content_type: application/octet-stream

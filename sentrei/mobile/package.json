@@ -1,12 +1,17 @@
 {
-  "name": "sentrei",
+  "name": "@sentrei/mobile",
+  "author": "Shun Kakinoki",
   "license": "MIT",
-  "homepage": "https://github.com/sentrei/sentrei/sentrei",
+  "version": "1.0.0",
+  "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sentrei/sentrei/sentrei.git"
+    "url": "https://github.com/sentrei/sentrei.git",
+    "directory": "sentrei/mobile"
   },
   "scripts": {
+    "release": "semantic-release",
+    "release-test": "semantic-release -d",
     "alpha": "yarn run swap-alpha && firebase use alpha && firebase deploy --only hosting:docs --token $FIREBASE_TOKEN",
     "beta": "yarn run swap-beta && firebase use beta && firebase deploy --only hosting:docs --token $FIREBASE_TOKEN",
     "master": "yarn run swap-master && firebase use master && firebase deploy --only hosting:docs --token $FIREBASE_TOKEN",

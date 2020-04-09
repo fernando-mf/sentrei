@@ -54,7 +54,7 @@ jobs:
       - name: Refactor pubspec.yaml
         run: |
           version=$(node -pe "require('./package.json').version")
-          sed -i -e "s/^version: .*/version: $version/" sentrei/pubspec.yaml
+          sed -i -e "s/^version: .*/version: $version/" sentrei/mobile/pubspec.yaml
       - name: Run yarn fix
         run: |
           yarn run fix
@@ -82,4 +82,4 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: fastlane-cmd
-          client-payload: '{"branch": "${{ github.event.client_payload.slash_command.arg1 }}", "event_name": "release", "release": "false"}'
+          client-payload: '{"branch": "${{ github.event.client_payload.slash_command.arg1 }}", "event_name": "release", "release": "true"}'

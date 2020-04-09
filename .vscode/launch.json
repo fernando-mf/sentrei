@@ -4,19 +4,19 @@
     {
       "name": "alpha",
       "request": "launch",
-      "args": ["--flavor", "alpha", "-t", "lib/main.dart"],
+      "args": ["--flavor", "alpha", "-t", "sentrei/mobile/lib/main.dart"],
       "type": "dart"
     },
     {
       "name": "beta",
       "request": "launch",
-      "args": ["--flavor", "beta", "-t", "lib/main.dart"],
+      "args": ["--flavor", "beta", "-t", "sentrei/mobile/lib/main.dart"],
       "type": "dart"
     },
     {
       "name": "master",
       "request": "launch",
-      "args": ["--flavor", "master", "-t", "lib/main.dart"],
+      "args": ["--flavor", "master", "-t", "sentrei/mobile/lib/main.dart"],
       "type": "dart"
     }
   ]

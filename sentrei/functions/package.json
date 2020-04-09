@@ -1,0 +1,25 @@
+{
+  "name": "@sentrei/functions",
+  "author": "Shun Kakinoki",
+  "license": "MIT",
+  "version": "1.0.0",
+  "homepage": "https://sentrei.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sentrei/sentrei.git",
+    "directory": "sentrei/functions"
+  },
+  "dependencies": {
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.4",
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "release": "semantic-release",
+    "release-test": "semantic-release -d"
+  }
+}
