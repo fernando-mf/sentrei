@@ -39,7 +39,7 @@ jobs:
         if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:
-          file: sentrei/coverage/lcov.info
+          file: sentrei/mobile/coverage/lcov.info
           name: sentrei
           fail_ci_if_error: true
           flags: test
