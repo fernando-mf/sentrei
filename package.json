@@ -1,25 +1,33 @@
 {
   "name": "sentrei",
-  "private": true,
-  "author": "Shun Kakinoki",
-  "license": "MIT",
   "version": "3.9.23",
+  "private": true,
   "homepage": "https://github.com/sentrei/sentrei",
   "repository": {
     "type": "git",
     "url": "https://github.com/sentrei/sentrei.git"
   },
+  "license": "MIT",
+  "author": "Shun Kakinoki",
+  "workspaces": [
+    "sentrei/*"
+  ],
   "scripts": {
-    "test": "yarn lint && yarn release-test",
-    "publish": "lerna publish from-git --no-git-reset --yes",
-    "release": "semantic-release",
-    "release-test": "semantic-release -d",
-    "lint": "yarn eclint-check && yarn prettier-check",
-    "fix": "yarn eclint-fix && yarn prettier-fix",
     "eclint-check": "eclint check $(git grep --cached -l '')",
     "eclint-fix": "eclint fix $(git grep --cached -l '')",
+    "fix": "yarn eclint-fix && yarn prettier-fix",
+    "lint": "yarn eclint-check && yarn prettier-check",
     "prettier-check": "prettier --check .",
-    "prettier-fix": "prettier --write ."
+    "prettier-fix": "prettier --write .",
+    "publish": "lerna publish from-git --yes",
+    "release": "semantic-release",
+    "release-test": "semantic-release -d",
+    "test": "yarn lint && yarn release-test"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git-cz --hook || true"
+    }
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
@@ -31,13 +39,5 @@
     "lerna": "^3.20.2",
     "prettier": "^2.0.4",
     "semantic-release": "^17.0.4"
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git-cz --hook || true"
-    }
-  },
-  "workspaces": [
-    "sentrei/*"
-  ]
+  }
 }
