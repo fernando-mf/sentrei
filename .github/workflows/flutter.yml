@@ -15,7 +15,7 @@ jobs:
       - id: change
         run: |
           git fetch --quiet
-          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/lib; then
+          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/mobile/lib; then
             echo ::set-output name=changed::false && exit 0
           else
             echo ::set-output name=changed::true && exit 0
@@ -27,11 +27,11 @@ jobs:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
       - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei
+        working-directory: sentrei/mobile
         run: |
           flutter pub get
       - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei
+        working-directory: sentrei/mobile
         run: |
           flutter analyze
           flutter test --coverage

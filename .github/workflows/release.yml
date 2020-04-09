@@ -54,7 +54,7 @@ jobs:
       - name: Refactor pubspec.yaml
         run: |
           version=$(node -pe "require('./package.json').version")
-          sed -i -e "s/^version: .*/version: $version/" sentrei/pubspec.yaml
+          sed -i -e "s/^version: .*/version: $version/" sentrei/mobile/pubspec.yaml
       - name: Run yarn fix
         run: |
           yarn run fix
