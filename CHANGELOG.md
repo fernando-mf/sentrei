@@ -1,3 +1,9 @@
+## [3.9.36](https://github.com/sentrei/sentrei/compare/v3.9.35...v3.9.36) (2020-04-09)
+
+### Bug Fixes
+
+- 🐛 add sentrei package ([4c7f71a](https://github.com/sentrei/sentrei/commit/4c7f71a265047a565b10e55af051ebde0b49a51e))
+
 ## [3.9.35](https://github.com/sentrei/sentrei/compare/v3.9.34...v3.9.35) (2020-04-09)
 
 ### Bug Fixes
