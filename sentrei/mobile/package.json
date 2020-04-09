@@ -1,7 +1,5 @@
 {
   "name": "@sentrei/mobile",
-  "author": "Shun Kakinoki",
-  "license": "MIT",
   "version": "1.0.0",
   "homepage": "https://sentrei.com",
   "repository": {
@@ -9,12 +7,14 @@
     "url": "https://github.com/sentrei/sentrei.git",
     "directory": "sentrei/mobile"
   },
+  "license": "MIT",
+  "author": "Shun Kakinoki",
   "scripts": {
-    "release": "semantic-release",
-    "release-test": "semantic-release -d",
     "alpha": "yarn run swap-alpha && firebase use alpha && firebase deploy --only hosting:docs --token $FIREBASE_TOKEN",
     "beta": "yarn run swap-beta && firebase use beta && firebase deploy --only hosting:docs --token $FIREBASE_TOKEN",
     "master": "yarn run swap-master && firebase use master && firebase deploy --only hosting:docs --token $FIREBASE_TOKEN",
+    "release": "semantic-release",
+    "release-test": "semantic-release -d",
     "staging-alpha": "yarn run swap-alpha && firebase use alpha && firebase deploy --only hosting:staging-docs --token $FIREBASE_TOKEN",
     "staging-beta": "yarn run swap-beta && firebase use beta && firebase deploy --only hosting:staging-docs --token $FIREBASE_TOKEN",
     "staging-master": "yarn run swap-master && firebase use master && firebase deploy --only hosting:staging-docs --token $FIREBASE_TOKEN",
@@ -24,5 +24,8 @@
   },
   "dependencies": {
     "firebase-tools": "^8.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,7 +1,5 @@
 {
   "name": "@sentrei/web",
-  "author": "Shun Kakinoki",
-  "license": "MIT",
   "version": "1.0.0",
   "homepage": "https://sentrei.com",
   "repository": {
@@ -9,11 +7,16 @@
     "url": "https://github.com/sentrei/sentrei.git",
     "directory": "sentrei/web"
   },
-  "dependencies": {
-    "@sentrei/common": "file:../common"
-  },
+  "license": "MIT",
+  "author": "Shun Kakinoki",
   "scripts": {
     "release": "semantic-release",
     "release-test": "semantic-release -d"
+  },
+  "dependencies": {
+    "@sentrei/common": "file:../common"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

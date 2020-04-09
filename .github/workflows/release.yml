@@ -61,7 +61,6 @@ jobs:
       - name: Publish
         run: |
           git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-          git tag | tail -3
           git stash && yarn run publish && git stash pop || true
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
