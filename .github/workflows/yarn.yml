@@ -36,4 +36,3 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}
           git commit -am "[sentrei-auto-fix]"
           git push
-
