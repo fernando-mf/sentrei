@@ -19,7 +19,7 @@
     "lint": "yarn eclint-check && yarn prettier-check",
     "prettier-check": "prettier --check .",
     "prettier-fix": "prettier --write .",
-    "publish": "lerna publish from-git --yes",
+    "publish": "lerna publish from-package --yes",
     "release": "semantic-release",
     "release-test": "semantic-release -d",
     "test": "yarn lint && yarn release-test"

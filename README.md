@@ -4,8 +4,6 @@
 
 [![Effective Dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)
 [![Flutter](https://img.shields.io/badge/built%20with-Flutter-brightgreen)](https://flutter.dev/docs)
-[![Issues](https://img.shields.io/github/issues/sentrei/sentrei)](https://github.com/sentrei/sentrei/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/sentrei/sentrei)](https://github.com/sentrei/sentrei/pulls)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)
 [![Commitzen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)
 [![License](https://img.shields.io/github/license/sentrei/sentrei)](https://github.com/sentrei/sentrei/blob/master/LICENSE.md)
