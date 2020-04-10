@@ -1,3 +1,9 @@
+## [3.9.38](https://github.com/sentrei/sentrei/compare/v3.9.37...v3.9.38) (2020-04-10)
+
+### Bug Fixes
+
+- 🐛 add mobile correct path ([cb698c9](https://github.com/sentrei/sentrei/commit/cb698c929fd64a1265ba6c8ef088514de1791e1c))
+
 ## [3.9.37](https://github.com/sentrei/sentrei/compare/v3.9.36...v3.9.37) (2020-04-09)
 
 ### Bug Fixes
