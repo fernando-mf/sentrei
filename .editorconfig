@@ -38,7 +38,7 @@ trim_trailing_whitespace = none
 indent_style = none
 indent_size = non
 
-[sentrei/android/firebase/**]
+[sentrei/mobile/android/firebase/**]
 charset = none
 end_of_line = none
 insert_final_newline = none
@@ -46,7 +46,7 @@ trim_trailing_whitespace = none
 indent_style = none
 indent_size = none
 
-[sentrei/android/key/**]
+[sentrei/mobile/android/key/**]
 charset = none
 end_of_line = none
 insert_final_newline = none
