@@ -63,6 +63,7 @@ platform :android do
         }
       ],
       app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
+      firebase_test_lab_results_bucket: "sentrei-alpha-test-lab-results",
       download_dir: "results",
     )
     if options[:release]
@@ -111,6 +112,7 @@ platform :android do
         }
       ],
       app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
+      firebase_test_lab_results_bucket: "sentrei-beta-test-lab-results",
       download_dir: "results",
     )
     if options[:release]
@@ -155,6 +157,7 @@ platform :android do
         }
       ],
       app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk",
+      firebase_test_lab_results_bucket: "sentrei-master-test-lab-results",
       download_dir: "results",
     )
     if options[:release]
@@ -187,6 +190,7 @@ platform :android do
           }
         ],
         app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
+        firebase_test_lab_results_bucket: "sentrei-alpha-test-lab-results",
         github_owner: "sentrei",
         github_repository: "sentrei",
         github_pr_number: ENV["PR_NUMBER"],
@@ -211,6 +215,7 @@ platform :android do
           }
         ],
         app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
+        firebase_test_lab_results_bucket: "sentrei-beta-test-lab-results",
         github_owner: "sentrei",
         github_repository: "sentrei",
         github_pr_number: ENV["PR_NUMBER"],
@@ -235,6 +240,7 @@ platform :android do
           }
         ],
         app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk",
+        firebase_test_lab_results_bucket: "sentrei-master-test-lab-results",
         github_owner: "sentrei",
         github_repository: "sentrei",
         github_pr_number: ENV["PR_NUMBER"],
