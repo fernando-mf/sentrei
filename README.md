@@ -17,15 +17,32 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
+<!-- <p align="center">
+    <a><img src="assets/apple-store-badge.svg" width="300"></img></a>
+    <a><img src="assets/google-play-badge.png" width="300"></img></a>
+</p> -->
+
 ## Getting Started 🚀
 
+### Design
+
 <!-- prettier-ignore-start -->
-| Version | Android | iOS | Docs |
+| Version | Mobile |
+| ------- | ------- |
+| master | [LINK](https://www.figma.com/file/u1RU33b2eJgpIUTMsnqt7u/mobile?node-id=0%3A1) |
+<!-- prettier-ignore-end -->
+
+### Mobile
+
+<!-- prettier-ignore-start -->
+| Version | Firebase(Android) | Firebase(iOS) | Docs |
 | ------- | ------- | --- | ---- |
 | alpha | [LINK](https://appdistribution.firebase.dev/i/ecwjmtsh) | [LINK](https://appdistribution.firebase.dev/i/iCHEpULk) | https://alpha.docs.sentrei.com |
 | beta | [LINK](https://appdistribution.firebase.dev/i/zk13ZGu1) | [LINK](https://appdistribution.firebase.dev/i/5rx5sRDi) | https://beta.docs.sentrei.com |
 | master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.docs.sentrei.com |
 <!-- prettier-ignore-end -->
+
+### Web
 
 ## Contributors ✨
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppProvider extends ChangeNotifier {
-  bool _isBusy;
-  bool get isbusy => _isBusy;
+  bool _isLoading;
+  bool get isLoading => _isLoading;
 
   set loading(bool value) {
-    _isBusy = value;
+    _isLoading = value;
     notifyListeners();
   }
 }
