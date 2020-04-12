@@ -7,13 +7,14 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:provider/provider.dart';
-import 'package:nested/nested.dart';
 import 'package:sentrei/app/app.dart';
-import 'package:sentrei/login/login.dart';
+import 'package:sentrei/providers/providers.dart';
 
+/// Main function of the sentrei app.
 void main() {
   Crashlytics.instance.enableInDevMode = true;
-  // Pass all uncaught errors from the framework to Crashlytics.
+
+  /// Pass all uncaught errors from the framework to Crashlytics.
   FlutterError.onError = Crashlytics.instance.recordFlutterError;
 
   runZoned(() {
@@ -28,59 +29,30 @@ void main() {
 }
 
 class App extends StatelessWidget {
-  final Widget home;
-  static FirebaseAnalytics analytics = FirebaseAnalytics();
-  static FirebaseAnalyticsObserver observer =
-      FirebaseAnalyticsObserver(analytics: analytics);
-
-  List<SingleChildWidget> _buildProviders(BuildContext context) {
-    return [
-      ChangeNotifierProvider(create: (_) => ThemeProvider()),
-      ChangeNotifierProvider(create: (_) => PackageInfoProvider()),
-      Provider<AuthService>(
-        create: (_) => AuthServiceAdapter(
-          initialAuthServiceType: AuthServiceType.firebase,
-        ),
-        dispose: (_, AuthService authService) => authService.dispose(),
-      )
-    ];
-  }
-
-  App({this.home}) {
+  App() {
     final router = Router();
     Routes.configureRoutes(router);
     Application.router = router;
   }
 
+  static FirebaseAnalytics analytics = FirebaseAnalytics();
+  static FirebaseAnalyticsObserver observer =
+      FirebaseAnalyticsObserver(analytics: analytics);
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: _buildProviders(context),
-      child: Consumer<ThemeProvider>(
-        builder: (_, provider, __) {
-          return AuthPageBuilder(
-            builder: (BuildContext context, AsyncSnapshot<User> userSnapshot) {
-              return MaterialApp(
-                title: 'sentrei',
-                theme: provider.getTheme(),
-                darkTheme: provider.getTheme(isDarkMode: true),
-                themeMode: provider.getThemeMode(),
-                onGenerateRoute: Application.router.generator,
-                home: home ?? AuthPage(userSnapshot: userSnapshot),
-                navigatorObservers: [
-                  FirebaseAnalyticsObserver(analytics: analytics),
-                ],
-                builder: (context, child) {
-                  // Guarantee text size is not affected by phone system settings https://www.kikt.top/posts/flutter/layout/dynamic-text/
-                  return MediaQuery(
-                    data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-                    child: child,
-                  );
-                },
-              );
-            },
-          );
-        },
+      providers: [
+        ChangeNotifierProvider<AuthProvider>(create: (_) => AuthProvider()),
+        ChangeNotifierProvider<ThemeProvider>(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider<PackageInfoProvider>(
+            create: (_) => PackageInfoProvider()),
+      ],
+      child: AppPage(
+        onGenerateRoute: Application.router.generator,
+        navigatorObservers: [
+          FirebaseAnalyticsObserver(analytics: analytics),
+        ],
       ),
     );
   }

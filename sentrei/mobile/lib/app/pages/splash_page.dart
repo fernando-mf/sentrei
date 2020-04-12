@@ -6,9 +6,13 @@ import 'package:rxdart/rxdart.dart';
 import 'package:sentrei/app/app.dart';
 import 'package:sentrei/const/const.dart';
 import 'package:sentrei/login/login.dart';
+import 'package:sentrei/providers/providers.dart';
 import 'package:sentrei/utils/utils.dart';
 import 'package:sentrei/widgets/widgets.dart';
 
+/// Default [SplashPage] for initializing the app
+/// If the app is launched for the first time, it loads the [OnboardingPage]
+/// If not, the app loads the [LoginPage]
 class SplashPage extends StatefulWidget {
   @override
   _SplashPageState createState() => _SplashPageState();
@@ -23,7 +27,6 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await SpUtil.getInstance();
-      // Because SpUtil is not initialized, MaterialApp obtains the default theme configuration. Sync here
       Provider.of<ThemeProvider>(context, listen: false).syncTheme();
       _initSplash();
     });
@@ -48,17 +51,13 @@ class _SplashPageState extends State<SplashPage> {
         SpUtil.putBool(Commons.keyGuide, false);
         _initGuide();
       } else {
-        _goLogin();
+        NavigatorUtil.push(
+          context,
+          LoginRouter.loginPage,
+          replace: true,
+        );
       }
     });
-  }
-
-  _goLogin() {
-    NavigatorUtil.push(
-      context,
-      LoginRouter.loginPage,
-      replace: true,
-    );
   }
 
   @override

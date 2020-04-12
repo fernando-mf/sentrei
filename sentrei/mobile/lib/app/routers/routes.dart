@@ -10,7 +10,7 @@ import 'package:sentrei/widgets/widgets.dart';
 class Routes {
   static String home = '/home';
 
-  static List<IRouterProvider> _listRouter = [];
+  static List<AppRouter> _listRouter = [];
 
   static void configureRoutes(Router router) {
     router.notFoundHandler = Handler(

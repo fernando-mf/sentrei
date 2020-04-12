@@ -1,22 +1,60 @@
-sentrei/mobile/doc/.firebase
+# Android related
+**/android/**/gradle-wrapper.jar
+**/android/.bundle
+**/android/key/alpha/sentrei-alpha.json
+**/android/key/beta/sentrei-beta.json
+**/android/key/master/sentrei-master.json
+**/android/key.properties
+**/android/key/api.json
+**/android/key/key.jks
+**/android/key/upload_cert.der
+**/android/vendor
+**/android/.gradle
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
 
-sentrei/mobile/android/.bundle
-sentrei/mobile/android/key/alpha/sentrei-alpha.json
-sentrei/mobile/android/key/beta/sentrei-beta.json
-sentrei/mobile/android/key/master/sentrei-master.json
-sentrei/mobile/android/key.properties
-sentrei/mobile/android/key/api.json
-sentrei/mobile/android/key/key.jks
-sentrei/mobile/android/key/upload_cert.der
-sentrei/mobile/android/vendor
+# iOS/XCode related
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.moved-aside
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/*sync/
+**/ios/**/.sconsign.dblite
+**/ios/**/.tags*
+**/ios/**/.vagrant/
+**/ios/**/DerivedData/
+**/ios/**/Icon?
+**/ios/**/Pods/
+**/ios/**/build/
+**/ios/**/vendor/
+**/ios/**/.bundle/
+**/ios/**/.symlinks/
+**/ios/**/profile
+**/ios/**/xcuserdata
+**/ios/.generated/
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
 
-sentrei/mobile/ios/.bundle
-sentrei/mobile/ios/.symlinks/
-sentrei/mobile/ios/build/
-sentrei/mobile/ios/Pods/
-sentrei/mobile/ios/vendor
+# Exceptions to above rules.
+!**/ios/**/default.mode1v3
+!**/ios/**/default.mode2v3
+!**/ios/**/default.pbxuser
+!**/ios/**/default.perspectivev3
 
-sentrei/mobile/firebase.json
+# Mobile related.
+**/mobile/firebase.json
+**/mobile/doc/.firebase
 
 # Miscellaneous
 *.class

@@ -24,9 +24,9 @@ coverage:
         informational: true
         only_pulls: false
 flags:
-  test:
+  mobile-test:
     paths:
-      - sentrei/lib/
+      - sentrei/mobile/lib/
     carryforward: true
 comment:
   layout: "reach, diff, flags, files"
