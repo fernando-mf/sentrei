@@ -1,6 +1,7 @@
-import 'package:fancy_on_boarding/fancy_on_boarding.dart';
 import 'package:flutter/material.dart';
+import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:sentrei/routers/routers.dart';
+import 'package:sentrei/widgets/widgets.dart';
 
 class OnboardingPage extends StatefulWidget {
   @override
@@ -8,39 +9,59 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
-  //Create a list of PageModel to be set on the onBoarding Screens.
-  final pageList = [
-    PageModel(
-      color: const Color(0xFF678FB4),
-      heroAssetPath: 'assets/images/logo.png',
-      iconAssetPath: 'assets/images/logo.png',
-      title: Text('Hotels',
-          style: TextStyle(
-            fontWeight: FontWeight.w800,
-            color: Colors.white,
-            fontSize: 34.0,
-          )),
-      body: Text('All hotels and hostels are sorted by hospitality rating',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18.0,
-          )),
+  int page = 0;
+
+  UpdateType updateType;
+
+  final pages = [
+    Container(
+      color: Colors.pink,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          LoadAssetImage('onboarding'),
+        ],
+      ),
+    ),
+    Container(
+      color: Colors.deepPurpleAccent,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          LoadAssetImage('onboarding'),
+        ],
+      ),
     ),
   ];
 
+  _onPageChangeCallback(int lpage) {
+    if (page == lpage) {
+      Navigator.pushNamed(context, RouteNames.loginPage);
+    } else {
+      setState(() {
+        page = lpage;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      //Pass pageList and the mainPage route.
-      body: FancyOnBoarding(
-        doneButtonText: 'Done',
-        skipButtonText: 'Skip',
-        pageList: pageList,
-        onDoneButtonPressed: () =>
-            Navigator.of(context).pushNamed(RouteNames.loginPage),
-        onSkipButtonPressed: () =>
-            Navigator.of(context).pushNamed(RouteNames.loginPage),
+    return MaterialApp(
+      home: Scaffold(
+        body: Stack(
+          children: <Widget>[
+            LiquidSwipe(
+              pages: pages,
+              enableSlideIcon: true,
+              enableLoop: false,
+              onPageChangeCallback: _onPageChangeCallback,
+            ),
+          ],
+        ),
       ),
     );
   }

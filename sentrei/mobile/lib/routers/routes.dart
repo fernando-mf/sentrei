@@ -5,12 +5,6 @@ import 'package:sentrei/routers/routers.dart';
 import 'package:sentrei/utils/utils.dart';
 
 class Routes {
-  static dynamic route() {
-    return {
-      RouteNames.splashPage: (BuildContext context) => SplashPage(),
-    };
-  }
-
   static void sendNavigationEventToFirebase(String path) {
     if (path != null && path.isNotEmpty) {
       AnalyticsUtil().analytics.setCurrentScreen(screenName: path);
@@ -18,25 +12,21 @@ class Routes {
   }
 
   static Route onGenerateRoute(RouteSettings settings) {
-    final List<String> pathElements = settings.name.split('/');
-    if (pathElements[0] != '' || pathElements.length == 1) {
-      return null;
-    }
-    switch (pathElements[1]) {
-
-      /// App
+    switch (settings.name) {
       case RouteNames.appPage:
-        return DefaultTransition<bool>(
+        return NativeTransition<bool>(
           builder: (BuildContext context) => AppPage(),
         );
       case RouteNames.onboardingPage:
-        return DefaultTransition<bool>(
+        return NativeTransition<bool>(
           builder: (BuildContext context) => OnboardingPage(),
         );
-
-      /// Login
+      case RouteNames.splashPage:
+        return NativeTransition<bool>(
+          builder: (BuildContext context) => SplashPage(),
+        );
       case RouteNames.loginPage:
-        return DefaultTransition<bool>(
+        return NativeTransition<bool>(
           builder: (BuildContext context) => LoginPage(),
         );
       default:

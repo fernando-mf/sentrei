@@ -14,7 +14,7 @@ class AppPage extends StatelessWidget {
           theme: provider.getTheme(),
           darkTheme: provider.getTheme(isDarkMode: true),
           themeMode: provider.getThemeMode(),
-          routes: Routes.route(),
+          initialRoute: RouteNames.splashPage,
           onGenerateRoute: (settings) => Routes.onGenerateRoute(settings),
           onUnknownRoute: (settings) => Routes.onUnknownRoute(settings),
         );
