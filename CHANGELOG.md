@@ -1,3 +1,9 @@
+## [3.10.1](https://github.com/sentrei/sentrei/compare/v3.10.0...v3.10.1) (2020-04-13)
+
+### Bug Fixes
+
+- 🐛 add register devices option ([4df6e6b](https://github.com/sentrei/sentrei/commit/4df6e6b0581c4d4fd7f202baaf60edb569505447))
+
 # [3.10.0](https://github.com/sentrei/sentrei/compare/v3.9.39...v3.10.0) (2020-04-13)
 
 ### Features
