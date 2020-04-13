@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: rm design/figma/**/*.png
+      - run: |
+          find . -name "*.png" -type f -delete
       - uses: primer/figma-action@v1.0.0-alpha.2
         with:
           args: "format=png outputDir=design/figma/const"
