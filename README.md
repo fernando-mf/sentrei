@@ -38,9 +38,9 @@
 <!-- prettier-ignore-start -->
 | Version | FAD (Android) | FAD (iOS) | Docs |
 | ------- | ------------- | --------- | ---- |
-| alpha | [LINK](https://appdistribution.firebase.dev/i/ecwjmtsh) | [LINK](https://appdistribution.firebase.dev/i/iCHEpULk) | https://alpha.docs.sentrei.com |
-| beta | [LINK](https://appdistribution.firebase.dev/i/zk13ZGu1) | [LINK](https://appdistribution.firebase.dev/i/5rx5sRDi) | https://beta.docs.sentrei.com |
-| master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.docs.sentrei.com |
+| alpha | [LINK](https://appdistribution.firebase.dev/i/ecwjmtsh) | [LINK](https://appdistribution.firebase.dev/i/iCHEpULk) | https://alpha.mobile.sentrei.com |
+| beta | [LINK](https://appdistribution.firebase.dev/i/zk13ZGu1) | [LINK](https://appdistribution.firebase.dev/i/5rx5sRDi) | https://beta.mobile.sentrei.com |
+| master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.mobile.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ### Web 🌐
