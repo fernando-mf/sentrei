@@ -46,6 +46,22 @@ jobs:
         run: |
           flutter pub global activate dartdoc
           flutter pub global run dartdoc:dartdoc --exclude 'dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart:ui,dart:ffi,dart:html,dart:js,dart:js_util'
+      - name: Create deployment production
+        uses: chrnorm/deployment-action@releases/v1
+        if: github.event_name == 'push'
+        id: deployment
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: http://${{ steps.branch.outputs.branch }}.mobile.sentrei.com
+          environment: production
+      - name: Create deployment staging
+        uses: chrnorm/deployment-action@releases/v1
+        if: github.event.client_payload.pull_request != null
+        id: deployment
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: http://staging.${{ steps.branch.outputs.branch }}.mobile.sentrei.com
+          environment: staging
       - name: Deploy to firebase
         if: github.event_name == 'push'
         working-directory: sentrei/mobile
@@ -60,6 +76,38 @@ jobs:
           yarn run staging-${{ github.event.client_payload.pull_request.base.ref }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Update deployment success
+        if: success() && github.event_name == 'push'
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: http://${{ steps.branch.outputs.branch }}.mobile.sentrei.com
+          state: success
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - name: Update deployment success
+        if: success() && github.event.client_payload.pull_request != null
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: http://staging.${{ steps.branch.outputs.branch }}.mobile.sentrei.com
+          state: success
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - name: Update deployment failure
+        if: success() && github.event_name == 'push'
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: http://${{ steps.branch.outputs.branch }}.mobile.sentrei.com
+          state: failure
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - name: Update deployment failure
+        if: success() && github.event.client_payload.pull_request != null
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: http://staging.${{ steps.branch.outputs.branch }}.mobile.sentrei.com
+          state: failure
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - name: Comment url
         if: github.event.client_payload.pull_request != null
         uses: peter-evans/create-or-update-comment@v1
