@@ -2,21 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sentrei/app/app.dart';
 import 'package:sentrei/providers/providers.dart';
+import 'package:sentrei/routers/routers.dart';
 
 /// Default [AppPage] for initializing the app.
-///
-/// Requiires [onGenerateRoute] for routing.
-/// Requires [navigatorObservers] for analytics.
 class AppPage extends StatelessWidget {
-  const AppPage({
-    Key key,
-    @required this.onGenerateRoute,
-    @required this.navigatorObservers,
-  })  : assert(navigatorObservers != null),
-        super(key: key);
-  final RouteFactory onGenerateRoute;
-  final List<NavigatorObserver> navigatorObservers;
-
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeProvider>(
@@ -27,8 +16,9 @@ class AppPage extends StatelessWidget {
           darkTheme: provider.getTheme(isDarkMode: true),
           themeMode: provider.getThemeMode(),
           home: SplashPage(),
-          onGenerateRoute: Application.router.generator,
-          navigatorObservers: navigatorObservers,
+          routes: Routes.route(),
+          onGenerateRoute: (settings) => Routes.onGenerateRoute(settings),
+          onUnknownRoute: (settings) => Routes.onUnknownRoute(settings),
         );
       },
     );

@@ -1,7 +1,6 @@
 import 'package:fancy_on_boarding/fancy_on_boarding.dart';
 import 'package:flutter/material.dart';
-import 'package:sentrei/login/login.dart';
-import 'package:sentrei/utils/utils.dart';
+import 'package:sentrei/routers/routers.dart';
 
 class OnboardingPage extends StatefulWidget {
   @override
@@ -38,16 +37,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
         doneButtonText: 'Done',
         skipButtonText: 'Skip',
         pageList: pageList,
-        onDoneButtonPressed: () => NavigatorUtil.push(
-          context,
-          LoginRouter.loginPage,
-          replace: true,
-        ),
-        onSkipButtonPressed: () => NavigatorUtil.push(
-          context,
-          LoginRouter.loginPage,
-          replace: true,
-        ),
+        onDoneButtonPressed: () =>
+            Navigator.of(context).pushNamed(RouteNames.loginPage),
+        onSkipButtonPressed: () =>
+            Navigator.of(context).pushNamed(RouteNames.loginPage),
       ),
     );
   }

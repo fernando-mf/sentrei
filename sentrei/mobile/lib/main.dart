@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluro/fluro.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -29,12 +28,6 @@ void main() {
 }
 
 class App extends StatelessWidget {
-  App() {
-    final router = Router();
-    Routes.configureRoutes(router);
-    Application.router = router;
-  }
-
   static FirebaseAnalytics analytics = FirebaseAnalytics();
   static FirebaseAnalyticsObserver observer =
       FirebaseAnalyticsObserver(analytics: analytics);
@@ -51,12 +44,7 @@ class App extends StatelessWidget {
         ChangeNotifierProvider<PackageInfoProvider>(
             create: (_) => PackageInfoProvider()),
       ],
-      child: AppPage(
-        onGenerateRoute: Application.router.generator,
-        navigatorObservers: [
-          FirebaseAnalyticsObserver(analytics: analytics),
-        ],
-      ),
+      child: AppPage(),
     );
   }
 }
