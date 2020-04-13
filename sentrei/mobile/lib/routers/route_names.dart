@@ -1,9 +1,9 @@
 class RouteNames {
   /// App
-  static const String appPage = 'AppPage';
-  static const String onboardingPage = 'OnboardingPage';
-  static const String splashPage = 'SplashPage';
+  static const String splashPage = '/';
+  static const String appPage = '/AppPage';
+  static const String onboardingPage = '/OnboardingPage';
 
   /// Login
-  static const String loginPage = 'LoginPage';
+  static const String loginPage = '/LoginPage';
 }

@@ -4,11 +4,10 @@ import 'package:sentrei/login/login.dart';
 import 'package:sentrei/routers/routers.dart';
 import 'package:sentrei/utils/utils.dart';
 
-
 class Routes {
   static dynamic route() {
     return {
-      '/': (BuildContext context) => SplashPage(),
+      RouteNames.splashPage: (BuildContext context) => SplashPage(),
     };
   }
 
@@ -34,10 +33,6 @@ class Routes {
         return DefaultTransition<bool>(
           builder: (BuildContext context) => OnboardingPage(),
         );
-      case RouteNames.splashPage:
-        return DefaultTransition<bool>(
-          builder: (BuildContext context) => SplashPage(),
-        );
 
       /// Login
       case RouteNames.loginPage:
@@ -53,7 +48,7 @@ class Routes {
     return MaterialPageRoute(
       builder: (_) => Scaffold(
         body: Center(
-          child: Text('${settings.name.split('/')[1]} ...'),
+          child: Text('Unknown Route ${settings.name.split('/')[1]} ...'),
         ),
       ),
     );

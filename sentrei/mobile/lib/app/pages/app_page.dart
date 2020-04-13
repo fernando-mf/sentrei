@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sentrei/app/app.dart';
 import 'package:sentrei/providers/providers.dart';
 import 'package:sentrei/routers/routers.dart';
 
@@ -15,7 +14,6 @@ class AppPage extends StatelessWidget {
           theme: provider.getTheme(),
           darkTheme: provider.getTheme(isDarkMode: true),
           themeMode: provider.getThemeMode(),
-          home: SplashPage(),
           routes: Routes.route(),
           onGenerateRoute: (settings) => Routes.onGenerateRoute(settings),
           onUnknownRoute: (settings) => Routes.onUnknownRoute(settings),

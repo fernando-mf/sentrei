@@ -2,9 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
-import 'package:sentrei/providers/providers.dart';
 import 'package:sentrei/app/app.dart';
-import 'package:sentrei/login/login.dart';
+import 'package:sentrei/providers/providers.dart';
 import 'package:sentrei/utils/utils.dart';
 import 'package:sentrei/widgets/widgets.dart';
 
@@ -20,10 +19,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      Provider.of<AppProvider>(context, listen: false).initApp();
       Provider.of<ThemeProvider>(context, listen: false).syncTheme();
-      Provider.of<AppProvider>(context, listen: false)
-          .initSplash(_subscription);
     });
   }
 
@@ -47,7 +43,7 @@ class _SplashPageState extends State<SplashPage> {
               bottomFactor: 0,
               child: LoadAssetImage('logo'),
             )
-          : app.isInitial ? OnboardingPage() : LoginPage(),
+          : OnboardingPage(),
     );
   }
 }

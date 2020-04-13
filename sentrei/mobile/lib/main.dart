@@ -37,7 +37,7 @@ class App extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<AppProvider>(
-          create: (_) => AppProvider()..loading = true,
+          create: (_) => AppProvider(),
         ),
         ChangeNotifierProvider<AuthProvider>(create: (_) => AuthProvider()),
         ChangeNotifierProvider<ThemeProvider>(create: (_) => ThemeProvider()),
