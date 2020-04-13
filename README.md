@@ -28,16 +28,16 @@
 ### Design 🎨
 
 <!-- prettier-ignore-start -->
-| Version | Mobile |
-| ------- | ------- |
-| master | [LINK](https://www.figma.com/file/u1RU33b2eJgpIUTMsnqt7u/mobile?node-id=0%3A1) |
+| Version | Const | Mobile | Web |
+| ------- | ----- | ------ | -- |
+| master | [LINK](https://www.figma.com/file/FcE7ACUUJAey0gspwpFN48/const) | [LINK](https://www.figma.com/file/0HJCBXV4H81774BKNzdTPs/mobile) | [LINK](https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web) |
 <!-- prettier-ignore-end -->
 
 ### Mobile 📱
 
 <!-- prettier-ignore-start -->
-| Version | Firebase(Android) | Firebase(iOS) | Docs |
-| ------- | ------- | --- | ---- |
+| Version | FAD (Android) | FAD (iOS) | Docs |
+| ------- | ------------- | --------- | ---- |
 | alpha | [LINK](https://appdistribution.firebase.dev/i/ecwjmtsh) | [LINK](https://appdistribution.firebase.dev/i/iCHEpULk) | https://alpha.docs.sentrei.com |
 | beta | [LINK](https://appdistribution.firebase.dev/i/zk13ZGu1) | [LINK](https://appdistribution.firebase.dev/i/5rx5sRDi) | https://beta.docs.sentrei.com |
 | master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.docs.sentrei.com |
