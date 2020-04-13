@@ -18,5 +18,3 @@ jobs:
           branch-suffix: short-commit-hash
           token: ${{ secrets.ACCESS_TOKEN }}
           title: "chore: [sentrei-figma-pr]"
-        env:
-          HUSKY_SKIP_HOOKS: 1
