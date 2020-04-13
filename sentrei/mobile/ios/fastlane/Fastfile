@@ -33,6 +33,15 @@ platform :ios do
     )
   end
 
+  desc "Register new devices"
+  lane :register do
+    register_devices(
+      devices: {
+        "Shun\'s iPhone" => "00008020-00026d1e0208002e",
+      }
+    )
+  end
+
   desc "Submit a new alpha build to firebase"
   lane :alpha do |options|
     add_badge(
