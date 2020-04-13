@@ -1,7 +1,7 @@
-import 'package:fancy_on_boarding/fancy_on_boarding.dart';
 import 'package:flutter/material.dart';
-import 'package:sentrei/login/login.dart';
-import 'package:sentrei/utils/utils.dart';
+import 'package:liquid_swipe/liquid_swipe.dart';
+import 'package:sentrei/routers/routers.dart';
+import 'package:sentrei/widgets/widgets.dart';
 
 class OnboardingPage extends StatefulWidget {
   @override
@@ -9,138 +9,58 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
-  //Create a list of PageModel to be set on the onBoarding Screens.
-  final pageList = [
-    PageModel(
-      color: const Color(0xFF678FB4),
-      heroAssetPath: 'assets/images/logo.png',
-      iconAssetPath: 'assets/images/logo.png',
-      title: Text('Hotels',
-          style: TextStyle(
-            fontWeight: FontWeight.w800,
-            color: Colors.white,
-            fontSize: 34.0,
-          )),
-      body: Text('All hotels and hostels are sorted by hospitality rating',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18.0,
-          )),
-    ),
-    PageModel(
-      color: const Color(0xFF65B0B4),
-      heroAssetPath: 'assets/images/logo.png',
-      iconAssetPath: 'assets/images/logo.png',
-      title: Text('Banks',
-          style: TextStyle(
-            fontWeight: FontWeight.w800,
-            color: Colors.white,
-            fontSize: 34.0,
-          )),
-      body:
-          Text('We carefully verify all banks before adding them into the app',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18.0,
-              )),
-    ),
-    PageModel(
-      color: const Color(0xFF9B90BC),
-      heroAssetPath: 'assets/images/logo.png',
-      iconAssetPath: 'assets/images/logo.png',
-      title: Text('Store',
-          style: TextStyle(
-            fontWeight: FontWeight.w800,
-            color: Colors.white,
-            fontSize: 34.0,
-          )),
-      body: Text(
-        'All local stores are categorized for your convenience',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 18.0,
-        ),
+  int page = 0;
+
+  UpdateType updateType;
+
+  final pages = [
+    Container(
+      color: Colors.pink,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          LoadAssetImage('onboarding'),
+        ],
       ),
     ),
-    // SVG Pages Example
-    PageModel(
-      color: const Color(0xFF678FB4),
-      heroAssetPath: 'assets/images/logo.png',
-      iconAssetPath: 'assets/images/logo.png',
-      title: Text('Hotels SVG',
-          style: TextStyle(
-            fontWeight: FontWeight.w800,
-            color: Colors.white,
-            fontSize: 34.0,
-          )),
-      body: Text('All hotels and hostels are sorted by hospitality rating',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18.0,
-          )),
-      heroAssetColor: Colors.white,
-    ),
-    PageModel(
-      color: const Color(0xFF65B0B4),
-      heroAssetPath: 'assets/images/logo.png',
-      iconAssetPath: 'assets/images/logo.png',
-      title: Text('Banks SVG',
-          style: TextStyle(
-            fontWeight: FontWeight.w800,
-            color: Colors.white,
-            fontSize: 34.0,
-          )),
-      body:
-          Text('We carefully verify all banks before adding them into the app',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18.0,
-              )),
-      heroAssetColor: Colors.white,
-    ),
-    PageModel(
-      color: const Color(0xFF9B90BC),
-      heroAssetPath: 'assets/images/logo.png',
-      iconAssetPath: 'assets/images/logo.png',
-      title: Text('Store SVG',
-          style: TextStyle(
-            fontWeight: FontWeight.w800,
-            color: Colors.white,
-            fontSize: 34.0,
-          )),
-      body: Text(
-        'All local stores are categorized for your convenience',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 18.0,
-        ),
+    Container(
+      color: Colors.deepPurpleAccent,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          LoadAssetImage('onboarding'),
+        ],
       ),
     ),
   ];
 
+  _onPageChangeCallback(int lpage) {
+    if (page == lpage) {
+      Navigator.pushNamed(context, RouteNames.loginPage);
+    } else {
+      setState(() {
+        page = lpage;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      //Pass pageList and the mainPage route.
-      body: FancyOnBoarding(
-        doneButtonText: 'Done',
-        skipButtonText: 'Skip',
-        pageList: pageList,
-        onDoneButtonPressed: () => NavigatorUtil.push(
-          context,
-          LoginRouter.loginPage,
-          replace: true,
-        ),
-        onSkipButtonPressed: () => NavigatorUtil.push(
-          context,
-          LoginRouter.loginPage,
-          replace: true,
+    return MaterialApp(
+      home: Scaffold(
+        body: Stack(
+          children: <Widget>[
+            LiquidSwipe(
+              pages: pages,
+              enableSlideIcon: true,
+              enableLoop: false,
+              onPageChangeCallback: _onPageChangeCallback,
+            ),
+          ],
         ),
       ),
     );

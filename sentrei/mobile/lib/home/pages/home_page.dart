@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 import 'package:sentrei/const/const.dart';
-import 'package:sentrei/login/login.dart';
 import 'package:sentrei/home/home.dart';
+import 'package:sentrei/models/models.dart';
 
 class HomePage extends StatelessWidget {
   Future<void> _signOut(BuildContext context) async {
     try {
-      final AuthService auth = Provider.of<AuthService>(context, listen: false);
-      await auth.signOut();
+      print('Sign Out');
     } on PlatformException catch (e) {
       await PlatformExceptionAlertDialog(
         title: 'Logout Failed',

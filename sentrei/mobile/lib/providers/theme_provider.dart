@@ -37,7 +37,7 @@ class ThemeProvider extends ChangeNotifier {
     }
   }
 
-  getTheme({bool isDarkMode = false}) {
+  ThemeData getTheme({bool isDarkMode = false}) {
     return ThemeData(
       errorColor: isDarkMode ? Colours.red_dark : Colours.red,
       brightness: isDarkMode ? Brightness.dark : Brightness.light,

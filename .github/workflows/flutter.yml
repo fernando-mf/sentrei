@@ -42,4 +42,4 @@ jobs:
           file: sentrei/mobile/coverage/lcov.info
           name: sentrei
           fail_ci_if_error: true
-          flags: test
+          flags: mobile-test
