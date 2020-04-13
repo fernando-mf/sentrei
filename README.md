@@ -25,7 +25,7 @@
 
 ## Getting Started 🚀
 
-### Design
+### Design 🎨
 
 <!-- prettier-ignore-start -->
 | Version | Mobile |
@@ -33,7 +33,7 @@
 | master | [LINK](https://www.figma.com/file/u1RU33b2eJgpIUTMsnqt7u/mobile?node-id=0%3A1) |
 <!-- prettier-ignore-end -->
 
-### Mobile
+### Mobile 📱
 
 <!-- prettier-ignore-start -->
 | Version | Firebase(Android) | Firebase(iOS) | Docs |
@@ -43,7 +43,7 @@
 | master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.docs.sentrei.com |
 <!-- prettier-ignore-end -->
 
-### Web
+### Web 🌐
 
 ## Contributors ✨
 
