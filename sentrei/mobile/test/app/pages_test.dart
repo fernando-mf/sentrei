@@ -6,7 +6,6 @@ import 'package:sentrei/providers/providers.dart';
 void main() {
   var map = Map<String, Widget>();
   map['onboarding_page'] = OnboardingPage();
-  map['splash_page'] = SplashPage();
 
   group('app => Detect whether page clickable targets have semantics', () {
     ThemeData themeData = ThemeProvider().getTheme();
