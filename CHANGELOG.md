@@ -1,3 +1,9 @@
+# [3.10.0](https://github.com/sentrei/sentrei/compare/v3.9.39...v3.10.0) (2020-04-13)
+
+### Features
+
+- 🎸 refactor sentrei bmobile ([560695a](https://github.com/sentrei/sentrei/commit/560695a4abcb34daee6c5070bdec4ef5f9c067d6))
+
 ## [3.9.39](https://github.com/sentrei/sentrei/compare/v3.9.38...v3.9.39) (2020-04-12)
 
 ### Bug Fixes
