@@ -28,6 +28,14 @@ fastlane ios icon
 
 Set appicons
 
+### ios register
+
+```
+fastlane ios register
+```
+
+Register new devices
+
 ### ios alpha
 
 ```
