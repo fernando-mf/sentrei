@@ -1,0 +1,27 @@
+{
+  "title": "Acme",
+  "description": "Creative Agency",
+  "logo": "/upload/logo.svg",
+  "footer": "Ⓒ Sentrei, Inc.",
+  "favicon": "favicon-32x32.png",
+  "navigation": [
+    {
+      "text": "Design",
+      "link": "/",
+      "position": "left",
+      "external": false
+    },
+    {
+      "text": "Instagram",
+      "link": "https://www.instagram.com/shunkakinoki",
+      "position": "left",
+      "external": true
+    },
+    {
+      "text": "Github",
+      "link": "https://github.com/sentrei/sentrei",
+      "position": "right",
+      "external": true
+    }
+  ]
+}
