@@ -7,31 +7,31 @@
   "targets": {
     "sentrei-alpha": {
       "hosting": {
-        "docs": [
-          "sentrei-alpha-docs"
+        "mobile": [
+          "sentrei-alpha-mobile"
         ],
-        "staging-docs": [
-          "sentrei-staging-alpha-docs"
+        "staging-mobile": [
+          "sentrei-staging-alpha-mobile"
         ]
       }
     },
     "sentrei-beta": {
       "hosting": {
-        "docs": [
-          "sentrei-beta-docs"
+        "mobile": [
+          "sentrei-beta-mobile"
         ],
-        "staging-docs": [
-          "sentrei-staging-beta-docs"
+        "staging-mobile": [
+          "sentrei-staging-beta-mobile"
         ]
       }
     },
     "sentrei-master": {
       "hosting": {
-        "docs": [
-          "sentrei-master-docs"
+        "mobile": [
+          "sentrei-master-mobile"
         ],
-        "staging-docs": [
-          "sentrei-staging-master-docs"
+        "staging-mobile": [
+          "sentrei-staging-master-mobile"
         ]
       }
     }
