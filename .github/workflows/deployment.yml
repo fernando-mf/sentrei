@@ -38,7 +38,7 @@ jobs:
           state: pending
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to firebase
-        working-directory: sentrei/mobile
+        working-directory: sentrei/design
         run: |
           yarn run ${{ github.event.deployment.task }}
         env:
