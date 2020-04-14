@@ -53,6 +53,7 @@
 !**/ios/**/default.perspectivev3
 
 # Mobile related.
+**/mobile/.firebase
 **/mobile/firebase.json
 **/mobile/doc/.firebase
 
