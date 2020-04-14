@@ -1,4 +1,4 @@
-const config = require('../config.json');
+const config = require("../config.json");
 module.exports = {
   title: config.title,
   description: config.description,
@@ -9,21 +9,24 @@ module.exports = {
     nav: config.navigation,
   },
   head: [
-    ['link', {
-      rel: "icon",
-      href: config.favicon
-    }]
+    [
+      "link",
+      {
+        rel: "icon",
+        href: config.favicon,
+      },
+    ],
   ],
   markdown: {
     anchor: {
-      permalink: false
-    }
+      permalink: false,
+    },
   },
   configureWebpack: {
     resolve: {
       alias: {
-        '@design': '../../../../design'
-      }
-    }
-  }
+        "@design": "../../../../design",
+      },
+    },
+  },
 };

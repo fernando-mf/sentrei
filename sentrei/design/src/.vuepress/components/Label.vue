@@ -5,14 +5,13 @@
 </template>
 
 <script>
-  export default {
-  }
+export default {};
 </script>
 
 <style scoped>
-  .label {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 700;
-  }
+.label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
 </style>
