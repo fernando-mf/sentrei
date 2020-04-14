@@ -1,28 +1,23 @@
 {
-  "hosting": [
-    {
-      "site": "sentrei-master-docs",
+  "hosting": [{
+      "site": "sentrei-master-mobile",
       "target": "docs",
       "public": "doc/api",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
+      "rewrites": [{
+        "source": "**",
+        "destination": "/index.html"
+      }]
     },
     {
-      "site": "sentrei-staging-master-docs",
+      "site": "sentrei-staging-master-mobile",
       "target": "staging-docs",
       "public": "doc/api",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
+      "rewrites": [{
+        "source": "**",
+        "destination": "/index.html"
+      }]
     }
   ]
 }

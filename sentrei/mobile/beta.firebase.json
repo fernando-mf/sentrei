@@ -1,28 +1,23 @@
 {
-  "hosting": [
-    {
-      "site": "sentrei-beta-docs",
+  "hosting": [{
+      "site": "sentrei-beta-mobile",
       "target": "docs",
       "public": "doc/api",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
+      "rewrites": [{
+        "source": "**",
+        "destination": "/index.html"
+      }]
     },
     {
-      "site": "sentrei-staging-beta-docs",
+      "site": "sentrei-staging-beta-mobile",
       "target": "staging-docs",
       "public": "doc/api",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
+      "rewrites": [{
+        "source": "**",
+        "destination": "/index.html"
+      }]
     }
   ]
 }
