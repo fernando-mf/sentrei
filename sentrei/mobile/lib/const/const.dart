@@ -1,5 +1,5 @@
 export 'colours.dart';
 export 'commons.dart';
-export 'gradientbgs.dart';
+export 'gradient_bgs.dart';
 export 'keys.dart';
-export 'textstyles.dart';
+export 'text_styles.dart';

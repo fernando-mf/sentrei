@@ -57,6 +57,8 @@
 **/mobile/firebase.json
 **/mobile/doc/.firebase
 
+**/design/pixelmator/**
+
 # Miscellaneous
 *.class
 *.log
