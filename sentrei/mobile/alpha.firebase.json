@@ -1,23 +1,28 @@
 {
-  "hosting": [{
+  "hosting": [
+    {
       "site": "sentrei-alpha-mobile",
       "target": "docs",
       "public": "doc/api",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [{
-        "source": "**",
-        "destination": "/index.html"
-      }]
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     },
     {
       "site": "sentrei-staging-alpha-mobile",
       "target": "staging-docs",
       "public": "doc/api",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [{
-        "source": "**",
-        "destination": "/index.html"
-      }]
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }
