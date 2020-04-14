@@ -4,7 +4,31 @@ env:
   flutter_channel: "stable"
   flutter_version: "1.12.13+hotfix.9"
 jobs:
+  deployment:
+    if: github.event.deployment.payload.target == 'design-production'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.head_ref }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Cache node modules
+        id: cache
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: node-v1-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            node-v1-
+      - name: Install dependencies with yarn
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          yarn install --frozen-lockfile
   mobile:
+    if: github.event.deployment.payload.target == 'mobile-production-master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
