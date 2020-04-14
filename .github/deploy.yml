@@ -1,3 +1,17 @@
+design-production:
+  auto_deploy_on: refs/heads/master
+  environment: "Design Production"
+  production_environment: true
+  task: design
+  payload:
+    url: https://design.sentrei.com
+design-staging:
+  environment: "Design Staging PR ${{ pr }}"
+  transient_environment: true
+  production_environment: false
+  task: staging-design
+  payload:
+    url: https://staging.design.sentrei.com
 mobile-production-alpha:
   auto_deploy_on: refs/heads/alpha
   environment: "Mobile Production Alpha"
