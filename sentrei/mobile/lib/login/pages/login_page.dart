@@ -10,7 +10,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 64.0),
-        decoration: BoxDecoration(gradient: GradientBgs.signup_background),
+        decoration: BoxDecoration(gradient: GradientBgs.mango),
         child: ListView(
           physics: BouncingScrollPhysics(),
           children: <Widget>[
@@ -35,7 +35,7 @@ class LoginPage extends StatelessWidget {
               margin: EdgeInsets.only(left: 32.0, right: 32.0, top: 12.0),
               child: GoogleSignInButton(
                 onPressed: () {},
-                splashColor: Colours.black_opaque,
+                splashColor: Colours.black,
                 text: 'Log in with Google',
               ),
             ),
@@ -43,7 +43,7 @@ class LoginPage extends StatelessWidget {
               margin: EdgeInsets.only(left: 32.0, right: 32.0, top: 12.0),
               child: TwitterSignInButton(
                 onPressed: () {},
-                splashColor: Colours.black_opaque,
+                splashColor: Colours.black,
                 text: 'Log in with Twitter',
               ),
             ),

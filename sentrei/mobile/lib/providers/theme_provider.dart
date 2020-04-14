@@ -1,11 +1,8 @@
-import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sentrei/const/const.dart';
 import 'package:sentrei/utils/utils.dart';
 
-/// References:
-/// https://github.com/stefanJi/Flutter4GitLab/blob/master/lib/providers/theme.dart
 class ThemeProvider extends ChangeNotifier {
   static const Map<ThemeMode, String> themes = {
     ThemeMode.dark: 'Dark',
@@ -39,7 +36,7 @@ class ThemeProvider extends ChangeNotifier {
 
   ThemeData getTheme({bool isDarkMode = false}) {
     return ThemeData(
-      primaryColor: isDarkMode ? Colours.app_main_dark : Colours.app_main,
+      scaffoldBackgroundColor: isDarkMode ? Colours.gray : Colours.gray,
     );
   }
 }

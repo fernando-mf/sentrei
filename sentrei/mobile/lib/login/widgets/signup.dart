@@ -8,7 +8,7 @@ Widget signupWidget() {
       children: <Widget>[
         Text(
           'Don\'t have an account?',
-          style: Styles.textBlack,
+          style: TextStyles.textSize12,
         ),
         FlatButton(
           onPressed: () {
@@ -16,7 +16,7 @@ Widget signupWidget() {
           },
           child: Text(
             'Sign Up',
-            style: Styles.textBlackUnderline,
+            style: TextStyles.textSize12,
           ),
         )
       ],

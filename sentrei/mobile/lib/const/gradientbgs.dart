@@ -1,11 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:sentrei/const/const.dart';
 
 class GradientBgs {
-  static const LinearGradient signup_background = LinearGradient(
-    begin: FractionalOffset(0.0, 0.4),
-    end: FractionalOffset(0.9, 0.7),
-    stops: [0.1, 0.9],
-    colors: [Colours.blue_light, Colours.red],
+  static LinearGradient aqua = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0xFF00C6FF),
+      Color(0xFF0072FF),
+    ],
+  );
+
+  static LinearGradient mango = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0xFFFFC371),
+      Color(0xFFFF5F6D),
+    ],
+  );
+
+  static LinearGradient react = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0xFFFC5C7D),
+      Color(0xFF6A82FB),
+    ],
+  );
+
+  static LinearGradient peach = LinearGradient(
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+    colors: [
+      Color(0xFFDDD6F3),
+      Color(0xFFFAACA8),
+    ],
   );
 }
