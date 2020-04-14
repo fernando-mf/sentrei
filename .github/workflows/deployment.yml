@@ -25,3 +25,10 @@ jobs:
         with:
           state: failure
           token: ${{ secrets.GITHUB_TOKEN }}
+  context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
