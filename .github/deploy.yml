@@ -6,7 +6,7 @@ mobile-production-alpha:
   payload:
     url: https://alpha.mobile.sentrei.com
 mobile-staging-alpha:
-  environment: "Mobile Staging Alpha PR-${{ pr }}"
+  environment: "Mobile Staging Alpha PR ${{ pr }}"
   transient_environment: true
   production_environment: false
   task: staging-alpha
@@ -20,7 +20,7 @@ mobile-production-beta:
   payload:
     url: https://beta.mobile.sentrei.com
 mobile-staging-beta:
-  environment: "Mobile Staging Beta PR-${{ pr }}"
+  environment: "Mobile Staging Beta PR ${{ pr }}"
   transient_environment: true
   production_environment: false
   task: staging-beta
@@ -34,7 +34,7 @@ mobile-production-master:
   payload:
     url: https://mobile.sentrei.com
 mobile-staging-master:
-  environment: "Mobile Staging Master PR-${{ pr }}"
+  environment: "Mobile Staging Master PR ${{ pr }}"
   transient_environment: true
   production_environment: false
   task: staging-master
