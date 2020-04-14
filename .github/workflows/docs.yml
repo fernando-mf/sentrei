@@ -1,12 +1,5 @@
 name: Docs
-on:
-  push:
-    branches:
-      - alpha
-      - beta
-      - master
-  repository_dispatch:
-    types: [docs-cmd]
+on: deployment
 env:
   flutter_channel: "stable"
   flutter_version: "1.12.13+hotfix.9"
@@ -14,21 +7,9 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Extract branch name
-        if: github.event_name == 'push'
-        id: branch
-        run: |
-          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-      - name: Checkout
-        if: github.event_name == 'push'
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           ref: ${{ steps.branch.outputs.branch }}
-      - name: Checkout
-        if: github.event.client_payload.pull_request != null
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.client_payload.pull_request.head.ref }}
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
@@ -52,17 +33,9 @@ jobs:
           state: pending
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to firebase
-        if: github.event_name == 'push'
         working-directory: sentrei/mobile
         run: |
-          yarn run ${{ steps.branch.outputs.branch }}
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - name: Deploy to firebase
-        if: github.event.client_payload.pull_request != null
-        working-directory: sentrei/mobile
-        run: |
-          yarn run staging-${{ github.event.client_payload.pull_request.base.ref }}
+          yarn run master
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deployment success
@@ -77,3 +50,10 @@ jobs:
         with:
           state: failure
           token: ${{ secrets.GITHUB_TOKEN }}
+  context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
