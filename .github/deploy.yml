@@ -4,6 +4,7 @@ design-production:
   production_environment: true
   task: design
   payload:
+    type: design
     url: https://design.sentrei.com
 design-staging:
   environment: "Design Staging PR ${{ pr }}"
@@ -11,6 +12,7 @@ design-staging:
   production_environment: false
   task: staging-design
   payload:
+    type: design
     url: https://staging.design.sentrei.com
 mobile-production-alpha:
   auto_deploy_on: refs/heads/alpha
@@ -18,6 +20,7 @@ mobile-production-alpha:
   production_environment: true
   task: alpha
   payload:
+    type: mobile
     url: https://alpha.mobile.sentrei.com
 mobile-staging-alpha:
   environment: "Mobile Staging Alpha PR ${{ pr }}"
@@ -25,6 +28,7 @@ mobile-staging-alpha:
   production_environment: false
   task: staging-alpha
   payload:
+    type: mobile
     url: https://staging.alpha.mobile.sentrei.com
 mobile-production-beta:
   auto_deploy_on: refs/heads/beta
@@ -32,6 +36,7 @@ mobile-production-beta:
   production_environment: true
   task: beta
   payload:
+    type: mobile
     url: https://beta.mobile.sentrei.com
 mobile-staging-beta:
   environment: "Mobile Staging Beta PR ${{ pr }}"
@@ -39,6 +44,7 @@ mobile-staging-beta:
   production_environment: false
   task: staging-beta
   payload:
+    type: mobile
     url: https://staging.beta.mobile.sentrei.com
 mobile-production-master:
   auto_deploy_on: refs/heads/master
@@ -46,6 +52,7 @@ mobile-production-master:
   production_environment: true
   task: master
   payload:
+    type: mobile
     url: https://mobile.sentrei.com
 mobile-staging-master:
   environment: "Mobile Staging Master PR ${{ pr }}"
@@ -53,4 +60,5 @@ mobile-staging-master:
   production_environment: false
   task: staging-master
   payload:
+    type: mobile
     url: https://staging.mobile.sentrei.com
