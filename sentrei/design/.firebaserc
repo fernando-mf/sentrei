@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "master": "sentrei-master"
+  },
+  "targets": {
+    "sentrei-master": {
+      "hosting": {
+        "design": [
+          "sentrei-design"
+        ],
+        "staging-design": [
+          "sentrei-staging-design"
+        ]
+      }
+    }
+  }
+}

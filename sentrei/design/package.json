@@ -10,7 +10,8 @@
   "license": "MIT",
   "author": "Shun Kakinoki",
   "scripts": {
-    "dev": "vuepress dev portfolio"
+    "build": "vuepress build src",
+    "dev": "vuepress dev src"
   },
   "publishConfig": {
     "access": "public"
