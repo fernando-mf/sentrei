@@ -32,7 +32,7 @@ jobs:
         with:
           environment-url: ${{ github.event.deployment.payload.url }}
           state: pending
-          token: ${{ secrets.GITHUB_TOKEN }
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to firebase
         working-directory: sentrei/mobile
         run: |
