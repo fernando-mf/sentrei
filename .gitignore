@@ -53,11 +53,14 @@
 !**/ios/**/default.perspectivev3
 
 # Mobile related.
-**/mobile/.firebase
 **/mobile/firebase.json
 **/mobile/doc/.firebase
 
+# Design related.
 **/design/pixelmator/**
+
+# Firebase related.
+**/.firebase
 
 # Miscellaneous
 *.class
