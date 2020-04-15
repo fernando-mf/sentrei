@@ -34,6 +34,9 @@ jobs:
         working-directory: sentrei/mobile
         run: |
           flutter analyze
+      - if: steps.change.outputs.changed == 'true'
+        working-directory: sentrei/mobile
+        run: |
           flutter test --coverage
       - name: Upload coverage to Codecov
         if: steps.change.outputs.changed == 'true'
@@ -42,4 +45,4 @@ jobs:
           file: sentrei/mobile/coverage/lcov.info
           name: sentrei
           fail_ci_if_error: true
-          flags: mobile-test
+          flags: mobile
