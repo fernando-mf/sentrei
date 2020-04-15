@@ -12,3 +12,8 @@ resource "google_storage_bucket" "test-lab-results" {
     }
   }
 }
+
+resource "google_storage_bucket" "dvc" {
+  name     = "sentrei-${var.environment}-dvc"
+  location = "US"
+}

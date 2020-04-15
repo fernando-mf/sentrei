@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
+import 'package:sentrei/app/app.dart';
 import 'package:sentrei/routers/routers.dart';
-import 'package:sentrei/widgets/widgets.dart';
 
 class OnboardingPage extends StatefulWidget {
   @override
@@ -13,33 +13,14 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   UpdateType updateType;
 
-  final pages = [
-    Container(
-      color: Colors.pink,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          LoadAssetImage('onboarding'),
-        ],
-      ),
-    ),
-    Container(
-      color: Colors.deepPurpleAccent,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          LoadAssetImage('onboarding'),
-        ],
-      ),
-    ),
+  final List<Container> pages = [
+    VentureSection(),
+    PlanSection(),
+    ProgressSection(),
   ];
 
   _onPageChangeCallback(int lpage) {
-    if (page == lpage) {
+    if (page == lpage && page != 0) {
       Navigator.pushNamed(context, RouteNames.loginPage);
     } else {
       setState(() {

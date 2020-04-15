@@ -10,14 +10,14 @@ Widget headlinesWidget() {
         Text(
           'WELCOME BACK!',
           textAlign: TextAlign.left,
-          style: Styles.headlineTop,
+          style: TextStyles.textSize12,
         ),
         Container(
           margin: EdgeInsets.only(top: 48.0),
           child: Text(
             'Log in \nto continue.',
             textAlign: TextAlign.left,
-            style: Styles.headlineMiddle,
+            style: TextStyles.textSize12,
           ),
         )
       ],
