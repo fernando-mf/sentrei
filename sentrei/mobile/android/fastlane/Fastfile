@@ -3,7 +3,7 @@ fastlane_version "2.28.3"
 default_platform :android
 
 desc "Bump version code"
-private_lane :bump_version_code do |options|
+private_lane :bump_version_code do
   g = google_play_track_version_codes
   ga = google_play_track_version_codes(track: "alpha")
   gb = google_play_track_version_codes(track: "beta")
