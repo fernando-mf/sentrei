@@ -22,6 +22,14 @@ indent_style = unset
 [Makefile]
 indent_style = tab
 
+[*.arb]
+charset = none
+end_of_line = none
+insert_final_newline = none
+trim_trailing_whitespace = none
+indent_style = none
+indent_size = none
+
 [*.flr]
 charset = none
 end_of_line = none

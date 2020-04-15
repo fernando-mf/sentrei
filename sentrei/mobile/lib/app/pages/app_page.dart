@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:sentrei/i18n/i18n.dart';
 import 'package:sentrei/providers/providers.dart';
 import 'package:sentrei/routers/routers.dart';
 
@@ -17,6 +19,16 @@ class AppPage extends StatelessWidget {
           initialRoute: RouteNames.splashPage,
           onGenerateRoute: (settings) => Routes.onGenerateRoute(settings),
           onUnknownRoute: (settings) => Routes.onUnknownRoute(settings),
+          localizationsDelegates: [
+            AppLocalizationDelegate(),
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: [
+            Locale('en', ''),
+            Locale('zh', ''),
+            Locale('ja', ''),
+          ],
         );
       },
     );
