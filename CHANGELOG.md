@@ -1,3 +1,9 @@
+# [3.12.0-alpha.1](https://github.com/sentrei/sentrei/compare/v3.11.2...v3.12.0-alpha.1) (2020-04-15)
+
+### Features
+
+- 🎸 add i18n functionality ([4cd415b](https://github.com/sentrei/sentrei/commit/4cd415b1027a0dd6415fecc8f1ae56afad197632))
+
 ## [3.11.2](https://github.com/sentrei/sentrei/compare/v3.11.1...v3.11.2) (2020-04-15)
 
 ### Bug Fixes
