@@ -1,3 +1,9 @@
+## [3.11.1](https://github.com/sentrei/sentrei/compare/v3.11.0...v3.11.1) (2020-04-15)
+
+### Bug Fixes
+
+- **deps:** bump vuepress from 1.4.0 to 1.4.1 ([aa97398](https://github.com/sentrei/sentrei/commit/aa9739815ad77db2a77116ea84214640f87107ec))
+
 # [3.11.0](https://github.com/sentrei/sentrei/compare/v3.10.2...v3.11.0) (2020-04-15)
 
 ### Features
