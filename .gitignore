@@ -54,10 +54,6 @@
 
 # Mobile related.
 **/mobile/firebase.json
-**/mobile/doc/.firebase
-
-# Design related.
-**/design/pixelmator/**
 
 # Firebase related.
 **/.firebase
