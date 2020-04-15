@@ -1,4 +1,4 @@
-FROM gitpod/workspace-full:latest
+FROM gitpod/workspace-full:commit-e8585e862e3ac6cb8ed842b22bd5948e6f5a8e94
 
 ENV FLUTTER_VERSION="v1.12.13+hotfix.9-stable"
 
