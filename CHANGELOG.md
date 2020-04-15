@@ -1,3 +1,9 @@
+# [3.11.0](https://github.com/sentrei/sentrei/compare/v3.10.2...v3.11.0) (2020-04-15)
+
+### Features
+
+- 🎸 initiate figma ui flow ([e6ba0ab](https://github.com/sentrei/sentrei/commit/e6ba0ab6c4086d2f05bdce57cffe86b5d693e153))
+
 ## [3.10.2](https://github.com/sentrei/sentrei/compare/v3.10.1...v3.10.2) (2020-04-13)
 
 ### Bug Fixes
