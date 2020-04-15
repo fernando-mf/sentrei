@@ -20,15 +20,14 @@ class AppPage extends StatelessWidget {
           onGenerateRoute: (settings) => Routes.onGenerateRoute(settings),
           onUnknownRoute: (settings) => Routes.onUnknownRoute(settings),
           localizationsDelegates: [
-            SentreiLocalizationsDelegate(),
+            AppLocalizationDelegate(),
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: [
-            const Locale('en'),
-            const Locale('zh'),
-            const Locale('ja'),
+            Locale('en', ''),
+            Locale('zh', ''),
+            Locale('ja', ''),
           ],
         );
       },

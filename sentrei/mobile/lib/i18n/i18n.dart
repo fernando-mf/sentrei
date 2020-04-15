@@ -1,3 +1,3 @@
+export 'app_localization_delegate.dart';
+export 'app_localization.dart';
 export 'messages_all.dart';
-export 'sentrei_localizations_delegate.dart';
-export 'sentrei_localizations.dart';

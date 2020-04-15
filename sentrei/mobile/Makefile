@@ -20,10 +20,13 @@ export:
 i18n: i18n-arb i18n-dart
 
 i18n-arb:
-	flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/i18n lib/i18n/sentrei_localizations.dart
+	flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/i18n lib/i18n/app_localization.dart
+
+i18n-copy:
+	cat lib/i18n/intl_messages.arb | tee lib/i18n/intl_en.arb lib/i18n/intl_ja.arb lib/i18n/intl_zh.arb >/dev/null
 
 i18n-dart:
-	flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/i18n --no-use-deferred-loading lib/i18n/sentrei_localizations.dart lib/i18n/intl_*.arb
+	flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/i18n --no-use-deferred-loading lib/i18n/app_localization.dart lib/i18n/intl_*.arb
 
 format:
 	flutter format lib

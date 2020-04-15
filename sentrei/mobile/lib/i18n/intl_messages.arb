@@ -1,7 +1,8 @@
 {
-  "@@last_modified": "2020-04-15T19:25:33.972729",
-  "title": "This is my first localization App",
-  "@title": {
+  "@@last_modified": "2020-04-15T20:14:32.060308",
+  "heyWorld": "Hey World",
+  "@heyWorld": {
+    "description": "Simpel word for greeting ",
     "type": "text",
     "placeholders": {}
   }
