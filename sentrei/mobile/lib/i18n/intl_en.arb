@@ -1,0 +1,8 @@
+{
+  "@@last_modified": "2020-04-15T18:14:24.739999",
+  "title": "This is my first localization App",
+  "@title": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
