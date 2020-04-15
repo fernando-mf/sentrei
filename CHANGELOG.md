@@ -1,3 +1,9 @@
+## [3.11.2](https://github.com/sentrei/sentrei/compare/v3.11.1...v3.11.2) (2020-04-15)
+
+### Bug Fixes
+
+- 🐛 add tag version ([ac48fe2](https://github.com/sentrei/sentrei/commit/ac48fe2c49c47d639a32ecd1c5bd994b8d08c935)), closes [#674](https://github.com/sentrei/sentrei/issues/674)
+
 ## [3.11.1](https://github.com/sentrei/sentrei/compare/v3.11.0...v3.11.1) (2020-04-15)
 
 ### Bug Fixes
