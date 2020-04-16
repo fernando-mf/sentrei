@@ -16,7 +16,7 @@ class ProgressSection extends Container {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           LoadAssetImage('progress'),
-          Text(AppLocalization.of(context).heyWorld),
+          Text(AppLocalization.of(context).progress),
         ],
       ),
     );
