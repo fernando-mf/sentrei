@@ -16,6 +16,9 @@ class VentureSection extends Container {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           LoadAssetImage('venture'),
+          ProgressDot(
+            dotsCount: 3,
+          ),
           OnboardingButton(),
         ],
       ),

@@ -16,6 +16,10 @@ class PlanSection extends Container {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           LoadAssetImage('plan'),
+          ProgressDot(
+            dotsCount: 3,
+            position: 1,
+          ),
           OnboardingButton(),
         ],
       ),

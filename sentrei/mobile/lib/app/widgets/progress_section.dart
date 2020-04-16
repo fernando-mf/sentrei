@@ -16,6 +16,10 @@ class ProgressSection extends Container {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           LoadAssetImage('progress'),
+          ProgressDot(
+            dotsCount: 3,
+            position: 2,
+          ),
           OnboardingButton(),
         ],
       ),
