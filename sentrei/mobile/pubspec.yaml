@@ -52,4 +52,10 @@ flutter:
   assets:
     - assets/images/
     - assets/lottie/
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Light.ttf
+        - asset: assets/fonts/Montserrat-Medium.ttf
+        - asset: assets/fonts/Montserrat-Regular.ttf
   uses-material-design: true

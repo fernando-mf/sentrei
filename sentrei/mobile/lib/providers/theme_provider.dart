@@ -36,6 +36,7 @@ class ThemeProvider extends ChangeNotifier {
 
   ThemeData getTheme({bool isDarkMode = false}) {
     return ThemeData(
+      fontFamily: 'Montserrat',
       scaffoldBackgroundColor: isDarkMode ? Colours.gray : Colours.gray,
     );
   }
