@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:sentrei/app/app.dart';
-import 'package:sentrei/routers/routers.dart';
 
 class OnboardingPage extends StatefulWidget {
   @override
@@ -19,16 +18,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
     ProgressSection(),
   ];
 
-  _onPageChangeCallback(int lpage) {
-    if (page == lpage && page != 0) {
-      Navigator.pushNamed(context, RouteNames.loginPage);
-    } else {
-      setState(() {
-        page = lpage;
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +27,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
             pages: pages,
             enableSlideIcon: true,
             enableLoop: false,
-            onPageChangeCallback: _onPageChangeCallback,
           ),
         ],
       ),

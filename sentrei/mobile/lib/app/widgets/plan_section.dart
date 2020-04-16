@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sentrei/app/app.dart';
 import 'package:sentrei/const/const.dart';
 import 'package:sentrei/widgets/widgets.dart';
 
@@ -15,6 +16,7 @@ class PlanSection extends Container {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           LoadAssetImage('plan'),
+          OnboardingButton(),
         ],
       ),
     );
