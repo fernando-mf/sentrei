@@ -31,18 +31,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Stack(
-          children: <Widget>[
-            LiquidSwipe(
-              pages: pages,
-              enableSlideIcon: true,
-              enableLoop: false,
-              onPageChangeCallback: _onPageChangeCallback,
-            ),
-          ],
-        ),
+    return Scaffold(
+      body: Stack(
+        children: <Widget>[
+          LiquidSwipe(
+            pages: pages,
+            enableSlideIcon: true,
+            enableLoop: false,
+            onPageChangeCallback: _onPageChangeCallback,
+          ),
+        ],
       ),
     );
   }
