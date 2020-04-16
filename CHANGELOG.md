@@ -1,3 +1,9 @@
+## [3.12.3](https://github.com/sentrei/sentrei/compare/v3.12.2...v3.12.3) (2020-04-16)
+
+### Bug Fixes
+
+- 🐛 add fontfamily Montserrat ([18842c6](https://github.com/sentrei/sentrei/commit/18842c61547457099c704182aae1a4db866ea398))
+
 ## [3.12.2](https://github.com/sentrei/sentrei/compare/v3.12.1...v3.12.2) (2020-04-16)
 
 ### Bug Fixes
