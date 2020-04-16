@@ -1,3 +1,9 @@
+## [3.12.4](https://github.com/sentrei/sentrei/compare/v3.12.3...v3.12.4) (2020-04-16)
+
+### Bug Fixes
+
+- **deps:** bump firebase-tools from 8.0.3 to 8.1.0 ([44fc2d9](https://github.com/sentrei/sentrei/commit/44fc2d9946c18cfa2bc7968d4221d5ec5f1ff38d))
+
 ## [3.12.3](https://github.com/sentrei/sentrei/compare/v3.12.2...v3.12.3) (2020-04-16)
 
 ### Bug Fixes
