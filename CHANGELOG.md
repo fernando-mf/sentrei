@@ -1,3 +1,9 @@
+## [3.12.1](https://github.com/sentrei/sentrei/compare/v3.12.0...v3.12.1) (2020-04-16)
+
+### Bug Fixes
+
+- 🐛 bugging i18n working!!! ([3f39e75](https://github.com/sentrei/sentrei/commit/3f39e759b2d901417738fb1a7ee03dee450834a6))
+
 # [3.12.0](https://github.com/sentrei/sentrei/compare/v3.11.2...v3.12.0) (2020-04-16)
 
 ### Features
