@@ -17,12 +17,9 @@ class AppLocalization {
     return Localizations.of<AppLocalization>(context, AppLocalization);
   }
 
-  // list of locales
-  String get heyWorld {
+  String get progress {
     return Intl.message(
-      'Hey World',
-      name: 'heyWorld',
-      desc: 'Simpel word for greeting ',
+      'Progress',
     );
   }
 }
