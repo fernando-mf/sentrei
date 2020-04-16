@@ -17,6 +17,12 @@ class AppLocalization {
     return Localizations.of<AppLocalization>(context, AppLocalization);
   }
 
+  String get start {
+    return Intl.message(
+      'Start',
+    );
+  }
+
   String get progress {
     return Intl.message(
       'Progress',

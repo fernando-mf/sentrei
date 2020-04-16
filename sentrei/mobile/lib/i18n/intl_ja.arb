@@ -1,6 +1,11 @@
 {
-  "@@last_modified": "2020-04-16T15:24:27.377813",
-  "Progress": "進捗状況",
+  "@@last_modified": "2020-04-16T20:25:13.893427",
+  "Start": "スタート",
+  "@Start": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Progress": "Progress",
   "@Progress": {
     "type": "text",
     "placeholders": {}
