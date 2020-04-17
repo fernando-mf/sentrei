@@ -15,6 +15,7 @@ class ProgressSection extends Container {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          HeadlineText(),
           LoadAssetImage('progress'),
           ProgressDot(
             dotsCount: 3,

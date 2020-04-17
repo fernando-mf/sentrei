@@ -15,6 +15,7 @@ class PlanSection extends Container {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          HeadlineText(),
           LoadAssetImage('plan'),
           ProgressDot(
             dotsCount: 3,

@@ -15,6 +15,7 @@ class VentureSection extends Container {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          HeadlineText(),
           LoadAssetImage('venture'),
           ProgressDot(
             dotsCount: 3,
