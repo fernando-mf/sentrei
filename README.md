@@ -8,14 +8,14 @@
 [![Commitzen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)
 [![License](https://img.shields.io/github/license/sentrei/sentrei)](https://github.com/sentrei/sentrei/blob/master/LICENSE.md)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/sentrei/sentrei/graphs/commit-activity)
-[![Star on GitHub](https://img.shields.io/github/stars/sentrei/sentrei.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/sentrei/sentrei)
-[![codecov](https://codecov.io/gh/sentrei/sentrei/branch/master/graph/badge.svg)](https://codecov.io/gh/sentrei/sentrei)
 [![mergify-status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei&style=flat)](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei&style=flat)
 [![dependabot-status](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/sentrei/sentrei)
 [![Join the chat at https://gitter.im/sentrei/sentrei](https://badges.gitter.im/sentrei/sentrei.svg)](https://gitter.im/sentrei/sentrei?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![Star on GitHub](https://img.shields.io/github/stars/sentrei/sentrei.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/sentrei/sentrei)
+[![codecov](https://codecov.io/gh/sentrei/sentrei/branch/master/graph/badge.svg)](https://codecov.io/gh/sentrei/sentrei)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/33af9b285c934b3fa958d85c6638aefb)](https://www.codacy.com/gh/sentrei/sentrei?utm_source=github.com&utm_medium=referral&utm_content=sentrei/sentrei&utm_campaign=Badge_Grade)
 
 <!-- <p align="center">
