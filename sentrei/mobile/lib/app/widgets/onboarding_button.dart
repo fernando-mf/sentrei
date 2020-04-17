@@ -8,8 +8,8 @@ class OnboardingButton extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
       child: Container(
-        width: 300,
         height: 60,
+        width: MediaQuery.of(context).size.width * 0.8,
         decoration: BoxDecoration(
           gradient: GradientBgs.shonan,
         ),
