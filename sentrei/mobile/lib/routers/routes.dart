@@ -26,7 +26,7 @@ class Routes {
           builder: (BuildContext context) => SplashPage(),
         );
       case RouteNames.loginPage:
-        return NativeTransition<bool>(
+        return UpwardTransition<bool>(
           builder: (BuildContext context) => LoginPage(),
         );
       default:
