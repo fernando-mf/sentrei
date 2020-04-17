@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sentrei/app/app.dart';
 import 'package:sentrei/const/const.dart';
+import 'package:sentrei/i18n/i18n.dart';
 import 'package:sentrei/widgets/widgets.dart';
 
 class PlanSection extends Container {
@@ -15,7 +16,10 @@ class PlanSection extends Container {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          HeadlineText(),
+          HeadlineText(
+            AppLocalizations.of(context).goBold,
+            AppLocalizations.of(context).seeTheBiggerPicture,
+          ),
           LoadAssetImage('plan'),
           ProgressDot(
             dotsCount: 3,

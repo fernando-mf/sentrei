@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sentrei/const/const.dart';
 import 'package:sentrei/app/app.dart';
+import 'package:sentrei/const/const.dart';
+import 'package:sentrei/i18n/i18n.dart';
 import 'package:sentrei/widgets/widgets.dart';
 
 class ProgressSection extends Container {
@@ -15,7 +16,10 @@ class ProgressSection extends Container {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          HeadlineText(),
+          HeadlineText(
+            AppLocalizations.of(context).lifeopsAsAService,
+            AppLocalizations.of(context).learnAndGrow,
+          ),
           LoadAssetImage('progress'),
           ProgressDot(
             dotsCount: 3,

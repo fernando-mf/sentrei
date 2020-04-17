@@ -13,7 +13,7 @@ class OnboardingButton extends StatelessWidget {
       ),
       child: FlatButton(
         child: Text(
-          AppLocalization.of(context).start,
+          AppLocalizations.of(context).start,
           style: TextStyle(color: Colors.white),
         ),
         onPressed: () {},

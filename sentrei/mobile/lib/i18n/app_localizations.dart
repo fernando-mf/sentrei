@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:sentrei/i18n/i18n.dart';
 
-class AppLocalization {
-  static Future<AppLocalization> load(Locale locale) {
+class AppLocalizations {
+  static Future<AppLocalizations> load(Locale locale) {
     final String name =
         locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      return AppLocalization();
+      return AppLocalizations();
     });
   }
 
-  static AppLocalization of(BuildContext context) {
-    return Localizations.of<AppLocalization>(context, AppLocalization);
+  static AppLocalizations of(BuildContext context) {
+    return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
   String get start {
