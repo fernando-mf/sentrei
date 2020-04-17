@@ -1,14 +1,6 @@
-data "google_iam_policy" "owner" {
-  binding {
-    role = "roles/owner"
-
-    members = [
-      "user:shunkakinoki@gmail.com",
-      "user:shunkakinoki@sentrei.com",
-    ]
-  }
-}
-resource "google_project_iam_policy" "owner" {
-  project     = "sentrei-${var.environment}"
-  policy_data = data.google_iam_policy.owner.policy_data
+resource "google_project_iam_member" "owner" {
+  for_each = toset(var.environments)
+  project  = "sentrei-${each.value}"
+  role     = "roles/owner"
+  member   = "user:shunkakinoki@gmail.com"
 }
