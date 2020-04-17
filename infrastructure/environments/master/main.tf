@@ -10,6 +10,11 @@ module "github" {
   source = "../../modules/github"
 }
 
+module "iam" {
+  source      = "../../modules/iam"
+  environment = var.environment
+}
+
 module "storage" {
   source      = "../../modules/storage"
   environment = var.environment
