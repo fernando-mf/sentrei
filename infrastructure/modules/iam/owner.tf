@@ -9,5 +9,6 @@ data "google_iam_policy" "owner" {
   }
 }
 resource "google_project_iam_policy" "owner" {
+  project     = "sentrei-${var.environment}"
   policy_data = data.google_iam_policy.owner.policy_data
 }
