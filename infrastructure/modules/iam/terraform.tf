@@ -20,7 +20,7 @@ resource "google_project_iam_member" "terraform_project_iam_admin" {
 }
 
 resource "google_project_iam_member" "terraform_dns_admin" {
-  for_each = toset(var.environments)
+  for_each = setintersection(toset(var.environments), toset(["master"]))
   project  = "sentrei-${each.value}"
   role     = "roles/dns.admin"
   member   = "serviceAccount:${google_service_account.terraform[each.value].email}"
