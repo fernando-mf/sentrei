@@ -11,8 +11,8 @@ module "github" {
 }
 
 module "iam" {
-  source      = "../../modules/iam"
-  environment = var.environment
+  source       = "../../modules/iam"
+  environments = ["master"]
 }
 
 module "storage" {
