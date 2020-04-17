@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sentrei/const/const.dart';
+import 'package:sentrei/routers/routers.dart';
 import 'package:sentrei/i18n/i18n.dart';
 
 class OnboardingButton extends StatelessWidget {
@@ -18,7 +19,9 @@ class OnboardingButton extends StatelessWidget {
             AppLocalizations.of(context).start,
             style: TextStyle(color: Colors.white),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, RouteNames.loginPage);
+          },
         ),
       ),
     );
