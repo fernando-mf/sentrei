@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sentrei/const/const.dart';
 
 Widget signupWidget() {
   return Container(
@@ -8,7 +7,6 @@ Widget signupWidget() {
       children: <Widget>[
         Text(
           'Don\'t have an account?',
-          style: TextStyles.textSize12,
         ),
         FlatButton(
           onPressed: () {
@@ -16,7 +14,6 @@ Widget signupWidget() {
           },
           child: Text(
             'Sign Up',
-            style: TextStyles.textSize12,
           ),
         )
       ],

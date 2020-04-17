@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sentrei/app/app.dart';
 import 'package:sentrei/const/const.dart';
 import 'package:sentrei/i18n/i18n.dart';
 import 'package:sentrei/widgets/widgets.dart';
@@ -11,12 +12,22 @@ class ProgressSection extends Container {
         gradient: GradientBgs.react,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          Spacer(flex: 3),
+          HeadlineText(
+            AppLocalizations.of(context).lifeopsAsAService,
+            AppLocalizations.of(context).learnAndGrow,
+          ),
+          Spacer(flex: 1),
           LoadAssetImage('progress'),
-          Text(AppLocalization.of(context).progress),
+          Spacer(flex: 1),
+          ProgressDot(
+            dotsCount: 3,
+            position: 2,
+          ),
+          Spacer(flex: 1),
+          OnboardingButton(),
+          Spacer(flex: 3),
         ],
       ),
     );

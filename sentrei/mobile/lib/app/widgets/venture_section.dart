@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sentrei/app/app.dart';
 import 'package:sentrei/const/const.dart';
+import 'package:sentrei/i18n/i18n.dart';
 import 'package:sentrei/widgets/widgets.dart';
 
 class VentureSection extends Container {
@@ -10,11 +12,21 @@ class VentureSection extends Container {
         gradient: GradientBgs.ultra,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          Spacer(flex: 3),
+          HeadlineText(
+            AppLocalizations.of(context).organizeYourLife,
+            AppLocalizations.of(context).throughInsightfulMetrics,
+          ),
+          Spacer(flex: 1),
           LoadAssetImage('venture'),
+          Spacer(flex: 1),
+          ProgressDot(
+            dotsCount: 3,
+          ),
+          Spacer(flex: 1),
+          OnboardingButton(),
+          Spacer(flex: 3),
         ],
       ),
     );

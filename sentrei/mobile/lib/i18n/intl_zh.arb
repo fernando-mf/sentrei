@@ -1,7 +1,37 @@
 {
-  "@@last_modified": "2020-04-16T15:24:27.377813",
-  "Progress": "进展",
-  "@Progress": {
+  "@@last_modified": "2020-04-16T20:25:13.893427",
+  "Start": "??",
+  "@Start": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Organize Your Life": "Organize Your Life",
+  "@Organize Your Life": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "through insightful metrics": "through insightful metrics",
+  "@through insightful metrics": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Go Bold": "Go Bold",
+  "@Go Bold": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "see the bigger picture": "see the bigger picture",
+  "@see the bigger picture": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "LifeOps as a Service": "LifeOps as a Service",
+  "@LifeOps as a Service": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "learn and grow": "learn and grow",
+  "@learn and grow": {
     "type": "text",
     "placeholders": {}
   }

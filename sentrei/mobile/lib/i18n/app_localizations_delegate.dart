@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sentrei/i18n/i18n.dart';
 
-class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {
+class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
   final Locale overriddenLocale;
 
   const AppLocalizationDelegate({this.overriddenLocale});
@@ -14,8 +14,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {
       ].contains(locale.languageCode);
 
   @override
-  Future<AppLocalization> load(Locale locale) => AppLocalization.load(locale);
+  Future<AppLocalizations> load(Locale locale) => AppLocalizations.load(locale);
 
   @override
-  bool shouldReload(LocalizationsDelegate<AppLocalization> old) => false;
+  bool shouldReload(LocalizationsDelegate<AppLocalizations> old) => false;
 }

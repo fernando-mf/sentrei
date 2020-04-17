@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sentrei/const/const.dart';
 
 Widget headlinesWidget() {
   return Container(
@@ -10,14 +9,12 @@ Widget headlinesWidget() {
         Text(
           'WELCOME BACK!',
           textAlign: TextAlign.left,
-          style: TextStyles.textSize12,
         ),
         Container(
           margin: EdgeInsets.only(top: 48.0),
           child: Text(
             'Log in \nto continue.',
             textAlign: TextAlign.left,
-            style: TextStyles.textSize12,
           ),
         )
       ],

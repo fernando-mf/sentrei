@@ -54,4 +54,13 @@ class GradientBgs {
       Color(0xFFFF6E7F),
     ],
   );
+
+  static LinearGradient shonan = LinearGradient(
+    begin: Alignment.centerLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0xFF4776E6),
+      Color(0xFF8E54E9),
+    ],
+  );
 }
