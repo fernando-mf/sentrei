@@ -25,3 +25,10 @@ resource "google_project_iam_member" "terraform_dns_admin" {
   role     = "roles/dns.admin"
   member   = "serviceAccount:${google_service_account.terraform[each.value].email}"
 }
+
+resource "google_project_iam_member" "terraform_storage_admin" {
+  for_each = toset(var.environments)
+  project  = "sentrei-${each.value}"
+  role     = "roles/storage.admin"
+  member   = "serviceAccount:${google_service_account.terraform[each.value].email}"
+}
