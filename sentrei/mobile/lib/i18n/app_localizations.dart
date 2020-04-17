@@ -23,9 +23,39 @@ class AppLocalization {
     );
   }
 
-  String get progress {
+  String get organizeYourLife {
     return Intl.message(
-      'Progress',
+      'Organize Your Life',
+    );
+  }
+
+  String get throughInsightfulMetrics {
+    return Intl.message(
+      'through insightful metrics',
+    );
+  }
+
+  String get goBold {
+    return Intl.message(
+      'Go Bold',
+    );
+  }
+
+  String get seeTheBiggerPicture {
+    return Intl.message(
+      'see the bigger picture',
+    );
+  }
+
+  String get lifeopsAsAService {
+    return Intl.message(
+      'LifeOps as a Service',
+    );
+  }
+
+  String get learnAndGrow {
+    return Intl.message(
+      'learn and grow',
     );
   }
 }

@@ -1,12 +1,37 @@
 {
-  "@@last_modified": "2020-04-16T20:26:41.591313",
+  "@@last_modified": "2020-04-17T10:06:24.760145",
   "Start": "Start",
   "@Start": {
     "type": "text",
     "placeholders": {}
   },
-  "Progress": "Progress",
-  "@Progress": {
+  "Organize Your Life": "Organize Your Life",
+  "@Organize Your Life": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "through insightful metrics": "through insightful metrics",
+  "@through insightful metrics": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Go Bold": "Go Bold",
+  "@Go Bold": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "see the bigger picture": "see the bigger picture",
+  "@see the bigger picture": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "LifeOps as a Service": "LifeOps as a Service",
+  "@LifeOps as a Service": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "learn and grow": "learn and grow",
+  "@learn and grow": {
     "type": "text",
     "placeholders": {}
   }
