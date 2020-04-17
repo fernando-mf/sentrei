@@ -1,3 +1,9 @@
+# [3.13.0](https://github.com/sentrei/sentrei/compare/v3.12.4...v3.13.0) (2020-04-17)
+
+### Features
+
+- 🎸 add terraform multiple environments ([edd5545](https://github.com/sentrei/sentrei/commit/edd5545f0d312336e2121435e37c640ca9b535f8))
+
 ## [3.12.4](https://github.com/sentrei/sentrei/compare/v3.12.3...v3.12.4) (2020-04-16)
 
 ### Bug Fixes
