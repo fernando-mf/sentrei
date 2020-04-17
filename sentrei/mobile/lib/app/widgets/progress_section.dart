@@ -12,20 +12,20 @@ class ProgressSection extends Container {
         gradient: GradientBgs.react,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          Spacer(flex: 3),
           HeadlineText(
             AppLocalizations.of(context).lifeopsAsAService,
             AppLocalizations.of(context).learnAndGrow,
           ),
+          Spacer(flex: 1),
           LoadAssetImage('progress'),
           ProgressDot(
             dotsCount: 3,
-            position: 2,
           ),
+          Spacer(flex: 1),
           OnboardingButton(),
+          Spacer(flex: 3),
         ],
       ),
     );

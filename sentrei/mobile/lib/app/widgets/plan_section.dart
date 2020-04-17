@@ -12,20 +12,21 @@ class PlanSection extends Container {
         gradient: GradientBgs.lavender,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          Spacer(flex: 3),
           HeadlineText(
             AppLocalizations.of(context).goBold,
             AppLocalizations.of(context).seeTheBiggerPicture,
           ),
+          Spacer(flex: 1),
           LoadAssetImage('plan'),
           ProgressDot(
             dotsCount: 3,
             position: 1,
           ),
+          Spacer(flex: 1),
           OnboardingButton(),
+          Spacer(flex: 3),
         ],
       ),
     );

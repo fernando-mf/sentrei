@@ -12,19 +12,20 @@ class VentureSection extends Container {
         gradient: GradientBgs.ultra,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          Spacer(flex: 3),
           HeadlineText(
             AppLocalizations.of(context).organizeYourLife,
             AppLocalizations.of(context).throughInsightfulMetrics,
           ),
+          Spacer(flex: 1),
           LoadAssetImage('venture'),
           ProgressDot(
             dotsCount: 3,
           ),
+          Spacer(flex: 1),
           OnboardingButton(),
+          Spacer(flex: 3),
         ],
       ),
     );
