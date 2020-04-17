@@ -20,8 +20,10 @@ class ProgressSection extends Container {
           ),
           Spacer(flex: 1),
           LoadAssetImage('progress'),
+          Spacer(flex: 1),
           ProgressDot(
             dotsCount: 3,
+            position: 2,
           ),
           Spacer(flex: 1),
           OnboardingButton(),

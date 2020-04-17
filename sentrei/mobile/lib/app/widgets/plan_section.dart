@@ -20,6 +20,7 @@ class PlanSection extends Container {
           ),
           Spacer(flex: 1),
           LoadAssetImage('plan'),
+          Spacer(flex: 1),
           ProgressDot(
             dotsCount: 3,
             position: 1,

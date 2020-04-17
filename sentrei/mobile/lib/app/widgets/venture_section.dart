@@ -20,6 +20,7 @@ class VentureSection extends Container {
           ),
           Spacer(flex: 1),
           LoadAssetImage('venture'),
+          Spacer(flex: 1),
           ProgressDot(
             dotsCount: 3,
           ),
