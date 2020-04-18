@@ -10,9 +10,9 @@ encrypt:
 	keytool -genkey -v -keystore android/key/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
 	gpg --symmetric --cipher-algo AES256 android/key/api.json
 	gpg --symmetric --cipher-algo AES256 android/key/key.jks
-	gpg --symmetric --cipher-algo AES256 android/key/alpha/sentrei-alpha.json
-	gpg --symmetric --cipher-algo AES256 android/key/beta/sentrei-beta.json
-	gpg --symmetric --cipher-algo AES256 android/key/master/sentrei-master.json
+	gpg --symmetric --cipher-algo AES256 android/key/test-lab-alpha.json
+	gpg --symmetric --cipher-algo AES256 android/key/test-lab-beta.json
+	gpg --symmetric --cipher-algo AES256 android/key/test-lab-master.json
 
 export:
 	keytool -exportcert -alias key -keystore android/key/key.jks | openssl sha1 -binary | openssl base64

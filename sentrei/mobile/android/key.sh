@@ -4,11 +4,11 @@ gpg --quiet --batch --yes --decrypt --passphrase="$APP_SIGN_PWD" \
 gpg --quiet --batch --yes --decrypt --passphrase="$APP_SIGN_PWD" \
 --output key/key.jks key/key.jks.gpg
 gpg --quiet --batch --yes --decrypt --passphrase="$APP_SIGN_PWD" \
---output key/alpha/sentrei-alpha.json key/alpha/sentrei-alpha.json.gpg
+--output key/test-lab-alpha.json key/test-lab-alpha.json.gpg
 gpg --quiet --batch --yes --decrypt --passphrase="$APP_SIGN_PWD" \
---output key/beta/sentrei-beta.json key/beta/sentrei-beta.json.gpg
+--output key/test-lab-beta.json key/test-lab-beta.json.gpg
 gpg --quiet --batch --yes --decrypt --passphrase="$APP_SIGN_PWD" \
---output key/master/sentrei-master.json key/master/sentrei-master.json.gpg
+--output key/test-lab-master.json key/test-lab-master.json.gpg
 
 echo "storePassword=$APP_SIGN_PWD" >> key.properties
 echo "keyPassword=$APP_SIGN_PWD" >> key.properties
