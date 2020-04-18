@@ -1,3 +1,9 @@
+## [3.13.3](https://github.com/sentrei/sentrei/compare/v3.13.2...v3.13.3) (2020-04-18)
+
+### Bug Fixes
+
+- 🐛 add test lab secret keys ([6f90cf2](https://github.com/sentrei/sentrei/commit/6f90cf28ed17f8ad202a6267e0037e6ea2cebe97))
+
 ## [3.13.2](https://github.com/sentrei/sentrei/compare/v3.13.1...v3.13.2) (2020-04-18)
 
 ### Bug Fixes
