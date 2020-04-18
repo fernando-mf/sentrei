@@ -54,7 +54,7 @@ platform :android do
     )
     firebase_test_lab_android(
       project_id: "sentrei-alpha",
-      gcloud_service_key_file: "key/alpha/sentrei-alpha.json",
+      gcloud_service_key_file: "key/test-lab-alpha.json",
       type: "robo",
       devices: [
         {
@@ -103,7 +103,7 @@ platform :android do
     )
     firebase_test_lab_android(
       project_id: "sentrei-beta",
-      gcloud_service_key_file: "key/beta/sentrei-beta.json",
+      gcloud_service_key_file: "key/test-lab-beta.json",
       type: "robo",
       devices: [
         {
@@ -148,7 +148,7 @@ platform :android do
     )
     firebase_test_lab_android(
       project_id: "sentrei-master",
-      gcloud_service_key_file: "key/master/sentrei-master.json",
+      gcloud_service_key_file: "key/test-lab-master.json",
       type: "robo",
       devices: [
         {
@@ -181,7 +181,7 @@ platform :android do
       )
       firebase_test_lab_android(
         project_id: "sentrei-alpha",
-        gcloud_service_key_file: "key/alpha/sentrei-alpha.json",
+        gcloud_service_key_file: "key/test-lab-alpha.json",
         type: "robo",
         devices: [
           {
@@ -206,7 +206,7 @@ platform :android do
       )
       firebase_test_lab_android(
         project_id: "sentrei-beta",
-        gcloud_service_key_file: "key/beta/sentrei-beta.json",
+        gcloud_service_key_file: "key/test-lab-beta.json",
         type: "robo",
         devices: [
           {
@@ -231,7 +231,7 @@ platform :android do
       )
       firebase_test_lab_android(
         project_id: "sentrei-master",
-        gcloud_service_key_file: "key/master/sentrei-master.json",
+        gcloud_service_key_file: "key/test-lab-master.json",
         type: "robo",
         devices: [
           {
