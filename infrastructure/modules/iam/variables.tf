@@ -1,3 +1,3 @@
-variable "environments" {
-  type = list(string)
+variable "environment" {
+  type = string
 }
