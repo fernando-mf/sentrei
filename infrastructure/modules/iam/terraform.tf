@@ -16,6 +16,12 @@ resource "google_project_iam_member" "terraform_project_iam_admin" {
   member  = "serviceAccount:${google_service_account.terraform.email}"
 }
 
+resource "google_project_iam_member" "terraform_service_account_admin" {
+  project = "sentrei-${var.environment}"
+  role    = "roles/iam.serviceAccountAdmin"
+  member  = "serviceAccount:${google_service_account.terraform.email}"
+}
+
 resource "google_project_iam_member" "terraform_dns_admin" {
   count   = var.environment == "master" ? 1 : 0
   project = "sentrei-${var.environment}"
