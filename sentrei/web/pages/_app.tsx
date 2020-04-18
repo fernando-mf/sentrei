@@ -3,6 +3,16 @@ import Head from "next/head";
 import {AppProps} from "next/app";
 import {ThemeProvider} from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import {createMuiTheme} from "@material-ui/core/styles";
+import purple from "@material-ui/core/colors/purple";
+import green from "@material-ui/core/colors/green";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: purple,
+    secondary: green,
+  },
+});
 
 export default function MyApp(props: AppProps) {
   const {Component, pageProps} = props;

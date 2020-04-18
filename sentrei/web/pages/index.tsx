@@ -2,7 +2,6 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import Copyright from "@sentrei/common/src/components/Copyright";
 
 export default function Index() {
   return (
@@ -11,7 +10,6 @@ export default function Index() {
         <Typography variant="h4" component="h1" gutterBottom>
           Next.js with TypeScript example
         </Typography>
-        <Copyright />
       </Box>
     </Container>
   );

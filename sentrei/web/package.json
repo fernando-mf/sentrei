@@ -15,9 +15,12 @@
   "dependencies": {
     "@material-ui/core": "^4.9.10",
     "@sentrei/common": "^3.13.3",
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.4.0",
     "next": "^9.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "recharts": "^1.8.5",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
