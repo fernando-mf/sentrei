@@ -1,23 +1,28 @@
 {
-  "hosting": [{
+  "hosting": [
+    {
       "site": "sentrei-beta-web",
       "target": "web",
       "public": "out",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [{
-        "source": "**",
-        "destination": "/index.html"
-      }]
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     },
     {
       "site": "sentrei-staging-beta-web",
       "target": "staging-web",
       "public": "out",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [{
-        "source": "**",
-        "destination": "/index.html"
-      }]
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }
