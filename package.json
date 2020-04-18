@@ -15,13 +15,15 @@
   "scripts": {
     "eclint-check": "eclint check $(git ls-files)",
     "eclint-fix": "eclint fix $(git ls-files)",
-    "fix": "yarn eclint-fix && yarn prettier-fix",
-    "lint": "yarn eclint-check && yarn prettier-check",
+    "fix": "yarn eclint-fix && yarn prettier-fix && yarn sort-package-json",
+    "lint": "yarn eclint-check && yarn prettier-check && yarn sort-package-json-check",
     "prettier-check": "prettier --check .",
     "prettier-fix": "prettier --write .",
     "publish": "lerna publish from-package --yes",
     "release": "semantic-release",
     "release-test": "semantic-release -d",
+    "sort-package-json": "sort-package-json 'package.json' 'sentrei/*/package.json'",
+    "sort-package-json-check": "sort-package-json 'package.json' 'sentrei/*/package.json' --check",
     "test": "yarn lint && yarn release-test"
   },
   "husky": {
@@ -38,6 +40,7 @@
     "husky": "^4.2.3",
     "lerna": "^3.20.2",
     "prettier": "^2.0.4",
-    "semantic-release": "^17.0.4"
+    "semantic-release": "^17.0.4",
+    "sort-package-json": "^1.42.0"
   }
 }
