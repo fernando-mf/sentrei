@@ -129,10 +129,11 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile
-      - name: Generate docs
+      - name: Generate web
         working-directory: sentrei/web
         run: |
           yarn run build
+          yarn run export
       - name: Deployment pending
         uses: deliverybot/deployment-status@master
         with:
@@ -159,10 +160,3 @@ jobs:
           environment-url: ${{ github.event.deployment.payload.url }}
           state: failure
           token: ${{ secrets.GITHUB_TOKEN }}
-  context:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
