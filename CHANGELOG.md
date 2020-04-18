@@ -1,3 +1,9 @@
+## [3.13.4](https://github.com/sentrei/sentrei/compare/v3.13.3...v3.13.4) (2020-04-18)
+
+### Bug Fixes
+
+- 🐛 deploy web gha ([0e1a33a](https://github.com/sentrei/sentrei/commit/0e1a33a064d63cc9215f84aad8c2bc05830cb967))
+
 ## [3.13.3](https://github.com/sentrei/sentrei/compare/v3.13.2...v3.13.3) (2020-04-18)
 
 ### Bug Fixes
