@@ -1,3 +1,9 @@
+## [3.13.2](https://github.com/sentrei/sentrei/compare/v3.13.1...v3.13.2) (2020-04-18)
+
+### Bug Fixes
+
+- 🐛 change to secret repo for ios ([f60f573](https://github.com/sentrei/sentrei/commit/f60f573cb1ff6b445253facd21512457f80ce0b1))
+
 ## [3.13.1](https://github.com/sentrei/sentrei/compare/v3.13.0...v3.13.1) (2020-04-17)
 
 ### Bug Fixes
