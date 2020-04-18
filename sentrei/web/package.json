@@ -9,6 +9,9 @@
   },
   "license": "MIT",
   "author": "Shun Kakinoki",
+  "scripts": {
+    "dev": "next"
+  },
   "dependencies": {
     "@material-ui/core": "^4.9.10",
     "@sentrei/common": "^3.13.3",
