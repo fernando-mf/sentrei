@@ -45,6 +45,14 @@
 
 ### Web 🌐
 
+<!-- prettier-ignore-start -->
+| Version | Web |
+| ------- | --- |
+| alpha | https://alpha.sentrei.com |
+| beta | https://beta.sentrei.com |
+| master | https://sentrei.com |
+<!-- prettier-ignore-end -->
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

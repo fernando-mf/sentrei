@@ -1,7 +1,7 @@
 resource "github_repository" "sentrei" {
   name         = "sentrei"
   description  = "Official sentrei app"
-  homepage_url = "https://docs.sentrei.com/"
+  homepage_url = "https://sentrei.com"
   private      = false
   has_issues   = true
   has_projects = true
@@ -22,7 +22,7 @@ resource "github_branch_protection" "alpha" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "context", "flutter", "ready", "terraform (alpha)", "terraform (beta)", "terraform (master)", "yarn", "atlas/sentrei/sentrei-master", "Semantic Pull Request", "WIP"]
+    contexts = ["auto-approve", "context", "flutter", "ready", "terraform (alpha)", "terraform (beta)", "terraform (master)", "yarn", "atlas/sentrei/sentrei-alpha", "Semantic Pull Request", "WIP"]
   }
 }
 
@@ -38,7 +38,7 @@ resource "github_branch_protection" "beta" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "context", "flutter", "ready", "terraform (alpha)", "terraform (beta)", "terraform (master)", "yarn", "atlas/sentrei/sentrei-master", "Semantic Pull Request", "WIP"]
+    contexts = ["auto-approve", "context", "flutter", "ready", "terraform (alpha)", "terraform (beta)", "terraform (master)", "yarn", "atlas/sentrei/sentrei-beta", "Semantic Pull Request", "WIP"]
   }
 }
 
