@@ -12,7 +12,7 @@ module "github" {
 
 module "iam" {
   source       = "../../modules/iam"
-  environments = ["master"]
+  environments = ["alpha", "beta", "master"]
 }
 
 module "storage" {
