@@ -1,0 +1,39 @@
+{
+  "projects": {
+    "alpha": "sentrei-alpha",
+    "beta": "sentrei-beta",
+    "master": "sentrei-master"
+  },
+  "targets": {
+    "sentrei-alpha": {
+      "hosting": {
+        "web": [
+          "sentrei-alpha-web"
+        ],
+        "staging-web": [
+          "sentrei-staging-alpha-web"
+        ]
+      }
+    },
+    "sentrei-beta": {
+      "hosting": {
+        "web": [
+          "sentrei-beta-web"
+        ],
+        "staging-web": [
+          "sentrei-staging-beta-web"
+        ]
+      }
+    },
+    "sentrei-master": {
+      "hosting": {
+        "web": [
+          "sentrei-master-web"
+        ],
+        "staging-web": [
+          "sentrei-staging-master-web"
+        ]
+      }
+    }
+  }
+}
