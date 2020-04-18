@@ -1,0 +1,23 @@
+{
+  "hosting": [{
+      "site": "sentrei-alpha-web",
+      "target": "web",
+      "public": "out",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [{
+        "source": "**",
+        "destination": "/index.html"
+      }]
+    },
+    {
+      "site": "sentrei-staging-alpha-web",
+      "target": "staging-web",
+      "public": "out",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [{
+        "source": "**",
+        "destination": "/index.html"
+      }]
+    }
+  ]
+}

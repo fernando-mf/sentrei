@@ -55,6 +55,9 @@
 # Mobile related.
 **/mobile/firebase.json
 
+# Web related.
+**/web/firebase.json
+
 # Firebase related.
 **/.firebase
 

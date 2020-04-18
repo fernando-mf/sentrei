@@ -62,3 +62,51 @@ mobile-staging-master:
   payload:
     type: mobile
     url: https://staging.mobile.sentrei.com
+web-production-alpha:
+  auto_deploy_on: refs/heads/alpha
+  environment: "Web Production Alpha"
+  production_environment: true
+  task: alpha
+  payload:
+    type: web
+    url: https://alpha.sentrei.com
+web-staging-alpha:
+  environment: "Web Staging Alpha PR ${{ pr }}"
+  transient_environment: true
+  production_environment: false
+  task: staging-alpha
+  payload:
+    type: web
+    url: https://staging.alpha.sentrei.com
+web-production-beta:
+  auto_deploy_on: refs/heads/beta
+  environment: "Web Production Beta"
+  production_environment: true
+  task: beta
+  payload:
+    type: web
+    url: https://beta.sentrei.com
+web-staging-beta:
+  environment: "Web Staging Beta PR ${{ pr }}"
+  transient_environment: true
+  production_environment: false
+  task: staging-beta
+  payload:
+    type: web
+    url: https://staging.beta.sentrei.com
+web-production-master:
+  auto_deploy_on: refs/heads/master
+  environment: "Web Production Master"
+  production_environment: true
+  task: master
+  payload:
+    type: web
+    url: https://sentrei.com
+web-staging-master:
+  environment: "Web Staging Master PR ${{ pr }}"
+  transient_environment: true
+  production_environment: false
+  task: staging-master
+  payload:
+    type: web
+    url: https://staging.sentrei.com
