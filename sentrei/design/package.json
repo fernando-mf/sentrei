@@ -10,15 +10,15 @@
   "license": "MIT",
   "author": "Shun Kakinoki",
   "scripts": {
-    "design": "firebase use master && firebase deploy --only hosting:design --token $FIREBASE_TOKEN",
-    "staging-design": "firebase use master && firebase deploy --only hosting:staging-design --token $FIREBASE_TOKEN",
     "build": "vuepress build src",
-    "dev": "vuepress dev src"
-  },
-  "publishConfig": {
-    "access": "public"
+    "design": "firebase use master && firebase deploy --only hosting:design --token $FIREBASE_TOKEN",
+    "dev": "vuepress dev src",
+    "staging-design": "firebase use master && firebase deploy --only hosting:staging-design --token $FIREBASE_TOKEN"
   },
   "dependencies": {
     "vuepress": "^1.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
