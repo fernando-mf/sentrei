@@ -61,7 +61,7 @@ platform :ios do
       readonly: is_ci,
       keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
       keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
-      git_url: "https://github.com/shunkakinoki/ios-certificates.git",
+      git_url: ENV['SECRET_REPO'],
       git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}"),
     )
     build_ios_app(
@@ -126,7 +126,7 @@ platform :ios do
       readonly: is_ci,
       keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
       keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
-      git_url: "https://github.com/shunkakinoki/ios-certificates.git",
+      git_url: ENV['SECRET_REPO'],
       git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}"),
     )
     build_ios_app(
@@ -188,7 +188,7 @@ platform :ios do
       readonly: is_ci,
       keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
       keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
-      git_url: "https://github.com/shunkakinoki/ios-certificates.git",
+      git_url: ENV['SECRET_REPO'],
       git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}"),
     )
     build_ios_app(
