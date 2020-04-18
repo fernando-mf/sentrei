@@ -1,34 +1,30 @@
 resource "google_service_account" "terraform" {
-  for_each     = toset(var.environments)
-  project      = "sentrei-${each.value}"
+  project      = "sentrei-${var.environment}"
   account_id   = "terraform"
   display_name = "terraform"
 }
 
 resource "google_project_iam_member" "terraform_service_account_user" {
-  for_each = toset(var.environments)
-  project  = "sentrei-${each.value}"
-  role     = "roles/iam.serviceAccountUser"
-  member   = "serviceAccount:${google_service_account.terraform[each.value].email}"
+  project = "sentrei-${var.environment}"
+  role    = "roles/iam.serviceAccountUser"
+  member  = "serviceAccount:${google_service_account.terraform.email}"
 }
 
 resource "google_project_iam_member" "terraform_project_iam_admin" {
-  for_each = toset(var.environments)
-  project  = "sentrei-${each.value}"
-  role     = "roles/resourcemanager.projectIamAdmin"
-  member   = "serviceAccount:${google_service_account.terraform[each.value].email}"
+  project = "sentrei-${var.environment}"
+  role    = "roles/resourcemanager.projectIamAdmin"
+  member  = "serviceAccount:${google_service_account.terraform.email}"
 }
 
 resource "google_project_iam_member" "terraform_dns_admin" {
-  for_each = setintersection(toset(var.environments), toset(["master"]))
-  project  = "sentrei-${each.value}"
-  role     = "roles/dns.admin"
-  member   = "serviceAccount:${google_service_account.terraform[each.value].email}"
+  count   = var.environment == "master" ? 1 : 0
+  project = "sentrei-${var.environment}"
+  role    = "roles/dns.admin"
+  member  = "serviceAccount:${google_service_account.terraform.email}"
 }
 
 resource "google_project_iam_member" "terraform_storage_admin" {
-  for_each = toset(var.environments)
-  project  = "sentrei-${each.value}"
-  role     = "roles/storage.admin"
-  member   = "serviceAccount:${google_service_account.terraform[each.value].email}"
+  project = "sentrei-${var.environment}"
+  role    = "roles/storage.admin"
+  member  = "serviceAccount:${google_service_account.terraform.email}"
 }
