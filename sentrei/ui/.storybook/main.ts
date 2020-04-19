@@ -25,25 +25,7 @@ module.exports = {
       ],
       include: [path.resolve(__dirname, "../src")],
     });
-    config.module?.rules.push({
-      test: /\.styl$/,
-      use: [
-        "style-loader",
-        {
-          loader: "css-loader",
-          options: {
-            importLoaders: 1,
-            sourceMap: false,
-            modules: {
-              localIdentName: "[path][name]__[local]",
-            },
-          },
-        },
-        "stylus-loader",
-      ],
-      include: [path.resolve(__dirname, "../src")],
-    });
-    config.resolve?.extensions?.push(".ts", ".tsx", "styl");
+    config.resolve?.extensions?.push(".ts", ".tsx");
     config.performance = false;
     return config;
   },

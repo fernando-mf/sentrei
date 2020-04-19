@@ -38,6 +38,9 @@
     "react-docgen-typescript-loader": "^3.7.2",
     "typescript": "^3.8.3"
   },
+  "scripts": {
+    "storybook": "start-storybook -p 9009 -s public"
+  },
   "publishConfig": {
     "access": "public"
   }
