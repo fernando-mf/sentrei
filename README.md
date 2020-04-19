@@ -28,9 +28,9 @@
 ### Design 🎨
 
 <!-- prettier-ignore-start -->
-| Version | Const | Mobile | Web | Docs |
-| ------- | ----- | ------ | --- | ---- |
-| master | [LINK](https://www.figma.com/file/FcE7ACUUJAey0gspwpFN48/const) | [LINK](https://www.figma.com/file/0HJCBXV4H81774BKNzdTPs/mobile) | [LINK](https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web) | https://design.sentrei.com |
+| Version | Const | Mobile | Web | Storybook | Docs |
+| ------- | ----- | ------ | --- | --------- | ---- |
+| master | [LINK](https://www.figma.com/file/FcE7ACUUJAey0gspwpFN48/const) | [LINK](https://www.figma.com/file/0HJCBXV4H81774BKNzdTPs/mobile) | [LINK](https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web) | https://storybook.sentrei.com | shttps://design.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ### Mobile 📱
