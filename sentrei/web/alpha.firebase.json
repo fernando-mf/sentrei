@@ -25,7 +25,8 @@
         {
           "source": "**/**",
           "function": "hosting"
-      }]
+        }
+      ]
     }
   ]
 }
