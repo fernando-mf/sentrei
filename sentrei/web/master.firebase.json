@@ -16,12 +16,7 @@
   },
   "functions": {
     "source": "dist/functions",
-    "predeploy": [
-      "yarn run build-functions",
-      "yarn run build-next",
-      "yarn run deps-copy",
-      "yarn run deps-install"
-    ]
+    "predeploy": ["yarn run prepare-hosting"]
   },
   "hosting": [
     {
@@ -29,7 +24,7 @@
       "target": "web",
       "public": "dist/functions",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "predeploy": ["yarn run build", "yarn run export"],
+      "predeploy": ["yarn run prepare-web"],
       "rewrites": [
         {
           "source": "**/**",
@@ -42,7 +37,7 @@
       "target": "staging-web",
       "public": "dist/public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "predeploy": ["yarn run build-public"],
+      "predeploy": ["yarn run prepare-web"],
       "rewrites": [
         {
           "source": "**/**",
