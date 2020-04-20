@@ -1,3 +1,9 @@
+# [3.15.0](https://github.com/sentrei/sentrei/compare/v3.14.0...v3.15.0) (2020-04-20)
+
+### Features
+
+- 🎸 init next ssr ([ec7dc31](https://github.com/sentrei/sentrei/commit/ec7dc31c3370c16025fcf1520ef95a3fb746a3e2))
+
 # [3.14.0](https://github.com/sentrei/sentrei/compare/v3.13.4...v3.14.0) (2020-04-20)
 
 ### Features
