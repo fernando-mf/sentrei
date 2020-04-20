@@ -7,7 +7,7 @@ module.exports = {
       },
     };
   },
-  webpack: config => {
+  webpack: (config) => {
     config.resolve.extensions = [".web.js", ".js", ".jsx", ".json"];
 
     return config;
