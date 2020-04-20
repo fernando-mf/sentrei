@@ -1,28 +1,52 @@
 {
+  "emulators": {
+    "firestore": {
+      "port": "8080"
+    },
+    "functions": {
+      "port": "5001"
+    },
+    "database": {
+      "port": "9000"
+    },
+    "hosting": {
+      "host": "localhost",
+      "port": "5000"
+    }
+  },
+  "functions": {
+    "source": "dist/functions",
+    "predeploy": [
+      "yarn run build-functions",
+      "yarn run build-next",
+      "yarn run deps-copy",
+      "yarn run deps-install"
+    ]
+  },
   "hosting": [
     {
       "site": "sentrei-master-web",
       "target": "web",
-      "public": "out",
+      "public": "dist/functions",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "predeploy": ["yarn run build", "yarn run export"],
       "rewrites": [
         {
-          "source": "**",
-          "destination": "/index.html"
+          "source": "**/**",
+          "function": "nextApp"
         }
       ]
     },
     {
       "site": "sentrei-staging-master-web",
       "target": "staging-web",
-      "public": "out",
+      "public": "dist/public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "predeploy": ["yarn run build", "yarn run export"],
+      "predeploy": ["yarn run build-public"],
       "rewrites": [
         {
-          "source": "**",
-          "destination": "/index.html"
+          "source": "**/**",
+          "function": "nextApp"
         }
       ]
     }
