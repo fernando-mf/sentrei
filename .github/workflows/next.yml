@@ -1,8 +1,5 @@
 name: Next
 on: pull_request
-env:
-  flutter_channel: "stable"
-  flutter_version: "1.12.13+hotfix.9"
 jobs:
   next:
     runs-on: ubuntu-latest
@@ -16,7 +13,7 @@ jobs:
           node-version: "12.x"
       - name: Cache node modules
         id: cache
-        uses: actions/cache@vs1
+        uses: actions/cache@v1
         with:
           path: node_modules
           key: node-v1-${{ hashFiles('**/yarn.lock') }}
