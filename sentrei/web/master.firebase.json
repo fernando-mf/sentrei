@@ -1,19 +1,4 @@
 {
-  "emulators": {
-    "firestore": {
-      "port": "8080"
-    },
-    "functions": {
-      "port": "5001"
-    },
-    "database": {
-      "port": "9000"
-    },
-    "hosting": {
-      "host": "localhost",
-      "port": "5000"
-    }
-  },
   "functions": {
     "source": "dist/functions",
     "predeploy": ["yarn run prepare-hosting"]
@@ -28,7 +13,7 @@
       "rewrites": [
         {
           "source": "**/**",
-          "function": "nextApp"
+          "function": "hosting"
         }
       ]
     },
@@ -41,7 +26,7 @@
       "rewrites": [
         {
           "source": "**/**",
-          "function": "nextApp"
+          "function": "hosting"
         }
       ]
     }
