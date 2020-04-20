@@ -1,0 +1,56 @@
+name: Next
+on: pull_request
+env:
+  flutter_channel: "stable"
+  flutter_version: "1.12.13+hotfix.9"
+jobs:
+  next:
+    runs-on: ubuntu-latest
+    if: ${{ needs.change.outputs.change }} == 'true'
+    needs: change
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Cache node modules
+        id: cache
+        uses: actions/cache@vs1
+        with:
+          path: node_modules
+          key: node-v1-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            node-v1-
+      - name: Extract PR number
+        run: |
+          echo ::set-env name=PR_NUMBER::$(echo "$GITHUB_REF" | awk -F / '{print $3}')
+      - id: change
+        run: |
+          git fetch --quiet
+          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/next/src; then
+            echo ::set-output name=changed::false && exit 0
+          else
+            echo ::set-output name=changed::true && exit 0
+          fi
+      - if: steps.change.outputs.changed == 'true'
+        working-directory: sentrei/web
+        run: |
+          yarn run build
+      # - if: steps.change.outputs.changed == 'true'
+      #   working-directory: sentrei/web
+      #   run: |
+      #     flutter analyze
+      # - if: steps.change.outputs.changed == 'true'
+      #   working-directory: sentrei/mobile
+      #   run: |
+      #     flutter test --coverage
+      # - name: Upload coverage to Codecov
+      #   if: steps.change.outputs.changed == 'true'
+      #   uses: codecov/codecov-action@v1
+      #   with:
+      #     file: sentrei/mobile/coverage/lcov.info
+      #     name: sentrei
+      #     fail_ci_if_error: true
+      #     flags: mobile

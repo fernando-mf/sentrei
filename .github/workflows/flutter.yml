@@ -4,21 +4,6 @@ env:
   flutter_channel: "stable"
   flutter_version: "1.12.13+hotfix.9"
 jobs:
-  change:
-    runs-on: ubuntu-latest
-    outputs:
-      change: ${{ steps.change.outputs.change }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - id: change
-        run: |
-          git fetch --quiet
-          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/mobile/lib; then
-            echo ::set-output name=change::false && exit 0
-          else
-            echo ::set-output name=change::true && exit 0
-          fi
   flutter:
     runs-on: ubuntu-latest
     if: ${{ needs.change.outputs.change }} == 'true'
