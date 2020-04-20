@@ -11,6 +11,7 @@
   "author": "Shun Kakinoki",
   "scripts": {
     "alpha": "yarn run swap-alpha && firebase use alpha && firebase deploy --only hosting:web --token $FIREBASE_TOKEN",
+    "analyze": "cross-env ANALYZE=true next build",
     "beta": "yarn run swap-beta && firebase use beta && firebase deploy --only hosting:web --token $FIREBASE_TOKEN",
     "build": "next build",
     "dev": "next",
@@ -25,9 +26,12 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.9.10",
+    "@next/bundle-analyzer": "^9.3.5",
     "@sentrei/common": "^3.13.3",
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.4.0",
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.6.0",
     "next": "^9.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -39,6 +43,8 @@
     "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
+    "cpx": "^1.5.0",
+    "rimraf": "^3.0.2",
     "typescript": "^3.8.3"
   },
   "publishConfig": {

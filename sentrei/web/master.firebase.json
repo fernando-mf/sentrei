@@ -5,6 +5,7 @@
       "target": "web",
       "public": "out",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run build", "yarn run export"],
       "rewrites": [
         {
           "source": "**",
@@ -17,6 +18,7 @@
       "target": "staging-web",
       "public": "out",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run build", "yarn run export"],
       "rewrites": [
         {
           "source": "**",

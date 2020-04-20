@@ -27,10 +27,6 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile
-      - name: Generate docs
-        working-directory: sentrei/design
-        run: |
-          yarn run build
       - name: Deployment pending
         uses: deliverybot/deployment-status@master
         with:
@@ -129,11 +125,6 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile
-      - name: Generate web
-        working-directory: sentrei/web
-        run: |
-          yarn run build
-          yarn run export
       - name: Deployment pending
         uses: deliverybot/deployment-status@master
         with:

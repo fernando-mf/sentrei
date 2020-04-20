@@ -57,6 +57,7 @@
 
 # Web related.
 **/web/firebase.json
+**/web/out
 
 # Firebase related.
 **/.firebase

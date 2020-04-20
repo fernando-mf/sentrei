@@ -2,6 +2,7 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import Button from "../components/Button";
 
 export default function Index() {
   return (
@@ -11,6 +12,7 @@ export default function Index() {
           Next.js with TypeScript example
         </Typography>
       </Box>
+      <Button />
     </Container>
   );
 }

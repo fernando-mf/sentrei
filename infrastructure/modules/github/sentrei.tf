@@ -7,7 +7,7 @@ resource "github_repository" "sentrei" {
   has_projects = true
   has_wiki     = false
 
-  topics = ["flutter", "flutter-app", "flutter-ui"]
+  topics = ["ios", "android", "webapp", "flutter", "flutter-app", "flutter-ui"]
 }
 
 resource "github_branch_protection" "alpha" {

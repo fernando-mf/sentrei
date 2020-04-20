@@ -9,6 +9,7 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/sentrei/sentrei/graphs/commit-activity)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://storybook.sentrei.com)
 [![Effective Dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)
 [![mergify-status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei&style=flat)](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei&style=flat)
 [![dependabot-status](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)
@@ -28,9 +29,9 @@
 ### Design 🎨
 
 <!-- prettier-ignore-start -->
-| Version | Const | Mobile | Web | Docs |
-| ------- | ----- | ------ | --- | ---- |
-| master | [LINK](https://www.figma.com/file/FcE7ACUUJAey0gspwpFN48/const) | [LINK](https://www.figma.com/file/0HJCBXV4H81774BKNzdTPs/mobile) | [LINK](https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web) | https://design.sentrei.com |
+| Version | Const | Mobile | Web | Storybook | Docs |
+| ------- | ----- | ------ | --- | --------- | ---- |
+| master | [LINK](https://www.figma.com/file/FcE7ACUUJAey0gspwpFN48/const) | [LINK](https://www.figma.com/file/0HJCBXV4H81774BKNzdTPs/mobile) | [LINK](https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web) | https://storybook.sentrei.com | shttps://design.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ### Mobile 📱
