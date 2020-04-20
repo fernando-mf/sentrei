@@ -7,7 +7,7 @@
     {
       "site": "sentrei-master-web",
       "target": "web",
-      "public": "dist/functions",
+      "public": "dist/public",
       "predeploy": ["yarn run prepare-web"],
       "rewrites": [
         {
@@ -25,8 +25,7 @@
         {
           "source": "**/**",
           "function": "hosting"
-        }
-      ]
+      }]
     }
   ]
 }

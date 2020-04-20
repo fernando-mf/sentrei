@@ -3,32 +3,25 @@
     "source": "dist/functions",
     "predeploy": ["yarn run prepare-hosting"]
   },
-  "hosting": [
-    {
+  "hosting": [{
       "site": "sentrei-beta-web",
       "target": "web",
-      "public": "dist/functions",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "public": "dist/public",
       "predeploy": ["yarn run prepare-web"],
-      "rewrites": [
-        {
-          "source": "**/**",
-          "function": "hosting"
-        }
-      ]
+      "rewrites": [{
+        "source": "**/**",
+        "function": "hosting"
+      }]
     },
     {
       "site": "sentrei-staging-beta-web",
       "target": "staging-web",
       "public": "dist/public",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "predeploy": ["yarn run prepare-web"],
-      "rewrites": [
-        {
-          "source": "**/**",
-          "function": "hosting"
-        }
-      ]
+      "rewrites": [{
+        "source": "**/**",
+        "function": "hosting"
+      }]
     }
   ]
 }
