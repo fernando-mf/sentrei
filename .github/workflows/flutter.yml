@@ -6,6 +6,7 @@ env:
 jobs:
   flutter:
     runs-on: ubuntu-latest
+    if: $(git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/mobile/lib)
     steps:
       - name: Checkout
         uses: actions/checkout@v2
