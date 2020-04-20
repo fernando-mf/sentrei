@@ -1,31 +1,30 @@
 {
-  "hosting": [{
+  "hosting": [
+    {
       "site": "sentrei-master-web",
       "target": "web",
       "public": "out",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "predeploy": [
-        "yarn run build",
-        "yarn run export"
-      ],
-      "rewrites": [{
-        "source": "**",
-        "destination": "/index.html"
-      }]
+      "predeploy": ["yarn run build", "yarn run export"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     },
     {
       "site": "sentrei-staging-master-web",
       "target": "staging-web",
       "public": "out",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "predeploy": [
-        "yarn run build",
-        "yarn run export"
-      ],
-      "rewrites": [{
-        "source": "**",
-        "destination": "/index.html"
-      }]
+      "predeploy": ["yarn run build", "yarn run export"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }
