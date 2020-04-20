@@ -134,7 +134,7 @@ jobs:
       - name: Deploy to firebase
         working-directory: sentrei/web
         run: |
-          yarn run ${{ github.event.deployment.task }}
+          yarn run ${{ github.event.deployment.task }} --ignore-engines
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deployment success
