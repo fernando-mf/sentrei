@@ -7,6 +7,9 @@
     "url": "https://github.com/sentrei/sentrei.git",
     "directory": "sentrei/web"
   },
+  "engines": {
+    "node": "10"
+  },
   "license": "MIT",
   "author": "Shun Kakinoki",
   "scripts": {
@@ -16,10 +19,10 @@
     "build-public": "cpx 'src/public/**/*.*' 'dist/public' -C",
     "build-next": "next build",
     "build-functions": "tsc --project src/functions",
-    "deploy-functions": "firebase deploy --only functions:nex",
+    "deploy-hosting": "firebase deploy --only functions:hosting",
     "deploy-web": "firebase deploy --only hosting:web --token $FIREBASE_TOKEN",
     "deploy-staging-web": "firebase deploy --only hosting:staging-web --token $FIREBASE_TOKEN",
-    "deps-copy": "cpx '*{package.json}' 'dist/functions' -C",
+    "deps-copy": "cpx package.json dist/functions -C",
     "deps-install": "cd dist/functions && yarn install",
     "dev": "next",
     "export": "next export",

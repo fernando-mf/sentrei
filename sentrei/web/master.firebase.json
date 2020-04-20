@@ -1,11 +1,26 @@
 {
+  "emulators": {
+    "firestore": {
+      "port": "8080"
+    },
+    "functions": {
+      "port": "5001"
+    },
+    "database": {
+      "port": "9000"
+    },
+    "hosting": {
+      "host": "localhost",
+      "port": "5000"
+    }
+  },
   "functions": {
     "source": "dist/functions",
     "predeploy": [
       "yarn run build-functions",
       "yarn run build-next",
-      "yarn run copy-deps",
-      "yarn run install-deps"
+      "yarn run deps-copy",
+      "yarn run deps-install"
     ]
   },
   "hosting": [{
@@ -15,7 +30,7 @@
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "predeploy": ["yarn run build", "yarn run export"],
       "rewrites": [{
-        "source": "**",
+        "source": "**/**",
         "function": "nextApp"
       }]
     },
@@ -26,7 +41,7 @@
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "predeploy": ["yarn run build-public"],
       "rewrites": [{
-        "source": "**",
+        "source": "**/**",
         "function": "nextApp"
       }]
     }
