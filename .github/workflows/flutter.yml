@@ -7,7 +7,6 @@ jobs:
   flutter:
     runs-on: ubuntu-latest
     if: ${{ needs.change.outputs.change }} == 'true'
-    needs: change
     steps:
       - name: Checkout
         uses: actions/checkout@v2

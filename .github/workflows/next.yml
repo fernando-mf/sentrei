@@ -7,7 +7,6 @@ jobs:
   next:
     runs-on: ubuntu-latest
     if: ${{ needs.change.outputs.change }} == 'true'
-    needs: change
     steps:
       - uses: actions/checkout@v2
         with:
