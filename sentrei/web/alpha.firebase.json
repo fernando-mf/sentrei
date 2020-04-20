@@ -1,26 +1,32 @@
 {
+  "functions": {
+    "source": "dist/functions",
+    "predeploy": ["yarn run prepare-hosting"]
+  },
   "hosting": [
     {
       "site": "sentrei-alpha-web",
       "target": "web",
-      "public": "out",
+      "public": "dist/functions",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run prepare-web"],
       "rewrites": [
         {
-          "source": "**",
-          "destination": "/index.html"
+          "source": "**/**",
+          "function": "hosting"
         }
       ]
     },
     {
       "site": "sentrei-staging-alpha-web",
       "target": "staging-web",
-      "public": "out",
+      "public": "dist/public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run prepare-web"],
       "rewrites": [
         {
-          "source": "**",
-          "destination": "/index.html"
+          "source": "**/**",
+          "function": "hosting"
         }
       ]
     }
