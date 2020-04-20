@@ -43,7 +43,7 @@ jobs:
       - name: Install dependencies with yarn
         if: steps.yarn.outputs.cache-hit != 'true'
         run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --ignore-engines
       - name: Extract branch name
         id: branch
         shell: bash
