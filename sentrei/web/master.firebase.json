@@ -16,20 +16,21 @@
   },
   "functions": {
     "source": "dist/functions",
-    "predeploy": [
-      "yarn run prepare-hosting"
-    ]
+    "predeploy": ["yarn run prepare-hosting"]
   },
-  "hosting": [{
+  "hosting": [
+    {
       "site": "sentrei-master-web",
       "target": "web",
       "public": "dist/functions",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "predeploy": ["yarn run prepare-web"],
-      "rewrites": [{
-        "source": "**/**",
-        "function": "nextApp"
-      }]
+      "rewrites": [
+        {
+          "source": "**/**",
+          "function": "nextApp"
+        }
+      ]
     },
     {
       "site": "sentrei-staging-master-web",
@@ -37,10 +38,12 @@
       "public": "dist/public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "predeploy": ["yarn run prepare-web"],
-      "rewrites": [{
-        "source": "**/**",
-        "function": "nextApp"
-      }]
+      "rewrites": [
+        {
+          "source": "**/**",
+          "function": "nextApp"
+        }
+      ]
     }
   ]
 }
