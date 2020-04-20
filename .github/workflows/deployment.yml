@@ -124,7 +124,7 @@ jobs:
       - name: Install dependencies with yarn
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --ignore-engines
       - name: Deployment pending
         uses: deliverybot/deployment-status@master
         with:
