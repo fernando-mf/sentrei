@@ -32,7 +32,7 @@ jobs:
         uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           target_url: ${{ github.event.client_payload.url_prefix }}design.sentrei.com
       - name: Deploy to firebase
         working-directory: sentrei/design
@@ -44,7 +44,7 @@ jobs:
         if: success()
         uses: chrnorm/deployment-status@releases/v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           target_url: ${{ github.event.client_payload.url_prefix }}design.sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
@@ -52,7 +52,7 @@ jobs:
         if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           target_url: ${{ github.event.client_payload.url_prefix }}design.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
@@ -83,7 +83,7 @@ jobs:
         uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           target_url: ${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
       - name: Deploy to firebase
         working-directory: sentrei/mobile
@@ -95,7 +95,7 @@ jobs:
         if: success()
         uses: chrnorm/deployment-status@releases/v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           target_url: ${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
@@ -103,7 +103,7 @@ jobs:
         if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           target_url: ${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
@@ -133,7 +133,7 @@ jobs:
         uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           target_url: ${{ github.event.client_payload.url_prefix }}sentrei.com
       - name: Deploy to firebase
         working-directory: sentrei/web
@@ -145,7 +145,7 @@ jobs:
         if: success()
         uses: chrnorm/deployment-status@releases/v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           target_url: ${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
@@ -153,7 +153,7 @@ jobs:
         if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           target_url: ${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
