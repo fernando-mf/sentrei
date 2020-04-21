@@ -59,6 +59,7 @@ jobs:
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - name: Dispatch event
+        if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -118,6 +119,7 @@ jobs:
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - name: Dispatch event
+        if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -176,6 +178,7 @@ jobs:
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - name: Dispatch event
+        if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
