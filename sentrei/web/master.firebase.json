@@ -4,25 +4,29 @@
       "site": "sentrei-master-web",
       "target": "web",
       "public": "dist/public",
-      "rewrites": [{
-        "source": "**",
-        "run": {
-          "serviceId": "sentrei-master-web",
-          "region": "us-central1"
+      "rewrites": [
+        {
+          "source": "**",
+          "run": {
+            "serviceId": "sentrei-master-web",
+            "region": "us-central1"
+          }
         }
-      }]
+      ]
     },
     {
       "site": "sentrei-staging-master-web",
       "target": "staging-web",
       "public": "dist/public",
-      "rewrites": [{
-        "source": "**",
-        "run": {
-          "serviceId": "sentrei-staging-master-web",
-          "region": "us-central1"
+      "rewrites": [
+        {
+          "source": "**",
+          "run": {
+            "serviceId": "sentrei-staging-master-web",
+            "region": "us-central1"
+          }
         }
-      }]
+      ]
     }
   ]
 }
