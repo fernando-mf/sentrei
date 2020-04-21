@@ -9,3 +9,8 @@ export const hosting = functions.https.onRequest((req, res) => {
   console.log("File: " + req.originalUrl);
   return app.prepare().then(() => handle(req, res));
 });
+
+export const stagingHosting = functions.https.onRequest((req, res) => {
+  console.log("File: " + req.originalUrl);
+  return app.prepare().then(() => handle(req, res));
+});

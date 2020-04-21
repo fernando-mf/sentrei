@@ -24,7 +24,7 @@
       "rewrites": [
         {
           "source": "**/**",
-          "function": "hosting"
+          "function": "stagingHosting"
         }
       ]
     }
