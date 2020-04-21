@@ -15,6 +15,10 @@ module "iam" {
   environment = var.environment
 }
 
+module "secret" {
+  source = "../../modules/secret"
+}
+
 module "storage" {
   source      = "../../modules/storage"
   environment = var.environment
