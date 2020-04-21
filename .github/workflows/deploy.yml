@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies with yarn
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          yarn install --frozen-lockfile --ignore-engines
+          yarn install --frozen-lockfile
       - name: Create GitHub deployment
         uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -82,7 +82,7 @@ jobs:
       - name: Install dependencies with yarn
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          yarn install --frozen-lockfile --ignore-engines
+          yarn install --frozen-lockfile
       - name: Generate docs
         working-directory: sentrei/mobile
         run: |
@@ -134,7 +134,7 @@ jobs:
           ref: ${{ github.event.client_payload.branch }}
       - uses: actions/setup-node@v1
         with:
-          node-version: "10.x"
+          node-version: "13.x"
       - name: Cache node modules
         id: cache
         uses: actions/cache@v1
@@ -146,7 +146,7 @@ jobs:
       - name: Install dependencies with yarn
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          yarn install --frozen-lockfile --ignore-engines
+          yarn install --frozen-lockfile
       - name: Create GitHub deployment
         uses: chrnorm/deployment-action@releases/v1
         id: deployment

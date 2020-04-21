@@ -9,7 +9,7 @@ jobs:
           ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v1
         with:
-          node-version: "10.x"
+          node-version: "13.x"
       - name: Cache node modules
         id: cache
         uses: actions/cache@v1
@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies with yarn
         if: steps.change.outputs.changed == 'true' && steps.cache.outputs.cache-hit != 'true'
         run: |
-          yarn install --frozen-lockfile --ignore-engines
+          yarn install --frozen-lockfile
       - if: steps.change.outputs.changed == 'true'
         working-directory: sentrei/web
         run: |
