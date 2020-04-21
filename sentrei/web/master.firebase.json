@@ -1,32 +1,28 @@
 {
-  "functions": {
-    "source": "dist/functions",
-    "predeploy": ["yarn run prepare-hosting"]
-  },
   "hosting": [
     {
       "site": "sentrei-master-web",
       "target": "web",
       "public": "dist/public",
-      "predeploy": ["yarn run prepare-web"],
-      "rewrites": [
-        {
-          "source": "**/**",
-          "function": "hosting"
+      "rewrites": [{
+        "source": "**",
+        "run": {
+          "serviceId": "sentrei-master-web",
+          "region": "us-central1"
         }
-      ]
+      }]
     },
     {
       "site": "sentrei-staging-master-web",
       "target": "staging-web",
       "public": "dist/public",
-      "predeploy": ["yarn run prepare-web"],
-      "rewrites": [
-        {
-          "source": "**/**",
-          "function": "stagingHosting"
+      "rewrites": [{
+        "source": "**",
+        "run": {
+          "serviceId": "sentrei-staging-master-web",
+          "region": "us-central1"
         }
-      ]
+      }]
     }
   ]
 }
