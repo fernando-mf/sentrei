@@ -50,15 +50,12 @@ jobs:
       - name: Install dependencies with yarn
         if: steps.yarn.outputs.cache-hit != 'true'
         run: |
-          yarn install --frozen-lockfile --ignore-engines
+          yarn install --frozen-lockfile
       - name: Release
         run: |
           yarn run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Restore yarn.lock
-        run: |
-          git restore yarn.lock
       - name: Update package versions
         run: |
           version=$(node -pe "require('./package.json').version")
