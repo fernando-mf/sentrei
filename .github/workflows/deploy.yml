@@ -28,12 +28,12 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile --ignore-engines
-      - name: Deployment pending
-        uses: deliverybot/deployment-status@master
+      - name: Create GitHub deployment
+        uses: chrnorm/deployment-action@releases/v1
+        id: deployment
         with:
-          environment-url: ${{ github.event.client_payload.url_prefix }}.design.sentrei.com
-          state: pending
           token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: ${{ github.event.client_payload.url_prefix }}.design.sentrei.com
       - name: Deploy to firebase
         working-directory: sentrei/design
         run: |
@@ -42,18 +42,20 @@ jobs:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deployment success
         if: success()
-        uses: deliverybot/deployment-status@master
+        uses: chrnorm/deployment-status@releases/v1
         with:
-          environment-url: ${{ github.event.client_payload.url_prefix }}.design.sentrei.com
-          state: success
           token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: ${{ github.event.client_payload.url_prefix }}.design.sentrei.com
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - name: Deployment failure
         if: failure()
-        uses: deliverybot/deployment-status@master
+        uses: chrnorm/deployment-status@releases/v1
         with:
-          environment-url: ${{ github.event.client_payload.url_prefix }}.design.sentrei.com
-          state: failure
           token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: ${{ github.event.client_payload.url_prefix }}.design.sentrei.com
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
   mobile:
     if: github.event.client_payload.event_name == 'mobile'
     runs-on: ubuntu-latest
@@ -77,12 +79,12 @@ jobs:
         run: |
           flutter pub global activate dartdoc
           flutter pub global run dartdoc:dartdoc --exclude 'dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart:ui,dart:ffi,dart:html,dart:js,dart:js_util'
-      - name: Deployment pending
-        uses: deliverybot/deployment-status@master
+      - name: Create GitHub deployment
+        uses: chrnorm/deployment-action@releases/v1
+        id: deployment
         with:
-          environment-url: ${{ github.event.client_payload.url_prefix }}.mobile.sentrei.com
-          state: pending
           token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: ${{ github.event.client_payload.url_prefix }}.mobile.sentrei.com
       - name: Deploy to firebase
         working-directory: sentrei/mobile
         run: |
@@ -91,18 +93,20 @@ jobs:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deployment success
         if: success()
-        uses: deliverybot/deployment-status@master
+        uses: chrnorm/deployment-status@releases/v1
         with:
-          environment-url: ${{ github.event.client_payload.url_prefix }}.mobile.sentrei.com
-          state: success
           token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: ${{ github.event.client_payload.url_prefix }}.mobile.sentrei.com
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - name: Deployment failure
         if: failure()
-        uses: deliverybot/deployment-status@master
+        uses: chrnorm/deployment-status@releases/v1
         with:
-          environment-url: ${{ github.event.client_payload.url_prefix }}.mobile.sentrei.com
-          state: failure
           token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: ${{ github.event.client_payload.url_prefix }}.mobile.sentrei.com
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
   web:
     if: github.event.client_payload.event_name == 'web'
     runs-on: ubuntu-latest
@@ -125,12 +129,12 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile --ignore-engines
-      - name: Deployment pending
-        uses: deliverybot/deployment-status@master
+      - name: Create GitHub deployment
+        uses: chrnorm/deployment-action@releases/v1
+        id: deployment
         with:
-          environment-url: ${{ github.event.client_payload.url_prefix }}.sentrei.com
-          state: pending
           token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: ${{ github.event.client_payload.url_prefix }}.sentrei.com
       - name: Deploy to firebase
         working-directory: sentrei/web
         run: |
@@ -139,15 +143,17 @@ jobs:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deployment success
         if: success()
-        uses: deliverybot/deployment-status@master
+        uses: chrnorm/deployment-status@releases/v1
         with:
-          environment-url: ${{ github.event.client_payload.url_prefix }}.sentrei.com
-          state: success
           token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: ${{ github.event.client_payload.url_prefix }}.sentrei.com
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - name: Deployment failure
         if: failure()
-        uses: deliverybot/deployment-status@master
+        uses: chrnorm/deployment-status@releases/v1
         with:
-          environment-url: ${{ github.event.client_payload.url_prefix }}.sentrei.com
-          state: failure
           token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: ${{ github.event.client_payload.url_prefix }}.sentrei.com
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
