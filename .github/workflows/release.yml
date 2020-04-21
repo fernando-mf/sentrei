@@ -102,7 +102,7 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
-          client-payload: '{"branch": "${{ needs.context.outputs.branch }}", "environment": "production", "event_name": "design", "task": "${{ needs.context.outputs.branch }}", "url_prefix": ""}'
+          client-payload: '{"branch": "${{ needs.context.outputs.branch }}", "environment": "production", "event_name": "design", "task": "design", "url_prefix": ""}'
   mobile:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest

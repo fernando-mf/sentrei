@@ -1,9 +1,9 @@
-name: Ready
+name: LGTM
 on:
   repository_dispatch:
-    types: [ready-cmd]
+    types: [lgtm-cmd]
 jobs:
-  ready:
+  lgtm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@0.9.0

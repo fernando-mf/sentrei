@@ -14,7 +14,7 @@
     "event_type_suffix": "-cmd"
   },
   {
-    "command": "ready",
+    "command": "lgtm",
     "permission": "admin",
     "issue_type": "pull-request",
     "allow_edits": true,
@@ -28,16 +28,16 @@
     "event_type_suffix": "-cmd"
   },
   {
-    "command": "sync",
+    "command": "staging",
     "permission": "none",
-    "issue_type": "both",
+    "issue_type": "pull-request",
     "allow_edits": true,
     "event_type_suffix": "-cmd"
   },
   {
-    "command": "staging",
+    "command": "sync",
     "permission": "none",
-    "issue_type": "pull-request",
+    "issue_type": "both",
     "allow_edits": true,
     "event_type_suffix": "-cmd"
   },
