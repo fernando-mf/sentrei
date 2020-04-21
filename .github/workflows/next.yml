@@ -3,7 +3,6 @@ on: pull_request
 jobs:
   next:
     runs-on: ubuntu-latest
-    if: ${{ needs.change.outputs.change }} == 'true'
     steps:
       - uses: actions/checkout@v2
         with:
@@ -30,6 +29,13 @@ jobs:
           else
             echo ::set-output name=changed::true && exit 0
           fi
+      - name: Dispatch event
+        if: steps.change.outputs.changed == 'true'
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: deploy-cmd
+          client-payload: '{"branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "web", "task": "staging-${{ github.event.pull_request.base.ref }}", "url_prefix": "${{ github.event.pull_request.base.ref }}.staging."}'
       - if: steps.change.outputs.changed == 'true'
         working-directory: sentrei/web
         run: |
