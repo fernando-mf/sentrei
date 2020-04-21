@@ -24,11 +24,15 @@ jobs:
       - id: change
         run: |
           git fetch --quiet
-          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/web/next/src; then
+          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/web/src; then
             echo ::set-output name=changed::false && exit 0
           else
             echo ::set-output name=changed::true && exit 0
           fi
+      - name: Install dependencies with yarn
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          yarn install --frozen-lockfile --ignore-engines
       - if: steps.change.outputs.changed == 'true'
         working-directory: sentrei/web
         run: |
