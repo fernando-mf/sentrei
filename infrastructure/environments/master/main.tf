@@ -20,8 +20,7 @@ module "iam" {
 }
 
 module "secret" {
-  provider = google-beta
-  source   = "../../modules/secret"
+  source = "../../modules/secret"
 }
 
 module "storage" {
