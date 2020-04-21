@@ -4,25 +4,29 @@
       "site": "sentrei-beta-web",
       "target": "web",
       "public": "dist/public",
-      "rewrites": [{
-        "source": "**",
-        "run": {
-          "serviceId": "sentrei-beta-web",
-          "region": "us-central1"
+      "rewrites": [
+        {
+          "source": "**",
+          "run": {
+            "serviceId": "sentrei-beta-web",
+            "region": "us-central1"
+          }
         }
-      }]
+      ]
     },
     {
       "site": "sentrei-staging-beta-web",
       "target": "staging-web",
       "public": "dist/public",
-      "rewrites": [{
-        "source": "**",
-        "run": {
-          "serviceId": "sentrei-staging-beta-web",
-          "region": "us-central1"
+      "rewrites": [
+        {
+          "source": "**",
+          "run": {
+            "serviceId": "sentrei-staging-beta-web",
+            "region": "us-central1"
+          }
         }
-      }]
+      ]
     }
   ]
 }

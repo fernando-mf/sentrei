@@ -4,25 +4,29 @@
       "site": "sentrei-alpha-web",
       "target": "web",
       "public": "dist/public",
-      "rewrites": [{
-        "source": "**",
-        "run": {
-          "serviceId": "sentrei-alpha-web",
-          "region": "us-central1"
+      "rewrites": [
+        {
+          "source": "**",
+          "run": {
+            "serviceId": "sentrei-alpha-web",
+            "region": "us-central1"
+          }
         }
-      }]
+      ]
     },
     {
       "site": "sentrei-staging-alpha-web",
       "target": "staging-web",
       "public": "dist/public",
-      "rewrites": [{
-        "source": "**",
-        "run": {
-          "serviceId": "sentrei-staging-alpha-web",
-          "region": "us-central1"
+      "rewrites": [
+        {
+          "source": "**",
+          "run": {
+            "serviceId": "sentrei-staging-alpha-web",
+            "region": "us-central1"
+          }
         }
-      }]
+      ]
     }
   ]
 }
