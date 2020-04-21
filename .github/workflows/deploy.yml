@@ -1,17 +1,18 @@
-name: Deployment
-on: deployment
+name: Deploy
+on:
+  repository_dispatch:
+    types: [deploy-cmd]
 env:
   flutter_channel: "stable"
   flutter_version: "1.12.13+hotfix.9"
 jobs:
   design:
-    if: github.event.deployment.payload.type == 'design'
+    if: github.event.client_payload.event_name == 'design'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.event.client_payload.branch }}
       - uses: actions/setup-node@v1
         with:
           node-version: "13.x"
@@ -30,36 +31,36 @@ jobs:
       - name: Deployment pending
         uses: deliverybot/deployment-status@master
         with:
-          environment-url: ${{ github.event.deployment.payload.url }}
+          environment-url: ${{ github.event.client_payload.url_prefix }}.design.sentrei.com
           state: pending
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to firebase
         working-directory: sentrei/design
         run: |
-          yarn run ${{ github.event.deployment.task }}
+          yarn run ${{ github.event.client_payload.task }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deployment success
         if: success()
         uses: deliverybot/deployment-status@master
         with:
-          environment-url: ${{ github.event.deployment.payload.url }}
+          environment-url: ${{ github.event.client_payload.url_prefix }}.design.sentrei.com
           state: success
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deployment failure
         if: failure()
         uses: deliverybot/deployment-status@master
         with:
-          environment-url: ${{ github.event.deployment.payload.url }}
+          environment-url: ${{ github.event.client_payload.url_prefix }}.design.sentrei.com
           state: failure
           token: ${{ secrets.GITHUB_TOKEN }}
   mobile:
-    if: github.event.deployment.payload.type == 'mobile'
+    if: github.event.client_payload.event_name == 'mobile'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.ref }}
+          ref: ${{ github.event.client_payload.branch }}
       - uses: actions/setup-node@v1
         with:
           node-version: "13.x"
@@ -79,37 +80,36 @@ jobs:
       - name: Deployment pending
         uses: deliverybot/deployment-status@master
         with:
-          environment-url: ${{ github.event.deployment.payload.url }}
+          environment-url: ${{ github.event.client_payload.url_prefix }}.mobile.sentrei.com
           state: pending
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to firebase
         working-directory: sentrei/mobile
         run: |
-          yarn run ${{ github.event.deployment.task }}
+          yarn run ${{ github.event.client_payload.task }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deployment success
         if: success()
         uses: deliverybot/deployment-status@master
         with:
-          environment-url: ${{ github.event.deployment.payload.url }}
+          environment-url: ${{ github.event.client_payload.url_prefix }}.mobile.sentrei.com
           state: success
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deployment failure
         if: failure()
         uses: deliverybot/deployment-status@master
         with:
-          environment-url: ${{ github.event.deployment.payload.url }}
+          environment-url: ${{ github.event.client_payload.url_prefix }}.mobile.sentrei.com
           state: failure
           token: ${{ secrets.GITHUB_TOKEN }}
   web:
-    if: github.event.deployment.payload.type == 'web'
+    if: github.event.client_payload.event_name == 'web'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.event.client_payload.branch }}
       - uses: actions/setup-node@v1
         with:
           node-version: "10.x"
@@ -128,26 +128,26 @@ jobs:
       - name: Deployment pending
         uses: deliverybot/deployment-status@master
         with:
-          environment-url: ${{ github.event.deployment.payload.url }}
+          environment-url: ${{ github.event.client_payload.url_prefix }}.sentrei.com
           state: pending
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to firebase
         working-directory: sentrei/web
         run: |
-          yarn run ${{ github.event.deployment.task }}
+          yarn run ${{ github.event.client_payload.task }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deployment success
         if: success()
         uses: deliverybot/deployment-status@master
         with:
-          environment-url: ${{ github.event.deployment.payload.url }}
+          environment-url: ${{ github.event.client_payload.url_prefix }}.sentrei.com
           state: success
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deployment failure
         if: failure()
         uses: deliverybot/deployment-status@master
         with:
-          environment-url: ${{ github.event.deployment.payload.url }}
+          environment-url: ${{ github.event.client_payload.url_prefix }}.sentrei.com
           state: failure
           token: ${{ secrets.GITHUB_TOKEN }}
