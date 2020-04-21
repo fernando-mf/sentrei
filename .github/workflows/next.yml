@@ -9,7 +9,7 @@ jobs:
           ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v1
         with:
-          node-version: "13.x"
+          node-version: "10.x"
       - name: Cache node modules
         id: cache
         uses: actions/cache@v1
@@ -24,11 +24,19 @@ jobs:
       - id: change
         run: |
           git fetch --quiet
-          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/next/src; then
+          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/web/src; then
             echo ::set-output name=changed::false && exit 0
           else
             echo ::set-output name=changed::true && exit 0
           fi
+      - name: Install dependencies with yarn
+        if: steps.change.outputs.changed == 'true' && steps.cache.outputs.cache-hit != 'true'
+        run: |
+          yarn install --frozen-lockfile --ignore-engines
+      - if: steps.change.outputs.changed == 'true'
+        working-directory: sentrei/web
+        run: |
+          yarn run build-next
       - name: Dispatch event
         if: steps.change.outputs.changed == 'true'
         uses: peter-evans/repository-dispatch@v1
@@ -36,10 +44,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
           client-payload: '{"branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "web", "task": "staging-${{ github.event.pull_request.base.ref }}", "url_prefix": "${{ github.event.pull_request.base.ref }}.staging."}'
-      - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei/web
-        run: |
-          yarn run build
       # - if: steps.change.outputs.changed == 'true'
       #   working-directory: sentrei/web
       #   run: |
