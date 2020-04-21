@@ -27,3 +27,8 @@ jobs:
               repo: context.repo.repo,
               event: 'APPROVE',
             })
+      - uses: micnncim/action-lgtm-reaction@v0.6.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          trigger: '["/lgtm"]'
