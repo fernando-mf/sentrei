@@ -30,13 +30,13 @@ jobs:
             echo ::set-output name=changed::true && exit 0
           fi
       - name: Install dependencies with yarn
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.change.outputs.changed == 'true' && steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile --ignore-engines
       - if: steps.change.outputs.changed == 'true'
         working-directory: sentrei/web
         run: |
-          yarn run build
+          yarn run build-next
       - name: Dispatch event
         if: steps.change.outputs.changed == 'true'
         uses: peter-evans/repository-dispatch@v1
