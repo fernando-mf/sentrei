@@ -6,7 +6,7 @@ resource "google_cloud_run_service" "sentrei_web" {
   template {
     spec {
       containers {
-        image = "gcr.io/sentrei/sentrei:${var.environment}"
+        image = "gcr.io/sentrei-${var.environment}/sentrei:${var.environment}"
       }
     }
   }
@@ -20,7 +20,7 @@ resource "google_cloud_run_service" "sentrei_staging_web" {
   template {
     spec {
       containers {
-        image = "gcr.io/sentrei/sentrei:staging-${var.environment}"
+        image = "gcr.io/sentrei-${var.environment}/sentrei:staging-${var.environment}"
       }
     }
   }
