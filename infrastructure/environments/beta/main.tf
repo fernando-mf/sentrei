@@ -7,6 +7,11 @@ module "iam" {
   environment = var.environment
 }
 
+module "run" {
+  source      = "../../modules/run"
+  environment = var.environment
+}
+
 module "storage" {
   source      = "../../modules/storage"
   environment = var.environment
