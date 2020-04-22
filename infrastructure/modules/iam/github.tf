@@ -15,3 +15,7 @@ resource "google_project_iam_member" "github_project_run_invoker" {
   role    = "roles/run.invoker"
   member  = "serviceAccount:${google_service_account.github.email}"
 }
+
+output "google_service_account_github_email" {
+  value = google_service_account.github.email
+}

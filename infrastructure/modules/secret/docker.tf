@@ -1,6 +1,6 @@
-resource "google_secret_manager_secret" "sentrei" {
+resource "google_secret_manager_secret" "docker" {
   provider  = google-beta
-  secret_id = "sentrei"
+  secret_id = "docker"
 
   replication {
     user_managed {
@@ -13,8 +13,8 @@ resource "google_secret_manager_secret" "sentrei" {
 
 resource "google_secret_manager_secret_iam_member" "github" {
   provider  = google-beta
-  project   = google_secret_manager_secret.sentrei.project
-  secret_id = google_secret_manager_secret.sentrei.secret_id
+  project   = google_secret_manager_secret.docker.project
+  secret_id = google_secret_manager_secret.docker.secret_id
   role      = "roles/viewer"
   member    = "serviceAccount:${var.email}"
 }
