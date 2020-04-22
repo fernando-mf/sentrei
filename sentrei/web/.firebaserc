@@ -30,12 +30,12 @@
         "storybook": [
           "sentrei-storybook"
         ],
+        "staging-storybook": [
+          "sentrei-staging-storybook"
+        ],
         "web": [
           "sentrei-master-web"
         ],
-        "staging-storybook": [
-          "sentrei-staging-storybook"
-        ]
         "staging-web": [
           "sentrei-staging-master-web"
         ]
