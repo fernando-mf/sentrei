@@ -181,7 +181,7 @@ jobs:
           username: _json_key
           password: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
           registry: gcr.io
-          repository: ${{ github.repository }}
+          repository: sentrei-${{ github.event.client_payload.base }}
           tags: ${{ github.event.client_payload.task }}
           path: sentrei/web
           always_pull: false
