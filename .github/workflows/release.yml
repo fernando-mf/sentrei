@@ -121,7 +121,7 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
-          client-payload: '{"branch": "${{ needs.context.outputs.branch }}", "environment": "production", "event_name": "web", "task": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'
+          client-payload: '{"branch": "${{ needs.context.outputs.branch }}", "environment": "production", "event_name": "web", "task": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}.", "base": "${{ needs.context.outputs.branch }}"}'
   fastlane:
     runs-on: ubuntu-latest
     steps:

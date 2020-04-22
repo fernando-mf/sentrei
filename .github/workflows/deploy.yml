@@ -162,6 +162,8 @@ jobs:
           secrets: |-
             DOCKER_USERNAME:sentrei-master/docker_username
             DOCKER_PASSWORD:sentrei-master/docker_password
+            SERVICE_ACCOUNT_EMAIL:sentrei-master/github_email_${{ github.event.client_payload.base }}
+            SERVICE_ACCOUNT_KEY:sentrei-master/github_key_${{ github.event.client_payload.base }}
       - uses: docker/build-push-action@v1
         with:
           username: ${{ steps.secrets.outputs.DOCKER_USERNAME }}
@@ -174,9 +176,9 @@ jobs:
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
           version: "286.0.0"
-          service_account_email: ${{ secrets.RUN_SA_EMAIL }}
-          service_account_key: ${{ secrets.RUN_SA_KEY }}
-          project_id: ${{ github.event.client_payload.project }}
+          service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
+          service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
+          project_id: "sentrei-${{ github.event.client_payload.base }}"
       - name: Deploy
         run: |-
           gcloud run deploy "sentrei-${{ github.event.client_payload.task }}-web" \
