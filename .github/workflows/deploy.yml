@@ -125,6 +125,65 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: lighthouse-cmd
           client-payload: '{"url": "https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com"}'
+  storybook:
+    if: github.event.client_payload.event_name == 'storybook'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "13.x"
+      - name: Cache node modules
+        id: cache
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: node-v1-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            node-v1-
+      - name: Install dependencies with yarn
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          yarn install --frozen-lockfile
+      - name: Create GitHub deployment
+        uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          environment: ${{ github.event.client_payload.environment }}
+          ref: ${{ github.event.client_payload.branch }}
+          token: ${{ secrets.ACCESS_TOKEN }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}storybook.sentrei.com
+      - name: Deploy to firebase
+        working-directory: sentrei/design
+        run: |
+          yarn run storybook-${{ github.event.client_payload.task }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Deployment success
+        if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}storybook.sentrei.com
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - name: Deployment failure
+        if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}storybook.sentrei.com
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - name: Dispatch event
+        if: github.event.client_payload.environment == 'staging'
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: lighthouse-cmd
+          client-payload: '{"url": "https://${{ github.event.client_payload.url_prefix }}storybook.sentrei.com"}'
   web:
     if: github.event.client_payload.event_name == 'web'
     runs-on: ubuntu-latest
