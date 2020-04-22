@@ -10,9 +10,9 @@ resource "google_project_iam_member" "github_service_account_user" {
   member  = "serviceAccount:${google_service_account.github.email}"
 }
 
-resource "google_project_iam_member" "github_project_run_invoker" {
+resource "google_project_iam_member" "github_project_run_admin" {
   project = "sentrei-${var.environment}"
-  role    = "roles/run.invoker"
+  role    = "roles/run.admin"
   member  = "serviceAccount:${google_service_account.github.email}"
 }
 
