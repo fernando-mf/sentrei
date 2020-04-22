@@ -1,3 +1,9 @@
+## [3.16.3](https://github.com/sentrei/sentrei/compare/v3.16.2...v3.16.3) (2020-04-22)
+
+### Bug Fixes
+
+- **deps:** bump fastlane from 2.145.0 to 2.146.0 in /sentrei/mobile/ios ([2214821](https://github.com/sentrei/sentrei/commit/2214821f4177b9ecd4854ad5fbe668ed15a8225d))
+
 ## [3.16.2](https://github.com/sentrei/sentrei/compare/v3.16.1...v3.16.2) (2020-04-22)
 
 ### Bug Fixes
