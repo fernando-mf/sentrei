@@ -11,7 +11,7 @@ resource "google_secret_manager_secret" "docker" {
   }
 }
 
-resource "google_secret_manager_secret_iam_member" "github" {
+resource "google_secret_manager_secret_iam_member" "docker" {
   provider  = google-beta
   project   = google_secret_manager_secret.docker.project
   secret_id = google_secret_manager_secret.docker.secret_id
