@@ -16,5 +16,5 @@ resource "google_secret_manager_secret_iam_member" "github" {
   project   = google_secret_manager_secret.sentrei.project
   secret_id = google_secret_manager_secret.sentrei.secret_id
   role      = "roles/viewer"
-  member    = "user:shunkakinoki@gmail.com"
+  member    = "serviceAccount:${var.email}"
 }

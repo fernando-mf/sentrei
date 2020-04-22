@@ -3,7 +3,6 @@
     {
       "site": "sentrei-alpha-web",
       "target": "web",
-      "public": "dist/public",
       "rewrites": [
         {
           "source": "**",
@@ -17,7 +16,6 @@
     {
       "site": "sentrei-staging-alpha-web",
       "target": "staging-web",
-      "public": "dist/public",
       "rewrites": [
         {
           "source": "**",

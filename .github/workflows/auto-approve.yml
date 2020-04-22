@@ -38,7 +38,7 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-  ready:
+  lgtm:
     runs-on: ubuntu-latest
     steps:
       - name: comment PR

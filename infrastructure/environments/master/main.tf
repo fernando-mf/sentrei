@@ -21,6 +21,7 @@ module "iam" {
 
 module "secret" {
   source = "../../modules/secret"
+  email  = module.iam.google_service_account_github_email
 }
 
 module "storage" {

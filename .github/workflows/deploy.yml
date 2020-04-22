@@ -155,6 +155,12 @@ jobs:
           ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
+      # - id: secrets
+      #   uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
+      #   with:
+      #     credentials: ${{ secrets.gcp_credentials }}
+      #     secrets: |-
+      #       token:sentrei-master/docker
       - name: Deploy to firebase
         working-directory: sentrei/web
         run: |
