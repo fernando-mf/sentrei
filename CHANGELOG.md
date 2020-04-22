@@ -1,3 +1,9 @@
+## [3.16.1](https://github.com/sentrei/sentrei/compare/v3.16.0...v3.16.1) (2020-04-22)
+
+### Bug Fixes
+
+- 🐛 add public dir ([1137162](https://github.com/sentrei/sentrei/commit/1137162127dc020c99b1d29455442462d080615f))
+
 # [3.15.0](https://github.com/sentrei/sentrei/compare/v3.14.0...v3.15.0) (2020-04-20)
 
 ### Features
