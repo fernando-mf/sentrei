@@ -185,7 +185,7 @@ jobs:
       - name: Deploy
         run: |-
           gcloud run deploy "sentrei-${{ github.event.client_payload.task }}-web" \
-            --image "$GITHUB_REPOSITORY:${{ github.event.client_payload.task }}" \
+            --image "docker.io/$GITHUB_REPOSITORY:${{ github.event.client_payload.task }}" \
             --platform "managed" \
             --region "us-central1" \
             --allow-unauthenticated \
