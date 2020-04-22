@@ -171,6 +171,19 @@ jobs:
           tag_with_ref: true
           tag_with_sha: true
           push: true
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: '286.0.0'
+          service_account_email: ${{ secrets.RUN_SA_EMAIL }}
+          service_account_key: ${{ secrets.RUN_SA_KEY }}
+          project_id: ${{ github.event.client_payload.project }}
+      - name: Deploy
+        run: |-
+          gcloud run deploy "sentrei-${{ github.event.client_payload.task }}-web" \
+            --image "$GITHUB_REPOSITORY:${{ github.event.client_payload.task }}" \
+            --platform "managed" \
+            --allow-unauthenticated \
+            --quiet
       - name: Deploy to firebase
         working-directory: sentrei/web
         run: |
