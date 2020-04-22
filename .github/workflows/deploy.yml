@@ -162,8 +162,8 @@ jobs:
           secrets: |-
             DOCKER_USERNAME:sentrei-master/docker_username
             DOCKER_PASSWORD:sentrei-master/docker_password
-            SERVICE_ACCOUNT_EMAIL:sentrei-master/github_email_${{ github.event.client_payload.base }}
-            SERVICE_ACCOUNT_KEY:sentrei-master/github_key_${{ github.event.client_payload.base }}
+            SERVICE_ACCOUNT_EMAIL:sentrei-master/github_${{ github.event.client_payload.base }}_email
+            SERVICE_ACCOUNT_KEY:sentrei-master/github_${{ github.event.client_payload.base }}_key
       - uses: docker/build-push-action@v1
         with:
           username: ${{ steps.secrets.outputs.DOCKER_USERNAME }}

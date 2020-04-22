@@ -1,6 +1,6 @@
-resource "google_secret_manager_secret" "github_email_master" {
+resource "google_secret_manager_secret" "github_master_email" {
   provider  = google-beta
-  secret_id = "github_email_master"
+  secret_id = "github_master_email"
 
   replication {
     user_managed {
@@ -11,7 +11,7 @@ resource "google_secret_manager_secret" "github_email_master" {
   }
 }
 
-resource "google_secret_manager_secret_iam_member" "github_email_master" {
+resource "google_secret_manager_secret_iam_member" "github_master_email" {
   provider  = google-beta
   project   = google_secret_manager_secret.docker_username.project
   secret_id = google_secret_manager_secret.docker_username.secret_id
@@ -19,9 +19,9 @@ resource "google_secret_manager_secret_iam_member" "github_email_master" {
   member    = "serviceAccount:${var.email}"
 }
 
-resource "google_secret_manager_secret" "github_key_master" {
+resource "google_secret_manager_secret" "github_master_key" {
   provider  = google-beta
-  secret_id = "github_key_master"
+  secret_id = "github_master_key"
 
   replication {
     user_managed {
@@ -32,7 +32,7 @@ resource "google_secret_manager_secret" "github_key_master" {
   }
 }
 
-resource "google_secret_manager_secret_iam_member" "github_key_master" {
+resource "google_secret_manager_secret_iam_member" "github_master_key" {
   provider  = google-beta
   project   = google_secret_manager_secret.docker_password.project
   secret_id = google_secret_manager_secret.docker_password.secret_id
