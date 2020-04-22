@@ -25,7 +25,9 @@
     "start": "next start -p 8080",
     "swap-alpha": "cp alpha.firebase.json firebase.json",
     "swap-beta": "cp beta.firebase.json firebase.json",
-    "swap-master": "cp master.firebase.json firebase.json"
+    "swap-master": "cp master.firebase.json firebase.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.10",
@@ -40,13 +42,22 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/react": "^5.3.18",
     "@types/next": "^9.0.0",
     "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
+    "@types/storybook__react": "^5.2.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.1.0",
     "cpx": "^1.5.0",
     "cross-env": "^7.0.2",
     "rimraf": "^3.0.2",
+    "ts-loader": "^7.0.1",
     "typescript": "^3.8.3"
   },
   "publishConfig": {
