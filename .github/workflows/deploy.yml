@@ -187,6 +187,7 @@ jobs:
           gcloud run deploy "sentrei-${{ github.event.client_payload.task }}-web" \
             --image "$GITHUB_REPOSITORY:${{ github.event.client_payload.task }}" \
             --platform "managed" \
+            --region "us-central1" \
             --allow-unauthenticated \
             --quiet
       - name: Deploy to firebase
