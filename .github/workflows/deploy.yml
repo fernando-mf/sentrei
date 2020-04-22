@@ -171,6 +171,8 @@ jobs:
           repository: ${{ github.repository }}
           tags: ${{ github.event.client_payload.task }}
           path: sentrei/web
+          always_pull: true
+          add_git_labels: true
           tag_with_ref: true
           tag_with_sha: true
           push: true
