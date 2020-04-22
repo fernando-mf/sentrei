@@ -2,6 +2,10 @@ provider "google" {
   region = "us-central1"
 }
 
+provider "google-beta" {
+  region = "us-central1"
+}
+
 module "dns" {
   source = "../../modules/dns"
 }
@@ -13,6 +17,10 @@ module "github" {
 module "iam" {
   source      = "../../modules/iam"
   environment = var.environment
+}
+
+module "secret" {
+  source = "../../modules/secret"
 }
 
 module "storage" {
