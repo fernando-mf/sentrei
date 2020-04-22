@@ -19,6 +19,12 @@ resource "google_cloud_run_service" "sentrei_web" {
       }
     }
   }
+
+  traffic {
+    percent         = 30
+    latest_revision = true
+  }
+  autogenerate_revision_name = true
 }
 
 resource "google_cloud_run_service_iam_policy" "sentrei_web" {
@@ -41,6 +47,12 @@ resource "google_cloud_run_service" "sentrei_staging_web" {
       }
     }
   }
+
+  traffic {
+    percent         = 30
+    latest_revision = true
+  }
+  autogenerate_revision_name = true
 }
 
 resource "google_cloud_run_service_iam_policy" "sentrei_staging_web" {
