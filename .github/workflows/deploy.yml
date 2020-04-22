@@ -160,7 +160,17 @@ jobs:
         with:
           credentials: ${{ secrets.GCP_CREDENTIALS }}
           secrets: |-
-            docker:sentrei-master/docker
+            DOCKER_USERNAME:sentrei-master/docker_username
+            DOCKER_PASSWORD:sentrei-master/docker_password
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ steps.secrets.outputs.DOCKER_USERNAME }}
+          password: ${{ steps.secrets.outputs.DOCKER_PASSWORD }}
+          repository: ${{ github.repository }}
+          tags: ${{ github.event.client_payload.task }}
+          tag_with_ref: true
+          tag_with_sha: true
+          push: true
       - name: Deploy to firebase
         working-directory: sentrei/web
         run: |
