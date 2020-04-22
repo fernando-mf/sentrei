@@ -184,7 +184,7 @@ jobs:
           repository: ${{ github.repository }}
           tags: ${{ github.event.client_payload.task }}
           path: sentrei/web
-          always_pull: true
+          always_pull: false
           add_git_labels: true
           tag_with_ref: true
           tag_with_sha: true
@@ -198,7 +198,7 @@ jobs:
       - name: Deploy
         run: |-
           gcloud run deploy "sentrei-${{ github.event.client_payload.task }}-web" \
-            --image "gcr.io/$GITHUB_REPOSITORY:${{ github.event.client_payload.task }}" \
+            --image "gcr.io/sentrei-${{ github.event.client_payload.base }}/sentrei:${{ github.event.client_payload.task }}" \
             --platform "managed" \
             --region "us-central1" \
             --allow-unauthenticated \
