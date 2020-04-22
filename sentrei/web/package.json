@@ -27,7 +27,7 @@
     "swap-beta": "cp beta.firebase.json firebase.json",
     "swap-master": "cp master.firebase.json firebase.json",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o out"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.10",
