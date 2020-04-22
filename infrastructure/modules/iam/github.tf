@@ -28,12 +28,14 @@ resource "google_service_account" "github_admin" {
 }
 
 resource "google_project_iam_member" "github_admin_service_account_user" {
+  count   = var.environment == "master" ? 1 : 0
   project = "sentrei-${var.environment}"
   role    = "roles/iam.serviceAccountUser"
   member  = "serviceAccount:${google_service_account.github_admin[count.index].email}"
 }
 
 resource "google_project_iam_member" "github_admin_secret_manager_admin" {
+  count   = var.environment == "master" ? 1 : 0
   project = "sentrei-${var.environment}"
   role    = "roles/secretmanager.admin"
   member  = "serviceAccount:${google_service_account.github_admin[count.index].email}"
