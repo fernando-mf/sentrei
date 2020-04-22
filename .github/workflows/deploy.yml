@@ -170,6 +170,7 @@ jobs:
           password: ${{ steps.secrets.outputs.DOCKER_PASSWORD }}
           repository: ${{ github.repository }}
           tags: ${{ github.event.client_payload.task }}
+          path: sentrei/web
           tag_with_ref: true
           tag_with_sha: true
           push: true
