@@ -158,7 +158,7 @@ jobs:
       - name: Deploy to firebase
         working-directory: sentrei/design
         run: |
-          yarn run storybook-${{ github.event.client_payload.task }}
+          yarn run ${{ github.event.client_payload.task }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deployment success
