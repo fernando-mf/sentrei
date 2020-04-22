@@ -16,6 +16,12 @@ resource "google_project_iam_member" "github_project_run_admin" {
   member  = "serviceAccount:${google_service_account.github.email}"
 }
 
+resource "google_project_iam_member" "github_project_storage_admin" {
+  project = "sentrei-${var.environment}"
+  role    = "roles/storage.admin"
+  member  = "serviceAccount:${google_service_account.github.email}"
+}
+
 output "google_service_account_github_email" {
   value = google_service_account.github.email
 }
