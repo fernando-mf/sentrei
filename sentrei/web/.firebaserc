@@ -27,6 +27,12 @@
     },
     "sentrei-master": {
       "hosting": {
+        "storybook": [
+          "sentrei-storybook"
+        ],
+        "staging-storybook": [
+          "sentrei-staging-storybook"
+        ],
         "web": [
           "sentrei-master-web"
         ],
