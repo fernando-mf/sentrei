@@ -95,7 +95,7 @@
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
-    "@sentrei/ui": "^3.13.3",
+    "@sentrei/ui": "^3.13.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
