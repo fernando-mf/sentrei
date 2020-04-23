@@ -3,7 +3,5 @@
   "compilerOptions": {
     "jsx": "react"
   },
-  "include": [
-    "jest.config.js",
-  ]
+  "include": ["jest.config.js"]
 }
