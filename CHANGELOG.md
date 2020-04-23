@@ -1,3 +1,9 @@
+## [3.16.4](https://github.com/sentrei/sentrei/compare/v3.16.3...v3.16.4) (2020-04-22)
+
+### Bug Fixes
+
+- **deps:** bump firebase-admin from 8.10.0 to 8.11.0 ([8cdbf9a](https://github.com/sentrei/sentrei/commit/8cdbf9afa2d5ea8338bbfbb4f41511926a816c93))
+
 ## [3.16.3](https://github.com/sentrei/sentrei/compare/v3.16.2...v3.16.3) (2020-04-22)
 
 ### Bug Fixes
