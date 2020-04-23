@@ -55,7 +55,7 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
-          client-payload: '{"branch": "${{ github.event.client_payload.pull_request.head.ref }}", "environment": "staging", "event_name": "storybook", "task": "staging-storybook", "url_prefix": "staging."}'
+          client-payload: '{"branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "storybook", "task": "staging-storybook", "url_prefix": "staging."}'
       - name: Dispatch web event
         if: steps.change.outputs.changed == 'true'
         uses: peter-evans/repository-dispatch@v1
@@ -63,3 +63,24 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
           client-payload: '{"branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "web", "task": "staging-${{ github.event.pull_request.base.ref }}", "url_prefix": "staging.${{ github.event.pull_request.base.ref }}.", "base": "${{ github.event.pull_request.base.ref }}"}'
+      - if: steps.change.outputs.changed == 'true'
+        id: secrets
+        uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
+        with:
+          credentials: ${{ secrets.GCP_CREDENTIALS }}
+          secrets: |-
+            DOCKER_USERNAME:sentrei-master/docker_username
+            DOCKER_PASSWORD:sentrei-master/docker_password
+            SERVICE_ACCOUNT_EMAIL:sentrei-master/github_${{ github.event.pull_request.base.ref }}_email
+            SERVICE_ACCOUNT_KEY:sentrei-master/github_${{ github.event.pull_request.base.ref }}_key
+      - if: steps.change.outputs.changed == 'true'
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: "286.0.0"
+          service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
+          service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
+          project_id: "sentrei-${{ github.event.pull_request.base.ref }}"
+      - if: steps.change.outputs.changed == 'true'
+        working-directory: sentrei/web
+        run: |
+          yarn run regression
