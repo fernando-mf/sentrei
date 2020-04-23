@@ -38,7 +38,7 @@
     "swap-alpha": "cp alpha.firebase.json firebase.json",
     "swap-beta": "cp beta.firebase.json firebase.json",
     "swap-master": "cp master.firebase.json firebase.json",
-    "test": "yarn run eslint-check && yarn run jest && yarn run storycap && yarn run regression"
+    "test": "yarn run eslint-check && yarn run jest && yarn run storycap"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.10",
