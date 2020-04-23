@@ -80,6 +80,7 @@ jobs:
           service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
           service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
           project_id: "sentrei-${{ github.event.pull_request.base.ref }}"
+          export_default_credentials: true
       - if: steps.change.outputs.changed == 'true'
         working-directory: sentrei/web
         run: |
