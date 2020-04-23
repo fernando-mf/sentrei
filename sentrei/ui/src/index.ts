@@ -1,3 +1,3 @@
-export {default as Button} from "./components/Button/Button";
-export {default as Copyright} from "./components/Copyright/Copyright";
-export {default as ProTip} from "./components/ProTip/ProTip";
+export {default as Button} from "./Button/Button";
+export {default as Copyright} from "./Copyright/Copyright";
+export {default as ProTip} from "./ProTip/ProTip";

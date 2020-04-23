@@ -2,8 +2,7 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import ProTip from "@sentrei/ui/ProTip";
-import Copyright from "@sentrei/ui/Copyright";
+import {Copyright, ProTip} from "@sentrei/ui";
 
 export default function Index(): JSX.Element {
   return (
