@@ -26,7 +26,8 @@ coverage:
 flags:
   mobile-test:
     paths:
-      - sentrei/mobile/lib/
+      - sentrei/mobile/lib
+      - sentrei/web/src
     carryforward: true
 comment:
   layout: "reach, diff, flags, files"
