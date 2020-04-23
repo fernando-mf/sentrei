@@ -11,11 +11,20 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "project": "tsconfig.json",
-    "sourceType": "module"
+    "sourceType": "module",
+    "useJSXTextNode": true
   },
   "plugins": ["react", "prettier", "@typescript-eslint"],
-  "extends": [],
+  "extends": [
+    "airbnb",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint"
+  ],
   "settings": {
     "react": {
       "version": "detect"
