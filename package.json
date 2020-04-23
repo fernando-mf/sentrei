@@ -20,7 +20,6 @@
     "prettier-check": "prettier --check .",
     "prettier-fix": "prettier --write .",
     "publish": "lerna publish from-package --yes",
-    "regression": "reg-suit run",
     "release": "semantic-release",
     "release-test": "semantic-release -d",
     "sort-package-json": "sort-package-json 'package.json' 'sentrei/*/package.json'",

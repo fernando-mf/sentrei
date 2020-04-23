@@ -26,6 +26,7 @@
     "fix": "yarn run eslint-fix",
     "jest": "jest --coverage",
     "master": "yarn run swap-master && firebase use master && yarn run deploy-web",
+    "regression": "reg-suit run",
     "staging-alpha": "yarn run swap-alpha && firebase use alpha && yarn run deploy-staging-web",
     "staging-beta": "yarn run swap-beta && firebase use beta && yarn run deploy-staging-web",
     "staging-master": "yarn run swap-master && firebase use master && yarn run deploy-staging-web",
@@ -37,7 +38,7 @@
     "swap-alpha": "cp alpha.firebase.json firebase.json",
     "swap-beta": "cp beta.firebase.json firebase.json",
     "swap-master": "cp master.firebase.json firebase.json",
-    "test": "yarn run eslint-check && yarn run jest && yarn run storycap"
+    "test": "yarn run eslint-check && yarn run jest && yarn run storycap && yarn run regression"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.10",
