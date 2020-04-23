@@ -12,7 +12,7 @@ module.exports = {
     "<rootDir>/src/__tests__/setupTests.ts",
   ],
   moduleFileExtensions: ["js", "ts", "tsx"],
-  setupFiles: ['<rootDir>/src/__tests__/setupTests.ts'],
+  setupFiles: ["<rootDir>/src/__tests__/setupTests.ts"],
   collectCoverage: true,
   verbose: true,
   collectCoverageFrom: [
