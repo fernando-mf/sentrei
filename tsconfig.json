@@ -27,7 +27,6 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "composite": true,
     "declaration": true,
     "declarationMap": true,
     "paths": {
