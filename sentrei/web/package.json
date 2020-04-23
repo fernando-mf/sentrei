@@ -26,17 +26,19 @@
     "fix": "yarn run eslint-fix",
     "jest": "jest --coverage",
     "master": "yarn run swap-master && firebase use master && yarn run deploy-web",
-    "staging-alpha": "yarn run swap-alpha && firebase use alpha && yarn run deploy-staging-web && yarn run deploy-staging-storybook",
-    "staging-beta": "yarn run swap-beta && firebase use beta && yarn run deploy-staging-web && yarn run deploy-staging-storybook",
-    "staging-master": "yarn run swap-master && firebase use master && yarn run deploy-staging-web && yarn run deploy-staging-storybook",
+    "regression": "reg-suit run",
+    "staging-alpha": "yarn run swap-alpha && firebase use alpha && yarn run deploy-staging-web",
+    "staging-beta": "yarn run swap-beta && firebase use beta && yarn run deploy-staging-web",
+    "staging-master": "yarn run swap-master && firebase use master && yarn run deploy-staging-web",
     "staging-storybook": "yarn run swap-master && firebase use master && yarn run deploy-staging-storybook",
     "start": "next start -p 8080",
     "start-storybook": "start-storybook -p 6006",
     "storybook": "yarn run swap-master && firebase use master && yarn run deploy-storybook",
+    "storycap": "storycap --serverCmd 'start-storybook -p 9001' http://localhost:9001 --serverTimeout 120000",
     "swap-alpha": "cp alpha.firebase.json firebase.json",
     "swap-beta": "cp beta.firebase.json firebase.json",
     "swap-master": "cp master.firebase.json firebase.json",
-    "test": "yarn run eslint-check && yarn run jest"
+    "test": "yarn run eslint-check && yarn run jest && yarn run storycap"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.10",
@@ -81,6 +83,7 @@
     "jest": "^25.4.0",
     "jest-enzyme": "^7.1.2",
     "pretty-quick": "^2.0.1",
+    "storycap": "^2.3.5",
     "ts-jest": "^25.4.0",
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3"
