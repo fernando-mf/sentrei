@@ -83,4 +83,4 @@ jobs:
       - if: steps.change.outputs.changed == 'true'
         working-directory: sentrei/web
         run: |
-          yarn run regression
+          npx reg-suit run
