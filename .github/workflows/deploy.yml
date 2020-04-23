@@ -58,8 +58,7 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Dispatch event
-        if: github.event.client_payload.environment == 'staging'
+      - name: Dispatch lighthouse event
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -118,8 +117,7 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Dispatch event
-        if: github.event.client_payload.environment == 'staging'
+      - name: Dispatch lighthouse event
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -177,8 +175,7 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}storybook.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Dispatch event
-        if: github.event.client_payload.environment == 'staging'
+      - name: Dispatch lighthouse event
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -284,8 +281,7 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Dispatch event
-        if: github.event.client_payload.environment == 'staging'
+      - name: Dispatch lighthouse event
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
