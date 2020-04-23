@@ -37,7 +37,8 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "files": [],
-  "references": [{
+  "references": [
+    {
       "path": "sentrei/common"
     },
     {
