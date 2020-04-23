@@ -20,11 +20,20 @@
   },
   "plugins": ["react", "prettier", "@typescript-eslint"],
   "extends": [
-    "airbnb",
+    "airbnb-typescript",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react"
   ],
+  "rules": {
+    "prettier/prettier": "error"
+  },
   "settings": {
     "react": {
       "version": "detect"

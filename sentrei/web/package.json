@@ -32,7 +32,8 @@
     "storybook": "yarn run swap-master && firebase use master && yarn run deploy-storybook",
     "swap-alpha": "cp alpha.firebase.json firebase.json",
     "swap-beta": "cp beta.firebase.json firebase.json",
-    "swap-master": "cp master.firebase.json firebase.json"
+    "swap-master": "cp master.firebase.json firebase.json",
+    "test": "yarn run eslint-check"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.10",
@@ -61,12 +62,13 @@
     "awesome-typescript-loader": "^5.2.1",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
     "pretty-quick": "^2.0.1",
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3"
