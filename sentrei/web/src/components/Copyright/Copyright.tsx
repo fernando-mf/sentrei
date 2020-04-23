@@ -9,8 +9,7 @@ export default function Copyright() {
       <MuiLink color="inherit" href="https://material-ui.com/">
         Sentrei, Inc.
       </MuiLink>{" "}
-      {new Date().getFullYear()}
-      {"."}
+      {new Date().getFullYear()}.
     </Typography>
   );
 }
