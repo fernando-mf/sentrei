@@ -13,7 +13,6 @@ module.exports = {
   ],
   moduleFileExtensions: ["js", "ts", "tsx"],
   setupFiles: ['<rootDir>/src/__tests__/setupTests.ts'],
-  collectCoverage: true,
   verbose: true,
   collectCoverageFrom: [
     "**/*.{js,jsx,ts,tsx}",
