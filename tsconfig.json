@@ -1,0 +1,50 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "allowJs": false,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "lib": ["es6", "dom", "es2016"],
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "lib",
+    "downlevelIteration": true,
+    "removeComments": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "declarationMap": true,
+    "paths": {
+      "@sentrei/*": ["sentrei/*/src"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
+  "files": [],
+  "references": [
+    {
+      "path": "sentrei/common"
+    },
+    {
+      "path": "sentrei/ui"
+    },
+    {
+      "path": "sentrei/web"
+    }
+  ]
+}
