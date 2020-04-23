@@ -1,3 +1,9 @@
+## [3.16.5](https://github.com/sentrei/sentrei/compare/v3.16.4...v3.16.5) (2020-04-23)
+
+### Bug Fixes
+
+- **deps:** bump fastlane in /sentrei/mobile/android ([0ae9910](https://github.com/sentrei/sentrei/commit/0ae9910bf4f245f92a067224aa4125b67aaaf280))
+
 ## [3.16.4](https://github.com/sentrei/sentrei/compare/v3.16.3...v3.16.4) (2020-04-22)
 
 ### Bug Fixes
