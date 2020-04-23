@@ -37,8 +37,20 @@ jobs:
         working-directory: sentrei/web
         run: |
           yarn run build
+      - if: steps.change.outputs.changed == 'true'
+        working-directory: sentrei/web
+        run: |
+          yarn run test
+      - name: Upload coverage to Codecov
+        if: steps.change.outputs.changed == 'true'
+        uses: codecov/codecov-action@v1
+        with:
+          file: sentrei/web/coverage/lcov.info
+          name: sentrei
+          fail_ci_if_error: true
+          flags: web
       - name: Dispatch storybook event
-        if: github.event.client_payload.slash_command.arg1 == 'storybook'
+        if: steps.change.outputs.changed == 'true'
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -51,19 +63,3 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
           client-payload: '{"branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "web", "task": "staging-${{ github.event.pull_request.base.ref }}", "url_prefix": "staging.${{ github.event.pull_request.base.ref }}.", "base": "${{ github.event.pull_request.base.ref }}"}'
-      # - if: steps.change.outputs.changed == 'true'
-      #   working-directory: sentrei/web
-      #   run: |
-      #     flutter analyze
-      # - if: steps.change.outputs.changed == 'true'
-      #   working-directory: sentrei/mobile
-      #   run: |
-      #     flutter test --coverage
-      # - name: Upload coverage to Codecov
-      #   if: steps.change.outputs.changed == 'true'
-      #   uses: codecov/codecov-action@v1
-      #   with:
-      #     file: sentrei/mobile/coverage/lcov.info
-      #     name: sentrei
-      #     fail_ci_if_error: true
-      #     flags: mobile
