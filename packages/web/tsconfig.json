@@ -1,5 +1,8 @@
 {
   "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
   "include": [
     "src"
   ],
@@ -15,7 +18,4 @@
       "path": "../ui"
     }
   ],
-  "compilerOptions": {
-    "noEmit": true
-  }
 }

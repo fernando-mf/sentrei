@@ -2,6 +2,6 @@
   "extends": "./tsconfig.base.json",
   "files": [],
   "references": [{
-    "path": "./ui/tsconfig.build.json"
+    "path": "./ui/tsconfig.json"
   }]
 }
