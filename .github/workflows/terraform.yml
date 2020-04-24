@@ -8,18 +8,15 @@ jobs:
       matrix:
         environment: [alpha, beta, master]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Terraform Format
-        uses: hashicorp/terraform-github-actions@master
+      - uses: actions/checkout@v2
+      - uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 0.12.24
           tf_actions_subcommand: fmt
           tf_actions_working_dir: infrastructure/environments/${{ matrix.environment }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Terraform Init
-        uses: hashicorp/terraform-github-actions@master
+      - uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 0.12.24
           tf_actions_subcommand: init
@@ -27,8 +24,7 @@ jobs:
         env:
           TF_CLI_ARGS_init: '-backend-config="token=${{ secrets.TF_API_TOKEN }}" -backend-config="organization=sentrei"'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Terraform Validate
-        uses: hashicorp/terraform-github-actions@master
+      - uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 0.12.24
           tf_actions_subcommand: validate

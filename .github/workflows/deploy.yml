@@ -16,50 +16,43 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "13.x"
-      - name: Cache node modules
-        id: cache
+      - id: cache
         uses: actions/cache@v1
         with:
           path: node_modules
           key: node-v1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             node-v1-
-      - name: Install dependencies with yarn
-        if: steps.cache.outputs.cache-hit != 'true'
+      - if: steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile
-      - name: Create GitHub deployment
-        uses: chrnorm/deployment-action@releases/v1
+      - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
           environment: ${{ github.event.client_payload.environment }}
           ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
-      - name: Deploy to firebase
-        working-directory: sentrei/design
+      - working-directory: sentrei/design
         run: |
           yarn run ${{ github.event.client_payload.task }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - name: Deployment success
-        if: success()
+      - if: success()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Deployment failure
-        if: failure()
+      - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Dispatch lighthouse event
-        uses: peter-evans/repository-dispatch@v1
+      - uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: lighthouse-cmd
@@ -78,47 +71,40 @@ jobs:
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
-      - name: Install dependencies with yarn
-        if: steps.cache.outputs.cache-hit != 'true'
+      - if: steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile
-      - name: Generate docs
-        working-directory: sentrei/mobile
+      - working-directory: sentrei/mobile
         run: |
           flutter pub global activate dartdoc
           flutter pub global run dartdoc:dartdoc --exclude 'dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart:ui,dart:ffi,dart:html,dart:js,dart:js_util'
-      - name: Create GitHub deployment
-        uses: chrnorm/deployment-action@releases/v1
+      - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
           environment: ${{ github.event.client_payload.environment }}
           ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
-      - name: Deploy to firebase
-        working-directory: sentrei/mobile
+      - working-directory: sentrei/mobile
         run: |
           yarn run ${{ github.event.client_payload.task }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - name: Deployment success
-        if: success()
+      - if: success()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Deployment failure
-        if: failure()
+      - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Dispatch lighthouse event
-        uses: peter-evans/repository-dispatch@v1
+      - uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: lighthouse-cmd
@@ -133,50 +119,43 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "13.x"
-      - name: Cache node modules
-        id: cache
+      - id: cache
         uses: actions/cache@v1
         with:
           path: node_modules
           key: node-v1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             node-v1-
-      - name: Install dependencies with yarn
-        if: steps.cache.outputs.cache-hit != 'true'
+      - if: steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile
-      - name: Create GitHub deployment
-        uses: chrnorm/deployment-action@releases/v1
+      - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
           environment: ${{ github.event.client_payload.environment }}
           ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
-      - name: Deploy to firebase
-        working-directory: sentrei/web
+      - working-directory: sentrei/web
         run: |
           yarn run ${{ github.event.client_payload.task }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - name: Deployment success
-        if: success()
+      - if: success()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Deployment failure
-        if: failure()
+      - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Dispatch lighthouse event
-        uses: peter-evans/repository-dispatch@v1
+      - uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: lighthouse-cmd
@@ -191,20 +170,17 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "13.x"
-      - name: Cache node modules
-        id: cache
+      - id: cache
         uses: actions/cache@v1
         with:
           path: node_modules
           key: node-v1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             node-v1-
-      - name: Install dependencies with yarn
-        if: steps.cache.outputs.cache-hit != 'true'
+      - if: steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile
-      - name: Create GitHub deployment
-        uses: chrnorm/deployment-action@releases/v1
+      - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
           environment: ${{ github.event.client_payload.environment }}
@@ -249,7 +225,6 @@ jobs:
           service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
           service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
           project_id: "sentrei-${{ github.event.client_payload.base }}"
-      - name: Deploy
         run: |-
           gcloud run deploy "sentrei-${{ github.event.client_payload.task }}-web" \
             --image "gcr.io/sentrei-${{ github.event.client_payload.base }}/sentrei:${{ github.event.client_payload.task }}" \
@@ -257,30 +232,26 @@ jobs:
             --region "us-central1" \
             --allow-unauthenticated \
             --quiet
-      - name: Deploy to firebase
-        working-directory: sentrei/web
+      - working-directory: sentrei/web
         run: |
           yarn run ${{ github.event.client_payload.task }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - name: Deployment success
-        if: success()
+      - if: success()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Deployment failure
-        if: failure()
+      - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Dispatch lighthouse event
-        uses: peter-evans/repository-dispatch@v1
+      - uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: lighthouse-cmd

@@ -34,15 +34,13 @@ jobs:
   context:
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
-        env:
+      - env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
   lgtm:
     runs-on: ubuntu-latest
     steps:
-      - name: comment PR
-        uses: unsplash/comment-on-pr@master
+      - uses: unsplash/comment-on-pr@master
         if: |
           github.event.pull_request != null && contains(toJson(github.event.pull_request.title), '[sentrei-auto-pr]') && (github.actor == 'shunkakinoki') ||
           github.event.pull_request != null && contains(toJson(github.event.pull_request.title), '[sentrei-figma-pr]') && (github.actor == 'shunkakinoki') ||

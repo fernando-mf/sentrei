@@ -10,16 +10,14 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "13.x"
-      - name: Cache node modules
-        id: cache
+      - id: cache
         uses: actions/cache@v1
         with:
           path: node_modules
           key: node-v1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             node-v1-
-      - name: Extract PR number
-        run: |
+      - run: |
           echo ::set-env name=PR_NUMBER::$(echo "$GITHUB_REF" | awk -F / '{print $3}')
       - id: change
         run: |
@@ -29,8 +27,7 @@ jobs:
           else
             echo ::set-output name=changed::true && exit 0
           fi
-      - name: Install dependencies with yarn
-        if: steps.change.outputs.changed == 'true' && steps.cache.outputs.cache-hit != 'true'
+      - if: steps.change.outputs.changed == 'true' && steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile
       - if: steps.change.outputs.changed == 'true'
@@ -44,16 +41,14 @@ jobs:
         working-directory: sentrei/web
         run: |
           yarn run test
-      - name: Upload coverage to Codecov
-        if: steps.change.outputs.changed == 'true'
+      - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:
           file: sentrei/web/coverage/lcov.info
           name: sentrei
           fail_ci_if_error: true
           flags: web
-      - name: Dispatch web event
-        if: steps.change.outputs.changed == 'true'
+      - if: steps.change.outputs.changed == 'true'
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
