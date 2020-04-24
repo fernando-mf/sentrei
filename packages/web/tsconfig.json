@@ -6,5 +6,10 @@
     "**/*.spec.ts",
     "**/*.spec.tsx",
     "**/*.stories.tsx"
-  ]
+  ],
+  "references": [{
+    "path": "../common"
+  }, {
+    "path": "../ui"
+  }],
 }
