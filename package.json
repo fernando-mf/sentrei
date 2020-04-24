@@ -15,8 +15,8 @@
   "scripts": {
     "eclint-check": "eclint check $(git ls-files)",
     "eclint-fix": "eclint fix $(git ls-files)",
-    "eslint-check": "eslint 'sentrei/**/**/*.{js,ts.tsx}'",
-    "eslint-fix": "eslint --fix 'sentrei/**/**/*.{js,ts.tsx}'",
+    "eslint-check": "eslint . -c .eslintrc.json --no-eslintrc --ignore-path .gitignore",
+    "eslint-fix": "eslint --fix . -c .eslintrc.json --no-eslintrc --ignore-path .gitignore",
     "fix": "yarn eclint-fix && yarn eslint-fix && yarn prettier-fix && yarn sort-package-json-fix",
     "lint": "yarn eclint-check && yarn eslint-check && yarn prettier-check && yarn sort-package-json-check",
     "prettier-check": "prettier --check .",
