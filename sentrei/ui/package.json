@@ -16,8 +16,8 @@
   ],
   "scripts": {
     "build": "build-storybook -o out",
-    "deploy-staging-storybook": "firebase deploy --only hosting:staging-storybook --token $FIREBASE_TOKEN",
-    "deploy-storybook": "firebase deploy --only hosting:storybook --token $FIREBASE_TOKEN",
+    "deploy-staging-storybook": "firebase deploy --only hosting:staging-ui --token $FIREBASE_TOKEN",
+    "deploy-storybook": "firebase deploy --only hosting:ui --token $FIREBASE_TOKEN",
     "dev": "start-storybook -p 6006",
     "eslint-check": "eslint --ext .js,.jsx,.ts,.tsx src",
     "eslint-fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
