@@ -1,6 +1,11 @@
 {
   "include": ["src/**/*"],
-  "exclude": ["**/__tests__/*.ts", "**/*.spec.ts", "**/*.spec.tsx", "**/*.stories.tsx"],
+  "exclude": [
+    "**/__tests__/*.ts",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.stories.tsx"
+  ],
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "lib",
