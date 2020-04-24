@@ -23,6 +23,10 @@ module.exports = {
   snapshotSerializers: ["enzyme-to-json/serializer"],
   globals: {
     "ts-jest": {
+      diagnostics: {
+        warnOnly: true,
+      },
+      isolatedModules: true,
       tsConfig: "<rootDir>/tsconfig.test.json",
     },
   },

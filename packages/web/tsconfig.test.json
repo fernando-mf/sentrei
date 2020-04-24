@@ -1,7 +1,12 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "jsx": "react"
+    "jsx": "react",
   },
-  "include": ["src", "jest.config.js"]
+  "include": [
+    "**/__tests__/*.ts",
+    "**/__tests__/*.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+  ]
 }
