@@ -3,7 +3,6 @@
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": "./packages",
-    "composite": true,
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
@@ -13,10 +12,6 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "moduleResolution": "node",
-    "noEmit": true,
-    "paths": {
-      "@sentrei/*": ["./*/src"]
-    },
     "rootDir": ".",
     "resolveJsonModule": true,
     "skipLibCheck": true,

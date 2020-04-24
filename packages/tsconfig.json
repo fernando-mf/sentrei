@@ -1,14 +1,9 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./common"
-    },
-    {
-      "path": "./ui"
-    },
-    {
-      "path": "./web"
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@sentrei/ui": ["ui/src/index.tsx"],
     }
-  ]
+  }
 }
