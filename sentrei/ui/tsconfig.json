@@ -6,7 +6,7 @@
     "noEmit": false,
     "jsx": "react",
     "outDir": "lib",
-    "rootDir": ".",
+    "rootDir": "."
   },
   "include": ["src/**/*"],
   "exclude": [
