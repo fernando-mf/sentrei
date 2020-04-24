@@ -17,12 +17,10 @@ jobs:
           key: node-v1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             node-v1-
-      - run: |
-          echo ::set-env name=PR_NUMBER::$(echo "$GITHUB_REF" | awk -F / '{print $3}')
       - id: change
         run: |
           git fetch --quiet
-          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/ui; then
+          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- packages/ui; then
             echo ::set-output name=changed::false && exit 0
           else
             echo ::set-output name=changed::true && exit 0
@@ -31,17 +29,17 @@ jobs:
         run: |
           yarn install --frozen-lockfile
       - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei/ui
+        working-directory: packages/ui
         run: |
           yarn run tsc
       - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei/ui
+        working-directory: packages/ui
         run: |
           yarn run test
       - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:
-          file: sentrei/ui/coverage/lcov.info
+          file: packages/ui/coverage/lcov.info
           name: sentrei
           fail_ci_if_error: true
           flags: ui
@@ -59,17 +57,17 @@ jobs:
           secrets: |-
             DOCKER_USERNAME:sentrei-master/docker_username
             DOCKER_PASSWORD:sentrei-master/docker_password
-            SERVICE_ACCOUNT_EMAIL:sentrei-master/github_${{ github.event.pull_request.base.ref }}_email
-            SERVICE_ACCOUNT_KEY:sentrei-master/github_${{ github.event.pull_request.base.ref }}_key
+            SERVICE_ACCOUNT_EMAIL:sentrei-master/github_master_email
+            SERVICE_ACCOUNT_KEY:sentrei-master/github_master_key
       - if: steps.change.outputs.changed == 'true'
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
           version: "286.0.0"
           service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
           service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
-          project_id: "sentrei-${{ github.event.pull_request.base.ref }}"
+          project_id: "sentrei-master"
           export_default_credentials: true
       - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei/ui
+        working-directory: packages/ui
         run: |
           npx reg-suit run

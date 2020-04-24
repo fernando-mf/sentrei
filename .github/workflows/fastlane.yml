@@ -30,12 +30,12 @@ jobs:
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
-      - working-directory: sentrei/mobile
+      - working-directory: packages/mobile
         run: |
           ./brew.sh
       - run: |
           gem install bundler
-      - working-directory: sentrei/mobile/${{ matrix.platform }}
+      - working-directory: packages/mobile/${{ matrix.platform }}
         run: |
           bundle update --bundler
           bundle config path ./vendor/bundle
@@ -43,7 +43,7 @@ jobs:
       - run: |
           npm install -g firebase-tools
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
-      - working-directory: sentrei/mobile
+      - working-directory: packages/mobile
         run: |
           flutter pub get
       - id: version
@@ -61,7 +61,7 @@ jobs:
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - id: secret
-        working-directory: sentrei/mobile/${{ matrix.platform }}
+        working-directory: packages/mobile/${{ matrix.platform }}
         run: |
           ./key.sh
         env:
@@ -70,16 +70,16 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           SECRET_REPO: ${{ secrets.SECRET_REPO }}
       - if: matrix.platform == 'android'
-        working-directory: sentrei/mobile
+        working-directory: packages/mobile
         run: |
           flutter build apk --flavor ${{ github.event.client_payload.branch }} --target-platform android-arm,android-arm64,android-x64 --split-per-abi
           flutter build appbundle --flavor ${{ github.event.client_payload.branch }} --target-platform android-arm,android-arm64,android-x64
       - if: matrix.platform == 'ios'
-        working-directory: sentrei/mobile
+        working-directory: packages/mobile
         run: |
           flutter build ios --no-codesign --release --flavor ${{ github.event.client_payload.branch }}
       - if: github.event.client_payload.event_name == 'release'
-        working-directory: sentrei/mobile/${{ matrix.platform }}
+        working-directory: packages/mobile/${{ matrix.platform }}
         run: |
           bundle exec fastlane ${{ github.event.client_payload.branch }} release:${{ github.event.client_payload.release }}
         env:
@@ -92,7 +92,7 @@ jobs:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           SECRET_REPO: ${{ secrets.SECRET_REPO }}
       - if: matrix.platform == 'android' && github.event.client_payload.event_name == 'test'
-        working-directory: sentrei/mobile/${{ matrix.platform }}
+        working-directory: packages/mobile/${{ matrix.platform }}
         run: |
           bundle exec fastlane test ${{ github.event.client_payload.branch }}:true
         env:
@@ -105,7 +105,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.get_url.outputs.upload_url }}
-          asset_path: sentrei/mobile/build/app/outputs/apk/${{ github.event.client_payload.branch }}/release/app-${{ github.event.client_payload.branch }}-release.apk
+          asset_path: packages/mobile/build/app/outputs/apk/${{ github.event.client_payload.branch }}/release/app-${{ github.event.client_payload.branch }}-release.apk
           asset_name: ${{ github.event.client_payload.branch }}.apk
           asset_content_type: application/vnd.android.package-archive
       - if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
@@ -114,7 +114,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.get_url.outputs.upload_url }}
-          asset_path: sentrei/mobile/build/app/outputs/bundle/${{ github.event.client_payload.branch }}Release/app-${{ github.event.client_payload.branch }}-release.aab
+          asset_path: packages/mobile/build/app/outputs/bundle/${{ github.event.client_payload.branch }}Release/app-${{ github.event.client_payload.branch }}-release.aab
           asset_name: ${{ github.event.client_payload.branch }}.aab
           asset_content_type: application/vnd.android.package-archive
       - if: matrix.platform == 'ios' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
@@ -123,6 +123,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.get_url.outputs.upload_url }}
-          asset_path: sentrei/mobile/ios/build/Runner/${{ github.event.client_payload.branch }}.ipa
+          asset_path: packages/mobile/ios/build/Runner/${{ github.event.client_payload.branch }}.ipa
           asset_name: ${{ github.event.client_payload.branch }}.ipa
           asset_content_type: application/octet-stream

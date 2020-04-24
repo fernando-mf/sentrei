@@ -13,7 +13,7 @@ jobs:
       - id: change
         run: |
           git fetch --quiet
-          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/mobile; then
+          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- packages/mobile; then
             echo ::set-output name=changed::false && exit 0
           else
             echo ::set-output name=changed::true && exit 0
@@ -24,21 +24,21 @@ jobs:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
       - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei/mobile
+        working-directory: packages/mobile
         run: |
           flutter pub get
       - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei/mobile
+        working-directory: packages/mobile
         run: |
           flutter analyze
       - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei/mobile
+        working-directory: packages/mobile
         run: |
           flutter test --coverage
       - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:
-          file: sentrei/mobile/coverage/lcov.info
+          file: packages/mobile/coverage/lcov.info
           name: sentrei
           fail_ci_if_error: true
           flags: mobile

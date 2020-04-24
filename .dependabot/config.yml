@@ -37,7 +37,7 @@ update_configs:
     default_reviewers:
       - shunkakinoki
   - package_manager: "ruby:bundler"
-    directory: "sentrei/mobile/android"
+    directory: "packages/mobile/android"
     update_schedule: "daily"
     commit_message:
       prefix: "fix"
@@ -46,7 +46,7 @@ update_configs:
     default_reviewers:
       - shunkakinoki
   - package_manager: "ruby:bundler"
-    directory: "sentrei/mobile/ios"
+    directory: "packages/mobile/ios"
     update_schedule: "daily"
     commit_message:
       prefix: "fix"
