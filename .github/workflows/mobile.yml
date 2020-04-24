@@ -1,10 +1,10 @@
-name: Flutter
+name: Mobile
 on: pull_request
 env:
   flutter_channel: "stable"
   flutter_version: "1.12.13+hotfix.9"
 jobs:
-  flutter:
+  mobile:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

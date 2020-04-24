@@ -1,0 +1,12 @@
+{
+  "include": ["src/**/*"],
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "lib",
+    "rootDir": "src",
+    "jsx": "react",
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es5", "es6", "es7", "es2017", "dom", "esnext.asynciterable"]
+  }
+}
