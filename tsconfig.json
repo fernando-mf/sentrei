@@ -7,13 +7,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "module": "ES6",
+    "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ES6"
+    "target": "ESNext"
   },
   "include": ["**/*.js", "**/*.ts", "**/*.tsx"],
   "references": [

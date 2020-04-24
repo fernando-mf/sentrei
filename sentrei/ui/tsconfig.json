@@ -3,6 +3,7 @@
   "compilerOptions": {
     "allowJs": true,
     "composite": true,
+    "module": "CommonJS",
     "noEmit": false,
     "jsx": "react",
     "outDir": "lib",
