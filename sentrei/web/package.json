@@ -14,10 +14,7 @@
     "analyze": "cross-env ANALYZE=true next build",
     "beta": "yarn run swap-beta && firebase use beta && yarn run deploy-web && yarn run deploy-staging-web",
     "build": "next build",
-    "build-storybook": "build-storybook -o out",
-    "deploy-staging-storybook": "firebase deploy --only hosting:staging-storybook --token $FIREBASE_TOKEN",
     "deploy-staging-web": "firebase deploy --only hosting:staging-web --token $FIREBASE_TOKEN",
-    "deploy-storybook": "firebase deploy --only hosting:storybook --token $FIREBASE_TOKEN",
     "deploy-web": "firebase deploy --only hosting:web --token $FIREBASE_TOKEN",
     "dev": "next",
     "eslint-check": "eslint --ext .js,.jsx,.ts,.tsx src",
@@ -31,13 +28,10 @@
     "staging-master": "yarn run swap-master && firebase use master && yarn run deploy-staging-web",
     "staging-storybook": "yarn run swap-master && firebase use master && yarn run deploy-staging-storybook",
     "start": "next start -p 8080",
-    "start-storybook": "start-storybook -p 6006",
-    "storybook": "yarn run swap-master && firebase use master && yarn run deploy-storybook",
-    "storycap": "storycap --serverCmd 'start-storybook -p 9001' http://localhost:9001 --serverTimeout 120000",
     "swap-alpha": "cp alpha.firebase.json firebase.json",
     "swap-beta": "cp beta.firebase.json firebase.json",
     "swap-master": "cp master.firebase.json firebase.json",
-    "test": "yarn run eslint-check && yarn run jest && yarn run storycap"
+    "test": "yarn run eslint-check && yarn run jest"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.10",
@@ -54,9 +48,6 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^5.3.18",
-    "@storybook/addon-links": "^5.3.18",
-    "@storybook/addons": "^5.3.18",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^25.2.1",
@@ -83,7 +74,6 @@
     "jest": "^25.4.0",
     "jest-enzyme": "^7.1.2",
     "pretty-quick": "^2.0.1",
-    "storycap": "^2.3.5",
     "ts-jest": "^25.4.0",
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3"
