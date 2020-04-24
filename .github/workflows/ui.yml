@@ -1,7 +1,7 @@
-name: Web
+name: UI
 on: pull_request
 jobs:
-  web:
+  ui:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,7 +24,7 @@ jobs:
       - id: change
         run: |
           git fetch --quiet
-          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/web; then
+          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- sentrei/ui; then
             echo ::set-output name=changed::false && exit 0
           else
             echo ::set-output name=changed::true && exit 0
@@ -33,9 +33,6 @@ jobs:
         if: steps.change.outputs.changed == 'true' && steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile
-      - if: steps.change.outputs.changed == 'true'
-        run: |
-          yarn run build
       - if: steps.change.outputs.changed == 'true'
         working-directory: sentrei/web
         run: |
