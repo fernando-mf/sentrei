@@ -3,9 +3,7 @@
   "compilerOptions": {
     "noEmit": true
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "exclude": [
     "node_modules",
     "**/__tests__/*.ts",
@@ -13,7 +11,9 @@
     "**/*.spec.tsx",
     "**/*.stories.tsx"
   ],
-  "references": [{
-    "path": "../ui"
-  }],
+  "references": [
+    {
+      "path": "../ui"
+    }
+  ]
 }
