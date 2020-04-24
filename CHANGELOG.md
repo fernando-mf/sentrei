@@ -1,3 +1,9 @@
+## [3.16.6](https://github.com/sentrei/sentrei/compare/v3.16.5...v3.16.6) (2020-04-24)
+
+### Bug Fixes
+
+- **deps:** bump mhart/alpine-node from 13.13 to 14.0.0 ([d87b426](https://github.com/sentrei/sentrei/commit/d87b426789016904d92a6fd46129d3a3b87623b9))
+
 ## [3.16.5](https://github.com/sentrei/sentrei/compare/v3.16.4...v3.16.5) (2020-04-23)
 
 ### Bug Fixes
