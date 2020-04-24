@@ -57,15 +57,15 @@ jobs:
           secrets: |-
             DOCKER_USERNAME:sentrei-master/docker_username
             DOCKER_PASSWORD:sentrei-master/docker_password
-            SERVICE_ACCOUNT_EMAIL:sentrei-master/github_${{ github.event.pull_request.base.ref }}_email
-            SERVICE_ACCOUNT_KEY:sentrei-master/github_${{ github.event.pull_request.base.ref }}_key
+            SERVICE_ACCOUNT_EMAIL:sentrei-master/github_master_email
+            SERVICE_ACCOUNT_KEY:sentrei-master/github_master_key
       - if: steps.change.outputs.changed == 'true'
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
           version: "286.0.0"
           service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
           service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
-          project_id: "sentrei-${{ github.event.pull_request.base.ref }}"
+          project_id: "sentrei-master"
           export_default_credentials: true
       - if: steps.change.outputs.changed == 'true'
         working-directory: packages/ui
