@@ -9,11 +9,8 @@
   },
   "license": "MIT",
   "author": "Shun Kakinoki",
-  "main": "./lib/src/index.js",
-  "types": "./lib/src/index.d.ts",
-  "files": [
-    "lib"
-  ],
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "build": "build-storybook -o out",
     "deploy-staging-storybook": "firebase deploy --only hosting:staging-ui --token $FIREBASE_TOKEN",

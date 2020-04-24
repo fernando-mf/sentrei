@@ -1,15 +1,12 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "allowJs": true,
-    "composite": true,
     "module": "CommonJS",
     "noEmit": false,
     "jsx": "react",
     "outDir": "lib",
-    "rootDir": "."
+    "rootDir": "src"
   },
-  "include": ["src/**/*"],
   "exclude": [
     "node_modules",
     "**/__tests__/*.ts",
