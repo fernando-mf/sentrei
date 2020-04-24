@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 
 RUN yarn install
-RUN yarn build
+RUN yarn tsc
 
 WORKDIR /app/sentrei/web
 
