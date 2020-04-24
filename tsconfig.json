@@ -19,7 +19,8 @@
     "target": "ESNext"
   },
   "include": ["**/*.js", "**/*.ts", "**/*.tsx"],
-  "references": [{
+  "references": [
+    {
       "path": "packages/common"
     },
     {
