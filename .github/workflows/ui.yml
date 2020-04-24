@@ -34,18 +34,18 @@ jobs:
         run: |
           yarn install --frozen-lockfile
       - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei/web
+        working-directory: sentrei/ui
         run: |
           yarn run build
       - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei/web
+        working-directory: sentrei/ui
         run: |
           yarn run test
       - name: Upload coverage to Codecov
         if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:
-          file: sentrei/web/coverage/lcov.info
+          file: sentrei/ui/coverage/lcov.info
           name: sentrei
           fail_ci_if_error: true
           flags: web
@@ -56,13 +56,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
           client-payload: '{"branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "storybook", "task": "staging-storybook", "url_prefix": "staging."}'
-      - name: Dispatch web event
-        if: steps.change.outputs.changed == 'true'
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: deploy-cmd
-          client-payload: '{"branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "web", "task": "staging-${{ github.event.pull_request.base.ref }}", "url_prefix": "staging.${{ github.event.pull_request.base.ref }}.", "base": "${{ github.event.pull_request.base.ref }}"}'
       - if: steps.change.outputs.changed == 'true'
         id: secrets
         uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
@@ -82,6 +75,6 @@ jobs:
           project_id: "sentrei-${{ github.event.pull_request.base.ref }}"
           export_default_credentials: true
       - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei/web
+        working-directory: sentrei/ui
         run: |
           npx reg-suit run
