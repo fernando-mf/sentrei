@@ -13,6 +13,7 @@
     "sentrei/*"
   ],
   "scripts": {
+    "build": "lerna run build --scope={@sentrei/common,@sentrei/ui}",
     "eclint-check": "eclint check $(git ls-files)",
     "eclint-fix": "eclint fix $(git ls-files)",
     "fix": "yarn eclint-fix && yarn prettier-fix && yarn sort-package-json",
