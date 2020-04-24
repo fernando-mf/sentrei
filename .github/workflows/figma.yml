@@ -27,8 +27,7 @@ jobs:
         env:
           FIGMA_FILE_URL: "https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web"
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-      - name: Create a pull request if updated
-        uses: peter-evans/create-pull-request@v2
+      - uses: peter-evans/create-pull-request@v2
         with:
           branch-suffix: short-commit-hash
           token: ${{ secrets.ACCESS_TOKEN }}

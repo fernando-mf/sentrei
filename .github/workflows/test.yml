@@ -9,8 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Dispatch fastlane event
-        uses: peter-evans/repository-dispatch@v1
+      - uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: fastlane-cmd

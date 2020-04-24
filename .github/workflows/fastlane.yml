@@ -13,8 +13,7 @@ jobs:
       matrix:
         platform: [android, ios]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
       - run: git fetch --quiet
@@ -31,35 +30,27 @@ jobs:
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
-      - name: Install brew
-        working-directory: sentrei/mobile
+      - working-directory: sentrei/mobile
         run: |
           ./brew.sh
-      - name: Install bundler
-        run: |
+      - run: |
           gem install bundler
-      - name: Install bundler ${{ matrix.platform }}
-        working-directory: sentrei/mobile/${{ matrix.platform }}
+      - working-directory: sentrei/mobile/${{ matrix.platform }}
         run: |
           bundle update --bundler
           bundle config path ./vendor/bundle
           bundle install --jobs 4 --retry 3
-      - name: Install firebase
-        run: |
+      - run: |
           npm install -g firebase-tools
-      - name: Install gcloud
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
-      - name: Install pub
-        working-directory: sentrei/mobile
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      - working-directory: sentrei/mobile
         run: |
           flutter pub get
-      - name: Extract version semver
-        id: version
+      - id: version
         run: |
           version=$(node -pe "require('./package.json').version")
           echo "##[set-output name=version;]$version"
-      - name: Extract upload_url
-        id: get_url
+      - id: get_url
         run: |
           api_url="https://api.github.com/repos/$GITHUB_REPOSITORY/releases"
           release_id="$(curl -H "Authorization: token $GITHUB_TOKEN" "$api_url/tags/v$version" | jq -r '.id | select(. != null)')"
@@ -69,8 +60,7 @@ jobs:
           version: ${{ steps.version.outputs.version }}
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Decrypt secrets ${{ matrix.platform }}
-        id: secret
+      - id: secret
         working-directory: sentrei/mobile/${{ matrix.platform }}
         run: |
           ./key.sh
@@ -79,19 +69,16 @@ jobs:
           BRANCH: ${{ github.event.client_payload.branch }}
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           SECRET_REPO: ${{ secrets.SECRET_REPO }}
-      - name: Run flutter android
-        if: matrix.platform == 'android'
+      - if: matrix.platform == 'android'
         working-directory: sentrei/mobile
         run: |
           flutter build apk --flavor ${{ github.event.client_payload.branch }} --target-platform android-arm,android-arm64,android-x64 --split-per-abi
           flutter build appbundle --flavor ${{ github.event.client_payload.branch }} --target-platform android-arm,android-arm64,android-x64
-      - name: Run flutter ios
-        if: matrix.platform == 'ios'
+      - if: matrix.platform == 'ios'
         working-directory: sentrei/mobile
         run: |
           flutter build ios --no-codesign --release --flavor ${{ github.event.client_payload.branch }}
-      - name: Run fastlane ${{ matrix.platform }}
-        if: github.event.client_payload.event_name == 'release'
+      - if: github.event.client_payload.event_name == 'release'
         working-directory: sentrei/mobile/${{ matrix.platform }}
         run: |
           bundle exec fastlane ${{ github.event.client_payload.branch }} release:${{ github.event.client_payload.release }}
@@ -104,8 +91,7 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           SECRET_REPO: ${{ secrets.SECRET_REPO }}
-      - name: Run fastlane test
-        if: matrix.platform == 'android' && github.event.client_payload.event_name == 'test'
+      - if: matrix.platform == 'android' && github.event.client_payload.event_name == 'test'
         working-directory: sentrei/mobile/${{ matrix.platform }}
         run: |
           bundle exec fastlane test ${{ github.event.client_payload.branch }}:true
@@ -113,8 +99,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.client_payload.pull_request_number }}
           SECRET_REPO: ${{ secrets.SECRET_REPO }}
-      - name: Upload android apk
-        if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
+      - if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -123,8 +108,7 @@ jobs:
           asset_path: sentrei/mobile/build/app/outputs/apk/${{ github.event.client_payload.branch }}/release/app-${{ github.event.client_payload.branch }}-release.apk
           asset_name: ${{ github.event.client_payload.branch }}.apk
           asset_content_type: application/vnd.android.package-archive
-      - name: Upload android aab
-        if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
+      - if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -133,8 +117,7 @@ jobs:
           asset_path: sentrei/mobile/build/app/outputs/bundle/${{ github.event.client_payload.branch }}Release/app-${{ github.event.client_payload.branch }}-release.aab
           asset_name: ${{ github.event.client_payload.branch }}.aab
           asset_content_type: application/vnd.android.package-archive
-      - name: Upload ios ipa
-        if: matrix.platform == 'ios' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
+      - if: matrix.platform == 'ios' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -5,8 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Slash command dispatch
-        uses: peter-evans/slash-command-dispatch@v1
+      - uses: peter-evans/slash-command-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           reaction-token: ${{ secrets.GITHUB_TOKEN }}
