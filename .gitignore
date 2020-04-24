@@ -55,6 +55,9 @@
 # Mobile related.
 **/mobile/firebase.json
 
+# UI related.
+**/ui/lib
+
 # Web related.
 **/web/firebase.json
 **/web/out
