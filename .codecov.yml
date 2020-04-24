@@ -29,7 +29,7 @@ flags:
       - sentrei/mobile/lib
       - sentrei/ui/src
       - sentrei/web/src
-    carryforward: true
+    carryforward: false
 comment:
   layout: "reach, diff, flags, files"
   behavior: default
