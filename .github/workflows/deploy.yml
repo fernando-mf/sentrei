@@ -123,8 +123,8 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: lighthouse-cmd
           client-payload: '{"url": "https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com"}'
-  storybook:
-    if: github.event.client_payload.event_name == 'storybook'
+  ui:
+    if: github.event.client_payload.event_name == 'ui'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -152,7 +152,7 @@ jobs:
           environment: ${{ github.event.client_payload.environment }}
           ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}storybook.sentrei.com
+          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
       - name: Deploy to firebase
         working-directory: sentrei/web
         run: |
@@ -164,7 +164,7 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}storybook.sentrei.com
+          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - name: Deployment failure
@@ -172,7 +172,7 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}storybook.sentrei.com
+          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - name: Dispatch lighthouse event
@@ -180,7 +180,7 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: lighthouse-cmd
-          client-payload: '{"url": "https://${{ github.event.client_payload.url_prefix }}storybook.sentrei.com"}'
+          client-payload: '{"url": "https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com"}'
   web:
     if: github.event.client_payload.event_name == 'web'
     runs-on: ubuntu-latest

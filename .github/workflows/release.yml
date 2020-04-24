@@ -111,17 +111,17 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
           client-payload: '{"branch": "${{ needs.context.outputs.branch }}", "environment": "production", "event_name": "mobile", "task": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'
-  storybook:
+  ui:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     needs: context
     steps:
-      - name: Dispatch storybook event
+      - name: Dispatch ui event
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
-          client-payload: '{"branch": "${{ needs.context.outputs.branch }}", "environment": "production", "event_name": "storybook", "task": "storybook", "url_prefix": ""}'
+          client-payload: '{"branch": "${{ needs.context.outputs.branch }}", "environment": "production", "event_name": "ui", "task": "ui", "url_prefix": ""}'
   web:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest

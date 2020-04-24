@@ -36,7 +36,7 @@ jobs:
       - if: steps.change.outputs.changed == 'true'
         working-directory: sentrei/ui
         run: |
-          yarn run build
+          yarn run tsc
       - if: steps.change.outputs.changed == 'true'
         working-directory: sentrei/ui
         run: |
@@ -49,13 +49,13 @@ jobs:
           name: sentrei
           fail_ci_if_error: true
           flags: ui
-      - name: Dispatch storybook event
+      - name: Dispatch ui event
         if: steps.change.outputs.changed == 'true'
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
-          client-payload: '{"branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "storybook", "task": "staging-storybook", "url_prefix": "staging."}'
+          client-payload: '{"branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "ui", "task": "staging-ui", "url_prefix": "staging."}'
       - if: steps.change.outputs.changed == 'true'
         id: secrets
         uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
