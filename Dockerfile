@@ -3,7 +3,7 @@ FROM mhart/alpine-node:14.0.0
 WORKDIR /app
 COPY . .
 
-RUN yarn install
+RUN yarn install --production
 RUN yarn tsc
 
 WORKDIR /app/sentrei/web

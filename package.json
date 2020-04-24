@@ -60,5 +60,8 @@
     "reg-suit": "^0.10.0",
     "semantic-release": "^17.0.4",
     "sort-package-json": "^1.42.0"
+  },
+  "dependencies": {
+    "typescript": "^3.8.3"
   }
 }

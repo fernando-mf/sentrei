@@ -18,5 +18,5 @@
     "titleBar.border": "#b52e31"
   },
   "peacock.color": "#b52e31",
-  "eslint.lintTask.options": "--fix --ext .js,.jsx,.ts,.tsx sentrei/web/src"
+  "eslint.lintTask.options": ". -c .eslintrc.json --no-eslintrc --ignore-path .gitignore"
 }
