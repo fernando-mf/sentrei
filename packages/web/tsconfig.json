@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.base.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "noEmit": true
   },
@@ -13,9 +13,7 @@
     "**/*.spec.tsx",
     "**/*.stories.tsx"
   ],
-  "references": [
-    {
-      "path": "../ui"
-    }
-  ],
+  "references": [{
+    "path": "../ui"
+  }],
 }
