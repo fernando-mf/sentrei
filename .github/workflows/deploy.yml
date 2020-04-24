@@ -136,7 +136,7 @@ jobs:
           ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
-      - working-directory: sentrei/web
+      - working-directory: sentrei/ui
         run: |
           yarn run ${{ github.event.client_payload.task }}
         env:
