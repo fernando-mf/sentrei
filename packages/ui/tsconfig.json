@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "baseUrl": "src",
     "module": "CommonJS",
     "noEmit": false,
     "jsx": "react",
