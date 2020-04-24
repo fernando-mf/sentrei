@@ -48,7 +48,7 @@ jobs:
           file: sentrei/ui/coverage/lcov.info
           name: sentrei
           fail_ci_if_error: true
-          flags: web
+          flags: ui
       - name: Dispatch storybook event
         if: steps.change.outputs.changed == 'true'
         uses: peter-evans/repository-dispatch@v1
