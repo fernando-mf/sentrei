@@ -14,7 +14,9 @@
     "**/*.spec.tsx",
     "**/*.stories.tsx"
   ],
-  "references": [{
-    "path": "../ui"
-  }]
+  "references": [
+    {
+      "path": "../ui"
+    }
+  ]
 }
