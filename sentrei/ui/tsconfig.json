@@ -1,19 +1,18 @@
 {
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "composite": true,
+    "outDir": "lib",
+    "rootDir": ".",
+    "jsx": "react",
+  },
   "include": ["src/**/*"],
   "exclude": [
+    "/node_modules",
     "**/__tests__/*.ts",
     "**/*.spec.ts",
     "**/*.spec.tsx",
     "**/*.stories.tsx"
   ],
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "composite": true,
-    "outDir": "lib",
-    "rootDir": ".",
-    "jsx": "react",
-    "module": "commonjs",
-    "target": "es5",
-    "lib": ["es5", "es6", "es7", "es2017", "dom", "esnext.asynciterable"]
-  }
 }
