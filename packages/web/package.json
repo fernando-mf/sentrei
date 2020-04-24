@@ -26,13 +26,11 @@
     "start": "next start -p 8080",
     "swap-alpha": "cp alpha.firebase.json firebase.json",
     "swap-beta": "cp beta.firebase.json firebase.json",
-    "swap-master": "cp master.firebase.json firebase.json",
-    "test": "jest --coverage"
+    "swap-master": "cp master.firebase.json firebase.json"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.10",
     "@next/bundle-analyzer": "^9.3.5",
-    "@sentrei/common": "*",
     "@sentrei/ui": "*",
     "@storybook/react": "^5.3.18",
     "@stripe/react-stripe-js": "^1.1.2",
@@ -44,23 +42,12 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "@types/enzyme": "^3.10.5",
-    "@types/enzyme-adapter-react-16": "^1.0.6",
-    "@types/jest": "^25.2.1",
     "@types/next": "^9.0.0",
     "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "awesome-typescript-loader": "^5.2.1",
     "cross-env": "^7.0.2",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "enzyme-to-json": "^3.4.4",
-    "jest": "^25.4.0",
-    "jest-enzyme": "^7.1.2",
-    "pretty-quick": "^2.0.1",
-    "ts-jest": "^25.4.0",
-    "ts-loader": "^7.0.1",
     "typescript": "^3.8.3"
   },
   "publishConfig": {

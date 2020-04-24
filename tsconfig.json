@@ -1,30 +1,9 @@
 {
-  "compileOnSave": true,
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "allowJs": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "ESNext"
-  },
-  "include": ["**/*.js", "**/*.ts", "**/*.tsx"],
-  "references": [
-    {
-      "path": "sentrei/common"
-    },
-    {
-      "path": "sentrei/ui"
-    },
-    {
-      "path": "sentrei/web"
+    "baseUrl": ".",
+    "paths": {
+      "@sentrei/ui": ["packages/ui/src/index.tsx"]
     }
-  ]
+  }
 }
