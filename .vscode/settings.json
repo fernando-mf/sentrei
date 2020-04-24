@@ -18,5 +18,5 @@
     "titleBar.border": "#b52e31"
   },
   "peacock.color": "#b52e31",
-  "eslint.lintTask.options": ". -c .eslintrc.json --no-eslintrc --ignore-path .gitignore"
+  "eslint.lintTask.options": "-c .eslintrc.json --ext .ts,.tsx --ignore-path .gitignore"
 }
