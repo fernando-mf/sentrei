@@ -11,6 +11,7 @@
       "jsx": true
     },
     "project": "tsconfig.json",
+    "createDefaultProgram": true,
     "sourceType": "module",
     "useJSXTextNode": true
   },
