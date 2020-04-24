@@ -36,6 +36,7 @@
     }
   },
   "dependencies": {
+    "lerna": "^3.20.2",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
@@ -55,7 +56,6 @@
     "eslint-plugin-react-hooks": "^3.0.0",
     "git-cz": "^4.3.1",
     "husky": "^4.2.5",
-    "lerna": "^3.20.2",
     "prettier": "^2.0.4",
     "reg-keygen-git-hash-plugin": "^0.8.5",
     "reg-notify-github-plugin": "^0.8.5",
