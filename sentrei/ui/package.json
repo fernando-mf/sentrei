@@ -15,8 +15,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "rimraf lib && tsc",
-    "build-storybook": "build-storybook -o out",
+    "build": "build-storybook -o out",
     "deploy-staging-storybook": "firebase deploy --only hosting:staging-storybook --token $FIREBASE_TOKEN",
     "deploy-storybook": "firebase deploy --only hosting:storybook --token $FIREBASE_TOKEN",
     "eslint-check": "eslint --ext .js,.jsx,.ts,.tsx src",
@@ -28,6 +27,7 @@
     "storybook": "yarn run swap-master && firebase use master && yarn run deploy-storybook",
     "storycap": "storycap --serverCmd 'start-storybook -p 9001' http://localhost:9001 --serverTimeout 120000",
     "test": "yarn run eslint-check && yarn run jest",
+    "tsc": "rimraf lib && tsc",
     "watch": "tsc -w --preserveWatchOutput"
   },
   "dependencies": {
@@ -79,11 +79,6 @@
     "ts-jest": "^25.4.0",
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3"
-  },
-  "peerDependencies": {
-    "@sentrei/ui": "^3.13.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
   },
   "publishConfig": {
     "access": "public"
