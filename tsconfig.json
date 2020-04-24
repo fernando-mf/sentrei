@@ -10,14 +10,16 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
+    "paths": {
+      "@sentrei/*": ["packages/*/src"]
+    },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext"
   },
   "include": ["**/*.js", "**/*.ts", "**/*.tsx"],
-  "references": [
-    {
+  "references": [{
       "path": "packages/common"
     },
     {
