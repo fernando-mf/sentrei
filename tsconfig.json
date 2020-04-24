@@ -34,7 +34,7 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "**/__tests__/*.ts", "**/*.spec.ts", "**/*.spec.tsx", "**/*.stories.tsx"],
+  "exclude": ["node_modules"],
   "files": [],
   "references": [
     {
