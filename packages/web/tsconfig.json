@@ -13,9 +13,6 @@
   ],
   "references": [
     {
-      "path": "../common"
-    },
-    {
       "path": "../ui"
     }
   ]
