@@ -24,12 +24,18 @@ coverage:
         informational: true
         only_pulls: false
 flags:
-  mobile-test:
+  mobile:
     paths:
       - sentrei/mobile/lib
+    carryforward: true
+  ui:
+    paths:
       - sentrei/ui/src
+    carryforward: true
+  web:
+    paths:
       - sentrei/web/src
-    carryforward: false
+    carryforward: true
 comment:
   layout: "reach, diff, flags, files"
   behavior: default
