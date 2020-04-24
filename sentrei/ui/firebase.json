@@ -1,5 +1,6 @@
 {
-  "hosting": [{
+  "hosting": [
+    {
       "site": "sentrei-ui",
       "target": "ui",
       "public": "out",
