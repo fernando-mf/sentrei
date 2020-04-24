@@ -33,8 +33,13 @@
       "@sentrei/*": ["sentrei/*/src"]
     }
   },
-  "include": ["next-env.d.ts", "jest.config.js", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.stories.tsx"
+  ],
   "files": [],
   "references": [
     {
