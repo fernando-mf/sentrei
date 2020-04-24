@@ -1,10 +1,34 @@
 coverage:
   precision: 3
   status:
-    project:
+    mobile:
       default:
         flags:
-          - test
+          - mobile
+        target: auto
+        threshold: null
+        base: auto
+        if_no_uploads: error
+        if_not_found: success
+        if_ci_failed: error
+        informational: true
+        only_pulls: false
+    ui:
+      default:
+        flags:
+          - ui
+        target: auto
+        threshold: null
+        base: auto
+        if_no_uploads: error
+        if_not_found: success
+        if_ci_failed: error
+        informational: true
+        only_pulls: false
+    web:
+      default:
+        flags:
+          - web
         target: auto
         threshold: null
         base: auto
@@ -27,15 +51,15 @@ flags:
   mobile:
     paths:
       - sentrei/mobile/lib
-    carryforward: true
+    carryforward: false
   ui:
     paths:
       - sentrei/ui/src
-    carryforward: true
+    carryforward: false
   web:
     paths:
       - sentrei/web/src
-    carryforward: true
+    carryforward: false
 comment:
   layout: "reach, diff, flags, files"
   behavior: default
