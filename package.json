@@ -10,7 +10,7 @@
   "license": "MIT",
   "author": "Shun Kakinoki",
   "workspaces": [
-    "sentrei/*"
+    "packages/*"
   ],
   "scripts": {
     "eclint-check": "eclint check $(git ls-files)",
@@ -24,8 +24,8 @@
     "publish": "lerna publish from-package --yes",
     "release": "semantic-release",
     "release-test": "semantic-release -d",
-    "sort-package-json-check": "sort-package-json 'package.json' 'sentrei/*/package.json' --check",
-    "sort-package-json-fix": "sort-package-json 'package.json' 'sentrei/*/package.json'",
+    "sort-package-json-check": "sort-package-json 'package.json' 'packages/*/package.json' --check",
+    "sort-package-json-fix": "sort-package-json 'package.json' 'packages/*/package.json'",
     "test": "yarn lint && yarn release-test",
     "tsc": "lerna run tsc --scope={@sentrei/common,@sentrei/ui}",
     "watch": "lerna run watch --scope={@sentrei/common,@sentrei/ui}"

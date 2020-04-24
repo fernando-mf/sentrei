@@ -50,15 +50,15 @@ coverage:
 flags:
   mobile:
     paths:
-      - sentrei/mobile/lib
+      - packages/mobile/lib
     carryforward: false
   ui:
     paths:
-      - sentrei/ui/src
+      - packages/ui/src
     carryforward: false
   web:
     paths:
-      - sentrei/web/src
+      - packages/web/src
     carryforward: false
 comment:
   layout: "reach, diff, flags, files"

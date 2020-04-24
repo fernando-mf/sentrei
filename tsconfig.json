@@ -18,13 +18,13 @@
   "include": ["**/*.js", "**/*.ts", "**/*.tsx"],
   "references": [
     {
-      "path": "sentrei/common"
+      "path": "packages/common"
     },
     {
-      "path": "sentrei/ui"
+      "path": "packages/ui"
     },
     {
-      "path": "sentrei/web"
+      "path": "packages/web"
     }
   ]
 }

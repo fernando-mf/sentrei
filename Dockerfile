@@ -6,7 +6,7 @@ COPY . .
 RUN yarn install --production
 RUN yarn tsc
 
-WORKDIR /app/sentrei/web
+WORKDIR /app/packages/web
 
 RUN yarn build
 
