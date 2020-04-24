@@ -56,7 +56,10 @@
 **/mobile/firebase.json
 
 # UI related.
+**/ui/.reg
 **/ui/lib
+**/ui/out
+**/ui/__screenshots__
 
 # Web related.
 **/web/firebase.json

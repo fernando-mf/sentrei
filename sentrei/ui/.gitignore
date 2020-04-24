@@ -113,8 +113,3 @@ dist
 .yarn/unplugged
 .yarn/build-state.yml
 .pnp.*
-
-lib
-out
-.reg
-__screenshots__
