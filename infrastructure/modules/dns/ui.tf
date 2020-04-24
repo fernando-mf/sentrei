@@ -1,5 +1,5 @@
-resource "google_dns_record_set" "storybook_sentrei_com_A" {
-  name         = "storybook.${google_dns_managed_zone.sentrei.dns_name}"
+resource "google_dns_record_set" "ui_sentrei_com_A" {
+  name         = "ui.${google_dns_managed_zone.sentrei.dns_name}"
   managed_zone = google_dns_managed_zone.sentrei.name
   type         = "A"
   ttl          = 300
@@ -7,8 +7,8 @@ resource "google_dns_record_set" "storybook_sentrei_com_A" {
   rrdatas = ["151.101.1.195", "151.101.65.195"]
 }
 
-resource "google_dns_record_set" "staging_storybook_sentrei_com_A" {
-  name         = "staging.storybook.${google_dns_managed_zone.sentrei.dns_name}"
+resource "google_dns_record_set" "staging_ui_sentrei_com_A" {
+  name         = "staging.ui.${google_dns_managed_zone.sentrei.dns_name}"
   managed_zone = google_dns_managed_zone.sentrei.name
   type         = "A"
   ttl          = 300
