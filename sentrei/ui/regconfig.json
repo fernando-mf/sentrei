@@ -14,7 +14,7 @@
       "clientId": "MzKxNDMzMLcw0y9OzSspSs3UtzAyNzU3NoDxAQ=="
     },
     "reg-publish-gcs-plugin": {
-      "bucketName": "sentrei-master-reg-web"
+      "bucketName": "sentrei-master-reg"
     }
   }
 }
