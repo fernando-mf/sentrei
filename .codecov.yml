@@ -27,6 +27,7 @@ flags:
   mobile-test:
     paths:
       - sentrei/mobile/lib
+      - sentrei/ui/src
       - sentrei/web/src
     carryforward: true
 comment:
