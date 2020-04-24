@@ -36,7 +36,7 @@ jobs:
       - if: steps.change.outputs.changed == 'true'
         working-directory: sentrei/ui
         run: |
-          yarn run build
+          yarn run tsc
       - if: steps.change.outputs.changed == 'true'
         working-directory: sentrei/ui
         run: |
