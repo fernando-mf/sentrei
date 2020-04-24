@@ -3,7 +3,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "allowJs": false,
+    "allowJs": true,
     "jsx": "preserve",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -33,7 +33,7 @@
       "@sentrei/*": ["sentrei/*/src"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "jest.config.js", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "files": [],
   "references": [

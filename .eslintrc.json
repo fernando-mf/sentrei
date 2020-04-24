@@ -4,13 +4,14 @@
     "es6": true,
     "node": true
   },
-  "ignorePatterns": ["node_modules", "**/__tests__*", "**/*.spec.*"],
+  "ignorePatterns": ["**/node_modules/**", "**/lib/**"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "project": "tsconfig.json",
+    "createDefaultProgram": true,
     "sourceType": "module",
     "useJSXTextNode": true
   },
