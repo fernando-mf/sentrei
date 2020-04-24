@@ -1,9 +1,10 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "lib",
-    "rootDir": "src"
+    "outDir": "./lib",
+    "rootDir": "./src"
   },
+  "include": ["src"],
   "exclude": [
     "node_modules",
     "**/__tests__/*.ts",
@@ -13,7 +14,8 @@
   ],
   "references": [
     {
-      "path": "../ui"
+      "path": "../ui",
+      "prepend": false
     }
   ]
 }
