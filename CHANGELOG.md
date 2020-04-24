@@ -1,3 +1,13 @@
+# [4.0.0](https://github.com/sentrei/sentrei/compare/v3.16.7...v4.0.0) (2020-04-24)
+
+### Features
+
+- 🎸 CHANGE TO PACKAGE DIR STRUCTURE ([ea2d9cf](https://github.com/sentrei/sentrei/commit/ea2d9cfdf99ea92bb4747192e6d71760c364b6ad))
+
+### BREAKING CHANGES
+
+- 🧨 YES
+
 ## [3.16.6](https://github.com/sentrei/sentrei/compare/v3.16.5...v3.16.6) (2020-04-24)
 
 ### Bug Fixes
