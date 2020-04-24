@@ -27,6 +27,7 @@
     "start": "start-storybook -p 6006",
     "storybook": "yarn run swap-master && firebase use master && yarn run deploy-storybook",
     "storycap": "storycap --serverCmd 'start-storybook -p 9001' http://localhost:9001 --serverTimeout 120000",
+    "test": "yarn run eslint-check && yarn run jest",
     "watch": "tsc -w --preserveWatchOutput"
   },
   "dependencies": {

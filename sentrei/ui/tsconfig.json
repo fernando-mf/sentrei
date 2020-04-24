@@ -4,6 +4,9 @@
   "compilerOptions": {
     "outDir": "lib",
     "rootDir": "src",
-    "jsx": "react"
+    "jsx": "react",
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es5", "es6", "es7", "es2017", "dom", "esnext.asynciterable"],
   }
 }
