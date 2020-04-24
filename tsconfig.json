@@ -16,7 +16,8 @@
     "target": "ES6"
   },
   "include": ["**/*.js", "**/*.ts", "**/*.tsx"],
-  "references": [{
+  "references": [
+    {
       "path": "sentrei/common"
     },
     {
