@@ -7,9 +7,12 @@
     "**/*.spec.tsx",
     "**/*.stories.tsx"
   ],
-  "references": [{
-    "path": "../common"
-  }, {
-    "path": "../ui"
-  }],
+  "references": [
+    {
+      "path": "../common"
+    },
+    {
+      "path": "../ui"
+    }
+  ]
 }
