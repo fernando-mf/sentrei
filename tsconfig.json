@@ -13,7 +13,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ES5"
+    "target": "ESNext"
   },
   "include": ["**/*.js", "**/*.ts", "**/*.tsx"],
   "references": [
