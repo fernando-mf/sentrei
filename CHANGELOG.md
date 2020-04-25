@@ -1,3 +1,9 @@
+## [4.1.2](https://github.com/sentrei/sentrei/compare/v4.1.1...v4.1.2) (2020-04-25)
+
+### Bug Fixes
+
+- 🐛 add web package ([9c78dd5](https://github.com/sentrei/sentrei/commit/9c78dd5fa5f1de695e278624d875bea3c2298628))
+
 ## [4.1.1](https://github.com/sentrei/sentrei/compare/v4.1.0...v4.1.1) (2020-04-25)
 
 ### Bug Fixes
