@@ -1,3 +1,9 @@
+## [4.1.1](https://github.com/sentrei/sentrei/compare/v4.1.0...v4.1.1) (2020-04-25)
+
+### Bug Fixes
+
+- 🐛 refactor readme badges ([f017a84](https://github.com/sentrei/sentrei/commit/f017a8474273a99174d8bae4f82fca4d76c11866))
+
 # [4.0.0](https://github.com/sentrei/sentrei/compare/v3.16.7...v4.0.0) (2020-04-24)
 
 ### Features
