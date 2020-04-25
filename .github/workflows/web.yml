@@ -39,6 +39,7 @@ jobs:
         working-directory: packages/web
         run: |
           yarn run build
+          yarn run cypress-install
           yarn run test
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
