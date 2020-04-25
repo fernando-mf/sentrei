@@ -42,12 +42,14 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
+    "@cypress/webpack-preprocessor": "^5.1.2",
     "@types/next": "^9.0.0",
     "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "awesome-typescript-loader": "^5.2.1",
     "cross-env": "^7.0.2",
+    "cypress": "^4.4.1",
     "typescript": "^3.8.3"
   },
   "publishConfig": {
