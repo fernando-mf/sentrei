@@ -10,5 +10,6 @@ WORKDIR /app/packages/web
 
 RUN yarn build
 
-EXPOSE 3000
-CMD ["yarn", "start"]
+EXPOSE 8080
+
+CMD ["yarn", "start", "-p", "8080"]
