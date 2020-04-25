@@ -39,18 +39,11 @@ jobs:
         working-directory: packages/web
         run: |
           yarn run build
-        env:
-          NODE_ENV: test
-      - if: steps.change.outputs.changed == 'true'
-        uses: cypress-io/github-action@v1
-        with:
-          working-directory: packages/web
-          record: true
-          start: yarn run start
-          wait-on: "http://localhost:3000"
+          yarn run cypress-install
+          yarn run test
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_ENV: test
       - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:
