@@ -16,7 +16,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
-      - run: git fetch --quiet
+      - run: |
+          git fetch --quiet
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: "2.x"
