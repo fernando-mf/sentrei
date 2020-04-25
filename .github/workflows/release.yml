@@ -53,7 +53,7 @@ jobs:
       - run: |
           version=$(node -pe "require('./package.json').version")
           sed -i -e "s/^version: .*/version: $version/" packages/mobile/pubspec.yaml
-          for i in $(find sentrei -name package.json); do
+          for i in $(find packages -name package.json); do
             sed -i -e "s/^  \"version\": .*/  \"version\": \"$version\",/" $i
             cat $i
           done
