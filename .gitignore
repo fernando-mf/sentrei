@@ -64,6 +64,7 @@
 # Web related.
 **/web/firebase.json
 **/web/out
+**/web/cypress/videos
 
 # Firebase related.
 **/.firebase
