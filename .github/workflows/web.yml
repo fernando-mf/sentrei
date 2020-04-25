@@ -36,6 +36,28 @@ jobs:
         run: |
           yarn run build
       - if: steps.change.outputs.changed == 'true'
+        working-directory: packages/web
+        run: |
+          yarn run build
+        env:
+          NODE_ENV: test
+      - uses: cypress-io/github-action@v1
+        with:
+          working-directory: packages/web
+          record: true
+          start: yarn run start
+          wait-on: "http://localhost:3000"
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - if: steps.change.outputs.changed == 'true'
+        uses: codecov/codecov-action@v1
+        with:
+          file: packages/web/coverage/lcov.info
+          name: sentrei
+          fail_ci_if_error: true
+          flags: web
+      - if: steps.change.outputs.changed == 'true'
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
