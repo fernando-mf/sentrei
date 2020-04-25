@@ -1,8 +1,4 @@
 {
-    "plugins": [
-        "istanbul"
-    ],
-    "presets": [
-        "next/babel"
-    ]
+  "plugins": ["istanbul"],
+  "presets": ["next/babel"]
 }
