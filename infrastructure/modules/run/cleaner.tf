@@ -24,6 +24,11 @@ resource "google_cloud_run_service" "cleaner" {
 resource "google_cloud_run_domain_mapping" "cleaner" {
   location = "us-central1"
   name     = "cleaner.sentrei.com"
+
+  metadata {
+    namespace = "sentrei-${var.environment}"
+  }
+
   spec {
     route_name = google_cloud_run_service.cleaner.name
   }
