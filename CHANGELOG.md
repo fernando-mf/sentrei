@@ -1,3 +1,9 @@
+# [4.3.0](https://github.com/sentrei/sentrei/compare/v4.2.0...v4.3.0) (2020-04-25)
+
+### Features
+
+- 🎸 github actions refactor deploy json ([9f63f5e](https://github.com/sentrei/sentrei/commit/9f63f5e59e874280ff03796bd3df256896ac9de8))
+
 # [4.2.0](https://github.com/sentrei/sentrei/compare/v4.1.2...v4.2.0) (2020-04-25)
 
 ### Features
