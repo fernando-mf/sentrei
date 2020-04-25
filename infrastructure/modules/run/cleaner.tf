@@ -20,3 +20,11 @@ resource "google_cloud_run_service" "cleaner" {
   }
   autogenerate_revision_name = true
 }
+
+resource "google_cloud_run_domain_mapping" "cleaner" {
+  location = "us-central1"
+  name     = "cleaner.sentrei.com"
+  spec {
+    route_name = google_cloud_run_service.cleaner.name
+  }
+}
