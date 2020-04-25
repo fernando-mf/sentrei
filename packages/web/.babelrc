@@ -1,0 +1,8 @@
+{
+    "plugins": [
+        "istanbul"
+    ],
+    "presets": [
+        "next/babel"
+    ]
+}

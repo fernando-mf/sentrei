@@ -62,6 +62,8 @@
 **/ui/__screenshots__
 
 # Web related.
+**/web/cypress/integration/*.d.ts
+**/web/cypress/integration/*.d.ts.map
 **/web/firebase.json
 **/web/out
 **/web/cypress/videos
