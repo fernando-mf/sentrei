@@ -56,4 +56,4 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
-          client-payload: '{"branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "web", "task": "staging:${{ github.event.pull_request.base.ref }}", "url_prefix": "staging.${{ github.event.pull_request.base.ref }}.", "base": "${{ github.event.pull_request.base.ref }}"}'
+          client-payload: '{"base": "${{ github.event.pull_request.base.ref }}", "branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "web", "pull_request_number": "${{ github.event.pull_request.number }}", "release": "false", "task": "staging:${{ github.event.pull_request.base.ref }}", "url_prefix": "staging.${{ github.event.pull_request.base.ref }}."}'
