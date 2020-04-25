@@ -1,3 +1,9 @@
+# [4.2.0](https://github.com/sentrei/sentrei/compare/v4.1.2...v4.2.0) (2020-04-25)
+
+### Features
+
+- 🎸 change yarn commands to be : ([5c9b391](https://github.com/sentrei/sentrei/commit/5c9b39121888fe556313d124d68fb115a073de99))
+
 ## [4.1.2](https://github.com/sentrei/sentrei/compare/v4.1.1...v4.1.2) (2020-04-25)
 
 ### Bug Fixes
