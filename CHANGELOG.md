@@ -1,3 +1,9 @@
+## [4.3.1](https://github.com/sentrei/sentrei/compare/v4.3.0...v4.3.1) (2020-04-25)
+
+### Bug Fixes
+
+- 🐛 add storage lifecycle ([b52dd68](https://github.com/sentrei/sentrei/commit/b52dd68165fbdbb00cb97316850de9ab47004b52))
+
 # [4.3.0](https://github.com/sentrei/sentrei/compare/v4.2.0...v4.3.0) (2020-04-25)
 
 ### Features
