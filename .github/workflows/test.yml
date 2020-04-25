@@ -13,4 +13,4 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: fastlane-cmd
-          client-payload: '{"branch": "${{ github.event.client_payload.pull_request.head.ref }}", "event_name": "test", "pull_request_number": "${{ github.event.client_payload.pull_request.number }}"}'
+          client-payload: '{"base": "${{ github.event.client_payload.pull_request.base.ref }}", "branch": "${{ github.event.client_payload.pull_request.head.ref }}", "environment": "production", "event_name": "fastlane-test", "pull_request_number": "${{ github.event.client_payload.pull_request.number }}", "release": "false", "task": "fastlane", "url_prefix": ""}'

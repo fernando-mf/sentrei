@@ -79,7 +79,7 @@ jobs:
         working-directory: packages/mobile
         run: |
           flutter build ios --no-codesign --release --flavor ${{ github.event.client_payload.branch }}
-      - if: github.event.client_payload.event_name == 'release'
+      - if: github.event.client_payload.event_name == 'fastlane'
         working-directory: packages/mobile/${{ matrix.platform }}
         run: |
           bundle exec fastlane ${{ github.event.client_payload.branch }} release:${{ github.event.client_payload.release }}
@@ -92,7 +92,7 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           SECRET_REPO: ${{ secrets.SECRET_REPO }}
-      - if: matrix.platform == 'android' && github.event.client_payload.event_name == 'test'
+      - if: matrix.platform == 'android' && github.event.client_payload.event_name == 'fastlane-test'
         working-directory: packages/mobile/${{ matrix.platform }}
         run: |
           bundle exec fastlane test ${{ github.event.client_payload.branch }}:true
@@ -100,7 +100,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.client_payload.pull_request_number }}
           SECRET_REPO: ${{ secrets.SECRET_REPO }}
-      - if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
+      - if: matrix.platform == 'android' && github.event.client_payload.event_name == 'fastlane' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -109,7 +109,7 @@ jobs:
           asset_path: packages/mobile/build/app/outputs/apk/${{ github.event.client_payload.branch }}/release/app-${{ github.event.client_payload.branch }}-release.apk
           asset_name: ${{ github.event.client_payload.branch }}.apk
           asset_content_type: application/vnd.android.package-archive
-      - if: matrix.platform == 'android' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
+      - if: matrix.platform == 'android' && github.event.client_payload.event_name == 'fastlane' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -118,7 +118,7 @@ jobs:
           asset_path: packages/mobile/build/app/outputs/bundle/${{ github.event.client_payload.branch }}Release/app-${{ github.event.client_payload.branch }}-release.aab
           asset_name: ${{ github.event.client_payload.branch }}.aab
           asset_content_type: application/vnd.android.package-archive
-      - if: matrix.platform == 'ios' && github.event.client_payload.event_name == 'release' && github.event.client_payload.release == 'false'
+      - if: matrix.platform == 'ios' && github.event.client_payload.event_name == 'fastlane' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

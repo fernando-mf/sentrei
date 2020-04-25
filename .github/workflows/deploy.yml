@@ -225,8 +225,17 @@ jobs:
           service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
           service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
           project_id: "sentrei-${{ github.event.client_payload.base }}"
-      - run: |
-          gcloud run deploy "sentrei-${{ github.event.client_payload.task }}-web" \
+      - if: github.event.client_payload.environment == 'production'
+        run: |
+          gcloud run deploy "sentrei-${{ github.event.client_payload.base }}-web" \
+            --image "gcr.io/sentrei-${{ github.event.client_payload.base }}/sentrei:${{ github.event.client_payload.task }}" \
+            --platform "managed" \
+            --region "us-central1" \
+            --allow-unauthenticated \
+            --quiet
+      - if: github.event.client_payload.environment == 'staging'
+        run: |
+          gcloud run deploy "sentrei-staging-${{ github.event.client_payload.base }}-web" \
             --image "gcr.io/sentrei-${{ github.event.client_payload.base }}/sentrei:${{ github.event.client_payload.task }}" \
             --platform "managed" \
             --region "us-central1" \
