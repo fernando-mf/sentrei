@@ -52,11 +52,6 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: lighthouse-cmd
-          client-payload: '{"url": "https://${{ github.event.client_payload.url_prefix }}design.sentrei.com"}'
   mobile:
     if: github.event.client_payload.event_name == 'mobile'
     runs-on: ubuntu-latest
@@ -104,11 +99,6 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: lighthouse-cmd
-          client-payload: '{"url": "https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com"}'
   ui:
     if: github.event.client_payload.event_name == 'ui'
     runs-on: ubuntu-latest
@@ -155,11 +145,6 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: lighthouse-cmd
-          client-payload: '{"url": "https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com"}'
   web:
     if: github.event.client_payload.event_name == 'web'
     runs-on: ubuntu-latest
@@ -260,8 +245,3 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: lighthouse-cmd
-          client-payload: '{"url": "https://${{ github.event.client_payload.url_prefix }}sentrei.com"}'

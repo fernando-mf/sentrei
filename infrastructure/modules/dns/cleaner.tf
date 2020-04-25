@@ -7,7 +7,7 @@ resource "google_dns_record_set" "cleaner_sentrei_com_CNAME" {
   rrdatas = ["ghs.googlehosted.com."]
 }
 
-resource "google_dns_record_set" "sentrei_com_TXT_google_site_verification" {
+resource "google_dns_record_set" "cleaner_sentrei_com_TXT" {
   name         = "cleaner.${google_dns_managed_zone.sentrei.dns_name}"
   managed_zone = google_dns_managed_zone.sentrei.name
   type         = "TXT"
