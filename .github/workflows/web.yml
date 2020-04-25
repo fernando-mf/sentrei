@@ -38,8 +38,12 @@ jobs:
       - uses: cypress-io/github-action@v1
         with:
           working-directory: packages/web
+          record: true
           start: yarn run start
           wait-on: "http://localhost:3000"
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - if: steps.change.outputs.changed == 'true'
         uses: peter-evans/repository-dispatch@v1
         with:
