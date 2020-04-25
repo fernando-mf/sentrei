@@ -41,7 +41,7 @@ jobs:
           yarn run build
         env:
           NODE_ENV: test
-      - if: steps.change.outputs.changed == 'true's
+      - if: steps.change.outputs.changed == 'true'
         uses: cypress-io/github-action@v1
         with:
           working-directory: packages/web
