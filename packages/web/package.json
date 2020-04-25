@@ -44,7 +44,7 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "@cypress/code-coverage": "^3.5.2",
+    "@cypress/code-coverage": "^3.5.3",
     "@cypress/webpack-preprocessor": "^5.1.2",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/next": "^9.0.0",

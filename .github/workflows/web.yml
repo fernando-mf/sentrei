@@ -35,6 +35,12 @@ jobs:
         working-directory: packages/web
         run: |
           yarn run build
+      - if: steps.change.outputs.changed == 'true'
+        working-directory: packages/web
+        run: |
+          yarn run build
+        env:
+          NODE_ENV: test
       - uses: cypress-io/github-action@v1
         with:
           working-directory: packages/web
