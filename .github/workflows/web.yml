@@ -39,7 +39,7 @@ jobs:
         working-directory: packages/web
         run: |
           yarn run build
-          yarn run cypress-install
+          yarn run cypress:install
           yarn run test
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
@@ -56,4 +56,4 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
-          client-payload: '{"branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "web", "task": "staging-${{ github.event.pull_request.base.ref }}", "url_prefix": "staging.${{ github.event.pull_request.base.ref }}.", "base": "${{ github.event.pull_request.base.ref }}"}'
+          client-payload: '{"branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "web", "task": "staging:${{ github.event.pull_request.base.ref }}", "url_prefix": "staging.${{ github.event.pull_request.base.ref }}.", "base": "${{ github.event.pull_request.base.ref }}"}'

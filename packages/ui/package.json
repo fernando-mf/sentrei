@@ -13,18 +13,16 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "build-storybook -o out",
-    "deploy-staging-storybook": "firebase deploy --only hosting:staging-ui --token $FIREBASE_TOKEN",
-    "deploy-storybook": "firebase deploy --only hosting:ui --token $FIREBASE_TOKEN",
+    "deploy:staging-storybook": "firebase deploy --only hosting:staging-ui --token $FIREBASE_TOKEN",
+    "deploy:storybook": "firebase deploy --only hosting:ui --token $FIREBASE_TOKEN",
     "dev": "start-storybook -p 6006",
-    "eslint-check": "eslint --ext .js,.jsx,.ts,.tsx src",
-    "eslint-fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
     "fix": "yarn run eslint-fix",
     "jest": "jest --coverage",
-    "staging-ui": "firebase use master && yarn run deploy-staging-storybook",
+    "staging:ui": "firebase use master && yarn run deploy:staging-storybook",
     "storycap": "storycap --serverCmd 'start-storybook -p 9001' http://localhost:9001 --serverTimeout 120000",
-    "test": "yarn run eslint-check && yarn run jest",
+    "test": "yarn run jest",
     "tsc": "rimraf lib && tsc -b .",
-    "ui": "firebase use master && yarn run deploy-storybook",
+    "ui": "firebase use master && yarn run deploy:storybook",
     "watch": "tsc -w --preserveWatchOutput"
   },
   "dependencies": {

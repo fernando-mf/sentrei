@@ -18,10 +18,12 @@ jobs:
     steps:
       - env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo $GITHUB_CONTEXT
+        run: |
+          echo $GITHUB_CONTEXT
       - id: branch
         shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
   release:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
