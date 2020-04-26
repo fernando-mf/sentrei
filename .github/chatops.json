@@ -14,6 +14,13 @@
     "event_type_suffix": "-cmd"
   },
   {
+    "command": "gcr",
+    "permission": "none",
+    "issue_type": "both",
+    "allow_edits": true,
+    "event_type_suffix": "-cmd"
+  },
+  {
     "command": "lgtm",
     "permission": "admin",
     "issue_type": "pull-request",
