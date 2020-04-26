@@ -1,5 +1,12 @@
 [
   {
+    "command": "deliver",
+    "permission": "admin",
+    "issue_type": "issue",
+    "allow_edits": true,
+    "event_type_suffix": "-cmd"
+  },
+  {
     "command": "deploy",
     "permission": "admin",
     "issue_type": "pull-request",
@@ -23,20 +30,6 @@
   {
     "command": "lgtm",
     "permission": "admin",
-    "issue_type": "pull-request",
-    "allow_edits": true,
-    "event_type_suffix": "-cmd"
-  },
-  {
-    "command": "release",
-    "permission": "admin",
-    "issue_type": "issue",
-    "allow_edits": true,
-    "event_type_suffix": "-cmd"
-  },
-  {
-    "command": "staging",
-    "permission": "none",
     "issue_type": "pull-request",
     "allow_edits": true,
     "event_type_suffix": "-cmd"

@@ -51,9 +51,3 @@ jobs:
           name: sentrei
           fail_ci_if_error: true
           flags: web
-      - if: steps.change.outputs.changed == 'true'
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: deploy-cmd
-          client-payload: '{"base": "${{ github.event.pull_request.base.ref }}", "branch": "${{ github.event.pull_request.head.ref }}", "environment": "staging", "event_name": "web", "pull_request_number": "${{ github.event.pull_request.number }}", "release": "false", "task": "staging:${{ github.event.pull_request.base.ref }}", "url_prefix": "staging.${{ github.event.pull_request.base.ref }}."}'

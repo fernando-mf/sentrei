@@ -1,0 +1,30 @@
+name: Deliver
+on:
+  repository_dispatch:
+    types: [deliver-cmd]
+env:
+  flutter_channel: "stable"
+  flutter_version: "1.12.13+hotfix.9"
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    outputs:
+      branch: ${{ steps.branch.outputs.branch }}
+    steps:
+      - env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo $GITHUB_CONTEXT
+      - id: branch
+        shell: bash
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+  fastlane:
+    if: github.event.client_payload != null
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: fastlane-cmd
+          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ github.event.client_payload.slash_command.arg1 }}", "environment": "production", "event_name": "release", "pull_request_number": "", "release": "true", "task": "fastlane", "url_prefix": ""}'
