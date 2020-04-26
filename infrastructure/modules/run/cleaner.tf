@@ -8,7 +8,7 @@ resource "google_cloud_run_service" "cleaner" {
       containers {
         image = "gcr.io/gcr-cleaner/gcr-cleaner"
         resources {
-          limits = { "memory" : "256Mi" }
+          limits = { "cpu" : "1000m", "memory" : "512Mi" }
         }
       }
     }
@@ -19,17 +19,4 @@ resource "google_cloud_run_service" "cleaner" {
     latest_revision = true
   }
   autogenerate_revision_name = true
-}
-
-resource "google_cloud_run_domain_mapping" "cleaner" {
-  location = "us-central1"
-  name     = "cleaner.sentrei.com"
-
-  metadata {
-    namespace = "sentrei-${var.environment}"
-  }
-
-  spec {
-    route_name = google_cloud_run_service.cleaner.name
-  }
 }

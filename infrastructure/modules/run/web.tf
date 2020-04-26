@@ -17,7 +17,7 @@ resource "google_cloud_run_service" "sentrei_web" {
       containers {
         image = "gcr.io/sentrei-${var.environment}/sentrei:${var.environment}"
         resources {
-          limits = { "memory" : "512Mi" }
+          limits = { "cpu" : "1000m", "memory" : "512Mi" }
         }
       }
     }
@@ -47,7 +47,7 @@ resource "google_cloud_run_service" "sentrei_staging_web" {
       containers {
         image = "gcr.io/sentrei-${var.environment}/sentrei:staging-${var.environment}"
         resources {
-          limits = { "memory" : "256Mi" }
+          limits = { "cpu" : "1000m", "memory" : "512Mi" }
         }
       }
     }
