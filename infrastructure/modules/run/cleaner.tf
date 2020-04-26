@@ -20,3 +20,13 @@ resource "google_cloud_run_service" "cleaner" {
   }
   autogenerate_revision_name = true
 }
+
+resource "google_cloud_run_service_iam_binding" "cleaner" {
+  location = google_cloud_run_service.cleaner.location
+  project  = google_cloud_run_service.cleaner.project
+  service  = google_cloud_run_service.cleaner.name
+  role     = "roles/invoker"
+  members = [
+    var.email,
+  ]
+}

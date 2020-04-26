@@ -1,6 +1,7 @@
 resource "google_cloud_scheduler_job" "cleaner" {
   name             = "cleaner"
-  schedule         = "*/8 * * * *"
+  schedule         = "0 0 * * *"
+  time_zone        = "Etc/UTC"
   attempt_deadline = "300s"
 
   http_target {
