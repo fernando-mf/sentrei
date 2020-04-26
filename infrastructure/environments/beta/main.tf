@@ -14,6 +14,7 @@ module "run" {
 
 module "scheduler" {
   source      = "../../modules/scheduler"
+  email       = module.iam.google_service_account_cleaner_email
   environment = var.environment
 }
 

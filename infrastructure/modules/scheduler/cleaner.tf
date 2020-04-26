@@ -6,6 +6,10 @@ resource "google_cloud_scheduler_job" "cleaner" {
   http_target {
     http_method = "POST"
     uri         = "https://cleaner.sentrei.com/http"
-    body        = "{\"repo\":\"gcr.io/sentrei-${var.environment}/sentrei\"}"
+    body        = base64encode("{\"repo\":\"gcr.io/sentrei-${var.environment}/sentrei\"}")
+
+    oauth_token {
+      service_account_email = var.email
+    }
   }
 }
