@@ -1,5 +1,7 @@
 name: GCR
 on:
+  repository_dispatch:
+    types: [gcr-cmd]
   schedule:
     - cron: "0 0,8,16 * * *"
 jobs:
