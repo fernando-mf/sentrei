@@ -152,19 +152,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "14.x"
-      - id: cache
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: node-v1-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            node-v1-
-      - if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          yarn install --frozen-lockfile
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
@@ -217,11 +204,6 @@ jobs:
             --region "us-central1" \
             --allow-unauthenticated \
             --quiet
-      - working-directory: packages/web
-        run: |
-          yarn run ${{ github.event.client_payload.task }}
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - if: success()
         uses: chrnorm/deployment-status@releases/v1
         with:
