@@ -32,8 +32,10 @@ resource "google_cloud_run_service_iam_binding" "cleaner" {
 }
 
 resource "google_cloud_run_domain_mapping" "cleaner" {
+  provider = google-beta
+  project  = "some-google-project-id"
   location = "us-central1"
-  name     = "cleaner.sentrei.com."
+  name     = "cleaner.sentrei.com"
 
   metadata {
     namespace = "sentrei-${var.environment}"
