@@ -1,3 +1,9 @@
+# [4.4.0](https://github.com/sentrei/sentrei/compare/v4.3.1...v4.4.0) (2020-04-26)
+
+### Features
+
+- 🎸 refactor deliver gha ([4338f07](https://github.com/sentrei/sentrei/commit/4338f0741804bfc33a7a780a996c54a809f2cfb0))
+
 ## [4.3.1](https://github.com/sentrei/sentrei/compare/v4.3.0...v4.3.1) (2020-04-25)
 
 ### Bug Fixes
