@@ -218,7 +218,10 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - name: Dump the client payload context
-        env:
-          PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
-        run: echo "$PAYLOAD_CONTEXT"
+      - if: github.event.client_payload.environment == 'staging'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ github.event.client_payload.comment_id }}
+          reaction-type: hooray
