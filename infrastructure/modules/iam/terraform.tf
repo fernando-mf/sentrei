@@ -16,6 +16,12 @@ resource "google_project_iam_member" "terraform_project_iam_admin" {
   member  = "serviceAccount:${google_service_account.terraform.email}"
 }
 
+resource "google_project_iam_member" "terraform_cloud_scheduler_admin" {
+  project = "sentrei-${var.environment}"
+  role    = "roles/cloudscheduler.admin"
+  member  = "serviceAccount:${google_service_account.terraform.email}"
+}
+
 resource "google_project_iam_member" "terraform_run_admin" {
   project = "sentrei-${var.environment}"
   role    = "roles/run.admin"
