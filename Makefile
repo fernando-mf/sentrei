@@ -1,11 +1,14 @@
-CLEANER_RUNNER_URL = https://gcr-master-cleaner-pk2gjf6ada-uc.a.run.app
-GCLOUD_AUTH_TOKEN= $(shell gcloud auth print-identity-token)
+cleaner-alpha:
+	gcloud container images list-tags gcr.io/sentrei-alpha/sentrei --filter='-tags:*' --format='get(digest)' --limit=unlimited | \
+	xargs -I {arg} gcloud container images delete "gcr.io/sentrei-alpha/sentrei@{arg}" --quiet
 
-cleaner:
-	curl -XPOST \
-	-H "Authorization: Bearer $(GCLOUD_AUTH_TOKEN)" \
-	-d "{\"repo\":\"gcr.io/sentrei-master/sentrei\"}" \
-	$(CLEANER_RUNNER_URL)/http
+cleaner-beta:
+	gcloud container images list-tags gcr.io/sentrei-beta/sentrei --filter='-tags:*' --format='get(digest)' --limit=unlimited | \
+	xargs -I {arg} gcloud container images delete "gcr.io/sentrei-beta/sentrei@{arg}" --quiet
+
+cleaner-master:
+	gcloud container images list-tags gcr.io/sentrei-master/sentrei --filter='-tags:*' --format='get(digest)' --limit=unlimited | \
+	xargs -I {arg} gcloud container images delete "gcr.io/sentrei-master/sentrei@{arg}" --quiet
 
 git-ls-files-mod:
 	git ls-files --stage
