@@ -181,51 +181,24 @@ jobs:
             DOCKER_PASSWORD:sentrei-master/docker_password
             SERVICE_ACCOUNT_EMAIL:sentrei-master/github_${{ github.event.client_payload.base }}_email
             SERVICE_ACCOUNT_KEY:sentrei-master/github_${{ github.event.client_payload.base }}_key
-      - if: github.event.client_payload.environment == 'production'
-        uses: docker/build-push-action@v1
+      - uses: docker/build-push-action@v1
         with:
           username: ${{ steps.secrets.outputs.DOCKER_USERNAME }}
           password: ${{ steps.secrets.outputs.DOCKER_PASSWORD }}
           repository: ${{ github.repository }}
-          tags: ${{ github.event.client_payload.base }}
+          tags: ${{ github.event.client_payload.tag }}
           always_pull: true
           add_git_labels: true
           tag_with_ref: true
           tag_with_sha: true
           push: true
-      - if: github.event.client_payload.environment == 'production'
-        uses: docker/build-push-action@v1
+      - uses: docker/build-push-action@v1
         with:
           username: _json_key
           password: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
           registry: gcr.io
           repository: sentrei-${{ github.event.client_payload.base }}/sentrei
-          tags: ${{ github.event.client_payload.base }}
-          always_pull: false
-          add_git_labels: true
-          tag_with_ref: false
-          tag_with_sha: false
-          push: true
-      - if: github.event.client_payload.environment == 'staging'
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ steps.secrets.outputs.DOCKER_USERNAME }}
-          password: ${{ steps.secrets.outputs.DOCKER_PASSWORD }}
-          repository: ${{ github.repository }}
-          tags: staging-${{ github.event.client_payload.base }}
-          always_pull: true
-          add_git_labels: true
-          tag_with_ref: true
-          tag_with_sha: true
-          push: true
-      - if: github.event.client_payload.environment == 'staging'
-        uses: docker/build-push-action@v1
-        with:
-          username: _json_key
-          password: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
-          registry: gcr.io
-          repository: sentrei-${{ github.event.client_payload.base }}/sentrei
-          tags: staging-${{ github.event.client_payload.base }}
+          tags: ${{ github.event.client_payload.tag }}
           always_pull: false
           add_git_labels: true
           tag_with_ref: false
@@ -237,18 +210,9 @@ jobs:
           service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
           service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
           project_id: "sentrei-${{ github.event.client_payload.base }}"
-      - if: github.event.client_payload.environment == 'production'
-        run: |
-          gcloud run deploy "sentrei-${{ github.event.client_payload.base }}-web" \
-            --image "gcr.io/sentrei-${{ github.event.client_payload.base }}/sentrei:${{ github.event.client_payload.task }}" \
-            --platform "managed" \
-            --region "us-central1" \
-            --allow-unauthenticated \
-            --quiet
-      - if: github.event.client_payload.environment == 'staging'
-        run: |
+      - run: |
           gcloud run deploy "sentrei-staging-${{ github.event.client_payload.base }}-web" \
-            --image "gcr.io/sentrei-${{ github.event.client_payload.base }}/sentrei:${{ github.event.client_payload.task }}" \
+            --image "gcr.io/sentrei-${{ github.event.client_payload.base }}/sentrei:${{ github.event.client_payload.tag }}" \
             --platform "managed" \
             --region "us-central1" \
             --allow-unauthenticated \
@@ -272,3 +236,7 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - name: Dump the client payload context
+        env:
+          PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
+        run: echo "$PAYLOAD_CONTEXT"
