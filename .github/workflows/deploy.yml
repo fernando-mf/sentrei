@@ -210,8 +210,7 @@ jobs:
           service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
           service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
           project_id: "sentrei-${{ github.event.client_payload.base }}"
-      - if: github.event.client_payload.environment == 'staging'
-        run: |
+      - run: |
           gcloud run deploy "sentrei-staging-${{ github.event.client_payload.base }}-web" \
             --image "gcr.io/sentrei-${{ github.event.client_payload.base }}/sentrei:${{ github.event.client_payload.tag }}" \
             --platform "managed" \
@@ -237,3 +236,7 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - name: Dump the client payload context
+        env:
+          PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
+        run: echo "$PAYLOAD_CONTEXT"
