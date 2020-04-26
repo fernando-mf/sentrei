@@ -6,7 +6,7 @@ resource "google_cloud_run_service" "cleaner" {
   template {
     spec {
       containers {
-        image = "gcr.io/gcr-cleaner/gcr-cleaner"
+        image = "gcr.io/gcr-cleaner/gcr-cleaner:latest"
         resources {
           limits = { "cpu" : "1000m", "memory" : "512Mi" }
         }
