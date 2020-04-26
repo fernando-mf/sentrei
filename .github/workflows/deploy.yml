@@ -29,7 +29,7 @@ jobs:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
-          environment: ${{ github.event.client_payload.environment }}
+          environment: "Design ${{ github.event.client_payload.environment }}"
           ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
@@ -76,7 +76,7 @@ jobs:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
-          environment: ${{ github.event.client_payload.environment }}
+          environment: "Mobile ${{ github.event.client_payload.environment }}"
           ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
@@ -122,7 +122,7 @@ jobs:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
-          environment: ${{ github.event.client_payload.environment }}
+          environment: "UI ${{ github.event.client_payload.environment }}"
           ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
@@ -155,7 +155,7 @@ jobs:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
-          environment: "${{ github.event.client_payload.environment }} web"
+          environment: "Web ${{ github.event.client_payload.environment }}"
           ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
@@ -218,7 +218,7 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - if: github.event.client_payload.environment == 'staging'
+      - if: github.event.client_payload.environment == 'Staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
