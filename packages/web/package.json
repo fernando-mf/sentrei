@@ -48,6 +48,7 @@
     "@cypress/code-coverage": "^3.5.3",
     "@cypress/webpack-preprocessor": "^5.1.2",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@next/bundle-analyzer": "^9.3.5",
     "@types/next": "^9.0.0",
     "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
