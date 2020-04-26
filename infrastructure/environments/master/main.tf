@@ -21,6 +21,7 @@ module "iam" {
 
 module "run" {
   source      = "../../modules/run"
+  email       = module.iam.google_service_account_cleaner_email
   environment = var.environment
 }
 

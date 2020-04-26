@@ -202,7 +202,7 @@ jobs:
           always_pull: false
           add_git_labels: true
           tag_with_ref: true
-          tag_with_sha: true
+          tag_with_sha: false
           push: true
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
