@@ -221,7 +221,7 @@ jobs:
       - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
