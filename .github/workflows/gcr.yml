@@ -7,6 +7,7 @@ jobs:
       matrix:
         branch: ["alpha", "beta", "master"]
     steps:
+      - uses: actions/checkout@v2
       - id: secrets
         uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
         with:
