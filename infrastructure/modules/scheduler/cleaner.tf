@@ -1,12 +1,11 @@
-resource "google_cloud_scheduler_job" "job" {
-  name             = "test-job"
-  description      = "test http job"
+resource "google_cloud_scheduler_job" "cleaner" {
+  name             = "cleaner"
   schedule         = "*/8 * * * *"
-  time_zone        = "America/New_York"
-  attempt_deadline = "320s"
+  attempt_deadline = "300s"
 
   http_target {
     http_method = "POST"
-    uri         = "https://example.com/ping"
+    uri         = "https://cleaner.sentrei.com/http"
+    body        = "{\"repo\":\"gcr.io/sentrei-${var.environment}/sentrei\"}"
   }
 }
