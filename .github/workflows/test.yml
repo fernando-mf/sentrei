@@ -8,6 +8,10 @@ jobs:
     steps:
       - run: |
           echo ${{ github.event.client_payload.slash_command.unnamed_args }}
+      - name: Dump the client payload context
+        env:
+          PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
+        run: echo "$PAYLOAD_CONTEXT"
   design:
     runs-on: ubuntu-latest
     if: contains(join(github.event.client_payload.slash_command.unnamed_args), 'design') == 'true'
