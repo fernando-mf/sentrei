@@ -31,14 +31,5 @@ resource "google_dns_record_set" "sentrei_com_TXT" {
   type         = "TXT"
   ttl          = 300
 
-  rrdatas = ["\"v=spf1\" \"include:_spf.google.com\" \"~all\""]
-}
-
-resource "google_dns_record_set" "sentrei_com_TXT_google_site_verification" {
-  name         = google_dns_managed_zone.sentrei.dns_name
-  managed_zone = google_dns_managed_zone.sentrei.name
-  type         = "TXT"
-  ttl          = 300
-
   rrdatas = ["google-site-verification=aH-byqvvPX0QqQoPWEs7d8YVAt997VqwtF9x7D3kpkQ"]
 }
