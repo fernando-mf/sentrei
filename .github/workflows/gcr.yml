@@ -1,0 +1,27 @@
+name: GCR
+on: pull_request
+jobs:
+  gcr:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        branch: ["alpha", "beta", "master"]
+    steps:
+      - id: secrets
+        uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
+        with:
+          credentials: ${{ secrets.GCP_CREDENTIALS }}
+          secrets: |-
+            DOCKER_USERNAME:sentrei-${{ github.job.name	}}/docker_username
+            DOCKER_PASSWORD:sentrei-${{ matrix.branch }}/docker_password
+            SERVICE_ACCOUNT_EMAIL:sentrei-${{ matrix.branch }}/github_${{ matrix.branch }}_email
+            SERVICE_ACCOUNT_KEY:sentrei-${{ matrix.branch }}/github_${{ matrix.branch }}_key
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: "286.0.0"
+          service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
+          service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
+          project_id: "sentrei-${{ matrix.branch }}"
+          export_default_credentials: true
+      - run: |
+          make cleaner-${{ matrix.branch }}
