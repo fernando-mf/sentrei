@@ -12,6 +12,11 @@ module "run" {
   environment = var.environment
 }
 
+module "scheduler" {
+  source      = "../../modules/scheduler"
+  environment = var.environment
+}
+
 module "storage" {
   source      = "../../modules/storage"
   environment = var.environment
