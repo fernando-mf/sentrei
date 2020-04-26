@@ -74,7 +74,7 @@ jobs:
           HUSKY_SKIP_HOOKS: 1
 
   design:
-    if: github.event_name == 'push'
+    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == 'true'
     runs-on: ubuntu-latest
     needs: context
     steps:
@@ -94,7 +94,7 @@ jobs:
           event-type: fastlane-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "environment": "production", "event_name": "fastlane", "pull_request_number": "", "release": "false", "task": "fastlane", "url_prefix": ""}'
   mobile:
-    if: github.event_name == 'push'
+    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == 'true'
     runs-on: ubuntu-latest
     needs: context
     steps:
@@ -104,7 +104,7 @@ jobs:
           event-type: deploy-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "environment": "production", "event_name": "mobile", "pull_request_number": "", "release": "true", "task": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'
   ui:
-    if: github.event_name == 'push'
+    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == 'true'
     runs-on: ubuntu-latest
     needs: context
     steps:
@@ -114,7 +114,7 @@ jobs:
           event-type: deploy-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "environment": "production", "event_name": "ui", "pull_request_number": "", "release": "true", "task": "ui", "url_prefix": ""}'
   web:
-    if: github.event_name == 'push'
+    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == 'true'
     runs-on: ubuntu-latest
     needs: context
     steps:
