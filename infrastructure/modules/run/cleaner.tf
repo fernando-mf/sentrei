@@ -25,7 +25,7 @@ resource "google_cloud_run_service_iam_binding" "cleaner" {
   location = google_cloud_run_service.cleaner.location
   project  = google_cloud_run_service.cleaner.project
   service  = google_cloud_run_service.cleaner.name
-  role     = "roles/invoker"
+  role     = "roles/run.invoker"
   members = [
     "serviceAccount:${var.email}",
   ]
