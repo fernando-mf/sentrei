@@ -1,5 +1,7 @@
 name: GCR
-on: pull_request
+on:
+  schedule:
+    - cron: "0 0,8,16 * * *"
 jobs:
   gcr:
     runs-on: ubuntu-latest
