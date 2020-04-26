@@ -8,7 +8,7 @@ resource "google_dns_record_set" "cleaner_sentrei_com_CNAME" {
 }
 
 resource "google_dns_record_set" "cleaner_sentrei_com_TXT" {
-  name         = google_dns_managed_zone.sentrei.dns_name
+  name         = "cleaner.${google_dns_managed_zone.sentrei.dns_name}"
   managed_zone = google_dns_managed_zone.sentrei.name
   type         = "TXT"
   ttl          = 300
