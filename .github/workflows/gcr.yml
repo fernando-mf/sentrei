@@ -12,10 +12,10 @@ jobs:
         with:
           credentials: ${{ secrets.GCP_CREDENTIALS }}
           secrets: |-
-            DOCKER_USERNAME:sentrei-${{ github.job.name	}}/docker_username
-            DOCKER_PASSWORD:sentrei-${{ matrix.branch }}/docker_password
-            SERVICE_ACCOUNT_EMAIL:sentrei-${{ matrix.branch }}/github_${{ matrix.branch }}_email
-            SERVICE_ACCOUNT_KEY:sentrei-${{ matrix.branch }}/github_${{ matrix.branch }}_key
+            DOCKER_USERNAME:sentrei-master/docker_username
+            DOCKER_PASSWORD:sentrei-master/docker_password
+            SERVICE_ACCOUNT_EMAIL:sentrei-master/github_${{ matrix.branch }}_email
+            SERVICE_ACCOUNT_KEY:sentrei-master/github_${{ matrix.branch }}_key
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
           version: "286.0.0"
