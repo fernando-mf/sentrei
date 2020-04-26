@@ -10,6 +10,13 @@ jobs:
     if: github.event.client_payload.event_name == 'design'
     runs-on: ubuntu-latest
     steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          environment: "Design ${{ github.event.client_payload.environment }}"
+          ref: ${{ github.event.client_payload.branch }}
+          token: ${{ secrets.ACCESS_TOKEN }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
@@ -26,13 +33,6 @@ jobs:
       - if: steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile
-      - uses: chrnorm/deployment-action@releases/v1
-        id: deployment
-        with:
-          environment: "Design ${{ github.event.client_payload.environment }}"
-          ref: ${{ github.event.client_payload.branch }}
-          token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
       - working-directory: packages/design
         run: |
           yarn run ${{ github.event.client_payload.task }}
@@ -56,6 +56,13 @@ jobs:
     if: github.event.client_payload.event_name == 'mobile'
     runs-on: ubuntu-latest
     steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          environment: "Mobile ${{ github.event.client_payload.environment }}"
+          ref: ${{ github.event.client_payload.branch }}
+          token: ${{ secrets.ACCESS_TOKEN }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
@@ -73,13 +80,6 @@ jobs:
         run: |
           flutter pub global activate dartdoc
           flutter pub global run dartdoc:dartdoc --exclude 'dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart:ui,dart:ffi,dart:html,dart:js,dart:js_util'
-      - uses: chrnorm/deployment-action@releases/v1
-        id: deployment
-        with:
-          environment: "Mobile ${{ github.event.client_payload.environment }}"
-          ref: ${{ github.event.client_payload.branch }}
-          token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
       - working-directory: packages/mobile
         run: |
           yarn run ${{ github.event.client_payload.task }}
@@ -103,6 +103,13 @@ jobs:
     if: github.event.client_payload.event_name == 'ui'
     runs-on: ubuntu-latest
     steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          environment: "UI ${{ github.event.client_payload.environment }}"
+          ref: ${{ github.event.client_payload.branch }}
+          token: ${{ secrets.ACCESS_TOKEN }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
@@ -119,13 +126,6 @@ jobs:
       - if: steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile
-      - uses: chrnorm/deployment-action@releases/v1
-        id: deployment
-        with:
-          environment: "UI ${{ github.event.client_payload.environment }}"
-          ref: ${{ github.event.client_payload.branch }}
-          token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
       - working-directory: packages/ui
         run: |
           yarn run ${{ github.event.client_payload.task }}
@@ -149,9 +149,6 @@ jobs:
     if: github.event.client_payload.event_name == 'web'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.client_payload.branch }}
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
@@ -159,6 +156,9 @@ jobs:
           ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
       - id: secrets
         uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
         with:
