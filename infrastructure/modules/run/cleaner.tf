@@ -31,17 +31,17 @@ resource "google_cloud_run_service_iam_binding" "cleaner" {
   ]
 }
 
-resource "google_cloud_run_domain_mapping" "cleaner" {
-  provider = google-beta
-  project  = "sentrei-${var.environment}"
-  location = "us-central1"
-  name     = "cleaner.sentrei.com"
+# resource "google_cloud_run_domain_mapping" "cleaner" {
+#   provider = google-beta
+#   project  = "sentrei-${var.environment}"
+#   location = "us-central1"
+#   name     = "cleaner.sentrei.com"
 
-  metadata {
-    namespace = "sentrei-${var.environment}"
-  }
+#   metadata {
+#     namespace = "sentrei-${var.environment}"
+#   }
 
-  spec {
-    route_name = google_cloud_run_service.cleaner.name
-  }
-}
+#   spec {
+#     route_name = google_cloud_run_service.cleaner.name
+#   }
+# }
