@@ -10,6 +10,7 @@ module "iam" {
 module "run" {
   source      = "../../modules/run"
   environment = var.environment
+}
 
 module "scheduler" {
   source      = "../../modules/scheduler"
