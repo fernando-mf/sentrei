@@ -181,27 +181,54 @@ jobs:
             DOCKER_PASSWORD:sentrei-master/docker_password
             SERVICE_ACCOUNT_EMAIL:sentrei-master/github_${{ github.event.client_payload.base }}_email
             SERVICE_ACCOUNT_KEY:sentrei-master/github_${{ github.event.client_payload.base }}_key
-      - uses: docker/build-push-action@v1
+      - if: github.event.client_payload.environment == 'production'
+        uses: docker/build-push-action@v1
         with:
           username: ${{ steps.secrets.outputs.DOCKER_USERNAME }}
           password: ${{ steps.secrets.outputs.DOCKER_PASSWORD }}
           repository: ${{ github.repository }}
-          tags: ${{ github.event.client_payload.task }}
+          tags: ${{ github.event.client_payload.base }}
           always_pull: true
           add_git_labels: true
           tag_with_ref: true
           tag_with_sha: true
           push: true
-      - uses: docker/build-push-action@v1
+      - if: github.event.client_payload.environment == 'production'
+        uses: docker/build-push-action@v1
         with:
           username: _json_key
           password: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
           registry: gcr.io
           repository: sentrei-${{ github.event.client_payload.base }}/sentrei
-          tags: ${{ github.event.client_payload.task }}
+          tags: ${{ github.event.client_payload.base }}
           always_pull: false
           add_git_labels: true
+          tag_with_ref: false
+          tag_with_sha: false
+          push: true
+      - if: github.event.client_payload.environment == 'staging'
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ steps.secrets.outputs.DOCKER_USERNAME }}
+          password: ${{ steps.secrets.outputs.DOCKER_PASSWORD }}
+          repository: ${{ github.repository }}
+          tags: staging-${{ github.event.client_payload.base }}
+          always_pull: true
+          add_git_labels: true
           tag_with_ref: true
+          tag_with_sha: true
+          push: true
+      - if: github.event.client_payload.environment == 'staging'
+        uses: docker/build-push-action@v1
+        with:
+          username: _json_key
+          password: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
+          registry: gcr.io
+          repository: sentrei-${{ github.event.client_payload.base }}/sentrei
+          tags: staging-${{ github.event.client_payload.base }}
+          always_pull: false
+          add_git_labels: true
+          tag_with_ref: false
           tag_with_sha: false
           push: true
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
