@@ -9,7 +9,6 @@ RUN yarn install --production && \
 WORKDIR /app/packages/web
 
 RUN yarn build && \
-    yarn run prune && \
     yarn cache clean
 
 FROM node:14.0.0-alpine
