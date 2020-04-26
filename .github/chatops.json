@@ -35,13 +35,6 @@
     "event_type_suffix": "-cmd"
   },
   {
-    "command": "staging",
-    "permission": "none",
-    "issue_type": "pull-request",
-    "allow_edits": true,
-    "event_type_suffix": "-cmd"
-  },
-  {
     "command": "sync",
     "permission": "none",
     "issue_type": "both",
