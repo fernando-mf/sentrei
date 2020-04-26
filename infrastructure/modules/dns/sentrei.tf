@@ -31,5 +31,5 @@ resource "google_dns_record_set" "sentrei_com_TXT" {
   type         = "TXT"
   ttl          = 300
 
-  rrdatas = ["google-site-verification=aH-byqvvPX0QqQoPWEs7d8YVAt997VqwtF9x7D3kpkQ"]
+  rrdatas = ["google-site-verification=_SIRccUJfM_2d2h_pFobDrrPUlm-iNAbqHDYH3qPBxQ"]
 }
