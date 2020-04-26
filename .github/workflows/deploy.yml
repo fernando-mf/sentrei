@@ -52,6 +52,13 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - if: github.event.client_payload.environment == 'Staging'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ github.event.client_payload.comment_id }}
+          reaction-type: hooray
   mobile:
     if: github.event.client_payload.event_name == 'mobile'
     runs-on: ubuntu-latest
@@ -99,6 +106,13 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - if: github.event.client_payload.environment == 'Staging'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ github.event.client_payload.comment_id }}
+          reaction-type: hooray
   ui:
     if: github.event.client_payload.event_name == 'ui'
     runs-on: ubuntu-latest
@@ -145,6 +159,13 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - if: github.event.client_payload.environment == 'Staging'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ github.event.client_payload.comment_id }}
+          reaction-type: hooray
   web:
     if: github.event.client_payload.event_name == 'web'
     runs-on: ubuntu-latest
