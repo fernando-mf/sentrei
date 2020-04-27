@@ -27,8 +27,8 @@
     "sort-package-json:check": "sort-package-json 'package.json' 'packages/*/package.json' --check",
     "sort-package-json:fix": "sort-package-json 'package.json' 'packages/*/package.json'",
     "test": "yarn lint && yarn release-test",
-    "tsc": "tsc --build tsconfig.build.json",
-    "watch": "lerna run watch --scope={@sentrei/common,@sentrei/ui}"
+    "typescript": "tsc --build tsconfig.build.json",
+    "watch": "tsc --build tsconfig.build.json -w --preserveWatchOutput"
   },
   "husky": {
     "hooks": {

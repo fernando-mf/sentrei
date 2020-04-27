@@ -21,9 +21,7 @@
     "staging:ui": "firebase use master && yarn run deploy:staging-storybook",
     "storycap": "storycap --serverCmd 'start-storybook -p 9001' http://localhost:9001 --serverTimeout 120000",
     "test": "yarn run jest",
-    "tsc": "rimraf lib && tsc -b .",
-    "ui": "firebase use master && yarn run deploy:storybook",
-    "watch": "tsc -w --preserveWatchOutput"
+    "ui": "firebase use master && yarn run deploy:storybook"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.10",

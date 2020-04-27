@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . /app
 
 RUN yarn install --production && \
-    yarn tsc
+    yarn run typescript
 
 WORKDIR /app/packages/web
 
