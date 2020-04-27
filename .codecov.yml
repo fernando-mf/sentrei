@@ -1,43 +1,7 @@
 coverage:
   precision: 3
   status:
-    mobile:
-      default:
-        flags:
-          - mobile
-        target: auto
-        threshold: null
-        base: auto
-        if_no_uploads: error
-        if_not_found: success
-        if_ci_failed: error
-        informational: true
-        only_pulls: false
-    ui:
-      default:
-        flags:
-          - ui
-        target: auto
-        threshold: null
-        base: auto
-        if_no_uploads: error
-        if_not_found: success
-        if_ci_failed: error
-        informational: true
-        only_pulls: false
-    web:
-      default:
-        flags:
-          - web
-        target: auto
-        threshold: null
-        base: auto
-        if_no_uploads: error
-        if_not_found: success
-        if_ci_failed: error
-        informational: true
-        only_pulls: false
-    patch:
+    project:
       default:
         target: auto
         threshold: null
@@ -47,6 +11,13 @@ coverage:
         if_ci_failed: error
         informational: true
         only_pulls: false
+      mobile:
+        flags: mobile
+      ui:
+        flags: ui
+      web:
+        flags: web
+    patch: off
 flags:
   mobile:
     paths:

@@ -27,30 +27,6 @@
           }
         }
       ]
-    },
-    {
-      "site": "sentrei-storybook",
-      "target": "storybook",
-      "public": "out",
-      "predeploy": ["yarn run build-storybook"],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
-    },
-    {
-      "site": "sentrei-staging-storybook",
-      "target": "staging-storybook",
-      "public": "out",
-      "predeploy": ["yarn run build-storybook"],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
     }
   ]
 }
