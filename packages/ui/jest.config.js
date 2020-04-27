@@ -18,6 +18,8 @@ module.exports = {
   collectCoverageFrom: [
     "**/*.{js,jsx,ts,tsx}",
     "!**/*.d.ts",
+    "!**/*.spec.{ts,tsx}",
+    "!**/*.stories.tsx",
     "!**/node_modules/**",
   ],
   snapshotSerializers: ["enzyme-to-json/serializer"],
