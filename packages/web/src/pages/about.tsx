@@ -5,7 +5,7 @@ import Box from "@material-ui/core/Box";
 import ProTip from "@sentrei/ui/ProTip";
 import Copyright from "@sentrei/ui/Copyright";
 
-export default function Index(): JSX.Element {
+export default function About(): JSX.Element {
   return (
     <Container maxWidth="sm">
       <Box my={4}>
