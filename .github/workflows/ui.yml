@@ -32,9 +32,7 @@ jobs:
         working-directory: packages/ui
         run: |
           yarn run tsc
-      - if: steps.change.outputs.changed == 'true'
-        working-directory: packages/ui
-        run: |
+          yarn run build
           yarn run test
       - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
