@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@sentrei/ui": ["packages/ui/src/index.ts"]
+      "@sentrei/ui": ["packages/ui/src"],
+      "@sentrei/ui/*": ["packages/ui/src/*"]
     }
   }
 }
