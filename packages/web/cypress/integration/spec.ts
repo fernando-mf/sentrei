@@ -1,7 +1,5 @@
-// / <reference types="Cypress" />
-
-describe("CRA", () => {
-  it("shows learn link", function () {
+describe("Cypress", () => {
+  it("shows learn link", () => {
     cy.visit("/");
   });
 });
