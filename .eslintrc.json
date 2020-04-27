@@ -28,7 +28,8 @@
     "prettier/react"
   ],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/jsx-props-no-spreading": 0
   },
   "settings": {
     "react": {
