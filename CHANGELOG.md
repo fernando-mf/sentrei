@@ -1,3 +1,9 @@
+## [4.4.2](https://github.com/sentrei/sentrei/compare/v4.4.1...v4.4.2) (2020-04-27)
+
+### Bug Fixes
+
+- 🐛 add types for next.js with mui ([9e8c771](https://github.com/sentrei/sentrei/commit/9e8c7716068d36d3406186c4eace829417e73743))
+
 ## [4.4.1](https://github.com/sentrei/sentrei/compare/v4.4.0...v4.4.1) (2020-04-27)
 
 ### Bug Fixes
