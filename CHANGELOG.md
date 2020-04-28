@@ -1,3 +1,9 @@
+## [4.4.14](https://github.com/sentrei/sentrei/compare/v4.4.13...v4.4.14) (2020-04-28)
+
+### Bug Fixes
+
+- 🐛 client payload lgtm ([92082ff](https://github.com/sentrei/sentrei/commit/92082fff560c05f5f2406ca5c7a74a56d271a7c9))
+
 ## [4.4.13](https://github.com/sentrei/sentrei/compare/v4.4.12...v4.4.13) (2020-04-28)
 
 ### Bug Fixes
