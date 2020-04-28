@@ -1,3 +1,9 @@
+## [4.4.5](https://github.com/sentrei/sentrei/compare/v4.4.4...v4.4.5) (2020-04-28)
+
+### Bug Fixes
+
+- 🐛 release workflow gha ([06e6dee](https://github.com/sentrei/sentrei/commit/06e6dee653c3a9137369b86450fa5ff05252fa95))
+
 ## [4.4.4](https://github.com/sentrei/sentrei/compare/v4.4.3...v4.4.4) (2020-04-28)
 
 ### Bug Fixes
