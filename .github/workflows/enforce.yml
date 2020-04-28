@@ -1,13 +1,14 @@
-name: Enforce
+name: Enforcer
 on:
+  repository_dispatch:
+    types: [enforcer-cmd]
   pull_request:
-    types: [edited, opened, labeled, reopened, synchronize, unlabeled]
+    types: [opened, edited, labeled, synchronize, unlabeled]
 jobs:
-  enforce:
+  enforcer:
     runs-on: ubuntu-latest
     steps:
-      - uses: yogevbd/enforce-label-action@2.0.0
-        env:
-          REQUIRED_LABELS_ANY: ""
-          REQUIRED_LABELS_ALL: ""
+      - uses: yogevbd/enforce-label-action@master
+        with:
+          REQUIRED_LABELS_ANY: "ready-to-merge"
           BANNED_LABELS: "fastlane,ui,web"

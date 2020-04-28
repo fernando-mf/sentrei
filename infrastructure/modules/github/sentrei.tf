@@ -22,7 +22,7 @@ resource "github_branch_protection" "alpha" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "context", "enforce", "mobile", "labeler", "lgtm", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "atlas/sentrei/sentrei-alpha", "Semantic Pull Request", "WIP"]
+    contexts = ["auto-approve", "context", "mobile", "labeler", "lgtm", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "atlas/sentrei/sentrei-alpha", "Semantic Pull Request", "WIP"]
   }
 }
 
@@ -38,13 +38,13 @@ resource "github_branch_protection" "beta" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "context", "enforce", "mobile", "labeler", "lgtm", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "atlas/sentrei/sentrei-beta", "Semantic Pull Request", "WIP"]
+    contexts = ["auto-approve", "context", "mobile", "labeler", "lgtm", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "atlas/sentrei/sentrei-beta", "Semantic Pull Request", "WIP"]
   }
 }
 
 resource "github_branch_protection" "master" {
-  repository     = github_repository.sentrei.name
-  branch         = "master"
+  repository      = github_repository.sentrei.name
+  branch          = "master"
   enforce_admins = true
 
   required_pull_request_reviews {
@@ -55,6 +55,6 @@ resource "github_branch_protection" "master" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "context", "enforce", "mobile", "labeler", "lgtm", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "atlas/sentrei/sentrei-master", "Semantic Pull Request", "WIP"]
+    contexts = ["auto-approve", "context", "mobile", "labeler", "lgtm", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "atlas/sentrei/sentrei-master", "Semantic Pull Request", "WIP"]
   }
 }
