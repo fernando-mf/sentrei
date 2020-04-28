@@ -43,7 +43,7 @@ jobs:
           key: node-v1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             node-v1-
-      - if: steps.yarn.outputs.cache-hit != 'true'
+      - if: steps.yarn.outputs.cache-hit != true
         run: |
           yarn install --frozen-lockfile
       - run: |

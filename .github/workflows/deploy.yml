@@ -27,7 +27,7 @@ jobs:
           key: node-v1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             node-v1-
-      - if: steps.cache.outputs.cache-hit != 'true'
+      - if: steps.cache.outputs.cache-hit != true
         run: |
           yarn install --frozen-lockfile
       - working-directory: packages/design
@@ -231,7 +231,7 @@ jobs:
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
-      - if: steps.cache.outputs.cache-hit != 'true'
+      - if: steps.cache.outputs.cache-hit != true
         run: |
           yarn install --frozen-lockfile
       - working-directory: packages/mobile
@@ -299,7 +299,7 @@ jobs:
           key: node-v1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             node-v1-
-      - if: steps.cache.outputs.cache-hit != 'true'
+      - if: steps.cache.outputs.cache-hit != true
         run: |
           yarn install --frozen-lockfile
       - working-directory: packages/ui
