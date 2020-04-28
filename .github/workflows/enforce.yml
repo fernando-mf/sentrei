@@ -1,5 +1,7 @@
 name: Enforce
-on: pull_request
+on:
+  pull_request:
+    types: [edited, opened, labeled, reopened, synchronize, unlabeled]
 jobs:
   enforce:
     runs-on: ubuntu-latest
@@ -8,4 +10,4 @@ jobs:
         env:
           REQUIRED_LABELS_ANY: ""
           REQUIRED_LABELS_ALL: ""
-          BANNED_LABELS: "common,design,docs,functions,mobile,ui,web"
+          BANNED_LABELS: "fastlane,ui,web"

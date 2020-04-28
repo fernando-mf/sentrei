@@ -1,3 +1,7 @@
+github:
+  - .github/**/*
+infrastructure:
+  - infrastructure/**/*
 common:
   - packages/common/**/*
 design:
@@ -6,9 +10,11 @@ docs:
   - packages/docs/**/*
 functions:
   - packages/functions/**/*
+fastlane:
+  - packages/mobile/**/*
 mobile:
   - packages/mobile/**/*
 ui:
   - packages/ui/**/*
-weh:
+web:
   - packages/web/**/*
