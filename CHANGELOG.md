@@ -1,3 +1,9 @@
+## [4.4.12](https://github.com/sentrei/sentrei/compare/v4.4.11...v4.4.12) (2020-04-28)
+
+### Bug Fixes
+
+- 🐛 working gha release ([a065195](https://github.com/sentrei/sentrei/commit/a065195132e30af42f2196af44b7866d442ca842))
+
 ## [4.4.10](https://github.com/sentrei/sentrei/compare/v4.4.9...v4.4.10) (2020-04-28)
 
 ### Bug Fixes
