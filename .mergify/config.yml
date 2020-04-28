@@ -1,7 +1,6 @@
 pull_request_rules:
-  - name: alpha
-    conditions:
-      - label=ready-to-merge
+  - conditions:
+      - status-success=enforcer
     actions:
       delete_head_branch:
         force: true
