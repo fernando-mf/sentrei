@@ -5,7 +5,16 @@ on:
   repository_dispatch:
     types: [enforcer-cmd]
   pull_request:
-    types: [opened, edited, labeled, ready_for_review, reopened, synchronize, unlabeled]
+    types:
+      [
+        opened,
+        edited,
+        labeled,
+        ready_for_review,
+        reopened,
+        synchronize,
+        unlabeled,
+      ]
 jobs:
   automerge:
     runs-on: ubuntu-latest
