@@ -8,4 +8,4 @@ jobs:
         env:
           REQUIRED_LABELS_ANY: ""
           REQUIRED_LABELS_ALL: ""
-          BANNED_LABELS: "common,design,docs,functions,mobile,ui,web"
+          BANNED_LABELS: "@sentrei/mobile,@sentrei/ui,@sentrei/web"
