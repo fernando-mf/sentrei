@@ -3,7 +3,10 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@sentrei/*": ["node_modules/@sentrei/*/src"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": [
@@ -13,10 +16,5 @@
     "**/*.spec.ts",
     "**/*.spec.tsx",
     "**/*.stories.tsx"
-  ],
-  "references": [
-    {
-      "path": "../ui"
-    }
   ]
 }
