@@ -45,7 +45,7 @@ resource "github_branch_protection" "beta" {
 resource "github_branch_protection" "master" {
   repository      = github_repository.sentrei.name
   branch          = "master"
-  enforcer_admins = true
+  enforce_admins = true
 
   required_pull_request_reviews {
     dismiss_stale_reviews           = true
