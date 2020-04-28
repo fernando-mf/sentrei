@@ -59,6 +59,135 @@ jobs:
           repository: ${{ github.repository }}
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
+  fastlane:
+    if: github.event.client_payload.event_name == 'fastlane'
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [android, ios]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
+      - run: |
+          git fetch --quiet
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: "2.x"
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: ${{ env.flutter_channel }}
+          flutter-version: ${{ env.flutter_version }}
+      - working-directory: packages/mobile
+        run: |
+          ./brew.sh
+      - run: |
+          gem install bundler
+      - working-directory: packages/mobile/${{ matrix.platform }}
+        run: |
+          bundle update --bundler
+          bundle config path ./vendor/bundle
+          bundle install --jobs 4 --retry 3
+      - run: |
+          npm install -g firebase-tools
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      - working-directory: packages/mobile
+        run: |
+          flutter pub get
+      - id: version
+        run: |
+          version=$(node -pe "require('./package.json').version")
+          echo "##[set-output name=version;]$version"
+      - id: get_url
+        run: |
+          api_url="https://api.github.com/repos/$GITHUB_REPOSITORY/releases"
+          release_id="$(curl -H "Authorization: token $GITHUB_TOKEN" "$api_url/tags/v$version" | jq -r '.id | select(. != null)')"
+          upload_url="https://uploads.github.com/repos/$GITHUB_REPOSITORY/releases/$release_id/assets{?name,label}"
+          echo "##[set-output name=upload_url;]$upload_url"
+        env:
+          version: ${{ steps.version.outputs.version }}
+          GITHUB_REPOSITORY: $GITHUB_REPOSITORY
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - id: secret
+        working-directory: packages/mobile/${{ matrix.platform }}
+        run: |
+          ./key.sh
+        env:
+          APP_SIGN_PWD: ${{ secrets.APP_SIGN_PWD }}
+          BRANCH: ${{ github.event.client_payload.branch }}
+          GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          SECRET_REPO: ${{ secrets.SECRET_REPO }}
+      - if: matrix.platform == 'android'
+        working-directory: packages/mobile
+        run: |
+          flutter build apk --flavor ${{ github.event.client_payload.branch }} --target-platform android-arm,android-arm64,android-x64 --split-per-abi
+          flutter build appbundle --flavor ${{ github.event.client_payload.branch }} --target-platform android-arm,android-arm64,android-x64
+      - if: matrix.platform == 'ios'
+        working-directory: packages/mobile
+        run: |
+          flutter build ios --no-codesign --release --flavor ${{ github.event.client_payload.branch }}
+      - if: github.event.client_payload.environment == 'Production'
+        working-directory: packages/mobile/${{ matrix.platform }}
+        run: |
+          bundle exec fastlane ${{ github.event.client_payload.branch }} release:${{ github.event.client_payload.release }}
+        env:
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+          FASTLANE_SESSION: ${{ steps.secret.outputs.secret }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
+          GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          SECRET_REPO: ${{ secrets.SECRET_REPO }}
+      - if: matrix.platform == 'android' && github.event.client_payload.environment == 'Staging'
+        working-directory: packages/mobile/${{ matrix.platform }}
+        run: |
+          bundle exec fastlane test ${{ github.event.client_payload.branch }}:true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.client_payload.pull_request_number }}
+          SECRET_REPO: ${{ secrets.SECRET_REPO }}
+      - if: matrix.platform == 'android' && github.event.client_payload.environment == 'Production' && github.event.client_payload.release == 'false'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.get_url.outputs.upload_url }}
+          asset_path: packages/mobile/build/app/outputs/apk/${{ github.event.client_payload.branch }}/release/app-${{ github.event.client_payload.branch }}-release.apk
+          asset_name: ${{ github.event.client_payload.branch }}.apk
+          asset_content_type: application/vnd.android.package-archive
+      - if: matrix.platform == 'android' && github.event.client_payload.environment == 'Production' && github.event.client_payload.release == 'false'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.get_url.outputs.upload_url }}
+          asset_path: packages/mobile/build/app/outputs/bundle/${{ github.event.client_payload.branch }}Release/app-${{ github.event.client_payload.branch }}-release.aab
+          asset_name: ${{ github.event.client_payload.branch }}.aab
+          asset_content_type: application/vnd.android.package-archive
+      - if: matrix.platform == 'ios' && github.event.client_payload.environment == 'Production' && github.event.client_payload.release == 'false'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.get_url.outputs.upload_url }}
+          asset_path: packages/mobile/ios/build/Runner/${{ github.event.client_payload.branch }}.ipa
+          asset_name: ${{ github.event.client_payload.branch }}.ipa
+          asset_content_type: application/octet-stream
+      - if: github.event.client_payload.environment == 'Staging'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
+          reaction-type: hooray
   mobile:
     if: github.event.client_payload.event_name == 'mobile'
     runs-on: ubuntu-latest
