@@ -1,3 +1,9 @@
+## [4.4.6](https://github.com/sentrei/sentrei/compare/v4.4.5...v4.4.6) (2020-04-28)
+
+### Bug Fixes
+
+- 🐛 refactor tsconfig settings ([2084ab9](https://github.com/sentrei/sentrei/commit/2084ab94f6e8a10a033e3e6881a5dab82f92b45d))
+
 ## [4.4.5](https://github.com/sentrei/sentrei/compare/v4.4.4...v4.4.5) (2020-04-28)
 
 ### Bug Fixes
