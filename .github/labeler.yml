@@ -1,0 +1,14 @@
+common:
+  - packages/common/**/*
+design:
+  - packages/design/**/*
+docs:
+  - packages/docs/**/*
+functions:
+  - packages/functions/**/*
+mobile:
+  - packages/mobile/**/*
+ui:
+  - packages/ui/**/*
+weh:
+  - packages/web/**/*
