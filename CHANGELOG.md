@@ -1,3 +1,9 @@
+## [4.4.13](https://github.com/sentrei/sentrei/compare/v4.4.12...v4.4.13) (2020-04-28)
+
+### Bug Fixes
+
+- 🐛 lgtm ([b32b50f](https://github.com/sentrei/sentrei/commit/b32b50fc60fda5302fb46b4a3bfab39a8dd6e25c))
+
 ## [4.4.12](https://github.com/sentrei/sentrei/compare/v4.4.11...v4.4.12) (2020-04-28)
 
 ### Bug Fixes
