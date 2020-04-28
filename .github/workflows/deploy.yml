@@ -66,8 +66,8 @@ jobs:
           script: |
             github.issues.removeLabel({
               issue_number: ${{ github.event.client_payload.pull_request_number }},
-              owner: ${{ github.repository_owner }},
-              repo: ${{ github.repository }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               labels: ['design'],
             })
   fastlane:
@@ -206,8 +206,8 @@ jobs:
           script: |
             github.issues.removeLabel({
               issue_number: ${{ github.event.client_payload.pull_request_number }},
-              owner: ${{ github.repository_owner }},
-              repo: ${{ github.repository }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               labels: ['fastlane'],
             })
   mobile:
@@ -271,8 +271,8 @@ jobs:
           script: |
             github.issues.removeLabel({
               issue_number: ${{ github.event.client_payload.pull_request_number }},
-              owner: ${{ github.repository_owner }},
-              repo: ${{ github.repository }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               labels: ['mobile'],
             })
   ui:
@@ -335,8 +335,8 @@ jobs:
           script: |
             github.issues.removeLabel({
               issue_number: ${{ github.event.client_payload.pull_request_number }},
-              owner: ${{ github.repository_owner }},
-              repo: ${{ github.repository }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               labels: ['ui'],
             })
   web:
@@ -426,7 +426,7 @@ jobs:
           script: |
             github.issues.removeLabel({
               issue_number: ${{ github.event.client_payload.pull_request_number }},
-              owner: ${{ github.repository_owner }},
-              repo: ${{ github.repository }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               labels: ['web'],
             })

@@ -11,8 +11,8 @@ jobs:
           script: |
             github.pulls.createReview({
               pull_number: ${{ github.event.pull_request.number }},
-              owner: ${{ github.repository_owner }},
-              repo: ${{ github.repository }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               event: 'APPROVE',
             })
       - uses: actions/github-script@0.9.0
@@ -27,8 +27,8 @@ jobs:
           script: |
             github.pulls.createReview({
               pull_number: ${{ github.event.pull_request.number }},
-              owner: ${{ github.repository_owner }},
-              repo: ${{ github.repository }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               event: 'APPROVE',
             })
   context:
