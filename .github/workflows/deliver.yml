@@ -2,9 +2,6 @@ name: Deliver
 on:
   repository_dispatch:
     types: [deliver-cmd]
-env:
-  flutter_channel: "stable"
-  flutter_version: "1.12.13+hotfix.9"
 jobs:
   context:
     runs-on: ubuntu-latest
