@@ -1,3 +1,9 @@
+## [4.4.9](https://github.com/sentrei/sentrei/compare/v4.4.8...v4.4.9) (2020-04-28)
+
+### Bug Fixes
+
+- **deps:** bump fastlane-plugin-appicon in /packages/mobile/ios ([563e6e4](https://github.com/sentrei/sentrei/commit/563e6e4a95046c447b430c81d67606cb20c09516))
+
 ## [4.4.8](https://github.com/sentrei/sentrei/compare/v4.4.7...v4.4.8) (2020-04-28)
 
 ### Bug Fixes
