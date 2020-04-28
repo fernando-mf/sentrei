@@ -1,13 +1,13 @@
 name: Enforce
 on:
   pull_request:
-    types: [edited, opened, labeled, reopened, synchronize, unlabeled]
+    types: [labeled, synchronize, unlabeled]
 jobs:
   enforce:
     runs-on: ubuntu-latest
     steps:
-      - uses: yogevbd/enforce-label-action@2.0.0
+      - uses: yogevbd/enforce-label-action@master
         env:
-          REQUIRED_LABELS_ANY: ""
+          REQUIRED_LABELS_ANY: "ready-to-merge"
           REQUIRED_LABELS_ALL: ""
           BANNED_LABELS: "fastlane,ui,web"
