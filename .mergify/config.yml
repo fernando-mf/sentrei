@@ -1,5 +1,6 @@
 pull_request_rules:
-  - conditions:
+  - name: sentrei
+    conditions:
       - status-success=enforcer
     actions:
       delete_head_branch:
