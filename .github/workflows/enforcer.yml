@@ -1,9 +1,11 @@
 name: Enforcer
 on:
+  check_suite:
+    types: [completed]
   repository_dispatch:
     types: [enforcer-cmd]
   pull_request:
-    types: [opened, edited, labeled, synchronize, unlabeled]
+    types: [opened, edited, labeled, ready_for_review, reopened, synchronize, unlabeled]
 jobs:
   enforcer:
     runs-on: ubuntu-latest
@@ -12,3 +14,10 @@ jobs:
         with:
           REQUIRED_LABELS_ANY: "ready-to-merge"
           BANNED_LABELS: "fastlane,ui,web"
+  automerge:
+    needs: enforcer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: pascalgn/automerge-action@v0.8.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
