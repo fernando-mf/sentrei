@@ -348,7 +348,7 @@ jobs:
           service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
           project_id: "sentrei-${{ github.event.client_payload.base }}"
       - run: |
-          gcloud run deploy "sentrei-staging-${{ github.event.client_payload.base }}-web" \
+          gcloud run deploy "sentrei-${{ github.event.client_payload.tag }}-web" \
             --image "gcr.io/sentrei-${{ github.event.client_payload.base }}/sentrei:${{ github.event.client_payload.tag }}" \
             --platform "managed" \
             --region "us-central1" \
