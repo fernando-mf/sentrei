@@ -2,17 +2,17 @@ github:
   - github/**/*
 infrastructure:
   - infrastructure/**/*
-@sentrei/common:
+common:
   - packages/common/**/*
-@sentrei/design:
+design:
   - packages/design/**/*
-@sentrei/docs:
+docs:
   - packages/docs/**/*
-@sentrei/functions:
+functions:
   - packages/functions/**/*
-@sentrei/mobile:
+mobile:
   - packages/mobile/**/*
-@sentrei/ui:
+ui:
   - packages/ui/**/*
-@sentrei/web:
+web:
   - packages/web/**/*
