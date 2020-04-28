@@ -8,4 +8,4 @@ jobs:
         env:
           REQUIRED_LABELS_ANY: ""
           REQUIRED_LABELS_ALL: ""
-          BANNED_LABELS: "mobile,ui,web"
+          BANNED_LABELS: "fastlane,ui,web"

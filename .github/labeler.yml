@@ -1,5 +1,5 @@
 github:
-  - github/**/*
+  - .github/**/*
 infrastructure:
   - infrastructure/**/*
 common:
@@ -10,6 +10,8 @@ docs:
   - packages/docs/**/*
 functions:
   - packages/functions/**/*
+fastlane:
+  - packages/mobile/**/*
 mobile:
   - packages/mobile/**/*
 ui:
