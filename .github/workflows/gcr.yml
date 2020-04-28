@@ -30,3 +30,9 @@ jobs:
           export_default_credentials: true
       - run: |
           make cleaner-${{ matrix.branch }}
+      - uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
+          reaction-type: hooray

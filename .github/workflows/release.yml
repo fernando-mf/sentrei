@@ -90,7 +90,7 @@ jobs:
       - uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: fastlane-cmd
+          event-type: deploy-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "Production", "event_name": "fastlane", "pull_request_number": "", "release": "false", "task": "fastlane", "tag": "fastlane", "url_prefix": ""}'
   mobile:
     if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
