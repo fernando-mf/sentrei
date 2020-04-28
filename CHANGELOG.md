@@ -1,3 +1,9 @@
+## [4.4.7](https://github.com/sentrei/sentrei/compare/v4.4.6...v4.4.7) (2020-04-28)
+
+### Bug Fixes
+
+- 🐛 fix web title ([275c38e](https://github.com/sentrei/sentrei/commit/275c38e5abca075b0220dba59bc600ee478ec8d4))
+
 ## [4.4.6](https://github.com/sentrei/sentrei/compare/v4.4.5...v4.4.6) (2020-04-28)
 
 ### Bug Fixes
