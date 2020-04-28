@@ -25,17 +25,17 @@ jobs:
           else
             echo ::set-output name=changed::true && exit 0
           fi
-      - if: steps.change.outputs.changed == 'true' && steps.cache.outputs.cache-hit != true
+      - if: steps.change.outputs.changed == true && steps.cache.outputs.cache-hit != true
         run: |
           yarn install --frozen-lockfile
-      - if: steps.change.outputs.changed == 'true'
+      - if: steps.change.outputs.changed == true
         run: |
           yarn run typescript
-      - if: steps.change.outputs.changed == 'true'
+      - if: steps.change.outputs.changed == true
         working-directory: packages/web
         run: |
           yarn run build
-      - if: steps.change.outputs.changed == 'true'
+      - if: steps.change.outputs.changed == true
         working-directory: packages/web
         run: |
           yarn run build
@@ -44,11 +44,11 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           NODE_ENV: test
-      - if: steps.change.outputs.changed == 'true'
+      - if: steps.change.outputs.changed == true
         working-directory: packages/web
         run: |
           yarn run analyze
-      - if: steps.change.outputs.changed == 'true'
+      - if: steps.change.outputs.changed == true
         uses: codecov/codecov-action@v1
         with:
           file: packages/web/coverage/lcov.info
