@@ -17,6 +17,8 @@ on:
     types:
       - completed
   status: {}
+  deployment: {}
+  deployment_status: {}
 jobs:
   automerge:
     runs-on: ubuntu-latest
