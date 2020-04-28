@@ -1,0 +1,11 @@
+name: Enforce
+on: pull_request
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: yogevbd/enforce-label-action@2.0.0
+        env:
+          REQUIRED_LABELS_ANY: ""
+          REQUIRED_LABELS_ALL: ""
+          BANNED_LABELS: "common,design,docs,functions,mobile,ui,web"
