@@ -1,5 +1,7 @@
 name: Enforce
-on: pull_request
+on:
+  pull_request:
+    types: [opened, labeled, unlabeled]
 jobs:
   enforce:
     runs-on: ubuntu-latest
