@@ -12,3 +12,12 @@ jobs:
           reactions: true
           config-from-file: .github/chatops.json
           commands: deliver,deploy,enforce,figma,gcr,lgtm,sync,test
+  reaction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: micnncim/action-lgtm-reaction@v0.6.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          trigger: '["^/lgtm$"]'
