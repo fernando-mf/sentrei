@@ -3,7 +3,7 @@ on:
   repository_dispatch:
     types: [enforce-cmd]
   pull_request:
-    types: [labeled, synchronize, unlabeled]
+    types: [opened, edited, labeled, synchronize, unlabeled]
 jobs:
   enforce:
     runs-on: ubuntu-latest
