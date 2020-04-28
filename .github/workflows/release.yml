@@ -36,15 +36,18 @@ jobs:
           scope: "@sentrei"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - id: yarn
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
         uses: actions/cache@v1
         with:
           path: |
             node_modules
             */*/node_modules
-          key: node-v1-${{ hashFiles('**/yarn.lock') }}
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: yarn-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            node-v1-
+            yarn-${{ runner.os }}-
       - if: steps.yarn.outputs.cache-hit != true
         run: |
           yarn install --frozen-lockfile
