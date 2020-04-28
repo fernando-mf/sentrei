@@ -9,5 +9,5 @@ jobs:
       - uses: yogevbd/enforce-label-action@master
         env:
           REQUIRED_LABELS_ANY: "ready-to-merge"
-          REQUIRED_LABELS_ALL: ""
+          REQUIRED_LABELS_ALL: "ready-to-merge"
           BANNED_LABELS: "fastlane,ui,web"
