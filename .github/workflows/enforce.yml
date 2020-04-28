@@ -1,7 +1,7 @@
 name: Enforce
 on:
   pull_request:
-    types: [opened, labeled, unlabeled]
+    types: [edited, opened, labeled, reopened, synchronize, unlabeled]
 jobs:
   enforce:
     runs-on: ubuntu-latest
