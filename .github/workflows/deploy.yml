@@ -59,7 +59,7 @@ jobs:
       - if: github.event.client_payload.environment == 'Staging'
         uses: actions/github-script@0.9.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
             github.issues.removeLabel({
               issue_number: ${{ github.event.client_payload.pull_request_number }},
@@ -202,7 +202,7 @@ jobs:
       - if: github.event.client_payload.environment == 'Staging'
         uses: actions/github-script@0.9.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
             github.issues.removeLabel({
               issue_number: ${{ github.event.client_payload.pull_request_number }},
@@ -267,7 +267,7 @@ jobs:
       - if: github.event.client_payload.environment == 'Staging'
         uses: actions/github-script@0.9.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
             github.issues.removeLabel({
               issue_number: ${{ github.event.client_payload.pull_request_number }},
@@ -331,7 +331,7 @@ jobs:
       - if: github.event.client_payload.environment == 'Staging'
         uses: actions/github-script@0.9.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
             github.issues.removeLabel({
               issue_number: ${{ github.event.client_payload.pull_request_number }},
@@ -422,7 +422,7 @@ jobs:
       - if: github.event.client_payload.environment == 'Staging'
         uses: actions/github-script@0.9.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
             github.issues.removeLabel({
               issue_number: ${{ github.event.client_payload.pull_request_number }},
