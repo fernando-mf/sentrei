@@ -1,10 +1,13 @@
 {
-  "extends": "../../tsconfig.build.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
     "jsx": "react",
     "rootDir": "src",
-    "outDir": "./dist"
+    "outDir": "dist",
+    "paths": {
+      "@sentrei/*": ["node_modules/@sentrei/*/src"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": [
