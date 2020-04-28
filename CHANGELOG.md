@@ -1,3 +1,9 @@
+## [4.4.4](https://github.com/sentrei/sentrei/compare/v4.4.3...v4.4.4) (2020-04-28)
+
+### Bug Fixes
+
+- 🐛 add link component ([b712239](https://github.com/sentrei/sentrei/commit/b71223996de2b6a8ce1dd9431b6207caeaa0d0ae))
+
 ## [4.4.3](https://github.com/sentrei/sentrei/compare/v4.4.2...v4.4.3) (2020-04-27)
 
 ### Bug Fixes
