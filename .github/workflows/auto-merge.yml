@@ -1,20 +1,22 @@
 name: Auto Merge
 on:
-  check_suite:
-    types: [completed]
-  repository_dispatch:
-    types: [enforcer-cmd]
   pull_request:
     types:
-      [
-        opened,
-        edited,
-        labeled,
-        ready_for_review,
-        reopened,
-        synchronize,
-        unlabeled,
-      ]
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: {}
 jobs:
   automerge:
     runs-on: ubuntu-latest
