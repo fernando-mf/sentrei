@@ -11,4 +11,4 @@ jobs:
           reaction-token: ${{ secrets.GITHUB_TOKEN }}
           reactions: true
           config-from-file: .github/chatops.json
-          commands: deliver,deploy,enforce,figma,gcr,lgtm,sync,test
+          commands: deliver,deploy,enforcer,figma,gcr,lgtm,sync,test

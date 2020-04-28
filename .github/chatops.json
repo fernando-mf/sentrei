@@ -1,5 +1,4 @@
-[
-  {
+[{
     "command": "deliver",
     "permission": "admin",
     "issue_type": "issue",
@@ -14,7 +13,7 @@
     "event_type_suffix": "-cmd"
   },
   {
-    "command": "enforce",
+    "command": "enforcer",
     "permission": "none",
     "issue_type": "both",
     "allow_edits": true,

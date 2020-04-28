@@ -1,11 +1,11 @@
-name: Enforce
+name: Enforcer
 on:
   repository_dispatch:
-    types: [enforce-cmd]
+    types: [enforcer-cmd]
   pull_request:
     types: [opened, edited, labeled, synchronize, unlabeled]
 jobs:
-  enforce:
+  enforcer:
     runs-on: ubuntu-latest
     steps:
       - uses: yogevbd/enforce-label-action@master
