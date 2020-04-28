@@ -11,13 +11,18 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "14.x"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
       - id: cache
         uses: actions/cache@v1
         with:
-          path: node_modules
-          key: node-v1-${{ hashFiles('**/yarn.lock') }}
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: yarn-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            node-v1-
+            yarn-${{ runner.os }}-
       - if: steps.cache.outputs.cache-hit != true
         run: |
           yarn install --frozen-lockfile

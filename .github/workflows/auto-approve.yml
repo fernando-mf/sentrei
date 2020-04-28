@@ -4,8 +4,8 @@ jobs:
   auto-approve:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@0.9.0
-        if: github.actor == 'shunkakinoki'
+      - if: github.actor == 'shunkakinoki'
+        uses: actions/github-script@0.9.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -15,13 +15,13 @@ jobs:
               repo: context.repo.repo,
               event: 'APPROVE',
             })
-      - uses: actions/github-script@0.9.0
-        if: |
+      - if: |
           github.actor == 'github-actions[bot]' ||
           github.actor == 'dependabot[bot]' ||
           github.actor == 'dependabot-preview[bot]' ||
           github.actor == 'imgbot' ||
           github.actor == 'imgbot[bot]'
+        uses: actions/github-script@0.9.0
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
@@ -39,15 +39,15 @@ jobs:
         run: |
           echo "$GITHUB_CONTEXT"
   lgtm:
+    if: |
+      github.event.pull_request != null && contains(toJson(github.event.pull_request.title), '[sentrei-auto-pr]') && (github.actor == 'shunkakinoki') ||
+      github.event.pull_request != null && contains(toJson(github.event.pull_request.title), '[sentrei-figma-pr]') && (github.actor == 'shunkakinoki') ||
+      github.actor == 'dependabot[bot]' ||
+      github.actor == 'dependabot-preview[bot]' ||
+      github.actor == 'mergify[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: unsplash/comment-on-pr@master
-        if: |
-          github.event.pull_request != null && contains(toJson(github.event.pull_request.title), '[sentrei-auto-pr]') && (github.actor == 'shunkakinoki') ||
-          github.event.pull_request != null && contains(toJson(github.event.pull_request.title), '[sentrei-figma-pr]') && (github.actor == 'shunkakinoki') ||
-          github.actor == 'dependabot[bot]' ||
-          github.actor == 'dependabot-preview[bot]' ||
-          github.actor == 'mergify[bot]'
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:

@@ -39,7 +39,9 @@ jobs:
       - id: yarn
         uses: actions/cache@v1
         with:
-          path: node_modules
+          path: |
+            node_modules
+            */*/node_modules
           key: node-v1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             node-v1-

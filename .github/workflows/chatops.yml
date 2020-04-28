@@ -1,5 +1,5 @@
 name: Chatops
-on: [issue_comment]
+on: issue_comment
 jobs:
   chatops:
     runs-on: ubuntu-latest
