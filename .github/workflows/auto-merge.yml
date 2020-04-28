@@ -1,4 +1,4 @@
-name: Enforcer
+name: Auto Merge
 on:
   check_suite:
     types: [completed]
@@ -16,17 +16,14 @@ on:
         unlabeled,
       ]
 jobs:
-  enforcer:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: yogevbd/enforce-label-action@master
-        with:
-          REQUIRED_LABELS_ANY: "ready-to-merge"
-          BANNED_LABELS: "fastlane,ui,web"
   automerge:
-    needs: enforcer
     runs-on: ubuntu-latest
     steps:
       - uses: pascalgn/automerge-action@v0.8.0
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          MERGE_LABELS: "ready-to-merge,!fastlane,!ui,!web"
+          MERGE_RETRIES: "6"
+          MERGE_RETRY_SLEEP: "10000"
+          UPDATE_LABELS: ""
+          UPDATE_METHOD: "rebase"
