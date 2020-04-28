@@ -2,9 +2,6 @@ name: Deploy
 on:
   repository_dispatch:
     types: [deploy-cmd]
-env:
-  flutter_channel: "stable"
-  flutter_version: "1.12.13+hotfix.9"
 jobs:
   design:
     if: github.event.client_payload.event_name == 'design'
@@ -68,11 +65,14 @@ jobs:
               issue_number: ${{ github.event.client_payload.pull_request_number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['design'],
+              name: ['design'],
             })
   fastlane:
     if: github.event.client_payload.event_name == 'fastlane'
     runs-on: macos-latest
+    env:
+      flutter_channel: "stable"
+      flutter_version: "1.12.13+hotfix.9"
     strategy:
       fail-fast: false
       matrix:
@@ -208,7 +208,7 @@ jobs:
               issue_number: ${{ github.event.client_payload.pull_request_number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['fastlane'],
+              name: ['fastlane'],
             })
   mobile:
     if: github.event.client_payload.event_name == 'mobile'
@@ -273,7 +273,7 @@ jobs:
               issue_number: ${{ github.event.client_payload.pull_request_number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['mobile'],
+              name: ['mobile'],
             })
   ui:
     if: github.event.client_payload.event_name == 'ui'
@@ -337,7 +337,7 @@ jobs:
               issue_number: ${{ github.event.client_payload.pull_request_number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['ui'],
+              name: ['ui'],
             })
   web:
     if: github.event.client_payload.event_name == 'web'
@@ -428,5 +428,5 @@ jobs:
               issue_number: ${{ github.event.client_payload.pull_request_number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['web'],
+              name: ['web'],
             })
