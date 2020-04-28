@@ -72,9 +72,8 @@ jobs:
           title: "chore: [sentrei-auto-pr]"
         env:
           HUSKY_SKIP_HOOKS: 1
-
   design:
-    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == 'true'
+    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: ubuntu-latest
     needs: context
     steps:
@@ -84,7 +83,7 @@ jobs:
           event-type: deploy-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "Production", "event_name": "design", "pull_request_number": "", "release": "true", "task": "design", "tag": "design", "url_prefix": ""}'
   fastlane:
-    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == 'true'
+    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: ubuntu-latest
     needs: context
     steps:
@@ -94,7 +93,7 @@ jobs:
           event-type: fastlane-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "Production", "event_name": "fastlane", "pull_request_number": "", "release": "false", "task": "fastlane", "tag": "fastlane", "url_prefix": ""}'
   mobile:
-    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == 'true'
+    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: ubuntu-latest
     needs: context
     steps:
@@ -104,7 +103,7 @@ jobs:
           event-type: deploy-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "Production", "event_name": "mobile", "pull_request_number": "", "release": "true", "task": "${{ needs.context.outputs.branch }}", "tag": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'
   ui:
-    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == 'true'
+    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: ubuntu-latest
     needs: context
     steps:
@@ -114,7 +113,7 @@ jobs:
           event-type: deploy-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "Production", "event_name": "ui", "pull_request_number": "", "release": "true", "task": "ui", "tag": "ui", "url_prefix": ""}'
   web:
-    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == 'true'
+    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: ubuntu-latest
     needs: context
     steps:
