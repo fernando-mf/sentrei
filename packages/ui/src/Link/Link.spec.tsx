@@ -4,6 +4,6 @@ import Link from ".";
 
 describe("Link", () => {
   test("render", () => {
-    shallow(<Link href="/"/>);
+    shallow(<Link href="/" />);
   });
 });

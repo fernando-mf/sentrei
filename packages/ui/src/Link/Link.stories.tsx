@@ -8,4 +8,4 @@ storiesOf("Link", module)
       delay: 200,
     },
   })
-  .add("Just an Link story", () => <Link href="/"/>);
+  .add("Just an Link story", () => <Link href="/" />);
