@@ -1,4 +1,5 @@
-[{
+[
+  {
     "command": "deliver",
     "permission": "admin",
     "issue_type": "issue",
