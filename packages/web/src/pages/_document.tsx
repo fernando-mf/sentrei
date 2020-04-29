@@ -1,11 +1,13 @@
-import React, {ReactElement} from "react";
-import Document, {Html, Head, Main, NextScript} from "next/document";
+import React, { ReactElement } from "react";
+import Document, {
+  Html, Head, Main, NextScript,
+} from "next/document";
 import {
   DocumentInitialProps,
   RenderPageResult,
 } from "next/dist/next-server/lib/utils";
-import {ServerStyleSheets} from "@material-ui/core/styles";
-import {Theme} from "@sentrei/ui";
+import { ServerStyleSheets } from "@material-ui/core/styles";
+import { Theme } from "@sentrei/ui";
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -31,10 +33,8 @@ MyDocument.getInitialProps = async (ctx): Promise<DocumentInitialProps> => {
   const sheets = new ServerStyleSheets();
   const originalRenderPage = ctx.renderPage;
 
-  ctx.renderPage = (): RenderPageResult | Promise<RenderPageResult> =>
-    originalRenderPage({
-      enhanceApp: App => (props): ReactElement =>
-        sheets.collect(<App {...props} />),
+  ctx.renderPage = (): RenderPageResult | Promise<RenderPageResult> => originalRenderPage({
+      enhanceApp: (App) => (props): ReactElement => sheets.collect(<App {...props} />),
     });
 
   const initialProps = await Document.getInitialProps(ctx);

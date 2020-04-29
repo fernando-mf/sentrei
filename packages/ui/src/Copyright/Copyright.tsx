@@ -8,8 +8,10 @@ export default function Copyright(): JSX.Element {
       {"Copyright © "}
       <MuiLink color="inherit" href="https://sentrei.com/">
         Sentrei, Inc.
-      </MuiLink>{" "}
-      {new Date().getFullYear()}.
+      </MuiLink>
+      {" "}
+      {new Date().getFullYear()}
+      .
     </Typography>
   );
 }

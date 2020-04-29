@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const withPlugins = require("next-compose-plugins");
 const withSass = require("@zeit/next-sass");
 const withBundleAnalyzer = require("@next/bundle-analyzer");
@@ -16,5 +15,8 @@ const nextConfig = {
 };
 
 module.exports = withConfig(
-  withPlugins([[withSass], [withBundleAnalyzer]], nextConfig),
+  withPlugins([
+    [withSass],
+    [withBundleAnalyzer]
+  ], nextConfig)
 );

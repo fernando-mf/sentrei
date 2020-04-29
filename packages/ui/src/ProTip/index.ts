@@ -1,1 +1,1 @@
-export {default} from "./ProTip";
+export { default } from "./ProTip";
