@@ -4,37 +4,43 @@
     "es6": true,
     "node": true
   },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "project": "tsconfig.json",
-    "createDefaultProgram": true,
-    "sourceType": "module",
-    "useJSXTextNode": true
-  },
-  "plugins": ["react", "prettier", "@typescript-eslint"],
-  "extends": [
-    "airbnb-typescript",
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react"
+  "extends": ["eslint:recommended", "plugin:prettier/recommended", "prettier"],
+  "overrides": [
+    {
+      "extends": [
+        "airbnb-typescript",
+        "plugin:prettier/recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "prettier/@typescript-eslint",
+        "prettier",
+        "prettier/react"
+      ],
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "tsconfig.json"
+      },
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "react/display-name": 0,
+        "react/jsx-props-no-spreading": 0
+      },
+      "settings": {
+        "react": {
+          "version": "detect"
+        }
+      }
+    }
   ],
   "rules": {
-    "prettier/prettier": "error",
-    "react/display-name": 0,
-    "react/jsx-props-no-spreading": 0
+    "prettier/prettier": "error"
   },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  }
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "root": true
 }

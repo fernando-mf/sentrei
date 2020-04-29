@@ -2,20 +2,14 @@ name: Auto Merge
 on:
   pull_request:
     types:
-      - labeled
-      - unlabeled
-      - synchronize
-      - opened
       - edited
+      - labeled
+      - opened
       - ready_for_review
       - reopened
+      - synchronize
+      - unlabeled
       - unlocked
-  pull_request_review:
-    types:
-      - submitted
-  check_suite:
-    types:
-      - completed
   deployment: {}
   deployment_status: {}
 jobs:
