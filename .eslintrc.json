@@ -20,9 +20,9 @@
         "project": "tsconfig.json"
       },
       "plugins": ["@typescript-eslint"],
-        "rules": {
-          "react/jsx-props-no-spreading": 0
-        },
+      "rules": {
+        "react/jsx-props-no-spreading": 0
+      },
       "settings": {
         "react": {
           "version": "detect"

@@ -15,8 +15,5 @@ const nextConfig = {
 };
 
 module.exports = withConfig(
-  withPlugins([
-    [withSass],
-    [withBundleAnalyzer]
-  ], nextConfig)
+  withPlugins([[withSass], [withBundleAnalyzer]], nextConfig),
 );
