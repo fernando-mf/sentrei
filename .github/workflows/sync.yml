@@ -18,9 +18,3 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
       - run: |
           git fetch --quiet && git merge --ff-only origin/master && git push || true
-      - uses: peter-evans/create-or-update-comment@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.repository }}
-          comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
-          reaction-type: hooray
