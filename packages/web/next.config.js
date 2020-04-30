@@ -7,6 +7,8 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 
 const withBundleStats = require("next-plugin-bundle-stats")({
+  baseline: true,
+  compare: false,
   json: true,
 });
 
@@ -18,6 +20,11 @@ const nextConfig = {
 };
 
 module.exports = withPlugins(
-  [[withBundleAnalyzer], [withBundleStats], [withSass], [withTM]],
+  [
+    [withBundleAnalyzer],
+    [withBundleStats],
+    [withSass],
+    [withTM]
+  ],
   nextConfig,
 );
