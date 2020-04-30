@@ -10,8 +10,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "14.x"
-      - id: yarn-cache-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
       - id: cache
         uses: actions/cache@v1
         with:
