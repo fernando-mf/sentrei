@@ -29,11 +29,10 @@ jobs:
             node_modules
             */*/node_modules
             ${{ steps.yarn-cache-path.outputs.dir }}
-          key: yarn-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            yarn-${{ runner.os }}-
-      - if: steps.cache.outputs.cache-hit != true
-        run: |
+            ${{ runner.os }}-yarn-
+      - run: |
           yarn install --frozen-lockfile
       - working-directory: packages/design
         run: |
@@ -236,8 +235,7 @@ jobs:
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
-      - if: steps.cache.outputs.cache-hit != true
-        run: |
+      - run: |
           yarn install --frozen-lockfile
       - working-directory: packages/mobile
         run: |
@@ -306,11 +304,10 @@ jobs:
             node_modules
             */*/node_modules
             ${{ steps.yarn-cache-path.outputs.dir }}
-          key: yarn-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            yarn-${{ runner.os }}-
-      - if: steps.cache.outputs.cache-hit != true
-        run: |
+            ${{ runner.os }}-yarn-
+      - run: |
           yarn install --frozen-lockfile
       - working-directory: packages/ui
         run: |
