@@ -25,13 +25,10 @@ jobs:
       - id: cache
         uses: actions/cache@v1
         with:
-          path: |
-            node_modules
-            */*/node_modules
-            ${{ steps.yarn-cache-path.outputs.dir }}
-          key: yarn-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.yarn-cache-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            yarn-${{ runner.os }}-
+            ${{ runner.os }}-yarn-
       - if: steps.cache.outputs.cache-hit != true
         run: |
           yarn install --frozen-lockfile
@@ -302,13 +299,10 @@ jobs:
       - id: cache
         uses: actions/cache@v1
         with:
-          path: |
-            node_modules
-            */*/node_modules
-            ${{ steps.yarn-cache-path.outputs.dir }}
-          key: yarn-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.yarn-cache-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            yarn-${{ runner.os }}-
+            ${{ runner.os }}-yarn-
       - if: steps.cache.outputs.cache-hit != true
         run: |
           yarn install --frozen-lockfile
