@@ -32,9 +32,3 @@ jobs:
           branch-suffix: short-commit-hash
           token: ${{ secrets.ACCESS_TOKEN }}
           title: "chore: [sentrei-figma-pr]"
-      - uses: peter-evans/create-or-update-comment@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.repository }}
-          comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
-          reaction-type: hooray
