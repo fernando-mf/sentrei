@@ -8,7 +8,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 
 const withBundleStats = require("next-plugin-bundle-stats")({
-  enabled: process.env.ANALYZE === "true",
+  json: true,
 });
 
 const aliases = {
