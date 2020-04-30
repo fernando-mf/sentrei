@@ -53,6 +53,9 @@ jobs:
         working-directory: packages/web
         run: |
           yarn run analyze
+      - uses: vio/bundle-stats-action@v1
+        with:
+          webpack-stats-path: 'packages/web/.next/bundle-stats.json'
       - if: steps.change.outputs.changed == true
         uses: codecov/codecov-action@v1
         with:
