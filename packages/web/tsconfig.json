@@ -4,10 +4,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "esModuleInterop": true,
-    "noEmit": true,
-    "paths": {
-      "@sentrei/*": ["node_modules/@sentrei/*/src"]
-    }
+    "noEmit": true
   },
   "include": ["src/**/*"],
   "exclude": [
