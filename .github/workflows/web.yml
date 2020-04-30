@@ -26,23 +26,23 @@ jobs:
         run: |
           git fetch --quiet
           if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- packages/ui packages/web; then
-            echo ::set-output name=changed::false && exit 0
+            echo ::set-output name=changed::'false' && exit 0
           else
-            echo ::set-output name=changed::true && exit 0
+            echo ::set-output name=changed::'true' && exit 0
           fi
       - run: |
           echo ${{ steps.change.outputs.changed }}
-      - if: steps.change.outputs.changed == true && steps.cache.outputs.cache-hit != true
+      - if: steps.change.outputs.changed == 'true' && steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn install --frozen-lockfile
-      - if: steps.change.outputs.changed == true
+      - if: steps.change.outputs.changed == 'true'
         run: |
           yarn run typescript
-      - if: steps.change.outputs.changed == true
+      - if: steps.change.outputs.changed == 'true'
         working-directory: packages/web
         run: |
           yarn run build
-      - if: steps.change.outputs.changed == true
+      - if: steps.change.outputs.changed == 'true'
         working-directory: packages/web
         run: |
           yarn run build
@@ -51,15 +51,15 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           NODE_ENV: test
-      - if: steps.change.outputs.changed == true
+      - if: steps.change.outputs.changed == 'true'
         working-directory: packages/web
         run: |
           yarn run analyze
-      - if: steps.change.outputs.changed == true
+      - if: steps.change.outputs.changed == 'true'
         uses: vio/bundle-stats-action@master
         with:
           webpack-stats-path: "packages/web/.next/bundle-stats.json"
-      - if: steps.change.outputs.changed == true
+      - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:
           file: packages/web/coverage/lcov.info
