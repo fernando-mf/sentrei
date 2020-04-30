@@ -1,26 +1,31 @@
-const path = require("path");
 const withPlugins = require("next-compose-plugins");
 const withSass = require("@zeit/next-sass");
 const withTM = require("next-transpile-modules")(["@sentrei/ui"]);
-
+const {StatsWriterPlugin} = require("webpack-stats-plugin");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
 const withBundleStats = require("next-plugin-bundle-stats")({
+  baseline: true,
+  compare: false,
   json: true,
 });
 
-const aliases = {
-  "@sentrei/ui": path.join(__dirname, "../ui"),
-};
-
 const nextConfig = {
   webpack: config => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      ...aliases,
-    };
+    config.plugins.push(
+      new StatsWriterPlugin({
+        filename: "webpack-stats.json",
+        stats: {
+          context: "./src",
+          assets: true,
+          entrypoints: true,
+          chunks: true,
+          modules: true,
+        },
+      }),
+    );
     return config;
   },
   publicRuntimeConfig: {

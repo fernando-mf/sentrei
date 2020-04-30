@@ -54,10 +54,9 @@ jobs:
         working-directory: packages/web
         run: |
           yarn run analyze
-      # - if: steps.change.outputs.changed == 'true'
-      #   uses: vio/bundle-stats-action@master
-      #   with:
-      #     webpack-stats-path: "packages/web/.next/bundle-stats.json"
+          yarn run relative-ci
+        env:
+          RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
       - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:

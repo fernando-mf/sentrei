@@ -5,12 +5,9 @@
     "composite": true,
     "jsx": "react",
     "rootDir": "src",
-    "outDir": "dist",
-    "paths": {
-      "@sentrei/*": ["node_modules/@sentrei/*/src"]
-    }
+    "outDir": "dist"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/**/*"],
   "exclude": [
     "node_modules",
     "**/__tests__/*.ts",
