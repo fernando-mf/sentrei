@@ -1367,9 +1367,9 @@
     watchify "3.11.1"
 
 "@cypress/code-coverage@^3.5.3":
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/@cypress/code-coverage/-/code-coverage-3.6.0.tgz#a44caa98fb031089d0ac54156b99818d6b94053e"
-  integrity sha512-XFoYR4HTcMYIJVMrHvcSL30vnLJGP0Sk1eRzEWCiFf5T4KxNLLBxbUHQ1BrBYWzcTiOsL8q8mIQSz1+M77tmRg==
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@cypress/code-coverage/-/code-coverage-3.7.0.tgz#4098623d532f3635a77f88b87768bafbb0d11fb3"
+  integrity sha512-GJZhh/kmybCO3Fgrsr3XrUpUMl9e1dFxNU7N8KQKp60UT4sGahrQL3zjx0+pGvR7kj3zN6Z67g/dyFUye878FQ==
   dependencies:
     "@cypress/browserify-preprocessor" "2.2.2"
     debug "4.1.1"
