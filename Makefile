@@ -1,3 +1,5 @@
+NODE_ENV_VERSION = 14.0.0
+
 cleaner-alpha:
 	gcloud container images list-tags gcr.io/sentrei-alpha/sentrei --filter='-tags:*' --format='get(digest)' --limit=unlimited | \
 	xargs -I {arg} gcloud container images delete "gcr.io/sentrei-alpha/sentrei@{arg}" --quiet
@@ -21,3 +23,10 @@ git-ls-files-120:
 
 pixelmator:
 	pipenv run dvc add design/pixelmator
+
+pipenv:
+	pipenv install --dev
+	. .venv/bin/activate
+
+nodeenv:
+	nodeenv --node=$(NODE_ENV_VERSION) -p
