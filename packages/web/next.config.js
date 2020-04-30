@@ -20,11 +20,6 @@ const nextConfig = {
 };
 
 module.exports = withPlugins(
-  [
-    [withBundleAnalyzer],
-    [withBundleStats],
-    [withSass],
-    [withTM]
-  ],
+  [[withBundleAnalyzer], [withBundleStats], [withSass], [withTM]],
   nextConfig,
 );
