@@ -1,3 +1,9 @@
+# [4.5.0](https://github.com/sentrei/sentrei/compare/v4.4.14...v4.5.0) (2020-04-30)
+
+### Features
+
+- 🎸 add tm modules ([175338a](https://github.com/sentrei/sentrei/commit/175338a0a260310db9b05bb380408cd171646c0c))
+
 ## [4.4.14](https://github.com/sentrei/sentrei/compare/v4.4.13...v4.4.14) (2020-04-28)
 
 ### Bug Fixes
