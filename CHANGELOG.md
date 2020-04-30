@@ -1,3 +1,9 @@
+## [4.5.1](https://github.com/sentrei/sentrei/compare/v4.5.0...v4.5.1) (2020-04-30)
+
+### Bug Fixes
+
+- 🐛 pipenv nodeenv version ([2aa1c82](https://github.com/sentrei/sentrei/commit/2aa1c822cdfd9842dcd92a4099eaa2335853246f))
+
 # [4.5.0](https://github.com/sentrei/sentrei/compare/v4.4.14...v4.5.0) (2020-04-30)
 
 ### Features
