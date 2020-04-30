@@ -20,8 +20,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      - if: steps.cache.outputs.cache-hit != true
-        run: |
+      - run: |
           yarn install --frozen-lockfile
       - run: |
           yarn run test

@@ -27,7 +27,7 @@ jobs:
           else
             echo ::set-output name=changed::'true' && exit 0
           fi
-      - if: steps.change.outputs.changed == 'true' && steps.cache.outputs.cache-hit != 'true'
+      - if: steps.change.outputs.changed == 'true'
         run: |
           yarn install --frozen-lockfile
       - if: steps.change.outputs.changed == 'true'
