@@ -23,7 +23,7 @@ jobs:
       - id: yarn-cache-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - id: cache
-        uses: actions/cache@v1
+        uses: actions/cache@master
         with:
           path: |
             node_modules
@@ -298,7 +298,7 @@ jobs:
       - id: yarn-cache-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - id: cache
-        uses: actions/cache@v1
+        uses: actions/cache@master
         with:
           path: |
             node_modules
