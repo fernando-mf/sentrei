@@ -10,9 +10,9 @@ jobs:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
-          environment: "Design ${{ github.event.client_payload.environment }}"
-          ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          environment: "Design ${{ github.event.client_payload.environment }}"
           target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
       - uses: actions/checkout@v2
         with:
@@ -222,9 +222,9 @@ jobs:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
-          environment: "Mobile ${{ github.event.client_payload.environment }}"
-          ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          environment: "Mobile ${{ github.event.client_payload.environment }}"
           target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
       - uses: actions/checkout@v2
         with:
@@ -286,9 +286,9 @@ jobs:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
-          environment: "UI ${{ github.event.client_payload.environment }}"
-          ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          environment: "UI ${{ github.event.client_payload.environment }}"
           target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
       - uses: actions/checkout@v2
         with:
@@ -355,9 +355,9 @@ jobs:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
         with:
-          environment: "Web ${{ github.event.client_payload.environment }}"
-          ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          environment: "Web ${{ github.event.client_payload.environment }}"
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
       - uses: actions/checkout@v2
         with:
