@@ -30,6 +30,8 @@ jobs:
           else
             echo ::set-output name=changed::true && exit 0
           fi
+      - run: |
+          echo ${{ steps.change.outputs.changed }}
       - if: steps.change.outputs.changed == true && steps.cache.outputs.cache-hit != true
         run: |
           yarn install --frozen-lockfile
