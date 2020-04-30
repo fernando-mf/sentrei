@@ -1,8 +1,15 @@
 const path = require("path");
 const withPlugins = require("next-compose-plugins");
 const withSass = require("@zeit/next-sass");
-const withBundleAnalyzer = require("@next/bundle-analyzer");
 const withTM = require("next-transpile-modules")(["@sentrei/ui"]);
+
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
+const withBundleStats = require("next-plugin-bundle-stats")({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const aliases = {
   "@sentrei/ui": path.join(__dirname, "../ui"),
@@ -23,6 +30,6 @@ const nextConfig = {
 };
 
 module.exports = withPlugins(
-  [[withBundleAnalyzer], [withSass], [withTM]],
+  [[withBundleAnalyzer], [withBundleStats], [withSass], [withTM]],
   nextConfig,
 );
