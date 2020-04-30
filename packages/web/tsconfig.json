@@ -9,10 +9,7 @@
       "@sentrei/*": ["node_modules/@sentrei/*/src"]
     }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": [
     "node_modules",
     "**/__tests__/*.ts",
