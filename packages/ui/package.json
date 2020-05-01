@@ -16,9 +16,9 @@
   ],
   "scripts": {
     "build": "build-storybook -o out",
+    "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
     "clean:dist": "rimraf dist",
     "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
-    "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
     "deploy:staging-storybook": "firebase deploy --only hosting:staging-ui --token $FIREBASE_TOKEN",
     "deploy:storybook": "firebase deploy --only hosting:ui --token $FIREBASE_TOKEN",
     "dev": "start-storybook -p 6006",
