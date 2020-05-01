@@ -14,6 +14,10 @@ const withBundleStats = require("next-plugin-bundle-stats")({
 
 const nextConfig = {
   webpack: config => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@sentrei/ui": require.resolve("@sentrei/ui"),
+    };
     config.plugins.push(
       new StatsWriterPlugin({
         filename: "webpack-stats.json",
@@ -26,6 +30,17 @@ const nextConfig = {
         },
       }),
     );
+    config.module.rules.push({
+      test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
+      use: {
+        loader: "url-loader",
+        options: {
+          limit: 100000,
+          name: "[name].[ext]",
+        },
+      },
+    });
+    config.resolve.symlinks = true;
     return config;
   },
   publicRuntimeConfig: {

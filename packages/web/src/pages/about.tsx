@@ -2,7 +2,9 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import {Copyright, Link, ProTip} from "@sentrei/ui";
+import Copyright from "@sentrei/ui/Copyright";
+import Link from "@sentrei/ui/Link";
+import ProTip from "@sentrei/ui/ProTip";
 
 export default function About(): JSX.Element {
   return (

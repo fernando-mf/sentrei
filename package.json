@@ -13,6 +13,8 @@
     "packages/*"
   ],
   "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean -y",
     "eclint:check": "eclint check $(git ls-files)",
     "eclint:fix": "eclint fix $(git ls-files)",
     "eslint:check": "eslint . -c .eslintrc.json --ext .js,.ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
@@ -28,6 +30,7 @@
     "sort-package-json:fix": "sort-package-json 'package.json' 'packages/*/package.json'",
     "test": "yarn lint && yarn release-test",
     "typescript": "lerna run typescript --stream --parallel",
+    "unsplash": "yarn run clean && yarn run bootstrap",
     "watch": "tsc --build tsconfig.build.json -w --preserveWatchOutput"
   },
   "husky": {

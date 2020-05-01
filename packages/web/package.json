@@ -35,8 +35,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.10",
     "@next/bundle-analyzer": "^9.3.5",
-    "@sentrei/ui": "*",
-    "@storybook/react": "^5.3.18",
+    "@sentrei/ui": "file:../ui",
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.4.0",
     "@zeit/next-sass": "^1.0.1",
@@ -50,6 +49,7 @@
     "react-helmet": "^6.0.0",
     "recharts": "^1.8.5",
     "styled-components": "^5.1.0",
+    "url-loader": "^4.1.0",
     "webpack-stats-plugin": "^0.3.1"
   },
   "devDependencies": {

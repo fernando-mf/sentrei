@@ -4,7 +4,8 @@ WORKDIR /app
 COPY . /app
 
 RUN yarn install --production && \
-    yarn run typescript
+    yarn run typescript && \
+    yarn run unsplash
 
 WORKDIR /app/packages/web
 
