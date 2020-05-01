@@ -31,8 +31,7 @@ jobs:
               repo: context.repo.repo,
               event: 'APPROVE',
             })
-      - if: |
-          contains(toJson(github.event.client_payload.pull_request.title), '[sentrei-auto-pr]') == true
+      - if: contains(toJson(github.event.pull_request.title), '[sentrei-auto-pr]') == true
         uses: actions/github-script@0.9.0
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
