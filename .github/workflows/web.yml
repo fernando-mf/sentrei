@@ -34,7 +34,7 @@ jobs:
       - if: steps.change.outputs.changed == 'true'
         run: |
           yarn install --frozen-lockfile
-          yarn run lerna bootstrap
+          yarn run bootstrap
       - if: steps.change.outputs.changed == 'true'
         run: |
           yarn run typescript

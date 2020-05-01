@@ -3,13 +3,13 @@ FROM node:14.1.0-alpine as builder
 WORKDIR /app
 COPY . /app
 
-RUN yarn install --production && \
-    yarn run lerna bootstrap && \
+RUN yarn install --production &&
+    yarn run bootstrap &&
     yarn run typescript
 
 WORKDIR /app/packages/web
 
-RUN yarn build && \
+RUN yarn build &&
     yarn cache clean
 
 FROM node:14.1.0-alpine
