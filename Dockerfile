@@ -5,7 +5,7 @@ COPY . /app
 
 RUN yarn install --production && \
     yarn run typescript && \
-    yarn run unsplashg
+    yarn run unsplash
 
 WORKDIR /app/packages/web
 
