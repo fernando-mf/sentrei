@@ -1,3 +1,9 @@
+## [4.5.4](https://github.com/sentrei/sentrei/compare/v4.5.3...v4.5.4) (2020-05-01)
+
+### Bug Fixes
+
+- 🐛 upgrade node version ([5a6263c](https://github.com/sentrei/sentrei/commit/5a6263ce6567931910b53b750f78369f47a99d49))
+
 ## [4.5.2](https://github.com/sentrei/sentrei/compare/v4.5.1...v4.5.2) (2020-04-30)
 
 ### Bug Fixes
