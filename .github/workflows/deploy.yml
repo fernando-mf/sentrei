@@ -19,7 +19,7 @@ jobs:
           ref: ${{ github.event.client_payload.branch }}
       - uses: actions/setup-node@v1
         with:
-          node-version: "14.0.0"
+          node-version: "14.1.0"
       - id: yarn-cache-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - id: cache
@@ -96,7 +96,7 @@ jobs:
           java-version: "12.x"
       - uses: actions/setup-node@v1
         with:
-          node-version: "14.0.0"
+          node-version: "14.1.0"
       - uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}
@@ -231,7 +231,7 @@ jobs:
           ref: ${{ github.event.client_payload.branch }}
       - uses: actions/setup-node@v1
         with:
-          node-version: "14.0.0"
+          node-version: "14.1.0"
       - uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}
@@ -295,7 +295,7 @@ jobs:
           ref: ${{ github.event.client_payload.branch }}
       - uses: actions/setup-node@v1
         with:
-          node-version: "14.0.0"
+          node-version: "14.1.0"
       - id: yarn-cache-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - id: cache
