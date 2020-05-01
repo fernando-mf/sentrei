@@ -3,6 +3,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import {Copyright, Link, ProTip} from "@sentrei/ui";
+import Button from "@sentrei/ui/Button";
 
 export default function About(): JSX.Element {
   return (
@@ -13,6 +14,7 @@ export default function About(): JSX.Element {
         </Typography>
         <Link href="/">Go to the main page</Link>
         <ProTip />
+        <Button />
         <Copyright />
       </Box>
     </Container>
