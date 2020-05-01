@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . /app
 
 RUN yarn install --production && \
-    yarn run bootstrap && \
+    yarn run lerna bootstrap && \
     yarn run typescript
 
 WORKDIR /app/packages/web
