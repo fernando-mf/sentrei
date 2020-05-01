@@ -4,8 +4,9 @@
     "baseUrl": ".",
     "composite": true,
     "jsx": "react",
-    "rootDir": "src",
-    "outDir": "dist"
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": "src"
   },
   "include": ["src/**/*"],
   "exclude": [

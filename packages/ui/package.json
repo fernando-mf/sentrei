@@ -9,8 +9,11 @@
   },
   "license": "MIT",
   "author": "Shun Kakinoki",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "build-storybook -o out",
     "deploy:staging-storybook": "firebase deploy --only hosting:staging-ui --token $FIREBASE_TOKEN",
@@ -21,7 +24,7 @@
     "staging:ui": "firebase use master && yarn run deploy:staging-storybook",
     "storycap": "storycap --serverCmd 'start-storybook -p 9001' http://localhost:9001 --serverTimeout 120000",
     "test": "yarn run jest",
-    "typescript": "tsc -p tsconfig.json",
+    "typescript": "rimraf dist && tsc -b .",
     "ui": "firebase use master && yarn run deploy:storybook"
   },
   "dependencies": {
