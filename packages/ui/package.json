@@ -16,6 +16,9 @@
   ],
   "scripts": {
     "build": "build-storybook -o out",
+    "clean:dist": "rimraf dist",
+    "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
+    "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
     "deploy:staging-storybook": "firebase deploy --only hosting:staging-ui --token $FIREBASE_TOKEN",
     "deploy:storybook": "firebase deploy --only hosting:ui --token $FIREBASE_TOKEN",
     "dev": "start-storybook -p 6006",
@@ -24,7 +27,7 @@
     "staging:ui": "firebase use master && yarn run deploy:staging-storybook",
     "storycap": "storycap --serverCmd 'start-storybook -p 9001' http://localhost:9001 --serverTimeout 120000",
     "test": "yarn run jest",
-    "typescript": "rimraf dist && tsc -b .",
+    "typescript": "yarn run clean && tsc -b .",
     "ui": "firebase use master && yarn run deploy:storybook"
   },
   "dependencies": {
