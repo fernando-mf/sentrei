@@ -17,4 +17,5 @@ mobile:
 ui:
   - packages/ui/**/*
 web:
+  - packages/ui/**/*
   - packages/web/**/*
