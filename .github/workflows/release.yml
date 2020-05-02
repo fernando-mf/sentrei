@@ -71,7 +71,7 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           branch-suffix: short-commit-hash
-          title: 'chore: [sentrei-auto-pr]'
+          title: "chore: [sentrei-auto-pr]"
         env:
           HUSKY_SKIP_HOOKS: 1
   design:
