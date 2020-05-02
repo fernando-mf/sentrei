@@ -87,5 +87,5 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 ## Support 🙋
 
 [Schedule a meeting](https://calendly.com/shunkakinoki) with me for feedback, questions, or support.
-We would love to hear your feedback on Sentrei and how we can make it better for you. 
+We would love to hear your feedback on Sentrei and how we can make it better for you.
 Anyone is welcome!
