@@ -1,3 +1,10 @@
+## [4.6.6](https://github.com/sentrei/sentrei/compare/v4.6.5...v4.6.6) (2020-05-02)
+
+### Bug Fixes
+
+- 🐛 add ([b8c0f6f](https://github.com/sentrei/sentrei/commit/b8c0f6feda26a024f945426f1476072a0e6f8e61)), closes [#1084](https://github.com/sentrei/sentrei/issues/1084)
+- 🐛 add proper labels ([a8af6f5](https://github.com/sentrei/sentrei/commit/a8af6f59b720466560a5032d26f2ef99fcd4f597))
+
 ## [4.6.5](https://github.com/sentrei/sentrei/compare/v4.6.4...v4.6.5) (2020-05-02)
 
 ### Bug Fixes
