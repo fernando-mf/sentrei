@@ -389,6 +389,10 @@ jobs:
             DOCKER_PASSWORD:sentrei-master/docker_password
             SERVICE_ACCOUNT_EMAIL:sentrei-master/github_${{ github.event.client_payload.base }}_email
             SERVICE_ACCOUNT_KEY:sentrei-master/github_${{ github.event.client_payload.base }}_key
+            WEB_ENV:sentrei-master/web_${{ github.event.client_payload.base }}_env
+      - working-directory: packages/web
+        run: |
+          echo '${{ steps.secrets.outputs.WEB_ENV }}' > .env
       - uses: docker/build-push-action@v1
         with:
           username: ${{ steps.secrets.outputs.DOCKER_USERNAME }}
