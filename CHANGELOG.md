@@ -1,3 +1,9 @@
+## [4.6.4](https://github.com/sentrei/sentrei/compare/v4.6.3...v4.6.4) (2020-05-02)
+
+### Bug Fixes
+
+- 🐛 add title wip ([9898aad](https://github.com/sentrei/sentrei/commit/9898aadf7857c0d3ebd859b4e2d6dcc8c2ddb86e))
+
 ## [4.6.3](https://github.com/sentrei/sentrei/compare/v4.6.2...v4.6.3) (2020-05-02)
 
 ### Bug Fixes
