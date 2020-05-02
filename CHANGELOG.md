@@ -1,3 +1,9 @@
+## [4.6.3](https://github.com/sentrei/sentrei/compare/v4.6.2...v4.6.3) (2020-05-02)
+
+### Bug Fixes
+
+- 🐛 change env production ([c20e8b4](https://github.com/sentrei/sentrei/commit/c20e8b48ab5cd88ca1c7a7c64abb1a58455fb874))
+
 ## [4.6.2](https://github.com/sentrei/sentrei/compare/v4.6.1...v4.6.2) (2020-05-02)
 
 ### Bug Fixes
