@@ -1,3 +1,9 @@
+## [4.6.2](https://github.com/sentrei/sentrei/compare/v4.6.1...v4.6.2) (2020-05-02)
+
+### Bug Fixes
+
+- 🐛 add watch cmd ([1d5c41e](https://github.com/sentrei/sentrei/commit/1d5c41e40c7dce0f820dfc75c5854ee8d5ec773f))
+
 # [4.6.0](https://github.com/sentrei/sentrei/compare/v4.5.4...v4.6.0) (2020-05-02)
 
 ### Features
