@@ -5,19 +5,16 @@ on:
       - alpha
       - beta
       - master
-env:
-  flutter_channel: "stable"
-  flutter_version: "1.12.13+hotfix.9"
 jobs:
   context:
     runs-on: ubuntu-latest
     outputs:
       branch: ${{ steps.branch.outputs.branch }}
     steps:
-      - env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: |
+      - run: |
           echo $GITHUB_CONTEXT
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
       - id: branch
         shell: bash
         run: |
@@ -91,6 +88,9 @@ jobs:
     if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: ubuntu-latest
     needs: context
+    env:
+      flutter_channel: "stable"
+      flutter_version: "1.12.13+hotfix.9"
     steps:
       - uses: peter-evans/repository-dispatch@v1
         with:
