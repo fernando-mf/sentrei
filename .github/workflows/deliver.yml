@@ -8,10 +8,10 @@ jobs:
     outputs:
       branch: ${{ steps.branch.outputs.branch }}
     steps:
-      - env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: |
+      - run: |
           echo $GITHUB_CONTEXT
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
       - id: branch
         shell: bash
         run: |
