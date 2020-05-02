@@ -36,25 +36,20 @@ jobs:
           yarn install --frozen-lockfile
           yarn run typescript
           yarn run unsplash
-      - if: steps.change.outputs.changed == 'true'
-        working-directory: packages/web
-        run: |
           yarn run build
+          yarn install --frozen-lockfile
+          yarn run typescript
       - if: steps.change.outputs.changed == 'true'
         working-directory: packages/web
         run: |
           yarn run build
           yarn run cypress:install
           yarn run test
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          NODE_ENV: test
-      - if: steps.change.outputs.changed == 'true'
-        working-directory: packages/web
-        run: |
           yarn run analyze
           yarn run relative-ci
         env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          NODE_ENV: test
           RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
       - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
