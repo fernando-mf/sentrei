@@ -36,31 +36,31 @@
   description: This PR relates to tests, QA, CI.
 - name: github
   color: 0366d6
-  description:
+  description: github
 - name: infrastructure
   color: 0366d6
-  description:
+  description: infrastructure
 - name: common
   color: 0366d6
-  description:
+  description: common
 - name: design
   color: 0366d6
-  description:
+  description: design
 - name: docs
   color: 0366d6
-  description:
+  description: docs
 - name: functions
   color: 0366d6
-  description:
+  description: functions
 - name: fastlane
   color: 0366d6
-  description:
+  description: fastlane
 - name: mobile
   color: 0366d6
-  description:
+  description: mobile
 - name: ui
   color: 0366d6
-  description:
+  description: ui
 - name: web
   color: 0366d6
-  description:
+  description: web
