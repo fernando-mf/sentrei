@@ -14,8 +14,8 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "clean": "lerna clean -y",
     "build": "lerna run build --scope @sentrei/web",
+    "clean": "lerna clean -y",
     "eclint:check": "eclint check $(git ls-files)",
     "eclint:fix": "eclint fix $(git ls-files)",
     "eslint:check": "eslint . -c .eslintrc.json --ext .js,.ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
