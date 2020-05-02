@@ -5,7 +5,7 @@ import {
   RenderPageResult,
 } from "next/dist/next-server/lib/utils";
 import {ServerStyleSheets} from "@material-ui/core/styles";
-import Theme from "@sentrei/ui/Theme";
+import Theme from "@sentrei/ui/containers/Theme";
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
