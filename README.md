@@ -83,3 +83,9 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 ## Stargazers over time 📈
 
 [![Stargazers over time](https://starchart.cc/sentrei/sentrei.svg)](https://starchart.cc/sentrei/sentrei)
+
+## Support 🙋
+
+[Schedule a meeting](https://calendly.com/shunkakinoki) with me for feedback, questions, or support.
+We would love to hear your feedback on Sentrei and how we can make it better for you.
+Anyone is welcome!
