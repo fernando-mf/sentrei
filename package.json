@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "build": "lerna run build --scope @sentrei/web",
     "clean": "lerna clean -y",
     "eclint:check": "eclint check $(git ls-files)",
     "eclint:fix": "eclint fix $(git ls-files)",

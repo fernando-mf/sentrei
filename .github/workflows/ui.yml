@@ -35,7 +35,6 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           yarn run typescript
-          yarn run unsplash
       - if: steps.change.outputs.changed == 'true'
         working-directory: packages/ui
         run: |
