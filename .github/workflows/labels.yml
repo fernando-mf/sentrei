@@ -1,5 +1,10 @@
 name: Labels
-on: push
+on:
+  push:
+    branches:
+      - alpha
+      - beta
+      - master
 jobs:
   labels:
     runs-on: ubuntu-latest
