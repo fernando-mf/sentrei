@@ -5,6 +5,9 @@ import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
 import {ThemeProvider as StyledThemeProvider} from "styled-components";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Theme from "@sentrei/ui/containers/Theme";
+import * as firebase from "firebase/app";
+import "firebase/performance";
+import firebaseConfig from "../utils/firebaseConfig";
 
 export default function MyApp(props: AppProps): JSX.Element {
   const {Component, pageProps} = props;
@@ -14,6 +17,7 @@ export default function MyApp(props: AppProps): JSX.Element {
     if (jssStyles) {
       jssStyles.parentElement?.removeChild(jssStyles);
     }
+    firebase.initializeApp(firebaseConfig);
   }, []);
 
   return (
