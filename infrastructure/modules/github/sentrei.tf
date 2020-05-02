@@ -4,7 +4,7 @@ resource "github_repository" "sentrei" {
   homepage_url = "https://sentrei.com"
   private      = false
   has_issues   = true
-  has_projects = true
+  has_projects = false
   has_wiki     = false
 
   topics = ["ios", "android", "webapp", "flutter", "flutter-app", "flutter-ui"]
