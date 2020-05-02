@@ -19,7 +19,7 @@ export default class Document extends NextDocument {
     try {
       ctx.renderPage = (): any =>
         originalRenderPage({
-          enhanceApp: (App: any) => (props: any) =>
+          enhanceApp: (App: any) => (props: any): any =>
             styledComponentSheet.collectStyles(
               materialUiSheets.collect(<App {...props} />),
             ),
