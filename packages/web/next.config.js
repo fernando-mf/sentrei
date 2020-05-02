@@ -1,16 +1,31 @@
 const path = require("path");
 const withPlugins = require("next-compose-plugins");
+const withCSS = require("@zeit/next-css");
 const withSass = require("@zeit/next-sass");
 const withTM = require("next-transpile-modules")(["@sentrei/ui"]);
-const {StatsWriterPlugin} = require("webpack-stats-plugin");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
+const nextRuntimeDotenv = require("next-runtime-dotenv");
+const {StatsWriterPlugin} = require("webpack-stats-plugin");
 
 const withBundleStats = require("next-plugin-bundle-stats")({
   baseline: true,
   compare: false,
   json: true,
+});
+
+const withConfig = nextRuntimeDotenv({
+  public: [
+    "API_KEY",
+    "AUTH_DOMAIN",
+    "DATABASE_URL",
+    "PROJECT_ID",
+    "STORAGE_BUCKET",
+    "MESSAGING_SENDER_ID",
+    "APP_ID",
+    "MEASUREMENT_ID",
+  ],
 });
 
 const aliases = {
@@ -50,12 +65,20 @@ const nextConfig = {
     return config;
   },
   publicRuntimeConfig: {
-    API_URL: process.env.API_URL,
     API_KEY: process.env.API_KEY,
+    AUTH_DOMAIN: process.env.AUTH_DOMAIN,
+    DATABASE_URL: process.env.DATABASE_URL,
+    PROJECT_ID: process.env.PROJECT_ID,
+    STORAGE_BUCKET: process.env.STORAGE_BUCKET,
+    MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID,
+    APP_ID: process.env.APP_ID,
+    MEASUREMENT_ID: process.env.MEASUREMENT_ID,
   },
 };
 
-module.exports = withPlugins(
-  [[withBundleAnalyzer], [withBundleStats], [withSass], [withTM]],
-  nextConfig,
+module.exports = withConfig(
+  withPlugins(
+    [[withBundleAnalyzer], [withBundleStats], [withCSS], [withSass], [withTM]],
+    nextConfig,
+  ),
 );
