@@ -20,7 +20,7 @@
   color: 4071a5
   description: Packaging category
 - name: performance
-  color: 555555
+  color: eeeeee
   description: Relates to product or testing performance.
 - name: skip-changelog
   color: eeeeee
