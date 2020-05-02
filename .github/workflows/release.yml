@@ -69,8 +69,8 @@ jobs:
           yarn run fix
       - uses: peter-evans/create-pull-request@v2
         with:
-          branch-suffix: short-commit-hash
           token: ${{ secrets.ACCESS_TOKEN }}
+          branch-suffix: short-commit-hash
           title: "chore: [sentrei-auto-pr]"
         env:
           HUSKY_SKIP_HOOKS: 1
