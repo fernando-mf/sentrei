@@ -1,9 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import NextApp, {AppProps} from "next/app";
+import NextApp from "next/app";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
 import {ThemeProvider as StyledThemeProvider} from "styled-components";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Theme from "@sentrei/ui/containers/Theme";
 import * as firebase from "firebase/app";
 import "firebase/performance";
@@ -14,6 +13,7 @@ export default class App extends NextApp {
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles && jssStyles.parentNode)
       jssStyles.parentNode.removeChild(jssStyles);
+    firebase.initializeApp(firebaseConfig);
   }
 
   render(): JSX.Element {
