@@ -3,7 +3,7 @@ FROM node:14.1.0-alpine as builder
 WORKDIR /app
 COPY . /app
 
-RUN yarn install --production && \
+RUN yarn install --frozen-lockfile && \
     yarn run typescript && \
     yarn run unsplash
 
