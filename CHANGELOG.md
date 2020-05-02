@@ -1,3 +1,9 @@
+# [4.6.0](https://github.com/sentrei/sentrei/compare/v4.5.4...v4.6.0) (2020-05-02)
+
+### Features
+
+- 🎸 refactor tsconfig nextjs ([1083134](https://github.com/sentrei/sentrei/commit/10831346f06c4970bcdaaefa4cf9a248a0da433a))
+
 ## [4.5.4](https://github.com/sentrei/sentrei/compare/v4.5.3...v4.5.4) (2020-05-01)
 
 ### Bug Fixes
