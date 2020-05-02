@@ -1,6 +1,6 @@
-resource "google_secret_manager_secret" "next_master_env" {
+resource "google_secret_manager_secret" "web_alpha_env" {
   provider  = google-beta
-  secret_id = "next_master_env"
+  secret_id = "web_alpha_env"
 
   replication {
     user_managed {
@@ -11,7 +11,7 @@ resource "google_secret_manager_secret" "next_master_env" {
   }
 }
 
-resource "google_secret_manager_secret_iam_member" "next_master_env" {
+resource "google_secret_manager_secret_iam_member" "web_alpha_env" {
   provider  = google-beta
   project   = google_secret_manager_secret.docker_username.project
   secret_id = google_secret_manager_secret.docker_username.secret_id
