@@ -1,3 +1,9 @@
+## [4.6.5](https://github.com/sentrei/sentrei/compare/v4.6.4...v4.6.5) (2020-05-02)
+
+### Bug Fixes
+
+- 🐛 add sentrei protip ([4597a7b](https://github.com/sentrei/sentrei/commit/4597a7b7628a26ad94af6200d1f3988c5bffaa00))
+
 ## [4.6.4](https://github.com/sentrei/sentrei/compare/v4.6.3...v4.6.4) (2020-05-02)
 
 ### Bug Fixes
