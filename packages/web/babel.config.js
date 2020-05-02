@@ -1,4 +1,13 @@
-const plugins = [];
+const plugins = [
+  [
+    "styled-components",
+    {
+      ssr: true,
+      displayName: true,
+      preprocess: false,
+    },
+  ],
+];
 if (process.env.NODE_ENV === "test") {
   plugins.push("istanbul");
 }
