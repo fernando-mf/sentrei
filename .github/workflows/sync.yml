@@ -18,7 +18,8 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
       - run: |
           git fetch --quiet --unshallow && git merge --ff-only origin/master && git push || true
-      - uses: pixta-dev/repository-mirroring-action@v1
+      - if: matrix.branch == 'alpha'
+        uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url: git@gitlab.com:sentrei/sentrei.git
           ssh_private_key: ${{ secrets.GITLAB_SSH_KEY }}
