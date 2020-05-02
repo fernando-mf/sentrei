@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import {AppProps} from "next/app";
+import NextApp, {AppProps} from "next/app";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
 import {ThemeProvider as StyledThemeProvider} from "styled-components";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -9,32 +9,31 @@ import * as firebase from "firebase/app";
 import "firebase/performance";
 import firebaseConfig from "../utils/firebaseConfig";
 
-export default function MyApp(props: AppProps): JSX.Element {
-  const {Component, pageProps} = props;
-
-  React.useEffect(() => {
+export default class App extends NextApp {
+  componentDidMount(): void {
     const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles) {
-      jssStyles.parentElement?.removeChild(jssStyles);
-    }
-    firebase.initializeApp(firebaseConfig);
-  }, []);
+    if (jssStyles && jssStyles.parentNode)
+      jssStyles.parentNode.removeChild(jssStyles);
+  }
 
-  return (
-    <>
-      <Head>
-        <title>Sentrei</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-      </Head>
-      <MaterialThemeProvider theme={Theme}>
+  render(): JSX.Element {
+    const {Component, pageProps} = this.props;
+
+    return (
+      <>
+        <Head>
+          <title>Sentrei</title>
+          <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width"
+          />
+        </Head>
         <StyledThemeProvider theme={Theme}>
-          <CssBaseline />
-          <Component {...pageProps} />
+          <MaterialThemeProvider theme={Theme}>
+            <Component {...pageProps} />
+          </MaterialThemeProvider>
         </StyledThemeProvider>
-      </MaterialThemeProvider>
-    </>
-  );
+      </>
+    );
+  }
 }

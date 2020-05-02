@@ -1,50 +1,44 @@
-import React, {ReactElement} from "react";
-import Document, {Html, Main, NextScript} from "next/document";
-import Head from "next/head";
-import {
-  DocumentInitialProps,
-  RenderPageResult,
-} from "next/dist/next-server/lib/utils";
-import {ServerStyleSheets} from "@material-ui/core/styles";
-import Theme from "@sentrei/ui/containers/Theme";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React from "react";
+import NextDocument from "next/document";
+import {ServerStyleSheet as StyledComponentSheets} from "styled-components";
+import {ServerStyleSheets as MaterialUiServerStyleSheets} from "@material-ui/core/styles";
 
-export default class MyDocument extends Document {
-  render(): JSX.Element {
-    return (
-      <Html lang="en">
-        <Head>
-          <meta name="theme-color" content={Theme.palette.primary.main} />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
+export default class Document extends NextDocument {
+  static async getInitialProps(
+    ctx: any,
+  ): Promise<{
+    styles: JSX.Element[];
+    html: string;
+    head?: (JSX.Element | null)[] | undefined;
+  }> {
+    const styledComponentSheet = new StyledComponentSheets();
+    const materialUiSheets = new MaterialUiServerStyleSheets();
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = (): any =>
+        originalRenderPage({
+          enhanceApp: (App: any) => (props: any) =>
+            styledComponentSheet.collectStyles(
+              materialUiSheets.collect(<App {...props} />),
+            ),
+        });
+
+      const initialProps = await NextDocument.getInitialProps(ctx);
+
+      return {
+        ...initialProps,
+        styles: [
+          <React.Fragment key="styles">
+            {initialProps.styles}
+            {materialUiSheets.getStyleElement()}
+            {styledComponentSheet.getStyleElement()}
+          </React.Fragment>,
+        ],
+      };
+    } finally {
+      styledComponentSheet.seal();
+    }
   }
 }
-
-MyDocument.getInitialProps = async (ctx): Promise<DocumentInitialProps> => {
-  const sheets = new ServerStyleSheets();
-  const originalRenderPage = ctx.renderPage;
-
-  ctx.renderPage = (): RenderPageResult | Promise<RenderPageResult> =>
-    originalRenderPage({
-      enhanceApp: App => (props): ReactElement =>
-        sheets.collect(<App {...props} />),
-    });
-
-  const initialProps = await Document.getInitialProps(ctx);
-
-  return {
-    ...initialProps,
-    styles: [
-      ...React.Children.toArray(initialProps.styles),
-      sheets.getStyleElement(),
-    ],
-  };
-};
