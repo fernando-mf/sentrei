@@ -1,6 +1,6 @@
-resource "google_secret_manager_secret" "firebase_alpha_env" {
+resource "google_secret_manager_secret" "web_master_env" {
   provider  = google-beta
-  secret_id = "firebase_alpha_env"
+  secret_id = "web_master_env"
 
   replication {
     user_managed {
@@ -11,7 +11,7 @@ resource "google_secret_manager_secret" "firebase_alpha_env" {
   }
 }
 
-resource "google_secret_manager_secret_iam_member" "firebase_alpha_env" {
+resource "google_secret_manager_secret_iam_member" "web_master_env" {
   provider  = google-beta
   project   = google_secret_manager_secret.docker_username.project
   secret_id = google_secret_manager_secret.docker_username.secret_id
