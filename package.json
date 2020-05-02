@@ -32,7 +32,7 @@
     "test": "yarn lint && yarn release-test",
     "typescript": "lerna run typescript --stream --parallel",
     "unsplash": "yarn run clean && yarn run bootstrap",
-    "watch": "tsc --build tsconfig.build.json -w --preserveWatchOutput"
+    "watch": "lerna run watch --stream --parallel"
   },
   "husky": {
     "hooks": {
