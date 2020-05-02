@@ -1,3 +1,4 @@
+const path = require("path");
 const withPlugins = require("next-compose-plugins");
 const withSass = require("@zeit/next-sass");
 const withTM = require("next-transpile-modules")(["@sentrei/ui"]);
@@ -12,10 +13,15 @@ const withBundleStats = require("next-plugin-bundle-stats")({
   json: true,
 });
 
+const aliases = {
+  "@sentrei/ui": path.join(__dirname, "../ui"),
+};
+
 const nextConfig = {
   webpack: config => {
     config.resolve.alias = {
       ...config.resolve.alias,
+      ...aliases,
       "@sentrei/ui": require.resolve("@sentrei/ui"),
     };
     config.plugins.push(

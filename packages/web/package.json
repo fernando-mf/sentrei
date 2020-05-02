@@ -35,7 +35,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.10",
     "@next/bundle-analyzer": "^9.3.5",
-    "@sentrei/ui": "file:../ui",
+    "@sentrei/ui": "*",
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.4.0",
     "@zeit/next-sass": "^1.0.1",
