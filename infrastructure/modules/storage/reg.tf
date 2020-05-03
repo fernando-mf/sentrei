@@ -13,3 +13,9 @@ resource "google_storage_bucket" "reg" {
     }
   }
 }
+
+resource "google_storage_bucket_iam_member" "reg" {
+  bucket = google_storage_bucket.reg.name
+  role = "roles/storage.objectViewer"
+  member = "allUsers"
+}
