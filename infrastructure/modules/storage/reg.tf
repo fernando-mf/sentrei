@@ -20,3 +20,10 @@ resource "google_compute_backend_bucket" "reg" {
   bucket_name = google_storage_bucket.reg[count.index].name
   enable_cdn  = true
 }
+
+resource "google_storage_bucket_iam_member" "reg" {
+  count  = var.environment == "master" ? 1 : 0
+  bucket = google_storage_bucket.reg.name
+  role   = "roles/storage.objectViewer"
+  member = "allUsers"
+}
