@@ -60,3 +60,10 @@ resource "google_project_iam_member" "terraform_compute_load_balancer_admin" {
   role    = "roles/compute.loadBalancerAdmin"
   member  = "serviceAccount:${google_service_account.terraform.email}"
 }
+
+resource "google_project_iam_member" "terraform_compute_storage_admin" {
+  count   = var.environment == "master" ? 1 : 0
+  project = "sentrei-${var.environment}"
+  role    = "roles/compute.storageAdmin"
+  member  = "serviceAccount:${google_service_account.terraform.email}"
+}
