@@ -26,17 +26,17 @@ jobs:
         with:
           target_repo_url: git@gitlab.com:sentrei/sentrei.git
           ssh_private_key: ${{ secrets.GITLAB_SSH_KEY }}
-      - if: matrix.branch == 'master'
-        id: secrets
-        uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
-        with:
-          credentials: ${{ secrets.GCP_CREDENTIALS }}
-          secrets: |-
-            DOCKER_USERNAME:sentrei-master/docker_username
-            DOCKER_PASSWORD:sentrei-master/docker_password
-      - if: matrix.branch == 'master'
-        uses: peter-evans/dockerhub-description@v2
-        env:
-          DOCKERHUB_USERNAME: ${{ steps.secrets.outputs.DOCKER_USERNAME }}
-          DOCKERHUB_PASSWORD: ${{ steps.secrets.outputs.DOCKER_PASSWORD }}
-          DOCKERHUB_REPOSITORY: ${{ github.repository }}
+      # - if: matrix.branch == 'master'
+      #   id: secrets
+      #   uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
+      #   with:
+      #     credentials: ${{ secrets.GCP_CREDENTIALS }}
+      #     secrets: |-
+      #       DOCKER_USERNAME:sentrei-master/docker_username
+      #       DOCKER_PASSWORD:sentrei-master/docker_password
+      # - if: matrix.branch == 'master'
+      #   uses: peter-evans/dockerhub-description@v2
+      #   env:
+      #     DOCKERHUB_USERNAME: ${{ steps.secrets.outputs.DOCKER_USERNAME }}
+      #     DOCKERHUB_PASSWORD: ${{ steps.secrets.outputs.DOCKER_PASSWORD }}
+      #     DOCKERHUB_REPOSITORY: ${{ github.repository }}
