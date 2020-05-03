@@ -4,8 +4,7 @@ WORKDIR /app
 COPY . /app
 
 RUN yarn install --frozen-lockfile && \
-    yarn run typescript && \
-    yarn run unsplash
+    yarn run typescript
 
 WORKDIR /app/packages/web
 
