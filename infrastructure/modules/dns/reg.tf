@@ -12,6 +12,7 @@ resource "google_compute_managed_ssl_certificate" "reg" {
 }
 
 resource "google_compute_target_https_proxy" "reg" {
+  name             = "reg-https-proxy"
   url_map          = google_compute_url_map.reg.self_link
   ssl_certificates = [google_compute_managed_ssl_certificate.reg.self_link]
 }
