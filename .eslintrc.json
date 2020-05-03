@@ -26,7 +26,18 @@
       "plugins": ["@typescript-eslint"],
       "rules": {
         "react/display-name": 0,
-        "react/jsx-props-no-spreading": 0
+        "react/jsx-props-no-spreading": 0,
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": [
+              "**/__tests__/**",
+              "**/*.spec.tsx",
+              "**/*.stories.tsx"
+            ],
+            "peerDependencies": false
+          }
+        ]
       },
       "settings": {
         "react": {
