@@ -5,6 +5,7 @@ resource "google_compute_url_map" "reg" {
 
 resource "google_compute_managed_ssl_certificate" "reg" {
   provider = google-beta
+  name     = "reg-managed-certificate"
 
   managed {
     domains = ["reg.${google_dns_managed_zone.sentrei.dns_name}"]
