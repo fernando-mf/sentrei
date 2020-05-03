@@ -23,7 +23,7 @@ resource "google_compute_backend_bucket" "reg" {
 
 resource "google_storage_bucket_iam_member" "reg" {
   count  = var.environment == "master" ? 1 : 0
-  bucket = google_storage_bucket.reg.name
+  bucket = google_storage_bucket.reg[count.index].name
   role   = "roles/storage.objectViewer"
   member = "allUsers"
 }
