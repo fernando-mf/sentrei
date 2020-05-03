@@ -7,7 +7,8 @@ provider "google-beta" {
 }
 
 module "dns" {
-  source = "../../modules/dns"
+  source        = "../../modules/dns"
+  reg_self_link = module.storage.reg_self_link
 }
 
 module "github" {
