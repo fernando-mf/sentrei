@@ -1,3 +1,9 @@
+## [4.6.8](https://github.com/sentrei/sentrei/compare/v4.6.7...v4.6.8) (2020-05-03)
+
+### Bug Fixes
+
+- 🐛 fix reg viz bug ([5e1233a](https://github.com/sentrei/sentrei/commit/5e1233a07ec1a4fd139c03c8ecd750aa87b2c16b)), closes [#1109](https://github.com/sentrei/sentrei/issues/1109)
+
 ## [4.6.7](https://github.com/sentrei/sentrei/compare/v4.6.6...v4.6.7) (2020-05-03)
 
 ### Bug Fixes
