@@ -232,12 +232,25 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "14.1.0"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@master
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}--
+      - run: |
+          yarn install --frozen-lockfile
       - uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
-      - run: |
-          yarn install --frozen-lockfile
       - working-directory: packages/mobile
         run: |
           flutter pub global activate dartdoc
@@ -395,7 +408,6 @@ jobs:
           registry: gcr.io
           repository: sentrei-${{ github.event.client_payload.base }}/sentrei
           tags: ${{ github.event.client_payload.tag }}
-          cache_froms: ${{ github.repository }}:${{ github.event.client_payload.tag }}
           always_pull: false
           add_git_labels: true
           tag_with_ref: false
