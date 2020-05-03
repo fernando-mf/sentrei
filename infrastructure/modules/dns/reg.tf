@@ -1,4 +1,5 @@
 resource "google_compute_url_map" "reg" {
+  name            = "reg-url-map"
   default_service = var.reg_self_link
 }
 
@@ -16,6 +17,7 @@ resource "google_compute_target_https_proxy" "reg" {
 }
 
 resource "google_compute_global_address" "reg" {
+  name         = "reg-public-address"
   ip_version   = "IPV4"
   address_type = "EXTERNAL"
 }
