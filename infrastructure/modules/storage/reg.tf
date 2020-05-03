@@ -14,13 +14,6 @@ resource "google_storage_bucket" "reg" {
   }
 }
 
-resource "google_compute_backend_bucket" "reg" {
-  count       = var.environment == "master" ? 1 : 0
-  name        = "sentrei-${var.environment}-reg"
-  bucket_name = google_storage_bucket.reg[count.index].name
-  enable_cdn  = true
-}
-
 resource "google_storage_bucket_iam_member" "reg" {
   count  = var.environment == "master" ? 1 : 0
   bucket = google_storage_bucket.reg[count.index].name
