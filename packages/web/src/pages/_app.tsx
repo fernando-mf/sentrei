@@ -1,11 +1,13 @@
-import React from "react";
-import Head from "next/head";
-import NextApp from "next/app";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
-import {ThemeProvider as StyledThemeProvider} from "styled-components";
-import Theme from "@sentrei/ui/containers/Theme";
 import * as firebase from "firebase/app";
+import NextApp from "next/app";
+import Head from "next/head";
+import React from "react";
+import {ThemeProvider as StyledThemeProvider} from "styled-components";
+
 import "firebase/performance";
+import Theme from "@sentrei/ui/containers/Theme";
+
 import firebaseConfig from "../utils/firebaseConfig";
 import "../styles/global.scss";
 

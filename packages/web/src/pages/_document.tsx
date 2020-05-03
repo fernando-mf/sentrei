@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
-import NextDocument, {Html, Head, Main, NextScript} from "next/document";
-import {ServerStyleSheet as StyledComponentSheets} from "styled-components";
 import {ServerStyleSheets as MaterialUiServerStyleSheets} from "@material-ui/core/styles";
+import NextDocument, {Html, Head, Main, NextScript} from "next/document";
+import React from "react";
+import {ServerStyleSheet as StyledComponentSheets} from "styled-components";
+
 import Theme from "@sentrei/ui/containers/Theme";
 
 export default class Document extends NextDocument {

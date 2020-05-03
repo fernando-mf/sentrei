@@ -1,10 +1,11 @@
-import React from "react";
-import Head from "next/head";
+import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-import Link from "@sentrei/ui/components/Link";
+import Head from "next/head";
+import React from "react";
+
 import Copyright from "@sentrei/ui/components/Copyright";
+import Link from "@sentrei/ui/components/Link";
 import ProTip from "@sentrei/ui/components/ProTip";
 
 export default function Index(): JSX.Element {

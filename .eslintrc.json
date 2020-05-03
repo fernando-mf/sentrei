@@ -4,12 +4,19 @@
     "es6": true,
     "node": true
   },
-  "extends": ["eslint:recommended", "plugin:prettier/recommended", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
   "overrides": [
     {
       "extends": [
         "airbnb-typescript",
         "plugin:prettier/recommended",
+        "plugin:import/typescript",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -36,6 +43,32 @@
               "**/*.stories.tsx"
             ],
             "peerDependencies": false
+          }
+        ],
+        "import/order": [
+          "error",
+          {
+            "alphabetize": {
+              "caseInsensitive": true,
+              "order": "asc"
+            },
+            "groups": [
+              "external",
+              "internal",
+              "parent",
+              "sibling",
+              "builtin",
+              "index"
+            ],
+            "pathGroups": [
+              {
+                "pattern": "@sentrei/**",
+                "group": "external",
+                "position": "after"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["builtin"],
+            "newlines-between": "always-and-inside-groups"
           }
         ]
       },
