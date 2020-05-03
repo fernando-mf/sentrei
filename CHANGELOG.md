@@ -1,3 +1,10 @@
+## [4.6.7](https://github.com/sentrei/sentrei/compare/v4.6.6...v4.6.7) (2020-05-03)
+
+### Bug Fixes
+
+- 🐛 add reg viewer ([33357a8](https://github.com/sentrei/sentrei/commit/33357a8cf95683a3e5c5f9bd9ca56ed285c91474))
+- 🐛 style ([542500f](https://github.com/sentrei/sentrei/commit/542500fa143a0d356b68b712b54fd00c871f766a)), closes [#1092](https://github.com/sentrei/sentrei/issues/1092)
+
 ## [4.6.6](https://github.com/sentrei/sentrei/compare/v4.6.5...v4.6.6) (2020-05-02)
 
 ### Bug Fixes
