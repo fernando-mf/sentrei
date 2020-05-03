@@ -24,6 +24,7 @@ resource "google_compute_global_address" "reg" {
 }
 
 resource "google_compute_global_forwarding_rule" "reg" {
+  name       = "reg-global-forwarding-https-rule"
   target     = google_compute_target_https_proxy.reg.self_link
   ip_address = google_compute_global_address.reg.address
   port_range = "443"
