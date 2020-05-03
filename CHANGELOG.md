@@ -1,3 +1,9 @@
+## [4.6.10](https://github.com/sentrei/sentrei/compare/v4.6.9...v4.6.10) (2020-05-03)
+
+### Bug Fixes
+
+- 🐛 add proper fonts ([8d41a37](https://github.com/sentrei/sentrei/commit/8d41a37596321c0181b22d49dfc0fdba43872dc3))
+
 ## [4.6.9](https://github.com/sentrei/sentrei/compare/v4.6.8...v4.6.9) (2020-05-03)
 
 ### Bug Fixes
