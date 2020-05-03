@@ -1,3 +1,9 @@
+## [4.6.12](https://github.com/sentrei/sentrei/compare/v4.6.11...v4.6.12) (2020-05-03)
+
+### Bug Fixes
+
+- 🐛 add plugin imports ([f6272f7](https://github.com/sentrei/sentrei/commit/f6272f72f872d03b9c1df2ee0cc6ed2f1d46f4ea))
+
 ## [4.6.11](https://github.com/sentrei/sentrei/compare/v4.6.10...v4.6.11) (2020-05-03)
 
 ### Bug Fixes
