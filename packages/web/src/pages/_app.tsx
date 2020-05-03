@@ -7,6 +7,7 @@ import Theme from "@sentrei/ui/containers/Theme";
 import * as firebase from "firebase/app";
 import "firebase/performance";
 import firebaseConfig from "../utils/firebaseConfig";
+import "../styles/global.scss";
 
 export default class App extends NextApp {
   componentDidMount(): void {
