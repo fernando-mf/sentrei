@@ -6,7 +6,6 @@ import Box from "@material-ui/core/Box";
 import Link from "next/link";
 import Copyright from "@sentrei/ui/components/Copyright";
 import ProTip from "@sentrei/ui/components/ProTip";
-import "../styles/index.scss";
 
 export default function Index(): JSX.Element {
   return (

@@ -50,7 +50,15 @@ export default class Document extends NextDocument {
           <meta name="theme-color" content={Theme.palette.primary.main} />
           <link
             rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap"
+          />
+          <link
+            rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Helvetica:300,400,500,700&display=swap"
           />
         </Head>
         <body>
