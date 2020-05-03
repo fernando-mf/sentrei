@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
-import NextDocument from "next/document";
+import NextDocument, {Html, Head, Main, NextScript} from "next/document";
 import {ServerStyleSheet as StyledComponentSheets} from "styled-components";
 import {ServerStyleSheets as MaterialUiServerStyleSheets} from "@material-ui/core/styles";
+import Theme from "@sentrei/ui/containers/Theme";
 
 export default class Document extends NextDocument {
   static async getInitialProps(
@@ -40,5 +41,23 @@ export default class Document extends NextDocument {
     } finally {
       styledComponentSheet.seal();
     }
+  }
+
+  render(): JSX.Element {
+    return (
+      <Html lang="en">
+        <Head>
+          <meta name="theme-color" content={Theme.palette.primary.main} />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }

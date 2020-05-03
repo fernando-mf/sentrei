@@ -50,6 +50,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "recharts": "^1.8.5",
+    "sass": "^1.26.5",
     "styled-components": "^5.1.0",
     "url-loader": "^4.1.0",
     "webpack-stats-plugin": "^0.3.1"
