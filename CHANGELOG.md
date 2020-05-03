@@ -1,3 +1,9 @@
+## [4.6.11](https://github.com/sentrei/sentrei/compare/v4.6.10...v4.6.11) (2020-05-03)
+
+### Bug Fixes
+
+- 🐛 remove cache v2 ([f2e8ef8](https://github.com/sentrei/sentrei/commit/f2e8ef8951ff86714fc1895012120e6e6b644f3e))
+
 ## [4.6.10](https://github.com/sentrei/sentrei/compare/v4.6.9...v4.6.10) (2020-05-03)
 
 ### Bug Fixes
