@@ -33,7 +33,7 @@ jobs:
           credentials: ${{ secrets.GCP_CREDENTIALS }}
           secrets: |-
             DOCKER_USERNAME:sentrei-master/docker_username
-            DOCKER_PASSWORD:sentrei-master/docker_passwor
+            DOCKER_PASSWORD:sentrei-master/docker_password
       - if: matrix.branch == 'master'
         uses: peter-evans/dockerhub-description@v2
         env:
