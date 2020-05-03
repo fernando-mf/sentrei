@@ -1,3 +1,9 @@
+## [4.6.9](https://github.com/sentrei/sentrei/compare/v4.6.8...v4.6.9) (2020-05-03)
+
+### Bug Fixes
+
+- 🐛 reset reg cdn and go to defaults ([5f4a4b7](https://github.com/sentrei/sentrei/commit/5f4a4b740dbe2e9513739a8de13e4f056525cbc8))
+
 ## [4.6.8](https://github.com/sentrei/sentrei/compare/v4.6.7...v4.6.8) (2020-05-03)
 
 ### Bug Fixes
