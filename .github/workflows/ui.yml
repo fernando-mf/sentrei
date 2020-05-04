@@ -5,14 +5,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
-      - uses: actions/setup-node@v1
+      - id: change
+        run: |
+          git fetch --quiet
+          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- packages/ui; then
+            echo ::set-output name=changed::'false' && exit 0
+          else
+            echo ::set-output name=changed::'true' && exit 0
+          fi
+      - if: steps.change.outputs.changed == 'true'
+        uses: actions/setup-node@v1
         with:
           node-version: "14.1.0"
-      - id: yarn-cache-path
+      - if: steps.change.outputs.changed == 'true'
+        id: yarn-cache-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
-      - id: cache
+      - if: steps.change.outputs.changed == 'true'
+        id: cache
         uses: actions/cache@master
         with:
           path: |
@@ -23,14 +32,6 @@ jobs:
             yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             yarn-v1-${{ runner.os }}--
-      - id: change
-        run: |
-          git fetch --quiet
-          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- packages/ui; then
-            echo ::set-output name=changed::'false' && exit 0
-          else
-            echo ::set-output name=changed::'true' && exit 0
-          fi
       - if: steps.change.outputs.changed == 'true'
         run: |
           yarn install --frozen-lockfile
