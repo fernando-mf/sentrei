@@ -1,3 +1,10 @@
+# [4.7.0](https://github.com/sentrei/sentrei/compare/v4.6.12...v4.7.0) (2020-05-04)
+
+### Features
+
+- 🎸 add blog feat ([0028163](https://github.com/sentrei/sentrei/commit/0028163cf2bd689bc87ecfffedebc37bc1f5f998)), closes [#1139](https://github.com/sentrei/sentrei/issues/1139)
+- 🎸 add blog package ([983c372](https://github.com/sentrei/sentrei/commit/983c3720e719f6987a9727d27dc61a4dab219cb1))
+
 ## [4.6.12](https://github.com/sentrei/sentrei/compare/v4.6.11...v4.6.12) (2020-05-03)
 
 ### Bug Fixes
