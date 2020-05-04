@@ -9,7 +9,7 @@
       "@sentrei/ui": ["../ui/dist"],
       "@sentrei/ui/*": ["../ui/dist/*"],
       "@sentrei/web": ["src"],
-      "@sentrei/web/*": ["src/*"],
+      "@sentrei/web/*": ["src/*"]
     }
   },
   "include": ["src/**/*"],
