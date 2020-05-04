@@ -30,6 +30,7 @@ const withConfig = nextRuntimeDotenv({
 
 const aliases = {
   "@sentrei/ui": path.join(__dirname, "../ui"),
+  "@sentrei/web": path.join(__dirname, "src"),
 };
 
 const nextConfig = {
