@@ -3,7 +3,7 @@
     {
       "site": "sentrei-blog",
       "target": "blog",
-      "public": "src/.vuepress/dist",
+      "public": "public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "predeploy": ["yarn run build"],
       "rewrites": [
@@ -16,7 +16,7 @@
     {
       "site": "sentrei-staging-blog",
       "target": "staging-blog",
-      "public": "src/.vuepress/dist",
+      "public": "public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "predeploy": ["yarn run build"],
       "rewrites": [
