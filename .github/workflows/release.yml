@@ -82,7 +82,7 @@ jobs:
       - uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: blog-cmd
+          event-type: deploy-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "Production", "event_name": "blog", "pull_request_number": "", "release": "true", "task": "blog", "tag": "blog", "url_prefix": ""}'
   design:
     if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
