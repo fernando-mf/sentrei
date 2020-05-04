@@ -1,3 +1,9 @@
+## [4.8.1](https://github.com/sentrei/sentrei/compare/v4.8.0...v4.8.1) (2020-05-04)
+
+### Bug Fixes
+
+- **deps:** bump @material-ui/core from 4.9.12 to 4.9.13 ([b226cc9](https://github.com/sentrei/sentrei/commit/b226cc9ef818d543489b60d46459c70fed29d087))
+
 # [4.8.0](https://github.com/sentrei/sentrei/compare/v4.7.2...v4.8.0) (2020-05-04)
 
 ### Features
