@@ -1,7 +1,7 @@
-import React from "react";
 import styled from "@emotion/styled";
 
 import mediaqueries from "@narative/gatsby-theme-novela/src/styles/media";
+import React from "react";
 
 // This should be the black color, but the difference not noticable, so I avoided shadowing a component.
 // fill="#231f20"
