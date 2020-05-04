@@ -51,6 +51,6 @@ module.exports = {
         prefixDefault: true,
         pagesPaths: ["/content"],
       },
-    }
+    },
   ],
 };
