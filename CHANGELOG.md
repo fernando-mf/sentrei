@@ -1,3 +1,9 @@
+# [4.8.0](https://github.com/sentrei/sentrei/compare/v4.7.2...v4.8.0) (2020-05-04)
+
+### Features
+
+- 🎸 add nprogress loading ([3ba0697](https://github.com/sentrei/sentrei/commit/3ba069709745e88972a07cd8095294089b77165c))
+
 ## [4.7.2](https://github.com/sentrei/sentrei/compare/v4.7.1...v4.7.2) (2020-05-04)
 
 ### Bug Fixes
