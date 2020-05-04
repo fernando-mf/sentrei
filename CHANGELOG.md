@@ -1,3 +1,9 @@
+## [4.7.1](https://github.com/sentrei/sentrei/compare/v4.7.0...v4.7.1) (2020-05-04)
+
+### Bug Fixes
+
+- 🐛 invoke blog deploy ([84fbe44](https://github.com/sentrei/sentrei/commit/84fbe441c61b60cafdef50b2e217e68308aa64a9))
+
 # [4.7.0](https://github.com/sentrei/sentrei/compare/v4.6.12...v4.7.0) (2020-05-04)
 
 ### Features
