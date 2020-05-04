@@ -47,6 +47,7 @@
     "firebase": "^7.14.2",
     "next": "^9.3.5",
     "next-compose-plugins": "^2.2.0",
+    "next-i18next": "^4.4.1",
     "next-plugin-bundle-stats": "^2.2.0",
     "next-runtime-dotenv": "^1.2.0",
     "next-transpile-modules": "^3.3.0",
