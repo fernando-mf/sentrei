@@ -7,9 +7,8 @@ import {ThemeProvider as StyledThemeProvider} from "styled-components";
 
 import "firebase/performance";
 import Theme from "@sentrei/ui/containers/Theme";
-
-import firebaseConfig from "../utils/firebaseConfig";
-import "../styles/global.scss";
+import firebaseConfig from "@sentrei/web/utils/firebaseConfig";
+import "@sentrei/web/styles/global.scss";
 
 export default class App extends NextApp {
   componentDidMount(): void {

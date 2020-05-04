@@ -6,8 +6,8 @@
     "esModuleInterop": true,
     "noEmit": true,
     "paths": {
-      "@sentrei/ui": ["../ui/dist"],
-      "@sentrei/ui/*": ["../ui/dist/*"]
+      "@sentrei/ui/*": ["../ui/dist/*"],
+      "@sentrei/web/*": ["src/*"]
     }
   },
   "include": ["src/**/*"],
