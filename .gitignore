@@ -52,6 +52,9 @@
 !**/ios/**/default.pbxuser
 !**/ios/**/default.perspectivev3
 
+# Blog related.
+**/blog/public
+
 # Mobile related.
 **/mobile/firebase.json
 

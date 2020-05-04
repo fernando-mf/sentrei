@@ -1,0 +1,30 @@
+{
+  "hosting": [
+    {
+      "site": "sentrei-blog",
+      "target": "blog",
+      "public": "public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run build"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "site": "sentrei-staging-blog",
+      "target": "staging-blog",
+      "public": "public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run build"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

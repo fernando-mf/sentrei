@@ -40,6 +40,9 @@
 - name: infrastructure
   color: 0366d6
   description: infrastructure
+- name: blog
+  color: 0366d6
+  description: blog
 - name: common
   color: 0366d6
   description: common
