@@ -1,23 +1,25 @@
+design:
+  - design/**/*
 github:
   - .github/**/*
 infrastructure:
   - infrastructure/**/*
-blog:
+packages/blog:
   - packages/blog/**/*
-common:
+packages/common:
   - packages/common/**/*
-design:
+packages/design:
   - packages/design/**/*
-docs:
+packages/docs:
   - packages/docs/**/*
-functions:
+packages/functions:
   - packages/functions/**/*
-fastlane:
+packages/fastlane:
   - packages/mobile/**/*
-mobile:
+packages/mobile:
   - packages/mobile/**/*
-ui:
+packages/ui:
   - packages/ui/**/*
-web:
+packages/web:
   - packages/ui/**/*
   - packages/web/**/*

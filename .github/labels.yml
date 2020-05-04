@@ -1,69 +1,36 @@
-- name: bug
-  color: fbca04
-  description: This issue/PR relates to a bug.
-- name: deprecated
-  color: fef2c0
-  description: This issue/PR relates to a deprecated module.
-- name: docs
-  color: 4071a5
-  description: This issue/PR relates to or includes documentation.
-- name: enhancement
-  color: ededed
-  description: This issue/PR relates to a feature request.
-- name: feature
-  color: 006b75
-  description: This issue/PR relates to a feature request.
-- name: major
-  color: c6476b
-  description: Marks an important and likely breaking change.
-- name: packaging
-  color: 4071a5
-  description: Packaging category
-- name: performance
-  color: eeeeee
-  description: Relates to product or testing performance.
-- name: skip-changelog
-  color: eeeeee
-  description: Can be missed from the changelog.
-- name: stale
-  color: eeeeee
-  description: Not updated in long time, will be closed soon.
-- name: wontfix
-  color: eeeeee
-  description: This will not be worked on
-- name: test
-  color: 0e8a16
-  description: This PR relates to tests, QA, CI.
-- name: github
-  color: 0366d6
-  description: github
-- name: infrastructure
-  color: 0366d6
-  description: infrastructure
-- name: blog
-  color: 0366d6
-  description: blog
-- name: common
-  color: 0366d6
-  description: common
-- name: design
-  color: 0366d6
-  description: design
-- name: docs
-  color: 0366d6
-  description: docs
-- name: functions
-  color: 0366d6
-  description: functions
-- name: fastlane
-  color: 0366d6
-  description: fastlane
-- name: mobile
-  color: 0366d6
-  description: mobile
-- name: ui
-  color: 0366d6
-  description: ui
-- name: web
-  color: 0366d6
-  description: web
+- name: "design"
+  color: "0366d6"
+  description: ""
+- name: "github"
+  color: "0366d6"
+  description: ""
+- name: "infrastructure"
+  color: "0366d6"
+  description: ""
+- name: "packages/blog"
+  color: "0366d6"
+  description: ""
+- name: "packages/common"
+  color: "0366d6"
+  description: ""
+- name: "packages/design"
+  color: "0366d6"
+  description: ""
+- name: "packages/docs"
+  color: "0366d6"
+  description: ""
+- name: "packages/functions"
+  color: "0366d6"
+  description: ""
+- name: "packages/fastlane"
+  color: "0366d6"
+  description: ""
+- name: "packages/mobile"
+  color: "0366d6"
+  description: ""
+- name: "packages/ui"
+  color: "0366d6"
+  description: ""
+- name: "packages/web"
+  color: "0366d6"
+  description: ""
