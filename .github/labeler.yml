@@ -2,6 +2,8 @@ github:
   - .github/**/*
 infrastructure:
   - infrastructure/**/*
+blog:
+  - packages/blog/**/*
 common:
   - packages/common/**/*
 design:
