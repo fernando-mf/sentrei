@@ -1,3 +1,10 @@
+## [4.7.2](https://github.com/sentrei/sentrei/compare/v4.7.1...v4.7.2) (2020-05-04)
+
+### Bug Fixes
+
+- 🐛 continue ([4b91281](https://github.com/sentrei/sentrei/commit/4b91281a4b47f1df6951503db3c1d6e3620296c2)), closes [#1146](https://github.com/sentrei/sentrei/issues/1146)
+- 🐛 invoke ([7e8b795](https://github.com/sentrei/sentrei/commit/7e8b7951e5713ab3204bad740ddc84127a9cd095))
+
 ## [4.7.1](https://github.com/sentrei/sentrei/compare/v4.7.0...v4.7.1) (2020-05-04)
 
 ### Bug Fixes
