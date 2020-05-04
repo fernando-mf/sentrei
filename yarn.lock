@@ -9750,7 +9750,7 @@ core-js-pure@^3.0.0, core-js-pure@^3.0.1:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.6.5.tgz#c79e75f5e38dbc85a662d91eea52b8256d53b813"
   integrity sha512-lacdXOimsiD0QyNf9BC/mxivNJ/ybBGJXQFKzRekp1WTHoVUWsUHEn+2T8GJAzzIhyOuXA+gOxCVN3l+5PLPUA==
 
-core-js@2, core-js@^2.4.0, core-js@^2.4.1, core-js@^2.6.10, core-js@^2.6.11, core-js@^2.6.5:
+core-js@2, core-js@^2, core-js@^2.4.0, core-js@^2.4.1, core-js@^2.6.10, core-js@^2.6.11, core-js@^2.6.5:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
   integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
@@ -15559,7 +15559,7 @@ hogan.js@^3.0.2:
     mkdirp "0.3.0"
     nopt "1.0.10"
 
-hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
+hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.2.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -15675,6 +15675,13 @@ html-minifier@^3.2.3:
     relateurl "0.2.x"
     uglify-js "3.4.x"
 
+html-parse-stringify2@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/html-parse-stringify2/-/html-parse-stringify2-2.0.1.tgz#dc5670b7292ca158b7bc916c9a6735ac8872834a"
+  integrity sha1-3FZwtyksoVi3vJFsmmc1rIhyg0o=
+  dependencies:
+    void-elements "^2.0.1"
+
 html-tag-names@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/html-tag-names/-/html-tag-names-1.1.5.tgz#f537420c16769511283f8ae1681785fbc89ee0a9"
@@ -15768,6 +15775,14 @@ http-errors@1.7.3, http-errors@^1.7.3, http-errors@~1.7.2:
     setprototypeof "1.1.1"
     statuses ">= 1.5.0 < 2"
     toidentifier "1.0.0"
+
+http-errors@~1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.4.0.tgz#6c0242dea6b3df7afda153c71089b31c6e82aabf"
+  integrity sha1-bAJC3qaz33r9oVPHEImzHG6Cqr8=
+  dependencies:
+    inherits "2.0.1"
+    statuses ">= 1.2.1 < 2"
 
 http-errors@~1.6.2:
   version "1.6.3"
@@ -15895,6 +15910,37 @@ hyphenate-style-name@^1.0.2, hyphenate-style-name@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.3.tgz#097bb7fa0b8f1a9cf0bd5c734cf95899981a9b48"
   integrity sha512-EcuixamT82oplpoJ2XU4pDtKGWQ7b00CD9f1ug9IaQ3p1bkHMiKCZ9ut9QDI6qsa6cpUuB+A/I+zLtdNK4n2DQ==
+
+i18next-browser-languagedetector@^4.0.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-4.1.1.tgz#89656cd9b78bb92dc0c7e86c0d9606f3f15fabfa"
+  integrity sha512-akv0zurR/2KU7s1qaWkirY9FEEOT1TNsQaezEg8+1BLLQre7vylqb7tYoUgYqP/0/BEzXJgnoQnj+sh5xYFMhg==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+
+i18next-fs-backend@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/i18next-fs-backend/-/i18next-fs-backend-1.0.2.tgz#8f137a59a7088c97d5112d6d624ebb8c5675fac9"
+  integrity sha512-7N7V6gu00/UBdCjz37JFKGB5UfuLDJlIoLMAxXQG5ih3CFKPqtJ7GfQ7lqd8t/L/6EQ1sciZ9022Xy5BwTrf7g==
+
+i18next-http-backend@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/i18next-http-backend/-/i18next-http-backend-1.0.8.tgz#6d32c4baacf363a26dfef76a973bfc3dd8d9b25d"
+  integrity sha512-f9oWlt3AuMh+xuKVpG8qlP6azI40N+wRBK/2jaJ7tHk6vMJSAGtZSM76Zx7p2JULqj27yNnc2yOEN4moq3RuFg==
+  dependencies:
+    node-fetch "2.6.0"
+
+i18next-http-middleware@>=1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/i18next-http-middleware/-/i18next-http-middleware-1.0.2.tgz#0507c6fdbfd4247eeb3550db2862b259dc26fe2d"
+  integrity sha512-ctyxMW/KGcfnDjiqWKx7Gm/flfkKrjvneH/d1KYSJwO/X9hxPwCBWiRa3cHy8movW/u6JfauuRuVU6fK27KAEw==
+
+i18next@^19.0.3:
+  version "19.4.4"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-19.4.4.tgz#c0a18bc2f2be554da636e67bfbf5200c7948b60d"
+  integrity sha512-ofaHtdsDdX3A5nYur1HWblB7J4hIcjr2ACdnwTAJgc8hTfPbyzZfGX0hVkKpI3vzDIgO6Uzc4v1ffW2W6gG6zw==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
 
 iconv-lite@0.4.24, iconv-lite@^0.4.15, iconv-lite@^0.4.17, iconv-lite@^0.4.24, iconv-lite@~0.4.13:
   version "0.4.24"
@@ -20997,6 +21043,24 @@ next-compose-plugins@^2.2.0:
   resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.2.0.tgz#95cd8eb40ab0652070d76572fb648354191628b0"
   integrity sha512-ChUlpT9tWfJ7YxqGw/WQ2T1gf8EeX93n1XqeQw0lkvGa7seszahvF4eOZUJoq7Hetsbzg4UHVnPoCXfXTyQR3g==
 
+next-i18next@^4.4.1:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/next-i18next/-/next-i18next-4.4.1.tgz#04bc3459015cb5c620cdf6b1388350b0a62fbd38"
+  integrity sha512-WsyEVqx0FPEmcC7lgCkCdolRyVewEdY2JFvZSl6344xk6DGGx5tNib0fBCGgd9zF0JFmndV+jBsep/ZJkl1gng==
+  dependencies:
+    core-js "^2"
+    detect-node "^2.0.4"
+    hoist-non-react-statics "^3.2.0"
+    i18next "^19.0.3"
+    i18next-browser-languagedetector "^4.0.0"
+    i18next-fs-backend "^1.0.2"
+    i18next-http-backend "^1.0.8"
+    i18next-http-middleware ">=1.0.2"
+    path-match "^1.2.4"
+    prop-types "^15.6.2"
+    react-i18next "^11.0.0"
+    url "^0.11.0"
+
 next-plugin-bundle-stats@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/next-plugin-bundle-stats/-/next-plugin-bundle-stats-2.2.0.tgz#127db2db9d1003f4be3a974b950d42010a1275f8"
@@ -22708,6 +22772,14 @@ path-key@^3.0.0, path-key@^3.1.0:
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-3.1.1.tgz#581f6ade658cbba65a0d3380de7753295054f375"
   integrity sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==
 
+path-match@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/path-match/-/path-match-1.2.4.tgz#a62747f3c7e0c2514762697f24443585b09100ea"
+  integrity sha1-pidH88fgwlFHYml/JEQ1hbCRAOo=
+  dependencies:
+    http-errors "~1.4.0"
+    path-to-regexp "^1.0.0"
+
 path-parse@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
@@ -22723,7 +22795,7 @@ path-to-regexp@0.1.7:
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
 
-path-to-regexp@^1.7.0:
+path-to-regexp@^1.0.0, path-to-regexp@^1.7.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-1.8.0.tgz#887b3ba9d84393e87a0a0b9f4cb756198b53548a"
   integrity sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==
@@ -24254,6 +24326,14 @@ react-hotkeys@2.0.0:
   integrity sha512-3n3OU8vLX/pfcJrR3xJ1zlww6KS1kEJt0Whxc4FiGV+MJrQ1mYSYI3qS/11d2MJDFm8IhOXMTFQirfu6AVOF6Q==
   dependencies:
     prop-types "^15.6.1"
+
+react-i18next@^11.0.0:
+  version "11.4.0"
+  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-11.4.0.tgz#dde6bf3a695910af7a4270fea2e111bc331cf151"
+  integrity sha512-lyOZSSQkif4H9HnHN3iEKVkryLI+WkdZSEw3VAZzinZLopfYRMHVY5YxCopdkXPLEHs6S5GjKYPh3+j0j336Fg==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    html-parse-stringify2 "2.0.1"
 
 react-input-autosize@^2.2.2:
   version "2.2.2"
@@ -26999,7 +27079,7 @@ static-site-generator-webpack-plugin@^3.4.2:
     url "^0.11.0"
     webpack-sources "^0.2.0"
 
-"statuses@>= 1.4.0 < 2", "statuses@>= 1.5.0 < 2", statuses@~1.5.0:
+"statuses@>= 1.2.1 < 2", "statuses@>= 1.4.0 < 2", "statuses@>= 1.5.0 < 2", statuses@~1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
@@ -29590,6 +29670,11 @@ vm-browserify@^1.0.0, vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
+
+void-elements@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
+  integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
