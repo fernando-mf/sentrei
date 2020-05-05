@@ -1,3 +1,9 @@
+## [4.8.2](https://github.com/sentrei/sentrei/compare/v4.8.1...v4.8.2) (2020-05-05)
+
+### Bug Fixes
+
+- 🐛 add navbar for mui component ([5d07ce6](https://github.com/sentrei/sentrei/commit/5d07ce68789d83a6cb6d048037fac6cea5b62126))
+
 ## [4.8.1](https://github.com/sentrei/sentrei/compare/v4.8.0...v4.8.1) (2020-05-04)
 
 ### Bug Fixes
