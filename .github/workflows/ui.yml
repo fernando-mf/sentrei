@@ -6,10 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.head_ref }}
+          fetch-depth: 0
       - id: change
         run: |
-          git fetch --quiet
           if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- packages/ui; then
             echo ::set-output name=changed::'false' && exit 0
           else
