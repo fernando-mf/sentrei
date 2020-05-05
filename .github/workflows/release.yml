@@ -25,6 +25,8 @@ jobs:
     needs: context
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v1
         with:
           always-auth: false
@@ -66,8 +68,6 @@ jobs:
         run: |
           echo "::set-env name=DIST_TAG::latest"
       - run: |
-          npm whoami
-          git fetch --depth=1 origin +refs/tags/*:refs/tags/*
           git stash && yarn run publish && git stash pop || true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -14,10 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          fetch-depth: 0
           ref: ${{ matrix.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
-      - run: |
-          git fetch --quiet --unshallow
       - if: matrix.branch != 'master'
         run: |
           git merge --ff-only origin/master && git push || true
