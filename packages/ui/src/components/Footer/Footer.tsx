@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function StickyFooter() {
+export default function StickyFooter(): JSX.Element {
   const classes = useStyles();
 
   return (
