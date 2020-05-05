@@ -31,7 +31,6 @@ const withConfig = nextRuntimeDotenv({
 const aliases = {
   "@sentrei/ui": path.join(__dirname, "../ui"),
   "@sentrei/web": path.join(__dirname, "src"),
-  "@sentrei/ui": require.resolve("@sentrei/ui"),
 };
 
 const nextConfig = {
@@ -39,6 +38,7 @@ const nextConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
       ...aliases,
+      "@sentrei/ui": require.resolve("@sentrei/ui"),
     };
     config.plugins.push(
       new StatsWriterPlugin({
