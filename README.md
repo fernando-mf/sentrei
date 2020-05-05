@@ -32,12 +32,20 @@
 
 ## Getting Started 🚀
 
+### Company 🏢
+
+<!-- prettier-ignore-start -->
+| Version | Blog | Pioneer |
+| ------- | ---- | ------- |
+| master | https://blog.sentrei.com | https://pioneer.sentrei.com |
+<!-- prettier-ignore-end -->
+
 ### Design 🎨
 
 <!-- prettier-ignore-start -->
-| Version | Const | Mobile | Web | UI | Docs | Blog |
-| ------- | ----- | ------ | --- | -- | ---- | ---- |
-| master | [LINK](https://www.figma.com/file/FcE7ACUUJAey0gspwpFN48/const) | [LINK](https://www.figma.com/file/0HJCBXV4H81774BKNzdTPs/mobile) | [LINK](https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web) | https://ui.sentrei.com | https://design.sentrei.com | https://blog.sentrei.com |
+| Version | Const | Mobile | Web | UI | Docs |
+| ------- | ----- | ------ | --- | -- | ---- |
+| master | [LINK](https://www.figma.com/file/FcE7ACUUJAey0gspwpFN48/const) | [LINK](https://www.figma.com/file/0HJCBXV4H81774BKNzdTPs/mobile) | [LINK](https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web) | https://ui.sentrei.com | https://design.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ### Mobile 📱
