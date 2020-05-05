@@ -4,7 +4,7 @@ const aliases = {
   "@sentrei/ui": path.join(__dirname, "../src"),
 };
 
-module.exports = ({ config }) => {
+module.exports = ({config}) => {
   config.resolve.alias = {
     ...config.resolve.alias,
     ...aliases,
