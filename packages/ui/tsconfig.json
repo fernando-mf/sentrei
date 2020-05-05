@@ -7,7 +7,9 @@
     "jsx": "react",
     "noEmit": false,
     "outDir": "dist",
-    "rootDir": "src"
+    "paths": {
+      "@sentrei/ui/*": ["src/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": [
