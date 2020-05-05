@@ -1,6 +1,6 @@
 {
   "name": "sentrei",
-  "version": "4.8.7",
+  "version": "4.8.9",
   "private": true,
   "homepage": "https://github.com/sentrei/sentrei",
   "repository": {
@@ -24,7 +24,7 @@
     "lint": "yarn eclint:check && yarn eslint:check && yarn prettier:check && yarn sort-package-json:check",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "publish": "lerna publish from-package --yes",
+    "publish": "lerna publish from-package --yes --dist-tag $DIST_TAG",
     "release": "semantic-release",
     "release-test": "semantic-release -d",
     "sort-package-json:check": "sort-package-json 'package.json' 'packages/*/package.json' --check",
