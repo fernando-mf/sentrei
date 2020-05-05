@@ -1,8 +1,8 @@
-import React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import React from "react";
 
 import Copyright from "@sentrei/ui/components/Copyright";
 
@@ -39,8 +39,8 @@ export default function StickyFooter() {
           Sticky footer
         </Typography>
         <Typography variant="h5" component="h2" gutterBottom>
-          {"Pin a footer to the bottom of the viewport."}
-          {"The footer will move as the main element of the page grows."}
+          Pin a footer to the bottom of the viewport. The footer will move as
+          the main element of the page grows.
         </Typography>
         <Typography variant="body1">Sticky footer placeholder.</Typography>
       </Container>

@@ -4,10 +4,10 @@ import Typography from "@material-ui/core/Typography";
 import Head from "next/head";
 import React from "react";
 
-import Navbar from "@sentrei/ui/components/NavBar";
 import Copyright from "@sentrei/ui/components/Copyright";
 import Footer from "@sentrei/ui/components/Footer";
 import Link from "@sentrei/ui/components/Link";
+import Navbar from "@sentrei/ui/components/NavBar";
 import ProTip from "@sentrei/ui/components/ProTip";
 
 export default function Index(): JSX.Element {
@@ -29,7 +29,7 @@ export default function Index(): JSX.Element {
           <ProTip />
           <Copyright />
         </Box>
-        <Footer/>
+        <Footer />
       </Container>
     </>
   );
