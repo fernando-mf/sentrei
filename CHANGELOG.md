@@ -1,3 +1,9 @@
+## [4.8.9](https://github.com/sentrei/sentrei/compare/v4.8.8...v4.8.9) (2020-05-05)
+
+### Bug Fixes
+
+- **deps:** bump @types/node from 13.13.4 to 13.13.5 ([d222f3d](https://github.com/sentrei/sentrei/commit/d222f3d61e0dcf84a8bd9cf90387292409a8d32b))
+
 ## [4.8.8](https://github.com/sentrei/sentrei/compare/v4.8.7...v4.8.8) (2020-05-05)
 
 ### Bug Fixes
