@@ -1,4 +1,5 @@
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import * as firebase from "firebase/app";
 import NextApp from "next/app";
 import Head from "next/head";
@@ -34,6 +35,7 @@ export default class App extends NextApp {
         </Head>
         <StyledThemeProvider theme={Theme}>
           <MaterialThemeProvider theme={Theme}>
+            <CssBaseline />
             <Component {...pageProps} />
           </MaterialThemeProvider>
         </StyledThemeProvider>
