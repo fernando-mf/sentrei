@@ -48,7 +48,7 @@ jobs:
             yarn-v1-${{ runner.os }}--
       - run: |
           yarn install --frozen-lockfile
-      - run: |
+          yarn run typescript
           yarn run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
