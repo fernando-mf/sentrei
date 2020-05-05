@@ -1,10 +1,10 @@
 import {shallow} from "enzyme";
 import React from "react";
 
-import ProTip from ".";
+import NavBar from ".";
 
-describe("ProTip", () => {
+describe("NavBar", () => {
   test("render", () => {
-    shallow(<ProTip />);
+    shallow(<NavBar />);
   });
 });

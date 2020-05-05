@@ -1,10 +1,10 @@
 import {shallow} from "enzyme";
 import React from "react";
 
-import ProTip from ".";
+import Footer from ".";
 
-describe("ProTip", () => {
+describe("Footer", () => {
   test("render", () => {
-    shallow(<ProTip />);
+    shallow(<Footer />);
   });
 });

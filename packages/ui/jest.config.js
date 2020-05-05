@@ -12,6 +12,10 @@ module.exports = {
     "<rootDir>/src/__tests__/setupTests.ts",
   ],
   moduleFileExtensions: ["js", "ts", "tsx"],
+  moduleNameMapper: {
+    "@sentrei/ui/(.*)": "<rootDir>/src/$1",
+    "@sentrei/ui/components/(.*)": "<rootDir>/src/components/$1",
+  },
   setupFiles: ["<rootDir>/src/__tests__/setupTests.ts"],
   collectCoverage: true,
   verbose: true,
@@ -25,6 +29,7 @@ module.exports = {
   snapshotSerializers: ["enzyme-to-json/serializer"],
   globals: {
     "ts-jest": {
+      importHelpers: true,
       tsConfig: "<rootDir>/tsconfig.test.json",
     },
   },

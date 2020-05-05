@@ -5,7 +5,9 @@ import Head from "next/head";
 import React from "react";
 
 import Copyright from "@sentrei/ui/components/Copyright";
+import Footer from "@sentrei/ui/components/Footer";
 import Link from "@sentrei/ui/components/Link";
+import Navbar from "@sentrei/ui/components/NavBar";
 import ProTip from "@sentrei/ui/components/ProTip";
 
 export default function Index(): JSX.Element {
@@ -16,6 +18,7 @@ export default function Index(): JSX.Element {
         <meta name="Description" content="Sentrei landing page" />
       </Head>
       <Container maxWidth="sm">
+        <Navbar />
         <Box my={4}>
           <Typography variant="h4" component="h1" gutterBottom>
             Next.js with TypeScript example
@@ -26,6 +29,7 @@ export default function Index(): JSX.Element {
           <ProTip />
           <Copyright />
         </Box>
+        <Footer />
       </Container>
     </>
   );
