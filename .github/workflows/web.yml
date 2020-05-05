@@ -5,9 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - id: change
         run: |
-          git fetch --quiet
           if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- packages/ui packages/web; then
             echo ::set-output name=changed::'false' && exit 0
           else
