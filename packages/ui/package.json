@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "build-storybook -o out",
+    "build": "build-storybook -o out --loglevel warn",
     "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
     "clean:dist": "rimraf dist",
     "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
