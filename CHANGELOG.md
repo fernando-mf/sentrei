@@ -1,3 +1,9 @@
+## [4.9.6](https://github.com/sentrei/sentrei/compare/v4.9.5...v4.9.6) (2020-05-06)
+
+### Bug Fixes
+
+- 🐛 environment variable for delivery to lowercase ([5ab4b31](https://github.com/sentrei/sentrei/commit/5ab4b31d98e507e1b2df95063c66e51b753b0d01))
+
 ## [4.9.5](https://github.com/sentrei/sentrei/compare/v4.9.4...v4.9.5) (2020-05-06)
 
 ### Bug Fixes
