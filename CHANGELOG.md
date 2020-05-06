@@ -1,3 +1,10 @@
+## [4.9.1](https://github.com/sentrei/sentrei/compare/v4.9.0...v4.9.1) (2020-05-06)
+
+### Bug Fixes
+
+- 🐛 fetch ([4337299](https://github.com/sentrei/sentrei/commit/4337299852efbdca3ea7033239334f9c32be0ec4))
+- 🐛 uilib ([ae11736](https://github.com/sentrei/sentrei/commit/ae1173679438cf37af631a27ee364aececed41fe))
+
 # [4.9.0](https://github.com/sentrei/sentrei/compare/v4.8.12...v4.9.0) (2020-05-06)
 
 ### Features
