@@ -1,3 +1,9 @@
+## [4.9.5](https://github.com/sentrei/sentrei/compare/v4.9.4...v4.9.5) (2020-05-06)
+
+### Bug Fixes
+
+- 🐛 add pioneer release ([72c778b](https://github.com/sentrei/sentrei/commit/72c778b278049ebe77b8f422b6323742672bf504))
+
 ## [4.9.4](https://github.com/sentrei/sentrei/compare/v4.9.3...v4.9.4) (2020-05-06)
 
 ### Bug Fixes
