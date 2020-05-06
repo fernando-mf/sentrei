@@ -1,3 +1,9 @@
+## [4.9.2](https://github.com/sentrei/sentrei/compare/v4.9.1...v4.9.2) (2020-05-06)
+
+### Bug Fixes
+
+- 🐛 add landing component ([27cd837](https://github.com/sentrei/sentrei/commit/27cd837120f5784f2ba041fab931a0a5cc0f827c))
+
 ## [4.9.1](https://github.com/sentrei/sentrei/compare/v4.9.0...v4.9.1) (2020-05-06)
 
 ### Bug Fixes
