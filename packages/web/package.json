@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/web",
-  "version": "4.9.2",
+  "version": "4.9.3-alpha.2",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -46,6 +46,7 @@
     "@zeit/next-sass": "^1.0.1",
     "babel-plugin-styled-components": "^1.10.7",
     "firebase": "^7.14.2",
+    "isomorphic-fetch": "^2.2.1",
     "next": "^9.3.5",
     "next-compose-plugins": "^2.2.0",
     "next-i18next": "^4.4.1",

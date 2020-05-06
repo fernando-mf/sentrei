@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/ui",
-  "version": "4.9.2",
+  "version": "4.9.3-alpha.2",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -57,6 +57,9 @@
     "@storybook/addon-viewport": "^5.3.18",
     "@storybook/addons": "^5.3.18",
     "@storybook/react": "^5.3.18",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/react-hooks": "^3.2.1",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^25.2.1",
