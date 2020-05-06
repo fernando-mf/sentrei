@@ -23,7 +23,6 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/33af9b285c934b3fa958d85c6638aefb)](https://www.codacy.com/gh/sentrei/sentrei?utm_source=github.com&utm_medium=referral&utm_content=sentrei/sentrei&utm_campaign=Badge_Grade)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/sentrei/sentrei.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sentrei/sentrei/alerts/)
 [![Uptime Robot](https://img.shields.io/uptimerobot/ratio/m784815116-8a053f04f101965fe947849c)](https://uptimerobot.com/dashboard#784815116)
-[![Join the chat at https://gitter.im/sentrei/sentrei](https://badges.gitter.im/sentrei/sentrei.svg)](https://gitter.im/sentrei/sentrei?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Pioneer](https://img.shields.io/badge/competes%20on-pioneer.app-important)](https://play.pioneer.app/)
 
 <!-- <p align="center">
