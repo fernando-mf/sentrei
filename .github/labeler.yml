@@ -18,8 +18,12 @@ packages/fastlane:
   - packages/mobile/**/*
 packages/mobile:
   - packages/mobile/**/*
+packages/pioneer:
+  - packages/mobile/**/*
 packages/ui:
+  - packages/common/**/*
   - packages/ui/**/*
 packages/web:
+  - packages/common/**/*
   - packages/ui/**/*
   - packages/web/**/*
