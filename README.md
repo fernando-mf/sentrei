@@ -13,7 +13,6 @@
 [![Effective Dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)
 [![mergify-status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei&style=flat)](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei&style=flat)
 [![dependabot-status](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)
-[![ZenHub](https://img.shields.io/badge/Managed_with-ZenHub-5e60ba.svg)](https://app.zenhub.com/workspace/o/sentrei/sentrei/boards)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/sentrei/sentrei)
 [![Github Version](https://img.shields.io/github/v/tag/sentrei/sentrei)](https://github.com/sentrei/sentrei/releases)
 [![Docker](https://img.shields.io/docker/pulls/sentrei/sentrei.svg)](https://hub.docker.com/repository/docker/sentrei/sentrei)
@@ -23,6 +22,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/33af9b285c934b3fa958d85c6638aefb)](https://www.codacy.com/gh/sentrei/sentrei?utm_source=github.com&utm_medium=referral&utm_content=sentrei/sentrei&utm_campaign=Badge_Grade)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/sentrei/sentrei.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sentrei/sentrei/alerts/)
 [![Uptime Robot](https://img.shields.io/uptimerobot/ratio/m784815116-8a053f04f101965fe947849c)](https://uptimerobot.com/dashboard#784815116)
+[![ZenHub](https://img.shields.io/badge/Managed_with-ZenHub-5e60ba.svg)](https://app.zenhub.com/workspace/o/sentrei/sentrei/boards)
 [![Pioneer](https://img.shields.io/badge/competing%20on-pioneer.app-important)](https://pioneer.app/join/shunkakinoki)
 
 <!-- <p align="center">
