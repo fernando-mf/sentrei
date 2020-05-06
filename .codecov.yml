@@ -1,8 +1,8 @@
 coverage:
   precision: 3
   status:
-    project: false
-    patch: false
+    project: off
+    patch: off
 flags:
   mobile:
     paths:
