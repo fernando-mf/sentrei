@@ -1,3 +1,15 @@
+# [4.9.0](https://github.com/sentrei/sentrei/compare/v4.8.12...v4.9.0) (2020-05-06)
+
+### Features
+
+- 🎸 add pioneer package ([547b101](https://github.com/sentrei/sentrei/commit/547b101868d09d74c395fab255945d39739d66dc))
+
+## [4.8.12](https://github.com/sentrei/sentrei/compare/v4.8.11...v4.8.12) (2020-05-06)
+
+### Bug Fixes
+
+- 🐛 working reg suit ([071ed75](https://github.com/sentrei/sentrei/commit/071ed757d92137ee097a3aa38b996300ca3a43bf))
+
 ## [4.8.11](https://github.com/sentrei/sentrei/compare/v4.8.10...v4.8.11) (2020-05-06)
 
 ### Bug Fixes
