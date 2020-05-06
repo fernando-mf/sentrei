@@ -1,3 +1,9 @@
+## [4.10.1](https://github.com/sentrei/sentrei/compare/v4.10.0...v4.10.1) (2020-05-06)
+
+### Bug Fixes
+
+- **deps:** bump @narative/gatsby-theme-novela from 0.15.0 to 0.15.1 ([b2d1680](https://github.com/sentrei/sentrei/commit/b2d1680a0ea006e85b99fadba7dc1a8f908bd6bc))
+
 # [4.10.0](https://github.com/sentrei/sentrei/compare/v4.9.9...v4.10.0) (2020-05-06)
 
 ### Features
