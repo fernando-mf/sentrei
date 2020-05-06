@@ -1,3 +1,9 @@
+## [4.9.3-alpha.2](https://github.com/sentrei/sentrei/compare/v4.9.3-alpha.1...v4.9.3-alpha.2) (2020-05-06)
+
+### Bug Fixes
+
+- 🐛 working gha ui ([f13572c](https://github.com/sentrei/sentrei/commit/f13572c0b265d2a335ae8dc1964c5d46714dfc89))
+
 ## [4.9.3-alpha.1](https://github.com/sentrei/sentrei/compare/v4.9.2...v4.9.3-alpha.1) (2020-05-06)
 
 ### Bug Fixes
