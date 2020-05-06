@@ -1,3 +1,9 @@
+# [4.10.0](https://github.com/sentrei/sentrei/compare/v4.9.9...v4.10.0) (2020-05-06)
+
+### Features
+
+- 🎸 add pioneer blog ([989e4f5](https://github.com/sentrei/sentrei/commit/989e4f5843a6ec042c5f29c43ae296c8e7d29a58))
+
 ## [4.9.9](https://github.com/sentrei/sentrei/compare/v4.9.8...v4.9.9) (2020-05-06)
 
 ### Bug Fixes
