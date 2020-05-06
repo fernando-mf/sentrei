@@ -42,6 +42,7 @@ jobs:
         working-directory: packages/web
         run: |
           yarn run build
+          yarn run export
           yarn run cypress:install
           yarn run test
           yarn run analyze
