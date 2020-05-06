@@ -11,7 +11,7 @@ jobs:
 
       - run: |
           git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
-          git pull origin/${{ github.event.pull_request.base.ref }}
+          git pull origin ${{ github.event.pull_request.base.ref }}
           git rev-parse origin/${{ github.event.pull_request.base.ref }}~1
 
       - id: change
