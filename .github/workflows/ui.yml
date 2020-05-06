@@ -42,7 +42,6 @@ jobs:
         working-directory: packages/ui
         run: |
           yarn run build
-          yarn run storycap
           yarn run test
       - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
@@ -76,7 +75,8 @@ jobs:
       - if: steps.change.outputs.changed == 'true'
         working-directory: packages/ui
         run: |
-          npx reg-suit run
+          yarn run storycap
+          yarn run reg-suit
         env:
           ACTUAL_KEY: ${{ github.sha }}
           EXPECTED_KEY: ${{ steps.expected.outputs.expected }}
