@@ -54,14 +54,14 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}blog.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: actions/github-script@0.9.0
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
@@ -123,14 +123,14 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: actions/github-script@0.9.0
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
@@ -217,7 +217,7 @@ jobs:
         working-directory: packages/mobile
         run: |
           flutter build ios --no-codesign --release --flavor ${{ github.event.client_payload.branch }}
-      - if: github.event.client_payload.environment == 'Production'
+      - if: github.event.client_payload.environment == 'production'
         working-directory: packages/mobile/${{ matrix.platform }}
         run: |
           bundle exec fastlane ${{ github.event.client_payload.branch }} release:${{ github.event.client_payload.release }}
@@ -230,7 +230,7 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           SECRET_REPO: ${{ secrets.SECRET_REPO }}
-      - if: matrix.platform == 'android' && github.event.client_payload.environment == 'Staging'
+      - if: matrix.platform == 'android' && github.event.client_payload.environment == 'staging'
         working-directory: packages/mobile/${{ matrix.platform }}
         run: |
           bundle exec fastlane test ${{ github.event.client_payload.branch }}:true
@@ -238,7 +238,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.client_payload.pull_request_number }}
           SECRET_REPO: ${{ secrets.SECRET_REPO }}
-      - if: matrix.platform == 'android' && github.event.client_payload.environment == 'Production' && github.event.client_payload.release == 'false'
+      - if: matrix.platform == 'android' && github.event.client_payload.environment == 'production' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -247,7 +247,7 @@ jobs:
           asset_path: packages/mobile/build/app/outputs/apk/${{ github.event.client_payload.branch }}/release/app-${{ github.event.client_payload.branch }}-release.apk
           asset_name: ${{ github.event.client_payload.branch }}.apk
           asset_content_type: application/vnd.android.package-archive
-      - if: matrix.platform == 'android' && github.event.client_payload.environment == 'Production' && github.event.client_payload.release == 'false'
+      - if: matrix.platform == 'android' && github.event.client_payload.environment == 'production' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -256,7 +256,7 @@ jobs:
           asset_path: packages/mobile/build/app/outputs/bundle/${{ github.event.client_payload.branch }}Release/app-${{ github.event.client_payload.branch }}-release.aab
           asset_name: ${{ github.event.client_payload.branch }}.aab
           asset_content_type: application/vnd.android.package-archive
-      - if: matrix.platform == 'ios' && github.event.client_payload.environment == 'Production' && github.event.client_payload.release == 'false'
+      - if: matrix.platform == 'ios' && github.event.client_payload.environment == 'production' && github.event.client_payload.release == 'false'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -265,14 +265,14 @@ jobs:
           asset_path: packages/mobile/ios/build/Runner/${{ github.event.client_payload.branch }}.ipa
           asset_name: ${{ github.event.client_payload.branch }}.ipa
           asset_content_type: application/octet-stream
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
           reaction-type: hooray
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: actions/github-script@0.9.0
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
@@ -342,14 +342,14 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: actions/github-script@0.9.0
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
@@ -411,14 +411,14 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: actions/github-script@0.9.0
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
@@ -480,14 +480,14 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: actions/github-script@0.9.0
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
@@ -522,7 +522,7 @@ jobs:
             SERVICE_ACCOUNT_EMAIL:sentrei-master/github_${{ github.event.client_payload.base }}_email
             SERVICE_ACCOUNT_KEY:sentrei-master/github_${{ github.event.client_payload.base }}_key
             WEB_ENV:sentrei-master/web_${{ github.event.client_payload.base }}_env
-      - if: github.event.client_payload.environment == 'Production'
+      - if: github.event.client_payload.environment == 'production'
         working-directory: packages/web
         run: |
           echo '${{ steps.secrets.outputs.WEB_ENV }}' > .env
@@ -577,14 +577,14 @@ jobs:
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
-      - if: github.event.client_payload.environment == 'Staging'
+      - if: github.event.client_payload.environment == 'staging'
         uses: actions/github-script@0.9.0
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
