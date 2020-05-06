@@ -1,23 +1,8 @@
 coverage:
   precision: 3
   status:
-    project:
-      default:
-        target: auto
-        threshold: null
-        base: auto
-        if_no_uploads: error
-        if_not_found: success
-        if_ci_failed: error
-        informational: true
-        only_pulls: false
-      mobile:
-        flags: mobile
-      ui:
-        flags: ui
-      web:
-        flags: web
-    patch: off
+    project: false
+    patch: false
 flags:
   mobile:
     paths:
