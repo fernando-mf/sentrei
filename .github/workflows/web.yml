@@ -52,6 +52,16 @@ jobs:
           NODE_ENV: test
           RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
       - if: steps.change.outputs.changed == 'true'
+        uses: nwtgck/actions-netlify@v1.0
+        with:
+          publish-dir: './packages/web/out'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:
           file: packages/web/coverage/lcov.info
