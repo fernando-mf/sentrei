@@ -37,7 +37,8 @@ module.exports = {
   ],
   themeConfig: {
     lastUpdated: "Last Updated",
-    nav: [{
+    nav: [
+      {
         text: "Home",
         link: "/",
       },
