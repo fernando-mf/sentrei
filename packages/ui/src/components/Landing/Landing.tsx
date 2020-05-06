@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, {FunctionComponent} from "react";
 
 import Footer from "@sentrei/ui/components/Footer";
@@ -11,6 +12,10 @@ const Landing: FunctionComponent = ({children}) => {
       <Footer />
     </>
   );
+};
+
+Landing.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default Landing;
