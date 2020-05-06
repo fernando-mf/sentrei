@@ -70,6 +70,13 @@ jobs:
           project_id: "sentrei-${{ github.event.pull_request.base.ref }}"
           export_default_credentials: true
       - if: steps.change.outputs.changed == 'true'
+        id: expected
+        run: |
+          echo "::set-env name=expected::$(git rev-parse origin/${{ github.event.pull_request.base.ref }}~1)"
+      - if: steps.change.outputs.changed == 'true'
         working-directory: packages/ui
         run: |
           npx reg-suit run
+        env:
+          ACTUAL_KEY: $GITHUB_SHA
+          EXPECTED: ${{ steps.expected.outputs.expected }}

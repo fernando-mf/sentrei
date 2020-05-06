@@ -17,6 +17,10 @@
     },
     "reg-publish-gcs-plugin": {
       "bucketName": "sentrei-master-reg"
+    },
+    "reg-simple-keygen-plugin": {
+      "expectedKey": "${EXPECTED_KEY}",
+      "actualKey": "${ACTUAL_KEY}"
     }
   }
 }
