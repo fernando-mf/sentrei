@@ -1,3 +1,9 @@
+## [4.9.4](https://github.com/sentrei/sentrei/compare/v4.9.3...v4.9.4) (2020-05-06)
+
+### Bug Fixes
+
+- 🐛 gha cache working ([3f5e065](https://github.com/sentrei/sentrei/commit/3f5e06573149492200226014fb42f499346e1469))
+
 ## [4.9.3](https://github.com/sentrei/sentrei/compare/v4.9.2...v4.9.3) (2020-05-06)
 
 ### Bug Fixes
