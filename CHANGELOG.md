@@ -1,3 +1,41 @@
+## [4.9.2](https://github.com/sentrei/sentrei/compare/v4.9.1...v4.9.2) (2020-05-06)
+
+### Bug Fixes
+
+- 🐛 add landing component ([27cd837](https://github.com/sentrei/sentrei/commit/27cd837120f5784f2ba041fab931a0a5cc0f827c))
+
+## [4.9.1](https://github.com/sentrei/sentrei/compare/v4.9.0...v4.9.1) (2020-05-06)
+
+### Bug Fixes
+
+- 🐛 fetch ([4337299](https://github.com/sentrei/sentrei/commit/4337299852efbdca3ea7033239334f9c32be0ec4))
+- 🐛 uilib ([ae11736](https://github.com/sentrei/sentrei/commit/ae1173679438cf37af631a27ee364aececed41fe))
+
+# [4.9.0](https://github.com/sentrei/sentrei/compare/v4.8.12...v4.9.0) (2020-05-06)
+
+### Features
+
+- 🎸 add pioneer package ([547b101](https://github.com/sentrei/sentrei/commit/547b101868d09d74c395fab255945d39739d66dc))
+
+## [4.8.12](https://github.com/sentrei/sentrei/compare/v4.8.11...v4.8.12) (2020-05-06)
+
+### Bug Fixes
+
+- 🐛 working reg suit ([071ed75](https://github.com/sentrei/sentrei/commit/071ed757d92137ee097a3aa38b996300ca3a43bf))
+
+## [4.8.11](https://github.com/sentrei/sentrei/compare/v4.8.10...v4.8.11) (2020-05-06)
+
+### Bug Fixes
+
+- 🐛 add actual and expected in reg via ([bad3f90](https://github.com/sentrei/sentrei/commit/bad3f90ff40cf5e839dc5cce2411366f59de90f2))
+- 🐛 ses ([6e2dce3](https://github.com/sentrei/sentrei/commit/6e2dce3714e8c80cc9212ba1b6ef7c7178f996fa))
+
+## [4.8.10](https://github.com/sentrei/sentrei/compare/v4.8.9...v4.8.10) (2020-05-05)
+
+### Bug Fixes
+
+- 🐛 migrate to fetch-depth 0 github actions ([9c9cdcd](https://github.com/sentrei/sentrei/commit/9c9cdcd8d9ba1d3994a13017a43e3bc6152b3494))
+
 ## [4.8.9](https://github.com/sentrei/sentrei/compare/v4.8.8...v4.8.9) (2020-05-05)
 
 ### Bug Fixes

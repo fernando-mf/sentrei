@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "master": "sentrei-master"
+  },
+  "targets": {
+    "sentrei-master": {
+      "hosting": {
+        "pioneer": [
+          "sentrei-pioneer"
+        ],
+        "staging-pioneer": [
+          "sentrei-staging-pioneer"
+        ]
+      }
+    }
+  }
+}

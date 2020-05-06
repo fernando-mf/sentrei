@@ -1,0 +1,30 @@
+{
+  "hosting": [
+    {
+      "site": "sentrei-pioneer",
+      "target": "pioneer",
+      "public": "src/.vuepress/dist",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run build"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "site": "sentrei-staging-pioneer",
+      "target": "staging-pioneer",
+      "public": "src/.vuepress/dist",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run build"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

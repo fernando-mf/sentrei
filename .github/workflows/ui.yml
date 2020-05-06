@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          fetch-depth: 0
           ref: ${{ github.head_ref }}
       - id: change
         run: |
@@ -42,7 +43,6 @@ jobs:
         working-directory: packages/ui
         run: |
           yarn run build
-          yarn run storycap
           yarn run test
       - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
@@ -70,6 +70,15 @@ jobs:
           project_id: "sentrei-${{ github.event.pull_request.base.ref }}"
           export_default_credentials: true
       - if: steps.change.outputs.changed == 'true'
+        id: reg
+        run: |
+          echo "::set-output name=actual::$(git rev-parse HEAD)"
+          echo "::set-output name=expected::$(git rev-list -n 1 origin/${{ github.event.pull_request.base.ref }} packages/ui)"
+      - if: steps.change.outputs.changed == 'true'
         working-directory: packages/ui
         run: |
-          npx reg-suit run
+          yarn run storycap
+          yarn run reg
+        env:
+          ACTUAL_KEY: ${{ steps.reg.outputs.actual }}
+          EXPECTED_KEY: ${{ steps.reg.outputs.expected }}
