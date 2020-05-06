@@ -72,7 +72,7 @@ jobs:
         id: expected
         run: |
           git fetch --no-tags --prune --depth=3 origin +refs/heads/*:refs/remotes/origin/*
-          echo "::set-env name=expected::$(git rev-parse origin/${{ github.event.pull_request.base.ref }}~1)"
+          echo "::set-output name=expected::$(git rev-parse origin/${{ github.event.pull_request.base.ref }}~1)"
       - if: steps.change.outputs.changed == 'true'
         working-directory: packages/ui
         run: |
