@@ -33,7 +33,7 @@ jobs:
           key: |
             yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            yarn-v1-${{ runner.os }}--
+            yarn-v1-${{ runner.os }}-
       - if: steps.change.outputs.changed == 'true'
         run: |
           yarn install --frozen-lockfile
