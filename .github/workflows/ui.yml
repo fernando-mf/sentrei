@@ -79,4 +79,4 @@ jobs:
           npx reg-suit run
         env:
           ACTUAL_KEY: $GITHUB_SHA
-          EXPECTED: ${{ steps.expected.outputs.expected }}
+          EXPECTED_KEY: ${{ steps.expected.outputs.expected }}
