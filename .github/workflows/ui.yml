@@ -42,7 +42,6 @@ jobs:
         working-directory: packages/ui
         run: |
           yarn run build
-          yarn run storycap
           yarn run test
       - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
@@ -70,6 +69,15 @@ jobs:
           project_id: "sentrei-${{ github.event.pull_request.base.ref }}"
           export_default_credentials: true
       - if: steps.change.outputs.changed == 'true'
+        id: expected
+        run: |
+          git fetch --no-tags --prune --depth=3 origin +refs/heads/*:refs/remotes/origin/*
+          echo "::set-output name=expected::$(git rev-parse origin/${{ github.event.pull_request.base.ref }}~1)"
+      - if: steps.change.outputs.changed == 'true'
         working-directory: packages/ui
         run: |
-          npx reg-suit run
+          yarn run storycap
+          yarn run reg-suit
+        env:
+          ACTUAL_KEY: ${{ github.sha }}
+          EXPECTED_KEY: ${{ steps.expected.outputs.expected }}
