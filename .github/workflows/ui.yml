@@ -72,7 +72,6 @@ jobs:
       - if: steps.change.outputs.changed == 'true'
         id: reg
         run: |
-          git fetch --quiet
           echo "::set-output name=actual::$(git rev-parse HEAD)"
           echo "::set-output name=expected::$(git rev-list -n 1 origin/${{ github.event.pull_request.base.ref }} packages/ui)"
       - if: steps.change.outputs.changed == 'true'
