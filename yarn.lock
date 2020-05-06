@@ -25070,13 +25070,6 @@ reg-gh-app-interface@^1.0.1:
   resolved "https://registry.yarnpkg.com/reg-gh-app-interface/-/reg-gh-app-interface-1.0.6.tgz#6e4f78f2e5c60585dac87b21d1cbc586dbb7f71c"
   integrity sha512-aLI9CpVlSyw3pdJkPS4E7P8pMjJG3DQrEN5bO5ANySxhHndXA7/uTGEe6kcK6V+/+xcYOsvoE6UrRphhkCZy3w==
 
-reg-keygen-git-hash-plugin@^0.8.5:
-  version "0.8.5"
-  resolved "https://registry.yarnpkg.com/reg-keygen-git-hash-plugin/-/reg-keygen-git-hash-plugin-0.8.5.tgz#8738a964396844de14dbf98f07ac5a5d983b3576"
-  integrity sha512-d0Bk8bWnXLaqIl37MVVdZRia87POgLuJ6yOhZBrVGz0Zn41vE+SeS8nuMEwsxvNBrqWvESvzBmetcfTFOEhkxw==
-  dependencies:
-    reg-suit-util "^0.8.5"
-
 reg-notify-github-plugin@^0.8.5:
   version "0.8.5"
   resolved "https://registry.yarnpkg.com/reg-notify-github-plugin/-/reg-notify-github-plugin-0.8.5.tgz#18f6beb8280468ee65d4f95f3249b7bcb5d206e1"
@@ -25099,6 +25092,11 @@ reg-publish-gcs-plugin@^0.9.0:
     mkdirp "^0.5.1"
     reg-suit-util "^0.8.5"
     uuid "^3.1.0"
+
+reg-simple-keygen-plugin@^0.7.25:
+  version "0.7.25"
+  resolved "https://registry.yarnpkg.com/reg-simple-keygen-plugin/-/reg-simple-keygen-plugin-0.7.25.tgz#98e6b87216b4b25cf285156b8c2563957d9f17ac"
+  integrity sha512-+HATT5cFHOM+wFPKTWHtMvegGcCZ4NDbF+HOjjvIbzDNlVwByiAvxGUNfNJDoHAonLminxpn3R4fG1pKUEWuEQ==
 
 reg-suit-core@^0.8.6:
   version "0.8.6"

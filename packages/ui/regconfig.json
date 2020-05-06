@@ -9,7 +9,6 @@
     }
   },
   "plugins": {
-    "reg-keygen-git-hash-plugin": true,
     "reg-notify-github-plugin": {
       "clientId": "MzKxNDMzMLcw0y9OzSspSs3UtzAyNzU3NoDxAQ==",
       "prComment": true,
@@ -17,6 +16,10 @@
     },
     "reg-publish-gcs-plugin": {
       "bucketName": "sentrei-master-reg"
+    },
+    "reg-simple-keygen-plugin": {
+      "expectedKey": "${EXPECTED_KEY}",
+      "actualKey": "${ACTUAL_KEY}"
     }
   }
 }

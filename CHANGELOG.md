@@ -1,3 +1,16 @@
+## [4.8.11](https://github.com/sentrei/sentrei/compare/v4.8.10...v4.8.11) (2020-05-06)
+
+### Bug Fixes
+
+- 🐛 add actual and expected in reg via ([bad3f90](https://github.com/sentrei/sentrei/commit/bad3f90ff40cf5e839dc5cce2411366f59de90f2))
+- 🐛 ses ([6e2dce3](https://github.com/sentrei/sentrei/commit/6e2dce3714e8c80cc9212ba1b6ef7c7178f996fa))
+
+## [4.8.10](https://github.com/sentrei/sentrei/compare/v4.8.9...v4.8.10) (2020-05-05)
+
+### Bug Fixes
+
+- 🐛 migrate to fetch-depth 0 github actions ([9c9cdcd](https://github.com/sentrei/sentrei/commit/9c9cdcd8d9ba1d3994a13017a43e3bc6152b3494))
+
 ## [4.8.9](https://github.com/sentrei/sentrei/compare/v4.8.8...v4.8.9) (2020-05-05)
 
 ### Bug Fixes
