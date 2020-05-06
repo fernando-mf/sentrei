@@ -1,6 +1,6 @@
 name: sentrei
 description: Official sentrei app
-version: 4.8.12
+version: 4.9.0
 
 environment:
   sdk: ">=2.3.0 <3.0.0"
