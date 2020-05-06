@@ -1,6 +1,8 @@
+const readWeekFiles = require("./scripts/week.js");
+
 module.exports = {
-  title: "journal",
-  description: "Life Mission",
+  title: "pioneer",
+  description: "Pionner Journal from Sentrei",
   base: "/",
   theme: "yuu",
   head: [
@@ -35,10 +37,30 @@ module.exports = {
   ],
   themeConfig: {
     lastUpdated: "Last Updated",
-    nav: [
-      {
+    nav: [{
         text: "Home",
         link: "/",
+      },
+      {
+        text: "Mission",
+        link: "/mission/",
+      },
+      {
+        text: "Project",
+        link: "/project/",
+      },
+      {
+        text: "Github",
+        link: "https://github.com/sentrei/sentrei",
+      },
+    ],
+    sidebar: [
+      ["/mission/", "Mission"],
+      ["/project/", "Project"],
+      {
+        title: "Week",
+        collapsable: true,
+        children: readWeekFiles("2020"),
       },
     ],
     yuu: {
