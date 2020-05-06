@@ -35,10 +35,12 @@ module.exports = {
   ],
   themeConfig: {
     lastUpdated: "Last Updated",
-    nav: [{
-      text: "Home",
-      link: "/",
-    }],
+    nav: [
+      {
+        text: "Home",
+        link: "/",
+      },
+    ],
     yuu: {
       defaultDarkTheme: true,
       defaultColorTheme: "blue",
