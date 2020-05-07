@@ -12,8 +12,8 @@
   "scripts": {
     "alpha": "yarn run swap:alpha && firebase use alpha && yarn run deploy:mobile",
     "beta": "yarn run swap:beta && firebase use beta && yarn run deploy:mobile",
-    "deploy:mobile": "firebase deploy --only hosting:mobile --token $FIREBASE_TOKEN",
-    "deploy:staging-mobile": "firebase deploy --only hosting:staging-mobile --token $FIREBASE_TOKEN",
+    "deploy:mobile": "firebase deploy --only hosting:mobile --token ${FIREBASE_TOKEN}",
+    "deploy:staging-mobile": "firebase deploy --only hosting:staging-mobile --token ${FIREBASE_TOKEN}",
     "master": "yarn run swap:master && firebase use master && yarn run deploy:mobile",
     "staging:alpha": "yarn run swap:alpha && firebase use alpha && yarn run deploy:staging-mobile",
     "staging:beta": "yarn run swap:beta && firebase use beta && yarn run deploy:staging-mobile",
