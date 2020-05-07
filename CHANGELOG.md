@@ -1,3 +1,9 @@
+## [4.12.1](https://github.com/sentrei/sentrei/compare/v4.12.0...v4.12.1) (2020-05-07)
+
+### Bug Fixes
+
+- 🐛 add staging automation ([8f80ea0](https://github.com/sentrei/sentrei/commit/8f80ea026c25110a4921913f510364e6e5489a97))
+
 ## [4.11.2](https://github.com/sentrei/sentrei/compare/v4.11.1...v4.11.2) (2020-05-07)
 
 ### Bug Fixes
