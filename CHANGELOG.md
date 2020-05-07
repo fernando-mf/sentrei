@@ -1,3 +1,9 @@
+## [4.13.1](https://github.com/sentrei/sentrei/compare/v4.13.0...v4.13.1) (2020-05-07)
+
+### Bug Fixes
+
+- 🐛 add test gha ([f84c087](https://github.com/sentrei/sentrei/commit/f84c087ef33e32c14bc32da035782d18e3cda232))
+
 # [4.13.0](https://github.com/sentrei/sentrei/compare/v4.12.1...v4.13.0) (2020-05-07)
 
 ### Features
