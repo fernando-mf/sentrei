@@ -1,3 +1,9 @@
+## [4.13.5](https://github.com/sentrei/sentrei/compare/v4.13.4...v4.13.5) (2020-05-07)
+
+### Bug Fixes
+
+- 🐛 add curly env ([5470b44](https://github.com/sentrei/sentrei/commit/5470b447545d23f4478f4ff1afe53315efa107ae))
+
 ## [4.13.4](https://github.com/sentrei/sentrei/compare/v4.13.3...v4.13.4) (2020-05-07)
 
 ### Bug Fixes
