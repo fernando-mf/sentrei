@@ -82,7 +82,8 @@ jobs:
         env:
           ACTUAL_KEY: ${{ steps.reg.outputs.actual }}
           EXPECTED_KEY: ${{ steps.reg.outputs.expected }}
-      - uses: peter-evans/find-comment@v1
+      - if: steps.change.outputs.changed == 'true'
+        uses: peter-evans/find-comment@v1
         id: fc
         with:
           issue-number: ${{ github.event.pull_request.number }}
