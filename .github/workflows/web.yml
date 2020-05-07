@@ -37,7 +37,8 @@ jobs:
       - if: steps.change.outputs.changed == 'true'
         run: |
           yarn install --frozen-lockfile
-      - run: |
+      - if: steps.change.outputs.changed == 'true'
+        run: |
           yarn run typescript
       - if: steps.change.outputs.changed == 'true'
         working-directory: packages/web
