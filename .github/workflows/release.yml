@@ -76,7 +76,7 @@ jobs:
       - uses: peter-evans/create-pull-request@v2
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          branch-suffix: short-commit-hash
+          branch: create-pull-request/${{ needs.context.outputs.branch }}
           title: "chore: [sentrei-auto-pr]"
         env:
           HUSKY_SKIP_HOOKS: 1
