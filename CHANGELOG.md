@@ -1,3 +1,9 @@
+## [4.13.7](https://github.com/sentrei/sentrei/compare/v4.13.6...v4.13.7) (2020-05-07)
+
+### Bug Fixes
+
+- 🐛 add yarn test gha devops ([e0d5bdf](https://github.com/sentrei/sentrei/commit/e0d5bdfe5027adbbc2457b65caa359fda5887991))
+
 ## [4.13.5](https://github.com/sentrei/sentrei/compare/v4.13.4...v4.13.5) (2020-05-07)
 
 ### Bug Fixes
