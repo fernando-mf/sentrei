@@ -41,7 +41,7 @@ jobs:
           issue-number: ${{ github.event.pull_request.number }}
           body-includes: /test
           comment-author: shunkakinoki
-      - if: steps.fc.outputs.comment-id != ''
+      - if: steps.fc.outputs.comment-id != null
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -50,7 +50,7 @@ jobs:
           edit-mode: replace
           body: |
             /test blog
-      - if: steps.fc.outputs.comment-id != ''
+      - if: steps.fc.outputs.comment-id != null
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -59,7 +59,7 @@ jobs:
           edit-mode: replace
           body: |
             /test design
-      - if: steps.fc.outputs.comment-id != ''
+      - if: steps.fc.outputs.comment-id != null
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
