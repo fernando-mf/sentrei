@@ -71,6 +71,9 @@
 **/web/out
 **/web/cypress/videos
 
+# Netlify related.
+.netlify
+
 # Firebase related.
 **/.firebase
 
