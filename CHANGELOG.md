@@ -1,3 +1,9 @@
+## [4.13.10](https://github.com/sentrei/sentrei/compare/v4.13.9...v4.13.10) (2020-05-07)
+
+### Bug Fixes
+
+- 🐛 add sentry browser ([8b12167](https://github.com/sentrei/sentrei/commit/8b12167f2e3dc9fb1290276f92557dc963e2b71b))
+
 ## [4.13.7](https://github.com/sentrei/sentrei/compare/v4.13.6...v4.13.7) (2020-05-07)
 
 ### Bug Fixes
