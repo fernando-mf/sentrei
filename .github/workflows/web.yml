@@ -52,15 +52,33 @@ jobs:
           NODE_ENV: test
           RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
       - if: steps.change.outputs.changed == 'true'
-        uses: nwtgck/actions-netlify@v1.0
+        uses: chrnorm/deployment-action@releases/v1
+        id: deployment
         with:
-          publish-dir: './packages/web/out'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.head_ref }}
+          environment: "Netlify"
+          target_url: https://sentrei.netlify.app
+      - if: steps.change.outputs.changed == 'true'
+        run: |
+          yarn run netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      - if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          target_url: https://sentrei.netlify.app
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          target_url: https://sentrei.netlify.app
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:
