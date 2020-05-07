@@ -26,7 +26,6 @@ jobs:
             yarn-v1-${{ runner.os }}-
       - run: |
           yarn install --frozen-lockfile
-      - run: |
           yarn run test
       - if: failure()
         run: |
