@@ -1,3 +1,9 @@
+# [4.11.0](https://github.com/sentrei/sentrei/compare/v4.10.4...v4.11.0) (2020-05-07)
+
+### Features
+
+- 🎸 add netlify staging gha ([59413cf](https://github.com/sentrei/sentrei/commit/59413cf8273000a44c78281c6121e6a1b9041303))
+
 ## [4.10.4](https://github.com/sentrei/sentrei/compare/v4.10.3...v4.10.4) (2020-05-07)
 
 ### Bug Fixes
