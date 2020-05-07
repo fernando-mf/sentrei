@@ -1,4 +1,4 @@
-name: Terraform
+name: Infrastructure
 on: pull_request
 jobs:
   terraform:
@@ -31,3 +31,13 @@ jobs:
           tf_actions_working_dir: infrastructure/environments/${{ matrix.environment }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  checkov:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: bridgecrewio/bridgecrew-action@master
+        with:
+          directory: "infrastructure"
+          soft-fail: "true"
+          output: "cli"
+          api-key-variable: ${{ secrets.BRIDGE_CREW_KEY }}
