@@ -5,7 +5,7 @@ on:
 jobs:
   blog:
     runs-on: ubuntu-latest
-    if: contains(github.event.client_payload.slash_command.unnamed_args, 'blog')
+    if: contains(fromJSON(github.event.client_payload.slash_command.unnamed_args), 'blog')
     steps:
       - uses: peter-evans/repository-dispatch@v1
         with:
