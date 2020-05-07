@@ -31,3 +31,9 @@ jobs:
           tf_actions_working_dir: infrastructure/environments/${{ matrix.environment }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: bridgecrewio/bridgecrew-action@master
+        with:
+          directory: "infrastructure"
+          soft-fail: "true"
+          output: "junitxml"
+          api-key-variable: ${{ secrets.BRIDGE_CREW_KEY }}
