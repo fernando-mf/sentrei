@@ -1,3 +1,9 @@
+## [4.13.4](https://github.com/sentrei/sentrei/compare/v4.13.3...v4.13.4) (2020-05-07)
+
+### Bug Fixes
+
+- **deps:** bump gatsby from 2.21.16 to 2.21.17 ([a8cdfa9](https://github.com/sentrei/sentrei/commit/a8cdfa9f55269e5f1034163e79d99281bb980df6))
+
 ## [4.13.3](https://github.com/sentrei/sentrei/compare/v4.13.2...v4.13.3) (2020-05-07)
 
 ### Bug Fixes
