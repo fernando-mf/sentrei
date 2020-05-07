@@ -42,7 +42,6 @@ jobs:
         working-directory: packages/web
         run: |
           yarn run build
-          yarn run export
           yarn run cypress:install
           yarn run test
           yarn run analyze
@@ -51,35 +50,6 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           NODE_ENV: test
           RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
-      - if: steps.change.outputs.changed == 'true'
-        uses: chrnorm/deployment-action@releases/v1
-        id: deployment
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${{ github.head_ref }}
-          environment: "Netlify"
-          target_url: https://sentrei.netlify.app
-      - if: steps.change.outputs.changed == 'true'
-        working-directory: packages/web
-        run: |
-          yarn run netlify
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-      - if: steps.change.outputs.changed == 'true' && success()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://sentrei.netlify.app
-          state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - if: steps.change.outputs.changed == 'true' && failure()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://sentrei.netlify.app
-          state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:
