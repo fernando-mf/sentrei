@@ -35,5 +35,5 @@ jobs:
         with:
           directory: "infrastructure"
           soft-fail: "true"
-          output: "junitxml"
+          output: "cli"
           api-key-variable: ${{ secrets.BRIDGE_CREW_KEY }}
