@@ -42,3 +42,17 @@ jobs:
           name: sentrei
           fail_ci_if_error: true
           flags: mobile
+      - if: steps.change.outputs.changed == 'true'
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+          event-type: test-cmd
+          client-payload: '{"event_name": "fastlane"}'
+      - if: steps.change.outputs.changed == 'true'
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+          event-type: test-cmd
+          client-payload: '{"event_name": "mobile"}'

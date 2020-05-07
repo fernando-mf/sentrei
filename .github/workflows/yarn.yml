@@ -35,3 +35,24 @@ jobs:
           git config --global user.email 'shunkakinoki@users.noreply.github.com'
           git commit -am "[sentrei-auto-fix]"
           git push
+      - if: steps.change.outputs.changed == 'true'
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+          event-type: test-cmd
+          client-payload: '{"event_name": "blog"}'
+      - if: steps.change.outputs.changed == 'true'
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+          event-type: test-cmd
+          client-payload: '{"event_name": "design"}'
+      - if: steps.change.outputs.changed == 'true'
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+          event-type: test-cmd
+          client-payload: '{"event_name": "pioneer"}'
