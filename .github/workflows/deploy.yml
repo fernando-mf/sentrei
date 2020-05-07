@@ -6,6 +6,7 @@ jobs:
   blog:
     if: github.event.client_payload.event_name == 'blog'
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -75,6 +76,7 @@ jobs:
   design:
     if: github.event.client_payload.event_name == 'design'
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -286,6 +288,7 @@ jobs:
   mobile:
     if: github.event.client_payload.event_name == 'mobile'
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -363,6 +366,7 @@ jobs:
   pioneer:
     if: github.event.client_payload.event_name == 'pioneer'
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -432,6 +436,7 @@ jobs:
   ui:
     if: github.event.client_payload.event_name == 'ui'
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -501,6 +506,7 @@ jobs:
   web:
     if: github.event.client_payload.event_name == 'web'
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
