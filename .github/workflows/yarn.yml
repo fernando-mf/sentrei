@@ -40,7 +40,7 @@ jobs:
         id: fc
         with:
           issue-number: ${{ github.event.pull_request.number }}
-          body-includes: test
+          body-includes: lgtm
           comment-author: shunkakinoki
       - if: steps.change.outputs.changed == 'true' && steps.fc.outputs.comment-id != ''
         uses: peter-evans/create-or-update-comment@v1
