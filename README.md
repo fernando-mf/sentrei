@@ -15,6 +15,7 @@
 [![Github Version](https://img.shields.io/github/v/tag/sentrei/sentrei)](https://github.com/sentrei/sentrei/releases)
 [![Docker](https://img.shields.io/docker/pulls/sentrei/sentrei.svg)](https://hub.docker.com/repository/docker/sentrei/sentrei)
 [![Star on GitHub](https://img.shields.io/github/stars/sentrei/sentrei.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/sentrei/sentrei)
+[![Maintainability](https://api.codeclimate.com/v1/badges/3e7969b437ba6580a649/maintainability)](https://velocity.codeclimate.com/launchpad)
 [![codecov](https://codecov.io/gh/sentrei/sentrei/branch/master/graph/badge.svg)](https://codecov.io/gh/sentrei/sentrei)
 [![relativeCI](https://badges.relative-ci.com/badges/C976Uvwm2P3DB7ZwroUw?branch=master)](https://app.relative-ci.com/projects/C976Uvwm2P3DB7ZwroUw)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/33af9b285c934b3fa958d85c6638aefb)](https://www.codacy.com/gh/sentrei/sentrei?utm_source=github.com&utm_medium=referral&utm_content=sentrei/sentrei&utm_campaign=Badge_Grade)
