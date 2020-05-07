@@ -42,15 +42,12 @@ jobs:
           name: sentrei
           fail_ci_if_error: true
           flags: mobile
-      - if: steps.fc.outputs.comment-id != null
-        uses: peter-evans/create-or-update-comment@v1
+      - uses: peter-evans/find-comment@v1
+        id: fc
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          repository: ${{ github.repository }}
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          edit-mode: replace
-          body: |
-            /test design
+          issue-number: ${{ github.event.pull_request.number }}
+          body-includes: /test
+          comment-author: shunkakinoki
       - if: steps.fc.outputs.comment-id != null
         uses: peter-evans/create-or-update-comment@v1
         with:

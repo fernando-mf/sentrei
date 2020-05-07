@@ -11,8 +11,8 @@
   "author": "Shun Kakinoki",
   "scripts": {
     "build": "vuepress build src",
-    "deploy:pioneer": "firebase deploy --only hosting:pioneer --token $FIREBASE_TOKEN",
-    "deploy:staging-pioneer": "firebase deploy --only hosting:staging-pioneer --token $FIREBASE_TOKEN",
+    "deploy:pioneer": "firebase deploy --only hosting:pioneer --token ${FIREBASE_TOKEN}",
+    "deploy:staging-pioneer": "firebase deploy --only hosting:staging-pioneer --token ${FIREBASE_TOKEN}",
     "dev": "vuepress dev src",
     "pioneer": "firebase use master && yarn run deploy:pioneer",
     "staging:pioneer": "firebase use master && yarn run deploy:staging-pioneer"
