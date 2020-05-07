@@ -39,32 +39,32 @@ jobs:
         id: fc
         with:
           issue-number: ${{ github.event.pull_request.number }}
-          body-includes: lgtm
+          body-includes: /test
           comment-author: shunkakinoki
-      - if: steps.fc.outputs.comment-id != ''
+      - if: steps.fc.outputs.comment-id != null
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           repository: ${{ github.repository }}
           comment-id: ${{ steps.fc.outputs.comment-id }}
-          reaction-type: "+1"
+          edit-mode: replace
           body: |
             /test blog
-      - if: steps.fc.outputs.comment-id != ''
+      - if: steps.fc.outputs.comment-id != null
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           repository: ${{ github.repository }}
           comment-id: ${{ steps.fc.outputs.comment-id }}
-          reaction-type: "+1"
+          edit-mode: replace
           body: |
             /test design
-      - if: steps.fc.outputs.comment-id != ''
+      - if: steps.fc.outputs.comment-id != null
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           repository: ${{ github.repository }}
           comment-id: ${{ steps.fc.outputs.comment-id }}
-          reaction-type: "+1"
+          edit-mode: replace
           body: |
             /test pioneer

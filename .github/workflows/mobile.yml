@@ -42,3 +42,30 @@ jobs:
           name: sentrei
           fail_ci_if_error: true
           flags: mobile
+      - if: steps.fc.outputs.comment-id != null
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            /test design
+      - if: steps.fc.outputs.comment-id != null
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            /test mobile
+      - if: steps.fc.outputs.comment-id != null
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            /test fastlane

@@ -373,7 +373,7 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.event.client_payload.branch }}
-          environment: "pioneer ${{ github.event.client_payload.environment }}"
+          environment: "Pioneer ${{ github.event.client_payload.environment }}"
           target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
       - uses: actions/checkout@v2
         with:
