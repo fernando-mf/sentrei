@@ -35,3 +35,36 @@ jobs:
           git config --global user.email 'shunkakinoki@users.noreply.github.com'
           git commit -am "[sentrei-auto-fix]"
           git push
+      - uses: peter-evans/find-comment@v1
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body-includes: lgtm
+          comment-author: shunkakinoki
+      - if: steps.fc.outputs.comment-id != ''
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          reaction-type: "+1"
+          body: |
+            /test blog
+      - if: steps.fc.outputs.comment-id != ''
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          reaction-type: "+1"
+          body: |
+            /test design
+      - if: steps.fc.outputs.comment-id != ''
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          reaction-type: "+1"
+          body: |
+            /test pioneer
