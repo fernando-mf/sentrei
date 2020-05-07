@@ -60,6 +60,7 @@ jobs:
           environment: "Netlify"
           target_url: https://sentrei.netlify.app
       - if: steps.change.outputs.changed == 'true'
+        working-directory: packages/web
         run: |
           yarn run netlify
         env:
