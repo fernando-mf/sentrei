@@ -6,15 +6,15 @@ flags:
   mobile:
     paths:
       - packages/mobile/lib
-    carryforward: false
+    carryforward: true
   ui:
     paths:
       - packages/ui/src
-    carryforward: false
+    carryforward: true
   web:
     paths:
       - packages/web/src
-    carryforward: false
+    carryforward: true
 comment:
   layout: "reach, diff, flags, files"
   behavior: default
