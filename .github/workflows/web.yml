@@ -66,14 +66,14 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-      - if: success()
+      - if: steps.change.outputs.changed == 'true' && success()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           target_url: https://sentrei.netlify.app
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      - if: failure()
+      - if: steps.change.outputs.changed == 'true' && failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
