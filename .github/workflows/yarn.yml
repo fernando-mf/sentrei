@@ -49,22 +49,4 @@ jobs:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: replace
           body: |
-            /test blog
-      - if: steps.fc.outputs.comment-id != null
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          repository: ${{ github.repository }}
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          edit-mode: replace
-          body: |
-            /test design
-      - if: steps.fc.outputs.comment-id != null
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          repository: ${{ github.repository }}
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          edit-mode: replace
-          body: |
-            /test pioneer
+            /test blog design pioneer
