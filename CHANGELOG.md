@@ -1,3 +1,9 @@
+## [4.13.3](https://github.com/sentrei/sentrei/compare/v4.13.2...v4.13.3) (2020-05-07)
+
+### Bug Fixes
+
+- 🐛 bump node version ([da573a4](https://github.com/sentrei/sentrei/commit/da573a412d9cf8a0e985103b036a80d2ac3e2904))
+
 ## [4.13.2](https://github.com/sentrei/sentrei/compare/v4.13.1...v4.13.2) (2020-05-07)
 
 ### Bug Fixes
