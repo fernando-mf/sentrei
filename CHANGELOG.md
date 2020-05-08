@@ -1,3 +1,9 @@
+## [4.15.6](https://github.com/sentrei/sentrei/compare/v4.15.5...v4.15.6) (2020-05-08)
+
+### Bug Fixes
+
+- 🐛 add proper sentry configuration ([914cede](https://github.com/sentrei/sentrei/commit/914ceded72aa8f033b5120d67e2b3021e5d825c2))
+
 ## [4.15.5](https://github.com/sentrei/sentrei/compare/v4.15.4...v4.15.5) (2020-05-08)
 
 ### Bug Fixes
