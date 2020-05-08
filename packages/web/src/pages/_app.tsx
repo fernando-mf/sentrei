@@ -9,6 +9,7 @@ import React from "react";
 import {ThemeProvider as StyledThemeProvider} from "styled-components";
 
 import "firebase/performance";
+import {appWithTranslation} from "@sentrei/common/i18n";
 import Theme from "@sentrei/ui/containers/Theme";
 import "@sentrei/web/utils/nprogress";
 import firebaseConfig from "@sentrei/web/utils/firebaseConfig";
@@ -16,7 +17,7 @@ import "@sentrei/web/styles/global.scss";
 import "@sentrei/web/styles/nprogress.scss";
 import isBrowser from "@sentrei/web/utils/isBrowser";
 
-export default class App extends NextApp {
+class App extends NextApp {
   componentDidMount(): void {
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles && jssStyles.parentNode)
@@ -58,3 +59,5 @@ export default class App extends NextApp {
     );
   }
 }
+
+export default appWithTranslation(App);

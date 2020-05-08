@@ -1,7 +1,6 @@
 import ICU from "i18next-icu";
 import en from "i18next-icu/locale-data/en";
 import ru from "i18next-icu/locale-data/ru";
-import {NextComponentType, NextPageContext} from "next";
 import NextI18next from "next-i18next";
 import {useTranslation as originalUseTranslation} from "react-i18next";
 
@@ -26,8 +25,3 @@ export const includeDefaultNamespaces = (namespaces: string[]): string[] =>
 export const {appWithTranslation} = nextI18next;
 export const {Trans} = nextI18next;
 export const useTranslation = originalUseTranslation;
-export type I18nPage<P = {}> = NextComponentType<
-  NextPageContext,
-  {namespacesRequired: string[]},
-  P & {namespacesRequired: string[]}
->;

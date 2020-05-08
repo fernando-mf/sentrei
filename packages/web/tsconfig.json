@@ -6,6 +6,7 @@
     "esModuleInterop": true,
     "noEmit": true,
     "paths": {
+      "@sentrei/common/*": ["../common/dist/*"],
       "@sentrei/ui/*": ["../ui/dist/*"],
       "@sentrei/web/*": ["src/*"]
     }
@@ -20,6 +21,9 @@
     "**/*.stories.tsx"
   ],
   "references": [
+    {
+      "path": "../common"
+    },
     {
       "path": "../ui"
     }
