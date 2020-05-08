@@ -15,11 +15,6 @@ Sentry.init({
   release: process.env.APP_VERSION_RELEASE,
 });
 
-if (!process.env.SENTRY_DSN && process.env.NODE_ENV !== "test") {
-  // eslint-disable-next-line no-console
-  console.error("Sentry DSN not defined");
-}
-
 Sentry.configureScope(scope => {
   scope.setTag("nodejs", process.version);
   scope.setTag("runtimeEngine", isBrowser ? "browser" : "server");
