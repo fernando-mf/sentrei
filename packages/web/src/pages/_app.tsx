@@ -1,12 +1,12 @@
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
+import * as Sentry from "@sentry/node";
 import * as firebase from "firebase/app";
+import get from "lodash.get";
 import NextApp from "next/app";
 import Head from "next/head";
 import React from "react";
 import {ThemeProvider as StyledThemeProvider} from "styled-components";
-import * as Sentry from "@sentry/node";
-import get from "lodash.get";
 
 import "firebase/performance";
 import Theme from "@sentrei/ui/containers/Theme";

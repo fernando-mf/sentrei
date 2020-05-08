@@ -1,6 +1,6 @@
 import * as Sentry from "@sentry/node";
-import getConfig from "next/config";
 import get from "lodash.get";
+import getConfig from "next/config";
 
 import isBrowser from "@sentrei/web/utils/isBrowser";
 
