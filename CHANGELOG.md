@@ -1,3 +1,9 @@
+# [4.16.0](https://github.com/sentrei/sentrei/compare/v4.15.10...v4.16.0) (2020-05-08)
+
+### Features
+
+- 🎸 add firebase config refactorization ([a4258c6](https://github.com/sentrei/sentrei/commit/a4258c63c7d1311c8f735ed04b7679bdaaf8c4f3))
+
 ## [4.15.10](https://github.com/sentrei/sentrei/compare/v4.15.9...v4.15.10) (2020-05-08)
 
 ### Bug Fixes
