@@ -23,8 +23,8 @@ class App extends NextApp {
     if (jssStyles && jssStyles.parentNode) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
-    firebase.analytics().logEvent("init");
-    firebase.performance().trace("init");
+    firebase.analytics().logEvent("_app");
+    firebase.performance().trace("_app");
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
