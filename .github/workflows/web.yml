@@ -41,6 +41,17 @@ jobs:
         run: |
           yarn run typescript
       - if: steps.change.outputs.changed == 'true'
+        id: secrets
+        uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
+        with:
+          credentials: ${{ secrets.GCP_CREDENTIALS }}
+          secrets: |-
+            WEB_ENV:sentrei-master/web_${{ github.event.pull_request.base.ref }}_env
+      - if: steps.change.outputs.changed == 'true'
+        working-directory: packages/web
+        run: |
+          echo '${{ steps.secrets.outputs.WEB_ENV }}' > .env
+      - if: steps.change.outputs.changed == 'true'
         working-directory: packages/web
         run: |
           yarn run build

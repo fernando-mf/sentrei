@@ -536,6 +536,7 @@ jobs:
             yarn-v1-${{ runner.os }}-
       - run: |
           yarn install --frozen-lockfile
+      - run: |
           yarn run typescript
       - id: secrets
         uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
@@ -549,16 +550,15 @@ jobs:
             WEB_ENV:sentrei-master/web_${{ github.event.client_payload.base }}_env
       - working-directory: packages/web
         run: |
+          echo '${{ steps.secrets.outputs.WEB_ENV }}' > .env
+      - working-directory: packages/web
+        run: |
           yarn run build
           yarn run export
           yarn run netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-      - if: github.event.client_payload.environment == 'production'
-        working-directory: packages/web
-        run: |
-          echo '${{ steps.secrets.outputs.WEB_ENV }}' > .env
       - uses: docker/build-push-action@v1
         with:
           username: ${{ steps.secrets.outputs.DOCKER_USERNAME }}
