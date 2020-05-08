@@ -16,6 +16,7 @@ Sentry.init({
 });
 
 if (!process.env.SENTRY_DSN && process.env.NODE_ENV !== "test") {
+  // eslint-disable-next-line no-console
   console.error("Sentry DSN not defined");
 }
 
@@ -24,6 +25,7 @@ Sentry.configureScope(scope => {
   scope.setTag("runtimeEngine", isBrowser ? "browser" : "server");
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const configureReq = (req: any): void => {
   Sentry.configureScope(scope => {
     scope.setTag("host", get(req, "headers.host"));
