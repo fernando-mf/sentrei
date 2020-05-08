@@ -42,25 +42,11 @@ jobs:
         run: |
           yarn run typescript
       - if: steps.change.outputs.changed == 'true'
-        working-directory: packages/ui
-        run: |
-          yarn run build
-          yarn run test
-      - if: steps.change.outputs.changed == 'true'
-        uses: codecov/codecov-action@v1
-        with:
-          file: packages/ui/coverage/lcov.info
-          name: sentrei
-          fail_ci_if_error: true
-          flags: ui
-      - if: steps.change.outputs.changed == 'true'
         id: secrets
         uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
         with:
           credentials: ${{ secrets.GCP_CREDENTIALS }}
           secrets: |-
-            DOCKER_USERNAME:sentrei-master/docker_username
-            DOCKER_PASSWORD:sentrei-master/docker_password
             SERVICE_ACCOUNT_EMAIL:sentrei-master/github_master_email
             SERVICE_ACCOUNT_KEY:sentrei-master/github_master_key
       - if: steps.change.outputs.changed == 'true'
@@ -79,11 +65,20 @@ jobs:
       - if: steps.change.outputs.changed == 'true'
         working-directory: packages/ui
         run: |
+          yarn run build
+          yarn run test
           yarn run storycap
           yarn run reg
         env:
           ACTUAL_KEY: ${{ steps.reg.outputs.actual }}
           EXPECTED_KEY: ${{ steps.reg.outputs.expected }}
+      - if: steps.change.outputs.changed == 'true'
+        uses: codecov/codecov-action@v1
+        with:
+          file: packages/ui/coverage/lcov.info
+          name: sentrei
+          fail_ci_if_error: true
+          flags: ui
       - if: steps.change.outputs.changed == 'true'
         uses: peter-evans/find-comment@v1
         id: fc
