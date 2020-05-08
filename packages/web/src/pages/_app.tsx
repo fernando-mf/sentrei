@@ -1,7 +1,6 @@
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
 import * as Sentry from "@sentry/node";
-import * as firebase from "firebase/app";
 import get from "lodash.get";
 import NextApp from "next/app";
 import Head from "next/head";
@@ -12,7 +11,7 @@ import "firebase/performance";
 import {appWithTranslation} from "@sentrei/common/i18n";
 import Theme from "@sentrei/ui/containers/Theme";
 import "@sentrei/web/utils/nprogress";
-import "@sentrei/web/utils/firebase";
+import firebase from "@sentrei/web/utils/firebase";
 import "@sentrei/web/utils/sentry";
 import "@sentrei/web/styles/global.scss";
 import "@sentrei/web/styles/nprogress.scss";
@@ -21,12 +20,11 @@ import isBrowser from "@sentrei/web/utils/isBrowser";
 class App extends NextApp {
   componentDidMount(): void {
     const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles && jssStyles.parentNode)
+    if (jssStyles && jssStyles.parentNode) {
       jssStyles.parentNode.removeChild(jssStyles);
-    if (process.env.NODE_ENV === "production") {
-      const perf = firebase.performance();
-      perf.trace("init");
     }
+    firebase.analytics().logEvent("_app");
+    firebase.performance().trace("_app");
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
