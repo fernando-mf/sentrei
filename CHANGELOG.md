@@ -1,3 +1,9 @@
+# [4.14.0](https://github.com/sentrei/sentrei/compare/v4.13.12...v4.14.0) (2020-05-08)
+
+### Features
+
+- 🎸 add sentry tracking ([c37a661](https://github.com/sentrei/sentrei/commit/c37a66179d47c326eb2f0105b0f8c8ee85b16efc))
+
 ## [4.13.12](https://github.com/sentrei/sentrei/compare/v4.13.11...v4.13.12) (2020-05-08)
 
 ### Bug Fixes
