@@ -66,18 +66,15 @@ jobs:
           done
           echo "::set-output name=release::sentrei@${version}"
       - if: needs.context.outputs.branch != 'master'
-        id: tag
         run: |
-          echo "::set-output name=tag::${{ needs.context.outputs.branch }}"
+          echo "::set-env name=DIST_TAG::${{ needs.context.outputs.branch }}"
       - if: needs.context.outputs.branch == 'master'
-        id: tag
         run: |
-          echo "::set-output name=tag::latest"
+          echo "::set-env name=DIST_TAG::latest""
       - run: |
           git stash && yarn run publish && git stash pop || true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          DIST_TOKEN: ${{ steps.tag.outputs.tag }}
       - run: |
           yarn run sentry
         env:

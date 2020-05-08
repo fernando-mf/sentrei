@@ -17,6 +17,7 @@ const withBundleStats = require("next-plugin-bundle-stats")({
 });
 
 const aliases = {
+  "@sentrei/common": path.join(__dirname, "../common"),
   "@sentrei/ui": path.join(__dirname, "../ui"),
   "@sentrei/web": path.join(__dirname, "src"),
 };
@@ -39,6 +40,7 @@ const nextConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
       ...aliases,
+      "@sentrei/common": require.resolve("@sentrei/common"),
       "@sentrei/ui": require.resolve("@sentrei/ui"),
     };
     config.plugins.push(
