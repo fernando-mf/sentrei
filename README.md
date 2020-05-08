@@ -17,10 +17,10 @@
 [![Star on GitHub](https://img.shields.io/github/stars/sentrei/sentrei.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/sentrei/sentrei)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3e7969b437ba6580a649/maintainability)](https://velocity.codeclimate.com/launchpad)
 [![codecov](https://codecov.io/gh/sentrei/sentrei/branch/master/graph/badge.svg)](https://codecov.io/gh/sentrei/sentrei)
-[![relativeCI](https://badges.relative-ci.com/badges/C976Uvwm2P3DB7ZwroUw?branch=master)](https://app.relative-ci.com/projects/C976Uvwm2P3DB7ZwroUw)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/33af9b285c934b3fa958d85c6638aefb)](https://www.codacy.com/gh/sentrei/sentrei?utm_source=github.com&utm_medium=referral&utm_content=sentrei/sentrei&utm_campaign=Badge_Grade)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/sentrei/sentrei.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sentrei/sentrei/alerts/)
 [![Uptime Robot](https://img.shields.io/uptimerobot/ratio/m784815116-8a053f04f101965fe947849c)](https://uptimerobot.com/dashboard#784815116)
+[![relativeCI](https://badges.relative-ci.com/badges/C976Uvwm2P3DB7ZwroUw?branch=master)](https://app.relative-ci.com/projects/C976Uvwm2P3DB7ZwroUw)
 [![ZenHub](https://img.shields.io/badge/Managed_with-ZenHub-5e60ba.svg)](https://app.zenhub.com/workspace/o/sentrei/sentrei/boards)
 [![Pioneer](https://img.shields.io/badge/competing%20on-pioneer.app-important)](https://pioneer.app/join/shunkakinoki)
 
