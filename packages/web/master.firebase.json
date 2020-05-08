@@ -9,7 +9,6 @@
       "rewrites": [
         {
           "source": "**",
-          "dynamicLinks": true,
           "run": {
             "serviceId": "sentrei-master-web",
             "region": "us-central1"
