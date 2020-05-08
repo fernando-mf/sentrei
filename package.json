@@ -27,6 +27,7 @@
     "publish": "lerna publish from-package --yes --dist-tag $DIST_TAG",
     "release": "semantic-release",
     "release-test": "semantic-release -d",
+    "sentry": "lerna run sentry --stream --parallel",
     "sort-package-json:check": "sort-package-json 'package.json' 'packages/*/package.json' --check",
     "sort-package-json:fix": "sort-package-json 'package.json' 'packages/*/package.json'",
     "test": "yarn lint && yarn release-test",
