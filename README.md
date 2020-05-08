@@ -2,7 +2,6 @@
   <img src="assets/banner.png">
 </p>
 
-[![Flutter](https://img.shields.io/badge/built%20with-Flutter-brightgreen)](https://flutter.dev/docs)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)
 [![Commitzen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)
 [![License](https://img.shields.io/github/license/sentrei/sentrei)](https://github.com/sentrei/sentrei/blob/master/LICENSE.md)
@@ -21,7 +20,8 @@
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/sentrei/sentrei.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sentrei/sentrei/alerts/)
 [![Uptime Robot](https://img.shields.io/uptimerobot/ratio/m784815116-8a053f04f101965fe947849c)](https://uptimerobot.com/dashboard#784815116)
 [![relativeCI](https://badges.relative-ci.com/badges/C976Uvwm2P3DB7ZwroUw?branch=master)](https://app.relative-ci.com/projects/C976Uvwm2P3DB7ZwroUw)
-[![ZenHub](https://img.shields.io/badge/Managed_with-ZenHub-5e60ba.svg)](https://app.zenhub.com/workspace/o/sentrei/sentrei/boards)
+[![ZenHub](https://img.shields.io/badge/managed_with-ZenHub-5e60ba)](https://app.zenhub.com/workspace/o/sentrei/sentrei/boards)
+[![Sentry](https://img.shields.io/badge/hosted%20with-Sentry-red)](https://sentry.io/organizations/sentrei/projects/)
 [![Pioneer](https://img.shields.io/badge/competing%20on-pioneer.app-important)](https://pioneer.app/join/shunkakinoki)
 
 <!-- <p align="center">
