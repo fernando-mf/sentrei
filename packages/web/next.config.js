@@ -35,6 +35,7 @@ const nextConfig = {
     SENTRY_DSN: process.env.SENTRY_DSN,
     SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT,
     SENTRY_RELEASE: process.env.SENTRY_RELEASE,
+    SENTREI_VERSION: process.env.SENTREI_VERSION,
   },
   webpack: (config, {isServer}) => {
     config.resolve.alias = {
