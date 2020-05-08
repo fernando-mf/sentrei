@@ -1,3 +1,9 @@
+## [4.15.4](https://github.com/sentrei/sentrei/compare/v4.15.3...v4.15.4) (2020-05-08)
+
+### Bug Fixes
+
+- 🐛 add module path ([1354c56](https://github.com/sentrei/sentrei/commit/1354c56ec6def7010c48c37ab530683c64c8d5e8))
+
 ## [4.15.2](https://github.com/sentrei/sentrei/compare/v4.15.1...v4.15.2) (2020-05-08)
 
 ### Bug Fixes
