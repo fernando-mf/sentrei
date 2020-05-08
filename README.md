@@ -3,14 +3,13 @@
 </p>
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)
-[![Commitzen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)
 [![License](https://img.shields.io/github/license/sentrei/sentrei)](https://github.com/sentrei/sentrei/blob/master/LICENSE.md)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/sentrei/sentrei/graphs/commit-activity)
+[![mergify-status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei)](https://dashboard.mergify.io/installation/7539741/repositories)
+[![dependabot-status](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)](https://app.dependabot.com/accounts/sentrei/repos/249660786)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://ui.sentrei.com)
-[![mergify-status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei&style=flat)](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei&style=flat)
-[![dependabot-status](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)
 [![Github Version](https://img.shields.io/github/v/tag/sentrei/sentrei)](https://github.com/sentrei/sentrei/releases)
 [![Docker](https://img.shields.io/docker/pulls/sentrei/sentrei.svg)](https://hub.docker.com/repository/docker/sentrei/sentrei)
 [![Star on GitHub](https://img.shields.io/github/stars/sentrei/sentrei.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/sentrei/sentrei)
