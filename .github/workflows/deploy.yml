@@ -548,9 +548,19 @@ jobs:
             SERVICE_ACCOUNT_EMAIL:sentrei-master/github_${{ github.event.client_payload.base }}_email
             SERVICE_ACCOUNT_KEY:sentrei-master/github_${{ github.event.client_payload.base }}_key
             WEB_ENV:sentrei-master/web_${{ github.event.client_payload.base }}_env
+      - id: version
+        run: |
+          version=$(node -pe "require('./package.json').version")
+          echo "::set-output name=release::sentrei@${version}"
       - working-directory: packages/web
         run: |
           echo '${{ steps.secrets.outputs.WEB_ENV }}' > .env
+      - working-directory: packages/web
+        run: |
+          ./env.sh
+        env:
+          SENTRY_ENVIRONMENT: ${{ github.event.client_payload.base }}
+          SENTRY_RELEASE: ${{ steps.version.outputs.release }}
       - working-directory: packages/web
         run: |
           yarn run build

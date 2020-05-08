@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "SENTRY_ENVIRONMENT=${SENTRY_ENVIRONMENT}" >> .env
+echo "SENTRY_RELEASE=${SENTRY_RELEASE}" >> .env

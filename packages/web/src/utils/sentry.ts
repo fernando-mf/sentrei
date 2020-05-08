@@ -6,8 +6,8 @@ import isBrowser from "@sentrei/web/utils/isBrowser";
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
   enabled: process.env.NODE_ENV !== "test",
-  environment: process.env.APP_STAGE,
-  release: process.env.APP_VERSION_RELEASE,
+  environment: process.env.APP_ENVIRONMENT,
+  release: process.env.APP_RELEASE,
 });
 
 Sentry.configureScope(scope => {
