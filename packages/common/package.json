@@ -9,8 +9,27 @@
   },
   "license": "MIT",
   "author": "Shun Kakinoki",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
+    "clean:dist": "rimraf dist",
+    "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
+    "jest": "jest --coverage",
+    "test": "yarn run jest",
+    "typescript": "yarn run clean && tsc -b .",
+    "watch": "tsc -b . -w --preserveWatchOutput"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "5915ac673cb6ddfe6cd4b6b93a8f71f6337aa24e"
+  "gitHead": "5915ac673cb6ddfe6cd4b6b93a8f71f6337aa24e",
+  "dependencies": {
+    "i18next-icu": "^1.3.1",
+    "next": "^9.3.6",
+    "next-i18next": "^4.4.1"
+  }
 }

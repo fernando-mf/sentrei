@@ -22,7 +22,6 @@
     "deploy:staging-storybook": "firebase deploy --only hosting:staging-ui --token ${FIREBASE_TOKEN}",
     "deploy:storybook": "firebase deploy --only hosting:ui --token ${FIREBASE_TOKEN}",
     "dev": "start-storybook -p 6006",
-    "fix": "yarn run eslint-fix",
     "jest": "jest --coverage",
     "reg": "reg-suit run",
     "staging:ui": "firebase use master && yarn run deploy:staging-storybook",
