@@ -51,8 +51,8 @@ jobs:
           yarn run relative-ci
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          NODE_ENV: test
           RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
+          NODE_ENV: test
       - if: steps.change.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:
