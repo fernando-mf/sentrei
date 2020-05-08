@@ -1,3 +1,9 @@
+## [4.15.9](https://github.com/sentrei/sentrei/compare/v4.15.8...v4.15.9) (2020-05-08)
+
+### Bug Fixes
+
+- 🐛 remove dynamic links ([39b2e7c](https://github.com/sentrei/sentrei/commit/39b2e7c53095b5031e569cc7071cb5f75fd91afb))
+
 ## [4.15.8](https://github.com/sentrei/sentrei/compare/v4.15.7...v4.15.8) (2020-05-08)
 
 ### Bug Fixes
