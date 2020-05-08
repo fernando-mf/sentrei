@@ -23,14 +23,14 @@
     "typescript": "yarn run clean && tsc -b .",
     "watch": "tsc -b . -w --preserveWatchOutput"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "gitHead": "5915ac673cb6ddfe6cd4b6b93a8f71f6337aa24e",
   "dependencies": {
     "i18next-icu": "^1.3.1",
     "next": "^9.3.6",
     "next-i18next": "^4.4.1",
     "react-i18next": "^11.4.0"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "5915ac673cb6ddfe6cd4b6b93a8f71f6337aa24e"
 }
