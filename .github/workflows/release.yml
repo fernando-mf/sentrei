@@ -70,7 +70,7 @@ jobs:
           echo "::set-env name=DIST_TAG::${{ needs.context.outputs.branch }}"
       - if: needs.context.outputs.branch == 'master'
         run: |
-          echo "::set-env name=DIST_TAG::latest""
+          echo "::set-env name=DIST_TAG::latest"
       - run: |
           git stash && yarn run publish && git stash pop || true
         env:
