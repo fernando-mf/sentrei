@@ -1,6 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {ServerStyleSheets as MaterialUiServerStyleSheets} from "@material-ui/core/styles";
-import NextDocument, {Html, Head, Main, NextScript} from "next/document";
+import * as Sentry from "@sentry/node";
+import {DocumentInitialProps} from "next/dist/next-server/lib/utils";
+import NextDocument, {
+  DocumentContext,
+  Html,
+  Head,
+  Main,
+  NextScript,
+} from "next/document";
 import React from "react";
 import {ServerStyleSheet as StyledComponentSheets} from "styled-components";
 
@@ -8,12 +16,8 @@ import Theme from "@sentrei/ui/containers/Theme";
 
 export default class Document extends NextDocument {
   static async getInitialProps(
-    ctx: any,
-  ): Promise<{
-    styles: JSX.Element[];
-    html: string;
-    head?: (JSX.Element | null)[] | undefined;
-  }> {
+    ctx: DocumentContext,
+  ): Promise<DocumentInitialProps> {
     const styledComponentSheet = new StyledComponentSheets();
     const materialUiSheets = new MaterialUiServerStyleSheets();
     const originalRenderPage = ctx.renderPage;

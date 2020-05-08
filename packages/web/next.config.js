@@ -35,7 +35,7 @@ const aliases = {
 };
 
 const nextConfig = {
-  webpack: config => {
+  webpack: (config, {isServer}) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       ...aliases,
@@ -64,6 +64,9 @@ const nextConfig = {
       },
     });
     config.resolve.symlinks = true;
+    if (!isServer) {
+      config.resolve.alias["@sentry/node"] = "@sentry/browser";
+    }
     return config;
   },
 };
