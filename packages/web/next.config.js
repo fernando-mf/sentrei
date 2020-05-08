@@ -2,6 +2,7 @@ const path = require("path");
 const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
 const withSass = require("@zeit/next-sass");
+const withSourceMaps = require("@zeit/next-source-maps");
 const withTM = require("next-transpile-modules")(["@sentrei/ui"]);
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
@@ -17,14 +18,15 @@ const withBundleStats = require("next-plugin-bundle-stats")({
 
 const withConfig = nextRuntimeDotenv({
   public: [
-    "API_KEY",
-    "AUTH_DOMAIN",
-    "DATABASE_URL",
-    "PROJECT_ID",
-    "STORAGE_BUCKET",
-    "MESSAGING_SENDER_ID",
-    "APP_ID",
-    "MEASUREMENT_ID",
+    "FIREBASE_API_KEY",
+    "FIREBASE_AUTH_DOMAIN",
+    "FIREBASE_DATABASE_URL",
+    "FIREBASE_PROJECT_ID",
+    "FIREBASE_STORAGE_BUCKET",
+    "FIREBASE_MESSAGING_SENDER_ID",
+    "FIREBASE_APP_ID",
+    "FIREBASE_MEASUREMENT_ID",
+    "SENTRY_DSN",
   ],
 });
 
@@ -34,7 +36,7 @@ const aliases = {
 };
 
 const nextConfig = {
-  webpack: config => {
+  webpack: (config, {isServer}) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       ...aliases,
@@ -63,23 +65,23 @@ const nextConfig = {
       },
     });
     config.resolve.symlinks = true;
+    if (!isServer) {
+      config.resolve.alias["@sentry/node"] = "@sentry/browser";
+    }
     return config;
-  },
-  publicRuntimeConfig: {
-    API_KEY: process.env.API_KEY,
-    AUTH_DOMAIN: process.env.AUTH_DOMAIN,
-    DATABASE_URL: process.env.DATABASE_URL,
-    PROJECT_ID: process.env.PROJECT_ID,
-    STORAGE_BUCKET: process.env.STORAGE_BUCKET,
-    MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID,
-    APP_ID: process.env.APP_ID,
-    MEASUREMENT_ID: process.env.MEASUREMENT_ID,
   },
 };
 
 module.exports = withConfig(
   withPlugins(
-    [[withBundleAnalyzer], [withBundleStats], [withCSS], [withSass], [withTM]],
+    [
+      [withBundleAnalyzer],
+      [withBundleStats],
+      [withCSS],
+      [withSass],
+      [withSourceMaps],
+      [withTM],
+    ],
     nextConfig,
   ),
 );

@@ -3,13 +3,10 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "esModuleInterop": true,
-    "noEmit": true,
-    "paths": {
-      "@sentrei/common/*": ["../common/dist/*"],
-      "@sentrei/ui/*": ["../ui/dist/*"],
-      "@sentrei/web/*": ["src/*"]
-    }
+    "composite": true,
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": "src"
   },
   "include": ["src/**/*"],
   "exclude": [
@@ -19,13 +16,5 @@
     "**/*.spec.ts",
     "**/*.spec.tsx",
     "**/*.stories.tsx"
-  ],
-  "references": [
-    {
-      "path": "../common"
-    },
-    {
-      "path": "../ui"
-    }
   ]
 }

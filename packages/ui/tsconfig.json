@@ -9,6 +9,7 @@
     "outDir": "dist",
     "rootDir": "src",
     "paths": {
+      "@sentrei/common/*": ["../common/dist/*"],
       "@sentrei/ui/*": ["src/*"]
     }
   },
@@ -20,5 +21,10 @@
     "**/*.spec.ts",
     "**/*.spec.tsx",
     "**/*.stories.tsx"
+  ],
+  "references": [
+    {
+      "path": "../common"
+    }
   ]
 }
