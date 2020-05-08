@@ -1,3 +1,7 @@
+import firebase from "firebase/app";
+
+import isBrowser from "@sentrei/web/utils/isBrowser";
+
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
@@ -9,4 +13,8 @@ const firebaseConfig = {
   measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
-export default firebaseConfig;
+if (isBrowser && !firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+export default firebase;
