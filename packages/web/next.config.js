@@ -32,10 +32,10 @@ const nextConfig = {
     FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
     FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
     FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID,
+    SENTREI_VERSION: process.env.SENTREI_VERSION,
     SENTRY_DSN: process.env.SENTRY_DSN,
     SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT,
     SENTRY_RELEASE: process.env.SENTRY_RELEASE,
-    SENTREI_VERSION: process.env.SENTREI_VERSION,
   },
   webpack: (config, {isServer}) => {
     config.resolve.alias = {
