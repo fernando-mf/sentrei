@@ -2,11 +2,14 @@
   "hosting": [
     {
       "site": "sentrei-beta-web",
+      "appAssociation": "AUTO",
       "public": "public",
+      "ignore": ["**/static/**"],
       "target": "web",
       "rewrites": [
         {
           "source": "**",
+          "dynamicLinks": true,
           "run": {
             "serviceId": "sentrei-beta-web",
             "region": "us-central1"
@@ -17,6 +20,7 @@
     {
       "site": "sentrei-staging-beta-web",
       "public": "public",
+      "ignore": ["**/static/**"],
       "target": "staging-web",
       "rewrites": [
         {
