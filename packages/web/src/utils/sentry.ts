@@ -1,15 +1,10 @@
 import * as Sentry from "@sentry/node";
 import get from "lodash.get";
-import getConfig from "next/config";
 
 import isBrowser from "@sentrei/web/utils/isBrowser";
 
-const {
-  publicRuntimeConfig: {SENTRY_DSN},
-} = getConfig();
-
 Sentry.init({
-  dsn: SENTRY_DSN,
+  dsn: process.env.SENTRY_DSN,
   enabled: process.env.NODE_ENV !== "test",
   environment: process.env.APP_STAGE,
   release: process.env.APP_VERSION_RELEASE,
