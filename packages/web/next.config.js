@@ -2,6 +2,7 @@ const path = require("path");
 const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
 const withSass = require("@zeit/next-sass");
+const withSourceMaps = require("@zeit/next-source-maps");
 const withTM = require("next-transpile-modules")(["@sentrei/ui"]);
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
@@ -73,7 +74,14 @@ const nextConfig = {
 
 module.exports = withConfig(
   withPlugins(
-    [[withBundleAnalyzer], [withBundleStats], [withCSS], [withSass], [withTM]],
+    [
+      [withBundleAnalyzer],
+      [withBundleStats],
+      [withCSS],
+      [withSass],
+      [withSourceMaps],
+      [withTM],
+    ],
     nextConfig,
   ),
 );
