@@ -538,6 +538,11 @@ jobs:
           yarn install --frozen-lockfile
       - run: |
           yarn run typescript
+      - working-directory: packages/web
+        run: |
+          yarn run ${{ github.event.client_payload.task }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - id: secrets
         uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
         with:
