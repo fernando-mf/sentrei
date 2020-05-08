@@ -3,10 +3,11 @@ import Typography from "@material-ui/core/Typography";
 import Head from "next/head";
 import React from "react";
 
+import {withTranslation} from "@sentrei/common/i18n";
 import Landing from "@sentrei/ui/components/Landing";
 import Link from "@sentrei/ui/components/Link";
 
-export default function Index(): JSX.Element {
+function Index(): JSX.Element {
   return (
     <>
       <Head>
@@ -26,3 +27,5 @@ export default function Index(): JSX.Element {
     </>
   );
 }
+
+export default withTranslation("common")(Index);

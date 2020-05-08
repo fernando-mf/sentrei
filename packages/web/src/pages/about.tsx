@@ -3,11 +3,12 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 
+import {withTranslation} from "@sentrei/common/i18n";
 import Copyright from "@sentrei/ui/components/Copyright";
 import Link from "@sentrei/ui/components/Link";
 import ProTip from "@sentrei/ui/components/ProTip";
 
-export default function About(): JSX.Element {
+function About(): JSX.Element {
   return (
     <Container maxWidth="sm">
       <Box my={4}>
@@ -21,3 +22,5 @@ export default function About(): JSX.Element {
     </Container>
   );
 }
+
+export default withTranslation("common")(About);
