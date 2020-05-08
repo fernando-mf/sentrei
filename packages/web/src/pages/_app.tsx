@@ -5,7 +5,7 @@ import * as firebase from "firebase/app";
 import get from "lodash.get";
 import NextApp from "next/app";
 import Head from "next/head";
-import React from "react";
+import React, {ErrorInfo} from "react";
 import {ThemeProvider as StyledThemeProvider} from "styled-components";
 
 import "firebase/performance";
@@ -23,6 +23,15 @@ class App extends NextApp {
     if (jssStyles && jssStyles.parentNode)
       jssStyles.parentNode.removeChild(jssStyles);
     firebase.initializeApp(firebaseConfig);
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
+    Sentry.withScope(scope => {
+      Object.keys(errorInfo).forEach(key => scope.setExtra(key, errorInfo));
+      Sentry.captureException(error);
+    });
+
+    super.componentDidCatch(error, errorInfo);
   }
 
   render(): JSX.Element {
