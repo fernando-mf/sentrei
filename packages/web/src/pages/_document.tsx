@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {ServerStyleSheets as MaterialUiServerStyleSheets} from "@material-ui/core/styles";
-import * as Sentry from "@sentry/node";
 import {DocumentInitialProps} from "next/dist/next-server/lib/utils";
 import NextDocument, {
   DocumentContext,
@@ -13,6 +12,7 @@ import React from "react";
 import {ServerStyleSheet as StyledComponentSheets} from "styled-components";
 
 import Theme from "@sentrei/ui/containers/Theme";
+import "@sentrei/web/utils/registerExceptionHandler";
 
 export default class Document extends NextDocument {
   static async getInitialProps(
