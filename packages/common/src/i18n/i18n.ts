@@ -1,13 +1,13 @@
 import ICU from "i18next-icu";
 import en from "i18next-icu/locale-data/en";
-import ru from "i18next-icu/locale-data/ru";
+import ja from "i18next-icu/locale-data/ja";
 import NextI18next from "next-i18next";
 import {useTranslation as originalUseTranslation} from "react-i18next";
 
 const use: unknown[] = [];
 const icu = new ICU({});
-icu.addLocaleData(ru);
 icu.addLocaleData(en);
+icu.addLocaleData(ja);
 use.push(icu);
 
 export const nextI18next = new NextI18next({
