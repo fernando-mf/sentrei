@@ -4,10 +4,10 @@ import get from "lodash.get";
 import isBrowser from "@sentrei/web/utils/isBrowser";
 
 Sentry.init({
-  dsn: process.env.SENTRY_DSN,
   enabled: process.env.NODE_ENV !== "test",
-  environment: process.env.APP_ENVIRONMENT,
-  release: process.env.APP_RELEASE,
+  dsn: process.env.SENTRY_DSN,
+  environment: process.env.SENTRY_ENVIRONMENT,
+  release: process.env.SENTRY_RELEASE,
 });
 
 Sentry.configureScope(scope => {
