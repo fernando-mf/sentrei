@@ -22617,13 +22617,6 @@ next-plugin-bundle-stats@^2.2.0:
   dependencies:
     bundle-stats-webpack-plugin "^2.2.0"
 
-next-runtime-dotenv@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/next-runtime-dotenv/-/next-runtime-dotenv-1.2.0.tgz#8392d99a639f49d2ee48e086f000321632280653"
-  integrity sha512-5Tnoey7U0JZb6M5StHtcFjT0ZBWXRbwnWZgbXqI+XKmMMUVH3lD1ogPSMoXMZcH2Q5stZUsyyfQfzDOIoHPBHw==
-  dependencies:
-    dotenv "^8.0.0"
-
 next-tick@1, next-tick@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.1.0.tgz#1836ee30ad56d67ef281b22bd199f709449b35eb"
@@ -22642,7 +22635,7 @@ next-transpile-modules@^3.3.0:
     micromatch "^4.0.2"
     slash "^3.0.0"
 
-next@*, next@^9.3.5, next@^9.3.6:
+next@*, next@^9.3.6:
   version "9.3.6"
   resolved "https://registry.yarnpkg.com/next/-/next-9.3.6.tgz#2bfd76f835606db3840adf07b51b052514ef3709"
   integrity sha512-b46i+qw2SYMVTOObc7GqUizt1zH1fB3T5qcOiCpl9utD7/LcWZkSxSPe7ZJtpAdFnl8V/7A58ADSvU1oxDDWug==

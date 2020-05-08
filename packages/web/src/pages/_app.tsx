@@ -12,7 +12,8 @@ import "firebase/performance";
 import {appWithTranslation} from "@sentrei/common/i18n";
 import Theme from "@sentrei/ui/containers/Theme";
 import "@sentrei/web/utils/nprogress";
-import firebaseConfig from "@sentrei/web/utils/firebaseConfig";
+import "@sentrei/web/utils/firebase";
+import "@sentrei/web/utils/sentry";
 import "@sentrei/web/styles/global.scss";
 import "@sentrei/web/styles/nprogress.scss";
 import isBrowser from "@sentrei/web/utils/isBrowser";
@@ -22,7 +23,10 @@ class App extends NextApp {
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles && jssStyles.parentNode)
       jssStyles.parentNode.removeChild(jssStyles);
-    firebase.initializeApp(firebaseConfig);
+    if (process.env.NODE_ENV === "production") {
+      const perf = firebase.performance();
+      perf.trace("init");
+    }
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
