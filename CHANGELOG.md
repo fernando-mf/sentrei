@@ -1,3 +1,9 @@
+## [4.15.2](https://github.com/sentrei/sentrei/compare/v4.15.1...v4.15.2) (2020-05-08)
+
+### Bug Fixes
+
+- 🐛 add sentry gha ([0502558](https://github.com/sentrei/sentrei/commit/0502558e5c00c5618c88f8f6697a1f664c741ec4))
+
 ## [4.15.1](https://github.com/sentrei/sentrei/compare/v4.15.0...v4.15.1) (2020-05-08)
 
 ### Bug Fixes
