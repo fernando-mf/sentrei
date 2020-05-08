@@ -1,3 +1,9 @@
+## [4.15.7](https://github.com/sentrei/sentrei/compare/v4.15.6...v4.15.7) (2020-05-08)
+
+### Bug Fixes
+
+- **deps:** bump firebase-admin from 8.12.0 to 8.12.1 ([201decf](https://github.com/sentrei/sentrei/commit/201decf8b3198f026eca6f49d90e17059dc2306e))
+
 ## [4.15.6](https://github.com/sentrei/sentrei/compare/v4.15.5...v4.15.6) (2020-05-08)
 
 ### Bug Fixes
