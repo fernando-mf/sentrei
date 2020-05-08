@@ -13,7 +13,11 @@ const firebaseConfig = {
   measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
-if (isBrowser && !firebase.apps.length) {
+if (
+  isBrowser &&
+  !firebase.apps.length &&
+  process.env.NODE_ENV === "production"
+) {
   firebase.initializeApp(firebaseConfig);
 }
 

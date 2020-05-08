@@ -23,8 +23,10 @@ class App extends NextApp {
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles && jssStyles.parentNode)
       jssStyles.parentNode.removeChild(jssStyles);
-    const perf = firebase.performance();
-    perf.trace("init");
+    if (process.env.NODE_ENV === "production") {
+      const perf = firebase.performance();
+      perf.trace("init");
+    }
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
