@@ -8,9 +8,10 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Close from "@material-ui/icons/Close";
 import Menu from "@material-ui/icons/Menu";
 import classNames from "classnames";
-import Link from "next/link";
 import PropTypes from "prop-types";
 import React from "react";
+
+import Link from "@sentrei/ui/components/Link";
 
 import HeaderStyles from "./HeaderStyles";
 
