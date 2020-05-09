@@ -76,7 +76,7 @@ jobs:
         id: fc
         with:
           issue-number: ${{ github.event.pull_request.number }}
-          body-includes: /test
+          body-includes: /test web
           comment-author: shunkakinoki
       - if: steps.fc.outputs.comment-id != null
         uses: peter-evans/create-or-update-comment@v1
