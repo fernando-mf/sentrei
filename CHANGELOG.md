@@ -1,3 +1,9 @@
+# [4.17.0](https://github.com/sentrei/sentrei/compare/v4.16.1...v4.17.0) (2020-05-09)
+
+### Features
+
+- 🎸 add first input delay ([33d1d4c](https://github.com/sentrei/sentrei/commit/33d1d4cf26e4886b0b2cf074d90a2a51aa3aec94))
+
 ## [4.16.1](https://github.com/sentrei/sentrei/compare/v4.16.0...v4.16.1) (2020-05-09)
 
 ### Bug Fixes
