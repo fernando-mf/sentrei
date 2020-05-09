@@ -23,4 +23,10 @@ function About(): JSX.Element {
   );
 }
 
+About.getInitialProps = (): {
+  namespacesRequired: string[];
+} => ({
+  namespacesRequired: ["common"],
+});
+
 export default withTranslation("common")(About);

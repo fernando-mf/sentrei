@@ -30,7 +30,7 @@ const Index = ({t}: any): JSX.Element => (
 Index.getInitialProps = (): {
   namespacesRequired: string[];
 } => ({
-  namespacesRequired: ["common", "index"],
+  namespacesRequired: ["index"],
 });
 
-export default withTranslation("common")(Index);
+export default withTranslation("index")(Index);
