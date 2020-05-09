@@ -5,6 +5,6 @@ import Header from ".";
 
 describe("Header", () => {
   test("render", () => {
-    shallow(<Header fixed/>);
+    shallow(<Header fixed />);
   });
 });
