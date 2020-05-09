@@ -10,19 +10,27 @@ module.exports = ({config}) => {
     ...config.resolve.alias,
     ...aliases,
   };
-  config.module.rules = [
-    {
-      test: /\.(ts|tsx)$/,
-      use: [
-        {
-          loader: require.resolve("awesome-typescript-loader"),
-          options: {
-            configFileName: "tsconfig.json",
-          },
+  config.module.rules.push({
+    test: /\.(ts|tsx)$/,
+    use: [
+      {
+        loader: require.resolve("babel-loader"),
+        options: {
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                useBuiltIns: "usage",
+                corejs: 3, // useBuiltInsオプションを追加
+              },
+            ],
+          ],
         },
-      ],
-    },
-  ];
+      },
+      require.resolve("react-docgen-typescript-loader"),
+    ],
+  });
+
   config.resolve.extensions.push(".ts", ".tsx");
   return config;
 };
