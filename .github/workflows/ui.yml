@@ -79,19 +79,3 @@ jobs:
           name: sentrei
           fail_ci_if_error: true
           flags: ui
-      - if: steps.change.outputs.changed == 'true'
-        uses: peter-evans/find-comment@v1
-        id: fc
-        with:
-          issue-number: ${{ github.event.pull_request.number }}
-          body-includes: /test ui
-          comment-author: shunkakinoki
-      - if: steps.fc.outputs.comment-id != null
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          repository: ${{ github.repository }}
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          edit-mode: replace
-          body: |
-            /test ui
