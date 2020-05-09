@@ -1,12 +1,12 @@
 import {storiesOf} from "@storybook/react";
 import * as React from "react";
 
-import Landing from ".";
+import Header from ".";
 
-storiesOf("Landing", module)
+storiesOf("Header", module)
   .addParameters({
     screenshot: {
       delay: 200,
     },
   })
-  .add("Just an Landing story", () => <Landing />);
+  .add("Just an Header story", () => <Header />);

@@ -1,11 +1,12 @@
+import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Head from "next/head";
 import React from "react";
 
-import {Link, withTranslation} from "@sentrei/common/i18n";
-import Landing from "@sentrei/ui/components/Landing";
-
+import {withTranslation} from "@sentrei/common/i18n";
+import Header from "@sentrei/ui/components/Header";
+import Link from "@sentrei/ui/components/Link";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Index = ({t}: any): JSX.Element => (
   <>
@@ -13,21 +14,24 @@ const Index = ({t}: any): JSX.Element => (
       <title>Sentrei</title>
       <meta name="Description" content="Sentrei landing page" />
     </Head>
-    <Landing>
-      <Container maxWidth="sm">
-        <Typography variant="h4" component="h1" gutterBottom>
-          {t("title")}
-        </Typography>
-        <Link href="/about">Go to the about page</Link>
-      </Container>
-    </Landing>
+    <Header />
+    <Container maxWidth="sm">
+      <Box pt={10} />
+      <Typography variant="h4" component="h1" gutterBottom>
+        {t("title")}
+      </Typography>
+      <Link href="/about" color="secondary">
+        Go to the about page
+      </Link>
+    </Container>
+    <Box pt={300} />
   </>
 );
 
 Index.getInitialProps = (): {
   namespacesRequired: string[];
 } => ({
-  namespacesRequired: ["common", "index"],
+  namespacesRequired: ["index"],
 });
 
-export default withTranslation("common")(Index);
+export default withTranslation("index")(Index);

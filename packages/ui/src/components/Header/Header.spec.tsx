@@ -1,10 +1,10 @@
 import {shallow} from "enzyme";
 import React from "react";
 
-import Landing from ".";
+import Header from ".";
 
-describe("Landing", () => {
+describe("Header", () => {
   test("render", () => {
-    shallow(<Landing />);
+    shallow(<Header />);
   });
 });

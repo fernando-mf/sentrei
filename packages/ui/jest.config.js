@@ -13,8 +13,8 @@ module.exports = {
   ],
   moduleFileExtensions: ["js", "ts", "tsx"],
   moduleNameMapper: {
+    "@sentrei/common/(.*)": "<rootDir>/../common/src/$1",
     "@sentrei/ui/(.*)": "<rootDir>/src/$1",
-    "@sentrei/ui/components/(.*)": "<rootDir>/src/components/$1",
   },
   setupFiles: ["<rootDir>/src/__tests__/setupTests.ts"],
   collectCoverage: true,

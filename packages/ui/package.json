@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "build-storybook -o out --loglevel warn",
+    "build": "build-storybook -o out",
     "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
     "clean:dist": "rimraf dist",
     "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
@@ -34,11 +34,15 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.9.10",
+    "@material-ui/icons": "^4.9.1",
+    "@sentrei/common": "*",
+    "@types/classnames": "^2.2.10",
     "@types/next": "^9.0.0",
     "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "@types/styled-components": "^5.1.0",
+    "classnames": "^2.2.6",
     "clsx": "^1.1.0",
     "next": "^9.3.6",
     "prop-types": "^15.7.2",
@@ -48,6 +52,7 @@
     "typescript": "^3.8.3"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.9.6",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-console": "^1.2.1",
     "@storybook/addon-info": "^5.3.18",
@@ -70,21 +75,20 @@
     "@types/storybook__addon-viewport": "^5.2.1",
     "@types/storybook__react": "^5.2.1",
     "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.5",
     "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
     "jest": "^26.0.0",
     "jest-enzyme": "^7.1.2",
-    "pretty-quick": "^2.0.1",
     "reg-notify-github-plugin": "^0.8.5",
     "reg-publish-gcs-plugin": "^0.9.0",
     "reg-simple-keygen-plugin": "^0.7.25",
     "reg-suit": "^0.10.0",
     "rimraf": "^3.0.2",
     "storycap": "^2.3.5",
-    "ts-jest": "^25.4.0",
-    "ts-loader": "^7.0.1"
+    "ts-jest": "^25.4.0"
   },
   "publishConfig": {
     "access": "public"

@@ -74,6 +74,10 @@
 # Netlify related.
 .netlify
 
+# Yarn related.
+.yarn
+.yarnrc
+
 # Firebase related.
 **/.firebase
 
