@@ -4,7 +4,6 @@ import Button from "@material-ui/core/Button";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
-import {makeStyles} from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Close from "@material-ui/icons/Close";
 import Menu from "@material-ui/icons/Menu";
@@ -13,80 +12,10 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 import React from "react";
 
-import Theme from "@sentrei/ui/containers/Theme";
-
-const useStyles = makeStyles({
-  absolute: {
-    position: "absolute",
-    top: "auto",
-  },
-  appBar: {
-    display: "flex",
-    border: "0",
-    borderRadius: "3px",
-    padding: "0.625rem 0",
-    marginBottom: "20px",
-    color: Theme.palette.common.white,
-    width: "100%",
-    backgroundColor: Theme.palette.grey[100],
-    transition: "all 150ms ease 0s",
-    alignItems: "center",
-    flexFlow: "row nowrap",
-    justifyContent: "flex-start",
-    position: "relative",
-  },
-  appResponsive: {
-    margin: "20px 10px",
-    marginTop: "0px",
-  },
-  container: {
-    paddingRight: "15px",
-    paddingLeft: "15px",
-    marginRight: "auto",
-    marginLeft: "auto",
-    width: "100%",
-    minHeight: "50px",
-    alignItems: "center",
-    justifyContent: "space-between",
-    display: "flex",
-    flexWrap: "nowrap",
-  },
-  fixed: {
-    position: "fixed",
-  },
-  hidden: {
-    width: "100%",
-  },
-  primary: {
-    backgroundColor: Theme.palette.primary.main,
-    color: Theme.palette.common.white,
-  },
-  title: {
-    letterSpacing: "unset",
-    "&,& a": {
-      minWidth: "unset",
-      lineHeight: "30px",
-      fontSize: "18px",
-      borderRadius: "3px",
-      textTransform: "none",
-      whiteSpace: "nowrap",
-      color: "inherit",
-      "&:hover,&:focus": {
-        color: "inherit",
-        background: "transparent",
-      },
-    },
-  },
-  transparent: {
-    backgroundColor: "transparent !important",
-    boxShadow: "none",
-    paddingTop: "25px",
-    color: Theme.palette.common.white,
-  },
-});
+import HeaderStyles from "./HeaderStyles";
 
 export default function Header(props: any): JSX.Element {
-  const classes = useStyles();
+  const classes = HeaderStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const {fixed} = props;
   const appBarClasses = classNames({
