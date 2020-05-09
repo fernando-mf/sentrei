@@ -5,7 +5,6 @@ import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
 import Header from "@sentrei/ui/components/Header";
-import Landing from "@sentrei/ui/components/Landing";
 import Link from "@sentrei/ui/components/Link";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Index = ({t}: any): JSX.Element => (
@@ -15,16 +14,14 @@ const Index = ({t}: any): JSX.Element => (
       <meta name="Description" content="Sentrei landing page" />
     </Head>
     <Header fixed />
-    <Landing>
-      <Container maxWidth="sm">
-        <Typography variant="h4" component="h1" gutterBottom>
-          {t("title")}
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-      </Container>
-    </Landing>
+    <Container maxWidth="sm">
+      <Typography variant="h4" component="h1" gutterBottom>
+        {t("title")}
+      </Typography>
+      <Link href="/about" color="secondary">
+        Go to the about page
+      </Link>
+    </Container>
   </>
 );
 
