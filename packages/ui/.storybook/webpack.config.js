@@ -1,7 +1,7 @@
 const path = require("path");
 
 const aliases = {
-  "@sentrei/common": path.join(__dirname, "../../common/src"),
+  "@sentrei/common": path.join(__dirname, "../../common/dist"),
   "@sentrei/ui": path.join(__dirname, "../src"),
 };
 
@@ -10,17 +10,17 @@ module.exports = ({config}) => {
     ...config.resolve.alias,
     ...aliases,
   };
-  config.module.rules.push({
+  config.module.rules = [{
     test: /\.(ts|tsx)$/,
     use: [
       {
         loader: require.resolve("awesome-typescript-loader"),
         options: {
-          configFileName: "tsconfig.test.json",
+          configFileName: "tsconfig.json",
         },
       },
     ],
-  });
+  }];
   config.resolve.extensions.push(".ts", ".tsx");
   return config;
 };
