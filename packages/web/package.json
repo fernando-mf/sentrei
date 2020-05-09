@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.9.10",
+    "@material-ui/icons": "^4.9.1",
     "@next/bundle-analyzer": "^9.3.5",
     "@sentrei/ui": "*",
     "@sentry/browser": "^5.15.5",
