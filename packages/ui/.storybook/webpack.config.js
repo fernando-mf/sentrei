@@ -21,13 +21,12 @@ module.exports = ({config}) => {
               "@babel/preset-env",
               {
                 useBuiltIns: "usage",
-                corejs: 3, // useBuiltInsオプションを追加
+                corejs: 3,
               },
             ],
           ],
         },
       },
-      require.resolve("react-docgen-typescript-loader"),
     ],
   });
 
