@@ -23,8 +23,14 @@ class App extends NextApp {
     if (jssStyles && jssStyles.parentNode) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
-    firebase.analytics().logEvent("_app");
-    firebase.performance().trace("_app");
+    if (
+      isBrowser &&
+      !firebase.apps.length &&
+      process.env.NODE_ENV === "production"
+    ) {
+      firebase.analytics().logEvent("_app");
+      firebase.performance().trace("_app");
+    }
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
