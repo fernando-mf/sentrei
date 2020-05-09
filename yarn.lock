@@ -1452,10 +1452,10 @@
     resolve-from "^5.0.0"
     resolve-global "^1.0.0"
 
-"@cypress/browserify-preprocessor@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@cypress/browserify-preprocessor/-/browserify-preprocessor-2.2.2.tgz#2db0067aea8bd6e98ac29bd331c05bad387608ba"
-  integrity sha512-uESobQlfv68GRKDokhBM5i47ZEwBBWS8zqFYFFBWVjv3KcXHpeReTXMPY/x1DljIO3RYRAxUsPJkh8vxhpRwNA==
+"@cypress/browserify-preprocessor@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@cypress/browserify-preprocessor/-/browserify-preprocessor-2.2.3.tgz#73cd0fc91fee90a9fb9a81a675ad52f6f1abddaf"
+  integrity sha512-NjumJpUlWeolsGICIseYblCRYsQDQA01W1ZxPcWZkG1hK01EI1HxMtX7fBnyeg2jY/i1xjrZV27PczmdGKAhXQ==
   dependencies:
     "@babel/core" "7.4.5"
     "@babel/plugin-proposal-class-properties" "7.3.0"
@@ -1477,11 +1477,11 @@
     watchify "3.11.1"
 
 "@cypress/code-coverage@^3.5.3":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@cypress/code-coverage/-/code-coverage-3.7.0.tgz#4098623d532f3635a77f88b87768bafbb0d11fb3"
-  integrity sha512-GJZhh/kmybCO3Fgrsr3XrUpUMl9e1dFxNU7N8KQKp60UT4sGahrQL3zjx0+pGvR7kj3zN6Z67g/dyFUye878FQ==
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/@cypress/code-coverage/-/code-coverage-3.7.1.tgz#c1c68dbbd5f1f3cbf8848dfac5d8eeda4fecdd61"
+  integrity sha512-GGpNgJkdB7If64BI0r7/EdG/qkY2JrlJXIwybJTvYS0nolBKDG7XTgC3VFke7mMx8/4h96MXYXj1Yu16aTJhoQ==
   dependencies:
-    "@cypress/browserify-preprocessor" "2.2.2"
+    "@cypress/browserify-preprocessor" "2.2.3"
     debug "4.1.1"
     execa "4.0.0"
     globby "11.0.0"
