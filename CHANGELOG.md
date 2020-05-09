@@ -1,3 +1,9 @@
+## [4.16.1](https://github.com/sentrei/sentrei/compare/v4.16.0...v4.16.1) (2020-05-09)
+
+### Bug Fixes
+
+- 🐛 add if else configuration ([9eb0431](https://github.com/sentrei/sentrei/commit/9eb04319fe81e0a5dc0d1fa7430cec5cf88739c5))
+
 # [4.16.0](https://github.com/sentrei/sentrei/compare/v4.15.10...v4.16.0) (2020-05-08)
 
 ### Features
