@@ -9,4 +9,4 @@ storiesOf("Header", module)
       delay: 200,
     },
   })
-  .add("Just an Header story", () => <Header fixed />);
+  .add("Just an Header story", () => <Header />);

@@ -8,19 +8,19 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Close from "@material-ui/icons/Close";
 import Menu from "@material-ui/icons/Menu";
 import classNames from "classnames";
-import PropTypes from "prop-types";
 import React from "react";
 
 import Link from "@sentrei/ui/components/Link";
 
 import HeaderStyles from "./HeaderStyles";
 
-export default function Header(props: any): JSX.Element {
+export default function Header(): JSX.Element {
   const classes = HeaderStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const {fixed} = props;
   const appBarClasses = classNames({
-    [classes.fixed]: fixed,
+    [classes.appBar]: true,
+    [classes.transparent]: true,
+    [classes.primary]: false,
   });
 
   const headerColorChange = (): void => {
@@ -47,13 +47,9 @@ export default function Header(props: any): JSX.Element {
   };
 
   React.useEffect(() => {
-    if (props.changeColorOnScroll) {
-      window.addEventListener("scroll", headerColorChange);
-    }
+    window.addEventListener("scroll", headerColorChange);
     return function cleanup(): void {
-      if (props.changeColorOnScroll) {
-        window.removeEventListener("scroll", headerColorChange);
-      }
+      window.removeEventListener("scroll", headerColorChange);
     };
   });
 
@@ -70,7 +66,7 @@ export default function Header(props: any): JSX.Element {
         <Hidden mdUp>
           <IconButton
             color="inherit"
-            aria-label="open drawer"
+            aria-label="openDrawer"
             onClick={handleDrawerToggle}
           >
             <Menu />
@@ -86,7 +82,7 @@ export default function Header(props: any): JSX.Element {
         >
           <IconButton
             color="inherit"
-            aria-label="open drawer"
+            aria-label="openDrawer"
             onClick={handleDrawerToggle}
           >
             <Close />
@@ -96,7 +92,3 @@ export default function Header(props: any): JSX.Element {
     </AppBar>
   );
 }
-
-Header.propTypes = {
-  fixed: PropTypes.bool.isRequired,
-};

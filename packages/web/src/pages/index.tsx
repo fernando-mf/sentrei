@@ -14,7 +14,7 @@ const Index = ({t}: any): JSX.Element => (
       <title>Sentrei</title>
       <meta name="Description" content="Sentrei landing page" />
     </Head>
-    <Header fixed />
+    <Header />
     <Container maxWidth="sm">
       <Box pt={10} />
       <Typography variant="h4" component="h1" gutterBottom>
@@ -24,6 +24,7 @@ const Index = ({t}: any): JSX.Element => (
         Go to the about page
       </Link>
     </Container>
+    <Box pt={300} />
   </>
 );
 

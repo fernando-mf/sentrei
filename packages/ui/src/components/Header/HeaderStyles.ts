@@ -2,15 +2,9 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 const HeaderStyles = makeStyles((theme: Theme) =>
   createStyles({
-    absolute: {
-      position: "absolute",
-      top: "auto",
-    },
     appBar: {
       display: "flex",
       border: "0",
-      borderRadius: "3px",
-      padding: "0.625rem 0",
       marginBottom: "20px",
       color: theme.palette.common.white,
       width: "100%",
@@ -18,9 +12,8 @@ const HeaderStyles = makeStyles((theme: Theme) =>
       transition: "all 150ms ease 0s",
       alignItems: "center",
       flexFlow: "row nowrap",
-
       justifyContent: "flex-start",
-      position: "relative",
+      position: "fixed",
     },
     appResponsive: {
       margin: "20px 10px",
@@ -37,9 +30,6 @@ const HeaderStyles = makeStyles((theme: Theme) =>
       justifyContent: "space-between",
       display: "flex",
       flexWrap: "nowrap",
-    },
-    fixed: {
-      position: "fixed",
     },
     hidden: {
       width: "100%",
