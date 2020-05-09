@@ -1,3 +1,9 @@
+## [4.17.1](https://github.com/sentrei/sentrei/compare/v4.17.0...v4.17.1) (2020-05-09)
+
+### Bug Fixes
+
+- 🐛 refactor github actions test workflow ([8b1d0c4](https://github.com/sentrei/sentrei/commit/8b1d0c47521725a1d3e7a266b858fd8423477016)), closes [#1366](https://github.com/sentrei/sentrei/issues/1366)
+
 # [4.17.0](https://github.com/sentrei/sentrei/compare/v4.16.1...v4.17.0) (2020-05-09)
 
 ### Features
