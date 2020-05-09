@@ -1,3 +1,4 @@
+import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Head from "next/head";
@@ -15,6 +16,7 @@ const Index = ({t}: any): JSX.Element => (
     </Head>
     <Header fixed />
     <Container maxWidth="sm">
+      <Box pt={10} />
       <Typography variant="h4" component="h1" gutterBottom>
         {t("title")}
       </Typography>

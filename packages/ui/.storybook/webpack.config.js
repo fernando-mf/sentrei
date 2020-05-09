@@ -1,6 +1,7 @@
 const path = require("path");
 
 const aliases = {
+  "@sentrei/common": path.join(__dirname, "../../common/src"),
   "@sentrei/ui": path.join(__dirname, "../src"),
 };
 

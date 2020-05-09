@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "build-storybook -o out --loglevel warn",
+    "build": "build-storybook -o out",
     "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
     "clean:dist": "rimraf dist",
     "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
@@ -35,6 +35,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.10",
     "@material-ui/icons": "^4.9.1",
+    "@sentrei/common": "*",
     "@types/classnames": "^2.2.10",
     "@types/next": "^9.0.0",
     "@types/node": "^13.13.0",
