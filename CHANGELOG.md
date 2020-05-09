@@ -1,3 +1,13 @@
+# [4.18.0](https://github.com/sentrei/sentrei/compare/v4.17.2...v4.18.0) (2020-05-09)
+
+### Bug Fixes
+
+- 🐛 add i18n link ([639e889](https://github.com/sentrei/sentrei/commit/639e889a779073cb14ac51bb4a958702e6a481bc)), closes [#1374](https://github.com/sentrei/sentrei/issues/1374)
+
+### Features
+
+- 🎸 add header component ([43516b5](https://github.com/sentrei/sentrei/commit/43516b562749c17f98e58576747191c1dabd43d7))
+
 ## [4.17.2](https://github.com/sentrei/sentrei/compare/v4.17.1...v4.17.2) (2020-05-09)
 
 ### Bug Fixes
