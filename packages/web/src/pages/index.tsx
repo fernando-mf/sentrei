@@ -7,6 +7,8 @@ import React from "react";
 import {withTranslation} from "@sentrei/common/i18n";
 import Header from "@sentrei/ui/components/Header";
 import Link from "@sentrei/ui/components/Link";
+import Particle from "@sentrei/ui/components/Particle";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Index = ({t}: any): JSX.Element => (
   <>
@@ -15,6 +17,7 @@ const Index = ({t}: any): JSX.Element => (
       <meta name="Description" content="Sentrei landing page" />
     </Head>
     <Header />
+    <Particle />
     <Container maxWidth="sm">
       <Box pt={10} />
       <Typography variant="h4" component="h1" gutterBottom>
