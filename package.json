@@ -1,7 +1,6 @@
 {
   "name": "@sentrei/sentrei",
   "version": "4.20.2",
-  "private": true,
   "homepage": "https://github.com/sentrei/sentrei",
   "repository": {
     "type": "git",
@@ -24,7 +23,7 @@
     "lint": "yarn eclint:check && yarn eslint:check && yarn prettier:check && yarn sort-package-json:check",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "publish": "yarn publish --access public && lerna publish from-package --yes --dist-tag $DIST_TAG",
+    "publish": "lerna publish from-package --yes --dist-tag $DIST_TAG",
     "release": "semantic-release",
     "release-test": "semantic-release -d",
     "sentry": "lerna run sentry --stream --parallel",
