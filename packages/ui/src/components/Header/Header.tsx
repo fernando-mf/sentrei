@@ -2,6 +2,7 @@
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Drawer from "@material-ui/core/Drawer";
+import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -10,7 +11,6 @@ import Menu from "@material-ui/icons/Menu";
 import classNames from "classnames";
 import React from "react";
 import Scrollspy from "react-scrollspy";
-import Grid from "@material-ui/core/Grid";
 
 import Link from "@sentrei/ui/components/Link";
 
