@@ -7,6 +7,9 @@ const ParticlesComponent = (): JSX.Element => {
       <Particles
         params={{
           particles: {
+            color: {
+              value: "#33ffff"
+            },
             number: {
               value: 160,
               density: {
@@ -14,7 +17,7 @@ const ParticlesComponent = (): JSX.Element => {
               },
             },
             size: {
-              value: 3,
+              value: 30,
               random: true,
               anim: {
                 speed: 4,
