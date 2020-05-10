@@ -65,7 +65,7 @@ export default class Document extends NextDocument {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Helvetica:300,400,500,700&display=swap"
           />
-          <script src="../dist/first-input-delay.min.js" />
+          <script src="https://cdn.jsdelivr.net/npm/first-input-delay@0.1.3/dist/first-input-delay.min.js" />
         </Head>
         <body>
           <Main />
