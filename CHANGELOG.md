@@ -1,3 +1,9 @@
+# [4.20.0](https://github.com/sentrei/sentrei/compare/v4.19.0...v4.20.0) (2020-05-10)
+
+### Features
+
+- 🎸 add particle component ([3ea23b7](https://github.com/sentrei/sentrei/commit/3ea23b7145342c5a060c532e2e5c89bbf0f3aa36))
+
 # [4.19.0](https://github.com/sentrei/sentrei/compare/v4.18.0...v4.19.0) (2020-05-10)
 
 ### Features
