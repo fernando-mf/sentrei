@@ -29,6 +29,8 @@ jobs:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
       - uses: peter-evans/create-pull-request@v2
         with:
-          branch-suffix: short-commit-hash
           token: ${{ secrets.ACCESS_TOKEN }}
+          branch-suffix: create-pull-request/figma
           title: "chore: [sentrei-auto-pr]"
+          commit-message: "chore: [sentrei-auto-pr]"
+          committer: Shun Kakinoki <shunkakinoki@users.noreply.github.com>
