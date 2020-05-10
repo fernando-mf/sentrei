@@ -8,7 +8,7 @@ const ParticlesComponent = (): JSX.Element => {
         params={{
           particles: {
             color: {
-              value: "#33ffff"
+              value: "#33ffff",
             },
             number: {
               value: 160,
