@@ -25,6 +25,11 @@ const Index = ({t}: any): JSX.Element => (
       </Link>
     </Container>
     <Box pt={300} />
+    <section id="section-1">section 1</section>
+    <Box pt={300} />
+    <section id="section-2">section 2</section>
+    <Box pt={300} />
+    <section id="section-3">section 3</section>
   </>
 );
 

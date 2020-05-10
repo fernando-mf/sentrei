@@ -9,6 +9,8 @@ import Close from "@material-ui/icons/Close";
 import Menu from "@material-ui/icons/Menu";
 import classNames from "classnames";
 import React from "react";
+import Scrollspy from "react-scrollspy";
+import Grid from "@material-ui/core/Grid";
 
 import Link from "@sentrei/ui/components/Link";
 
@@ -59,10 +61,18 @@ export default function Header(): JSX.Element {
         <Button className={classes.title}>
           <Link href="/home">Sentrei</Link>
         </Button>
-
-        <Hidden smDown implementation="css">
-          Sentrei Link
-        </Hidden>
+        <Grid container alignItems="center" justify="center">
+          <Hidden smDown implementation="css">
+            <Scrollspy
+              items={["section-1", "section-2", "section-3"]}
+              currentClassName="is-current"
+            >
+              <Button href="#section-1">Section 1</Button>
+              <Button href="#section-2">Section 2</Button>
+              <Button href="#section-3">Section 3</Button>
+            </Scrollspy>
+          </Hidden>
+        </Grid>
         <Hidden mdUp>
           <IconButton
             color="inherit"
