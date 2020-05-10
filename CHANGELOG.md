@@ -1,3 +1,9 @@
+## [4.20.3](https://github.com/sentrei/sentrei/compare/v4.20.2...v4.20.3) (2020-05-10)
+
+### Bug Fixes
+
+- 🐛 add favicon ico ([1a87917](https://github.com/sentrei/sentrei/commit/1a87917ad57440452396daecc2c48180997c81b9))
+
 ## [4.20.2](https://github.com/sentrei/sentrei/compare/v4.20.1...v4.20.2) (2020-05-10)
 
 ### Bug Fixes
