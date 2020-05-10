@@ -1,3 +1,9 @@
+# [4.19.0](https://github.com/sentrei/sentrei/compare/v4.18.0...v4.19.0) (2020-05-10)
+
+### Features
+
+- 🎸 add spyscroll tabs ([a683719](https://github.com/sentrei/sentrei/commit/a683719baf581e41fd5773512f401cec7bf4d881))
+
 # [4.18.0](https://github.com/sentrei/sentrei/compare/v4.17.2...v4.18.0) (2020-05-09)
 
 ### Bug Fixes
