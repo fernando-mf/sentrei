@@ -1,3 +1,9 @@
+## [4.20.2](https://github.com/sentrei/sentrei/compare/v4.20.1...v4.20.2) (2020-05-10)
+
+### Bug Fixes
+
+- 🐛 same git commiter ([e0917a0](https://github.com/sentrei/sentrei/commit/e0917a03d3caf4bb422e87dbeb85c822448683d8)), closes [#1368](https://github.com/sentrei/sentrei/issues/1368)
+
 # [4.20.0](https://github.com/sentrei/sentrei/compare/v4.19.0...v4.20.0) (2020-05-10)
 
 ### Features
