@@ -59,7 +59,7 @@ export default function Header(): JSX.Element {
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
         <Button className={classes.title}>
-          <Link href="/home">Sentrei</Link>
+          <Link href="/">Sentrei</Link>
         </Button>
         <Grid container alignItems="center" justify="center">
           <Hidden smDown implementation="css">
