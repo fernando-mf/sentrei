@@ -73,7 +73,7 @@ jobs:
           echo "::set-env name=DIST_TAG::latest"
       - run: |
           cat <<< $(jq '.private = false' package.json) > package.json && npm publish . --tag $DIST_TAG || true
-          git reset package.json
+          cat <<< $(jq '.private = true' package.json) > package.json
           git stash && yarn run publish:lerna && git stash pop || true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
