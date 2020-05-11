@@ -1,3 +1,9 @@
+# [4.21.0](https://github.com/sentrei/sentrei/compare/v4.20.8...v4.21.0) (2020-05-11)
+
+### Features
+
+- 🎸 add custom error ([53e058b](https://github.com/sentrei/sentrei/commit/53e058bb8e81f276d644d745996060f074e78116))
+
 ## [4.20.8](https://github.com/sentrei/sentrei/compare/v4.20.7...v4.20.8) (2020-05-11)
 
 ### Bug Fixes
