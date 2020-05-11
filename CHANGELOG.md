@@ -1,3 +1,9 @@
+## [4.21.1](https://github.com/sentrei/sentrei/compare/v4.21.0...v4.21.1) (2020-05-11)
+
+### Bug Fixes
+
+- 🐛 add error reporting ([d111844](https://github.com/sentrei/sentrei/commit/d111844d89b9cd7c33255ee3b01e3ba60f1bf253))
+
 # [4.21.0](https://github.com/sentrei/sentrei/compare/v4.20.8...v4.21.0) (2020-05-11)
 
 ### Features
