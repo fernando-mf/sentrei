@@ -1,3 +1,15 @@
+## [4.20.8](https://github.com/sentrei/sentrei/compare/v4.20.7...v4.20.8) (2020-05-11)
+
+### Bug Fixes
+
+- **deps:** bump @types/react-dom from 16.9.7 to 16.9.8 ([1322372](https://github.com/sentrei/sentrei/commit/1322372630b02b421cf27ad64a3966110d7505ea))
+
+## [4.20.7](https://github.com/sentrei/sentrei/compare/v4.20.6...v4.20.7) (2020-05-11)
+
+### Bug Fixes
+
+- **deps:** bump @types/react from 16.9.34 to 16.9.35 ([bcdf813](https://github.com/sentrei/sentrei/commit/bcdf8139a8731c6795e1e18425514ae8d745c082))
+
 ## [4.20.6](https://github.com/sentrei/sentrei/compare/v4.20.5...v4.20.6) (2020-05-11)
 
 ### Bug Fixes
