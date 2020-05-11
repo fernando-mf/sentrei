@@ -2,9 +2,13 @@ require("dotenv").config();
 const path = require("path");
 const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
+const withImages = require('next-images');
 const withSass = require("@zeit/next-sass");
-const withSourceMaps = require("@zeit/next-source-maps");
-const withTM = require("next-transpile-modules")(["@sentrei/ui"]);
+const withSourceMaps = require("@zeit/next-source-maps")();
+const withTM = require("next-transpile-modules")([
+  "@sentrei/common",
+  "@sentrei/ui",
+]);
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
@@ -37,7 +41,7 @@ const nextConfig = {
     SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT,
     SENTRY_RELEASE: process.env.SENTRY_RELEASE,
   },
-  webpack: (config, {isServer}) => {
+  webpack: (config, options) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       ...aliases,
@@ -67,7 +71,7 @@ const nextConfig = {
       },
     });
     config.resolve.symlinks = true;
-    if (!isServer) {
+    if (!options.isServer) {
       config.resolve.alias["@sentry/node"] = "@sentry/browser";
     }
     return config;
@@ -79,6 +83,7 @@ module.exports = withPlugins(
     [withBundleAnalyzer],
     [withBundleStats],
     [withCSS],
+    [withImages],
     [withSass],
     [withSourceMaps],
     [withTM],

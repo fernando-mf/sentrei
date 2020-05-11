@@ -1,3 +1,4 @@
+import * as Sentry from "@sentry/node";
 import {NextPageContext} from "next/dist/next-server/lib/utils";
 import React from "react";
 
@@ -32,6 +33,7 @@ function getInitialProps({
   if (res) {
     statusCode = res.statusCode;
   } else if (err) {
+    Sentry.captureException(err);
     statusCode = err.statusCode;
   } else {
     statusCode = null;
