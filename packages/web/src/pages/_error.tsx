@@ -1,5 +1,3 @@
-import Button from "@material-ui/core/Button";
-import * as Sentry from "@sentry/browser";
 import {NextPageContext} from "next/dist/next-server/lib/utils";
 import React from "react";
 
