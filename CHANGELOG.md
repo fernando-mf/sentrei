@@ -1,3 +1,9 @@
+## [4.20.6](https://github.com/sentrei/sentrei/compare/v4.20.5...v4.20.6) (2020-05-11)
+
+### Bug Fixes
+
+- 🐛 npm ([e92fde5](https://github.com/sentrei/sentrei/commit/e92fde587545a205d032230869ef3a92d02b5e5a))
+
 ## [4.20.3](https://github.com/sentrei/sentrei/compare/v4.20.2...v4.20.3) (2020-05-10)
 
 ### Bug Fixes
