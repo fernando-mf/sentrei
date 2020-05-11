@@ -2,7 +2,7 @@ require("dotenv").config();
 const path = require("path");
 const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
-const withImages = require('next-images');
+const withImages = require("next-images");
 const withSass = require("@zeit/next-sass");
 const withSourceMaps = require("@zeit/next-source-maps")();
 const withTM = require("next-transpile-modules")([
