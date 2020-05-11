@@ -1,3 +1,4 @@
+import * as SentryBrowser from "@sentry/browser";
 import * as Sentry from "@sentry/node";
 import get from "lodash.get";
 
@@ -8,6 +9,12 @@ Sentry.init({
   dsn: process.env.SENTRY_DSN,
   environment: process.env.SENTRY_ENVIRONMENT,
   release: process.env.SENTRY_RELEASE,
+  beforeSend(event) {
+    if (isBrowser && event.exception) {
+      SentryBrowser.showReportDialog({eventId: event.event_id});
+    }
+    return event;
+  },
 });
 
 Sentry.configureScope(scope => {
