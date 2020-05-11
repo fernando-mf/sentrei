@@ -3610,9 +3610,9 @@
     yargs "^15.3.1"
 
 "@next/bundle-analyzer@^9.3.5":
-  version "9.3.6"
-  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-9.3.6.tgz#3d1f83b7e3ca0e9be5b755aa1d672b4f5df2cd6a"
-  integrity sha512-9Xrtd7aSd7dWWsBXBoW8JQ0xNTj1xNX3NoBge5UxRI5vb2e5rY9e0hLECVBvUzuMl86WgW//dOWVikB94DrhfA==
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-9.4.0.tgz#54afa02058db91d65885c7ccd86079e866f38132"
+  integrity sha512-0BbWf08re/EDnxkbYLLBAiZYGtRN2HMtZb1/aMppBgJqFxJRHXPRZ8CltW1Og+ZYBx3+cgcx52BeVUzDtSnmsQ==
   dependencies:
     webpack-bundle-analyzer "3.6.1"
 
@@ -5879,10 +5879,17 @@
     markdown-it-table-of-contents "^0.4.0"
     prismjs "^1.13.0"
 
-"@vuepress/plugin-active-header-links@1.4.1", "@vuepress/plugin-active-header-links@^1.4.1":
+"@vuepress/plugin-active-header-links@1.4.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-1.4.1.tgz#36c6952230f12056d18c63229e0e499c6ef74fe5"
   integrity sha512-xv/qDY6S8rHzLGDHtwn3XV7Gi3Fnevp6d3H18PFK3sNwT2KGzKIe2c7lbn1qHDRUWcxY7+EoT7zmdJwIeG6dWQ==
+  dependencies:
+    lodash.debounce "^4.0.8"
+
+"@vuepress/plugin-active-header-links@^1.4.1":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-1.5.0.tgz#a7b9ce361e97119928f5209aeda69b699205bd31"
+  integrity sha512-jVMOo4mgGpRe7dNopsLEsoUvQQFDIZmM1IhOJi9bsv6NLRPP3Ej2MwIYV+JQ1akSQn9zmGB8t6aO9DKRaK8J3g==
   dependencies:
     lodash.debounce "^4.0.8"
 
@@ -5894,9 +5901,9 @@
     lodash.debounce "^4.0.8"
 
 "@vuepress/plugin-google-analytics@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-google-analytics/-/plugin-google-analytics-1.4.1.tgz#d537e7ed026e7808d1d9d186880e595b04fe0868"
-  integrity sha512-s43V5QHdTz0ayfy5vZrfMPpZzJBsj9L79TaxyMux1jOviS7oeWqkvNSblaHwP4Y8BxISehsKte8qsblQEN3zvQ==
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-google-analytics/-/plugin-google-analytics-1.5.0.tgz#07a9783739a552e3e4c435e3e2ad64432a540002"
+  integrity sha512-VJo7igbrkZdl02rkCnGmfr124o7qKkY8YfZtsGTsXDMpwP43FDQjsZVB2TLXHdaKoeVQr3khD4wKKklGzpiOGg==
 
 "@vuepress/plugin-last-updated@1.4.1":
   version "1.4.1"
