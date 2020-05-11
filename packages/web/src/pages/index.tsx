@@ -16,7 +16,7 @@ const Index = ({t}: any): JSX.Element => (
       <title>Sentrei</title>
       <meta name="Description" content="Sentrei landing page" />
     </Head>
-    <Header />
+    <Header imgLogoPath="a" />
     <Particle />
     <Container maxWidth="sm">
       <Box pt={10} />

@@ -9,6 +9,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Close from "@material-ui/icons/Close";
 import Menu from "@material-ui/icons/Menu";
 import classNames from "classnames";
+import PropTypes from "prop-types";
 import React from "react";
 import Scrollspy from "react-scrollspy";
 
@@ -16,7 +17,7 @@ import Link from "@sentrei/ui/components/Link";
 
 import HeaderStyles from "./HeaderStyles";
 
-export default function Header(): JSX.Element {
+export default function Header(props: any): JSX.Element {
   const classes = HeaderStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const appBarClasses = classNames({
@@ -24,6 +25,7 @@ export default function Header(): JSX.Element {
     [classes.transparent]: true,
     [classes.primary]: false,
   });
+  const {imgLogoPath} = props;
 
   const headerColorChange = (): void => {
     const windowsScrollTop = window.pageYOffset;
@@ -59,7 +61,14 @@ export default function Header(): JSX.Element {
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
         <Button className={classes.title}>
-          <Link href="/">Sentrei</Link>
+          <Link href="/">
+            <img
+              src="http://placekitten.com/25/25"
+              alt="Kitten"
+              height="25"
+              width="25"
+            />
+          </Link>
         </Button>
         <Grid container alignItems="center" justify="center">
           <Hidden smDown implementation="css">
@@ -102,3 +111,7 @@ export default function Header(): JSX.Element {
     </AppBar>
   );
 }
+
+Header.propTypes = {
+  imgLogoPath: PropTypes.string.isRequired,
+};
