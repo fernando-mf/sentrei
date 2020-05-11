@@ -1,7 +1,7 @@
 import {NextPageContext} from "next/dist/next-server/lib/utils";
 import React from "react";
 
-function CustomError({
+function Error({
   statusCode,
 }: {
   statusCode: number | null | undefined;
@@ -39,6 +39,6 @@ function getInitialProps({
   return {namespacesRequired, statusCode};
 }
 
-CustomError.getInitialProps = getInitialProps;
+Error.getInitialProps = getInitialProps;
 
-export default CustomError;
+export default Error;
