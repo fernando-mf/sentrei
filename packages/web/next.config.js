@@ -1,5 +1,6 @@
 require("dotenv").config();
 const path = require("path");
+const optimizedImages = require("next-optimized-images");
 const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
 const withImages = require("next-images");
@@ -93,14 +94,7 @@ const nextConfig = {
 
 module.exports = withPlugins(
   [
-    [withBundleAnalyzer],
-    [withBundleStats],
-    [withCSS],
-    [withImages],
     [withOptimizedImages],
-    [withSass],
-    [withSourceMaps],
-    [withTM],
   ],
   nextConfig,
 );

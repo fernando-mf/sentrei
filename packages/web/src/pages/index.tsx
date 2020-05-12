@@ -17,19 +17,13 @@ const Index = ({t}: any): JSX.Element => (
       <title>Sentrei</title>
       <meta name="Description" content="Sentrei landing page" />
     </Head>
-    <img src={require("assets/images/banner.png")} alt="logo" />
+    <img src="../../assets/images/banner.png" alt="logo" />
     <Header
       logo={
         <picture>
-          <source
-            srcSet={require("@assets/images/banner.png?webp")}
-            type="image/webp"
-          />
-          <source
-            srcSet={require("@assets/images/banner.png")}
-            type="image/png"
-          />
-          <img src={require("@assets/images/banner.png")} alt="logo" />
+          <source srcSet="../../assets/images/banner.png" type="image/webp" />
+          <source srcSet="../../assets/images/banner.png" type="image/png" />
+          <img src="../../assets/images/banner.png" alt="logo" />
         </picture>
       }
     />
