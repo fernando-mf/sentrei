@@ -1,3 +1,21 @@
+## [4.21.11](https://github.com/sentrei/sentrei/compare/v4.21.10...v4.21.11) (2020-05-12)
+
+### Bug Fixes
+
+- **deps:** bump @material-ui/core from 4.9.13 to 4.9.14 ([0fd6a62](https://github.com/sentrei/sentrei/commit/0fd6a62438629adfd8ae1bbda0411389347bc2b3))
+
+## [4.21.10](https://github.com/sentrei/sentrei/compare/v4.21.9...v4.21.10) (2020-05-11)
+
+### Bug Fixes
+
+- **deps:** bump @vuepress/plugin-nprogress from 1.4.1 to 1.5.0 ([997fdfe](https://github.com/sentrei/sentrei/commit/997fdfeea292da0ae2b58209032cc5d42092e170))
+
+## [4.21.2](https://github.com/sentrei/sentrei/compare/v4.21.1...v4.21.2) (2020-05-11)
+
+### Bug Fixes
+
+- **deps:** bump gatsby from 2.21.21 to 2.21.22 ([8c8cc7d](https://github.com/sentrei/sentrei/commit/8c8cc7d289c72a59e8be2186fb0fe69c0b579e04))
+
 ## [4.21.1](https://github.com/sentrei/sentrei/compare/v4.21.0...v4.21.1) (2020-05-11)
 
 ### Bug Fixes
