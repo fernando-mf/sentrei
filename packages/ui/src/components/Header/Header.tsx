@@ -25,7 +25,7 @@ export default function Header(props: any): JSX.Element {
     [classes.transparent]: true,
     [classes.primary]: false,
   });
-  const {imgLogoPath} = props;
+  const {logo} = props;
 
   const headerColorChange = (): void => {
     const windowsScrollTop = window.pageYOffset;
@@ -61,14 +61,7 @@ export default function Header(props: any): JSX.Element {
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
         <Button className={classes.title}>
-          <Link href="/">
-            <img
-              src="http://placekitten.com/25/25"
-              alt="Kitten"
-              height="25"
-              width="25"
-            />
-          </Link>
+          <Link href="/">{logo}</Link>
         </Button>
         <Grid container alignItems="center" justify="center">
           <Hidden smDown implementation="css">
@@ -113,5 +106,5 @@ export default function Header(props: any): JSX.Element {
 }
 
 Header.propTypes = {
-  imgLogoPath: PropTypes.string.isRequired,
+  logo: PropTypes.node.isRequired,
 };

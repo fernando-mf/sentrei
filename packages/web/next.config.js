@@ -2,6 +2,7 @@ require("dotenv").config();
 const path = require("path");
 const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
+const withImages = require("next-images");
 const withSass = require("@zeit/next-sass");
 const withSourceMaps = require("@zeit/next-source-maps")();
 const withTM = require("next-transpile-modules")([
@@ -26,16 +27,19 @@ const withOptimizedImages = require("next-optimized-images")({
   handleImages: ["jpeg", "png", "ico", "svg", "webp", "gif"],
   optimizeImages: true,
   optimizeImagesInDev: true,
+  defaultImageLoader: "img-loader",
   mozjpeg: {
     quality: 80,
   },
   optipng: {
     optimizationLevel: 3,
   },
+  pngquant: false,
   gifsicle: {
     interlaced: true,
     optimizationLevel: 3,
   },
+  svgo: {},
   webp: {
     preset: "default",
     quality: 75,
@@ -43,6 +47,7 @@ const withOptimizedImages = require("next-optimized-images")({
 });
 
 const aliases = {
+  "@assets": path.join(__dirname, "assets"),
   "@sentrei/common": path.join(__dirname, "../common"),
   "@sentrei/ui": path.join(__dirname, "../ui"),
   "@sentrei/web": path.join(__dirname, "src"),
@@ -67,9 +72,8 @@ const nextConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
       ...aliases,
-      "@sentrei/common": require.resolve("@sentrei/common"),
-      "@sentrei/ui": require.resolve("@sentrei/ui"),
     };
+    config.resolve.modules.push(path.resolve("./"));
     config.plugins.push(
       new StatsWriterPlugin({
         filename: "webpack-stats.json",
@@ -82,16 +86,6 @@ const nextConfig = {
         },
       }),
     );
-    config.module.rules.push({
-      test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
-      use: {
-        loader: "url-loader",
-        options: {
-          limit: 100000,
-          name: "[name].[ext]",
-        },
-      },
-    });
     config.resolve.symlinks = true;
     return config;
   },
@@ -102,6 +96,7 @@ module.exports = withPlugins(
     [withBundleAnalyzer],
     [withBundleStats],
     [withCSS],
+    [withImages],
     [withOptimizedImages],
     [withSass],
     [withSourceMaps],

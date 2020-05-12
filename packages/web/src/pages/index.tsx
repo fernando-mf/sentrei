@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
@@ -16,7 +17,22 @@ const Index = ({t}: any): JSX.Element => (
       <title>Sentrei</title>
       <meta name="Description" content="Sentrei landing page" />
     </Head>
-    <Header imgLogoPath="a" />
+    <img src={require("assets/images/banner.png")} alt="logo" />
+    <Header
+      logo={
+        <picture>
+          <source
+            srcSet={require("@assets/images/banner.png?webp")}
+            type="image/webp"
+          />
+          <source
+            srcSet={require("@assets/images/banner.png")}
+            type="image/png"
+          />
+          <img src={require("@assets/images/banner.png")} alt="logo" />
+        </picture>
+      }
+    />
     <Particle />
     <Container maxWidth="sm">
       <Box pt={10} />
