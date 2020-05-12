@@ -1,6 +1,6 @@
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
-import * as Sentry from "@sentry/node";
+import * as Sentry from "@sentry/browser";
 import get from "lodash.get";
 import NextApp from "next/app";
 import Head from "next/head";

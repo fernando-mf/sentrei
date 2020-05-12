@@ -2,7 +2,6 @@ require("dotenv").config();
 const path = require("path");
 const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
-const withImages = require("next-images");
 const withSass = require("@zeit/next-sass");
 const withSourceMaps = require("@zeit/next-source-maps")();
 const withTM = require("next-transpile-modules")([
@@ -18,6 +17,13 @@ const withBundleStats = require("next-plugin-bundle-stats")({
   baseline: true,
   compare: false,
   json: true,
+});
+
+const withOptimizedImages = require("next-optimized-images")({
+  webp: {
+    preset: "default",
+    quality: 75,
+  },
 });
 
 const aliases = {
@@ -71,9 +77,6 @@ const nextConfig = {
       },
     });
     config.resolve.symlinks = true;
-    if (!options.isServer) {
-      config.resolve.alias["@sentry/node"] = "@sentry/browser";
-    }
     return config;
   },
 };
@@ -83,7 +86,7 @@ module.exports = withPlugins(
     [withBundleAnalyzer],
     [withBundleStats],
     [withCSS],
-    [withImages],
+    [withOptimizedImages],
     [withSass],
     [withSourceMaps],
     [withTM],

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as Sentry from "@sentry/node";
+import * as Sentry from "@sentry/browser";
 
 const handleException = function handleException(e: Error): void {
   Sentry.captureException(e);

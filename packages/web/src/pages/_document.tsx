@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {ServerStyleSheets as MaterialUiServerStyleSheets} from "@material-ui/core/styles";
+import * as Sentry from "@sentry/browser";
 import {DocumentInitialProps} from "next/dist/next-server/lib/utils";
 import NextDocument, {
   DocumentContext,

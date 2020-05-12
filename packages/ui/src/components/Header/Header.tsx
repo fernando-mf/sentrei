@@ -10,8 +10,8 @@ import Close from "@material-ui/icons/Close";
 import Menu from "@material-ui/icons/Menu";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import React from "react";
 import Scrollspy from "react-scrollspy";
+import React from "react";
 
 import Link from "@sentrei/ui/components/Link";
 
