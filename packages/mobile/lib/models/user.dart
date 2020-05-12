@@ -79,7 +79,6 @@ class User {
       'userId': userId,
       'email': email,
       'displayName': displayName,
-      'userId': userId,
       'photoUrl': photoUrl,
       'contact': contact,
       'dob': dob,

@@ -17,16 +17,7 @@ const Index = ({t}: any): JSX.Element => (
       <title>Sentrei</title>
       <meta name="Description" content="Sentrei landing page" />
     </Head>
-    <img src="../../assets/images/banner.png" alt="logo" />
-    <Header
-      logo={
-        <picture>
-          <source srcSet="../../assets/images/banner.png" type="image/webp" />
-          <source srcSet="../../assets/images/banner.png" type="image/png" />
-          <img src="../../assets/images/banner.png" alt="logo" />
-        </picture>
-      }
-    />
+    <Header logo={<></>} />
     <Particle />
     <Container maxWidth="sm">
       <Box pt={10} />
@@ -37,12 +28,55 @@ const Index = ({t}: any): JSX.Element => (
         Go to the about page
       </Link>
     </Container>
-    <Box pt={300} />
-    <section id="section-1">section 1</section>
-    <Box pt={300} />
-    <section id="section-2">section 2</section>
-    <Box pt={300} />
-    <section id="section-3">section 3</section>
+    <div className="row" id="section-1">
+      <picture>
+        <source
+          srcSet={require("../../public/images/banner.png?webp")}
+          type="image/webp"
+        />
+        <source
+          srcSet={require("../../public/images/banner.png")}
+          type="image/jpeg"
+        />
+        <img src={require("../../public/images/banner.png")} alt="logo" />
+      </picture>
+    </div>
+    <div className="row" id="section-2">
+      <picture>
+        <source
+          srcSet={require("../../public/images/banner.png?webp")}
+          type="image/webp"
+        />
+        <source
+          srcSet={require("../../public/images/banner.png")}
+          type="image/jpeg"
+        />
+        <img src={require("../../public/images/banner.png")} alt="logo" />
+      </picture>
+    </div>
+    <div className="row" id="section-3">
+      <picture>
+        <source
+          srcSet={require("../../public/images/banner.png?webp")}
+          type="image/webp"
+        />
+        <source
+          srcSet={require("../../public/images/banner.png")}
+          type="image/jpeg"
+        />
+        <img src={require("../../public/images/banner.png")} alt="logo" />
+      </picture>
+    </div>
+
+    <style jsx>{`
+      .row {
+        max-width: 880px;
+        margin: 300px auto 40px;
+      }
+      img {
+        max-width: 100%;
+      }
+    `}</style>
   </>
 );
 

@@ -1,15 +1,14 @@
 require("dotenv").config();
 const path = require("path");
-const optimizedImages = require("next-optimized-images");
 const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
-const withImages = require("next-images");
 const withSass = require("@zeit/next-sass");
-const withSourceMaps = require("@zeit/next-source-maps")();
 const withTM = require("next-transpile-modules")([
   "@sentrei/common",
   "@sentrei/ui",
 ]);
+// const withSourceMaps = require("@zeit/next-source-maps")();
+
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
@@ -22,7 +21,7 @@ const withBundleStats = require("next-plugin-bundle-stats")({
 });
 
 const withOptimizedImages = require("next-optimized-images")({
-  inlineImageLimit: 8192,
+  inlineImageLimit: -1,
   imagesFolder: "images",
   imagesName: "[name]-[hash].[ext]",
   handleImages: ["jpeg", "png", "ico", "svg", "webp", "gif"],
@@ -75,18 +74,20 @@ const nextConfig = {
       ...aliases,
     };
     config.resolve.modules.push(path.resolve("./"));
-    config.plugins.push(
-      new StatsWriterPlugin({
-        filename: "webpack-stats.json",
-        stats: {
-          context: "./src",
-          assets: true,
-          entrypoints: true,
-          chunks: true,
-          modules: true,
-        },
-      }),
-    );
+    if (process.env.NODE_ENV !== "production") {
+      config.plugins.push(
+        new StatsWriterPlugin({
+          filename: "webpack-stats.json",
+          stats: {
+            context: "./src",
+            assets: true,
+            entrypoints: true,
+            chunks: true,
+            modules: true,
+          },
+        }),
+      );
+    }
     config.resolve.symlinks = true;
     return config;
   },
@@ -94,7 +95,13 @@ const nextConfig = {
 
 module.exports = withPlugins(
   [
+    [withBundleAnalyzer],
+    [withBundleStats],
+    [withCSS],
     [withOptimizedImages],
+    [withSass],
+    // [withSourceMaps], #1462
+    [withTM],
   ],
   nextConfig,
 );
