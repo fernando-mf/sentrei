@@ -18,7 +18,7 @@ Sentry.init({
 
 Sentry.configureScope(scope => {
   scope.setTag("nodejs", process.version);
-  scope.setTag("runtimeEngine", isBrowser ? "browser" : "server");
+  // scope.setTag("runtimeEngine", isBrowser ? "browser" : "server");
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
