@@ -63,7 +63,7 @@ const nextConfig = {
     SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT,
     SENTRY_RELEASE: process.env.SENTRY_RELEASE,
   },
-  webpack: (config, options) => {
+  webpack: config => {
     config.resolve.alias = {
       ...config.resolve.alias,
       ...aliases,
