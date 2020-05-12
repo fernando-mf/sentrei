@@ -20,6 +20,22 @@ const withBundleStats = require("next-plugin-bundle-stats")({
 });
 
 const withOptimizedImages = require("next-optimized-images")({
+  inlineImageLimit: 8192,
+  imagesFolder: "images",
+  imagesName: "[name]-[hash].[ext]",
+  handleImages: ["jpeg", "png", "ico", "svg", "webp", "gif"],
+  optimizeImages: true,
+  optimizeImagesInDev: true,
+  mozjpeg: {
+    quality: 80,
+  },
+  optipng: {
+    optimizationLevel: 3,
+  },
+  gifsicle: {
+    interlaced: true,
+    optimizationLevel: 3,
+  },
   webp: {
     preset: "default",
     quality: 75,
