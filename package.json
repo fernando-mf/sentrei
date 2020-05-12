@@ -47,7 +47,7 @@
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/exec": "^5.0.0",
-    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.29.0",
     "commitizen": "^4.0.4",
     "eclint": "^2.8.1",
