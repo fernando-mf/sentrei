@@ -24,7 +24,7 @@ const withOptimizedImages = require("next-optimized-images")({
   inlineImageLimit: -1,
   imagesFolder: "images",
   imagesName: "[name]-[hash].[ext]",
-  handleImages: ["jpeg", "png", "ico", "svg", "webp", "gif"],
+  handleImages: ["jpeg", "png", "ico", "svg", "webp"],
   optimizeImages: true,
   optimizeImagesInDev: true,
   defaultImageLoader: "img-loader",
