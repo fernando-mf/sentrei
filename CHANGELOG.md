@@ -1,3 +1,9 @@
+## [4.21.21](https://github.com/sentrei/sentrei/compare/v4.21.20...v4.21.21) (2020-05-13)
+
+### Bug Fixes
+
+- yarn update deps ([97b0b48](https://github.com/sentrei/sentrei/commit/97b0b4839d81f45dcc55a4d6451776f229a5324b))
+
 ## [4.21.20](https://github.com/sentrei/sentrei/compare/v4.21.19...v4.21.20) (2020-05-13)
 
 ### Bug Fixes
