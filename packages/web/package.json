@@ -21,7 +21,6 @@
     "dev": "next",
     "export": "next export",
     "master": "yarn run swap:master && firebase use master && yarn run deploy:web",
-    "netlify": "netlify deploy --dir=out --prod -a ${NETLIFY_AUTH_TOKEN} -s ${NETLIFY_SITE_ID}",
     "relative-ci": "relative-ci-agent",
     "sentry": "sentry-cli releases new -p sentrei ${SENTRY_RELEASE} && sentry-cli releases set-commits --auto ${SENTRY_RELEASE} && sentry-cli releases finalize ${SENTRY_RELEASE} && sentry-cli releases deploys ${SENTRY_RELEASE} new -e ${SENTRY_ENVIRONMENT}",
     "staging:alpha": "yarn run swap:alpha && firebase use alpha && yarn run deploy:staging-web",
@@ -45,7 +44,7 @@
     "@stripe/stripe-js": "^1.4.0",
     "@types/lodash.get": "^4.4.6",
     "@types/next": "^9.0.0",
-    "@types/node": "^13.13.0",
+    "@types/node": "^14.0.0",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
@@ -98,7 +97,6 @@
     "babel-plugin-istanbul": "^6.0.0",
     "cross-env": "^7.0.2",
     "cypress": "^4.4.1",
-    "netlify-cli": "^2.50.0",
     "start-server-and-test": "^1.11.0"
   },
   "publishConfig": {
