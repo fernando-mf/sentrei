@@ -1,9 +1,9 @@
 const {resolve} = require("path");
 const {existsSync, lstatSync, readdirSync} = require("fs");
 
-function readWeekFileList(year) {
+function readDayFileList(year, moon) {
   const fileList = [];
-  const dirPath = resolve(`./src/week/${year}`);
+  const dirPath = resolve(`./src/day/${year}/${moon}/`);
   const isDir = existsSync(dirPath) && lstatSync(dirPath).isDirectory();
   if (!isDir) {
     return fileList;
@@ -13,11 +13,11 @@ function readWeekFileList(year) {
   files.forEach(item => {
     const currentFile = item.slice(0, 2);
     fileList.push([
-      `/week/${year}/${currentFile}`,
-      `${year} Week ${currentFile}`,
+      `/day/${year}/${moon}/${currentFile}`,
+      `${year}/${moon}/${currentFile}`,
     ]);
   });
   return fileList.reverse();
 }
 
-module.exports = readWeekFileList;
+module.exports = readDayFileList;
