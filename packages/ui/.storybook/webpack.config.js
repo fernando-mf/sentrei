@@ -25,6 +25,7 @@ module.exports = ({config}) => {
     ],
   });
 
+  // Temporary for next-i18n core-js 2
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [
