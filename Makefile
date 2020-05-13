@@ -34,3 +34,6 @@ nodeenv:
 yarn:
 	yarn install --dev --upgrade latest
 	yarn bootstrap
+
+yarn-husky:
+	yarn add -D -W git-cz husky
