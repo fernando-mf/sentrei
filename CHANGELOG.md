@@ -1,3 +1,9 @@
+## [4.21.24](https://github.com/sentrei/sentrei/compare/v4.21.23...v4.21.24) (2020-05-13)
+
+### Bug Fixes
+
+- dockerfile apk update ([5cdbf74](https://github.com/sentrei/sentrei/commit/5cdbf7499f1c3bf2bad86d43df349d1c77a152ce))
+
 ## [4.21.23](https://github.com/sentrei/sentrei/compare/v4.21.22...v4.21.23) (2020-05-13)
 
 ### Bug Fixes
