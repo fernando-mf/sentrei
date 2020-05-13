@@ -11,7 +11,6 @@ RUN set -x && \
     libtool automake autoconf nasm vips-dev fftw-dev gcc g++ make libpng-dev libc6-compat
 
 RUN yarn install --frozen-lockfile && \
-    cat package.json && \
     yarn run typescript
 
 WORKDIR /app/packages/web
