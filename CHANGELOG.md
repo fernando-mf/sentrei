@@ -1,3 +1,9 @@
+## [4.21.27](https://github.com/sentrei/sentrei/compare/v4.21.26...v4.21.27) (2020-05-13)
+
+### Bug Fixes
+
+- **deps:** bump fastlane from 2.146.0 to 2.147.0 in /packages/mobile/ios ([87686b3](https://github.com/sentrei/sentrei/commit/87686b3ab9c15f5edd7104e779842d6df025eff4))
+
 ## [4.21.25](https://github.com/sentrei/sentrei/compare/v4.21.24...v4.21.25) (2020-05-13)
 
 ### Bug Fixes
