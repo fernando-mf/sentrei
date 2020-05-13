@@ -1,3 +1,9 @@
+# [4.23.0](https://github.com/sentrei/sentrei/compare/v4.22.0...v4.23.0) (2020-05-13)
+
+### Features
+
+- add proper storybook webpack config ([53554eb](https://github.com/sentrei/sentrei/commit/53554ebd361e29531363cb2a5b0e2a5a28f25a31))
+
 # [4.22.0](https://github.com/sentrei/sentrei/compare/v4.21.27...v4.22.0) (2020-05-13)
 
 ### Features
