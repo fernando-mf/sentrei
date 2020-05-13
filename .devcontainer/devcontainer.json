@@ -1,25 +1,18 @@
 {
   "name": "sentrei",
   "dockerFile": "Dockerfile",
-
-  // Set *default* container specific settings.json values on container create.
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+    "terminal.integrated.shell.linux": "/bin/zsh"
   },
-
-  // Add the IDs of extensions you want installed when the container is created.
-  "extensions": [],
-
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "extensions": [
+    "ms-vsonline.vsonline",
+    "GitHub.vscode-pull-request-github",
+    "MS-vsliveshare.vsliveshare",
+    "VisualStudioExptTeam.vscodeintellicode"
+  ],
   "forwardPorts": [3000],
-
-  // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "uname -a",
-
-  // Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-in-docker.
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ]
-  // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-  // "remoteUser": "vscode"
 }
