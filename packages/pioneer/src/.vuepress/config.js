@@ -60,7 +60,7 @@ module.exports = {
       ["/mission/", "Mission"],
       ["/project/", "Project"],
       {
-        title: "Week",
+        title: "2020 Week",
         collapsable: true,
         children: readWeekFileList("2020"),
       },
