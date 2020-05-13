@@ -1,4 +1,5 @@
-const readWeekFiles = require("./scripts/week.js");
+const readDayFileList = require("./scripts/day.js");
+const readWeekFileList = require("./scripts/week.js");
 
 module.exports = {
   title: "pioneer",
@@ -61,7 +62,12 @@ module.exports = {
       {
         title: "Week",
         collapsable: true,
-        children: readWeekFiles("2020"),
+        children: readWeekFileList("2020"),
+      },
+      {
+        title: "2020/05",
+        collapsable: true,
+        children: readDayFileList("2020", "05"),
       },
     ],
     yuu: {
