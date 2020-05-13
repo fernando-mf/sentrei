@@ -1,3 +1,9 @@
+# [4.22.0](https://github.com/sentrei/sentrei/compare/v4.21.27...v4.22.0) (2020-05-13)
+
+### Features
+
+- add dockerfile yarn ([5c34f4f](https://github.com/sentrei/sentrei/commit/5c34f4fdefa6fe860ce03331fec895197466b7a4))
+
 ## [4.21.27](https://github.com/sentrei/sentrei/compare/v4.21.26...v4.21.27) (2020-05-13)
 
 ### Bug Fixes
