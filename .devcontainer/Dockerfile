@@ -7,6 +7,7 @@ FROM ubuntu:18.04
 # property in devcontainer.json to use it. On Linux, the container user's GID/UIDs
 # will be updated to match your local UID/GID (when using the dockerFile property).
 # See https://aka.ms/vscode-remote/containers/non-root-user for details.
+
 ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
@@ -25,7 +26,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Configure apt and install packages
 RUN apt-get update \
     && apt-get -y install --no-install-recommends apt-utils dialog wget ca-certificates 2>&1 \
-    && nodejs npm \
     #
     # Verify git, common tools / libs installed, add/modify non-root user, optionally install zsh
     && wget -q -O /tmp/common-setup.sh $COMMON_SCRIPT_SOURCE \
