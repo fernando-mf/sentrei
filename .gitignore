@@ -71,9 +71,6 @@
 **/web/out
 **/web/cypress/videos
 
-# Netlify related.
-.netlify
-
 # Yarn related.
 .yarn
 .yarnrc

@@ -571,11 +571,6 @@ jobs:
       - working-directory: packages/web
         run: |
           yarn run build
-        #   yarn run export
-        #   yarn run netlify
-        # env:
-        #   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        #   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       - uses: docker/build-push-action@v1
         with:
           username: ${{ steps.secrets.outputs.DOCKER_USERNAME }}
