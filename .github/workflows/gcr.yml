@@ -29,4 +29,4 @@ jobs:
           project_id: "sentrei-${{ matrix.branch }}"
           export_default_credentials: true
       - run: |
-          make cleaner-${{ matrix.branch }}
+          make gcr-clean-${{ matrix.branch }}
