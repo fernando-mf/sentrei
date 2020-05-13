@@ -43,7 +43,6 @@
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.4.0",
     "@types/lodash.get": "^4.4.6",
-    "@types/next": "^9.0.0",
     "@types/node": "^14.0.0",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^16.9.34",
