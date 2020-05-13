@@ -2,6 +2,8 @@ FROM node:14.2.0-alpine as builder
 
 ENV NODE_ENV=production
 
+RUN apk --no-cache add g++ make libpng-dev
+
 WORKDIR /app
 COPY . /app
 
