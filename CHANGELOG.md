@@ -1,3 +1,9 @@
+## [4.21.23](https://github.com/sentrei/sentrei/compare/v4.21.22...v4.21.23) (2020-05-13)
+
+### Bug Fixes
+
+- 🐛 docker build path ([cac10f6](https://github.com/sentrei/sentrei/commit/cac10f6606c745dabd3941c820357c5ec2df3120))
+
 ## [4.21.21](https://github.com/sentrei/sentrei/compare/v4.21.20...v4.21.21) (2020-05-13)
 
 ### Bug Fixes
