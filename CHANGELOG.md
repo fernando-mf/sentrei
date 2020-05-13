@@ -1,3 +1,9 @@
+## [4.23.5](https://github.com/sentrei/sentrei/compare/v4.23.4...v4.23.5) (2020-05-13)
+
+### Bug Fixes
+
+- add pioneer updates ([427e3ee](https://github.com/sentrei/sentrei/commit/427e3ee3cbc0ac5740da170ac97832bf12f4420a))
+
 ## [4.23.4](https://github.com/sentrei/sentrei/compare/v4.23.3...v4.23.4) (2020-05-13)
 
 ### Bug Fixes
