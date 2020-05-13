@@ -79,7 +79,6 @@
     "@types/storybook__addon-links": "^5.2.1",
     "@types/storybook__addon-viewport": "^5.2.1",
     "@types/storybook__react": "^5.2.1",
-    "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
@@ -87,13 +86,15 @@
     "enzyme-to-json": "^3.4.4",
     "jest": "^26.0.0",
     "jest-enzyme": "^7.1.2",
+    "react-docgen-typescript-loader": "^3.7.2",
     "reg-notify-github-plugin": "^0.8.5",
     "reg-publish-gcs-plugin": "^0.9.0",
     "reg-simple-keygen-plugin": "^0.7.25",
     "reg-suit": "^0.10.0",
     "rimraf": "^3.0.2",
     "storycap": "^2.3.5",
-    "ts-jest": "^25.4.0"
+    "ts-jest": "^25.4.0",
+    "ts-loader": "^7.0.4"
   },
   "publishConfig": {
     "access": "public"
