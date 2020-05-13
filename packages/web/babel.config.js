@@ -8,7 +8,7 @@ const plugins = [
     },
   ],
 ];
-if (process.env.NODE_ENV === "test") {
+if (process.env.NODE_ENV !== "production") {
   plugins.push("istanbul");
 }
 module.exports = {

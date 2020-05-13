@@ -6,6 +6,7 @@
     "esModuleInterop": true,
     "noEmit": true,
     "paths": {
+      "@assets/*": ["assets/*"],
       "@sentrei/common/*": ["../common/dist/*"],
       "@sentrei/ui/*": ["../ui/dist/*"],
       "@sentrei/web/*": ["src/*"]

@@ -1,4 +1,4 @@
-import * as Sentry from "@sentry/node";
+import * as Sentry from "@sentry/browser";
 import * as firebase from "firebase/app";
 
 import "firebase/analytics";

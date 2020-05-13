@@ -9,9 +9,9 @@ class UpwardTransition<T> extends MaterialPageRoute<T> {
   Widget buildTransitions(BuildContext context, Animation<double> animation,
       Animation<double> secondaryAnimation, Widget child) {
     Routes.sendNavigationEventToFirebase(settings.name);
-    if (settings.isInitialRoute) {
-      return child;
-    }
+    // if (settings.isInitialRoute) {
+    //   return child;
+    // }
     return SlideTransition(
       position: Tween<Offset>(
         begin: Offset(0.0, 1.0),

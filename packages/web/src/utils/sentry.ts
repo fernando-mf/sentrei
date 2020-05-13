@@ -1,17 +1,16 @@
-import * as SentryBrowser from "@sentry/browser";
-import * as Sentry from "@sentry/node";
+import * as Sentry from "@sentry/browser";
 import get from "lodash.get";
 
 import isBrowser from "@sentrei/web/utils/isBrowser";
 
 Sentry.init({
-  enabled: process.env.NODE_ENV !== "test",
+  enabled: process.env.NODE_ENV !== "production",
   dsn: process.env.SENTRY_DSN,
   environment: process.env.SENTRY_ENVIRONMENT,
   release: process.env.SENTRY_RELEASE,
   beforeSend(event) {
     if (isBrowser && event.exception) {
-      SentryBrowser.showReportDialog({eventId: event.event_id});
+      Sentry.showReportDialog({eventId: event.event_id});
     }
     return event;
   },
@@ -19,7 +18,7 @@ Sentry.init({
 
 Sentry.configureScope(scope => {
   scope.setTag("nodejs", process.version);
-  scope.setTag("runtimeEngine", isBrowser ? "browser" : "server");
+  // scope.setTag("runtimeEngine", isBrowser ? "browser" : "server");
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

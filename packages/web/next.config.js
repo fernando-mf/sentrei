@@ -3,8 +3,12 @@ const path = require("path");
 const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
 const withSass = require("@zeit/next-sass");
-const withSourceMaps = require("@zeit/next-source-maps");
-const withTM = require("next-transpile-modules")(["@sentrei/ui"]);
+const withTM = require("next-transpile-modules")([
+  "@sentrei/common",
+  "@sentrei/ui",
+]);
+// const withSourceMaps = require("@zeit/next-source-maps")();
+
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
@@ -16,7 +20,34 @@ const withBundleStats = require("next-plugin-bundle-stats")({
   json: true,
 });
 
+const withOptimizedImages = require("next-optimized-images")({
+  inlineImageLimit: -1,
+  imagesFolder: "images",
+  imagesName: "[name]-[hash].[ext]",
+  handleImages: ["jpeg", "png", "ico", "svg", "webp", "gif"],
+  optimizeImages: true,
+  optimizeImagesInDev: true,
+  defaultImageLoader: "img-loader",
+  mozjpeg: {
+    quality: 80,
+  },
+  optipng: {
+    optimizationLevel: 3,
+  },
+  pngquant: false,
+  gifsicle: {
+    interlaced: true,
+    optimizationLevel: 3,
+  },
+  svgo: {},
+  webp: {
+    preset: "default",
+    quality: 75,
+  },
+});
+
 const aliases = {
+  "@assets": path.join(__dirname, "assets"),
   "@sentrei/common": path.join(__dirname, "../common"),
   "@sentrei/ui": path.join(__dirname, "../ui"),
   "@sentrei/web": path.join(__dirname, "src"),
@@ -37,39 +68,27 @@ const nextConfig = {
     SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT,
     SENTRY_RELEASE: process.env.SENTRY_RELEASE,
   },
-  webpack: (config, {isServer}) => {
+  webpack: config => {
     config.resolve.alias = {
       ...config.resolve.alias,
       ...aliases,
-      "@sentrei/common": require.resolve("@sentrei/common"),
-      "@sentrei/ui": require.resolve("@sentrei/ui"),
     };
-    config.plugins.push(
-      new StatsWriterPlugin({
-        filename: "webpack-stats.json",
-        stats: {
-          context: "./src",
-          assets: true,
-          entrypoints: true,
-          chunks: true,
-          modules: true,
-        },
-      }),
-    );
-    config.module.rules.push({
-      test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
-      use: {
-        loader: "url-loader",
-        options: {
-          limit: 100000,
-          name: "[name].[ext]",
-        },
-      },
-    });
-    config.resolve.symlinks = true;
-    if (!isServer) {
-      config.resolve.alias["@sentry/node"] = "@sentry/browser";
+    config.resolve.modules.push(path.resolve("./"));
+    if (process.env.NODE_ENV !== "production") {
+      config.plugins.push(
+        new StatsWriterPlugin({
+          filename: "webpack-stats.json",
+          stats: {
+            context: "./src",
+            assets: true,
+            entrypoints: true,
+            chunks: true,
+            modules: true,
+          },
+        }),
+      );
     }
+    config.resolve.symlinks = true;
     return config;
   },
 };
@@ -79,8 +98,9 @@ module.exports = withPlugins(
     [withBundleAnalyzer],
     [withBundleStats],
     [withCSS],
+    [withOptimizedImages],
     [withSass],
-    [withSourceMaps],
+    // [withSourceMaps], #1462
     [withTM],
   ],
   nextConfig,
