@@ -1,3 +1,10 @@
+## [4.21.25](https://github.com/sentrei/sentrei/compare/v4.21.24...v4.21.25) (2020-05-13)
+
+### Bug Fixes
+
+- remove types next ([92804de](https://github.com/sentrei/sentrei/commit/92804de65d2c687b6819db6d8b0588fdbecd5ea2))
+- remove types next@v2 ([43661ac](https://github.com/sentrei/sentrei/commit/43661ac935984579283ab623e3dbab2222ed4e4f))
+
 ## [4.21.24](https://github.com/sentrei/sentrei/compare/v4.21.23...v4.21.24) (2020-05-13)
 
 ### Bug Fixes
