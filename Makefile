@@ -30,3 +30,7 @@ pipenv:
 
 nodeenv:
 	nodeenv --node=$(NODE_ENV_VERSION) -p
+
+yarn:
+	yarn install --dev --upgrade latest
+	yarn bootstrap
