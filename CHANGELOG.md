@@ -1,3 +1,9 @@
+## [4.23.3](https://github.com/sentrei/sentrei/compare/v4.23.2...v4.23.3) (2020-05-13)
+
+### Bug Fixes
+
+- **deps:** bump ubuntu from 18.04 to 20.04 in /.devcontainer ([70443ad](https://github.com/sentrei/sentrei/commit/70443ad0a247454b55ca2e706cbfbf12b3b3b963))
+
 ## [4.23.2](https://github.com/sentrei/sentrei/compare/v4.23.1...v4.23.2) (2020-05-13)
 
 ### Bug Fixes
