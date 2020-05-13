@@ -10,21 +10,40 @@ module.exports = ({config}) => {
     ...config.resolve.alias,
     ...aliases,
   };
-  config.module.rules = [
-    {
-      test: /\.(ts|tsx)$/,
-      include: path.resolve(__dirname, "../src"),
-      use: [
-        require.resolve("ts-loader"),
-        {
-          loader: require.resolve("react-docgen-typescript-loader"),
-          options: {
-            tsconfigPath: path.resolve(__dirname, "../tsconfig.json"),
-          },
+
+  config.module.rules.push({
+    test: /\.(ts|tsx)$/,
+    include: path.resolve(__dirname, "../src"),
+    use: [
+      require.resolve("ts-loader"),
+      {
+        loader: require.resolve("react-docgen-typescript-loader"),
+        options: {
+          tsconfigPath: path.resolve(__dirname, "../tsconfig.json"),
         },
-      ],
-    },
-  ];
+      },
+    ],
+  });
+
+  config.module.rules.push({
+    test: /\.(ts|tsx)$/,
+    use: [
+      {
+        loader: require.resolve("babel-loader"),
+        options: {
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                useBuiltIns: "usage",
+                corejs: 3,
+              },
+            ],
+          ],
+        },
+      },
+    ],
+  });
 
   config.resolve.extensions.push(".ts", ".tsx");
 
