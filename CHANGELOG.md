@@ -1,3 +1,9 @@
+## [4.21.20](https://github.com/sentrei/sentrei/compare/v4.21.19...v4.21.20) (2020-05-13)
+
+### Bug Fixes
+
+- fix pr template ([0f059f8](https://github.com/sentrei/sentrei/commit/0f059f859237f66d1e735a520f3315fcb236cdff))
+
 ## [4.21.19](https://github.com/sentrei/sentrei/compare/v4.21.18...v4.21.19) (2020-05-13)
 
 ### Bug Fixes
