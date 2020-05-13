@@ -35,10 +35,6 @@ const withOptimizedImages = require("next-optimized-images")({
     optimizationLevel: 3,
   },
   pngquant: false,
-  gifsicle: {
-    interlaced: true,
-    optimizationLevel: 3,
-  },
   svgo: {},
   webp: {
     preset: "default",
