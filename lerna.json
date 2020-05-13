@@ -2,7 +2,6 @@
   "packages": ["packages/*"],
   "version": "fixed",
   "npmClient": "yarn",
-  "npmClientArgs": ["--frozen-lockfile", "--ignore-optional", "--production"],
   "useWorkspaces": true,
   "command": {
     "publish": {
