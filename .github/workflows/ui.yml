@@ -11,7 +11,7 @@ jobs:
       - id: change
         run: |
           git fetch --quiet
-          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- packages/ui yarn.lock; then
+          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- packages/common packages/ui yarn.lock; then
             echo ::set-output name=changed::'false' && exit 0
           else
             echo ::set-output name=changed::'true' && exit 0
