@@ -1,14 +1,14 @@
 NODE_ENV_VERSION = 14.2.0
 
-cleaner-alpha:
+gcr-clean-alpha:
 	gcloud container images list-tags gcr.io/sentrei-alpha/sentrei --filter='-tags:*' --format='get(digest)' --limit=unlimited | \
 	xargs -I {arg} gcloud container images delete "gcr.io/sentrei-alpha/sentrei@{arg}" --quiet
 
-cleaner-beta:
+gcr-clean-beta:
 	gcloud container images list-tags gcr.io/sentrei-beta/sentrei --filter='-tags:*' --format='get(digest)' --limit=unlimited | \
 	xargs -I {arg} gcloud container images delete "gcr.io/sentrei-beta/sentrei@{arg}" --quiet
 
-cleaner-master:
+gcr-clean-master:
 	gcloud container images list-tags gcr.io/sentrei-master/sentrei --filter='-tags:*' --format='get(digest)' --limit=unlimited | \
 	xargs -I {arg} gcloud container images delete "gcr.io/sentrei-master/sentrei@{arg}" --quiet
 
