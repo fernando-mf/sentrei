@@ -5,10 +5,15 @@
     "terminal.integrated.shell.linux": "/bin/zsh"
   },
   "extensions": [
-    "ms-vsonline.vsonline",
+    "eamodio.gitlens",
+    "foxundermoon.shell-format",
     "GitHub.vscode-pull-request-github",
+    "ms-azuretools.vscode-docker",
     "MS-vsliveshare.vsliveshare",
-    "VisualStudioExptTeam.vscodeintellicode"
+    "ms-vsonline.vsonline",
+    "oderwat.indent-rainbow",
+    "timonwong.shellcheck",
+    "VisualStudioExptTeam.vscodeintellicode",
   ],
   "forwardPorts": [3000],
   "postCreateCommand": "uname -a",
