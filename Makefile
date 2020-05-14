@@ -35,5 +35,8 @@ yarn:
 	yarn install --dev --upgrade latest
 	yarn run bootstrap
 
+yarn-eslint:
+	yarn add -D -W eslint-config-airbnb-typescript eslint-config-prettier eslint-plugin-prettier
+
 yarn-husky:
 	yarn add -D -W git-cz husky
