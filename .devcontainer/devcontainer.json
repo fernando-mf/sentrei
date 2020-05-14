@@ -13,7 +13,7 @@
     "ms-vsonline.vsonline",
     "oderwat.indent-rainbow",
     "timonwong.shellcheck",
-    "VisualStudioExptTeam.vscodeintellicode",
+    "VisualStudioExptTeam.vscodeintellicode"
   ],
   "forwardPorts": [3000],
   "postCreateCommand": "uname -a",
