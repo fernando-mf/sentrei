@@ -1,3 +1,13 @@
+# [4.24.0](https://github.com/sentrei/sentrei/compare/v4.23.6...v4.24.0) (2020-05-14)
+
+### Bug Fixes
+
+- 🐛 add get serverside props ([be80114](https://github.com/sentrei/sentrei/commit/be80114e1cd7f903c5b41bc93dcba4f0d55c3e0f))
+
+### Features
+
+- 🎸 add get server side props ([b42b878](https://github.com/sentrei/sentrei/commit/b42b8789c3466212f3e5f193633fff7d281aca78))
+
 ## [4.23.6](https://github.com/sentrei/sentrei/compare/v4.23.5...v4.23.6) (2020-05-14)
 
 ### Bug Fixes
