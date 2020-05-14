@@ -10,7 +10,7 @@ import Link from "@sentrei/ui/components/Link";
 import ProTip from "@sentrei/ui/components/ProTip";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function About({t}: any): JSX.Element {
+function Custom404({t}: any): JSX.Element {
   return (
     <Container maxWidth="sm">
       <Box my={4}>
@@ -36,4 +36,4 @@ export const getServerSideProps: GetServerSideProps = async () => {
   };
 };
 
-export default withTranslation("common")(About);
+export default withTranslation("common")(Custom404);
