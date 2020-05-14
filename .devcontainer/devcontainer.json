@@ -5,7 +5,10 @@
     "terminal.integrated.shell.linux": "/bin/zsh"
   },
   "extensions": [
+    "dart-code.flutter",
+    "dbaeumer.vscode-eslint",
     "eamodio.gitlens",
+    "editorconfig.editorconfig",
     "foxundermoon.shell-format",
     "GitHub.vscode-pull-request-github",
     "ms-azuretools.vscode-docker",
@@ -13,9 +16,11 @@
     "ms-vsonline.vsonline",
     "oderwat.indent-rainbow",
     "timonwong.shellcheck",
-    "VisualStudioExptTeam.vscodeintellicode"
+    "VisualStudioExptTeam.vscodeintellicode",
   ],
-  "forwardPorts": [3000],
+  "forwardPorts": [
+    3000
+  ],
   "postCreateCommand": "uname -a",
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
