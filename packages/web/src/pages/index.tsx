@@ -106,7 +106,7 @@ function Index({t}: any): JSX.Element {
   );
 }
 
-// eslint-disable-nextline @typescript-eslint/require-await
+// eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps = async () => {
   const namespacesRequired = ["common", "_error"];
 
