@@ -15,10 +15,6 @@ const HeaderStyles = makeStyles((theme: Theme) =>
       justifyContent: "flex-start",
       position: "fixed",
     },
-    appResponsive: {
-      margin: "20px 10px",
-      marginTop: "0px",
-    },
     container: {
       paddingRight: "15px",
       paddingLeft: "15px",
@@ -38,21 +34,15 @@ const HeaderStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.common.white,
     },
-    title: {
-      letterSpacing: "unset",
-      "&,& a": {
-        minWidth: "unset",
-        lineHeight: "30px",
-        fontSize: "18px",
-        borderRadius: "3px",
-        textTransform: "none",
-        whiteSpace: "nowrap",
-        color: "inherit",
-        "&:hover,&:focus": {
-          color: "inherit",
-          background: "transparent",
-        },
-      },
+    logo: {
+      maxWidth: "180px",
+      maxHeight: "180px",
+      minWidth: "60px",
+      minHeight: "60px",
+    },
+    menu: {
+      flexBox: true,
+      alignItems: "center",
     },
     transparent: {
       backgroundColor: "transparent !important",
