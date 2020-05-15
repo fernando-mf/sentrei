@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - "packages/blog/**"
+      - "packages/design/**"
       - "packages/pioneer/**"
 jobs:
   company:
@@ -10,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        environment: [blog, pioneer]
+        environment: [blog, design, pioneer]
     steps:
       - uses: actions/checkout@v2
         with:
