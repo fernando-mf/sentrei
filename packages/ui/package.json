@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/ui",
-  "version": "4.24.5",
+  "version": "4.24.7",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -93,7 +93,7 @@
     "reg-suit": "^0.10.0",
     "rimraf": "^3.0.2",
     "storycap": "^2.3.5",
-    "ts-jest": "^25.4.0",
+    "ts-jest": "^26.0.0",
     "ts-loader": "^7.0.4"
   },
   "publishConfig": {

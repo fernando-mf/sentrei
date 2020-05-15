@@ -1,3 +1,15 @@
+## [4.24.7](https://github.com/sentrei/sentrei/compare/v4.24.6...v4.24.7) (2020-05-15)
+
+### Bug Fixes
+
+- **deps:** bump jimp from 0.10.3 to 0.11.0 ([8413a93](https://github.com/sentrei/sentrei/commit/8413a9363cec61f2695e4dced8bfb1278af2c269))
+
+## [4.24.6](https://github.com/sentrei/sentrei/compare/v4.24.5...v4.24.6) (2020-05-15)
+
+### Bug Fixes
+
+- **deps:** bump gatsby from 2.21.32 to 2.21.33 ([fc79f45](https://github.com/sentrei/sentrei/commit/fc79f45108b65eb5d383e4508487744c02884a06))
+
 ## [4.24.5](https://github.com/sentrei/sentrei/compare/v4.24.4...v4.24.5) (2020-05-15)
 
 ### Bug Fixes
