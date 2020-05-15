@@ -1,5 +1,8 @@
 name: Web
-on: pull_request
+on: 
+  pull_request:
+    paths:
+      - 'packages/web/**'
 jobs:
   web:
     runs-on: ubuntu-latest
