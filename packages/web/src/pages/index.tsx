@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable global-require */
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
@@ -6,10 +7,22 @@ import {GetServerSideProps} from "next";
 import Head from "next/head";
 import React from "react";
 
+import styled from "styled-components";
+
 import {withTranslation} from "@sentrei/common/i18n";
 import Header from "@sentrei/ui/components/Header";
 import Link from "@sentrei/ui/components/Link";
 import Particle from "@sentrei/ui/components/Particle";
+
+const originalLandingBanner = require("../../public/images/banner-landing.png?resize&sizes[]=120&sizes[]=130&sizes[]=150");
+const pngLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=120&sizes[]=130&sizes[]=150");
+const webpLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=120&sizes[]=130&sizes[]=150");
+
+const Logo = styled.div`
+  max-width: 100%;
+  max-height: 100%;
+  align-items: "flex-start";
+`;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Index({t}: any): JSX.Element {
@@ -19,7 +32,17 @@ function Index({t}: any): JSX.Element {
         <title>Sentrei</title>
         <meta name="Description" content="Sentrei landing page" />
       </Head>
-      <Header logo={<></>} />
+      <Header
+        logo={
+          <Logo>
+            <picture>
+              <source srcSet={webpLandingBanner.srcSet} type="image/webp" />
+              <source srcSet={pngLandingBanner} type="image/png" />
+              <img src={originalLandingBanner} alt="logo" />
+            </picture>
+          </Logo>
+        }
+      />
       <Particle />
       <Container maxWidth="sm">
         <Box pt={10} />
