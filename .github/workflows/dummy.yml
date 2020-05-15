@@ -1,0 +1,8 @@
+name: Dummy
+on: push
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do nothing
+        run: exit 0
