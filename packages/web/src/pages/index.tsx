@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable global-require */
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
@@ -6,10 +7,21 @@ import {GetServerSideProps} from "next";
 import Head from "next/head";
 import React from "react";
 
+import styled from "styled-components";
+
 import {withTranslation} from "@sentrei/common/i18n";
 import Header from "@sentrei/ui/components/Header";
 import Link from "@sentrei/ui/components/Link";
 import Particle from "@sentrei/ui/components/Particle";
+
+const originalLandingBanner = require("../../public/images/banner-landing.png?resize&sizes[]=30&sizes[]=40&sizes[]=50");
+const pngLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=30&sizes[]=40&sizes[]=50");
+const webpLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=30&sizes[]=40&sizes[]=50");
+
+const Logo = styled.div`
+  max-width: 100%;
+  max-height: 100%;
+`;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Index({t}: any): JSX.Element {
@@ -19,7 +31,25 @@ function Index({t}: any): JSX.Element {
         <title>Sentrei</title>
         <meta name="Description" content="Sentrei landing page" />
       </Head>
-      <Header logo={<></>} />
+      <Header
+        logo={
+          <Logo>
+            <picture>
+              <source
+                media="(max-width: 45px)"
+                srcSet={webpLandingBanner.srcSet}
+                type="image/webp"
+              />
+              <source
+                media="(max-width: 45px)"
+                srcSet={pngLandingBanner}
+                type="image/png"
+              />
+              <img src={originalLandingBanner} alt="logo" />
+            </picture>
+          </Logo>
+        }
+      />
       <Particle />
       <Container maxWidth="sm">
         <Box pt={10} />
@@ -83,7 +113,7 @@ function Index({t}: any): JSX.Element {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
+// eslint-disable-nex  t-  line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps = async () => {
   const namespacesRequired = ["common", "_error"];
 
