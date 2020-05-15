@@ -2,6 +2,8 @@ name: Web
 on:
   pull_request:
     paths:
+      - "packages/common/**"
+      - "packages/ui/**"
       - "packages/web/**"
 jobs:
   web:
