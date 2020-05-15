@@ -8,23 +8,12 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.head_ref }}
-      - id: change
-        run: |
-          git fetch --quiet
-          if git diff --quiet origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }} -- packages/common packages/ui yarn.lock; then
-            echo ::set-output name=changed::'false' && exit 0
-          else
-            echo ::set-output name=changed::'true' && exit 0
-          fi
-      - if: steps.change.outputs.changed == 'true'
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: "14.2.0"
-      - if: steps.change.outputs.changed == 'true'
-        id: yarn-cache-path
+      - id: yarn-cache-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
-      - if: steps.change.outputs.changed == 'true'
-        id: cache
+      - id: cache
         uses: actions/cache@master
         with:
           path: |
@@ -35,35 +24,29 @@ jobs:
             yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             yarn-v1-${{ runner.os }}-
-      - if: steps.change.outputs.changed == 'true'
-        run: |
+      - run: |
           yarn install --frozen-lockfile
-      - if: steps.change.outputs.changed == 'true'
-        run: |
+      - run: |
           yarn run typescript
-      - if: steps.change.outputs.changed == 'true'
-        id: secrets
+      - id: secrets
         uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
         with:
           credentials: ${{ secrets.GCP_CREDENTIALS }}
           secrets: |-
             SERVICE_ACCOUNT_EMAIL:sentrei-master/github_master_email
             SERVICE_ACCOUNT_KEY:sentrei-master/github_master_key
-      - if: steps.change.outputs.changed == 'true'
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
           version: "286.0.0"
           service_account_email: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_EMAIL }}
           service_account_key: ${{ steps.secrets.outputs.SERVICE_ACCOUNT_KEY }}
           project_id: "sentrei-${{ github.event.pull_request.base.ref }}"
           export_default_credentials: true
-      - if: steps.change.outputs.changed == 'true'
-        id: reg
+      - id: reg
         run: |
           echo "::set-output name=actual::$(git rev-parse HEAD)"
           echo "::set-output name=expected::$(git rev-list -n 1 origin/${{ github.event.pull_request.base.ref }} packages/ui)"
-      - if: steps.change.outputs.changed == 'true'
-        working-directory: packages/ui
+      - working-directory: packages/ui
         run: |
           yarn run build
           yarn run test
@@ -72,8 +55,7 @@ jobs:
         env:
           ACTUAL_KEY: ${{ steps.reg.outputs.actual }}
           EXPECTED_KEY: ${{ steps.reg.outputs.expected }}
-      - if: steps.change.outputs.changed == 'true'
-        uses: codecov/codecov-action@v1
+      - uses: codecov/codecov-action@v1
         with:
           file: packages/ui/coverage/lcov.info
           name: sentrei

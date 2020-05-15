@@ -1,8 +1,15 @@
 name: Dummy
 on: push
 jobs:
+  mobile:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
+  ui:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
   web:
     runs-on: ubuntu-latest
     steps:
-      - name: Do nothing
-        run: exit 0
+      - run: exit 0
