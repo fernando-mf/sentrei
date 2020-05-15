@@ -14,9 +14,9 @@ import Header from "@sentrei/ui/components/Header";
 import Link from "@sentrei/ui/components/Link";
 import Particle from "@sentrei/ui/components/Particle";
 
-const originalLandingBanner = require("../../public/images/banner-landing.png?resize&sizes[]=30&sizes[]=40&sizes[]=50");
-const pngLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=30&sizes[]=40&sizes[]=50");
-const webpLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=30&sizes[]=40&sizes[]=50");
+const originalLandingBanner = require("../../public/images/banner-landing.png?resize&sizes[]=130&sizes[]=140&sizes[]=150");
+const pngLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=130&sizes[]=140&sizes[]=150");
+const webpLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=130&sizes[]=140&sizes[]=150");
 
 const Logo = styled.div`
   max-width: 100%;
@@ -35,16 +35,8 @@ function Index({t}: any): JSX.Element {
         logo={
           <Logo>
             <picture>
-              <source
-                media="(max-width: 45px)"
-                srcSet={webpLandingBanner.srcSet}
-                type="image/webp"
-              />
-              <source
-                media="(max-width: 45px)"
-                srcSet={pngLandingBanner}
-                type="image/png"
-              />
+              <source srcSet={webpLandingBanner.srcSet} type="image/webp" />
+              <source srcSet={pngLandingBanner} type="image/png" />
               <img src={originalLandingBanner} alt="logo" />
             </picture>
           </Logo>
