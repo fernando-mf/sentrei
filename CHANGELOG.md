@@ -1,3 +1,9 @@
+# [4.25.0](https://github.com/sentrei/sentrei/compare/v4.24.7...v4.25.0) (2020-05-15)
+
+### Features
+
+- 🎸 add proper banner ([78f49ca](https://github.com/sentrei/sentrei/commit/78f49cabfcbb51c14231efa85116ba8f9491c993))
+
 ## [4.24.7](https://github.com/sentrei/sentrei/compare/v4.24.6...v4.24.7) (2020-05-15)
 
 ### Bug Fixes
