@@ -60,7 +60,7 @@ export default function Header(props: any): JSX.Element {
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
-        <Button className={classes.title}>
+        <Button className={classes.logo}>
           <Link href="/">{logo}</Link>
         </Button>
         <Grid container alignItems="center" justify="center">
