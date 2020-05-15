@@ -14,13 +14,14 @@ import Header from "@sentrei/ui/components/Header";
 import Link from "@sentrei/ui/components/Link";
 import Particle from "@sentrei/ui/components/Particle";
 
-const originalLandingBanner = require("../../public/images/banner-landing.png?resize&sizes[]=130&sizes[]=140&sizes[]=150");
-const pngLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=130&sizes[]=140&sizes[]=150");
-const webpLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=130&sizes[]=140&sizes[]=150");
+const originalLandingBanner = require("../../public/images/banner-landing.png?resize&sizes[]=120&sizes[]=130&sizes[]=150");
+const pngLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=120&sizes[]=130&sizes[]=150");
+const webpLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=120&sizes[]=130&sizes[]=150");
 
 const Logo = styled.div`
   max-width: 100%;
   max-height: 100%;
+  align-items: "flex-start";
 `;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
