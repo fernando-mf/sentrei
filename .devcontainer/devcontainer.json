@@ -22,5 +22,5 @@
   "runServices": [],
   "postCreateCommand": "uname -a",
   "shutdownAction": "none",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspace"
 }
