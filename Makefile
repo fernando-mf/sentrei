@@ -33,6 +33,9 @@ pixelmator-pull:
 pixelmator-push:
 	pipenv run dvc push
 
+pixelmator-status:
+	pipenv run dvc status
+
 pipenv:
 	pipenv install --dev
 	. .venv/bin/activate
