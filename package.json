@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build --scope @sentrei/web",
+    "build": "lerna run build --stream",
     "clean": "lerna clean -y",
     "eclint:check": "eclint check $(git ls-files -- ':!*.jpeg' ':!:*.png' ':!:*.svg')",
     "eclint:fix": "eclint fix $(git ls-files -- ':!*.jpeg' ':!:*.png' ':!:*.svg')",

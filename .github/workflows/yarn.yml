@@ -27,6 +27,8 @@ jobs:
       - run: |
           yarn install --frozen-lockfile
       - run: |
+          yarn run typescript
+      - run: |
           yarn run test
       - if: failure()
         run: |
@@ -35,3 +37,5 @@ jobs:
           git config --global user.email 'shunkakinoki@users.noreply.github.com'
           git commit -am "[sentrei-auto-fix]"
           git push
+      - run: |
+          yarn run build

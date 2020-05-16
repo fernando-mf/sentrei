@@ -12,4 +12,4 @@ categories:
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-![](@design/figma/mobile/png/onboarding.png)
+![](@design/figma/mobile/png/Onboarding Button.png)

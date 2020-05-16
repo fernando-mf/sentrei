@@ -12,4 +12,4 @@ description: subtitle
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-![](@design/figma/const/png/Colours.png)
+![](@design/figma/const/png/Colours Black.png.png)
