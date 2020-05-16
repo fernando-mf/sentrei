@@ -1,3 +1,9 @@
+## [4.25.1](https://github.com/sentrei/sentrei/compare/v4.25.0...v4.25.1) (2020-05-16)
+
+### Bug Fixes
+
+- 🐛 design build bug ([97a07c5](https://github.com/sentrei/sentrei/commit/97a07c571b21ce61d7ccc75d6ad7386382297c7f))
+
 # [4.25.0](https://github.com/sentrei/sentrei/compare/v4.24.7...v4.25.0) (2020-05-15)
 
 ### Features
