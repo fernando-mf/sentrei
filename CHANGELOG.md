@@ -1,3 +1,9 @@
+## [4.25.2](https://github.com/sentrei/sentrei/compare/v4.25.1...v4.25.2) (2020-05-16)
+
+### Bug Fixes
+
+- **deps:** bump @next/bundle-analyzer from 9.4.0 to 9.4.1 ([936b13d](https://github.com/sentrei/sentrei/commit/936b13d968bdfe45b134b5f46f45c3cc4f8b421c))
+
 ## [4.25.1](https://github.com/sentrei/sentrei/compare/v4.25.0...v4.25.1) (2020-05-16)
 
 ### Bug Fixes
