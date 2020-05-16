@@ -5,6 +5,7 @@ const ParticlesComponent = (): JSX.Element => {
   return (
     <>
       <Particles
+        className="particle"
         params={{
           particles: {
             color: {
