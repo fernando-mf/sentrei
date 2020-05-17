@@ -8,6 +8,7 @@ import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
 import Banner from "@sentrei/ui/components/Banner";
+import Feature from "@sentrei/ui/components/Feature";
 import Footer from "@sentrei/ui/components/Footer";
 import Link from "@sentrei/ui/components/Link";
 import SpyHeader from "@sentrei/web/components/SpyHeader";
@@ -22,6 +23,7 @@ function Index({t}: any): JSX.Element {
       </Head>
       <SpyHeader />
       <Banner />
+      <Feature />
       <Container maxWidth="sm">
         <Box pt={10} />
         <Typography variant="h4" component="h1" gutterBottom>
