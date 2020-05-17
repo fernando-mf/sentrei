@@ -13,30 +13,38 @@ import Link from "@sentrei/ui/components/Link";
 const footers = [
   {
     title: "Company",
-    description: ["Team", "History", "Contact us", "Locations"],
-  },
-  {
-    title: "Features",
     description: [
-      "Cool stuff",
-      "Random feature",
-      "Team feature",
-      "Developer stuff",
-      "Another one",
+      {
+        title: "About",
+        link: "/about",
+        target: "",
+      },
     ],
   },
   {
     title: "Resources",
     description: [
-      "Resource",
-      "Resource name",
-      "Another resource",
-      "Final resource",
+      {
+        title: "Github",
+        link: "//github.com/sentrei",
+        target: "_blank",
+      },
     ],
   },
   {
     title: "Legal",
-    description: ["Privacy policy", "Terms of use"],
+    description: [
+      {
+        title: "Privacy policy",
+        link: "/privacy",
+        target: "",
+      },
+      {
+        title: "Terms of use",
+        link: "/terms",
+        target: "",
+      },
+    ],
   },
 ];
 
@@ -76,9 +84,14 @@ export default function StickyFooter(): JSX.Element {
               </Typography>
               <ul>
                 {footer.description.map(item => (
-                  <li key={item}>
-                    <Link href="#" variant="subtitle1" color="textSecondary">
-                      {item}
+                  <li key={item.title}>
+                    <Link
+                      href={item.link}
+                      target={item.target}
+                      variant="subtitle1"
+                      color="textSecondary"
+                    >
+                      {item.title}
                     </Link>
                   </li>
                 ))}

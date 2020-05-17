@@ -8,6 +8,7 @@ import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
 import Feature from "@sentrei/ui/components/Feature";
+import Footer from "@sentrei/ui/components/Footer";
 import Link from "@sentrei/ui/components/Link";
 import SpyHeader from "@sentrei/web/components/SpyHeader";
 
@@ -69,6 +70,7 @@ function Index({t}: any): JSX.Element {
           <img src={require("../../public/images/banner.png")} alt="logo" />
         </picture>
       </div>
+      <Footer />
     </>
   );
 }
