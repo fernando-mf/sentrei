@@ -19,7 +19,7 @@ import HeaderStyles from "./HeaderStyles";
 
 export default function Header(props: any): JSX.Element {
   const classes = HeaderStyles();
-  const {logo} = props;
+  const {logo, spy} = props;
 
   const appBarClasses = classNames({
     [classes.appBar]: true,
@@ -73,21 +73,25 @@ export default function Header(props: any): JSX.Element {
             <div className={classes.spy}>
               <Grid item>
                 <Hidden smDown implementation="css">
-                  <CustomScrollspy
-                    items={["section-1", "section-2", "section-3"]}
-                    className="menu"
-                    currentClassName="scroll-active-button"
-                  >
-                    <Button href="#section-1" className={classes.button}>
-                      <Typography>Section 1</Typography>
-                    </Button>
-                    <Button href="#section-2" className={classes.button}>
-                      <Typography>Section 2</Typography>
-                    </Button>
-                    <Button href="#section-3" className={classes.button}>
-                      <Typography>Section 3</Typography>
-                    </Button>
-                  </CustomScrollspy>
+                  {spy ? (
+                    <CustomScrollspy
+                      items={["section-1", "section-2", "section-3"]}
+                      className="menu"
+                      currentClassName="scroll-active-button"
+                    >
+                      <Button href="#section-1" className={classes.button}>
+                        <Typography>Section 1</Typography>
+                      </Button>
+                      <Button href="#section-2" className={classes.button}>
+                        <Typography>Section 2</Typography>
+                      </Button>
+                      <Button href="#section-3" className={classes.button}>
+                        <Typography>Section 3</Typography>
+                      </Button>
+                    </CustomScrollspy>
+                  ) : (
+                    <Button />
+                  )}
                 </Hidden>
               </Grid>
             </div>
@@ -117,6 +121,11 @@ export default function Header(props: any): JSX.Element {
   );
 }
 
+Header.defaultProps = {
+  spy: false,
+};
+
 Header.propTypes = {
   logo: PropTypes.node.isRequired,
+  spy: PropTypes.bool,
 };
