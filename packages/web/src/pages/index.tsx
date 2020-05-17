@@ -7,6 +7,7 @@ import Head from "next/head";
 import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
+import Banner from "@sentrei/ui/components/Banner";
 import Feature from "@sentrei/ui/components/Feature";
 import Footer from "@sentrei/ui/components/Footer";
 import Link from "@sentrei/ui/components/Link";
@@ -21,6 +22,7 @@ function Index({t}: any): JSX.Element {
         <meta name="Description" content="Sentrei landing page" />
       </Head>
       <SpyHeader />
+      <Banner />
       <Feature />
       <Container maxWidth="sm">
         <Box pt={10} />
