@@ -1,11 +1,11 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const HeaderStyles = makeStyles((theme: Theme) =>
+const BannerStyles = makeStyles((theme: Theme) =>
   createStyles({
-    feature: {
+    banner: {
       padding: theme.spacing(8, 0, 6),
     },
   }),
 );
 
-export default HeaderStyles;
+export default BannerStyles;

@@ -7,7 +7,7 @@ import Head from "next/head";
 import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
-import Feature from "@sentrei/ui/components/Feature";
+import Feature from "@sentrei/ui/components/Banner";
 import Footer from "@sentrei/ui/components/Footer";
 import Link from "@sentrei/ui/components/Link";
 import SpyHeader from "@sentrei/web/components/SpyHeader";

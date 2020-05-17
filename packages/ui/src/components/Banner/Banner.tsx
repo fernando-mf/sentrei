@@ -3,12 +3,12 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 
-import FeatureStyles from "./FeatureStyles";
+import BannerStyles from "./BannerStyles";
 
-export default function Feature(): JSX.Element {
-  const classes = FeatureStyles();
+export default function Banner(): JSX.Element {
+  const classes = BannerStyles();
   return (
-    <Container maxWidth="sm" component="main" className={classes.feature}>
+    <Container maxWidth="sm" component="main" className={classes.banner}>
       <Typography
         component="h1"
         variant="h2"
