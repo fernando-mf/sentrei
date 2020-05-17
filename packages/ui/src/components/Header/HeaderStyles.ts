@@ -26,13 +26,6 @@ const HeaderStyles = makeStyles((theme: Theme) =>
     margin: {
       margin: theme.spacing(1),
     },
-    spy: {
-      display: "none",
-      padding: theme.spacing(1),
-      [theme.breakpoints.up("sm")]: {
-        display: "block",
-      },
-    },
     primary: {
       backgroundColor: theme.palette.common.white,
     },
@@ -47,6 +40,13 @@ const HeaderStyles = makeStyles((theme: Theme) =>
       display: "flex",
       [theme.breakpoints.up("md")]: {
         display: "none",
+      },
+    },
+    spy: {
+      display: "none",
+      padding: theme.spacing(1),
+      [theme.breakpoints.up("sm")]: {
+        display: "block",
       },
     },
     transparent: {
