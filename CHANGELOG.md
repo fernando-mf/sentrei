@@ -1,3 +1,10 @@
+# [4.27.0](https://github.com/sentrei/sentrei/compare/v4.26.1...v4.27.0) (2020-05-17)
+
+### Features
+
+- 🎸 add banner logo ([1303bec](https://github.com/sentrei/sentrei/commit/1303bec4185e88dd50bde09ea426ff671041abdd))
+- 🎸 add testimonial section ([35b8d86](https://github.com/sentrei/sentrei/commit/35b8d8673d3d5ecdfbbbd0e9bd2235bff76cd453))
+
 ## [4.26.1](https://github.com/sentrei/sentrei/compare/v4.26.0...v4.26.1) (2020-05-17)
 
 ### Bug Fixes
