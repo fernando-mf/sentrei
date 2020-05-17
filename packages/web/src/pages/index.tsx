@@ -11,6 +11,7 @@ import Banner from "@sentrei/ui/components/Banner";
 import Feature from "@sentrei/ui/components/Feature";
 import Footer from "@sentrei/ui/components/Footer";
 import Link from "@sentrei/ui/components/Link";
+import Testimonial from "@sentrei/ui/components/Testimonial";
 import SpyHeader from "@sentrei/web/components/SpyHeader";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,6 +25,7 @@ function Index({t}: any): JSX.Element {
       <SpyHeader />
       <Banner />
       <Feature />
+      <Testimonial />
       <Container maxWidth="sm">
         <Box pt={10} />
         <Typography variant="h4" component="h1" gutterBottom>
