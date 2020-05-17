@@ -5,6 +5,9 @@ const BannerStyles = makeStyles((theme: Theme) =>
     banner: {
       padding: theme.spacing(8, 0, 6),
     },
+    margin: {
+      margin: theme.spacing(1),
+    },
   }),
 );
 
