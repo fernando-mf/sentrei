@@ -2,12 +2,8 @@
 import Avatar from "@material-ui/core/Avatar";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import IconButton from "@material-ui/core/IconButton";
 
 import Typography from "@material-ui/core/Typography";
-import AccessTime from "@material-ui/icons/AccessTime";
-import Dashboard from "@material-ui/icons/Dashboard";
-import GroupWork from "@material-ui/icons/GroupWork";
 
 import React from "react";
 
