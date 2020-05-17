@@ -1,3 +1,9 @@
+## [4.26.1](https://github.com/sentrei/sentrei/compare/v4.26.0...v4.26.1) (2020-05-17)
+
+### Bug Fixes
+
+- 🐛 add header conditioning ([e16fc98](https://github.com/sentrei/sentrei/commit/e16fc9838406eb7b48fae5f6f48a70a5138da7db))
+
 # [4.26.0](https://github.com/sentrei/sentrei/compare/v4.25.4...v4.26.0) (2020-05-17)
 
 ### Features
