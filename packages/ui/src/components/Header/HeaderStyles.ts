@@ -1,9 +1,9 @@
-import {createStyles, fade, makeStyles, Theme} from "@material-ui/core/styles";
+import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 const HeaderStyles = makeStyles((theme: Theme) =>
   createStyles({
     appBar: {
-      backgroundColor: theme.palette.common.white,
+      width: "100%",
     },
     grow: {
       flexGrow: 1,
@@ -11,36 +11,33 @@ const HeaderStyles = makeStyles((theme: Theme) =>
     menuButton: {
       marginRight: theme.spacing(2),
     },
-    title: {
-      display: "none",
-      [theme.breakpoints.up("sm")]: {
-        display: "block",
-      },
-    },
-    inputRoot: {
-      color: "inherit",
-    },
-    inputInput: {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-      transition: theme.transitions.create("width"),
-      width: "100%",
-      [theme.breakpoints.up("md")]: {
-        width: "20ch",
-      },
-    },
     logo: {
       maxWidth: "180px",
       maxHeight: "180px",
       minWidth: "60px",
       minHeight: "60px",
     },
+    margin: {
+      margin: theme.spacing(1),
+    },
+    scroll: {
+      active: {
+        color: theme.palette.primary,
+      },
+    },
+    spy: {
+      display: "none",
+      padding: theme.spacing(1),
+      [theme.breakpoints.up("sm")]: {
+        display: "block",
+      },
+    },
     primary: {
       backgroundColor: theme.palette.common.white,
     },
     sectionDesktop: {
       display: "none",
+      padding: theme.spacing(1),
       [theme.breakpoints.up("md")]: {
         display: "flex",
       },
