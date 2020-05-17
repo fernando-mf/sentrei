@@ -1,3 +1,9 @@
+# [4.26.0](https://github.com/sentrei/sentrei/compare/v4.25.4...v4.26.0) (2020-05-17)
+
+### Features
+
+- 🎸 add feature section ([808c4fa](https://github.com/sentrei/sentrei/commit/808c4fa12d4d795830cab460bdea17d7ad14ec25))
+
 ## [4.25.4](https://github.com/sentrei/sentrei/compare/v4.25.3...v4.25.4) (2020-05-17)
 
 ### Bug Fixes
