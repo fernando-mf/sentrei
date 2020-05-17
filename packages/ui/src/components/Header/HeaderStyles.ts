@@ -5,6 +5,12 @@ const HeaderStyles = makeStyles((theme: Theme) =>
     appBar: {
       width: "100%",
     },
+    button: {
+      "&:hover": {
+        color: theme.palette.primary.main,
+      },
+      margin: theme.spacing(1),
+    },
     grow: {
       flexGrow: 1,
     },
@@ -19,11 +25,6 @@ const HeaderStyles = makeStyles((theme: Theme) =>
     },
     margin: {
       margin: theme.spacing(1),
-    },
-    scroll: {
-      active: {
-        color: theme.palette.primary,
-      },
     },
     spy: {
       display: "none",

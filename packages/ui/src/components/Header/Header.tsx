@@ -14,8 +14,10 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 import Scrollspy from "react-scrollspy";
+import styled from "styled-components";
 
 import Link from "@sentrei/ui/components/Link";
+import Theme from "@sentrei/ui/containers/Theme";
 
 import HeaderStyles from "./HeaderStyles";
 
@@ -70,6 +72,12 @@ export default function Header(props: any): JSX.Element {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
+
+  const CustomScrollspy = styled(Scrollspy)`
+    .scroll-active-button {
+      color: ${Theme.palette.primary.main};
+    }
+  `;
 
   // const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>): void => {
   //   setMobileMoreAnchorEl(event.currentTarget);
@@ -137,27 +145,21 @@ export default function Header(props: any): JSX.Element {
             <div className={classes.spy}>
               <Grid item>
                 <Hidden smDown implementation="css">
-                  <Scrollspy
+                  <CustomScrollspy
                     items={["section-1", "section-2", "section-3"]}
                     className="menu"
-                    currentClassName="active"
+                    currentClassName="scroll-active-button"
                   >
-                    <Button href="#section-1" className={classes.margin}>
-                      <Typography className={classes.scroll}>
-                        Section 1
-                      </Typography>
+                    <Button href="#section-1" className={classes.button}>
+                      <Typography>Section 1</Typography>
                     </Button>
-                    <Button href="#section-2" className={classes.margin}>
-                      <Typography className={classes.scroll}>
-                        Section 2
-                      </Typography>
+                    <Button href="#section-2" className={classes.button}>
+                      <Typography>Section 2</Typography>
                     </Button>
-                    <Button href="#section-3" className={classes.margin}>
-                      <Typography className={classes.scroll}>
-                        Section 3
-                      </Typography>
+                    <Button href="#section-3" className={classes.button}>
+                      <Typography>Section 3</Typography>
                     </Button>
-                  </Scrollspy>
+                  </CustomScrollspy>
                 </Hidden>
               </Grid>
             </div>
