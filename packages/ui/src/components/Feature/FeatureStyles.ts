@@ -2,11 +2,6 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 const FeatureStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      display: "flex",
-      overflow: "hidden",
-      backgroundColor: theme.palette.secondary.light,
-    },
     container: {
       marginTop: theme.spacing(15),
       marginBottom: theme.spacing(30),
@@ -16,14 +11,14 @@ const FeatureStyles = makeStyles((theme: Theme) =>
     feature: {
       padding: theme.spacing(8, 0, 6),
     },
+    image: {
+      height: 55,
+    },
     item: {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       padding: theme.spacing(0, 5),
-    },
-    image: {
-      height: 55,
     },
     largeIcon: {
       width: 100,
@@ -32,11 +27,6 @@ const FeatureStyles = makeStyles((theme: Theme) =>
     title: {
       marginTop: theme.spacing(5),
       marginBottom: theme.spacing(5),
-    },
-    curvyLines: {
-      pointerEvents: "none",
-      position: "absolute",
-      top: -180,
     },
   }),
 );
