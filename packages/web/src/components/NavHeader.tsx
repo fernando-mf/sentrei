@@ -2,23 +2,12 @@
 import React from "react";
 
 import Header from "@sentrei/ui/components/Header";
+import LogoPicture from "@sentrei/web/components/LogoPicture";
 
-const pngLandingBanner = require("../../public/images/banner-landing.png?resize&sizes[]=300&sizes[]=600&sizes[]=900");
-const webpLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=300&sizes[]=600&sizes[]=900");
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function NavHeader(): JSX.Element {
   return (
     <>
-      <Header
-        logo={
-          <picture>
-            <source srcSet={webpLandingBanner.srcSet} type="image/webp" />
-            <source srcSet={pngLandingBanner} type="image/png" />
-            <img src={pngLandingBanner} alt="logo" />
-          </picture>
-        }
-      />
+      <Header logo={<LogoPicture />} />
     </>
   );
 }
