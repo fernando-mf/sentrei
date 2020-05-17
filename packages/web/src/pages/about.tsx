@@ -25,15 +25,10 @@ function About({t}: any): JSX.Element {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getServerSideProps: GetServerSideProps = async () => {
-  const namespacesRequired = ["common", "_error"];
+About.getInitialProps = (): {
+  namespacesRequired: string[];
+} => ({
+  namespacesRequired: ["index"],
+});
 
-  return {
-    props: {
-      namespacesRequired,
-    },
-  };
-};
-
-export default withTranslation("common")(About);
+export default withTranslation()(About);

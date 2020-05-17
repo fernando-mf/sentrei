@@ -3,26 +3,18 @@
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import {GetServerSideProps} from "next";
 import Head from "next/head";
 import React from "react";
 
 import styled from "styled-components";
 
 import {withTranslation} from "@sentrei/common/i18n";
+import Feature from "@sentrei/ui/components/Feature";
 import Header from "@sentrei/ui/components/Header";
 import Link from "@sentrei/ui/components/Link";
-import Particle from "@sentrei/ui/components/Particle";
 
-const originalLandingBanner = require("../../public/images/banner-landing.png?resize&sizes[]=120&sizes[]=130&sizes[]=150");
-const pngLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=120&sizes[]=130&sizes[]=150");
-const webpLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=120&sizes[]=130&sizes[]=150");
-
-const Logo = styled.div`
-  max-width: 100%;
-  max-height: 100%;
-  align-items: "flex-start";
-`;
+const pngLandingBanner = require("../../public/images/banner-landing.png?resize&sizes[]=300&sizes[]=600&sizes[]=900");
+const webpLandingBanner = require("../../public/images/banner-landing.png?webp?resize&sizes[]=300&sizes[]=600&sizes[]=900");
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Index({t}: any): JSX.Element {
@@ -34,16 +26,14 @@ function Index({t}: any): JSX.Element {
       </Head>
       <Header
         logo={
-          <Logo>
-            <picture>
-              <source srcSet={webpLandingBanner.srcSet} type="image/webp" />
-              <source srcSet={pngLandingBanner} type="image/png" />
-              <img src={originalLandingBanner} alt="logo" />
-            </picture>
-          </Logo>
+          <picture>
+            <source srcSet={webpLandingBanner.srcSet} type="image/webp" />
+            <source srcSet={pngLandingBanner} type="image/png" />
+            <img src={pngLandingBanner} alt="logo" />
+          </picture>
         }
       />
-      <Particle />
+      <Feature />
       <Container maxWidth="sm">
         <Box pt={10} />
         <Typography variant="h4" component="h1" gutterBottom>
@@ -106,15 +96,10 @@ function Index({t}: any): JSX.Element {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getServerSideProps: GetServerSideProps = async () => {
-  const namespacesRequired = ["common", "_error"];
+Index.getInitialProps = (): {
+  namespacesRequired: string[];
+} => ({
+  namespacesRequired: ["index"],
+});
 
-  return {
-    props: {
-      namespacesRequired,
-    },
-  };
-};
-
-export default withTranslation("index")(Index);
+export default withTranslation()(Index);
