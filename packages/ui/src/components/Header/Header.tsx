@@ -77,6 +77,9 @@ export default function Header(props: any): JSX.Element {
                       <Button href="#feature" className={classes.button}>
                         <Typography>Features</Typography>
                       </Button>
+                      <Button href="#pricing" className={classes.button}>
+                        <Typography>Pricing</Typography>
+                      </Button>
                       <Button href="#testimonial" className={classes.button}>
                         <Typography>Testimonial</Typography>
                       </Button>
