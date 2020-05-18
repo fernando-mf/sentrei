@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -32,39 +33,41 @@ export default function Banner(): JSX.Element {
         component="p"
         gutterBottom
       >
-        Quickly build an effective pricing table for your potential customers
-        with this layout. It&apos;s built with default Material-UI components
-        with little customization.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam
       </Typography>
-      <Grid container justify="center" direction="row" spacing={1}>
-        <Grid item xs={12} md={6}>
-          <div className={classes.item}>
-            <Button
-              color="primary"
-              variant="contained"
-              className={classes.margin}
-            >
-              <Typography noWrap>Get Started -free forever-</Typography>
-            </Button>
-          </div>
+      <Box pt={3}>
+        <Grid container justify="center" direction="row" spacing={1}>
+          <Grid item xs={12} md={6}>
+            <div className={classes.item}>
+              <Button
+                color="primary"
+                variant="contained"
+                className={classes.margin}
+              >
+                <Typography noWrap>Get Started -free forever-</Typography>
+              </Button>
+            </div>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <div className={classes.item}>
+              <Button
+                color="primary"
+                variant="outlined"
+                className={classes.margin}
+              >
+                <LogoImg
+                  width="20px"
+                  alt="Google sign-in"
+                  src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                />
+                <Typography>Sign up with Google </Typography>
+              </Button>
+            </div>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <div className={classes.item}>
-            <Button
-              color="primary"
-              variant="outlined"
-              className={classes.margin}
-            >
-              <LogoImg
-                width="20px"
-                alt="Google sign-in"
-                src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-              />
-              <Typography>Sign up with Google </Typography>
-            </Button>
-          </div>
-        </Grid>
-      </Grid>
+      </Box>
     </Container>
   );
 }

@@ -10,10 +10,8 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 import Scrollspy from "react-scrollspy";
-import styled from "styled-components";
 
 import Link from "@sentrei/ui/components/Link";
-import Theme from "@sentrei/ui/containers/Theme";
 
 import HeaderStyles from "./HeaderStyles";
 
@@ -46,12 +44,6 @@ export default function Header(props: any): JSX.Element {
     }
   };
 
-  const CustomScrollspy = styled(Scrollspy)`
-    .scroll-active-button {
-      color: ${Theme.palette.primary.main};
-    }
-  `;
-
   React.useEffect(() => {
     window.addEventListener("scroll", headerColorChange);
     return function cleanup(): void {
@@ -74,21 +66,33 @@ export default function Header(props: any): JSX.Element {
               <Grid item>
                 <Hidden smDown implementation="css">
                   {spy ? (
-                    <CustomScrollspy
-                      items={["section-1", "section-2", "section-3"]}
+                    <Scrollspy
+                      items={[
+                        "product",
+                        "feature",
+                        "testimonial",
+                        "pricing",
+                        "faq",
+                      ]}
                       className="menu"
                       currentClassName="scroll-active-button"
                     >
-                      <Button href="#section-1" className={classes.button}>
-                        <Typography>Section 1</Typography>
+                      <Button href="#product" className={classes.button}>
+                        <Typography>Product</Typography>
                       </Button>
-                      <Button href="#section-2" className={classes.button}>
-                        <Typography>Section 2</Typography>
+                      <Button href="#feature" className={classes.button}>
+                        <Typography>Features</Typography>
                       </Button>
-                      <Button href="#section-3" className={classes.button}>
-                        <Typography>Section 3</Typography>
+                      <Button href="#testimonial" className={classes.button}>
+                        <Typography>Testimonial</Typography>
                       </Button>
-                    </CustomScrollspy>
+                      <Button href="#pricing" className={classes.button}>
+                        <Typography>Pricing</Typography>
+                      </Button>
+                      <Button href="#faq" className={classes.button}>
+                        <Typography>FAQ</Typography>
+                      </Button>
+                    </Scrollspy>
                   ) : (
                     <Button />
                   )}
