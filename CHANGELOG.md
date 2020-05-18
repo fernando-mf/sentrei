@@ -1,3 +1,9 @@
+## [4.28.2](https://github.com/sentrei/sentrei/compare/v4.28.1...v4.28.2) (2020-05-18)
+
+### Bug Fixes
+
+- **deps:** bump gatsby-plugin-manifest from 2.4.3 to 2.4.5 ([c3278c0](https://github.com/sentrei/sentrei/commit/c3278c068723dbd02179879abdbbdc7a2b58296e))
+
 ## [4.28.1](https://github.com/sentrei/sentrei/compare/v4.28.0...v4.28.1) (2020-05-18)
 
 ### Bug Fixes
