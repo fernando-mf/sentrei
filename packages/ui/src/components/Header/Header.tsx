@@ -67,18 +67,21 @@ export default function Header(props: any): JSX.Element {
                 <Hidden smDown implementation="css">
                   {spy ? (
                     <Scrollspy
-                      items={["section-1", "section-2", "section-3"]}
+                      items={["product", "feature", "testimonial", "faq"]}
                       className="menu"
                       currentClassName="scroll-active-button"
                     >
-                      <Button href="#section-1" className={classes.button}>
-                        <Typography>Section 1</Typography>
+                      <Button href="#product" className={classes.button}>
+                        <Typography>Product</Typography>
                       </Button>
-                      <Button href="#section-2" className={classes.button}>
-                        <Typography>Section 2</Typography>
+                      <Button href="#feature" className={classes.button}>
+                        <Typography>Features</Typography>
                       </Button>
-                      <Button href="#section-3" className={classes.button}>
-                        <Typography>Section 3</Typography>
+                      <Button href="#testimonial" className={classes.button}>
+                        <Typography>Testimonial</Typography>
+                      </Button>
+                      <Button href="#faq" className={classes.button}>
+                        <Typography>FAQ</Typography>
                       </Button>
                     </Scrollspy>
                   ) : (

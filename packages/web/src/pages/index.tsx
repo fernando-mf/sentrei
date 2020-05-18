@@ -22,16 +22,16 @@ function Index({t}: any): JSX.Element {
       </Head>
       <SpyHeader />
       <Banner />
-      <div id="section-1">
+      <div id="product">
         <Product />
       </div>
-      <div id="section-2">
+      <div id="feature">
         <Feature />
       </div>
-      <div id="section-3">
+      <div id="testimonial">
         <Testimonial />
       </div>
-      <div id="section-4">
+      <div id="faq">
         <Faq />
       </div>
       <Footer />
