@@ -13910,9 +13910,9 @@ firebase-functions@^3.6.0:
     lodash "^4.17.14"
 
 firebase-tools@^8.0.2:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-8.2.0.tgz#2f12c27b03338a38c8d9ac91267f88eec0a39459"
-  integrity sha512-xcivJPhoOGJUR6Z1XDUVQ9TLD8wmlTrZ6rDunK1MIRn5+KU4vsn8x1oF9Zxri65/ViRralHmX/kBUx0MnIJKWA==
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-8.3.0.tgz#69bcd7953e2a7b16c65b0918bca210f74c9a3be6"
+  integrity sha512-/gl5wss3f31BQ71Mn11P9gFayWD0OB6s1HDmskeUea051XWT/M9KWfpV8OK866YNseA5uEzK8CwC+Q0MevWeHw==
   dependencies:
     "@google-cloud/pubsub" "^1.7.0"
     JSONStream "^1.2.1"
@@ -13927,7 +13927,6 @@ firebase-tools@^8.0.2:
     cross-env "^5.1.3"
     cross-spawn "^7.0.1"
     csv-streamify "^3.0.4"
-    didyoumean "^1.2.1"
     dotenv "^6.1.0"
     exit-code "^1.0.2"
     express "^4.16.4"
@@ -13940,10 +13939,12 @@ firebase-tools@^8.0.2:
     js-yaml "^3.13.1"
     jsonschema "^1.0.2"
     jsonwebtoken "^8.2.1"
+    leven "^3.1.0"
     lodash "^4.17.14"
     marked "^0.7.0"
     marked-terminal "^3.3.0"
     minimatch "^3.0.4"
+    morgan "^1.10.0"
     open "^6.3.0"
     ora "^3.4.0"
     plist "^3.0.1"
@@ -22035,7 +22036,7 @@ moo@^0.5.0:
   resolved "https://registry.yarnpkg.com/moo/-/moo-0.5.1.tgz#7aae7f384b9b09f620b6abf6f74ebbcd1b65dbc4"
   integrity sha512-I1mnb5xn4fO80BH9BLcF0yLypy2UKl+Cb01Fu0hJRkJjlCRtxZMWkTdAtDd5ZqCOxtCkhmRwyI57vWT+1iZ67w==
 
-morgan@^1.8.2:
+morgan@^1.10.0, morgan@^1.8.2:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/morgan/-/morgan-1.10.0.tgz#091778abc1fc47cd3509824653dae1faab6b17d7"
   integrity sha512-AbegBVI4sh6El+1gNwvD5YIck7nSA36weD7xvIxG4in80j/UoK8AEGaWnnz8v1GxonMCltmlNs5ZKbGvl9b1XQ==
