@@ -3,7 +3,7 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 const BannerStyles = makeStyles((theme: Theme) =>
   createStyles({
     banner: {
-      padding: theme.spacing(12, 0, 12),
+      padding: theme.spacing(12, 0, 6),
     },
     item: {
       display: "flex",

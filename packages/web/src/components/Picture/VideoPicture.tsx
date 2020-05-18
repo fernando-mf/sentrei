@@ -2,13 +2,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const pngLandingBanner = require("../../public/images/banner-landing.png?resze&sizes[]=300&sizes[]=600&sizes[]=900");
+const pngLandingBanner = require("../../../public/images/video.svg");
 
 const Logo = styled.img`
   max-width: 100%;
 `;
 
-function LogoPicture(): JSX.Element {
+function VideoPicture(): JSX.Element {
   return (
     <picture>
       <Logo src={pngLandingBanner} alt="logo" />
@@ -16,4 +16,4 @@ function LogoPicture(): JSX.Element {
   );
 }
 
-export default LogoPicture;
+export default VideoPicture;
