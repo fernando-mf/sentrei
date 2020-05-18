@@ -3,10 +3,7 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 const PricingCardStyles = makeStyles((theme: Theme) =>
   createStyles({
     cardHeader: {
-      backgroundColor:
-        theme.palette.type === "light"
-          ? theme.palette.grey[200]
-          : theme.palette.grey[700],
+      backgroundColor: theme.palette.primary.light,
     },
     cardPricing: {
       display: "flex",

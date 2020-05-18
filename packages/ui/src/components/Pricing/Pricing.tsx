@@ -26,7 +26,7 @@ const tiers = [
   {
     title: "Pro",
     subTitle: "Most popular",
-    price: "$15",
+    price: "$10",
     description: [
       "20 users included",
       "10 GB of storage",
