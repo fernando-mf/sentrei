@@ -10,31 +10,15 @@ import GroupWork from "@material-ui/icons/GroupWork";
 
 import React from "react";
 
+import Section from "@sentrei/ui/components/Section";
+
 import FeatureStyles from "./FeatureStyles";
 
 export default function Feature(): JSX.Element {
   const classes = FeatureStyles();
   return (
     <>
-      <Container maxWidth="sm" component="main" className={classes.feature}>
-        <Typography
-          component="h1"
-          variant="h2"
-          align="center"
-          color="textPrimary"
-          gutterBottom
-        >
-          Features
-        </Typography>
-        <Typography
-          variant="h5"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </Typography>
-      </Container>
+      <Section title="Features" subTitle="" />
       <Container maxWidth="md" component="main">
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>

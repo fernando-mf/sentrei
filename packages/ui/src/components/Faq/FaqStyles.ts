@@ -3,7 +3,7 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 const FaqStyles = makeStyles((theme: Theme) =>
   createStyles({
     faq: {
-      padding: theme.spacing(8, 0, 6),
+      padding: theme.spacing(0, 0, 9),
     },
     heading: {
       fontSize: theme.typography.pxToRem(15),

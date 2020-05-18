@@ -4,7 +4,7 @@ const FeatureStyles = makeStyles((theme: Theme) =>
   createStyles({
     feature: {
       flexGrow: 1,
-      padding: theme.spacing(9, 3, 6),
+      padding: theme.spacing(0, 3, 3),
     },
     image: {
       height: 55,

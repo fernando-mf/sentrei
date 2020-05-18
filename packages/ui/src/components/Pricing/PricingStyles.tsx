@@ -21,9 +21,6 @@ const PricingStyles = makeStyles((theme: Theme) =>
     link: {
       margin: theme.spacing(1, 1.5),
     },
-    pricing: {
-      padding: theme.spacing(9, 0, 6),
-    },
     footer: {
       borderTop: `1px solid ${theme.palette.divider}`,
       marginTop: theme.spacing(8),

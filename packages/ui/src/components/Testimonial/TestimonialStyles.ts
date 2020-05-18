@@ -15,7 +15,7 @@ const TestimonialStyles = makeStyles((theme: Theme) =>
       position: "relative",
     },
     testimonial: {
-      padding: theme.spacing(8, 0, 6),
+      padding: theme.spacing(3, 3, 3),
     },
     item: {
       display: "flex",
