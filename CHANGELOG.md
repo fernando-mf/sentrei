@@ -1,3 +1,12 @@
+# [4.28.0](https://github.com/sentrei/sentrei/compare/v4.27.2...v4.28.0) (2020-05-18)
+
+### Features
+
+- 🎸 add faq section ([9a2b29a](https://github.com/sentrei/sentrei/commit/9a2b29afb25dabd7a4f7b48a769b7d59bd205942))
+- 🎸 add pricing card ([6757a41](https://github.com/sentrei/sentrei/commit/6757a418dec262429a4a5e1587fb91d23dcf0f78))
+- 🎸 add proper scrollspy ([f986980](https://github.com/sentrei/sentrei/commit/f986980d62d7ad526e132732eb254806cd8c8f8e))
+- 🎸 update overall style ([3b8f007](https://github.com/sentrei/sentrei/commit/3b8f0076e2250cd46638db9d9e0d3daf3e58047c))
+
 ## [4.27.2](https://github.com/sentrei/sentrei/compare/v4.27.1...v4.27.2) (2020-05-18)
 
 ### Bug Fixes
