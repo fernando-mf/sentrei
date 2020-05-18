@@ -30,11 +30,11 @@ function Index({t}: any): JSX.Element {
       <div id="feature">
         <Feature />
       </div>
-      <div id="pricing">
-        <Pricing />
-      </div>
       <div id="testimonial">
         <Testimonial />
+      </div>
+      <div id="pricing">
+        <Pricing />
       </div>
       <div id="faq">
         <Faq />

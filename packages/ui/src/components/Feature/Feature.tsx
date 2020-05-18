@@ -15,39 +15,60 @@ import FeatureStyles from "./FeatureStyles";
 export default function Feature(): JSX.Element {
   const classes = FeatureStyles();
   return (
-    <Container maxWidth="lg" component="main" className={classes.feature}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={4}>
-          <Paper className={classes.paper}>
-            <IconButton>
-              <AccessTime className={classes.largeIcon} />
-            </IconButton>
-            <Typography variant="h4" className={classes.title}>
-              Time Tracking
-            </Typography>
-          </Paper>
+    <>
+      <Container maxWidth="sm" component="main" className={classes.feature}>
+        <Typography
+          component="h1"
+          variant="h2"
+          align="center"
+          color="textPrimary"
+          gutterBottom
+        >
+          Features
+        </Typography>
+        <Typography
+          variant="h5"
+          align="center"
+          color="textSecondary"
+          component="p"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </Typography>
+      </Container>
+      <Container maxWidth="md" component="main">
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={4}>
+            <Paper className={classes.paper}>
+              <IconButton>
+                <AccessTime className={classes.largeIcon} />
+              </IconButton>
+              <Typography variant="h4" className={classes.title}>
+                Time Tracking
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Paper className={classes.paper}>
+              <IconButton>
+                <Dashboard className={classes.largeIcon} />
+              </IconButton>
+              <Typography variant="h4" className={classes.title}>
+                New experiences
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Paper className={classes.paper}>
+              <IconButton>
+                <GroupWork className={classes.largeIcon} />
+              </IconButton>
+              <Typography variant="h4" className={classes.title}>
+                Exclusive rates
+              </Typography>
+            </Paper>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper className={classes.paper}>
-            <IconButton>
-              <Dashboard className={classes.largeIcon} />
-            </IconButton>
-            <Typography variant="h4" className={classes.title}>
-              New experiences
-            </Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper className={classes.paper}>
-            <IconButton>
-              <GroupWork className={classes.largeIcon} />
-            </IconButton>
-            <Typography variant="h4" className={classes.title}>
-              Exclusive rates
-            </Typography>
-          </Paper>
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </>
   );
 }

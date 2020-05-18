@@ -12,6 +12,8 @@ export default function Faq(): JSX.Element {
   const classes = FaqStyles();
 
   return (
+    <>
+    <Section title="Pricing" subTitle="" />
     <Container maxWidth="md" component="main" className={classes.faq}>
       <Typography
         variant="h5"
@@ -69,5 +71,6 @@ export default function Faq(): JSX.Element {
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </Container>
+    
   );
 }
