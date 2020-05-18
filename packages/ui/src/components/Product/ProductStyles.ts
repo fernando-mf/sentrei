@@ -4,6 +4,7 @@ const ProductStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+      padding: theme.spacing(8, 0, 6),
     },
   }),
 );

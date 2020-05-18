@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import Tab from "@material-ui/core/Tab";
-import Tabs from "@material-ui/core/Tabs";
+import Typography from "@material-ui/core/Typography";
 import React from "react";
 
 import ProductStyles from "./ProductStyles";
@@ -9,28 +9,14 @@ import ProductStyles from "./ProductStyles";
 export default function Product(): JSX.Element {
   const classes = ProductStyles();
 
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (
-    event: React.ChangeEvent<{}>,
-    newValue: number,
-  ): void => {
-    setValue(newValue);
-  };
-
   return (
-    <Paper className={classes.root}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
-        centered
-      >
-        <Tab label="Item One" />
-        <Tab label="Item Two" />
-        <Tab label="Item Three" />
-      </Tabs>
-    </Paper>
+    <Grid container component="main" className={classes.root}>
+      <Grid item xs={false} sm={4} md={7} />
+      <Grid item xs={12} sm={8} md={5}>
+        <Typography component="h1" variant="h5">
+          Sign in
+        </Typography>
+      </Grid>
+    </Grid>
   );
 }
