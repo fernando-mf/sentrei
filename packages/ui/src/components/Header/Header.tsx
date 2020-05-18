@@ -10,11 +10,8 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 import Scrollspy from "react-scrollspy";
-import styled from "styled-components";
 
 import Link from "@sentrei/ui/components/Link";
-import Particle from "@sentrei/ui/components/Particle";
-import Theme from "@sentrei/ui/containers/Theme";
 
 import HeaderStyles from "./HeaderStyles";
 
@@ -47,12 +44,6 @@ export default function Header(props: any): JSX.Element {
     }
   };
 
-  const CustomScrollspy = styled(Scrollspy)`
-    .scroll-active-button {
-      color: ${Theme.palette.primary.main};
-    }
-  `;
-
   React.useEffect(() => {
     window.addEventListener("scroll", headerColorChange);
     return function cleanup(): void {
@@ -75,7 +66,7 @@ export default function Header(props: any): JSX.Element {
               <Grid item>
                 <Hidden smDown implementation="css">
                   {spy ? (
-                    <CustomScrollspy
+                    <Scrollspy
                       items={["section-1", "section-2", "section-3"]}
                       className="menu"
                       currentClassName="scroll-active-button"
@@ -89,7 +80,7 @@ export default function Header(props: any): JSX.Element {
                       <Button href="#section-3" className={classes.button}>
                         <Typography>Section 3</Typography>
                       </Button>
-                    </CustomScrollspy>
+                    </Scrollspy>
                   ) : (
                     <Button />
                   )}

@@ -48,6 +48,9 @@ const HeaderStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.up("sm")]: {
         display: "block",
       },
+      "& .scroll-active-button": {
+        color: theme.palette.primary.main,
+      },
     },
     transparent: {
       backgroundColor: "transparent !important",
