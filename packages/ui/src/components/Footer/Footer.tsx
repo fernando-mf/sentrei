@@ -22,6 +22,16 @@ const footers = [
     ],
   },
   {
+    title: "Product",
+    description: [
+      {
+        title: "Product Release Notes",
+        link: "/product",
+        target: "",
+      },
+    ],
+  },
+  {
     title: "Resources",
     description: [
       {
