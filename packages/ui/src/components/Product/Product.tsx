@@ -20,8 +20,14 @@ export default function Product(props: any): JSX.Element {
           {img}
         </Grid>
         <Grid item xs={12} sm={8} md={5}>
-          <Typography component="h1" variant="h5">
-            Share the Moment
+          <Typography
+            component="h1"
+            variant="h3"
+            align="center"
+            color="textPrimary"
+            gutterBottom
+          >
+            Pricing
           </Typography>
         </Grid>
       </Grid>

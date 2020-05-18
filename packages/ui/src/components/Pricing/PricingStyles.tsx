@@ -24,18 +24,6 @@ const PricingStyles = makeStyles((theme: Theme) =>
     heroContent: {
       padding: theme.spacing(8, 0, 6),
     },
-    cardHeader: {
-      backgroundColor:
-        theme.palette.type === "light"
-          ? theme.palette.grey[200]
-          : theme.palette.grey[700],
-    },
-    cardPricing: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "baseline",
-      marginBottom: theme.spacing(2),
-    },
     footer: {
       borderTop: `1px solid ${theme.palette.divider}`,
       marginTop: theme.spacing(8),
