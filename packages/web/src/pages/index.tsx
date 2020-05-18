@@ -5,8 +5,10 @@ import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
 import Banner from "@sentrei/ui/components/Banner";
+import Faq from "@sentrei/ui/components/Faq";
 import Feature from "@sentrei/ui/components/Feature";
 import Footer from "@sentrei/ui/components/Footer";
+import Product from "@sentrei/ui/components/Product";
 import Testimonial from "@sentrei/ui/components/Testimonial";
 import SpyHeader from "@sentrei/web/components/SpyHeader";
 
@@ -19,14 +21,18 @@ function Index({t}: any): JSX.Element {
         <meta name="Description" content="Sentrei landing page" />
       </Head>
       <SpyHeader />
+      <Banner />
       <div id="section-1">
-        <Banner />
+        <Product />
       </div>
       <div id="section-2">
         <Feature />
       </div>
       <div id="section-3">
         <Testimonial />
+      </div>
+      <div id="section-4">
+        <Faq />
       </div>
       <Footer />
     </>

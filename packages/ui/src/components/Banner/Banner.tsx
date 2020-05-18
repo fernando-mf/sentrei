@@ -32,9 +32,9 @@ export default function Banner(): JSX.Element {
         component="p"
         gutterBottom
       >
-        Quickly build an effective pricing table for your potential customers
-        with this layout. It&apos;s built with default Material-UI components
-        with little customization.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam
       </Typography>
       <Grid container justify="center" direction="row" spacing={1}>
         <Grid item xs={12} md={6}>

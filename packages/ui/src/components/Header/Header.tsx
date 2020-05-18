@@ -13,6 +13,7 @@ import Scrollspy from "react-scrollspy";
 import styled from "styled-components";
 
 import Link from "@sentrei/ui/components/Link";
+import Particle from "@sentrei/ui/components/Particle";
 import Theme from "@sentrei/ui/containers/Theme";
 
 import HeaderStyles from "./HeaderStyles";
