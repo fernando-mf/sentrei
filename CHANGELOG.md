@@ -1,3 +1,9 @@
+## [4.27.1](https://github.com/sentrei/sentrei/compare/v4.27.0...v4.27.1) (2020-05-18)
+
+### Bug Fixes
+
+- 🐛 apply grid for button ([d05dff7](https://github.com/sentrei/sentrei/commit/d05dff7b0f2ebabc02eb6881a7ec3b30f013510a)), closes [#1613](https://github.com/sentrei/sentrei/issues/1613)
+
 # [4.27.0](https://github.com/sentrei/sentrei/compare/v4.26.1...v4.27.0) (2020-05-17)
 
 ### Features
