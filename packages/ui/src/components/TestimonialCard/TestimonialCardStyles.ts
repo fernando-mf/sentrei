@@ -1,18 +1,13 @@
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import {createStyles, makeStyles} from "@material-ui/core/styles";
 
-const TestimonialStyles = makeStyles((theme: Theme) =>
+const TestimonialStyles = makeStyles(() =>
   createStyles({
-    actions: {
-      textAlign: "center",
-    },
-    header: {
-      alignItems: "center",
-    },
     item: {
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "row",
       alignItems: "center",
-      padding: theme.spacing(0, 5),
+      justifyItems: "space-between",
+      justifyContent: "center",
     },
   }),
 );
