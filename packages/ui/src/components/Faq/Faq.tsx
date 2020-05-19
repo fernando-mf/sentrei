@@ -15,7 +15,7 @@ export default function Faq(): JSX.Element {
 
   return (
     <>
-      <Section title="Frequently Asked Questions" subTitle="" />
+      <Section title="FAQ" subTitle="" />
       <Container maxWidth="md" component="main" className={classes.faq}>
         <ExpansionPanel>
           <ExpansionPanelSummary
