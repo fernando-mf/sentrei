@@ -1,3 +1,12 @@
+# [4.30.0](https://github.com/sentrei/sentrei/compare/v4.29.5...v4.30.0) (2020-05-19)
+
+### Features
+
+- 🎸 add i18n trans ([7eb4935](https://github.com/sentrei/sentrei/commit/7eb4935d3a80b978ee16007b2a703fe0d5f16ee6))
+- 🎸 add testimonial cards ([e4b9452](https://github.com/sentrei/sentrei/commit/e4b9452a03958fec86c7e951b473b7b2c7dd4e18))
+- 🎸 complete initial product ([6f7e49d](https://github.com/sentrei/sentrei/commit/6f7e49dc9666370ddb63f98e72a1c8df0b7ae2d9))
+- 🎸 upgrade spacing component ([e0b364e](https://github.com/sentrei/sentrei/commit/e0b364e49ae317cd5406d92a17d4c0690fcf71c9))
+
 ## [4.29.5](https://github.com/sentrei/sentrei/compare/v4.29.4...v4.29.5) (2020-05-19)
 
 ### Bug Fixes
