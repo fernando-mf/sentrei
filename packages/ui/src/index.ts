@@ -6,6 +6,7 @@ export {default as Footer} from "./components/Footer";
 export {default as Link} from "./components/Link";
 export {default as Pricing} from "./components/Pricing";
 export {default as Product} from "./components/Product";
+export {default as ProductCard} from "./components/ProductCard";
 export {default as ProTip} from "./components/ProTip";
 export {default as Section} from "./components/Section";
 export {default as Spacing} from "./components/Spacing";

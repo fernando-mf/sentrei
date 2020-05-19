@@ -43,6 +43,7 @@ export default function Product(props: any): JSX.Element {
           </Typography>
         </Grid>
       </Grid>
+      <Box py={3} />
       <Grid container alignItems="center" justify="center" component="main">
         <Grid item xs={12} sm={8} md={7} className={classes.item}>
           <Box py={3} />
@@ -71,6 +72,7 @@ export default function Product(props: any): JSX.Element {
           {img}
         </Grid>
       </Grid>
+      <Box py={3} />
       <Grid container alignItems="center" justify="center" component="main">
         <Grid item xs={false} sm={4} md={5}>
           {img}
