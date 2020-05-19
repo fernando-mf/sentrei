@@ -16,7 +16,7 @@ export default function Faq(): JSX.Element {
   return (
     <>
       <Section title="FAQ" subTitle="" />
-      <Container maxWidth="md" component="main" >
+      <Container maxWidth="md" component="main">
         <ExpansionPanel>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}

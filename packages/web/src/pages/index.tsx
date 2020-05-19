@@ -10,6 +10,7 @@ import Faq from "@sentrei/ui/components/Faq";
 import Feature from "@sentrei/ui/components/Feature";
 import Footer from "@sentrei/ui/components/Footer";
 import Pricing from "@sentrei/ui/components/Pricing";
+import Spacing from "@sentrei/ui/components/Spacing";
 import Testimonial from "@sentrei/ui/components/Testimonial";
 import SentreiProduct from "@sentrei/web/components/SentreiProduct";
 import SpyHeader from "@sentrei/web/components/SpyHeader";
@@ -24,21 +25,27 @@ function Index({t}: any): JSX.Element {
       </Head>
       <SpyHeader />
       <Banner />
+      <Spacing />
       <div id="product">
         <SentreiProduct />
       </div>
+      <Spacing />
       <div id="feature">
         <Feature />
       </div>
+      <Spacing />
       <div id="testimonial">
         <Testimonial />
       </div>
+      <Spacing />
       <div id="pricing">
         <Pricing />
       </div>
+      <Spacing />
       <div id="faq">
         <Faq />
       </div>
+      <Spacing />
       <Footer />
     </>
   );

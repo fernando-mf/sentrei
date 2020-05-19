@@ -9,9 +9,6 @@ const FaqStyles = makeStyles((theme: Theme) =>
     root: {
       width: "100%",
     },
-    title: {
-      margin: theme.spacing(0, 0, 3),
-    },
   }),
 );
 
