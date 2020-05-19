@@ -28,7 +28,7 @@ function getInitialProps({
   namespacesRequired: string[];
   statusCode: number | null | undefined;
 } {
-  const namespacesRequired = ["common"];
+  const namespacesRequired = ["index"];
   let statusCode;
   if (res) {
     statusCode = res.statusCode;

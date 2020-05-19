@@ -5,6 +5,18 @@ import Header from ".";
 
 describe("Header", () => {
   test("render", () => {
-    shallow(<Header logo={<></>} />);
+    shallow(
+      <Header
+        faqText=""
+        featuresText=""
+        logo={<></>}
+        pricingText=""
+        productText=""
+        signInText=""
+        signUpText=""
+        spy
+        testimonialText=""
+      />,
+    );
   });
 });

@@ -10,13 +10,22 @@ import Copyright from "@sentrei/ui/components/Copyright";
 
 import Link from "@sentrei/ui/components/Link";
 import ProTip from "@sentrei/ui/components/ProTip";
-import NavHeader from "@sentrei/web/components/NavHeader";
+import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function About({t}: any): JSX.Element {
   return (
     <>
-      <NavHeader />
+      <SentreiHeader
+        faqText={t("faq")}
+        featuresText={t("features")}
+        pricingText={t("pricing")}
+        productText={t("product")}
+        signInText={t("signIn")}
+        signUpText={t("signUp")}
+        spy={false}
+        testimonialText={t("testimonial")}
+      />
       <Container maxWidth="sm">
         <Box my={4}>
           <Typography variant="h4" component="h1" gutterBottom>

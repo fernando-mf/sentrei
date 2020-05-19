@@ -17,7 +17,17 @@ import HeaderStyles from "./HeaderStyles";
 
 export default function Header(props: any): JSX.Element {
   const classes = HeaderStyles();
-  const {logo, spy} = props;
+  const {
+    faqText,
+    featuresText,
+    logo,
+    pricingText,
+    productText,
+    signInText,
+    signUpText,
+    spy,
+    testimonialText,
+  } = props;
 
   const appBarClasses = classNames({
     [classes.appBar]: true,
@@ -78,19 +88,19 @@ export default function Header(props: any): JSX.Element {
                       currentClassName="scroll-active-button"
                     >
                       <Button href="#product" className={classes.button}>
-                        <Typography>Product</Typography>
+                        <Typography>{productText}</Typography>
                       </Button>
                       <Button href="#feature" className={classes.button}>
-                        <Typography>Features</Typography>
+                        <Typography>{featuresText}</Typography>
                       </Button>
                       <Button href="#testimonial" className={classes.button}>
-                        <Typography>Testimonial</Typography>
+                        <Typography>{testimonialText}</Typography>
                       </Button>
                       <Button href="#pricing" className={classes.button}>
-                        <Typography>Pricing</Typography>
+                        <Typography>{pricingText}</Typography>
                       </Button>
                       <Button href="#faq" className={classes.button}>
-                        <Typography>FAQ</Typography>
+                        <Typography>{faqText}</Typography>
                       </Button>
                     </Scrollspy>
                   ) : (
@@ -106,14 +116,14 @@ export default function Header(props: any): JSX.Element {
                   variant="outlined"
                   className={classes.margin}
                 >
-                  <Typography>Sign In</Typography>
+                  <Typography>{signInText}</Typography>
                 </Button>
                 <Button
                   color="primary"
                   variant="contained"
                   className={classes.margin}
                 >
-                  <Typography>Sign Up for Free</Typography>
+                  <Typography>{signUpText}</Typography>
                 </Button>
               </Grid>
             </div>
@@ -130,6 +140,13 @@ Header.defaultProps = {
 };
 
 Header.propTypes = {
+  faqText: PropTypes.string.isRequired,
+  featuresText: PropTypes.string.isRequired,
   logo: PropTypes.node.isRequired,
+  pricingText: PropTypes.string.isRequired,
+  productText: PropTypes.string.isRequired,
+  signInText: PropTypes.string.isRequired,
+  signUpText: PropTypes.string.isRequired,
   spy: PropTypes.bool,
+  testimonialText: PropTypes.string.isRequired,
 };

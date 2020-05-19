@@ -16,7 +16,7 @@ export default function Faq(): JSX.Element {
   return (
     <>
       <Section title="FAQ" subTitle="" />
-      <Container maxWidth="md" component="main" className={classes.faq}>
+      <Container maxWidth="md" component="main">
         <ExpansionPanel>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
@@ -72,6 +72,7 @@ export default function Faq(): JSX.Element {
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </Container>
+      <Section title="" subTitle="" />
     </>
   );
 }
