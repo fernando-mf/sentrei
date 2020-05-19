@@ -18,7 +18,7 @@ export default function TestimonialCard(): JSX.Element {
       <CardContent>
         <div className={classes.item}>
           <Avatar />
-          <Box m={3} />
+          <Box m={1} />
           <Typography variant="h5">Game Changer</Typography>
         </div>
         <QuoteIcon color="primary" />

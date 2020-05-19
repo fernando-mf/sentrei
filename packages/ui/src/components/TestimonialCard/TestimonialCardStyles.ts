@@ -6,7 +6,6 @@ const TestimonialStyles = makeStyles(() =>
       display: "flex",
       flexDirection: "row",
       alignItems: "center",
-      justifyItems: "space-between",
       justifyContent: "center",
     },
   }),
