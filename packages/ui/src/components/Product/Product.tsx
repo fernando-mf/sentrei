@@ -7,6 +7,8 @@ import Typography from "@material-ui/core/Typography";
 import PropTypes from "prop-types";
 import React from "react";
 
+import ProductCard from "@sentrei/ui/components/ProductCard";
+
 import ProductStyles from "./ProductStyles";
 
 export default function Product(props: any): JSX.Element {
@@ -15,96 +17,32 @@ export default function Product(props: any): JSX.Element {
 
   return (
     <Container maxWidth="lg" component="main" className={classes.product}>
-      <Grid container alignItems="center" justify="center" component="main">
-        <Grid item xs={false} sm={4} md={5}>
-          {img}
-        </Grid>
-        <Grid item xs={12} sm={8} md={7} className={classes.item}>
-          <Box py={3} />
-          <Typography
-            component="h1"
-            variant="h3"
-            align="center"
-            color="textPrimary"
-            gutterBottom
-          >
-            Pricing
-          </Typography>
-          <Typography
-            component="p"
-            variant="h6"
-            align="center"
-            color="textSecondary"
-            gutterBottom
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam
-          </Typography>
-        </Grid>
-      </Grid>
+      <ProductCard
+        left
+        img={img}
+        subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam"
+        title="Pricing"
+      />
       <Box py={3} />
-      <Grid container alignItems="center" justify="center" component="main">
-        <Grid item xs={12} sm={8} md={7} className={classes.item}>
-          <Box py={3} />
-          <Typography
-            component="h1"
-            variant="h3"
-            align="center"
-            color="textPrimary"
-            gutterBottom
-          >
-            Pricing
-          </Typography>
-          <Typography
-            component="p"
-            variant="h6"
-            align="center"
-            color="textSecondary"
-            gutterBottom
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam
-          </Typography>
-        </Grid>
-        <Grid item xs={false} sm={4} md={5}>
-          {img}
-        </Grid>
-      </Grid>
+      <ProductCard
+        left={false}
+        img={img}
+        subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam"
+        title="Pricing"
+      />
       <Box py={3} />
-      <Grid container alignItems="center" justify="center" component="main">
-        <Grid item xs={false} sm={4} md={5}>
-          {img}
-        </Grid>
-        <Grid item xs={12} sm={8} md={7} className={classes.item}>
-          <Box py={3} />
-          <Typography
-            component="h1"
-            variant="h3"
-            align="center"
-            color="textPrimary"
-            gutterBottom
-          >
-            Pricing
-          </Typography>
-          <Typography
-            component="p"
-            variant="h6"
-            align="center"
-            color="textSecondary"
-            gutterBottom
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam
-          </Typography>
-        </Grid>
-      </Grid>
+      <ProductCard
+        left
+        img={img}
+        subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam"
+        title="Pricing"
+      />
     </Container>
   );
 }
-
-Product.propTypes = {
-  img: PropTypes.node.isRequired,
-};

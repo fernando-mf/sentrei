@@ -10,41 +10,40 @@ import ProductStyles from "./ProductCardStyles";
 
 export default function ProductCard(props: any): JSX.Element {
   const classes = ProductStyles();
-  const {left, img} = props;
+  const {left, img, subTitle, title} = props;
+
+  const Picture = (
+    <Grid item xs={false} sm={4} md={5}>
+      {img}
+    </Grid>
+  );
 
   return (
     <>
-      <Grid item xs={false} sm={left ? 4 : 8} md={left ? 5 : 7}>
-        {img}
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={left ? 8 : 4}
-        md={left ? 7 : 5}
-        className={classes.item}
-      >
-        <Box py={3} />
-        <Typography
-          component="h1"
-          variant="h3"
-          align="center"
-          color="textPrimary"
-          gutterBottom
-        >
-          Pricing
-        </Typography>
-        <Typography
-          component="p"
-          variant="h6"
-          align="center"
-          color="textSecondary"
-          gutterBottom
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam
-        </Typography>
+      <Grid container alignItems="center" justify="center" component="main">
+        {left && Picture}
+        <Grid item xs={12} sm={8} md={7} className={classes.item}>
+          <Box py={3} />
+          <Typography
+            component="h1"
+            variant="h3"
+            align="center"
+            color="textPrimary"
+            gutterBottom
+          >
+            {title}
+          </Typography>
+          <Typography
+            component="p"
+            variant="h6"
+            align="center"
+            color="textSecondary"
+            gutterBottom
+          >
+            {subTitle}
+          </Typography>
+        </Grid>
+        {!left && Picture}
       </Grid>
     </>
   );
@@ -53,4 +52,6 @@ export default function ProductCard(props: any): JSX.Element {
 ProductCard.propTypes = {
   left: PropTypes.bool.isRequired,
   img: PropTypes.node.isRequired,
+  subTitle: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
