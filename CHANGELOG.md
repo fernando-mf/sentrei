@@ -1,3 +1,9 @@
+# [4.29.0](https://github.com/sentrei/sentrei/compare/v4.28.4...v4.29.0) (2020-05-19)
+
+### Features
+
+- 🎸 add underline fa1 ([3745ecc](https://github.com/sentrei/sentrei/commit/3745eccdc6027480dcadbbb33d14812becefc020)), closes [#1648](https://github.com/sentrei/sentrei/issues/1648)
+
 ## [4.28.4](https://github.com/sentrei/sentrei/compare/v4.28.3...v4.28.4) (2020-05-19)
 
 ### Bug Fixes
