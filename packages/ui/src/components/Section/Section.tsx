@@ -16,6 +16,7 @@ export default function Section(props: any): JSX.Element {
         variant="h2"
         align="center"
         color="textPrimary"
+        className={classes.title}
         gutterBottom
       >
         {title}
