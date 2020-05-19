@@ -2,10 +2,6 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 const FeatureStyles = makeStyles((theme: Theme) =>
   createStyles({
-    feature: {
-      flexGrow: 1,
-      padding: theme.spacing(0, 3, 3),
-    },
     image: {
       height: 55,
     },

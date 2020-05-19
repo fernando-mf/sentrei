@@ -9,5 +9,6 @@ export {default as Product} from "./components/Product";
 export {default as ProTip} from "./components/ProTip";
 export {default as Section} from "./components/Section";
 export {default as Testimonial} from "./components/Testimonial";
+export {default as TestimonialCard} from "./components/TestimonialCard";
 
 export {default as Theme} from "./containers/Theme";

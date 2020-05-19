@@ -2,17 +2,17 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 const TestimonialStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      display: "flex",
-      overflow: "hidden",
-      backgroundColor: theme.palette.secondary.light,
+    actions: {
+      textAlign: "center",
     },
-    container: {
-      marginTop: theme.spacing(15),
-      marginBottom: theme.spacing(30),
+    header: {
       alignItems: "center",
+    },
+    item: {
       display: "flex",
-      position: "relative",
+      flexDirection: "column",
+      alignItems: "center",
+      padding: theme.spacing(0, 5),
     },
   }),
 );
