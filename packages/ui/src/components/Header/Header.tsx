@@ -17,6 +17,7 @@ import Scrollspy from "react-scrollspy";
 
 import {i18n} from "@sentrei/common/i18n";
 import Link from "@sentrei/ui/components/Link";
+import Theme from "@sentrei/ui/containers/Theme";
 
 import HeaderStyles from "./HeaderStyles";
 
@@ -101,8 +102,8 @@ export default function Header(props: any): JSX.Element {
                         "pricing",
                         "faq",
                       ]}
-                      className="menu"
                       currentClassName="scroll-active-button"
+                      offset={36}
                     >
                       <Button href="#product" className={classes.button}>
                         <Typography>{productText}</Typography>
