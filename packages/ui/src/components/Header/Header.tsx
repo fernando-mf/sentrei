@@ -39,8 +39,10 @@ export default function Header(props: any): JSX.Element {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = (language: string): void => {
-    i18n.changeLanguage(language);
+  const handleClose = (language?: string): void => {
+    if (language) {
+      i18n.changeLanguage(language);
+    }
     setAnchorEl(null);
   };
 
@@ -153,7 +155,7 @@ export default function Header(props: any): JSX.Element {
                   anchorEl={anchorEl}
                   keepMounted
                   open={Boolean(anchorEl)}
-                  onClose={handleClose}
+                  onClose={(): void => handleClose()}
                 >
                   <MenuItem onClick={(): void => handleClose("en")}>
                     English

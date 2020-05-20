@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const pngLandingBanner = require("../../../public/images/banner-landing.png?resze&sizes[]=300&sizes[]=600&sizes[]=900");
+const pngLandingBanner = require("../../../public/images/banner-landing.png");
 
 const Logo = styled.img`
   max-width: 100%;
