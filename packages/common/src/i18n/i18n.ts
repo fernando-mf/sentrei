@@ -31,4 +31,5 @@ export const {
   Link,
   Trans,
 } = nextI18next;
+
 export const useTranslation = originalUseTranslation;
