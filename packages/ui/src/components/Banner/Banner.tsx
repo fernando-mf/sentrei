@@ -62,6 +62,7 @@ export default function Banner(props: any): JSX.Element {
         color="textSecondary"
         component="p"
         gutterBottom
+        className={classes.text}
       >
         {bannerText}
       </Typography>
