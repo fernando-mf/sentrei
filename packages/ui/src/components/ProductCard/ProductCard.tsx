@@ -14,7 +14,7 @@ import ProductStyles from "./ProductCardStyles";
 function ProductCard(props: any): JSX.Element {
   const classes = ProductStyles();
   const {left, img, subTitle, title, width} = props;
-  const [scale, setScale] = useState(1.1);
+  const [scale] = useState(1.1);
 
   const Picture = (
     <Grid item xs={false} sm={4} md={5}>
