@@ -6,11 +6,11 @@ import React from "react";
 import {withTranslation} from "@sentrei/common/i18n";
 import Faq from "@sentrei/ui/components/Faq";
 import Footer from "@sentrei/ui/components/Footer";
-import Pricing from "@sentrei/ui/components/Pricing";
 import Spacing from "@sentrei/ui/components/Spacing";
 import SentreiBanner from "@sentrei/web/components/SentreiBanner";
 import SentreiFeature from "@sentrei/web/components/SentreiFeature";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
+import SentreiPricing from "@sentrei/web/components/SentreiPricing";
 import SentreiProduct from "@sentrei/web/components/SentreiProduct";
 import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
 
@@ -75,7 +75,26 @@ function Index({t}: any): JSX.Element {
       </div>
       <Spacing />
       <div id="pricing">
-        <Pricing />
+        <SentreiPricing
+          buttonTextOne={t("buttonTextOne")}
+          buttonVariantOne={t("buttonVariantOne")}
+          descriptionOne={t("descriptionOne")}
+          priceOne={t("priceOne")}
+          titleOne={t("titleOne")}
+          subTitleOne={t("subTitleOne")}
+          buttonTextTwo={t("buttonTextTwo")}
+          buttonVariantTwo={t("buttonVariantTwo")}
+          descriptionTwo={t("descriptionTwo")}
+          priceTwo={t("priceTwo")}
+          titleTwo={t("titleTwo")}
+          subTitleTwo={t("subTitleTwo")}
+          buttonTextThree={t("buttonTextThree")}
+          buttonVariantThree={t("buttonVariantThree")}
+          descriptionThree={t("descriptionThree")}
+          priceThree={t("priceThree")}
+          titleThree={t("titleThree")}
+          subTitleThree={t("subTitleThree")}
+        />
       </div>
       <Spacing />
       <div id="faq">
