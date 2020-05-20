@@ -50,13 +50,13 @@ export default function Product(props: any): JSX.Element {
 }
 
 Product.propTypes = {
-  connectImg = PropTypes.node.isRequired,
-  connectSubTitle = PropTypes.string.isRequired,
-  connectTitle = PropTypes.string.isRequired,
-  dataImg = PropTypes.node.isRequired,
-  dataSubTitle = PropTypes.string.isRequired,
-  dataTitle = PropTypes.string.isRequired,
-  videoImg = PropTypes.node.isRequired,
-  videoSubTitle = PropTypes.string.isRequired,
-  videoTitle = PropTypes.string.isRequired,
+  connectImg: PropTypes.node.isRequired,
+  connectSubTitle: PropTypes.string.isRequired,
+  connectTitle: PropTypes.string.isRequired,
+  dataImg: PropTypes.node.isRequired,
+  dataSubTitle: PropTypes.string.isRequired,
+  dataTitle: PropTypes.string.isRequired,
+  videoImg: PropTypes.node.isRequired,
+  videoSubTitle: PropTypes.string.isRequired,
+  videoTitle: PropTypes.string.isRequired,
 };

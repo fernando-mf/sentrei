@@ -2,13 +2,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const pngLandingBanner = require("../../../public/images/video.svg");
+const pngLandingBanner = require("../../../public/images/connect.svg");
 
 const Logo = styled.img`
   max-width: 100%;
 `;
 
-export default function VideoPicture(): JSX.Element {
+export default function ConnectPicture(): JSX.Element {
   return (
     <picture>
       <Logo src={pngLandingBanner} alt="logo" />

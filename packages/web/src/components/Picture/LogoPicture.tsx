@@ -8,12 +8,10 @@ const Logo = styled.img`
   max-width: 100%;
 `;
 
-function LogoPicture(): JSX.Element {
+export default function LogoPicture(): JSX.Element {
   return (
     <picture>
       <Logo src={pngLandingBanner} alt="logo" />
     </picture>
   );
 }
-
-export default LogoPicture;
