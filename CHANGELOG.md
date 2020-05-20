@@ -1,3 +1,16 @@
+# [4.31.0](https://github.com/sentrei/sentrei/compare/v4.30.6...v4.31.0) (2020-05-20)
+
+### Bug Fixes
+
+- 🐛 bug handle close ([54a11a1](https://github.com/sentrei/sentrei/commit/54a11a1f55fa4dc6ddd74c52a764ebea21571da1))
+
+### Features
+
+- 🎸 add i18n feat ([88d1c04](https://github.com/sentrei/sentrei/commit/88d1c04861d98f14c63e6fefeb6c5e7af22a69ba))
+- 🎸 add priicing section ([dd0d6ff](https://github.com/sentrei/sentrei/commit/dd0d6ff6fc3911dd1a3cb3cadf397197e5f98d77))
+- 🎸 add product shadow ([04cd178](https://github.com/sentrei/sentrei/commit/04cd178a7c894ba2254e61bb344902e86ed09c16))
+- 🎸 upgrade product card ([3e9f20d](https://github.com/sentrei/sentrei/commit/3e9f20dd750087e4bd6286b67bcffa2e4f78f160))
+
 ## [4.30.6](https://github.com/sentrei/sentrei/compare/v4.30.5...v4.30.6) (2020-05-20)
 
 ### Bug Fixes
