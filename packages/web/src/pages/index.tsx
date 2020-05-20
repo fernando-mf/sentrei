@@ -4,13 +4,13 @@ import Head from "next/head";
 import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
-import Banner from "@sentrei/ui/components/Banner";
 import Faq from "@sentrei/ui/components/Faq";
 import Feature from "@sentrei/ui/components/Feature";
 import Footer from "@sentrei/ui/components/Footer";
 import Pricing from "@sentrei/ui/components/Pricing";
 import Spacing from "@sentrei/ui/components/Spacing";
 import Testimonial from "@sentrei/ui/components/Testimonial";
+import SentreiBanner from "@sentrei/web/components/SentreiBanner";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 import SentreiProduct from "@sentrei/web/components/SentreiProduct";
 
@@ -32,7 +32,16 @@ function Index({t}: any): JSX.Element {
         spy
         testimonialText={t("testimonial")}
       />
-      <Banner />
+      <SentreiBanner
+        bannerBottom={t("bannerBottom")}
+        bannerText={t("bannerText")}
+        bannerTop={t("bannerTop")}
+        googleText={t("googleText")}
+        startText={t("startText")}
+        typicalOne={t("typicalOne")}
+        typicalTwo={t("typicalTwo")}
+        typicalThree={t("typicalThree")}
+      />
       <Spacing />
       <div id="product">
         <SentreiProduct />
