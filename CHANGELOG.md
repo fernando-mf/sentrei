@@ -1,3 +1,9 @@
+## [4.30.4](https://github.com/sentrei/sentrei/compare/v4.30.3...v4.30.4) (2020-05-20)
+
+### Bug Fixes
+
+- **deps:** bump typescript from 3.9.2 to 3.9.3 ([af04a97](https://github.com/sentrei/sentrei/commit/af04a97054336e4e0127d0bd950b197eb54a9725))
+
 ## [4.30.3](https://github.com/sentrei/sentrei/compare/v4.30.2...v4.30.3) (2020-05-19)
 
 ### Bug Fixes
