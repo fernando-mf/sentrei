@@ -9,7 +9,7 @@ const ProductStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(0, 3, 0),
     },
     tilt: {
-      filter: "drop-shadow(0 9px 9px gray)",
+      filter: "drop-shadow(0 3px 3px gray)",
     },
   }),
 );
