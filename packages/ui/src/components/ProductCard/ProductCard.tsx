@@ -5,17 +5,22 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import withWidth, {isWidthUp, isWidthDown} from "@material-ui/core/withWidth";
 import PropTypes from "prop-types";
-import React from "react";
+import React, {useState} from "react";
+
+import Tilt from "react-parallax-tilt";
 
 import ProductStyles from "./ProductCardStyles";
 
 function ProductCard(props: any): JSX.Element {
   const classes = ProductStyles();
   const {left, img, subTitle, title, width} = props;
+  const [scale, setScale] = useState(1.1);
 
   const Picture = (
     <Grid item xs={false} sm={4} md={5}>
-      {img}
+      <Tilt scale={scale} transitionSpeed={2500} className={classes.tilt}>
+        {img}
+      </Tilt>
     </Grid>
   );
 

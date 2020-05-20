@@ -8,6 +8,9 @@ const ProductStyles = makeStyles((theme: Theme) =>
     product: {
       padding: theme.spacing(0, 3, 0),
     },
+    tilt: {
+      filter: "drop-shadow(0 9px 9px gray)",
+    },
   }),
 );
 
