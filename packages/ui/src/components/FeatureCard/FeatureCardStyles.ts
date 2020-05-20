@@ -5,6 +5,7 @@ const FeatureCardStyles = makeStyles((theme: Theme) =>
     avatar: {
       width: theme.spacing(15),
       height: theme.spacing(15),
+      boxShadow: "0px 0px 5px 1px grey",
       backgroundColor: theme.palette.common.white,
     },
     card: {

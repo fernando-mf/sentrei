@@ -8,11 +8,11 @@ import Faq from "@sentrei/ui/components/Faq";
 import Footer from "@sentrei/ui/components/Footer";
 import Pricing from "@sentrei/ui/components/Pricing";
 import Spacing from "@sentrei/ui/components/Spacing";
-import Testimonial from "@sentrei/ui/components/Testimonial";
 import SentreiBanner from "@sentrei/web/components/SentreiBanner";
 import SentreiFeature from "@sentrei/web/components/SentreiFeature";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 import SentreiProduct from "@sentrei/web/components/SentreiProduct";
+import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Index({t}: any): JSX.Element {
@@ -56,17 +56,22 @@ function Index({t}: any): JSX.Element {
       <Spacing />
       <div id="feature">
         <SentreiFeature
-          titleOne={t("titleOne")}
-          subTitleOne={t("subTitleOne")}
-          titleTwo={t("titleTwo")}
-          subTitleTwo={t("subTitleTwo")}
-          titleThree={t("titleThree")}
-          subTitleThree={t("subTitleThree")}
+          titleOne={t("featureTitleOne")}
+          subTitleOne={t("featureSubTitleOne")}
+          titleTwo={t("featureTitleTwo")}
+          subTitleTwo={t("featureSubTitleTwo")}
+          titleThree={t("featureTitleThree")}
+          subTitleThree={t("featureSubTitleThree")}
         />
       </div>
       <Spacing />
       <div id="testimonial">
-        <Testimonial />
+        <SentreiTestimonial
+          authorOne={t("testimonialAuthorOne")}
+          bodyOne={t("testimonialBodyOne")}
+          occupationOne={t("testimonialOccupationOne")}
+          titleOne={t("testimonialTitleOne")}
+        />
       </div>
       <Spacing />
       <div id="pricing">
