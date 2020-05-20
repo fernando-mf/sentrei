@@ -7,7 +7,10 @@ import React from "react";
 import FeatureCard from "@sentrei/ui/components/FeatureCard";
 import Section from "@sentrei/ui/components/Section";
 
+import FeatureStyles from "./FeatureStyles";
+
 export default function Feature(props: any): JSX.Element {
+  const classes = FeatureStyles();
   const {
     imgOne,
     titleOne,
@@ -25,13 +28,13 @@ export default function Feature(props: any): JSX.Element {
       <Section title="Features" subTitle="" />
       <Container maxWidth="md" component="main">
         <Grid container spacing={3}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} className={classes.item}>
             <FeatureCard img={imgOne} title={titleOne} subTitle={subTitleOne} />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} className={classes.item}>
             <FeatureCard img={imgTwo} title={titleTwo} subTitle={subTitleTwo} />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} className={classes.item}>
             <FeatureCard
               img={imgThree}
               title={titleThree}

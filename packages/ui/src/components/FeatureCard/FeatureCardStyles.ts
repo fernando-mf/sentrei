@@ -1,6 +1,6 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const FeatureStyles = makeStyles((theme: Theme) =>
+const FeatureCardStyles = makeStyles((theme: Theme) =>
   createStyles({
     avatar: {
       width: theme.spacing(15),
@@ -22,4 +22,4 @@ const FeatureStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default FeatureStyles;
+export default FeatureCardStyles;

@@ -7,10 +7,10 @@ import Typography from "@material-ui/core/Typography";
 import PropTypes from "prop-types";
 import React from "react";
 
-import FeatureStyles from "./FeatureCardStyles";
+import FeatureCardStyles from "./FeatureCardStyles";
 
 export default function FeatureCard(props: any): JSX.Element {
-  const classes = FeatureStyles();
+  const classes = FeatureCardStyles();
 
   const {img, subTitle, title} = props;
   return (
@@ -20,7 +20,9 @@ export default function FeatureCard(props: any): JSX.Element {
           <Avatar className={classes.avatar}>{img}</Avatar>
         </div>
         <Box m={1} />
-        <Typography variant="h5">{title}</Typography>
+        <Typography noWrap variant="h5">
+          {title}
+        </Typography>
         <Box m={1} />
         <Typography variant="body2" color="textSecondary" component="p">
           {subTitle}

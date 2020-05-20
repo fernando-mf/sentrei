@@ -6,6 +6,7 @@ import React from "react";
 import {i18n} from "@sentrei/common/i18n";
 import Feature from "@sentrei/ui/components/Feature";
 import FocusPicture from "@sentrei/web/components/Picture/FocusPicture";
+import GoalPicture from "@sentrei/web/components/Picture/GoalPicture";
 import TimePicture from "@sentrei/web/components/Picture/TimePicture";
 
 export default function SentreiFeature(props: any): JSX.Element {
@@ -28,7 +29,7 @@ export default function SentreiFeature(props: any): JSX.Element {
         imgTwo={<FocusPicture />}
         titleTwo={titleTwo}
         subTitleTwo={subTitleTwo}
-        imgThree={<TimePicture />}
+        imgThree={<GoalPicture />}
         titleThree={titleThree}
         subTitleThree={subTitleThree}
       />
