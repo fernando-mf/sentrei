@@ -32,13 +32,13 @@ const HeaderStyles = makeStyles((theme: Theme) =>
     sectionDesktop: {
       display: "none",
       padding: theme.spacing(1),
-      [theme.breakpoints.up("md")]: {
+      [theme.breakpoints.up("lg")]: {
         display: "flex",
       },
     },
     sectionMobile: {
       display: "flex",
-      [theme.breakpoints.up("md")]: {
+      [theme.breakpoints.up("lg")]: {
         display: "none",
       },
     },

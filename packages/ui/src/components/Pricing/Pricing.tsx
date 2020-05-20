@@ -61,15 +61,16 @@ export default function Pricing(props: any): JSX.Element {
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map(tier => (
-            <PricingCard
-              buttonText={tier.buttonText}
-              buttonVariant={tier.buttonVariant}
-              description={tier.description}
-              key={tier.title}
-              price={tier.price}
-              title={tier.title}
-              subTitle={tier.subTitle}
-            />
+            <Grid item key={tier.title} xs={12} sm={4}>
+              <PricingCard
+                buttonText={tier.buttonText}
+                buttonVariant={tier.buttonVariant}
+                description={tier.description}
+                price={tier.price}
+                title={tier.title}
+                subTitle={tier.subTitle}
+              />
+            </Grid>
           ))}
         </Grid>
       </Container>

@@ -65,7 +65,7 @@ export default class Document extends NextDocument {
           />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Helvetica:300,400,500,700&display=swap"
+            href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:300,400,500,700&display=swap"
           />
           <link
             rel="apple-touch-icon"

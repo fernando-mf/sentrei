@@ -1238,6 +1238,11 @@
     core-js "^3.1.4"
     superstruct "^0.8.3"
 
+"@camwiegert/typical@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@camwiegert/typical/-/typical-0.1.1.tgz#c75d3b658e2f542d113c3e266389794c7dc45d6d"
+  integrity sha512-4xAtH3F3uJ8boe9IPahdYFCBELmyOBwHGAn0rDO6C1rx0TuZb5f4UqfuiOQF7YiMJGCOsUIW7LyucMNnVQYsRg==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
@@ -16759,19 +16764,19 @@ i18next-browser-languagedetector@^4.0.0:
   dependencies:
     "@babel/runtime" "^7.5.5"
 
-i18next-fs-backend@^1.0.1, i18next-fs-backend@^1.0.2:
+i18next-fs-backend@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/i18next-fs-backend/-/i18next-fs-backend-1.0.3.tgz#2bfb81c1951d0c55ee6f82f9277ef950a55ba80d"
   integrity sha512-ppSvicYolLrWEVQ7Eb27708GFYikq1bXGM9Wmz/5faM6V2nvhnHPP3fDLQ26E2cNZAKGeT/9znK08jSgei4leA==
 
-i18next-http-backend@^1.0.4, i18next-http-backend@^1.0.8:
+i18next-http-backend@^1.0.4:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/i18next-http-backend/-/i18next-http-backend-1.0.10.tgz#56d0c4edca44b4210253f7f07bc340d1ac682d50"
   integrity sha512-HQl3N2plhU7WQd2Bcq3UWrpgM01w/Lkee76airTsKsLG4jnWKy6mYH3O7xz1da2ga9R6AN1MTSVVzJTp0uDl7A==
   dependencies:
     node-fetch "2.6.0"
 
-i18next-http-middleware@>=1.0.2, i18next-http-middleware@^1.0.0:
+i18next-http-middleware@^1.0.0:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/i18next-http-middleware/-/i18next-http-middleware-1.0.6.tgz#f72532db9f946f52fd9ba3b68ed7d82748ad3fa5"
   integrity sha512-SMMe3Lnn2lPk/qlZ02qO2fm50Rx3f4c9puLxa3L5nxLthZrIKCI3HHmrJddJZIKI2RW2Im+Vr8597g7A9W+mFQ==
@@ -22284,25 +22289,7 @@ next-compose-plugins@^2.2.0:
   resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.2.0.tgz#95cd8eb40ab0652070d76572fb648354191628b0"
   integrity sha512-ChUlpT9tWfJ7YxqGw/WQ2T1gf8EeX93n1XqeQw0lkvGa7seszahvF4eOZUJoq7Hetsbzg4UHVnPoCXfXTyQR3g==
 
-next-i18next@^4.4.1:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/next-i18next/-/next-i18next-4.4.2.tgz#ba7ed45d93b9123baa6f06abc29c784e06e2c088"
-  integrity sha512-J7A0x4MFqDw2O2nJGId98pmeSTNwRpMHTSNboi4xeQsvl4PN5T3MrA/LZN0GJCa8rsRWR63dkNVYN8fx5OOg1A==
-  dependencies:
-    core-js "^2"
-    detect-node "^2.0.4"
-    hoist-non-react-statics "^3.2.0"
-    i18next "^19.0.3"
-    i18next-browser-languagedetector "^4.0.0"
-    i18next-fs-backend "^1.0.2"
-    i18next-http-backend "^1.0.8"
-    i18next-http-middleware ">=1.0.2"
-    path-match "^1.2.4"
-    prop-types "^15.6.2"
-    react-i18next "^11.0.0"
-    url "^0.11.0"
-
-next-i18next@^5.0.0-beta.2:
+next-i18next@^5.0.0-beta.2, next-i18next@beta:
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/next-i18next/-/next-i18next-5.0.0-beta.2.tgz#32646f31f955a707f6b77bb3cf12371b2afa24f5"
   integrity sha512-M5QkHf+x13urBJEfKmFlrrnvwg4ob3wv2LacyRK32XbSw9DuVIqttBtg8wR1U1LPpUHsGBQaz0cpJf4QmBlMYA==
@@ -25857,6 +25844,11 @@ react-outside-click-handler@^1.2.4:
     object.values "^1.1.0"
     prop-types "^15.7.2"
 
+react-parallax-tilt@^1.3.42:
+  version "1.3.42"
+  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.3.42.tgz#aa12ae835b4ef8455e09c8bc5da8a84068a4dc56"
+  integrity sha512-AY3xOn7K3TL1cRm/0RtvUXIImDTYyBeAZLBW6PTbG/RUrljik8nHvMZHh2O6B51VFRTCSKCQio3YAVspcCO3IA==
+
 react-particles-js@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/react-particles-js/-/react-particles-js-3.2.1.tgz#a331e80519c9e70f448090915def088f72ed6ed3"
@@ -26024,6 +26016,13 @@ react-transition-group@^4.3.0, react-transition-group@^4.4.0:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-typical@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/react-typical/-/react-typical-0.1.3.tgz#c56e607a8e435b6f8a23eb5eaaf00768e35be06d"
+  integrity sha512-VynIYVQvAZ1Nco4C+QNEqR17STGK/xw6Dc1zNj/LuYm8fISw1Qp3q9n3hv6O3iQDLD0OWwdWKHun5oj6mCMB4A==
+  dependencies:
+    "@camwiegert/typical" "^0.1.1"
 
 react-use@13.27.0:
   version "13.27.0"
