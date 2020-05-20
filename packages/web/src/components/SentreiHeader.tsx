@@ -3,6 +3,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import {i18n} from "@sentrei/common/i18n";
 import Header from "@sentrei/ui/components/Header";
 import LogoPicture from "@sentrei/web/components/Picture/LogoPicture";
 
@@ -21,6 +22,7 @@ export default function SentreiHeader(props: any): JSX.Element {
   return (
     <>
       <Header
+        key={i18n.language}
         faqText={faqText}
         featuresText={featuresText}
         pricingText={pricingText}

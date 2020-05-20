@@ -3,6 +3,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import {i18n} from "@sentrei/common/i18n";
 import Banner from "@sentrei/ui/components/Banner";
 
 export default function SentreiBanner(props: any): JSX.Element {
@@ -20,6 +21,7 @@ export default function SentreiBanner(props: any): JSX.Element {
   return (
     <>
       <Banner
+        key={i18n.language}
         bannerBottom={bannerBottom}
         bannerText={bannerText}
         bannerTop={bannerTop}
