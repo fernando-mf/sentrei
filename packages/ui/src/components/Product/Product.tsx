@@ -13,14 +13,14 @@ export default function Product(props: any): JSX.Element {
   const classes = ProductStyles();
   const {
     connectImg,
-    connectSubTitle,
     connectTitle,
+    connectSubTitle,
     dataImg,
-    dataSubTitle,
     dataTitle,
+    dataSubTitle,
     videoImg,
-    videoSubTitle,
     videoTitle,
+    videoSubTitle,
   } = props;
 
   return (
@@ -34,16 +34,16 @@ export default function Product(props: any): JSX.Element {
       <Box py={3} />
       <ProductCard
         left={false}
-        img={dataImg}
-        subTitle={dataSubTitle}
-        title={dataTitle}
+        img={connectImg}
+        subTitle={connectSubTitle}
+        title={connectTitle}
       />
       <Box py={3} />
       <ProductCard
         left
-        img={connectImg}
-        subTitle={connectSubTitle}
-        title={connectTitle}
+        img={dataImg}
+        subTitle={dataSubTitle}
+        title={dataTitle}
       />
     </Container>
   );
@@ -51,12 +51,12 @@ export default function Product(props: any): JSX.Element {
 
 Product.propTypes = {
   connectImg: PropTypes.node.isRequired,
-  connectSubTitle: PropTypes.string.isRequired,
   connectTitle: PropTypes.string.isRequired,
+  connectSubTitle: PropTypes.string.isRequired,
   dataImg: PropTypes.node.isRequired,
-  dataSubTitle: PropTypes.string.isRequired,
   dataTitle: PropTypes.string.isRequired,
+  dataSubTitle: PropTypes.string.isRequired,
   videoImg: PropTypes.node.isRequired,
-  videoSubTitle: PropTypes.string.isRequired,
   videoTitle: PropTypes.string.isRequired,
+  videoSubTitle: PropTypes.string.isRequired,
 };

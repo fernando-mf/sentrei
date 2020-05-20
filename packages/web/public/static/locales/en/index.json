@@ -8,11 +8,17 @@
   "testimonial": "Testimonial",
   "title": "Sentrei",
   "bannerBottom": "do great work",
-  "bannerText": "A unified virtual workspace that never goes anywhere-always accessible from anywhere with a click of a button-",
+  "bannerText": "A unified virtual workspace that never goes anywhere - always accessible from anywhere with a click of a button -",
   "bannerTop": "Where",
   "googleText": "Sign up with Google",
   "startText": "Get Started -Free forever-",
   "typicalOne": "remote teams",
   "typicalThree": "classmates",
-  "typicalTwo": "workforces"
+  "typicalTwo": "workforces",
+  "connectTitle": "Always available for everyone",
+  "connectSubTitle": "Tired of minutes-restriced video conference apps? Our virtual workspace will be always there for you - just like in the physical world",
+  "dataTitle": "Insightful analytics and data",
+  "dataSubTitle": "Our data analytics team will track everyone's presence on the workspace and present you with real-time updates for team productivity and efficiency",
+  "videoTitle": "Bond together while focusing",
+  "videoSubTitle": "Want a remote-oriented workspace for working with others virtually without ever getting distracted? You can now focus solely on your work with the company of others all while listening to your favorite music"
 }

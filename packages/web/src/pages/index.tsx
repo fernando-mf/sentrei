@@ -44,7 +44,14 @@ function Index({t}: any): JSX.Element {
       />
       <Spacing />
       <div id="product">
-        <SentreiProduct />
+        <SentreiProduct
+          connectSubTitle={t("connectSubTitle")}
+          connectTitle={t("connectTitle")}
+          dataSubTitle={t("dataSubTitle")}
+          dataTitle={t("dataTitle")}
+          videoSubTitle={t("videoSubTitle")}
+          videoTitle={t("videoTitle")}
+        />
       </div>
       <Spacing />
       <div id="feature">

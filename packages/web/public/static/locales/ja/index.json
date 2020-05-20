@@ -8,11 +8,17 @@
   "testimonial": "お客様の声",
   "title": "セントレイ",
   "bannerBottom": "にとって最高の仕事場",
-  "bannerText": "仮想ワークスペースで最高のパフォーマンスを発揮しよう-どこからでもワンクリックで即座にアクセス-",
+  "bannerText": "バーチャル・ワークスペースで最大限のパフォーマンスを発揮しよう - どこからでもワンクリックで即座にアクセス -",
   "bannerTop": "すべての",
   "googleText": "Google で サインインする",
   "startText": "すべて 無料 でスタートする",
   "typicalOne": "リモートチーム",
   "typicalThree": "クラスメート",
-  "typicalTwo": "同僚"
+  "typicalTwo": "同僚",
+  "connectSubTitle": "",
+  "connectTitle": "",
+  "dataSubTitle": "",
+  "dataTitle": "",
+  "videoSubTitle": "",
+  "videoTitle": ""
 }
