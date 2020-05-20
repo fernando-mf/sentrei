@@ -15,6 +15,7 @@ const BannerStyles = makeStyles((theme: Theme) =>
     },
     typical: {
       color: theme.palette.primary.main,
+      placeContent: "center",
     },
   }),
 );
