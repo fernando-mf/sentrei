@@ -5,6 +5,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
+import Typical from "react-typical";
 import styled from "styled-components";
 
 import BannerStyles from "./BannerStyles";
@@ -24,7 +25,16 @@ export default function Banner(): JSX.Element {
         color="textPrimary"
         gutterBottom
       >
-        Where remote software teams do their best work
+        Where
+        <br />
+        <Typical
+          steps={["remote teams", 3000, "dev teams", 3000]}
+          loop={Infinity}
+          wrapper="span"
+          className={classes.typical}
+        />
+        <br />
+        do their best work
       </Typography>
       <Typography
         variant="h5"

@@ -13,6 +13,9 @@ const BannerStyles = makeStyles((theme: Theme) =>
     margin: {
       margin: theme.spacing(1),
     },
+    typical: {
+      color: theme.palette.primary.main,
+    },
   }),
 );
 
