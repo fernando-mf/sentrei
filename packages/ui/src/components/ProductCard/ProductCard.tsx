@@ -3,14 +3,15 @@
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import withWidth, {isWidthUp, isWidthDown} from "@material-ui/core/withWidth";
 import PropTypes from "prop-types";
 import React from "react";
 
 import ProductStyles from "./ProductCardStyles";
 
-export default function ProductCard(props: any): JSX.Element {
+function ProductCard(props: any): JSX.Element {
   const classes = ProductStyles();
-  const {left, img, subTitle, title} = props;
+  const {left, img, subTitle, title, width} = props;
 
   const Picture = (
     <Grid item xs={false} sm={4} md={5}>
@@ -22,6 +23,7 @@ export default function ProductCard(props: any): JSX.Element {
     <>
       <Grid container alignItems="center" justify="center" component="main">
         {left && Picture}
+        {!left && isWidthDown("xs", width) && Picture}
         <Grid item xs={12} sm={8} md={7} className={classes.item}>
           <Box py={3} />
           <Typography
@@ -43,7 +45,7 @@ export default function ProductCard(props: any): JSX.Element {
             {subTitle}
           </Typography>
         </Grid>
-        {!left && Picture}
+        {!left && isWidthUp("sm", width) && Picture}
       </Grid>
     </>
   );
@@ -55,3 +57,5 @@ ProductCard.propTypes = {
   subTitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
+
+export default withWidth()(ProductCard);
