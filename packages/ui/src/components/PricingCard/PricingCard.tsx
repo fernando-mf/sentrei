@@ -25,45 +25,43 @@ export default function PricingCard(props: any): JSX.Element {
   const classes = PricingCardStyles();
 
   return (
-    <Grid item key={title} xs={12} sm={6} md={4}>
-      <Card>
-        <CardHeader
-          title={title}
-          subheader={subTitle}
-          titleTypographyProps={{align: "center"}}
-          subheaderTypographyProps={{align: "center"}}
-          action={action}
-          className={classes.cardHeader}
-        />
-        <CardContent>
-          <div className={classes.cardPricing}>
-            <Typography component="h2" variant="h3" color="textPrimary">
-              {price}
+    <Card>
+      <CardHeader
+        title={title}
+        subheader={subTitle}
+        titleTypographyProps={{align: "center"}}
+        subheaderTypographyProps={{align: "center"}}
+        action={action}
+        className={classes.cardHeader}
+      />
+      <CardContent>
+        <div className={classes.cardPricing}>
+          <Typography component="h2" variant="h3" color="textPrimary">
+            {price}
+          </Typography>
+          <Typography variant="h6" color="textSecondary">
+            /mo
+          </Typography>
+        </div>
+        <ul>
+          {description.map((line: string) => (
+            <Typography
+              component="li"
+              variant="subtitle1"
+              align="center"
+              key={line}
+            >
+              {line}
             </Typography>
-            <Typography variant="h6" color="textSecondary">
-              /mo
-            </Typography>
-          </div>
-          <ul>
-            {description.map((line: string) => (
-              <Typography
-                component="li"
-                variant="subtitle1"
-                align="center"
-                key={line}
-              >
-                {line}
-              </Typography>
-            ))}
-          </ul>
-        </CardContent>
-        <CardActions>
-          <Button fullWidth variant={buttonVariant} color="primary">
-            {buttonText}
-          </Button>
-        </CardActions>
-      </Card>
-    </Grid>
+          ))}
+        </ul>
+      </CardContent>
+      <CardActions>
+        <Button fullWidth variant={buttonVariant} color="primary">
+          {buttonText}
+        </Button>
+      </CardActions>
+    </Card>
   );
 }
 

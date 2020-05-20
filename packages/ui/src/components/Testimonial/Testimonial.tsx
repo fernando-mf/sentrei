@@ -13,13 +13,13 @@ export default function Testimonial(): JSX.Element {
       <Section title="Testimonial" subTitle="" />
       <Container maxWidth="lg" component="main">
         <Grid container direction="row" spacing={3}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={4}>
             <TestimonialCard />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={4}>
             <TestimonialCard />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={4}>
             <TestimonialCard />
           </Grid>
         </Grid>
