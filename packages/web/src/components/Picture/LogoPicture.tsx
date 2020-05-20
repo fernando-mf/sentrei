@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const pngLandingBanner = require("../../../public/images/banner-landing.png");
+const pngPicture = require("../../../public/images/banner-landing.png");
 
 const Logo = styled.img`
   max-width: 100%;
@@ -11,7 +11,7 @@ const Logo = styled.img`
 export default function LogoPicture(): JSX.Element {
   return (
     <picture>
-      <Logo src={pngLandingBanner} alt="logo" />
+      <Logo src={pngPicture} alt="logo" />
     </picture>
   );
 }

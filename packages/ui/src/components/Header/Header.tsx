@@ -17,7 +17,6 @@ import Scrollspy from "react-scrollspy";
 
 import {i18n} from "@sentrei/common/i18n";
 import Link from "@sentrei/ui/components/Link";
-import Theme from "@sentrei/ui/containers/Theme";
 
 import HeaderStyles from "./HeaderStyles";
 
@@ -34,6 +33,7 @@ export default function Header(props: any): JSX.Element {
     spy,
     testimonialText,
   } = props;
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {

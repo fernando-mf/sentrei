@@ -2,13 +2,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const svgPicture = require("../../../public/images/data.svg");
+const svgPicture = require("../../../public/images/time.svg");
 
 const Logo = styled.img`
   max-width: 100%;
 `;
 
-export default function DataPicture(): JSX.Element {
+export default function TimePicture(): JSX.Element {
   return (
     <picture>
       <Logo src={svgPicture} alt="logo" />

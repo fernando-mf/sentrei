@@ -3,8 +3,9 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 const FeatureStyles = makeStyles((theme: Theme) =>
   createStyles({
     avatar: {
-      width: theme.spacing(7),
-      height: theme.spacing(7),
+      width: theme.spacing(15),
+      height: theme.spacing(15),
+      backgroundColor: theme.palette.common.white,
     },
     card: {
       alignItems: "center",
@@ -17,11 +18,6 @@ const FeatureStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
       justifyItems: "space-between",
       justifyContent: "center",
-    },
-    title: {
-      "&:hover": {
-        color: theme.palette.primary.main,
-      },
     },
   }),
 );

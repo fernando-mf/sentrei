@@ -5,12 +5,12 @@ import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
 import Faq from "@sentrei/ui/components/Faq";
-import Feature from "@sentrei/ui/components/Feature";
 import Footer from "@sentrei/ui/components/Footer";
 import Pricing from "@sentrei/ui/components/Pricing";
 import Spacing from "@sentrei/ui/components/Spacing";
 import Testimonial from "@sentrei/ui/components/Testimonial";
 import SentreiBanner from "@sentrei/web/components/SentreiBanner";
+import SentreiFeature from "@sentrei/web/components/SentreiFeature";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 import SentreiProduct from "@sentrei/web/components/SentreiProduct";
 
@@ -55,7 +55,14 @@ function Index({t}: any): JSX.Element {
       </div>
       <Spacing />
       <div id="feature">
-        <Feature />
+        <SentreiFeature
+          titleOne={t("titleOne")}
+          subTitleOne={t("subTitleOne")}
+          titleTwo={t("titleTwo")}
+          subTitleTwo={t("subTitleTwo")}
+          titleThree={t("titleThree")}
+          subTitleThree={t("subTitleThree")}
+        />
       </div>
       <Spacing />
       <div id="testimonial">

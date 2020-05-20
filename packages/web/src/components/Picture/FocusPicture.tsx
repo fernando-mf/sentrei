@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const svgPicture = require("../../../public/images/data.svg");
+const svgPicture = require("../../../public/images/focus.svg");
 
 const Logo = styled.img`
   max-width: 100%;
