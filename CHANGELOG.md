@@ -1,3 +1,9 @@
+## [4.31.5](https://github.com/sentrei/sentrei/compare/v4.31.4...v4.31.5) (2020-05-20)
+
+### Bug Fixes
+
+- **deps:** bump next from 9.4.1 to 9.4.2 ([ad4b8fe](https://github.com/sentrei/sentrei/commit/ad4b8fe11aaa067362a8f8408815ec9d9ca30a23))
+
 ## [4.31.4](https://github.com/sentrei/sentrei/compare/v4.31.3...v4.31.4) (2020-05-20)
 
 ### Bug Fixes
