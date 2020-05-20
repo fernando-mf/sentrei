@@ -5,7 +5,7 @@ const theme = createMuiTheme({
     fontFamily: [
       "Montserrat",
       "Roboto",
-      '"Helvetica Neue"',
+      '"Noto Serif JP"',
       "Arial",
       "sans-serif",
     ].join(","),

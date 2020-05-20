@@ -24,5 +24,11 @@ export const nextI18next = new NextI18next({
 export const includeDefaultNamespaces = (namespaces: string[]): string[] =>
   ["index"].concat(namespaces);
 
-export const {appWithTranslation, withTranslation, Link, Trans} = nextI18next;
+export const {
+  appWithTranslation,
+  i18n,
+  withTranslation,
+  Link,
+  Trans,
+} = nextI18next;
 export const useTranslation = originalUseTranslation;

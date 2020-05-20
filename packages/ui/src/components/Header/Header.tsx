@@ -4,13 +4,18 @@ import Button from "@material-ui/core/Button";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
+import IconButton from "@material-ui/core/IconButton";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import LanguageIcon from "@material-ui/icons/Language";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 import Scrollspy from "react-scrollspy";
 
+import {i18n} from "@sentrei/common/i18n";
 import Link from "@sentrei/ui/components/Link";
 
 import HeaderStyles from "./HeaderStyles";
@@ -28,6 +33,16 @@ export default function Header(props: any): JSX.Element {
     spy,
     testimonialText,
   } = props;
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = (language: string): void => {
+    i18n.changeLanguage(language);
+    setAnchorEl(null);
+  };
 
   const appBarClasses = classNames({
     [classes.appBar]: true,
@@ -125,6 +140,31 @@ export default function Header(props: any): JSX.Element {
                 >
                   <Typography>{signUpText}</Typography>
                 </Button>
+                <IconButton
+                  aria-controls="customized-menu"
+                  aria-haspopup="true"
+                  color="primary"
+                  onClick={handleClick}
+                >
+                  <LanguageIcon />
+                </IconButton>
+                <Menu
+                  id="simple-menu"
+                  anchorEl={anchorEl}
+                  keepMounted
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                >
+                  <MenuItem onClick={(): void => handleClose("en")}>
+                    English
+                  </MenuItem>
+                  <MenuItem onClick={(): void => handleClose("ja")}>
+                    日本語
+                  </MenuItem>
+                  <MenuItem onClick={(): void => handleClose("zh")}>
+                    中文
+                  </MenuItem>
+                </Menu>
               </Grid>
             </div>
           </Grid>
