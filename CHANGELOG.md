@@ -1,3 +1,10 @@
+# [4.32.0](https://github.com/sentrei/sentrei/compare/v4.31.6...v4.32.0) (2020-05-21)
+
+### Features
+
+- 🎸 complete faq i18n ([59ea730](https://github.com/sentrei/sentrei/commit/59ea7301f7ac4ca3e105ebfd3b9278050d8e9fee))
+- 🎸 upgrade testimonial i18n ([3be8982](https://github.com/sentrei/sentrei/commit/3be89827e5775aefe35d9383d0a142bea82fe76a))
+
 ## [4.31.6](https://github.com/sentrei/sentrei/compare/v4.31.5...v4.31.6) (2020-05-20)
 
 ### Bug Fixes
