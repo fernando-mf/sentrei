@@ -1,3 +1,9 @@
+# [4.34.0](https://github.com/sentrei/sentrei/compare/v4.33.0...v4.34.0) (2020-05-21)
+
+### Features
+
+- 🎸 add header mobile ([71cac6b](https://github.com/sentrei/sentrei/commit/71cac6b8d011428dcedbbf9a187a98c19a283fd5)), closes [#1705](https://github.com/sentrei/sentrei/issues/1705)
+
 # [4.32.0](https://github.com/sentrei/sentrei/compare/v4.31.6...v4.32.0) (2020-05-21)
 
 ### Features
