@@ -15,6 +15,7 @@ export default function SentreiHeader(props: any): JSX.Element {
     productText,
     signInText,
     signUpText,
+    sign,
     spy,
     testimonialText,
   } = props;
@@ -30,6 +31,7 @@ export default function SentreiHeader(props: any): JSX.Element {
         signInText={signInText}
         signUpText={signUpText}
         testimonialText={testimonialText}
+        sign={sign}
         spy={spy}
         logo={<LogoPicture />}
       />
@@ -38,7 +40,8 @@ export default function SentreiHeader(props: any): JSX.Element {
 }
 
 SentreiHeader.defaultProps = {
-  spy: false,
+  sign: true,
+  spy: true,
 };
 
 SentreiHeader.propTypes = {
@@ -48,6 +51,7 @@ SentreiHeader.propTypes = {
   productText: PropTypes.string.isRequired,
   signInText: PropTypes.string.isRequired,
   signUpText: PropTypes.string.isRequired,
+  sign: PropTypes.bool,
   spy: PropTypes.bool,
   testimonialText: PropTypes.string.isRequired,
 };

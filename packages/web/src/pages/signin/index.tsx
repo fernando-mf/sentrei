@@ -10,6 +10,7 @@ function About({t}: any): JSX.Element {
   return (
     <>
       <SentreiHeader
+        sign={false}
         spy={false}
         faqText={t("headerFaq")}
         featuresText={t("headerFeatures")}
