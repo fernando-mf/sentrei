@@ -3,7 +3,6 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import Container from "@material-ui/core/Container";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 
@@ -21,12 +20,11 @@ export default function Signin(): JSX.Element {
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h3">
           Sign in
         </Typography>
         <form className={classes.form} noValidate>
@@ -73,7 +71,7 @@ export default function Signin(): JSX.Element {
             </Grid>
             <Grid item>
               <Link href="#" variant="body2">
-                Don't have an account? Sign Up
+                Dont have an account? Sign Up
               </Link>
             </Grid>
           </Grid>

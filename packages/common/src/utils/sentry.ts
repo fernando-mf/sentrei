@@ -1,7 +1,7 @@
 import * as Sentry from "@sentry/browser";
 import get from "lodash.get";
 
-import isBrowser from "@sentrei/web/utils/isBrowser";
+import isBrowser from "@sentrei/common/utils/isBrowser";
 
 Sentry.init({
   enabled: process.env.NODE_ENV !== "production",

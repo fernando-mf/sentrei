@@ -3,8 +3,8 @@ import * as firebase from "firebase/app";
 
 import "firebase/analytics";
 import "firebase/performance";
-import isBrowser from "@sentrei/web/utils/isBrowser";
-import "@sentrei/web/utils/sentry";
+import isBrowser from "@sentrei/common/utils/isBrowser";
+import "@sentrei/common/utils/sentry";
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
