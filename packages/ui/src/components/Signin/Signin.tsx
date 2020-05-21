@@ -17,11 +17,17 @@ import MuiAlert from "@material-ui/lab/Alert";
 import firebase from "firebase/app";
 import Router from "next/router";
 import React from "react";
+import Slide from "@material-ui/core/Slide";
+import {TransitionProps} from "@material-ui/core/transitions";
 
 import "firebase/auth";
 import Link from "@sentrei/ui/components/Link";
 
 import SigninStyles from "./SigninStyles";
+
+function SlideTransition(props: TransitionProps) {
+  return <Slide {...props} direction="up" />;
+}
 
 type Inputs = {
   email: string;
@@ -85,7 +91,12 @@ export default function Signin(): JSX.Element {
     <Container component="main" maxWidth="xs">
       <div className={classes.paper}>
         {open ? (
-          <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Snackbar
+            open={open}
+            autoHideDuration={3000}
+            TransitionComponent={SlideTransition}
+            onClose={handleClose}
+          >
             <MuiAlert onClose={handleClose} variant="filled" severity="error">
               Error: {error}
             </MuiAlert>
