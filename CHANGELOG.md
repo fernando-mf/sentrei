@@ -1,3 +1,9 @@
+## [4.37.2](https://github.com/sentrei/sentrei/compare/v4.37.1...v4.37.2) (2020-05-21)
+
+### Bug Fixes
+
+- **deps:** bump @types/node from 14.0.4 to 14.0.5 ([074374c](https://github.com/sentrei/sentrei/commit/074374ce2343dd5662519ce215255c34865e62de))
+
 ## [4.37.1](https://github.com/sentrei/sentrei/compare/v4.37.0...v4.37.1) (2020-05-21)
 
 ### Bug Fixes
