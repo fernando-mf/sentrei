@@ -19,6 +19,12 @@ const HeaderStyles = makeStyles((theme: Theme) =>
       maxHeight: "180px",
       minWidth: "60px",
       minHeight: "60px",
+      [theme.breakpoints.down("md")]: {
+        maxWidth: "120px",
+        maxHeight: "120px",
+        minWidth: "60px",
+        minHeight: "60px",
+      },
     },
     margin: {
       margin: theme.spacing(1),
@@ -34,10 +40,10 @@ const HeaderStyles = makeStyles((theme: Theme) =>
       },
     },
     sectionMobile: {
-      display: "flex",
-      [theme.breakpoints.up("lg")]: {
+      [theme.breakpoints.up("md")]: {
         display: "none",
       },
+      marginLeft: "auto",
     },
     spy: {
       display: "none",

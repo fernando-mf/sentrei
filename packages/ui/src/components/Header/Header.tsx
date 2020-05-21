@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import AppBar from "@material-ui/core/AppBar";
+import Badge from "@material-ui/core/Badge";
 import Button from "@material-ui/core/Button";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Grid from "@material-ui/core/Grid";
@@ -10,6 +11,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import LanguageIcon from "@material-ui/icons/Language";
+import MenuIcon from "@material-ui/icons/Menu";
+
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
@@ -34,7 +37,16 @@ export default function Header(props: any): JSX.Element {
     testimonialText,
   } = props;
 
+  const mobileMenuId = "primary-search-account-menu-mobile";
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  const [
+    mobileMoreAnchorEl,
+    setMobileMoreAnchorEl,
+  ] = React.useState<null | HTMLElement>(null);
+
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
     setAnchorEl(event.currentTarget);
@@ -45,6 +57,14 @@ export default function Header(props: any): JSX.Element {
       i18n.changeLanguage(language);
     }
     setAnchorEl(null);
+  };
+
+  const handleMobileMenuClose = (): void => {
+    setMobileMoreAnchorEl(null);
+  };
+
+  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>): void => {
+    setMobileMoreAnchorEl(event.currentTarget);
   };
 
   const appBarClasses = classNames({
@@ -71,6 +91,22 @@ export default function Header(props: any): JSX.Element {
         .classList.remove(classes.primary);
     }
   };
+
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{vertical: "top", horizontal: "right"}}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{vertical: "top", horizontal: "right"}}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem onClick={(): void => handleClose("en")}>English</MenuItem>
+      <MenuItem onClick={(): void => handleClose("ja")}>日本語</MenuItem>
+      <MenuItem onClick={(): void => handleClose("zh")}>中文</MenuItem>
+    </Menu>
+  );
 
   React.useEffect(() => {
     window.addEventListener("scroll", headerColorChange);
@@ -170,9 +206,21 @@ export default function Header(props: any): JSX.Element {
                 </Menu>
               </Grid>
             </div>
+            <div className={classes.sectionMobile}>
+              <IconButton
+                edge="end"
+                aria-controls={mobileMenuId}
+                aria-label="menu"
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+              >
+                <MenuIcon />
+              </IconButton>
+            </div>
           </Grid>
         </Toolbar>
       </AppBar>
+      <div>{renderMobileMenu}</div>
       <Toolbar />
     </div>
   );
