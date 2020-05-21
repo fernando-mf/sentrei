@@ -156,9 +156,7 @@ export default function Header(props: any): JSX.Element {
                         <Typography>{faqText}</Typography>
                       </Button>
                     </Scrollspy>
-                  ) : (
-                    <Button />
-                  )}
+                  ) : null}
                 </Hidden>
               </Grid>
             </div>
@@ -169,6 +167,7 @@ export default function Header(props: any): JSX.Element {
                   variant="outlined"
                   className={classes.margin}
                 >
+                  <Link href="/signin" />
                   <Typography>{signInText}</Typography>
                 </Button>
                 <Button
@@ -176,6 +175,7 @@ export default function Header(props: any): JSX.Element {
                   variant="contained"
                   className={classes.margin}
                 >
+                  <Link href="/signin" />
                   <Typography>{signUpText}</Typography>
                 </Button>
                 <IconButton
