@@ -14,7 +14,6 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import MuiAlert from "@material-ui/lab/Alert";
-import * as Sentry from "@sentry/browser";
 import firebase from "firebase/app";
 import Router from "next/router";
 import React from "react";
