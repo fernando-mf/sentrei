@@ -9,9 +9,10 @@ const FeatureCardStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.common.white,
     },
     card: {
-      alignItems: "center",
+      alignItems: "stretch",
       flexDirection: "column",
       textAlign: "center",
+      height: "100%",
     },
     item: {
       display: "flex",

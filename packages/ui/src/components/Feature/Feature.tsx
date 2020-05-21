@@ -27,14 +27,21 @@ export default function Feature(props: any): JSX.Element {
     <>
       <Section title="Features" subTitle="" />
       <Container maxWidth="md" component="main">
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={4} className={classes.item}>
+        <Grid
+          container
+          spacing={3}
+          direction="row"
+          justify="center"
+          alignItems="stretch"
+          className={classes.container}
+        >
+          <Grid item xs={12} md={4}>
             <FeatureCard img={imgOne} title={titleOne} subTitle={subTitleOne} />
           </Grid>
-          <Grid item xs={12} md={4} className={classes.item}>
+          <Grid item xs={12} md={4}>
             <FeatureCard img={imgTwo} title={titleTwo} subTitle={subTitleTwo} />
           </Grid>
-          <Grid item xs={12} md={4} className={classes.item}>
+          <Grid item xs={12} md={4}>
             <FeatureCard
               img={imgThree}
               title={titleThree}
