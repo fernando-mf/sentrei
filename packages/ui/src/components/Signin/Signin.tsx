@@ -9,23 +9,23 @@ import Grid from "@material-ui/core/Grid";
 import "@sentrei/common/utils/sentry";
 // eslint-disable-next-line import/no-named-default
 import {default as LinkButton} from "@material-ui/core/Link";
+import Slide from "@material-ui/core/Slide";
 import Snackbar from "@material-ui/core/Snackbar";
 import TextField from "@material-ui/core/TextField";
+import {TransitionProps} from "@material-ui/core/transitions";
 import Typography from "@material-ui/core/Typography";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import MuiAlert from "@material-ui/lab/Alert";
 import firebase from "firebase/app";
 import Router from "next/router";
 import React from "react";
-import Slide from "@material-ui/core/Slide";
-import {TransitionProps} from "@material-ui/core/transitions";
 
 import "firebase/auth";
 import Link from "@sentrei/ui/components/Link";
 
 import SigninStyles from "./SigninStyles";
 
-function SlideTransition(props: TransitionProps) {
+function SlideTransition(props: TransitionProps): JSX.Element {
   return <Slide {...props} direction="up" />;
 }
 
@@ -46,8 +46,8 @@ export default function Signin(): JSX.Element {
   const [open, setOpen] = React.useState(false);
   const [error, setError] = React.useState(null);
 
-  const handleError = (error: any): void => {
-    setError(error);
+  const handleError = (err: any): void => {
+    setError(err);
     setOpen(true);
   };
 
@@ -73,8 +73,8 @@ export default function Signin(): JSX.Element {
         .auth()
         .signInWithEmailAndPassword(inputs.email, inputs.password);
       Router.push("/");
-    } catch (error) {
-      handleError(error);
+    } catch (err) {
+      handleError(err);
     }
   };
 
@@ -82,8 +82,8 @@ export default function Signin(): JSX.Element {
     firebase
       .auth()
       .sendPasswordResetEmail(email)
-      .catch(error => {
-        handleError(error);
+      .catch(err => {
+        handleError(err);
       });
   };
 
