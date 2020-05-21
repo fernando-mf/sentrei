@@ -1,3 +1,9 @@
+## [4.37.3](https://github.com/sentrei/sentrei/compare/v4.37.2...v4.37.3) (2020-05-21)
+
+### Bug Fixes
+
+- **deps:** bump firebase from 7.14.4 to 7.14.5 ([36cc772](https://github.com/sentrei/sentrei/commit/36cc772cb011b9834cab6713a27835f7dede6da9))
+
 ## [4.37.2](https://github.com/sentrei/sentrei/compare/v4.37.1...v4.37.2) (2020-05-21)
 
 ### Bug Fixes
