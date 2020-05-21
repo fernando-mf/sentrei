@@ -1,3 +1,27 @@
+## [4.31.6](https://github.com/sentrei/sentrei/compare/v4.31.5...v4.31.6) (2020-05-20)
+
+### Bug Fixes
+
+- **deps:** bump gatsby from 2.22.3 to 2.22.4 ([d14267f](https://github.com/sentrei/sentrei/commit/d14267fec5f6b9a72499ce044410b249c8ed3295))
+
+## [4.31.5](https://github.com/sentrei/sentrei/compare/v4.31.4...v4.31.5) (2020-05-20)
+
+### Bug Fixes
+
+- **deps:** bump next from 9.4.1 to 9.4.2 ([ad4b8fe](https://github.com/sentrei/sentrei/commit/ad4b8fe11aaa067362a8f8408815ec9d9ca30a23))
+
+## [4.31.4](https://github.com/sentrei/sentrei/compare/v4.31.3...v4.31.4) (2020-05-20)
+
+### Bug Fixes
+
+- **deps:** bump @next/bundle-analyzer from 9.4.1 to 9.4.2 ([cae6fc3](https://github.com/sentrei/sentrei/commit/cae6fc350b939ffce381ad812ce710c6485e22c4))
+
+## [4.31.3](https://github.com/sentrei/sentrei/compare/v4.31.2...v4.31.3) (2020-05-20)
+
+### Bug Fixes
+
+- **deps:** bump gatsby from 2.22.1 to 2.22.3 ([7f07d2f](https://github.com/sentrei/sentrei/commit/7f07d2ff7f21555f4d21e421715830b81011affc))
+
 # [4.31.0](https://github.com/sentrei/sentrei/compare/v4.30.6...v4.31.0) (2020-05-20)
 
 ### Bug Fixes
