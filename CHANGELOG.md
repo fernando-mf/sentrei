@@ -1,3 +1,12 @@
+# [4.35.0](https://github.com/sentrei/sentrei/compare/v4.34.1...v4.35.0) (2020-05-21)
+
+### Features
+
+- 🎸 add signin login ([ac498ef](https://github.com/sentrei/sentrei/commit/ac498efeb1b1df62b7f7eb2822734814e8d92e5e))
+- 🎸 add signin page ([868cb91](https://github.com/sentrei/sentrei/commit/868cb91db4d12557cffffc49856c0e8e7bbf354c))
+- 🎸 add signin page ([c99eb81](https://github.com/sentrei/sentrei/commit/c99eb811067ae78a422deaabde95d7cf4d7ef247))
+- 🎸 refactor to common utils ([a0f8a5f](https://github.com/sentrei/sentrei/commit/a0f8a5fe02a531ba165642220eeddece09aa8246))
+
 ## [4.34.1](https://github.com/sentrei/sentrei/compare/v4.34.0...v4.34.1) (2020-05-21)
 
 ### Bug Fixes
