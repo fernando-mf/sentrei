@@ -14,9 +14,6 @@ const HeaderStyles = makeStyles((theme: Theme) =>
     grow: {
       flexGrow: 1,
     },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
     logo: {
       maxWidth: "180px",
       maxHeight: "180px",

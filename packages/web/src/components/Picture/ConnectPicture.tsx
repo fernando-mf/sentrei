@@ -2,16 +2,16 @@
 import React from "react";
 import styled from "styled-components";
 
-const pngPicture = require("../../../public/images/banner-landing.png");
+const svgPicture = require("../../../public/images/connect.svg");
 
 const Logo = styled.img`
   max-width: 100%;
 `;
 
-export default function LogoPicture(): JSX.Element {
+export default function ConnectPicture(): JSX.Element {
   return (
     <picture>
-      <Logo src={pngPicture} alt="logo" />
+      <Logo src={svgPicture} alt="logo" />
     </picture>
   );
 }

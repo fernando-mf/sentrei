@@ -1,10 +1,12 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const FeatureStyles = makeStyles((theme: Theme) =>
+const FeatureCardStyles = makeStyles((theme: Theme) =>
   createStyles({
     avatar: {
-      width: theme.spacing(7),
-      height: theme.spacing(7),
+      width: theme.spacing(15),
+      height: theme.spacing(15),
+      boxShadow: "0px 0px 5px 1px grey",
+      backgroundColor: theme.palette.common.white,
     },
     card: {
       alignItems: "center",
@@ -19,11 +21,9 @@ const FeatureStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
     },
     title: {
-      "&:hover": {
-        color: theme.palette.primary.main,
-      },
+      fontWeight: theme.typography.fontWeightMedium,
     },
   }),
 );
 
-export default FeatureStyles;
+export default FeatureCardStyles;

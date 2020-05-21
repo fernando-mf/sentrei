@@ -1,17 +1,20 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@material-ui/core/Container";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import PropTypes from "prop-types";
 import React from "react";
 
 import Section from "@sentrei/ui/components/Section";
 
 import FaqStyles from "./FaqStyles";
 
-export default function Faq(): JSX.Element {
+export default function Faq(props: any): JSX.Element {
   const classes = FaqStyles();
+  const {titleOne, bodyOne, titleTwo, bodyTwo, titleThree, bodyThree} = props;
 
   return (
     <>
@@ -23,16 +26,12 @@ export default function Faq(): JSX.Element {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography className={classes.heading}>
-              Expansion Panel 1
+            <Typography variant="h6" className={classes.heading}>
+              {titleOne}
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
+            <Typography>{bodyOne}</Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel>
@@ -41,16 +40,12 @@ export default function Faq(): JSX.Element {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography className={classes.heading}>
-              Expansion Panel 2
+            <Typography variant="h6" className={classes.heading}>
+              {titleTwo}
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
+            <Typography>{bodyTwo}</Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel>
@@ -59,16 +54,12 @@ export default function Faq(): JSX.Element {
             aria-controls="panel3a-content"
             id="panel3a-header"
           >
-            <Typography className={classes.heading}>
-              Expansion Panel 3
+            <Typography variant="h6" className={classes.heading}>
+              {titleThree}
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
+            <Typography>{bodyThree}</Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </Container>
@@ -76,3 +67,12 @@ export default function Faq(): JSX.Element {
     </>
   );
 }
+
+Faq.propTypes = {
+  titleOne: PropTypes.string.isRequired,
+  bodyOne: PropTypes.string.isRequired,
+  titleTwo: PropTypes.string.isRequired,
+  bodyTwo: PropTypes.string.isRequired,
+  titleThree: PropTypes.string.isRequired,
+  bodyThree: PropTypes.string.isRequired,
+};

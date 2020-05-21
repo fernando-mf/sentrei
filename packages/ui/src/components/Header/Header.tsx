@@ -33,6 +33,7 @@ export default function Header(props: any): JSX.Element {
     spy,
     testimonialText,
   } = props;
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
@@ -101,8 +102,8 @@ export default function Header(props: any): JSX.Element {
                         "pricing",
                         "faq",
                       ]}
-                      className="menu"
                       currentClassName="scroll-active-button"
+                      offset={36}
                     >
                       <Button href="#product" className={classes.button}>
                         <Typography>{productText}</Typography>

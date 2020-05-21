@@ -10,53 +10,53 @@ import React from "react";
 import Copyright from "@sentrei/ui/components/Copyright";
 import Link from "@sentrei/ui/components/Link";
 
-const footers = [
-  {
-    title: "Company",
-    description: [
-      {
-        title: "About",
-        link: "/about",
-        target: "",
-      },
-    ],
-  },
-  {
-    title: "Product",
-    description: [
-      {
-        title: "Product Release Notes",
-        link: "/product",
-        target: "",
-      },
-    ],
-  },
-  {
-    title: "Resources",
-    description: [
-      {
-        title: "Github",
-        link: "//github.com/sentrei",
-        target: "_blank",
-      },
-    ],
-  },
-  {
-    title: "Legal",
-    description: [
-      {
-        title: "Privacy policy",
-        link: "/privacy",
-        target: "",
-      },
-      {
-        title: "Terms of use",
-        link: "/terms",
-        target: "",
-      },
-    ],
-  },
-];
+// const footers = [
+//   {
+//     title: "Company",
+//     description: [
+//       {
+//         title: "About",
+//         link: "/about",
+//         target: "",
+//       },
+//     ],
+//   },
+//   {
+//     title: "Product",
+//     description: [
+//       {
+//         title: "Product Release Notes",
+//         link: "/product",
+//         target: "",
+//       },
+//     ],
+//   },
+//   {
+//     title: "Resources",
+//     description: [
+//       {
+//         title: "Github",
+//         link: "//github.com/sentrei",
+//         target: "_blank",
+//       },
+//     ],
+//   },
+//   {
+//     title: "Legal",
+//     description: [
+//       {
+//         title: "Privacy policy",
+//         link: "/privacy",
+//         target: "",
+//       },
+//       {
+//         title: "Terms of use",
+//         link: "/terms",
+//         target: "",
+//       },
+//     ],
+//   },
+// ];
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -87,7 +87,7 @@ export default function StickyFooter(): JSX.Element {
     <footer className={classes.footer}>
       <Container maxWidth="md" component="footer" className={classes.footer}>
         <Grid container spacing={4} justify="space-evenly">
-          {footers.map(footer => (
+          {/* {footers.map(footer => (
             <Grid item xs={6} sm={3} key={footer.title}>
               <Typography variant="h6" color="textPrimary" gutterBottom>
                 {footer.title}
@@ -107,7 +107,7 @@ export default function StickyFooter(): JSX.Element {
                 ))}
               </ul>
             </Grid>
-          ))}
+          ))} */}
         </Grid>
         <Box mt={5}>
           <Copyright />

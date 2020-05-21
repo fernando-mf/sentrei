@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import PropTypes from "prop-types";
 import React from "react";
 import Typical from "react-typical";
 import styled from "styled-components";
@@ -14,8 +15,20 @@ const LogoImg = styled.img`
   margin-right: 1em;
 `;
 
-export default function Banner(): JSX.Element {
+export default function Banner(props: any): JSX.Element {
   const classes = BannerStyles();
+  const {
+    bannerBottom,
+    bannerText,
+    bannerTop,
+    googleText,
+    startText,
+    typicalOne,
+    typicalTwo,
+    typicalThree,
+  } = props;
+  const typicalDuration = 3000;
+
   return (
     <Container maxWidth="sm" component="main" className={classes.banner}>
       <Typography
@@ -25,16 +38,23 @@ export default function Banner(): JSX.Element {
         color="textPrimary"
         gutterBottom
       >
-        Where
+        {bannerTop}
         <br />
         <Typical
-          steps={["remote teams", 3000, "dev teams", 3000]}
+          steps={[
+            typicalOne,
+            typicalDuration,
+            typicalTwo,
+            typicalDuration,
+            typicalThree,
+            typicalDuration,
+          ]}
           loop={Infinity}
           wrapper="span"
           className={classes.typical}
         />
         <br />
-        do their best work
+        {bannerBottom}
       </Typography>
       <Typography
         variant="h5"
@@ -42,10 +62,9 @@ export default function Banner(): JSX.Element {
         color="textSecondary"
         component="p"
         gutterBottom
+        className={classes.text}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam
+        {bannerText}
       </Typography>
       <Box pt={3}>
         <Grid container justify="center" direction="row" spacing={1}>
@@ -56,7 +75,7 @@ export default function Banner(): JSX.Element {
                 variant="contained"
                 className={classes.margin}
               >
-                <Typography noWrap>Get Started -free forever-</Typography>
+                <Typography noWrap>{startText}</Typography>
               </Button>
             </div>
           </Grid>
@@ -72,7 +91,7 @@ export default function Banner(): JSX.Element {
                   alt="Google sign-in"
                   src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
                 />
-                <Typography>Sign up with Google </Typography>
+                <Typography>{googleText}</Typography>
               </Button>
             </div>
           </Grid>
@@ -81,3 +100,14 @@ export default function Banner(): JSX.Element {
     </Container>
   );
 }
+
+Banner.propTypes = {
+  bannerBottom: PropTypes.string.isRequired,
+  bannerText: PropTypes.string.isRequired,
+  bannerTop: PropTypes.string.isRequired,
+  googleText: PropTypes.string.isRequired,
+  startText: PropTypes.string.isRequired,
+  typicalOne: PropTypes.string.isRequired,
+  typicalTwo: PropTypes.string.isRequired,
+  typicalThree: PropTypes.string.isRequired,
+};

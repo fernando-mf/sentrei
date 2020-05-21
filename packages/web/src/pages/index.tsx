@@ -4,15 +4,15 @@ import Head from "next/head";
 import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
-import Banner from "@sentrei/ui/components/Banner";
-import Faq from "@sentrei/ui/components/Faq";
-import Feature from "@sentrei/ui/components/Feature";
 import Footer from "@sentrei/ui/components/Footer";
-import Pricing from "@sentrei/ui/components/Pricing";
 import Spacing from "@sentrei/ui/components/Spacing";
-import Testimonial from "@sentrei/ui/components/Testimonial";
+import SentreiBanner from "@sentrei/web/components/SentreiBanner";
+import SentreiFaq from "@sentrei/web/components/SentreiFaq";
+import SentreiFeature from "@sentrei/web/components/SentreiFeature";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
+import SentreiPricing from "@sentrei/web/components/SentreiPricing";
 import SentreiProduct from "@sentrei/web/components/SentreiProduct";
+import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Index({t}: any): JSX.Element {
@@ -23,35 +23,93 @@ function Index({t}: any): JSX.Element {
         <meta name="Description" content="Sentrei landing page" />
       </Head>
       <SentreiHeader
-        faqText={t("faq")}
-        featuresText={t("features")}
-        pricingText={t("pricing")}
-        productText={t("product")}
-        signInText={t("signIn")}
-        signUpText={t("signUp")}
         spy
-        testimonialText={t("testimonial")}
+        faqText={t("headerFaq")}
+        featuresText={t("headerFeatures")}
+        pricingText={t("headerPricing")}
+        productText={t("headerProduct")}
+        signInText={t("headerSignIn")}
+        signUpText={t("headerSignUp")}
+        testimonialText={t("headerTestimonial")}
       />
-      <Banner />
+      <SentreiBanner
+        bannerBottom={t("bannerBannerBottom")}
+        bannerText={t("bannerBannerText")}
+        bannerTop={t("bannerBannerTop")}
+        googleText={t("bannerGoogleText")}
+        startText={t("bannerStartText")}
+        typicalOne={t("bannerTypicalOne")}
+        typicalTwo={t("bannerTypicalTwo")}
+        typicalThree={t("bannerTypicalThree")}
+      />
       <Spacing />
       <div id="product">
-        <SentreiProduct />
+        <SentreiProduct
+          connectSubTitle={t("productConnectSubTitle")}
+          connectTitle={t("productConnectTitle")}
+          dataSubTitle={t("productDataSubTitle")}
+          dataTitle={t("productDataTitle")}
+          videoSubTitle={t("productVideoSubTitle")}
+          videoTitle={t("productVideoTitle")}
+        />
       </div>
       <Spacing />
       <div id="feature">
-        <Feature />
+        <SentreiFeature
+          titleOne={t("featureTitleOne")}
+          subTitleOne={t("featureSubTitleOne")}
+          titleTwo={t("featureTitleTwo")}
+          subTitleTwo={t("featureSubTitleTwo")}
+          titleThree={t("featureTitleThree")}
+          subTitleThree={t("featureSubTitleThree")}
+        />
       </div>
       <Spacing />
       <div id="testimonial">
-        <Testimonial />
+        <SentreiTestimonial
+          authorOne={t("testimonialAuthorOne")}
+          bodyOne={t("testimonialBodyOne")}
+          occupationOne={t("testimonialOccupationOne")}
+          titleOne={t("testimonialTitleOne")}
+        />
       </div>
       <Spacing />
       <div id="pricing">
-        <Pricing />
+        <SentreiPricing
+          priceMonth={t("pricingPriceMonth")}
+          buttonTextOne={t("pricingButtonTextOne")}
+          description1One={t("pricingDescription1One")}
+          description2One={t("pricingDescription2One")}
+          description3One={t("pricingDescription3One")}
+          priceOne={t("pricingPriceOne")}
+          titleOne={t("pricingTitleOne")}
+          subTitleOne={t("pricingSubTitleOne")}
+          buttonTextTwo={t("pricingButtonTextTwo")}
+          description1Two={t("pricingDescription1Two")}
+          description2Two={t("pricingDescription2Two")}
+          description3Two={t("pricingDescription3Two")}
+          priceTwo={t("pricingPriceTwo")}
+          titleTwo={t("pricingTitleTwo")}
+          subTitleTwo={t("pricingSubTitleTwo")}
+          buttonTextThree={t("pricingButtonTextThree")}
+          description1Three={t("pricingDescription1Three")}
+          description2Three={t("pricingDescription2Three")}
+          description3Three={t("pricingDescription3Three")}
+          priceThree={t("pricingPriceThree")}
+          titleThree={t("pricingTitleThree")}
+          subTitleThree={t("pricingSubTitleThree")}
+        />
       </div>
       <Spacing />
       <div id="faq">
-        <Faq />
+        <SentreiFaq
+          titleOne={t("faqTitleOne")}
+          bodyOne={t("faqBodyOne")}
+          titleTwo={t("faqTitleTwo")}
+          bodyTwo={t("faqBodyTwo")}
+          titleThree={t("faqTitleThree")}
+          bodyThree={t("faqBodyThree")}
+        />
       </div>
       <Spacing />
       <Footer />
