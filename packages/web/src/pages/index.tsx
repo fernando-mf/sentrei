@@ -4,10 +4,10 @@ import Head from "next/head";
 import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
-import Faq from "@sentrei/ui/components/Faq";
 import Footer from "@sentrei/ui/components/Footer";
 import Spacing from "@sentrei/ui/components/Spacing";
 import SentreiBanner from "@sentrei/web/components/SentreiBanner";
+import SentreiFaq from "@sentrei/web/components/SentreiFaq";
 import SentreiFeature from "@sentrei/web/components/SentreiFeature";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 import SentreiPricing from "@sentrei/web/components/SentreiPricing";
@@ -23,34 +23,34 @@ function Index({t}: any): JSX.Element {
         <meta name="Description" content="Sentrei landing page" />
       </Head>
       <SentreiHeader
-        faqText={t("faq")}
-        featuresText={t("features")}
-        pricingText={t("pricing")}
-        productText={t("product")}
-        signInText={t("signIn")}
-        signUpText={t("signUp")}
         spy
-        testimonialText={t("testimonial")}
+        faqText={t("headerFaq")}
+        featuresText={t("headerFeatures")}
+        pricingText={t("headerPricing")}
+        productText={t("headerProduct")}
+        signInText={t("headerSignIn")}
+        signUpText={t("headerSignUp")}
+        testimonialText={t("headerTestimonial")}
       />
       <SentreiBanner
-        bannerBottom={t("bannerBottom")}
-        bannerText={t("bannerText")}
-        bannerTop={t("bannerTop")}
-        googleText={t("googleText")}
-        startText={t("startText")}
-        typicalOne={t("typicalOne")}
-        typicalTwo={t("typicalTwo")}
-        typicalThree={t("typicalThree")}
+        bannerBottom={t("bannerBannerBottom")}
+        bannerText={t("bannerBannerText")}
+        bannerTop={t("bannerBannerTop")}
+        googleText={t("bannerGoogleText")}
+        startText={t("bannerStartText")}
+        typicalOne={t("bannerTypicalOne")}
+        typicalTwo={t("bannerTypicalTwo")}
+        typicalThree={t("bannerTypicalThree")}
       />
       <Spacing />
       <div id="product">
         <SentreiProduct
-          connectSubTitle={t("connectSubTitle")}
-          connectTitle={t("connectTitle")}
-          dataSubTitle={t("dataSubTitle")}
-          dataTitle={t("dataTitle")}
-          videoSubTitle={t("videoSubTitle")}
-          videoTitle={t("videoTitle")}
+          connectSubTitle={t("productConnectSubTitle")}
+          connectTitle={t("productConnectTitle")}
+          dataSubTitle={t("productDataSubTitle")}
+          dataTitle={t("productDataTitle")}
+          videoSubTitle={t("productVideoSubTitle")}
+          videoTitle={t("productVideoTitle")}
         />
       </div>
       <Spacing />
@@ -102,7 +102,14 @@ function Index({t}: any): JSX.Element {
       </div>
       <Spacing />
       <div id="faq">
-        <Faq />
+        <SentreiFaq
+          titleOne={t("faqTitleOne")}
+          bodyOne={t("faqBodyOne")}
+          titleTwo={t("faqTitleTwo")}
+          bodyTwo={t("faqBodyTwo")}
+          titleThree={t("faqTitleThree")}
+          bodyThree={t("faqBodyThree")}
+        />
       </div>
       <Spacing />
       <Footer />

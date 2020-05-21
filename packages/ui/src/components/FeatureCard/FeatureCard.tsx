@@ -20,7 +20,7 @@ export default function FeatureCard(props: any): JSX.Element {
           <Avatar className={classes.avatar}>{img}</Avatar>
         </div>
         <Box m={1} />
-        <Typography noWrap variant="h5">
+        <Typography noWrap variant="h5" className={classes.title}>
           {title}
         </Typography>
         <Box m={1} />

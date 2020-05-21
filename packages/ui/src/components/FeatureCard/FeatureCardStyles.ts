@@ -20,6 +20,9 @@ const FeatureCardStyles = makeStyles((theme: Theme) =>
       justifyItems: "space-between",
       justifyContent: "center",
     },
+    title: {
+      fontWeight: theme.typography.fontWeightMedium,
+    },
   }),
 );
 
