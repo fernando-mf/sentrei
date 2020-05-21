@@ -9,9 +9,12 @@ const BannerStyles = makeStyles((theme: Theme) =>
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
+      paddingLeft: theme.spacing(1),
+      paddingRight: theme.spacing(1),
     },
-    margin: {
+    button: {
       margin: theme.spacing(1),
+      width: "100%",
     },
     text: {
       whiteSpace: "pre-line",

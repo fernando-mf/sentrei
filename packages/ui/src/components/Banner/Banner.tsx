@@ -73,7 +73,7 @@ export default function Banner(props: any): JSX.Element {
               <Button
                 color="primary"
                 variant="contained"
-                className={classes.margin}
+                className={classes.button}
               >
                 <Typography noWrap>{startText}</Typography>
               </Button>
@@ -84,7 +84,7 @@ export default function Banner(props: any): JSX.Element {
               <Button
                 color="primary"
                 variant="outlined"
-                className={classes.margin}
+                className={classes.button}
               >
                 <LogoImg
                   width="20px"
