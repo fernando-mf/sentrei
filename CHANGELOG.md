@@ -1,3 +1,9 @@
+## [4.34.1](https://github.com/sentrei/sentrei/compare/v4.34.0...v4.34.1) (2020-05-21)
+
+### Bug Fixes
+
+- **deps:** bump node in /packages/web ([95fc20c](https://github.com/sentrei/sentrei/commit/95fc20c44ff23f9c891b7b005f60fa6ab51de880))
+
 # [4.34.0](https://github.com/sentrei/sentrei/compare/v4.33.0...v4.34.0) (2020-05-21)
 
 ### Features
