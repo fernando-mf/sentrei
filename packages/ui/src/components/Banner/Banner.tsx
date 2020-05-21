@@ -69,22 +69,20 @@ export default function Banner(props: any): JSX.Element {
         {bannerText}
       </Typography>
       <Box pt={3}>
-        <Grid container justify="center" direction="row" spacing={3}>
+        <Grid container justify="center" direction="row" spacing={2}>
           <Grid item xs={12} md={6}>
-            <div className={classes.item}>
-              <Link href="/signin">
-                <Button
-                  color="primary"
-                  variant="contained"
-                  className={classes.button}
-                >
-                  <Typography noWrap>{startText}</Typography>
-                </Button>
-              </Link>
-            </div>
+            <Link href="/signin" className={classes.item}>
+              <Button
+                color="primary"
+                variant="contained"
+                className={classes.button}
+              >
+                <Typography noWrap>{startText}</Typography>
+              </Button>
+            </Link>
           </Grid>
           <Grid item xs={12} md={6}>
-            <div className={classes.item}>
+            <Link href="/" className={classes.item}>
               <Button
                 color="primary"
                 variant="outlined"
@@ -97,7 +95,7 @@ export default function Banner(props: any): JSX.Element {
                 />
                 <Typography>{googleText}</Typography>
               </Button>
-            </div>
+            </Link>
           </Grid>
         </Grid>
       </Box>
