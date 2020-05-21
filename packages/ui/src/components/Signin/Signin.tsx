@@ -38,8 +38,10 @@ export default function Signin(): JSX.Element {
 
   const [inputs, setInputs] = React.useState(initial);
   const [open, setOpen] = React.useState(false);
+  const [error, setError] = React.useState(null);
 
-  const handleError = (): void => {
+  const handleError = (error: any): void => {
+    setError(error);
     setOpen(true);
   };
 
@@ -66,7 +68,7 @@ export default function Signin(): JSX.Element {
         .signInWithEmailAndPassword(inputs.email, inputs.password);
       Router.push("/");
     } catch (error) {
-      handleError();
+      handleError(error);
     }
   };
 
@@ -74,8 +76,8 @@ export default function Signin(): JSX.Element {
     firebase
       .auth()
       .sendPasswordResetEmail(email)
-      .catch(_ => {
-        handleError();
+      .catch(error => {
+        handleError(error);
       });
   };
 
@@ -85,7 +87,7 @@ export default function Signin(): JSX.Element {
         {open ? (
           <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
             <MuiAlert onClose={handleClose} variant="filled" severity="error">
-              Error
+              Error: {error}
             </MuiAlert>
           </Snackbar>
         ) : null}
