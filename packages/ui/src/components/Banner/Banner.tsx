@@ -69,7 +69,7 @@ export default function Banner(props: any): JSX.Element {
         {bannerText}
       </Typography>
       <Box pt={3}>
-        <Grid container justify="center" direction="row" spacing={1}>
+        <Grid container justify="center" direction="row" spacing={3}>
           <Grid item xs={12} md={6}>
             <div className={classes.item}>
               <Link href="/signin">
