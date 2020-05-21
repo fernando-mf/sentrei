@@ -16,8 +16,11 @@ export default function PricingCard(props: any): JSX.Element {
     action,
     buttonText,
     buttonVariant,
-    description,
+    description1,
+    description2,
+    description3,
     price,
+    priceMonth,
     subTitle,
     title,
   } = props;
@@ -39,21 +42,20 @@ export default function PricingCard(props: any): JSX.Element {
             {price}
           </Typography>
           <Typography variant="h6" color="textSecondary">
-            /mo
+            {priceMonth}
           </Typography>
         </div>
-        <ul>
-          {description.map((line: string) => (
-            <Typography
-              component="li"
-              variant="subtitle1"
-              align="center"
-              key={line}
-            >
-              {line}
-            </Typography>
-          ))}
-        </ul>
+        {[description1, description2, description3].map((line: string) => (
+          <Typography
+            noWrap
+            component="p"
+            variant="subtitle1"
+            align="center"
+            key={line}
+          >
+            {line}
+          </Typography>
+        ))}
       </CardContent>
       <CardActions>
         <Button fullWidth variant={buttonVariant} color="primary">
@@ -67,8 +69,11 @@ export default function PricingCard(props: any): JSX.Element {
 PricingCard.propTypes = {
   buttonText: PropTypes.string.isRequired,
   buttonVariant: PropTypes.string.isRequired,
-  description: PropTypes.array.isRequired,
+  description1: PropTypes.string.isRequired,
+  description2: PropTypes.string.isRequired,
+  description3: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
+  priceMonth: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
 };

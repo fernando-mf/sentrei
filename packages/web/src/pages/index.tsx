@@ -76,24 +76,28 @@ function Index({t}: any): JSX.Element {
       <Spacing />
       <div id="pricing">
         <SentreiPricing
-          buttonTextOne={t("buttonTextOne")}
-          buttonVariantOne={t("buttonVariantOne")}
-          descriptionOne={t("descriptionOne")}
-          priceOne={t("priceOne")}
-          titleOne={t("titleOne")}
-          subTitleOne={t("subTitleOne")}
-          buttonTextTwo={t("buttonTextTwo")}
-          buttonVariantTwo={t("buttonVariantTwo")}
-          descriptionTwo={t("descriptionTwo")}
-          priceTwo={t("priceTwo")}
-          titleTwo={t("titleTwo")}
-          subTitleTwo={t("subTitleTwo")}
-          buttonTextThree={t("buttonTextThree")}
-          buttonVariantThree={t("buttonVariantThree")}
-          descriptionThree={t("descriptionThree")}
-          priceThree={t("priceThree")}
-          titleThree={t("titleThree")}
-          subTitleThree={t("subTitleThree")}
+          priceMonth={t("pricingPriceMonth")}
+          buttonTextOne={t("pricingButtonTextOne")}
+          description1One={t("pricingDescription1One")}
+          description2One={t("pricingDescription2One")}
+          description3One={t("pricingDescription3One")}
+          priceOne={t("pricingPriceOne")}
+          titleOne={t("pricingTitleOne")}
+          subTitleOne={t("pricingSubTitleOne")}
+          buttonTextTwo={t("pricingButtonTextTwo")}
+          description1Two={t("pricingDescription1Two")}
+          description2Two={t("pricingDescription2Two")}
+          description3Two={t("pricingDescription3Two")}
+          priceTwo={t("pricingPriceTwo")}
+          titleTwo={t("pricingTitleTwo")}
+          subTitleTwo={t("pricingSubTitleTwo")}
+          buttonTextThree={t("pricingButtonTextThree")}
+          description1Three={t("pricingDescription1Three")}
+          description2Three={t("pricingDescription2Three")}
+          description3Three={t("pricingDescription3Three")}
+          priceThree={t("pricingPriceThree")}
+          titleThree={t("pricingTitleThree")}
+          subTitleThree={t("pricingSubTitleThree")}
         />
       </div>
       <Spacing />

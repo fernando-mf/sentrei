@@ -8,65 +8,27 @@ import React from "react";
 import PricingCard from "@sentrei/ui/components/PricingCard";
 import Section from "@sentrei/ui/components/Section";
 
-const tiers = [
-  {
-    title: "Free",
-    subTitle: "",
-    price: "$0",
-    description: [
-      "10 users included",
-      "2 GB of storage",
-      "Help center access",
-      "Email support",
-    ],
-    buttonText: "Sign up for free",
-    buttonVariant: "outlined",
-  },
-  {
-    title: "Pro",
-    subTitle: "Most popular",
-    price: "$10",
-    description: [
-      "20 users included",
-      "10 GB of storage",
-      "Help center access",
-      "Priority email support",
-    ],
-    buttonText: "Get started",
-    buttonVariant: "contained",
-  },
-  {
-    title: "Enterprise",
-    subTitle: "",
-    price: "$30",
-    description: [
-      "50 users included",
-      "30 GB of storage",
-      "Help center access",
-      "Phone & email support",
-    ],
-    buttonText: "Contact us",
-    buttonVariant: "outlined",
-  },
-];
-
 export default function Pricing(props: any): JSX.Element {
   const {
+    priceMonth,
     buttonTextOne,
-    buttonVariantOne,
-    descriptionOne,
+    description1One,
+    description2One,
+    description3One,
     priceOne,
     titleOne,
     subTitleOne,
     buttonTextTwo,
-    buttonVariantTwo,
-    descriptionTwo,
+    description1Two,
+    description2Two,
+    description3Two,
     priceTwo,
     titleTwo,
     subTitleTwo,
     buttonTextThree,
-    buttonVariantThree,
-    descriptionThree,
+    description1Three,
+    description2Three,
+    description3Three,
     priceThree,
     titleThree,
     subTitleThree,
@@ -80,9 +42,12 @@ export default function Pricing(props: any): JSX.Element {
           <Grid item key={titleOne} xs={12} sm={4}>
             <PricingCard
               buttonText={buttonTextOne}
-              buttonVariant={buttonVariantOne}
-              description={[descriptionOne]}
+              buttonVariant="outlined"
+              description1={description1One}
+              description2={description2One}
+              description3={description3One}
               price={priceOne}
+              priceMonth={priceMonth}
               title={titleOne}
               subTitle={subTitleOne}
             />
@@ -90,9 +55,12 @@ export default function Pricing(props: any): JSX.Element {
           <Grid item key={titleTwo} xs={12} sm={4}>
             <PricingCard
               buttonText={buttonTextTwo}
-              buttonVariant={buttonVariantTwo}
-              description={[descriptionTwo]}
+              buttonVariant="contained"
+              description1={description1Two}
+              description2={description2Two}
+              description3={description3Two}
               price={priceTwo}
+              priceMonth={priceMonth}
               title={titleTwo}
               subTitle={subTitleTwo}
             />
@@ -100,9 +68,12 @@ export default function Pricing(props: any): JSX.Element {
           <Grid item key={titleThree} xs={12} sm={4}>
             <PricingCard
               buttonText={buttonTextThree}
-              buttonVariant={buttonVariantThree}
-              description={[descriptionThree]}
+              buttonVariant="outlined"
+              description1={description1Three}
+              description2={description2Three}
+              description3={description3Three}
               price={priceThree}
+              priceMonth={priceMonth}
               title={titleThree}
               subTitle={subTitleThree}
             />
@@ -114,21 +85,25 @@ export default function Pricing(props: any): JSX.Element {
 }
 
 Pricing.propTypes = {
+  priceMonth: PropTypes.string.isRequired,
   buttonTextOne: PropTypes.string.isRequired,
-  buttonVariantOne: PropTypes.string.isRequired,
-  descriptionOne: PropTypes.string.isRequired,
+  description1One: PropTypes.string.isRequired,
+  description2One: PropTypes.string.isRequired,
+  description3One: PropTypes.string.isRequired,
   priceOne: PropTypes.string.isRequired,
   titleOne: PropTypes.string.isRequired,
   subTitleOne: PropTypes.string.isRequired,
   buttonTextTwo: PropTypes.string.isRequired,
-  buttonVariantTwo: PropTypes.string.isRequired,
-  descriptionTwo: PropTypes.string.isRequired,
+  description1Two: PropTypes.string.isRequired,
+  description2Two: PropTypes.string.isRequired,
+  description3Two: PropTypes.string.isRequired,
   priceTwo: PropTypes.string.isRequired,
   titleTwo: PropTypes.string.isRequired,
   subTitleTwo: PropTypes.string.isRequired,
   buttonTextThree: PropTypes.string.isRequired,
-  buttonVariantThree: PropTypes.string.isRequired,
-  descriptionThree: PropTypes.string.isRequired,
+  description1Three: PropTypes.string.isRequired,
+  description2Three: PropTypes.string.isRequired,
+  description3Three: PropTypes.string.isRequired,
   priceThree: PropTypes.string.isRequired,
   titleThree: PropTypes.string.isRequired,
   subTitleThree: PropTypes.string.isRequired,
