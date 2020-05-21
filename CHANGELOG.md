@@ -1,3 +1,9 @@
+# [4.37.0](https://github.com/sentrei/sentrei/compare/v4.36.1...v4.37.0) (2020-05-21)
+
+### Features
+
+- add keio slider ([436e4ae](https://github.com/sentrei/sentrei/commit/436e4ae864ff2f62752f2567ae13677f0310b7f1))
+
 ## [4.36.1](https://github.com/sentrei/sentrei/compare/v4.36.0...v4.36.1) (2020-05-21)
 
 ### Bug Fixes
