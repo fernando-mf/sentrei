@@ -1,3 +1,9 @@
+# [4.36.0](https://github.com/sentrei/sentrei/compare/v4.35.0...v4.36.0) (2020-05-21)
+
+### Features
+
+- 🎸 add initial signin ([308c6a0](https://github.com/sentrei/sentrei/commit/308c6a0564791d0943f7118790b25dd6180b1fc6))
+
 # [4.35.0](https://github.com/sentrei/sentrei/compare/v4.34.1...v4.35.0) (2020-05-21)
 
 ### Features
