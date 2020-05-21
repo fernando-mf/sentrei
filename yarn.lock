@@ -13901,7 +13901,7 @@ firebase-tools@^8.0.2:
     winston "^3.0.0"
     ws "^7.2.3"
 
-firebase@^7.14.2:
+firebase@^7.14.2, firebase@^7.14.4:
   version "7.14.4"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-7.14.4.tgz#c9256bc32e51ebcb93ef7542ef4ed6cc153c6f50"
   integrity sha512-BeI+Jfyg1QyNPY8tD+P0LeVbSqivQm3fEVPCoqVC/oYVusNplZD1LmMI5Swk3Wvh0G0BrSM1nhtv0/nF98fSUg==

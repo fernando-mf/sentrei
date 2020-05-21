@@ -9,6 +9,8 @@ import React from "react";
 import Typical from "react-typical";
 import styled from "styled-components";
 
+import Link from "@sentrei/ui/components/Link";
+
 import BannerStyles from "./BannerStyles";
 
 const LogoImg = styled.img`
@@ -70,13 +72,15 @@ export default function Banner(props: any): JSX.Element {
         <Grid container justify="center" direction="row" spacing={1}>
           <Grid item xs={12} md={6}>
             <div className={classes.item}>
-              <Button
-                color="primary"
-                variant="contained"
-                className={classes.button}
-              >
-                <Typography noWrap>{startText}</Typography>
-              </Button>
+              <Link href="/signin">
+                <Button
+                  color="primary"
+                  variant="contained"
+                  className={classes.button}
+                >
+                  <Typography noWrap>{startText}</Typography>
+                </Button>
+              </Link>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
