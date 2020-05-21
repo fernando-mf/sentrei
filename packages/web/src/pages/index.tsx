@@ -23,7 +23,6 @@ function Index({t}: any): JSX.Element {
         <meta name="Description" content="Sentrei landing page" />
       </Head>
       <SentreiHeader
-        spy
         faqText={t("headerFaq")}
         featuresText={t("headerFeatures")}
         pricingText={t("headerPricing")}

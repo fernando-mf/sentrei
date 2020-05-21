@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import {TextareaAutosize} from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import ButtonBase from "@material-ui/core/ButtonBase";
@@ -32,6 +33,7 @@ export default function Header(props: any): JSX.Element {
     productText,
     signInText,
     signUpText,
+    sign,
     spy,
     testimonialText,
   } = props;
@@ -128,7 +130,7 @@ export default function Header(props: any): JSX.Element {
             <div className={classes.spy}>
               <Grid item>
                 <Hidden smDown implementation="css">
-                  {spy ? (
+                  {spy && (
                     <Scrollspy
                       items={[
                         "product",
@@ -156,28 +158,34 @@ export default function Header(props: any): JSX.Element {
                         <Typography>{faqText}</Typography>
                       </Button>
                     </Scrollspy>
-                  ) : (
-                    <Button />
                   )}
                 </Hidden>
               </Grid>
             </div>
             <div className={classes.sectionDesktop}>
               <Grid item>
-                <Button
-                  color="primary"
-                  variant="outlined"
-                  className={classes.margin}
-                >
-                  <Typography>{signInText}</Typography>
-                </Button>
-                <Button
-                  color="primary"
-                  variant="contained"
-                  className={classes.margin}
-                >
-                  <Typography>{signUpText}</Typography>
-                </Button>
+                {sign && (
+                  <>
+                    <Link href="/signin">
+                      <Button
+                        color="primary"
+                        variant="outlined"
+                        className={classes.margin}
+                      >
+                        <Typography>{signInText}</Typography>
+                      </Button>
+                    </Link>
+                    <Link href="/signin">
+                      <Button
+                        color="primary"
+                        variant="contained"
+                        className={classes.margin}
+                      >
+                        <Typography>{signUpText}</Typography>
+                      </Button>
+                    </Link>
+                  </>
+                )}
                 <IconButton
                   aria-controls="customized-menu"
                   aria-haspopup="true"
@@ -226,7 +234,8 @@ export default function Header(props: any): JSX.Element {
 }
 
 Header.defaultProps = {
-  spy: false,
+  spy: true,
+  sign: true,
 };
 
 Header.propTypes = {
@@ -237,6 +246,7 @@ Header.propTypes = {
   productText: PropTypes.string.isRequired,
   signInText: PropTypes.string.isRequired,
   signUpText: PropTypes.string.isRequired,
+  sign: PropTypes.bool,
   spy: PropTypes.bool,
   testimonialText: PropTypes.string.isRequired,
 };

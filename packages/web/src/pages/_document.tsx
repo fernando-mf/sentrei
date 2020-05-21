@@ -14,8 +14,8 @@ import {ServerStyleSheet as StyledComponentSheets} from "styled-components";
 
 import Theme from "@sentrei/ui/containers/Theme";
 
-import "@sentrei/web/utils/sentry";
-import "@sentrei/web/utils/registerExceptionHandler";
+import "@sentrei/common/utils/sentry";
+import "@sentrei/common/utils/registerExceptionHandler";
 
 export default class Document extends NextDocument {
   static async getInitialProps(

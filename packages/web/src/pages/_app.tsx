@@ -9,13 +9,14 @@ import {ThemeProvider as StyledThemeProvider} from "styled-components";
 
 import "firebase/performance";
 import {appWithTranslation} from "@sentrei/common/i18n";
+import firebase from "@sentrei/common/utils/firebase";
+import isBrowser from "@sentrei/common/utils/isBrowser";
 import Theme from "@sentrei/ui/containers/Theme";
-import "@sentrei/web/utils/nprogress";
-import firebase from "@sentrei/web/utils/firebase";
-import "@sentrei/web/utils/sentry";
+
+import "@sentrei/common/utils/nprogress";
+import "@sentrei/common/utils/sentry";
 import "@sentrei/web/styles/global.scss";
 import "@sentrei/web/styles/nprogress.scss";
-import isBrowser from "@sentrei/web/utils/isBrowser";
 
 class App extends NextApp {
   componentDidMount(): void {

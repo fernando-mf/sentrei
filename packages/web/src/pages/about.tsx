@@ -17,13 +17,13 @@ function About({t}: any): JSX.Element {
   return (
     <>
       <SentreiHeader
+        spy={false}
         faqText={t("faq")}
         featuresText={t("features")}
         pricingText={t("pricing")}
         productText={t("product")}
         signInText={t("signIn")}
         signUpText={t("signUp")}
-        spy={false}
         testimonialText={t("testimonial")}
       />
       <Container maxWidth="sm">

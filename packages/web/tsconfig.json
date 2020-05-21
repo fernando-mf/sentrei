@@ -12,7 +12,7 @@
       "@sentrei/web/*": ["src/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../common/src/utils"],
   "exclude": [
     "node_modules",
     "**/__tests__/*.ts",
