@@ -5,10 +5,9 @@ import React from "react";
 
 import {i18n} from "@sentrei/common/i18n";
 import Product from "@sentrei/ui/components/Product";
+import ConnectPicture from "@sentrei/web/components/Picture/ConnectPicture";
 import DataPicture from "@sentrei/web/components/Picture/DataPicture";
 import VideoPicture from "@sentrei/web/components/Picture/VideoPicture";
-
-import ConnectPicture from "./Picture/ConnectPicture";
 
 export default function SentreiProduct(props: any): JSX.Element {
   const {

@@ -6,7 +6,6 @@ const SectionStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(0, 3, 0),
     },
     title: {
-      // backgroundColor: theme.palette.primary.main,
       backgroundImage: `linear-gradient(${theme.palette.primary.main}, ${theme.palette.primary.main})`,
       backgroundPosition: "center bottom",
       backgroundRepeat: "no-repeat",

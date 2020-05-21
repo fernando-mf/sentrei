@@ -12,6 +12,7 @@ import SentreiFeature from "@sentrei/web/components/SentreiFeature";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 import SentreiPricing from "@sentrei/web/components/SentreiPricing";
 import SentreiProduct from "@sentrei/web/components/SentreiProduct";
+import SentreiSlider from "@sentrei/web/components/SentreiSlider";
 import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -52,6 +53,7 @@ function Index({t}: any): JSX.Element {
           videoTitle={t("productVideoTitle")}
         />
       </div>
+      <SentreiSlider />
       <Spacing />
       <div id="feature">
         <SentreiFeature
