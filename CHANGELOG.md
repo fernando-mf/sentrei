@@ -1,3 +1,9 @@
+# [4.39.0](https://github.com/sentrei/sentrei/compare/v4.38.0...v4.39.0) (2020-05-22)
+
+### Features
+
+- 🎸 upgrade node env ([ddca539](https://github.com/sentrei/sentrei/commit/ddca539ff406369ae66c3b17f98aa58c8f100923))
+
 # [4.38.0](https://github.com/sentrei/sentrei/compare/v4.37.4...v4.38.0) (2020-05-22)
 
 ### Features
