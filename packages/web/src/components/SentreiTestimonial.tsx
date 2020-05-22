@@ -8,12 +8,13 @@ import Testimonial from "@sentrei/ui/components/Testimonial";
 import FocusPicture from "@sentrei/web/components/Picture/FocusPicture";
 
 export default function SentreiTestimonial(props: any): JSX.Element {
-  const {authorOne, bodyOne, occupationOne, titleOne} = props;
+  const {sectionTitle, authorOne, bodyOne, occupationOne, titleOne} = props;
 
   return (
     <>
       <Testimonial
         key={i18n.language}
+        sectionTitle={sectionTitle}
         authorOne={authorOne}
         bodyOne={bodyOne}
         imgOne={<FocusPicture />}
@@ -25,6 +26,7 @@ export default function SentreiTestimonial(props: any): JSX.Element {
 }
 
 SentreiTestimonial.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
   authorOne: PropTypes.string.isRequired,
   bodyOne: PropTypes.string.isRequired,
   occupationOne: PropTypes.string.isRequired,

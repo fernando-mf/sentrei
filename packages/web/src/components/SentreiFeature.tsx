@@ -11,6 +11,7 @@ import TimePicture from "@sentrei/web/components/Picture/TimePicture";
 
 export default function SentreiFeature(props: any): JSX.Element {
   const {
+    sectionTitle,
     titleOne,
     subTitleOne,
     titleTwo,
@@ -23,6 +24,7 @@ export default function SentreiFeature(props: any): JSX.Element {
     <>
       <Feature
         key={i18n.language}
+        sectionTitle={sectionTitle}
         imgOne={<TimePicture />}
         titleOne={titleOne}
         subTitleOne={subTitleOne}
@@ -38,6 +40,7 @@ export default function SentreiFeature(props: any): JSX.Element {
 }
 
 SentreiFeature.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
   titleOne: PropTypes.string.isRequired,
   subTitleOne: PropTypes.string.isRequired,
   titleTwo: PropTypes.string.isRequired,

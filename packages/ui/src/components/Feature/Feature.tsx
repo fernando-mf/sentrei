@@ -12,6 +12,7 @@ import FeatureStyles from "./FeatureStyles";
 export default function Feature(props: any): JSX.Element {
   const classes = FeatureStyles();
   const {
+    sectionTitle,
     imgOne,
     titleOne,
     subTitleOne,
@@ -25,7 +26,7 @@ export default function Feature(props: any): JSX.Element {
 
   return (
     <>
-      <Section title="Features" subTitle="" />
+      <Section title={sectionTitle} subTitle="" />
       <Container maxWidth="md" component="main">
         <Grid
           container
@@ -55,6 +56,7 @@ export default function Feature(props: any): JSX.Element {
 }
 
 Feature.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
   imgOne: PropTypes.node.isRequired,
   titleOne: PropTypes.string.isRequired,
   subTitleOne: PropTypes.string.isRequired,

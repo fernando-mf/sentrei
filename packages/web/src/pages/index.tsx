@@ -53,10 +53,11 @@ function Index({t}: any): JSX.Element {
           videoTitle={t("productVideoTitle")}
         />
       </div>
-      <SentreiSlider />
+      <SentreiSlider sectionTitle={t("sliderSectionTitle")} />
       <Spacing />
       <div id="feature">
         <SentreiFeature
+          sectionTitle={t("featureSectionTitle")}
           titleOne={t("featureTitleOne")}
           subTitleOne={t("featureSubTitleOne")}
           titleTwo={t("featureTitleTwo")}
@@ -68,6 +69,7 @@ function Index({t}: any): JSX.Element {
       <Spacing />
       <div id="testimonial">
         <SentreiTestimonial
+          sectionTitle={t("testimonialSectionTitle")}
           authorOne={t("testimonialAuthorOne")}
           bodyOne={t("testimonialBodyOne")}
           occupationOne={t("testimonialOccupationOne")}
@@ -77,6 +79,7 @@ function Index({t}: any): JSX.Element {
       <Spacing />
       <div id="pricing">
         <SentreiPricing
+          sectionTitle={t("pricingSectionTitle")}
           priceMonth={t("pricingPriceMonth")}
           buttonTextOne={t("pricingButtonTextOne")}
           description1One={t("pricingDescription1One")}
@@ -104,6 +107,7 @@ function Index({t}: any): JSX.Element {
       <Spacing />
       <div id="faq">
         <SentreiFaq
+          sectionTitle={t("faqSectionTitle")}
           titleOne={t("faqTitleOne")}
           bodyOne={t("faqBodyOne")}
           titleTwo={t("faqTitleTwo")}

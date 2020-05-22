@@ -9,11 +9,18 @@ import Section from "@sentrei/ui/components/Section";
 import TestimonialCard from "@sentrei/ui/components/TestimonialCard";
 
 export default function Testimonial(props: any): JSX.Element {
-  const {authorOne, bodyOne, imgOne, occupationOne, titleOne} = props;
+  const {
+    sectionTitle,
+    authorOne,
+    bodyOne,
+    imgOne,
+    occupationOne,
+    titleOne,
+  } = props;
 
   return (
     <>
-      <Section title="Testimonial" subTitle="" />
+      <Section title={sectionTitle} subTitle="" />
       <Container maxWidth="lg" component="main">
         <Grid container direction="row" spacing={3}>
           <Grid item xs={12} sm={4}>
@@ -50,6 +57,7 @@ export default function Testimonial(props: any): JSX.Element {
 }
 
 Testimonial.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
   authorOne: PropTypes.string.isRequired,
   bodyOne: PropTypes.string.isRequired,
   imgOne: PropTypes.node.isRequired,

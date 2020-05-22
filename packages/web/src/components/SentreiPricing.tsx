@@ -9,6 +9,7 @@ import Pricing from "@sentrei/ui/components/Pricing";
 
 export default function SentreiPricing(props: any): JSX.Element {
   const {
+    sectionTitle,
     priceMonth,
     buttonTextOne,
     description1One,
@@ -36,6 +37,7 @@ export default function SentreiPricing(props: any): JSX.Element {
   return (
     <Pricing
       key={i18n.language}
+      sectionTitle={sectionTitle}
       priceMonth={priceMonth}
       buttonTextOne={buttonTextOne}
       description1One={description1One}
@@ -63,6 +65,7 @@ export default function SentreiPricing(props: any): JSX.Element {
 }
 
 Pricing.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
   priceMonth: PropTypes.string.isRequired,
   buttonTextOne: PropTypes.string.isRequired,
   description1One: PropTypes.string.isRequired,
