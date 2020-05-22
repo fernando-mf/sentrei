@@ -641,7 +641,7 @@
 
 ### Bug Fixes
 
-- **deps:** bump node from 14.1.0-alpine to 14.3.0-alpine ([46a06f2](https://github.com/sentrei/sentrei/commit/46a06f2dd3715ba149c766948f81ec1c4e942613))
+- **deps:** bump node from 14.1.0-alpine to 14.2.0-alpine ([46a06f2](https://github.com/sentrei/sentrei/commit/46a06f2dd3715ba149c766948f81ec1c4e942613))
 
 ## [4.13.1](https://github.com/sentrei/sentrei/compare/v4.13.0...v4.13.1) (2020-05-07)
 
