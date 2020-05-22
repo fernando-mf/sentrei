@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
@@ -21,6 +22,9 @@ export default function SentreiSlider(props: any): JSX.Element {
       <Box p={3} />
       <div className="slider">
         <div className="slide-track">
+          <div className="slide">
+            <KeioPicture />
+          </div>
           <div className="slide">
             <KeioPicture />
           </div>

@@ -139,7 +139,6 @@ export default function Header(props: any): JSX.Element {
                         "faq",
                       ]}
                       currentClassName="scroll-active-button"
-                      offset={36}
                     >
                       <Button href="#product" className={classes.button}>
                         <Typography>{productText}</Typography>
