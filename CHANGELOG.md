@@ -1,3 +1,9 @@
+# [4.40.0](https://github.com/sentrei/sentrei/compare/v4.39.0...v4.40.0) (2020-05-22)
+
+### Features
+
+- 🎸 update dev ops ([7188fd9](https://github.com/sentrei/sentrei/commit/7188fd96c2268baf35ca718c31afe93d696a1e8f))
+
 # [4.39.0](https://github.com/sentrei/sentrei/compare/v4.38.0...v4.39.0) (2020-05-22)
 
 ### Features
