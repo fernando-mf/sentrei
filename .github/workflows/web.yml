@@ -53,6 +53,7 @@ jobs:
           RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
           NODE_ENV: test
       - uses: codecov/codecov-action@v1
+        continue-on-error: true
         with:
           file: packages/web/coverage/lcov.info
           name: sentrei

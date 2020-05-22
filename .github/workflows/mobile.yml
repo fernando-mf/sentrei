@@ -27,6 +27,7 @@ jobs:
         run: |
           flutter test --coverage
       - uses: codecov/codecov-action@v1
+        continue-on-error: true
         with:
           file: packages/mobile/coverage/lcov.info
           name: sentrei
