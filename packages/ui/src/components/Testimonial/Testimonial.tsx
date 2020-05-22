@@ -25,24 +25,24 @@ export default function Testimonial(props: any): JSX.Element {
               title={titleOne}
             />
           </Grid>
-          {/* <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={4}>
             <TestimonialCard
-              author={authorTwo}
-              body={bodyTwo}
-              img={imgTwo}
-              occupation={occupationTwo}
-              title={titleTwo}
+              author={authorOne}
+              body={bodyOne}
+              img={imgOne}
+              occupation={occupationOne}
+              title={titleOne}
             />
           </Grid>
           <Grid item xs={12} sm={4}>
             <TestimonialCard
-              author={authorThree}
-              body={bodyThree}
-              img={imgThree}
-              occupation={occupationThree}
-              title={titleThree}
+              author={authorOne}
+              body={bodyOne}
+              img={imgOne}
+              occupation={occupationOne}
+              title={titleOne}
             />
-          </Grid> */}
+          </Grid>
         </Grid>
       </Container>
     </>
