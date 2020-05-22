@@ -16,6 +16,16 @@ export default function Testimonial(props: any): JSX.Element {
     imgOne,
     occupationOne,
     titleOne,
+    authorTwo,
+    bodyTwo,
+    imgTwo,
+    occupationTwo,
+    titleTwo,
+    authorThree,
+    bodyThree,
+    imgThree,
+    occupationThree,
+    titleThree,
   } = props;
 
   return (
@@ -34,20 +44,20 @@ export default function Testimonial(props: any): JSX.Element {
           </Grid>
           <Grid item xs={12} sm={4}>
             <TestimonialCard
-              author={authorOne}
-              body={bodyOne}
-              img={imgOne}
-              occupation={occupationOne}
-              title={titleOne}
+              author={authorTwo}
+              body={bodyTwo}
+              img={imgTwo}
+              occupation={occupationTwo}
+              title={titleTwo}
             />
           </Grid>
           <Grid item xs={12} sm={4}>
             <TestimonialCard
-              author={authorOne}
-              body={bodyOne}
-              img={imgOne}
-              occupation={occupationOne}
-              title={titleOne}
+              author={authorThree}
+              body={bodyThree}
+              img={imgThree}
+              occupation={occupationThree}
+              title={titleThree}
             />
           </Grid>
         </Grid>
@@ -63,4 +73,14 @@ Testimonial.propTypes = {
   imgOne: PropTypes.node.isRequired,
   occupationOne: PropTypes.string.isRequired,
   titleOne: PropTypes.string.isRequired,
+  authorTwo: PropTypes.string.isRequired,
+  bodyTwo: PropTypes.string.isRequired,
+  imgTwo: PropTypes.node.isRequired,
+  occupationTwo: PropTypes.string.isRequired,
+  titleTwo: PropTypes.string.isRequired,
+  authorThree: PropTypes.string.isRequired,
+  bodyThree: PropTypes.string.isRequired,
+  imgThree: PropTypes.node.isRequired,
+  occupationThree: PropTypes.string.isRequired,
+  titleThree: PropTypes.string.isRequired,
 };

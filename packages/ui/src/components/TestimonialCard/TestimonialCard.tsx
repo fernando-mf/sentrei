@@ -16,7 +16,7 @@ export default function TestimonialCard(props: any): JSX.Element {
   const {author, body, img, occupation, title} = props;
 
   return (
-    <Card variant="outlined" elevation={0}>
+    <Card variant="outlined" elevation={0} className={classes.card}>
       <CardContent>
         <div className={classes.item}>
           <Avatar>{img}</Avatar>

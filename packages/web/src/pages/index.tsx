@@ -74,6 +74,14 @@ function Index({t}: any): JSX.Element {
           bodyOne={t("testimonialBodyOne")}
           occupationOne={t("testimonialOccupationOne")}
           titleOne={t("testimonialTitleOne")}
+          authorTwo={t("testimonialAuthorTwo")}
+          bodyTwo={t("testimonialBodyTwo")}
+          occupationTwo={t("testimonialOccupationTwo")}
+          titleTwo={t("testimonialTitleTwo")}
+          authorThree={t("testimonialAuthorThree")}
+          bodyThree={t("testimonialBodyThree")}
+          occupationThree={t("testimonialOccupationThree")}
+          titleThree={t("testimonialTitleThree")}
         />
       </div>
       <Spacing />
