@@ -1,3 +1,9 @@
+# [4.38.0](https://github.com/sentrei/sentrei/compare/v4.37.4...v4.38.0) (2020-05-22)
+
+### Features
+
+- add testimonial ([f0128b1](https://github.com/sentrei/sentrei/commit/f0128b144260c16f8192eb3f504b539abd27efb8))
+
 ## [4.37.4](https://github.com/sentrei/sentrei/compare/v4.37.3...v4.37.4) (2020-05-22)
 
 ### Bug Fixes
