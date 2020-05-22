@@ -13,8 +13,8 @@ resource "google_secret_manager_secret" "web_beta_env" {
 
 resource "google_secret_manager_secret_iam_member" "web_beta_env" {
   provider  = google-beta
-  project   = google_secret_manager_secret.docker_username.project
-  secret_id = google_secret_manager_secret.docker_username.secret_id
+  project   = google_secret_manager_secret.web_beta_env.project
+  secret_id = google_secret_manager_secret.web_beta_env.secret_id
   role      = "roles/viewer"
   member    = "serviceAccount:${var.email}"
 }

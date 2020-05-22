@@ -548,8 +548,6 @@ jobs:
         with:
           credentials: ${{ secrets.GCP_CREDENTIALS }}
           secrets: |-
-            DOCKER_USERNAME:sentrei-master/docker_username
-            DOCKER_PASSWORD:sentrei-master/docker_password
             SERVICE_ACCOUNT_EMAIL:sentrei-master/github_${{ github.event.client_payload.base }}_email
             SERVICE_ACCOUNT_KEY:sentrei-master/github_${{ github.event.client_payload.base }}_key
             WEB_ENV:sentrei-master/web_${{ github.event.client_payload.base }}_env
@@ -573,8 +571,8 @@ jobs:
           yarn run build
       - uses: docker/build-push-action@v1
         with:
-          username: ${{ steps.secrets.outputs.DOCKER_USERNAME }}
-          password: ${{ steps.secrets.outputs.DOCKER_PASSWORD }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
           repository: ${{ github.repository }}
           tags: ${{ github.event.client_payload.tag }}
           cache_froms: ${{ github.repository }}:${{ github.event.client_payload.tag }}

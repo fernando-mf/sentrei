@@ -13,8 +13,8 @@ resource "google_secret_manager_secret" "github_master_email" {
 
 resource "google_secret_manager_secret_iam_member" "github_master_email" {
   provider  = google-beta
-  project   = google_secret_manager_secret.docker_username.project
-  secret_id = google_secret_manager_secret.docker_username.secret_id
+  project   = google_secret_manager_secret.github_master_email.project
+  secret_id = google_secret_manager_secret.github_master_email.secret_id
   role      = "roles/viewer"
   member    = "serviceAccount:${var.email}"
 }
@@ -34,8 +34,8 @@ resource "google_secret_manager_secret" "github_master_key" {
 
 resource "google_secret_manager_secret_iam_member" "github_master_key" {
   provider  = google-beta
-  project   = google_secret_manager_secret.docker_password.project
-  secret_id = google_secret_manager_secret.docker_password.secret_id
+  project   = google_secret_manager_secret.github_master_key.project
+  secret_id = google_secret_manager_secret.github_master_key.secret_id
   role      = "roles/viewer"
   member    = "serviceAccount:${var.email}"
 }

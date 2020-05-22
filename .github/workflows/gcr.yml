@@ -17,8 +17,6 @@ jobs:
         with:
           credentials: ${{ secrets.GCP_CREDENTIALS }}
           secrets: |-
-            DOCKER_USERNAME:sentrei-master/docker_username
-            DOCKER_PASSWORD:sentrei-master/docker_password
             SERVICE_ACCOUNT_EMAIL:sentrei-master/github_${{ matrix.branch }}_email
             SERVICE_ACCOUNT_KEY:sentrei-master/github_${{ matrix.branch }}_key
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
