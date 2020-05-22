@@ -10,6 +10,7 @@ import Section from "@sentrei/ui/components/Section";
 
 export default function Pricing(props: any): JSX.Element {
   const {
+    sectionTitle,
     priceMonth,
     buttonTextOne,
     description1One,
@@ -36,7 +37,7 @@ export default function Pricing(props: any): JSX.Element {
 
   return (
     <>
-      <Section title="Pricing" subTitle="" />
+      <Section title={sectionTitle} subTitle="" />
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
           <Grid item key={titleOne} xs={12} sm={4}>
@@ -85,6 +86,7 @@ export default function Pricing(props: any): JSX.Element {
 }
 
 Pricing.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
   priceMonth: PropTypes.string.isRequired,
   buttonTextOne: PropTypes.string.isRequired,
   description1One: PropTypes.string.isRequired,

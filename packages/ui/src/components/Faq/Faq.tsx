@@ -14,11 +14,19 @@ import FaqStyles from "./FaqStyles";
 
 export default function Faq(props: any): JSX.Element {
   const classes = FaqStyles();
-  const {titleOne, bodyOne, titleTwo, bodyTwo, titleThree, bodyThree} = props;
+  const {
+    sectionTitle,
+    titleOne,
+    bodyOne,
+    titleTwo,
+    bodyTwo,
+    titleThree,
+    bodyThree,
+  } = props;
 
   return (
     <>
-      <Section title="FAQ" subTitle="" />
+      <Section title={sectionTitle} subTitle="" />
       <Container maxWidth="md" component="main">
         <ExpansionPanel>
           <ExpansionPanelSummary
@@ -69,6 +77,7 @@ export default function Faq(props: any): JSX.Element {
 }
 
 Faq.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
   titleOne: PropTypes.string.isRequired,
   bodyOne: PropTypes.string.isRequired,
   titleTwo: PropTypes.string.isRequired,

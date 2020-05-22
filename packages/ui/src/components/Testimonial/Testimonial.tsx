@@ -9,11 +9,28 @@ import Section from "@sentrei/ui/components/Section";
 import TestimonialCard from "@sentrei/ui/components/TestimonialCard";
 
 export default function Testimonial(props: any): JSX.Element {
-  const {authorOne, bodyOne, imgOne, occupationOne, titleOne} = props;
+  const {
+    sectionTitle,
+    authorOne,
+    bodyOne,
+    imgOne,
+    occupationOne,
+    titleOne,
+    authorTwo,
+    bodyTwo,
+    imgTwo,
+    occupationTwo,
+    titleTwo,
+    authorThree,
+    bodyThree,
+    imgThree,
+    occupationThree,
+    titleThree,
+  } = props;
 
   return (
     <>
-      <Section title="Testimonial" subTitle="" />
+      <Section title={sectionTitle} subTitle="" />
       <Container maxWidth="lg" component="main">
         <Grid container direction="row" spacing={3}>
           <Grid item xs={12} sm={4}>
@@ -25,7 +42,7 @@ export default function Testimonial(props: any): JSX.Element {
               title={titleOne}
             />
           </Grid>
-          {/* <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={4}>
             <TestimonialCard
               author={authorTwo}
               body={bodyTwo}
@@ -42,7 +59,7 @@ export default function Testimonial(props: any): JSX.Element {
               occupation={occupationThree}
               title={titleThree}
             />
-          </Grid> */}
+          </Grid>
         </Grid>
       </Container>
     </>
@@ -50,9 +67,20 @@ export default function Testimonial(props: any): JSX.Element {
 }
 
 Testimonial.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
   authorOne: PropTypes.string.isRequired,
   bodyOne: PropTypes.string.isRequired,
   imgOne: PropTypes.node.isRequired,
   occupationOne: PropTypes.string.isRequired,
   titleOne: PropTypes.string.isRequired,
+  authorTwo: PropTypes.string.isRequired,
+  bodyTwo: PropTypes.string.isRequired,
+  imgTwo: PropTypes.node.isRequired,
+  occupationTwo: PropTypes.string.isRequired,
+  titleTwo: PropTypes.string.isRequired,
+  authorThree: PropTypes.string.isRequired,
+  bodyThree: PropTypes.string.isRequired,
+  imgThree: PropTypes.node.isRequired,
+  occupationThree: PropTypes.string.isRequired,
+  titleThree: PropTypes.string.isRequired,
 };

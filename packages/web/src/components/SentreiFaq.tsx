@@ -7,11 +7,20 @@ import {i18n} from "@sentrei/common/i18n";
 import Faq from "@sentrei/ui/components/Faq";
 
 export default function SentreiFaq(props: any): JSX.Element {
-  const {titleOne, bodyOne, titleTwo, bodyTwo, titleThree, bodyThree} = props;
+  const {
+    sectionTitle,
+    titleOne,
+    bodyOne,
+    titleTwo,
+    bodyTwo,
+    titleThree,
+    bodyThree,
+  } = props;
 
   return (
     <Faq
       key={i18n.language}
+      sectionTitle={sectionTitle}
       titleOne={titleOne}
       bodyOne={bodyOne}
       titleTwo={titleTwo}
@@ -23,6 +32,7 @@ export default function SentreiFaq(props: any): JSX.Element {
 }
 
 SentreiFaq.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
   titleOne: PropTypes.string.isRequired,
   bodyOne: PropTypes.string.isRequired,
   titleTwo: PropTypes.string.isRequired,
