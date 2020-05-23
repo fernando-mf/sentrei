@@ -14,11 +14,11 @@ import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import MailOutlinedIcon from "@material-ui/icons/MailOutlined";
 import firebase from "firebase/app";
+
 import Router from "next/router";
 import React from "react";
-
 import "firebase/auth";
-import {useForm} from "react-hook-form";
+import {useForm, Controller} from "react-hook-form";
 
 import * as Yup from "yup";
 
@@ -46,9 +46,15 @@ export default function Auth({type}: Props): JSX.Element {
     ),
   });
 
-  const {register, errors, handleSubmit} = useForm({
+  const ResetFormSchema = Yup.object().shape({
+    email: Yup.string()
+      .required("Email is required")
+      .email("Please enter a valid email"),
+  });
+
+  const {control, register, errors, handleSubmit} = useForm({
     reValidateMode: "onBlur",
-    validationSchema: AuthFormSchema,
+    validationSchema: authType.reset ? ResetFormSchema : AuthFormSchema,
   });
 
   const [open, setOpen] = React.useState(false);
@@ -64,14 +70,14 @@ export default function Auth({type}: Props): JSX.Element {
     setOpen(false);
   };
 
-  const onSubmit = async (values: any): Promise<void> => {
+  const onSubmit = async (data: any): Promise<void> => {
     setMessage("");
     setSeverity("info");
     setOpen(false);
     switch (type) {
       case authType.reset:
         try {
-          firebase.auth().sendPasswordResetEmail(values.email);
+          firebase.auth().sendPasswordResetEmail(data.email);
           setMessage("Please check your email");
           setSeverity("success");
           setOpen(true);
@@ -85,7 +91,7 @@ export default function Auth({type}: Props): JSX.Element {
         try {
           await firebase
             .auth()
-            .signInWithEmailAndPassword(values.email, values.password);
+            .signInWithEmailAndPassword(data.email, data.password);
           setOpen(false);
           Router.push("/");
         } catch (err) {
@@ -98,7 +104,7 @@ export default function Auth({type}: Props): JSX.Element {
         try {
           await firebase
             .auth()
-            .createUserWithEmailAndPassword(values.email, values.password);
+            .createUserWithEmailAndPassword(data.email, data.password);
           setOpen(false);
           Router.push("/");
         } catch (err) {
@@ -136,35 +142,49 @@ export default function Auth({type}: Props): JSX.Element {
           autoComplete="off"
           noValidate
         >
-          <TextField
-            autoComplete="email"
-            autoFocus
-            fullWidth
-            id="email"
-            label="Email Address"
-            margin="normal"
+          <Controller
+            as={
+              <TextField
+                autoComplete="email"
+                autoFocus
+                fullWidth
+                id="email"
+                label="Email Address"
+                margin="normal"
+                name="email"
+                placeholder="example@sentrei.com"
+                required
+                variant="outlined"
+                error={!!errors.email}
+                inputRef={register}
+                helperText={errors.email ? errors.email.message : ""}
+              />
+            }
             name="email"
-            placeholder="example@sentrei.com"
-            required
-            variant="outlined"
-            error={!!errors.email}
-            inputRef={register}
-            helperText={errors.email ? errors.email.message : ""}
+            control={control}
+            defaultValue=""
           />
           {type === authType.signin || type === authType.signup ? (
-            <TextField
-              autoComplete="current-password"
-              fullWidth
-              id="password"
-              label="Password"
-              margin="normal"
+            <Controller
+              as={
+                <TextField
+                  autoComplete="current-password"
+                  fullWidth
+                  id="password"
+                  label="Password"
+                  margin="normal"
+                  name="password"
+                  required
+                  type="password"
+                  variant="outlined"
+                  error={!!errors.password}
+                  inputRef={register}
+                  helperText={errors.password ? errors.password.message : ""}
+                />
+              }
               name="password"
-              required
-              type="password"
-              variant="outlined"
-              error={!!errors.password}
-              inputRef={register}
-              helperText={errors.password ? errors.password.message : ""}
+              control={control}
+              defaultValue=""
             />
           ) : null}
           {type === authType.signin || type === authType.signup ? (
