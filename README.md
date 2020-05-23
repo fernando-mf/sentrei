@@ -2,9 +2,7 @@
   <img src="assets/banner.png">
 </p>
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)
 [![License](https://img.shields.io/github/license/sentrei/sentrei)](https://github.com/sentrei/sentrei/blob/master/LICENSE.md)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/sentrei/sentrei/graphs/commit-activity)
 [![mergify-status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei)](https://dashboard.mergify.io/installation/7539741/repositories)
 [![dependabot-status](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)](https://app.dependabot.com/accounts/sentrei/repos/249660786)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
@@ -20,8 +18,9 @@
 [![Uptime Robot](https://img.shields.io/uptimerobot/ratio/m784815116-8a053f04f101965fe947849c)](https://uptimerobot.com/dashboard#784815116)
 [![relativeCI](https://badges.relative-ci.com/badges/C976Uvwm2P3DB7ZwroUw?branch=master)](https://app.relative-ci.com/projects/C976Uvwm2P3DB7ZwroUw)
 [![ZenHub](https://img.shields.io/badge/managed_with-ZenHub-5e60ba)](https://app.zenhub.com/workspace/o/sentrei/sentrei/boards)
-[![Sentry](https://img.shields.io/badge/hosted%20with-Sentry-red)](https://sentry.io/organizations/sentrei/projects/)
+[![Firebase](https://img.shields.io/badge/using%20firebase-green)](https://console.firebase.google.com/project/sentrei-master)
 [![Pioneer](https://img.shields.io/badge/competing%20on-pioneer.app-important)](https://pioneer.app/join/shunkakinoki)
+[![Sentry](https://img.shields.io/badge/hosted%20with-Sentry-red)](https://sentry.io/organizations/sentrei/projects/)
 
 <!-- <p align="center">
     <a><img src="assets/apple-store-badge.svg" width="300"></img></a>
