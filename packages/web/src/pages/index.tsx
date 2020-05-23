@@ -45,9 +45,9 @@ function Index({t}: any): JSX.Element {
       />
       <Spacing />
       <SentreiScreen
-        labelOne="Virtual Workspace"
-        labelTwo="Share Love"
-        labelThree="View Analytics"
+        labelOne={t("screenLabelOne")}
+        labelTwo={t("screenLabelTwo")}
+        labelThree={t("screenLabelThree")}
       />
       <Spacing />
       <div id="product">
