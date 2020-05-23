@@ -1,3 +1,9 @@
+# [4.42.0](https://github.com/sentrei/sentrei/compare/v4.41.0...v4.42.0) (2020-05-23)
+
+### Features
+
+- 🎸 complete upgrade props ([c5186c6](https://github.com/sentrei/sentrei/commit/c5186c696e16bc0017e975ea38067259e8a129a1))
+
 # [4.41.0](https://github.com/sentrei/sentrei/compare/v4.40.3...v4.41.0) (2020-05-23)
 
 ### Features
