@@ -5,9 +5,6 @@ const FaqStyles = makeStyles((theme: Theme) =>
     heading: {
       fontWeight: theme.typography.fontWeightLight,
     },
-    root: {
-      width: "100%",
-    },
   }),
 );
 

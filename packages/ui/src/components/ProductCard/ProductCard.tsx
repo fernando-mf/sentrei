@@ -1,19 +1,23 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
+import {Breakpoint} from "@material-ui/core/styles/createBreakpoints";
 import Typography from "@material-ui/core/Typography";
 import withWidth, {isWidthUp, isWidthDown} from "@material-ui/core/withWidth";
-import PropTypes from "prop-types";
 import React from "react";
 
 import Tilt from "react-parallax-tilt";
 
 import ProductStyles from "./ProductCardStyles";
 
-function ProductCard(props: any): JSX.Element {
+interface Props {
+  left: boolean;
+  img: JSX.Element;
+  subTitle: string;
+  title: string;
+  width: Breakpoint;
+}
+function ProductCard({left, img, subTitle, title, width}: Props): JSX.Element {
   const classes = ProductStyles();
-  const {left, img, subTitle, title, width} = props;
 
   const Picture = (
     <Grid item xs={false} sm={4} md={5}>
@@ -54,12 +58,5 @@ function ProductCard(props: any): JSX.Element {
     </>
   );
 }
-
-ProductCard.propTypes = {
-  left: PropTypes.bool.isRequired,
-  img: PropTypes.node.isRequired,
-  subTitle: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-};
 
 export default withWidth()(ProductCard);

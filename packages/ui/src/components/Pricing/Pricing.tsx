@@ -1,40 +1,61 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import PropTypes from "prop-types";
 import React from "react";
 
 import PricingCard from "@sentrei/ui/components/PricingCard";
 import Section from "@sentrei/ui/components/Section";
 
-export default function Pricing(props: any): JSX.Element {
-  const {
-    sectionTitle,
-    priceMonth,
-    buttonTextOne,
-    description1One,
-    description2One,
-    description3One,
-    priceOne,
-    titleOne,
-    subTitleOne,
-    buttonTextTwo,
-    description1Two,
-    description2Two,
-    description3Two,
-    priceTwo,
-    titleTwo,
-    subTitleTwo,
-    buttonTextThree,
-    description1Three,
-    description2Three,
-    description3Three,
-    priceThree,
-    titleThree,
-    subTitleThree,
-  } = props;
+interface Props {
+  sectionTitle: string;
+  priceMonth: string;
+  buttonTextOne: string;
+  description1One: string;
+  description2One: string;
+  description3One: string;
+  priceOne: string;
+  titleOne: string;
+  subTitleOne: string;
+  buttonTextTwo: string;
+  description1Two: string;
+  description2Two: string;
+  description3Two: string;
+  priceTwo: string;
+  titleTwo: string;
+  subTitleTwo: string;
+  buttonTextThree: string;
+  description1Three: string;
+  description2Three: string;
+  description3Three: string;
+  priceThree: string;
+  titleThree: string;
+  subTitleThree: string;
+}
 
+export default function Pricing({
+  sectionTitle,
+  priceMonth,
+  buttonTextOne,
+  description1One,
+  description2One,
+  description3One,
+  priceOne,
+  titleOne,
+  subTitleOne,
+  buttonTextTwo,
+  description1Two,
+  description2Two,
+  description3Two,
+  priceTwo,
+  titleTwo,
+  subTitleTwo,
+  buttonTextThree,
+  description1Three,
+  description2Three,
+  description3Three,
+  priceThree,
+  titleThree,
+  subTitleThree,
+}: Props): JSX.Element {
   return (
     <>
       <Section title={sectionTitle} subTitle="" />
@@ -84,29 +105,3 @@ export default function Pricing(props: any): JSX.Element {
     </>
   );
 }
-
-Pricing.propTypes = {
-  sectionTitle: PropTypes.string.isRequired,
-  priceMonth: PropTypes.string.isRequired,
-  buttonTextOne: PropTypes.string.isRequired,
-  description1One: PropTypes.string.isRequired,
-  description2One: PropTypes.string.isRequired,
-  description3One: PropTypes.string.isRequired,
-  priceOne: PropTypes.string.isRequired,
-  titleOne: PropTypes.string.isRequired,
-  subTitleOne: PropTypes.string.isRequired,
-  buttonTextTwo: PropTypes.string.isRequired,
-  description1Two: PropTypes.string.isRequired,
-  description2Two: PropTypes.string.isRequired,
-  description3Two: PropTypes.string.isRequired,
-  priceTwo: PropTypes.string.isRequired,
-  titleTwo: PropTypes.string.isRequired,
-  subTitleTwo: PropTypes.string.isRequired,
-  buttonTextThree: PropTypes.string.isRequired,
-  description1Three: PropTypes.string.isRequired,
-  description2Three: PropTypes.string.isRequired,
-  description3Three: PropTypes.string.isRequired,
-  priceThree: PropTypes.string.isRequired,
-  titleThree: PropTypes.string.isRequired,
-  subTitleThree: PropTypes.string.isRequired,
-};

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import ButtonBase from "@material-ui/core/ButtonBase";
@@ -13,7 +12,6 @@ import LanguageIcon from "@material-ui/icons/Language";
 import MenuIcon from "@material-ui/icons/Menu";
 
 import classNames from "classnames";
-import PropTypes from "prop-types";
 import React from "react";
 import Scrollspy from "react-scrollspy";
 
@@ -22,20 +20,32 @@ import Link from "@sentrei/ui/components/Link";
 
 import HeaderStyles from "./HeaderStyles";
 
-export default function Header(props: any): JSX.Element {
+interface Props {
+  faqText: string;
+  featuresText: string;
+  logo: JSX.Element;
+  pricingText: string;
+  productText: string;
+  signInText: string;
+  signUpText: string;
+  sign: boolean;
+  spy: boolean;
+  testimonialText: string;
+}
+
+export default function Header({
+  faqText,
+  featuresText,
+  logo,
+  pricingText,
+  productText,
+  signInText,
+  signUpText,
+  sign = true,
+  spy = true,
+  testimonialText,
+}: Props): JSX.Element {
   const classes = HeaderStyles();
-  const {
-    faqText,
-    featuresText,
-    logo,
-    pricingText,
-    productText,
-    signInText,
-    signUpText,
-    sign,
-    spy,
-    testimonialText,
-  } = props;
 
   const mobileMenuId = "primary-search-account-menu-mobile";
 
@@ -229,21 +239,3 @@ export default function Header(props: any): JSX.Element {
     </div>
   );
 }
-
-Header.defaultProps = {
-  spy: true,
-  sign: true,
-};
-
-Header.propTypes = {
-  faqText: PropTypes.string.isRequired,
-  featuresText: PropTypes.string.isRequired,
-  logo: PropTypes.node.isRequired,
-  pricingText: PropTypes.string.isRequired,
-  productText: PropTypes.string.isRequired,
-  signInText: PropTypes.string.isRequired,
-  signUpText: PropTypes.string.isRequired,
-  sign: PropTypes.bool,
-  spy: PropTypes.bool,
-  testimonialText: PropTypes.string.isRequired,
-};

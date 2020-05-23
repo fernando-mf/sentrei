@@ -1,6 +1,4 @@
-/* eslint-disable no-alert */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -8,7 +6,6 @@ import Container from "@material-ui/core/Container";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 import "@sentrei/common/utils/sentry";
-// eslint-disable-next-line import/no-named-default
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";

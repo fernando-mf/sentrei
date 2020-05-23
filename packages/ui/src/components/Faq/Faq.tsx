@@ -1,28 +1,34 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@material-ui/core/Container";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import PropTypes from "prop-types";
 import React from "react";
 
 import Section from "@sentrei/ui/components/Section";
 
 import FaqStyles from "./FaqStyles";
 
-export default function Faq(props: any): JSX.Element {
+interface Props {
+  sectionTitle: string;
+  titleOne: string;
+  bodyOne: string;
+  titleTwo: string;
+  bodyTwo: string;
+  titleThree: string;
+  bodyThree: string;
+}
+export default function Faq({
+  sectionTitle,
+  titleOne,
+  bodyOne,
+  titleTwo,
+  bodyTwo,
+  titleThree,
+  bodyThree,
+}: Props): JSX.Element {
   const classes = FaqStyles();
-  const {
-    sectionTitle,
-    titleOne,
-    bodyOne,
-    titleTwo,
-    bodyTwo,
-    titleThree,
-    bodyThree,
-  } = props;
 
   return (
     <>
@@ -75,13 +81,3 @@ export default function Faq(props: any): JSX.Element {
     </>
   );
 }
-
-Faq.propTypes = {
-  sectionTitle: PropTypes.string.isRequired,
-  titleOne: PropTypes.string.isRequired,
-  bodyOne: PropTypes.string.isRequired,
-  titleTwo: PropTypes.string.isRequired,
-  bodyTwo: PropTypes.string.isRequired,
-  titleThree: PropTypes.string.isRequired,
-  bodyThree: PropTypes.string.isRequired,
-};

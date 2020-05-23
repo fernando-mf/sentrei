@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import PropTypes from "prop-types";
 import React from "react";
 
 import FeatureCard from "@sentrei/ui/components/FeatureCard";
@@ -9,20 +7,32 @@ import Section from "@sentrei/ui/components/Section";
 
 import FeatureStyles from "./FeatureStyles";
 
-export default function Feature(props: any): JSX.Element {
+interface Props {
+  sectionTitle: string;
+  imgOne: JSX.Element;
+  titleOne: string;
+  subTitleOne: string;
+  imgTwo: JSX.Element;
+  titleTwo: string;
+  subTitleTwo: string;
+  imgThree: JSX.Element;
+  titleThree: string;
+  subTitleThree: string;
+}
+
+export default function Feature({
+  sectionTitle,
+  imgOne,
+  titleOne,
+  subTitleOne,
+  imgTwo,
+  titleTwo,
+  subTitleTwo,
+  imgThree,
+  titleThree,
+  subTitleThree,
+}: Props): JSX.Element {
   const classes = FeatureStyles();
-  const {
-    sectionTitle,
-    imgOne,
-    titleOne,
-    subTitleOne,
-    imgTwo,
-    titleTwo,
-    subTitleTwo,
-    imgThree,
-    titleThree,
-    subTitleThree,
-  } = props;
 
   return (
     <>
@@ -54,16 +64,3 @@ export default function Feature(props: any): JSX.Element {
     </>
   );
 }
-
-Feature.propTypes = {
-  sectionTitle: PropTypes.string.isRequired,
-  imgOne: PropTypes.node.isRequired,
-  titleOne: PropTypes.string.isRequired,
-  subTitleOne: PropTypes.string.isRequired,
-  imgTwo: PropTypes.node.isRequired,
-  titleTwo: PropTypes.string.isRequired,
-  subTitleTwo: PropTypes.string.isRequired,
-  imgThree: PropTypes.node.isRequired,
-  titleThree: PropTypes.string.isRequired,
-  subTitleThree: PropTypes.string.isRequired,
-};
