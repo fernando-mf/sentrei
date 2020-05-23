@@ -8,6 +8,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import React from "react";
 
+import Props from "@sentrei/common/interfaces/Screen";
 import ScreenPanel from "@sentrei/ui/components/ScreenPanel";
 
 function a11yProps(
@@ -22,7 +23,14 @@ function a11yProps(
   };
 }
 
-export default function Spacing(): JSX.Element {
+export default function Screen({
+  imgOne,
+  imgTwo,
+  imgThree,
+  labelOne,
+  labelTwo,
+  labelThree,
+}: Props): JSX.Element {
   const [value, setValue] = React.useState<number>(0);
 
   const handleChange = (
@@ -43,27 +51,19 @@ export default function Spacing(): JSX.Element {
           variant="scrollable"
           scrollButtons="auto"
         >
-          <Tab
-            label="Virtual Workspace"
-            icon={<HomeWorkIcon />}
-            {...a11yProps(0)}
-          />
-          <Tab label="Share Love" icon={<FavoriteIcon />} {...a11yProps(1)} />
-          <Tab
-            label="View Analytics"
-            icon={<AssessmentIcon />}
-            {...a11yProps(2)}
-          />
+          <Tab label={labelOne} icon={<HomeWorkIcon />} {...a11yProps(0)} />
+          <Tab label={labelTwo} icon={<FavoriteIcon />} {...a11yProps(1)} />
+          <Tab label={labelThree} icon={<AssessmentIcon />} {...a11yProps(2)} />
         </Tabs>
       </Grid>
       <ScreenPanel value={value} index={0}>
-        Item One
+        {imgOne}
       </ScreenPanel>
       <ScreenPanel value={value} index={1}>
-        Item Two
+        {imgTwo}
       </ScreenPanel>
       <ScreenPanel value={value} index={2}>
-        Item Three
+        {imgThree}
       </ScreenPanel>
     </Container>
   );
