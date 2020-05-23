@@ -31,7 +31,7 @@ export default function Spacing({
       onClose={onClose}
     >
       <MuiAlert onClose={onClose} variant="filled" severity={severity}>
-        Error: {message}
+        {severity}: {message}
       </MuiAlert>
     </Snackbar>
   );
