@@ -1,29 +1,38 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import Typography from "@material-ui/core/Typography";
-import PropTypes from "prop-types";
 import React from "react";
 
 import PricingCardStyles from "./PricingCardStyles";
 
-export default function PricingCard(props: any): JSX.Element {
-  const {
-    action,
-    buttonText,
-    buttonVariant,
-    description1,
-    description2,
-    description3,
-    price,
-    priceMonth,
-    subTitle,
-    title,
-  } = props;
+interface Props {
+  action?: string;
+  buttonText: string;
+  buttonVariant: "text" | "outlined" | "contained";
+  description1: string;
+  description2: string;
+  description3: string;
+  price: string;
+  priceMonth: string;
+  subTitle: string;
+  title: string;
+}
+
+export default function PricingCard({
+  action,
+  buttonText,
+  buttonVariant,
+  description1,
+  description2,
+  description3,
+  price,
+  priceMonth,
+  subTitle,
+  title,
+}: Props): JSX.Element {
   const classes = PricingCardStyles();
 
   return (
@@ -65,15 +74,3 @@ export default function PricingCard(props: any): JSX.Element {
     </Card>
   );
 }
-
-PricingCard.propTypes = {
-  buttonText: PropTypes.string.isRequired,
-  buttonVariant: PropTypes.string.isRequired,
-  description1: PropTypes.string.isRequired,
-  description2: PropTypes.string.isRequired,
-  description3: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
-  priceMonth: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  subTitle: PropTypes.string.isRequired,
-};

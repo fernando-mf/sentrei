@@ -1,22 +1,18 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-var-requires */
-import PropTypes from "prop-types";
 import React from "react";
 
 import {i18n} from "@sentrei/common/i18n";
+import Props from "@sentrei/common/interfaces/Faq";
 import Faq from "@sentrei/ui/components/Faq";
 
-export default function SentreiFaq(props: any): JSX.Element {
-  const {
-    sectionTitle,
-    titleOne,
-    bodyOne,
-    titleTwo,
-    bodyTwo,
-    titleThree,
-    bodyThree,
-  } = props;
-
+export default function SentreiFaq({
+  sectionTitle,
+  titleOne,
+  bodyOne,
+  titleTwo,
+  bodyTwo,
+  titleThree,
+  bodyThree,
+}: Props): JSX.Element {
   return (
     <Faq
       key={i18n.language}
@@ -30,13 +26,3 @@ export default function SentreiFaq(props: any): JSX.Element {
     />
   );
 }
-
-SentreiFaq.propTypes = {
-  sectionTitle: PropTypes.string.isRequired,
-  titleOne: PropTypes.string.isRequired,
-  bodyOne: PropTypes.string.isRequired,
-  titleTwo: PropTypes.string.isRequired,
-  bodyTwo: PropTypes.string.isRequired,
-  titleThree: PropTypes.string.isRequired,
-  bodyThree: PropTypes.string.isRequired,
-};

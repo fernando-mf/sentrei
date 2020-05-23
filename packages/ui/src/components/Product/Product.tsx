@@ -1,27 +1,24 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
-import PropTypes from "prop-types";
 import React from "react";
 
+import Props from "@sentrei/common/interfaces/Product";
 import ProductCard from "@sentrei/ui/components/ProductCard";
 
 import ProductStyles from "./ProductStyles";
 
-export default function Product(props: any): JSX.Element {
+export default function Product({
+  connectImg,
+  connectTitle,
+  connectSubTitle,
+  dataImg,
+  dataTitle,
+  dataSubTitle,
+  videoImg,
+  videoTitle,
+  videoSubTitle,
+}: Props): JSX.Element {
   const classes = ProductStyles();
-  const {
-    connectImg,
-    connectTitle,
-    connectSubTitle,
-    dataImg,
-    dataTitle,
-    dataSubTitle,
-    videoImg,
-    videoTitle,
-    videoSubTitle,
-  } = props;
 
   return (
     <Container maxWidth="lg" component="main" className={classes.product}>
@@ -48,15 +45,3 @@ export default function Product(props: any): JSX.Element {
     </Container>
   );
 }
-
-Product.propTypes = {
-  connectImg: PropTypes.node.isRequired,
-  connectTitle: PropTypes.string.isRequired,
-  connectSubTitle: PropTypes.string.isRequired,
-  dataImg: PropTypes.node.isRequired,
-  dataTitle: PropTypes.string.isRequired,
-  dataSubTitle: PropTypes.string.isRequired,
-  videoImg: PropTypes.node.isRequired,
-  videoTitle: PropTypes.string.isRequired,
-  videoSubTitle: PropTypes.string.isRequired,
-};

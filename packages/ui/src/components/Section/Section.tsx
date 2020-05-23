@@ -1,14 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import PropTypes from "prop-types";
 import React from "react";
 
 import SectionStyles from "./SectionStyles";
 
-export default function Section(props: any): JSX.Element {
+interface Props {
+  subTitle: string;
+  title: string;
+}
+export default function Section({subTitle, title}: Props): JSX.Element {
   const classes = SectionStyles();
-  const {subTitle, title} = props;
+
   return (
     <Container maxWidth="sm" component="main" className={classes.section}>
       <Typography
@@ -32,8 +34,3 @@ export default function Section(props: any): JSX.Element {
     </Container>
   );
 }
-
-Section.propTypes = {
-  title: PropTypes.string.isRequired,
-  subTitle: PropTypes.string.isRequired,
-};

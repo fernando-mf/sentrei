@@ -1,19 +1,29 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import QuoteIcon from "@material-ui/icons/FormatQuote";
-import PropTypes from "prop-types";
 
 import React from "react";
 
 import TestimonialCardStyles from "./TestimonialCardStyles";
 
-export default function TestimonialCard(props: any): JSX.Element {
+interface Props {
+  author: string;
+  body: string;
+  img: JSX.Element;
+  occupation: string;
+  title: string;
+}
+export default function TestimonialCard({
+  author,
+  body,
+  img,
+  occupation,
+  title,
+}: Props): JSX.Element {
   const classes = TestimonialCardStyles();
-  const {author, body, img, occupation, title} = props;
 
   return (
     <Card variant="outlined" elevation={0} className={classes.card}>
@@ -38,11 +48,3 @@ export default function TestimonialCard(props: any): JSX.Element {
     </Card>
   );
 }
-
-TestimonialCard.propTypes = {
-  author: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  img: PropTypes.node.isRequired,
-  occupation: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-};

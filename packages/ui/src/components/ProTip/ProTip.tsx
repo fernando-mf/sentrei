@@ -1,8 +1,9 @@
 import Link from "@material-ui/core/Link";
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import SvgIcon, {SvgIconProps} from "@material-ui/core/SvgIcon";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
+
+import ProTipStyles from "./ProTipStyles";
 
 function LightBulbIcon(props: SvgIconProps): JSX.Element {
   return (
@@ -11,21 +12,8 @@ function LightBulbIcon(props: SvgIconProps): JSX.Element {
     </SvgIcon>
   );
 }
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      margin: theme.spacing(6, 0, 3),
-    },
-    lightBulb: {
-      verticalAlign: "middle",
-      marginRight: theme.spacing(1),
-    },
-  }),
-);
-
 export default function ProTip(): JSX.Element {
-  const classes = useStyles();
+  const classes = ProTipStyles();
   return (
     <Typography className={classes.root} color="textSecondary">
       <LightBulbIcon className={classes.lightBulb} />
