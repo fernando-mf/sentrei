@@ -21,7 +21,7 @@ function About({t}: any): JSX.Element {
         signUpText={t("headerSignUp")}
         testimonialText={t("headerTestimonial")}
       />
-      <Auth type={authType.signin} />;
+      <Auth type={authType.signup} />;
     </>
   );
 }

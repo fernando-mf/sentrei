@@ -7,6 +7,7 @@ import React from "react";
 import "@sentrei/web/styles/slider.scss";
 
 import KeioPicture from "@sentrei/web/components/Picture/KeioPicture";
+import UclPicture from "@sentrei/web/components/Picture/UclPicture";
 
 export default function SentreiSlider(props: any): JSX.Element {
   const {sectionTitle} = props;
@@ -26,43 +27,43 @@ export default function SentreiSlider(props: any): JSX.Element {
             <KeioPicture />
           </div>
           <div className="slide">
-            <KeioPicture />
+            <UclPicture />
           </div>
           <div className="slide">
             <KeioPicture />
           </div>
           <div className="slide">
-            <KeioPicture />
+            <UclPicture />
           </div>
           <div className="slide">
             <KeioPicture />
           </div>
           <div className="slide">
-            <KeioPicture />
+            <UclPicture />
           </div>
           <div className="slide">
             <KeioPicture />
           </div>
           <div className="slide">
-            <KeioPicture />
+            <UclPicture />
           </div>
           <div className="slide">
             <KeioPicture />
           </div>
           <div className="slide">
-            <KeioPicture />
+            <UclPicture />
           </div>
           <div className="slide">
             <KeioPicture />
           </div>
           <div className="slide">
-            <KeioPicture />
+            <UclPicture />
           </div>
           <div className="slide">
             <KeioPicture />
           </div>
           <div className="slide">
-            <KeioPicture />
+            <UclPicture />
           </div>
         </div>
       </div>

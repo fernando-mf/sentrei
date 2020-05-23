@@ -24,11 +24,7 @@ class App extends NextApp {
     if (jssStyles && jssStyles.parentNode) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
-    if (
-      isBrowser &&
-      !firebase.apps.length &&
-      process.env.NODE_ENV === "production"
-    ) {
+    if (isBrowser && !firebase.apps.length) {
       firebase.analytics().logEvent("_app");
       firebase.performance().trace("_app");
     }

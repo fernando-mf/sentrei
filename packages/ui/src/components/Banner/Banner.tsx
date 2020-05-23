@@ -71,7 +71,7 @@ export default function Banner(props: any): JSX.Element {
       <Box pt={3}>
         <Grid container justify="center" direction="row" spacing={2}>
           <Grid item xs={12} md={6}>
-            <Link href="/signin" className={classes.item}>
+            <Link href="/signup" className={classes.item}>
               <Button
                 color="primary"
                 variant="contained"

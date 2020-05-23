@@ -17,11 +17,7 @@ const firebaseConfig = {
   measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
-if (
-  isBrowser &&
-  !firebase.apps.length &&
-  process.env.NODE_ENV === "production"
-) {
+if (isBrowser && !firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
   try {
     firebase.analytics();
