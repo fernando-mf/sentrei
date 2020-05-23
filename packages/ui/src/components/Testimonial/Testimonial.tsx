@@ -3,27 +3,9 @@ import Grid from "@material-ui/core/Grid";
 
 import React from "react";
 
+import Props from "@sentrei/common/interfaces/Testimonial";
 import Section from "@sentrei/ui/components/Section";
 import TestimonialCard from "@sentrei/ui/components/TestimonialCard";
-
-interface Props {
-  sectionTitle: string;
-  authorOne: string;
-  bodyOne: string;
-  imgOne: JSX.Element;
-  occupationOne: string;
-  titleOne: string;
-  authorTwo: string;
-  bodyTwo: string;
-  imgTwo: JSX.Element;
-  occupationTwo: string;
-  titleTwo: string;
-  authorThree: string;
-  bodyThree: string;
-  imgThree: JSX.Element;
-  occupationThree: string;
-  titleThree: string;
-}
 
 export default function Testimonial({
   sectionTitle,

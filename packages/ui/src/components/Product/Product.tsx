@@ -2,21 +2,10 @@ import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import React from "react";
 
+import Props from "@sentrei/common/interfaces/Product";
 import ProductCard from "@sentrei/ui/components/ProductCard";
 
 import ProductStyles from "./ProductStyles";
-
-interface Props {
-  connectImg: JSX.Element;
-  connectTitle: string;
-  connectSubTitle: string;
-  dataImg: JSX.Element;
-  dataTitle: string;
-  dataSubTitle: string;
-  videoImg: JSX.Element;
-  videoTitle: string;
-  videoSubTitle: string;
-}
 
 export default function Product({
   connectImg,

@@ -6,19 +6,11 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import React from "react";
 
+import Props from "@sentrei/common/interfaces/Faq";
 import Section from "@sentrei/ui/components/Section";
 
 import FaqStyles from "./FaqStyles";
 
-interface Props {
-  sectionTitle: string;
-  titleOne: string;
-  bodyOne: string;
-  titleTwo: string;
-  bodyTwo: string;
-  titleThree: string;
-  bodyThree: string;
-}
 export default function Faq({
   sectionTitle,
   titleOne,

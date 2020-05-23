@@ -6,20 +6,10 @@ import Typography from "@material-ui/core/Typography";
 import React from "react";
 import Typical from "react-typical";
 
+import Props from "@sentrei/common/interfaces/Banner";
 import Link from "@sentrei/ui/components/Link";
 
 import BannerStyles from "./BannerStyles";
-
-interface Props {
-  bannerBottom: string;
-  bannerText: string;
-  bannerTop: string;
-  googleText: string;
-  startText: string;
-  typicalOne: string;
-  typicalTwo: string;
-  typicalThree: string;
-}
 
 export default function Banner({
   bannerBottom,

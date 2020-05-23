@@ -16,22 +16,10 @@ import React from "react";
 import Scrollspy from "react-scrollspy";
 
 import {i18n} from "@sentrei/common/i18n";
+import Props from "@sentrei/common/interfaces/Header";
 import Link from "@sentrei/ui/components/Link";
 
 import HeaderStyles from "./HeaderStyles";
-
-interface Props {
-  faqText: string;
-  featuresText: string;
-  logo: JSX.Element;
-  pricingText: string;
-  productText: string;
-  signInText: string;
-  signUpText: string;
-  sign: boolean;
-  spy: boolean;
-  testimonialText: string;
-}
 
 export default function Header({
   faqText,

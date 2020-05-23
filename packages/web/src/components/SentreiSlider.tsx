@@ -1,17 +1,17 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import PropTypes from "prop-types";
 import React from "react";
 import "@sentrei/web/styles/slider.scss";
 
 import KeioPicture from "@sentrei/web/components/Picture/KeioPicture";
 import UclPicture from "@sentrei/web/components/Picture/UclPicture";
 
-export default function SentreiSlider(props: any): JSX.Element {
-  const {sectionTitle} = props;
+interface Props {
+  sectionTitle: string;
+}
 
+export default function SentreiSlider({sectionTitle}: Props): JSX.Element {
   return (
     <>
       <Box p={4} />
@@ -70,7 +70,3 @@ export default function SentreiSlider(props: any): JSX.Element {
     </>
   );
 }
-
-SentreiSlider.propTypes = {
-  sectionTitle: PropTypes.string.isRequired,
-};
