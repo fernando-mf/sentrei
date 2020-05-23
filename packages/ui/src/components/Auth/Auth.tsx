@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Avatar from "@material-ui/core/Avatar";
@@ -57,8 +58,8 @@ export default function Auth({type}: Props): JSX.Element {
     validationSchema: authType.reset ? ResetFormSchema : AuthFormSchema,
   });
 
-  const [open, setOpen] = React.useState(false);
-  const [message, setMessage] = React.useState("");
+  const [open, setOpen] = React.useState<boolean>(false);
+  const [message, setMessage] = React.useState<string>("");
   const [severity, setSeverity] = React.useState<
     "error" | "success" | "info" | "warning"
   >("info");
@@ -70,6 +71,18 @@ export default function Auth({type}: Props): JSX.Element {
     setOpen(false);
   };
 
+  const handleError = (err: Error): void => {
+    setMessage(`${err.name}\n${err.message}`);
+    setSeverity("error");
+    setOpen(true);
+  };
+
+  const handleSuccess = (mes: string): void => {
+    setMessage(mes);
+    setSeverity("success");
+    setOpen(true);
+  };
+
   const onSubmit = async (data: any): Promise<void> => {
     setMessage("");
     setSeverity("info");
@@ -78,13 +91,9 @@ export default function Auth({type}: Props): JSX.Element {
       case authType.reset:
         try {
           firebase.auth().sendPasswordResetEmail(data.email);
-          setMessage("Please check your email");
-          setSeverity("success");
-          setOpen(true);
+          handleSuccess("Please check your email");
         } catch (err) {
-          setMessage(err);
-          setSeverity("error");
-          setOpen(true);
+          handleError(err);
         }
         break;
       case authType.signin:
@@ -95,9 +104,7 @@ export default function Auth({type}: Props): JSX.Element {
           setOpen(false);
           Router.push("/");
         } catch (err) {
-          setMessage(err);
-          setSeverity("error");
-          setOpen(true);
+          handleError(err);
         }
         break;
       case authType.signup:
@@ -108,9 +115,7 @@ export default function Auth({type}: Props): JSX.Element {
           setOpen(false);
           Router.push("/");
         } catch (err) {
-          setMessage(err);
-          setSeverity("error");
-          setOpen(true);
+          handleError(err);
         }
         break;
       default:
