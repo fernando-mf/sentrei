@@ -5,7 +5,6 @@ import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
 import Footer from "@sentrei/ui/components/Footer";
-import Screen from "@sentrei/ui/components/Screen";
 import Spacing from "@sentrei/ui/components/Spacing";
 import SentreiBanner from "@sentrei/web/components/SentreiBanner";
 import SentreiFaq from "@sentrei/web/components/SentreiFaq";
@@ -13,6 +12,7 @@ import SentreiFeature from "@sentrei/web/components/SentreiFeature";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 import SentreiPricing from "@sentrei/web/components/SentreiPricing";
 import SentreiProduct from "@sentrei/web/components/SentreiProduct";
+import SentreiScreen from "@sentrei/web/components/SentreiScreen";
 import SentreiSlider from "@sentrei/web/components/SentreiSlider";
 import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
 
@@ -44,7 +44,14 @@ function Index({t}: any): JSX.Element {
         typicalThree={t("bannerTypicalThree")}
       />
       <Spacing />
-      <Screen />
+      <SentreiScreen
+        imgOne={<></>}
+        imgTwo={<></>}
+        imgThree={<></>}
+        labelOne="Virtual Workspace"
+        labelTwo="Share Love"
+        labelThree="View Analytics"
+      />
       <Spacing />
       <div id="product">
         <SentreiProduct

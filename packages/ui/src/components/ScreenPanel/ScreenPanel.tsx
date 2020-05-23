@@ -1,4 +1,5 @@
 import Box from "@material-ui/core/Box";
+import Grow from "@material-ui/core/Grow";
 import React from "react";
 import Tilt from "react-parallax-tilt";
 
@@ -23,16 +24,18 @@ export default function ScreenPanel(props: ScreenPanelProps): JSX.Element {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
-          <Tilt
-            reset
-            scale={1.1}
-            transitionSpeed={2500}
-            className={classes.tilt}
-          >
-            {children}
-          </Tilt>
-        </Box>
+        <Grow in={value === index}>
+          <Box p={3}>
+            <Tilt
+              reset
+              scale={1.1}
+              transitionSpeed={2500}
+              className={classes.tilt}
+            >
+              {children}
+            </Tilt>
+          </Box>
+        </Grow>
       )}
     </div>
   );
