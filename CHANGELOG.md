@@ -1,3 +1,9 @@
+## [4.42.2](https://github.com/sentrei/sentrei/compare/v4.42.1...v4.42.2) (2020-05-23)
+
+### Bug Fixes
+
+- **deps:** bump @material-ui/lab from 4.0.0-alpha.53 to 4.0.0-alpha.54 ([c0d5273](https://github.com/sentrei/sentrei/commit/c0d527360073988a4a74ce2743f4e570a3e79ae6))
+
 # [4.42.0](https://github.com/sentrei/sentrei/compare/v4.41.0...v4.42.0) (2020-05-23)
 
 ### Features
