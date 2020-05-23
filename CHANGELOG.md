@@ -1,3 +1,9 @@
+# [4.43.0](https://github.com/sentrei/sentrei/compare/v4.42.2...v4.43.0) (2020-05-23)
+
+### Features
+
+- 🎸 add initial screen ([e048f68](https://github.com/sentrei/sentrei/commit/e048f68048cd947715f16fd70757a2609c0a1c13))
+
 ## [4.42.2](https://github.com/sentrei/sentrei/compare/v4.42.1...v4.42.2) (2020-05-23)
 
 ### Bug Fixes
