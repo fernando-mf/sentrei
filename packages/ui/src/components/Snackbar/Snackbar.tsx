@@ -5,10 +5,8 @@ import MuiAlert from "@material-ui/lab/Alert";
 import React from "react";
 
 function SlideTransition(props: TransitionProps): JSX.Element {
-  return <Slide {...props} direction="up" />;
+  return <Slide {...props} direction="down" />;
 }
-
-type SnackbarCloseReason = "timeout" | "clickaway";
 
 interface Props {
   open: boolean;
@@ -25,6 +23,10 @@ export default function Spacing({
 }: Props): JSX.Element {
   return (
     <Snackbar
+      anchorOrigin={{
+        vertical: "top",
+        horizontal: "center",
+      }}
       open={open}
       autoHideDuration={3000}
       TransitionComponent={SlideTransition}
