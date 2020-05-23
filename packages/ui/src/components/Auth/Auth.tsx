@@ -18,16 +18,15 @@ import Router from "next/router";
 import React from "react";
 
 import "firebase/auth";
+import {useForm} from "react-hook-form";
+
+import * as Yup from "yup";
+
 import authType from "@sentrei/common/types/authType";
 import Link from "@sentrei/ui/components/Link";
 import Snackbar from "@sentrei/ui/components/Snackbar";
 
 import AuthStyles from "./AuthStyles";
-
-type Inputs = {
-  email: string;
-  password: string;
-};
 
 interface Props {
   type: authType;
@@ -36,12 +35,22 @@ interface Props {
 export default function Auth({type}: Props): JSX.Element {
   const classes = AuthStyles();
 
-  const initial: Inputs = {
-    email: "",
-    password: "",
-  };
+  const AuthFormSchema = Yup.object().shape({
+    email: Yup.string()
+      .required("Email is required")
+      .email("Please enter a valid email"),
+    password: Yup.string().required("Please enter a valid password"),
+    passwordConfirmation: Yup.string().oneOf(
+      [Yup.ref("password")],
+      "Passwords must match",
+    ),
+  });
 
-  const [inputs, setInputs] = React.useState(initial);
+  const {register, errors, handleSubmit} = useForm({
+    reValidateMode: "onBlur",
+    validationSchema: AuthFormSchema,
+  });
+
   const [open, setOpen] = React.useState(false);
   const [message, setMessage] = React.useState("");
   const [severity, setSeverity] = React.useState<
@@ -55,23 +64,14 @@ export default function Auth({type}: Props): JSX.Element {
     setOpen(false);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<any>): void => {
-    e.persist();
-    setInputs({
-      ...inputs,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e: React.ChangeEvent<any>): Promise<void> => {
-    e.preventDefault();
+  const onSubmit = async (values: any): Promise<void> => {
     setMessage("");
     setSeverity("info");
     setOpen(false);
     switch (type) {
       case authType.reset:
         try {
-          firebase.auth().sendPasswordResetEmail(inputs.email);
+          firebase.auth().sendPasswordResetEmail(values.email);
           setMessage("Please check your email");
           setSeverity("success");
           setOpen(true);
@@ -85,7 +85,7 @@ export default function Auth({type}: Props): JSX.Element {
         try {
           await firebase
             .auth()
-            .signInWithEmailAndPassword(inputs.email, inputs.password);
+            .signInWithEmailAndPassword(values.email, values.password);
           setOpen(false);
           Router.push("/");
         } catch (err) {
@@ -98,7 +98,7 @@ export default function Auth({type}: Props): JSX.Element {
         try {
           await firebase
             .auth()
-            .createUserWithEmailAndPassword(inputs.email, inputs.password);
+            .createUserWithEmailAndPassword(values.email, values.password);
           setOpen(false);
           Router.push("/");
         } catch (err) {
@@ -130,31 +130,41 @@ export default function Auth({type}: Props): JSX.Element {
           {type === authType.signin ? "Sign in" : null}
           {type === authType.signup ? "Sign up" : null}
         </Typography>
-        <form onSubmit={handleSubmit} className={classes.form} noValidate>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className={classes.form}
+          autoComplete="off"
+          noValidate
+        >
           <TextField
-            variant="outlined"
-            margin="normal"
-            required
+            autoComplete="email"
+            autoFocus
             fullWidth
             id="email"
             label="Email Address"
+            margin="normal"
             name="email"
-            autoComplete="email"
-            autoFocus
-            onChange={handleInputChange}
+            placeholder="example@sentrei.com"
+            required
+            variant="outlined"
+            error={!!errors.email}
+            inputRef={register}
+            helperText={errors.email ? errors.email.message : ""}
           />
           {type === authType.signin || type === authType.signup ? (
             <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
               autoComplete="current-password"
-              onChange={handleInputChange}
+              fullWidth
+              id="password"
+              label="Password"
+              margin="normal"
+              name="password"
+              required
+              type="password"
+              variant="outlined"
+              error={!!errors.password}
+              inputRef={register}
+              helperText={errors.password ? errors.password.message : ""}
             />
           ) : null}
           {type === authType.signin || type === authType.signup ? (
@@ -174,30 +184,30 @@ export default function Auth({type}: Props): JSX.Element {
             {type === authType.signin ? "Sign in" : null}
             {type === authType.signup ? "Sign up" : null}
           </Button>
-          {type === authType.signin ? (
-            <Grid container>
-              <Grid item xs>
-                <Link href="/reset" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="/signup" variant="body2">
-                  Dont have an account? Sign Up
-                </Link>
-              </Grid>
-            </Grid>
-          ) : null}
-          {type === authType.signup ? (
-            <Grid container justify="center">
-              <Grid item>
-                <Link href="/signin" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
-          ) : null}
         </form>
+        {type === authType.signin ? (
+          <Grid container>
+            <Grid item xs>
+              <Link href="/reset" variant="body2">
+                Forgot password?
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link href="/signup" variant="body2">
+                Dont have an account? Sign Up
+              </Link>
+            </Grid>
+          </Grid>
+        ) : null}
+        {type === authType.signup ? (
+          <Grid container justify="center">
+            <Grid item>
+              <Link href="/signin" variant="body2">
+                Already have an account? Sign in
+              </Link>
+            </Grid>
+          </Grid>
+        ) : null}
       </div>
     </Container>
   );
