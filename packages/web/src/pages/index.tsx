@@ -12,6 +12,7 @@ import SentreiFeature from "@sentrei/web/components/SentreiFeature";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 import SentreiPricing from "@sentrei/web/components/SentreiPricing";
 import SentreiProduct from "@sentrei/web/components/SentreiProduct";
+import SentreiScreen from "@sentrei/web/components/SentreiScreen";
 import SentreiSlider from "@sentrei/web/components/SentreiSlider";
 import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
 
@@ -41,6 +42,12 @@ function Index({t}: any): JSX.Element {
         typicalOne={t("bannerTypicalOne")}
         typicalTwo={t("bannerTypicalTwo")}
         typicalThree={t("bannerTypicalThree")}
+      />
+      <Spacing />
+      <SentreiScreen
+        labelOne={t("screenLabelOne")}
+        labelTwo={t("screenLabelTwo")}
+        labelThree={t("screenLabelThree")}
       />
       <Spacing />
       <div id="product">
