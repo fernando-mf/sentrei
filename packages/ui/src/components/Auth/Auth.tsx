@@ -10,6 +10,7 @@ import "@sentrei/common/utils/sentry";
 // eslint-disable-next-line import/no-named-default
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
+import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import MailOutlinedIcon from "@material-ui/icons/MailOutlined";
 import firebase from "firebase/app";
@@ -122,7 +123,7 @@ export default function Auth({type}: Props): JSX.Element {
         <Avatar className={classes.avatar}>
           {type === authType.reset ? <MailOutlinedIcon /> : null}
           {type === authType.signin ? <LockOutlinedIcon /> : null}
-          {type === authType.signup ? <LockOutlinedIcon /> : null}
+          {type === authType.signup ? <AccountCircleOutlinedIcon /> : null}
         </Avatar>
         <Typography component="h1" variant="h3">
           {type === authType.reset ? "Reset email" : null}
