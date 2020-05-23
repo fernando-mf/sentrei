@@ -1,3 +1,10 @@
+# [4.41.0](https://github.com/sentrei/sentrei/compare/v4.40.3...v4.41.0) (2020-05-23)
+
+### Features
+
+- 🎸 add signup, reset, ucl ([daac7ea](https://github.com/sentrei/sentrei/commit/daac7eae5235adbcf27ef9b7b8ee7ddf46f2dd0d))
+- 🎸 feat ([0161a62](https://github.com/sentrei/sentrei/commit/0161a62d1ce79f308a1d5878bc5f199c9384b0fe))
+
 ## [4.40.3](https://github.com/sentrei/sentrei/compare/v4.40.2...v4.40.3) (2020-05-23)
 
 ### Bug Fixes
