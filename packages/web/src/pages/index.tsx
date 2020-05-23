@@ -5,6 +5,7 @@ import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
 import Footer from "@sentrei/ui/components/Footer";
+import Screen from "@sentrei/ui/components/Screen";
 import Spacing from "@sentrei/ui/components/Spacing";
 import SentreiBanner from "@sentrei/web/components/SentreiBanner";
 import SentreiFaq from "@sentrei/web/components/SentreiFaq";
@@ -42,6 +43,8 @@ function Index({t}: any): JSX.Element {
         typicalTwo={t("bannerTypicalTwo")}
         typicalThree={t("bannerTypicalThree")}
       />
+      <Spacing />
+      <Screen />
       <Spacing />
       <div id="product">
         <SentreiProduct

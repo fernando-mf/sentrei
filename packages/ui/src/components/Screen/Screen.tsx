@@ -1,5 +1,9 @@
-import AppBar from "@material-ui/core/AppBar";
+import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
 import Tab from "@material-ui/core/Tab";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import PersonPinIcon from "@material-ui/icons/PersonPin";
+import PhoneIcon from "@material-ui/icons/Phone";
 import TabContext from "@material-ui/lab/TabContext";
 import TabList from "@material-ui/lab/TabList";
 import TabPanel from "@material-ui/lab/TabPanel";
@@ -19,19 +23,26 @@ export default function Spacing(): JSX.Element {
   };
 
   return (
-    <div className={classes.root}>
+    <Container maxWidth="md" component="main">
       <TabContext value={value}>
-        <AppBar position="static">
-          <TabList onChange={handleChange} aria-label="simple tabs example">
-            <Tab label="Item One" value="1" />
-            <Tab label="Item Two" value="2" />
-            <Tab label="Item Three" value="3" />
-          </TabList>
-        </AppBar>
+        <TabList
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          variant="scrollable"
+          scrollButtons="auto"
+        >
+          <Tab label="Item One" icon={<PhoneIcon />} value="1" />
+          <Box p={3} />
+          <Tab label="Item Two" icon={<FavoriteIcon />} value="2" />
+          <Box p={3} />
+          <Tab label="Item Three" icon={<PersonPinIcon />} value="3" />
+        </TabList>
         <TabPanel value="1">Item One</TabPanel>
         <TabPanel value="2">Item Two</TabPanel>
         <TabPanel value="3">Item Three</TabPanel>
       </TabContext>
-    </div>
+    </Container>
   );
 }
