@@ -6,7 +6,7 @@ export default interface Props {
   productText: string;
   signInText: string;
   signUpText: string;
-  sign: boolean;
-  spy: boolean;
+  sign?: boolean;
+  spy?: boolean;
   testimonialText: string;
 }

@@ -1,11 +1,13 @@
 import React from "react";
 
 import {i18n} from "@sentrei/common/i18n";
-import Props from "@sentrei/common/interfaces/Product";
+import Original from "@sentrei/common/interfaces/Product";
 import Product from "@sentrei/ui/components/Product";
 import ConnectPicture from "@sentrei/web/components/Picture/ConnectPicture";
 import DataPicture from "@sentrei/web/components/Picture/DataPicture";
 import VideoPicture from "@sentrei/web/components/Picture/VideoPicture";
+
+type Props = Omit<Original, "connectImg" | "dataImg" | "videoImg">;
 
 export default function SentreiProduct({
   connectTitle,
