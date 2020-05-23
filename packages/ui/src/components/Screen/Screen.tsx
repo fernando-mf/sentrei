@@ -1,16 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
+import AssessmentIcon from "@material-ui/icons/Assessment";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import PersonPinIcon from "@material-ui/icons/PersonPin";
-import PhoneIcon from "@material-ui/icons/Phone";
+import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import React from "react";
 
 import ScreenPanel from "@sentrei/ui/components/ScreenPanel";
-
-import ScreenStyles from "./ScreenStyles";
 
 function a11yProps(
   index: number,
@@ -25,7 +23,6 @@ function a11yProps(
 }
 
 export default function Spacing(): JSX.Element {
-  const classes = ScreenStyles();
   const [value, setValue] = React.useState<number>(0);
 
   const handleChange = (
@@ -37,18 +34,28 @@ export default function Spacing(): JSX.Element {
 
   return (
     <Container maxWidth="md" component="main">
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
-        variant="scrollable"
-        scrollButtons="auto"
-      >
-        <Tab label="Item One" icon={<PhoneIcon />} {...a11yProps(0)} />
-        <Tab label="Item Two" icon={<FavoriteIcon />} {...a11yProps(1)} />
-        <Tab label="Item Three" icon={<PersonPinIcon />} {...a11yProps(2)} />
-      </Tabs>
+      <Grid container justify="center" direction="row" spacing={1}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          variant="scrollable"
+          scrollButtons="auto"
+        >
+          <Tab
+            label="Virtual Workspace"
+            icon={<HomeWorkIcon />}
+            {...a11yProps(0)}
+          />
+          <Tab label="Share Love" icon={<FavoriteIcon />} {...a11yProps(1)} />
+          <Tab
+            label="View Analytics"
+            icon={<AssessmentIcon />}
+            {...a11yProps(2)}
+          />
+        </Tabs>
+      </Grid>
       <ScreenPanel value={value} index={0}>
         Item One
       </ScreenPanel>

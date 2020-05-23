@@ -16,6 +16,7 @@ interface Props {
   title: string;
   width: Breakpoint;
 }
+
 function ProductCard({left, img, subTitle, title, width}: Props): JSX.Element {
   const classes = ProductStyles();
 
@@ -28,34 +29,32 @@ function ProductCard({left, img, subTitle, title, width}: Props): JSX.Element {
   );
 
   return (
-    <>
-      <Grid container alignItems="center" justify="center" component="main">
-        {left && Picture}
-        {!left && isWidthDown("xs", width) && Picture}
-        <Grid item xs={12} sm={8} md={7} className={classes.item}>
-          <Box py={3} />
-          <Typography
-            component="h1"
-            variant="h3"
-            align="center"
-            color="textPrimary"
-            gutterBottom
-          >
-            {title}
-          </Typography>
-          <Typography
-            component="p"
-            variant="h6"
-            align="center"
-            color="textSecondary"
-            gutterBottom
-          >
-            {subTitle}
-          </Typography>
-        </Grid>
-        {!left && isWidthUp("sm", width) && Picture}
+    <Grid container alignItems="center" justify="center" component="main">
+      {left && Picture}
+      {!left && isWidthDown("xs", width) && Picture}
+      <Grid item xs={12} sm={8} md={7} className={classes.item}>
+        <Box py={3} />
+        <Typography
+          component="h1"
+          variant="h3"
+          align="center"
+          color="textPrimary"
+          gutterBottom
+        >
+          {title}
+        </Typography>
+        <Typography
+          component="p"
+          variant="h6"
+          align="center"
+          color="textSecondary"
+          gutterBottom
+        >
+          {subTitle}
+        </Typography>
       </Grid>
-    </>
+      {!left && isWidthUp("sm", width) && Picture}
+    </Grid>
   );
 }
 

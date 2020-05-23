@@ -1,7 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
 import React from "react";
+import Tilt from "react-parallax-tilt";
+
+import ScreenPanelStyles from "./ScreenPanelStyles";
 
 interface ScreenPanelProps {
   children?: React.ReactNode;
@@ -10,6 +11,7 @@ interface ScreenPanelProps {
 }
 
 export default function ScreenPanel(props: ScreenPanelProps): JSX.Element {
+  const classes = ScreenPanelStyles();
   const {children, value, index, ...other} = props;
 
   return (
@@ -22,7 +24,14 @@ export default function ScreenPanel(props: ScreenPanelProps): JSX.Element {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <Tilt
+            reset
+            scale={1.1}
+            transitionSpeed={2500}
+            className={classes.tilt}
+          >
+            {children}
+          </Tilt>
         </Box>
       )}
     </div>
