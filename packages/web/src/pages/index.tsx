@@ -45,9 +45,6 @@ function Index({t}: any): JSX.Element {
       />
       <Spacing />
       <SentreiScreen
-        imgOne={<></>}
-        imgTwo={<></>}
-        imgThree={<></>}
         labelOne="Virtual Workspace"
         labelTwo="Share Love"
         labelThree="View Analytics"
