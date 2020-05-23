@@ -25,11 +25,11 @@ export default function ScreenPanel(props: ScreenPanelProps): JSX.Element {
     >
       {value === index && (
         <Grow in={value === index}>
-          <Box p={3}>
+          <Box p={5}>
             <Tilt
               reset
-              scale={1.1}
-              transitionSpeed={2500}
+              scale={1.03}
+              transitionSpeed={1000}
               className={classes.tilt}
             >
               {children}
