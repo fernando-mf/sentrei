@@ -1,3 +1,10 @@
+## [4.40.3](https://github.com/sentrei/sentrei/compare/v4.40.2...v4.40.3) (2020-05-23)
+
+### Bug Fixes
+
+- **deps:** bump @narative/gatsby-theme-novela from 0.15.6 to 0.15.7 ([0e033bd](https://github.com/sentrei/sentrei/commit/0e033bd041c132c8b0213a0e80dc4390a4eb62f6))
+- **deps:** bump react-i18next from 11.4.0 to 11.5.0 ([c2f52aa](https://github.com/sentrei/sentrei/commit/c2f52aa36fea8d674b5f2a3d2cc4ec647fe8dce6))
+
 ## [4.40.2](https://github.com/sentrei/sentrei/compare/v4.40.1...v4.40.2) (2020-05-22)
 
 ### Bug Fixes
