@@ -8,34 +8,31 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 import "@sentrei/common/utils/sentry";
 // eslint-disable-next-line import/no-named-default
-import {default as LinkButton} from "@material-ui/core/Link";
-import Slide from "@material-ui/core/Slide";
-import Snackbar from "@material-ui/core/Snackbar";
 import TextField from "@material-ui/core/TextField";
-import {TransitionProps} from "@material-ui/core/transitions";
 import Typography from "@material-ui/core/Typography";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import MuiAlert from "@material-ui/lab/Alert";
 import firebase from "firebase/app";
 import Router from "next/router";
 import React from "react";
 
 import "firebase/auth";
+import authType from "@sentrei/common/types/authType";
 import Link from "@sentrei/ui/components/Link";
+import Snackbar from "@sentrei/ui/components/Snackbar";
 
-import SigninStyles from "./SigninStyles";
-
-function SlideTransition(props: TransitionProps): JSX.Element {
-  return <Slide {...props} direction="up" />;
-}
+import AuthStyles from "./AuthStyles";
 
 type Inputs = {
   email: string;
   password: string;
 };
 
-export default function Signin(): JSX.Element {
-  const classes = SigninStyles();
+interface Props {
+  type: authType;
+}
+
+export default function Auth({type}: Props): JSX.Element {
+  const classes = AuthStyles();
 
   const initial: Inputs = {
     email: "",
@@ -44,12 +41,10 @@ export default function Signin(): JSX.Element {
 
   const [inputs, setInputs] = React.useState(initial);
   const [open, setOpen] = React.useState(false);
-  const [error, setError] = React.useState(null);
-
-  const handleError = (err: any): void => {
-    setError(err);
-    setOpen(true);
-  };
+  const [message, setMessage] = React.useState("");
+  const [severity, setSeverity] = React.useState<
+    "error" | "success" | "info" | "warning"
+  >("info");
 
   const handleClose = (event?: React.SyntheticEvent, reason?: string): void => {
     if (reason === "clickaway") {
@@ -74,34 +69,29 @@ export default function Signin(): JSX.Element {
         .signInWithEmailAndPassword(inputs.email, inputs.password);
       Router.push("/");
     } catch (err) {
-      handleError(err);
+      console.log(err);
     }
   };
 
   const forgotPassword = (email: any): void => {
-    firebase
-      .auth()
-      .sendPasswordResetEmail(email)
-      .catch(err => {
-        handleError(err);
-      });
+    firebase.auth().sendPasswordResetEmail(email);
+    setSeverity("success");
+    setMessage("");
+    setOpen(true);
+    // .catch(err => {
+    //   handleError(err);
+    // });
   };
 
   return (
     <Container component="main" maxWidth="xs">
+      <Snackbar
+        open={open}
+        message={message}
+        severity={severity}
+        onClose={handleClose}
+      />
       <div className={classes.paper}>
-        {open ? (
-          <Snackbar
-            open={open}
-            autoHideDuration={3000}
-            TransitionComponent={SlideTransition}
-            onClose={handleClose}
-          >
-            <MuiAlert onClose={handleClose} variant="filled" severity="error">
-              Error: {error}
-            </MuiAlert>
-          </Snackbar>
-        ) : null}
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
@@ -146,21 +136,20 @@ export default function Signin(): JSX.Element {
           >
             Sign In
           </Button>
-          <Grid container>
-            <Grid item xs>
-              <LinkButton
-                onClick={(): void => forgotPassword(inputs.email)}
-                variant="body2"
-              >
-                Forgot password?
-              </LinkButton>
+          {type === authType.signin ? (
+            <Grid container>
+              <Grid item xs>
+                <Link href="/reset" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="/signup" variant="body2">
+                  Dont have an account? Sign Up
+                </Link>
+              </Grid>
             </Grid>
-            <Grid item>
-              <Link href="#" variant="body2">
-                Dont have an account? Sign Up
-              </Link>
-            </Grid>
-          </Grid>
+          ) : null}
         </form>
       </div>
     </Container>

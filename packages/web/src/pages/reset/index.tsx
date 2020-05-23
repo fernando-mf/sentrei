@@ -20,8 +20,8 @@ function About({t}: any): JSX.Element {
         signInText={t("headerSignIn")}
         signUpText={t("headerSignUp")}
         testimonialText={t("headerTestimonial")}
-      />
-      <Auth type={authType.signin} />;
+      />{" "}
+      <Auth type={authType.reset} />;
     </>
   );
 }

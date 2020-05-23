@@ -1,3 +1,4 @@
+export {default as Auth} from "./components/Auth";
 export {default as Copyright} from "./components/Copyright";
 export {default as Banner} from "./components/Banner";
 export {default as Faq} from "./components/Faq";
@@ -9,7 +10,7 @@ export {default as Product} from "./components/Product";
 export {default as ProductCard} from "./components/ProductCard";
 export {default as ProTip} from "./components/ProTip";
 export {default as Section} from "./components/Section";
-export {default as Signin} from "./components/Signin";
+export {default as Snackbar} from "./components/Snackbar";
 export {default as Spacing} from "./components/Spacing";
 export {default as Testimonial} from "./components/Testimonial";
 export {default as TestimonialCard} from "./components/TestimonialCard";
