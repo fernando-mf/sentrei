@@ -11,6 +11,7 @@ import "@sentrei/common/utils/sentry";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import MailOutlinedIcon from "@material-ui/icons/MailOutlined";
 import firebase from "firebase/app";
 import Router from "next/router";
 import React from "react";
@@ -63,24 +64,50 @@ export default function Auth({type}: Props): JSX.Element {
 
   const handleSubmit = async (e: React.ChangeEvent<any>): Promise<void> => {
     e.preventDefault();
-    try {
-      await firebase
-        .auth()
-        .signInWithEmailAndPassword(inputs.email, inputs.password);
-      Router.push("/");
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const forgotPassword = (email: any): void => {
-    firebase.auth().sendPasswordResetEmail(email);
-    setSeverity("success");
     setMessage("");
-    setOpen(true);
-    // .catch(err => {
-    //   handleError(err);
-    // });
+    setSeverity("info");
+    setOpen(false);
+    switch (type) {
+      case authType.reset:
+        try {
+          firebase.auth().sendPasswordResetEmail(inputs.email);
+          setMessage("Please check your email");
+          setSeverity("success");
+          setOpen(true);
+        } catch (err) {
+          setMessage(err);
+          setSeverity("error");
+          setOpen(true);
+        }
+        break;
+      case authType.signin:
+        try {
+          await firebase
+            .auth()
+            .signInWithEmailAndPassword(inputs.email, inputs.password);
+          setOpen(false);
+          Router.push("/");
+        } catch (err) {
+          setMessage(err);
+          setSeverity("error");
+          setOpen(true);
+        }
+        break;
+      case authType.signup:
+        try {
+          await firebase
+            .auth()
+            .createUserWithEmailAndPassword(inputs.email, inputs.password);
+          setOpen(false);
+          Router.push("/");
+        } catch (err) {
+          setMessage(err);
+          setSeverity("error");
+          setOpen(true);
+        }
+        break;
+      default:
+    }
   };
 
   return (
@@ -93,10 +120,14 @@ export default function Auth({type}: Props): JSX.Element {
       />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          {type === authType.reset ? <MailOutlinedIcon /> : null}
+          {type === authType.signin ? <LockOutlinedIcon /> : null}
+          {type === authType.signup ? <LockOutlinedIcon /> : null}
         </Avatar>
         <Typography component="h1" variant="h3">
-          Sign in
+          {type === authType.reset ? "Reset email" : null}
+          {type === authType.signin ? "Sign in" : null}
+          {type === authType.signup ? "Sign up" : null}
         </Typography>
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
           <TextField
@@ -111,22 +142,26 @@ export default function Auth({type}: Props): JSX.Element {
             autoFocus
             onChange={handleInputChange}
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            onChange={handleInputChange}
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
+          {type === authType.signin || type === authType.signup ? (
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              onChange={handleInputChange}
+            />
+          ) : null}
+          {type === authType.signin || type === authType.signup ? (
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+          ) : null}
           <Button
             type="submit"
             fullWidth
@@ -134,7 +169,9 @@ export default function Auth({type}: Props): JSX.Element {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            {type === authType.reset ? "Send reset email" : null}
+            {type === authType.signin ? "Sign in" : null}
+            {type === authType.signup ? "Sign up" : null}
           </Button>
           {type === authType.signin ? (
             <Grid container>
@@ -146,6 +183,15 @@ export default function Auth({type}: Props): JSX.Element {
               <Grid item>
                 <Link href="/signup" variant="body2">
                   Dont have an account? Sign Up
+                </Link>
+              </Grid>
+            </Grid>
+          ) : null}
+          {type === authType.signup ? (
+            <Grid container justify="center">
+              <Grid item>
+                <Link href="/signin" variant="body2">
+                  Already have an account? Sign in
                 </Link>
               </Grid>
             </Grid>

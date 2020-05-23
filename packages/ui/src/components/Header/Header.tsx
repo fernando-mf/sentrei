@@ -173,7 +173,7 @@ export default function Header(props: any): JSX.Element {
                         <Typography>{signInText}</Typography>
                       </Button>
                     </Link>
-                    <Link href="/signin">
+                    <Link href="/signup">
                       <Button
                         color="primary"
                         variant="contained"
@@ -187,7 +187,6 @@ export default function Header(props: any): JSX.Element {
                 <IconButton
                   aria-controls="customized-menu"
                   aria-haspopup="true"
-                  color="primary"
                   onClick={handleClick}
                 >
                   <LanguageIcon />
