@@ -18,9 +18,9 @@ export default function SentreiScreen({
   return (
     <Screen
       key={i18n.language}
-      imgOne={<ConnectPicture />}
-      imgTwo={<DataPicture />}
-      imgThree={<VideoPicture />}
+      imgOne={<VideoPicture />}
+      imgTwo={<ConnectPicture />}
+      imgThree={<DataPicture />}
       labelOne={labelOne}
       labelTwo={labelTwo}
       labelThree={labelThree}
