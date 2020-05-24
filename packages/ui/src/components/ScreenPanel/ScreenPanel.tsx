@@ -27,9 +27,11 @@ export default function ScreenPanel(props: ScreenPanelProps): JSX.Element {
         <Grow in={value === index}>
           <Box p={5}>
             <Tilt
+              key="ScreenPanel"
               reset
-              scale={1.03}
+              scale={1.1}
               transitionSpeed={1000}
+              tiltEnable={false}
               className={classes.tilt}
             >
               {children}
