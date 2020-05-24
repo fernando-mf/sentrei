@@ -1,4 +1,3 @@
-require("dotenv").config();
 const path = require("path");
 const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
@@ -52,6 +51,10 @@ const aliases = {
 };
 
 const nextConfig = {
+  serverRuntimeConfig: {
+    FIREBASE_CLIENT_EMAIL: process.env.FIREBASE_CLIENT_EMAIL,
+    FIREBASE_PRIVATE_KEY: process.env.FIREBASE_PRIVATE_KEY,
+  },
   env: {
     FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
     FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
