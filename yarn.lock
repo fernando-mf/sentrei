@@ -5572,7 +5572,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@*", "@types/react-dom@^16.8.3", "@types/react-dom@^16.9.6":
+"@types/react-dom@*", "@types/react-dom@^16.9.6":
   version "16.9.8"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.8.tgz#fe4c1e11dfc67155733dfa6aa65108b4971cb423"
   integrity sha512-ykkPQ+5nFknnlU6lDd947WbQ6TE3NNzbQAkInC2EKY1qeYdTKp7onFusmYZb+ityzx2YviqT6BXSu+LyWWJwcA==
@@ -5621,7 +5621,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.8.10", "@types/react@^16.9.34":
+"@types/react@*", "@types/react@^16.9.34":
   version "16.9.35"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.35.tgz#a0830d172e8aadd9bd41709ba2281a3124bbd368"
   integrity sha512-q0n0SsWcGc8nDqH2GJfWQWUOmZSJhXV64CjVN5SvcNti3TdEaA3AH0D8DwNmMdzjMAC/78tB8nAZIlV8yTz+zQ==
@@ -14119,14 +14119,6 @@ firebaseui@^4.1.0:
   dependencies:
     dialog-polyfill "^0.4.7"
     material-design-lite "^1.2.0"
-
-firestore-pagination-hook@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/firestore-pagination-hook/-/firestore-pagination-hook-1.0.0.tgz#d0593de0e7c740bf734ad618d1c54b8f78d16cb1"
-  integrity sha512-a4eJ0ytA4/H9fBOHa0uHr9bptOd0MDkT82YZliyeDovQQL9aNXegiHx3L5rEPIIhvkqtdwlI13MTeLZdex59tQ==
-  dependencies:
-    "@types/react" "^16.8.10"
-    "@types/react-dom" "^16.8.3"
 
 first-input-delay@0.1.3:
   version "0.1.3"
