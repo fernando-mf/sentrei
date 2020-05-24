@@ -22,7 +22,14 @@ function ProductCard({left, img, subTitle, title, width}: Props): JSX.Element {
 
   const Picture = (
     <Grid item xs={false} sm={4} md={5}>
-      <Tilt reset scale={1.1} transitionSpeed={2500} className={classes.tilt}>
+      <Tilt
+        // TODO: https://github.com/mkosir/react-parallax-tilt/issues/8
+        reset
+        scale={1.1}
+        transitionSpeed={2500}
+        tiltEnable={false}
+        className={classes.tilt}
+      >
         {img}
       </Tilt>
     </Grid>
