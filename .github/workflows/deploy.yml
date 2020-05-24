@@ -285,6 +285,55 @@ jobs:
               repo: context.repo.repo,
               name: ['packages/fastlane'],
             })
+  functions:
+    if: github.event.client_payload.event_name == 'functions'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "10.x"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@master
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - working-directory: packages/functions
+        run: |
+          yarn run ${{ github.event.client_payload.task }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - if: github.event.client_payload.environment == 'staging'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ github.event.client_payload.comment_id }}
+          reaction-type: hooray
+      - if: github.event.client_payload.environment == 'staging'
+        uses: actions/github-script@0.9.0
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          script: |
+            github.issues.removeLabel({
+              issue_number: ${{ github.event.client_payload.pull_request_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: ['packages/functions'],
+            })
   mobile:
     if: github.event.client_payload.event_name == 'mobile'
     runs-on: ubuntu-latest
