@@ -16,6 +16,14 @@ resource "google_cloud_run_service" "sentrei_web" {
     spec {
       containers {
         image = "gcr.io/sentrei-${var.environment}/sentrei:${var.environment}"
+        env {
+          name  = "FIREBASE_CLIENT_EMAIL"
+          value = var.firebase_client_email
+        }
+        env {
+          name  = "FIREBASE_PRIVATE_KEY"
+          value = var.firebase_private_key
+        }
         resources {
           limits = { "cpu" : "1000m", "memory" : "512Mi" }
         }
