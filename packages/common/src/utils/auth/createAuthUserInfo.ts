@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {get, has} from "lodash";
 
-const createAuthUser = (
+export const createAuthUser = (
   firebaseUser: firebase.User | null,
 ): {
   id: string;

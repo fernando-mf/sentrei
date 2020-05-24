@@ -1,24 +1,26 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint react/jsx-props-no-spreading: 0 */
+
 import {get, set} from "lodash";
 import {NextPageContext} from "next";
 import PropTypes from "prop-types";
 import React from "react";
 
-import {AuthUserInfoContext} from "../auth/hooks";
-import {createAuthUser, createAuthUserInfo} from "../auth/user";
+import createAuthUserInfo, {
+  createAuthUser,
+} from "@sentrei/common/utils/auth/createAuthUserInfo";
+import useAuthUserInfo, {
+  AuthUserInfoContext,
+} from "@sentrei/ui/hooks/useAuthUserInfo";
 
 // Gets the authenticated user from the Firebase JS SDK, when client-side,
 // or from the request object, when server-side. Add the AuthUserInfo to
 // context.
-export default (ComposedComponent: any) => {
-  const WithAuthUserComp = (props: any) => {
+export default function WithAuthUser(ComposedComponent: any): any {
+  const WithAuthUserComp = (props: any): any => {
     const {AuthUserInfo, ...otherProps} = props;
 
-    // We'll use the authed user from client-side auth (Firebase JS SDK)
-    // when available. On the server side, we'll use the authed user from
-    // the session. This allows us to server-render while also using Firebase's
-    // client-side auth functionality.
-    const {user: firebaseUser} = useFirebaseAuth();
+    const {user: firebaseUser} = useAuthUserInfo();
     const AuthUserFromClient = createAuthUser(firebaseUser);
     const {AuthUser: AuthUserFromSession, token} = AuthUserInfo;
     const AuthUser = AuthUserFromClient || AuthUserFromSession || null;
@@ -30,7 +32,11 @@ export default (ComposedComponent: any) => {
     );
   };
 
-  WithAuthUserComp.getInitialProps = async (ctx: NextPageContext) => {
+  WithAuthUserComp.getInitialProps = async (
+    ctx: NextPageContext,
+  ): Promise<{
+    AuthUserInfo: any;
+  }> => {
     const {req, res} = ctx;
 
     // Get the AuthUserInfo object.
@@ -39,7 +45,9 @@ export default (ComposedComponent: any) => {
       // If server-side, get AuthUserInfo from the session in the request.
       // Don't include server middleware in the client JS bundle. See:
       // https://arunoda.me/blog/ssr-and-server-only-modules
-      const {addSession} = require("../middleware/cookieSession");
+
+      // eslint-disable-next-line global-require, @typescript-eslint/no-var-requires
+      const {addSession} = require("@sentrei/web/middleware/cookieSession");
       addSession(req, res);
       AuthUserInfo = createAuthUserInfo({
         firebaseUser: get(req, "session.decodedToken", null),
@@ -101,4 +109,4 @@ export default (ComposedComponent: any) => {
   WithAuthUserComp.defaultProps = {};
 
   return WithAuthUserComp;
-};
+}
