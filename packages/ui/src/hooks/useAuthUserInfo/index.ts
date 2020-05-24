@@ -1,1 +1,1 @@
-export {default} from "./useAuthUserInfo";
+export {default, AuthUserInfoContext} from "./useAuthUserInfo";

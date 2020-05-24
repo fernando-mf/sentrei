@@ -4,7 +4,7 @@ import "firebase/auth";
 
 import createAuthUserInfo from "@sentrei/common/utils/auth/createAuthUserInfo";
 
-const AuthUserInfoContext = React.createContext(createAuthUserInfo());
+export const AuthUserInfoContext = React.createContext(createAuthUserInfo());
 
 const useAuthUserInfo = (): any => {
   return React.useContext(AuthUserInfoContext);
