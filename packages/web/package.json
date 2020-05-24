@@ -20,7 +20,7 @@
     "deploy:web": "firebase deploy --only hosting:web --token ${FIREBASE_TOKEN}",
     "dev": "next",
     "export": "next export",
-    "master": "yarn run swap:master && firebase use master && yarn run deploy:web",
+    "master": "yarn run swap:master && firebase use master && yarn run deploy:web && yarn run deploy:staging-web",
     "relative-ci": "relative-ci-agent",
     "sentry": "sentry-cli releases new -p sentrei ${SENTRY_RELEASE} && sentry-cli releases set-commits --auto ${SENTRY_RELEASE} && sentry-cli releases finalize ${SENTRY_RELEASE} && sentry-cli releases deploys ${SENTRY_RELEASE} new -e ${SENTRY_ENVIRONMENT}",
     "staging:alpha": "yarn run swap:alpha && firebase use alpha && yarn run deploy:staging-web",

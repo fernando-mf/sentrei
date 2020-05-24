@@ -60,6 +60,8 @@
 **/functions/**/functions-admin-beta.json
 **/functions/**/functions-admin-master.json
 
+**/functions/firebase.json
+
 # Mobile related.
 **/mobile/firebase.json
 
