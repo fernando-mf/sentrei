@@ -40,4 +40,5 @@ jobs:
         with:
           directory: "infrastructure"
           soft-fail: true
+          quiet: true
           api-key: ${{ secrets.BRIDGE_CREW_KEY }}
