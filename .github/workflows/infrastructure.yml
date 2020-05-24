@@ -39,6 +39,5 @@ jobs:
       - uses: bridgecrewio/bridgecrew-action@master
         with:
           directory: "infrastructure"
-          soft-fail: "true"
-          output: "cli"
-          api-key-variable: ${{ secrets.BRIDGE_CREW_KEY }}
+          soft-fail: true
+          api-key: ${{ secrets.BRIDGE_CREW_KEY }}
