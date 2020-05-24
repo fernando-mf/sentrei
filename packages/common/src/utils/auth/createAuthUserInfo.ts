@@ -20,7 +20,14 @@ export const createAuthUser = (
   };
 };
 
-const createAuthUserInfo = ({firebaseUser = null, token = null} = {}): any => {
+const createAuthUserInfo = ({firebaseUser = null, token = null} = {}): {
+  AuthUser: {
+    id: string;
+    email: string | null;
+    emailVerified: any;
+  } | null;
+  token: null;
+} => {
   return {
     AuthUser: createAuthUser(firebaseUser),
     token,
