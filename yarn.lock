@@ -14025,7 +14025,7 @@ firebase-admin@8.12.1, firebase-admin@^8.10.0:
     "@google-cloud/firestore" "^3.0.0"
     "@google-cloud/storage" "^4.1.2"
 
-firebase-functions@^3.6.0:
+firebase-functions@^3.6.1:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/firebase-functions/-/firebase-functions-3.6.1.tgz#05fdf991e9f3f46cb2c7b32dd4a523766b17e14a"
   integrity sha512-CBvlDEoFgsdm10PTHs7gRd5xBmhp+eqCqgsyqKbzmdbU3J8RYqtBWoHm2O31gjtZv6MyOWvS3oFITShzBulylQ==
@@ -14036,7 +14036,7 @@ firebase-functions@^3.6.0:
     jsonwebtoken "^8.5.1"
     lodash "^4.17.14"
 
-firebase-tools@^8.0.2:
+firebase-tools@^8.0.2, firebase-tools@^8.3.0:
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-8.4.0.tgz#bd769924df2c5d5f12a015fcd0f40de0edec0aa2"
   integrity sha512-x9Qdb+dehSycSITCcpKM0xm7ltTMOu/XPPxNNlxM9epoDwHfAZFONpGM8SMmmn+DOd+D6ukG0mCsrQFSB5b1OQ==

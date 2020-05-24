@@ -9,6 +9,15 @@
   },
   "license": "MIT",
   "author": "Shun Kakinoki",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": "10"
+  },
   "scripts": {
     "alpha": "yarn run swap:alpha && firebase use alpha && yarn run deploy:functions && yarn run deploy:rules",
     "beta": "yarn run swap:beta && firebase use beta && yarn run deploy:functions && yarn run deploy:rules",
@@ -25,7 +34,8 @@
   },
   "dependencies": {
     "firebase-admin": "^8.10.0",
-    "firebase-functions": "^3.6.0"
+    "firebase-functions": "^3.6.1",
+    "firebase-tools": "^8.3.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.4",
