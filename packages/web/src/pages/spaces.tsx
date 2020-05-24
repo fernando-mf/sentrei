@@ -2,7 +2,6 @@
 
 import Button from "@material-ui/core/Button";
 import firebase from "firebase/app";
-import usePagination from "firestore-pagination-hook";
 import "firebase/firestore";
 import {get} from "lodash";
 
@@ -11,6 +10,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import Link from "@sentrei/ui/components/Link";
+import usePagination from "@sentrei/ui/hooks/usePagination";
 
 import withAuthUser from "@sentrei/web/components/HOC/withAuthUser";
 import withAuthUserInfo from "@sentrei/web/components/HOC/withAuthUserInfo";
@@ -45,7 +45,7 @@ const Spaces = (props: any): any => {
           <Link href="/spaces/create">create</Link>
           <div>
             {loading && <div>...</div>}
-            {items.map(item => (
+            {items.map((item: any) => (
               <p key={item.index}>
                 {JSON.stringify(item.data() || {}, null, 2)}
               </p>

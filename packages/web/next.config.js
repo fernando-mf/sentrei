@@ -65,6 +65,8 @@ const nextConfig = {
     SENTRY_DSN: process.env.SENTRY_DSN,
     SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT,
     SENTRY_RELEASE: process.env.SENTRY_RELEASE,
+    SESSION_SECRET_CURRENT: process.env.SESSION_SECRET_CURRENT,
+    SESSION_SECRET_PREVIOUS: process.env.SESSION_SECRET_PREVIOUS,
   },
   webpack: config => {
     config.resolve.alias = {
