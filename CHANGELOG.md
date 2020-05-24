@@ -1,3 +1,9 @@
+## [4.43.2](https://github.com/sentrei/sentrei/compare/v4.43.1...v4.43.2) (2020-05-24)
+
+### Bug Fixes
+
+- **deps:** bump imagemin-svgo from 7.1.0 to 8.0.0 ([05248e1](https://github.com/sentrei/sentrei/commit/05248e1167c07bbdcb679889a7b2a4d4cf48c47a))
+
 ## [4.43.1](https://github.com/sentrei/sentrei/compare/v4.43.0...v4.43.1) (2020-05-24)
 
 ### Bug Fixes
