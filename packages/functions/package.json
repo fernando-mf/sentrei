@@ -15,9 +15,6 @@
   "files": [
     "dist"
   ],
-  "engines": {
-    "node": "10"
-  },
   "scripts": {
     "alpha": "yarn run swap:alpha && firebase use alpha && yarn run deploy:functions && yarn run deploy:rules",
     "beta": "yarn run swap:beta && firebase use beta && yarn run deploy:functions && yarn run deploy:rules",
@@ -42,6 +39,9 @@
     "rimraf": "^3.0.2",
     "tslint": "^6.1.1",
     "typescript": "^3.8.3"
+  },
+  "engines": {
+    "node": "10"
   },
   "publishConfig": {
     "access": "public"
