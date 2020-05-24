@@ -14,6 +14,8 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 const {StatsWriterPlugin} = require("webpack-stats-plugin");
 
+const {SentryWebpackPlugin} = require("@sentry/webpack-plugin");
+
 const withBundleStats = require("next-plugin-bundle-stats")({
   baseline: true,
   compare: false,
@@ -81,6 +83,15 @@ const nextConfig = {
             chunks: true,
             modules: true,
           },
+        }),
+      );
+    }
+    if (process.env.SENTRY_DNS) {
+      config.plugins.push(
+        new SentryWebpackPlugin({
+          include: ".next",
+          ignore: ["node_modules", "cypress", "test"],
+          urlPrefix: "~/_next",
         }),
       );
     }
