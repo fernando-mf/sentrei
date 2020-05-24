@@ -1,3 +1,9 @@
+## [4.43.3](https://github.com/sentrei/sentrei/compare/v4.43.2...v4.43.3) (2020-05-24)
+
+### Bug Fixes
+
+- **deps:** bump imagemin-optipng from 7.1.0 to 8.0.0 ([31c48f5](https://github.com/sentrei/sentrei/commit/31c48f5bee0e8ba75f2bd9a6bda85e95f02dffe4))
+
 ## [4.43.2](https://github.com/sentrei/sentrei/compare/v4.43.1...v4.43.2) (2020-05-24)
 
 ### Bug Fixes
