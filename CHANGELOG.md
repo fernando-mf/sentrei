@@ -1,3 +1,10 @@
+# [4.44.0-beta.1](https://github.com/sentrei/sentrei/compare/v4.43.3...v4.44.0-beta.1) (2020-05-25)
+
+### Features
+
+- 🎸 refactor core sentrei ([49c51f8](https://github.com/sentrei/sentrei/commit/49c51f8b8d4f8ede3ca0046e83923462ef67acef))
+- ignore engines yarn ([5329cf5](https://github.com/sentrei/sentrei/commit/5329cf51efec6b740d3a934140f8de62a97a961a))
+
 ## [4.43.3](https://github.com/sentrei/sentrei/compare/v4.43.2...v4.43.3) (2020-05-24)
 
 ### Bug Fixes
