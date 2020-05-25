@@ -633,6 +633,7 @@ jobs:
           tags: ${{ github.event.client_payload.tag }}
           cache_froms: ${{ github.repository }}:${{ github.event.client_payload.tag }}
           dockerfile: packages/web/Dockerfile
+          path: "."
           always_pull: true
           add_git_labels: true
           tag_with_ref: true
@@ -646,6 +647,7 @@ jobs:
           repository: sentrei-${{ github.event.client_payload.base }}/sentrei
           tags: ${{ github.event.client_payload.tag }}
           dockerfile: packages/web/Dockerfile
+          path: "."
           always_pull: false
           add_git_labels: true
           tag_with_ref: false
