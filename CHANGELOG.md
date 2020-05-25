@@ -1,3 +1,10 @@
+## [4.45.4](https://github.com/sentrei/sentrei/compare/v4.45.3...v4.45.4) (2020-05-25)
+
+### Bug Fixes
+
+- add todo comment ([8a43dc7](https://github.com/sentrei/sentrei/commit/8a43dc738bc8ac69e3816860c7a4576ba6c361e8))
+- invoke ([b16e3d6](https://github.com/sentrei/sentrei/commit/b16e3d6ec3cbd5649e97a9d8deebf7bc2cd27ada))
+
 ## [4.45.3](https://github.com/sentrei/sentrei/compare/v4.45.2...v4.45.3) (2020-05-25)
 
 ### Bug Fixes
