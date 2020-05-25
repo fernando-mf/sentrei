@@ -35,7 +35,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --ignore-engines
       - working-directory: packages/blog
         run: |
           yarn run ${{ github.event.client_payload.task }}
@@ -105,7 +105,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --ignore-engines
       - working-directory: packages/design
         run: |
           yarn run ${{ github.event.client_payload.task }}
@@ -295,7 +295,7 @@ jobs:
           ref: ${{ github.event.client_payload.branch }}
       - uses: actions/setup-node@v1
         with:
-          node-version: "10.x"
+          node-version: "14.3.0"
       - id: yarn-cache-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - id: cache
@@ -310,7 +310,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --ignore-engines
       - working-directory: packages/functions
         run: |
           yarn run ${{ github.event.client_payload.task }}
@@ -366,7 +366,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --ignore-engines
       - uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}
@@ -444,7 +444,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --ignore-engines
       - working-directory: packages/pioneer
         run: |
           yarn run ${{ github.event.client_payload.task }}
@@ -514,7 +514,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --ignore-engines
       - working-directory: packages/ui
         run: |
           yarn run ${{ github.event.client_payload.task }}
@@ -584,7 +584,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --ignore-engines
       - run: |
           yarn run typescript
       - working-directory: packages/web
