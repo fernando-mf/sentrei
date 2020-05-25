@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:sentrei/utils/analytics_util.dart';
+// import 'package:sentrei/utils/analytics_util.dart';
 import 'package:sentrei/models/models.dart';
 import 'package:sentrei/utils/utils.dart';
 
@@ -36,10 +36,10 @@ class AuthProvider extends ChangeNotifier {
     userId = '';
     _userModel = null;
     _profileUserModelList = null;
-    if (isSignInWithGoogle) {
-      _googleSignIn.signOut();
-      AnalyticsUtil().logEvent(name: 'google_logout');
-    }
+    // if (isSignInWithGoogle) {
+    //   _googleSignIn.signOut();
+    //   AnalyticsUtil().logEvent(name: 'google_logout');
+    // }
     _firebaseAuth.signOut();
     notifyListeners();
   }
@@ -57,9 +57,10 @@ class AuthProvider extends ChangeNotifier {
   createUser(User user, {bool newUser = false}) {
     if (newUser) {
       // Create username by the combination of name and id
-      user.userName =
-          ModelUtil().getUserName(id: user.userId, name: user.displayName);
-      AnalyticsUtil().logEvent(name: 'create_newUser');
+      // TODO: Disable firebase analytics
+      // user.userName =
+      //     ModelUtil().getUserName(id: user.userId, name: user.displayName);
+      // AnalyticsUtil().logEvent(name: 'create_newUser');
 
       // Time at which user) is created
       user.createdAt = DateTime.now().toUtc().toString();
@@ -82,7 +83,8 @@ class AuthProvider extends ChangeNotifier {
   Future<FirebaseUser> handleGoogleSignIn() async {
     try {
       /// Record log in firebase kAnalytics about Google login
-      await AnalyticsUtil().analytics.logLogin(loginMethod: 'google_login');
+      /// TODO: Disable firebase analytics
+      // await AnalyticsUtil().analytics.logLogin(loginMethod: 'google_login');
       final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
       if (googleUser == null) {
         throw Exception('Google login cancelled by user');
