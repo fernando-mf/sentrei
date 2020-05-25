@@ -7,7 +7,7 @@ const verifyIdToken = (token: string): Promise<admin.auth.DecodedIdToken> => {
   const cert = {
     projectId: process.env.FIREBASE_PROJECT_ID,
     clientEmail: serverRuntimeConfig.FIREBASE_CLIENT_EMAIL,
-    privateKey: serverRuntimeConfig.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+    privateKey: serverRuntimeConfig.FIREBASE_PRIVATE_KEY.replace(/\n/g, " "),
   };
 
   if (!admin.apps.length) {
