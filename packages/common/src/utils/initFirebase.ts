@@ -1,6 +1,7 @@
 import * as Sentry from "@sentry/browser";
 import * as firebase from "firebase/app";
 
+import "firebase/auth";
 import "firebase/analytics";
 import "firebase/performance";
 import isBrowser from "@sentrei/common/utils/isBrowser";
@@ -17,14 +18,14 @@ const firebaseConfig = {
   measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
-if (isBrowser && !firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-  try {
-    firebase.analytics();
-    firebase.performance();
-  } catch (error) {
-    Sentry.captureException(error);
+export default function initFirebase(): void {
+  if (isBrowser && !firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+    try {
+      firebase.analytics();
+      firebase.performance();
+    } catch (error) {
+      Sentry.captureException(error);
+    }
   }
 }
-
-export default firebase;

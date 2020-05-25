@@ -1,22 +1,28 @@
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
 import * as Sentry from "@sentry/browser";
+import * as firebase from "firebase/app";
 import get from "lodash.get";
 import NextApp from "next/app";
 import Head from "next/head";
 import React, {ErrorInfo} from "react";
 import {ThemeProvider as StyledThemeProvider} from "styled-components";
 
-import "firebase/performance";
 import {appWithTranslation} from "@sentrei/common/i18n";
-import firebase from "@sentrei/common/utils/firebase";
+import initFirebase from "@sentrei/common/utils/initFirebase";
 import isBrowser from "@sentrei/common/utils/isBrowser";
 import Theme from "@sentrei/ui/containers/Theme";
+
+import "firebase/auth";
+import "firebase/analytics";
+import "firebase/performance";
 
 import "@sentrei/common/utils/nprogress";
 import "@sentrei/common/utils/sentry";
 import "@sentrei/web/styles/global.scss";
 import "@sentrei/web/styles/nprogress.scss";
+
+initFirebase();
 
 class App extends NextApp {
   componentDidMount(): void {

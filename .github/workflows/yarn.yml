@@ -25,7 +25,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn install --frozen-lockfile
+          yarn config set ignore-engines true && yarn install --frozen-lockfile
       - run: |
           yarn run typescript
       - run: |

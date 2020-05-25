@@ -41,13 +41,13 @@
     }
   },
   "dependencies": {
-    "lerna": "^3.20.2",
+    "lerna": "^3.22.0",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/exec": "^5.0.0",
-    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/eslint-plugin": "^3.0.0",
     "@typescript-eslint/parser": "^3.0.0",
     "commitizen": "^4.0.4",
     "eclint": "^2.8.1",
@@ -62,7 +62,10 @@
     "git-cz": "^4.5.0",
     "husky": "^4.2.5",
     "prettier": "^2.0.4",
-    "semantic-release": "^17.0.4",
+    "semantic-release": "^17.0.8",
     "sort-package-json": "^1.42.0"
+  },
+  "engines": {
+    "npm": "please_use_yarn_instead"
   }
 }
