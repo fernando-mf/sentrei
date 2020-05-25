@@ -1,3 +1,9 @@
+## [4.44.2](https://github.com/sentrei/sentrei/compare/v4.44.1...v4.44.2) (2020-05-25)
+
+### Bug Fixes
+
+- 🐛 yarn run typescript ([5369362](https://github.com/sentrei/sentrei/commit/53693629f5c3a709d62679f05aebe177e640e67e))
+
 ## [4.44.1](https://github.com/sentrei/sentrei/compare/v4.44.0...v4.44.1) (2020-05-25)
 
 ### Bug Fixes
