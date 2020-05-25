@@ -51,6 +51,10 @@ const aliases = {
 };
 
 const nextConfig = {
+  publicRuntimeConfig: {
+    SESSION_SECRET_CURRENT: process.env.SESSION_SECRET_CURRENT,
+    SESSION_SECRET_PREVIOUS: process.env.SESSION_SECRET_PREVIOUS,
+  },
   serverRuntimeConfig: {
     FIREBASE_CLIENT_EMAIL: process.env.FIREBASE_CLIENT_EMAIL,
     FIREBASE_PRIVATE_KEY: process.env.FIREBASE_PRIVATE_KEY,
@@ -68,8 +72,6 @@ const nextConfig = {
     SENTRY_DSN: process.env.SENTRY_DSN,
     SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT,
     SENTRY_RELEASE: process.env.SENTRY_RELEASE,
-    SESSION_SECRET_CURRENT: process.env.SESSION_SECRET_CURRENT,
-    SESSION_SECRET_PREVIOUS: process.env.SESSION_SECRET_PREVIOUS,
   },
   webpack: config => {
     config.resolve.alias = {
