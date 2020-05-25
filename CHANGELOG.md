@@ -1,3 +1,9 @@
+## [4.44.1](https://github.com/sentrei/sentrei/compare/v4.44.0...v4.44.1) (2020-05-25)
+
+### Bug Fixes
+
+- 🐛 add correct functions ([8cff1bc](https://github.com/sentrei/sentrei/commit/8cff1bca18371297866df2614d16308131f371ff))
+
 # [4.44.0](https://github.com/sentrei/sentrei/compare/v4.43.5...v4.44.0) (2020-05-25)
 
 ### Features
