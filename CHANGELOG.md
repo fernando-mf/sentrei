@@ -1,3 +1,9 @@
+## [4.46.3](https://github.com/sentrei/sentrei/compare/v4.46.2...v4.46.3) (2020-05-25)
+
+### Bug Fixes
+
+- add proper verify ([9fea637](https://github.com/sentrei/sentrei/commit/9fea637ece9ca679f054afacdeb3bb36a8ba0f6f))
+
 ## [4.46.2](https://github.com/sentrei/sentrei/compare/v4.46.1...v4.46.2) (2020-05-25)
 
 ### Bug Fixes
