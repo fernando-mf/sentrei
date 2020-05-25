@@ -17,7 +17,6 @@ import "@sentrei/common/utils/sentry";
 import "@sentrei/common/utils/registerExceptionHandler";
 
 // TODO: Generic type 'NextDocument<P>' requires between 0 and 1 type arguments.ts(2707)
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore
 export default class Document extends NextDocument<Props, {}> {
   static async getInitialProps(
@@ -62,7 +61,6 @@ export default class Document extends NextDocument<Props, {}> {
   }
 
   render(): JSX.Element {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore
     const {AuthUserInfo} = this.props;
 
