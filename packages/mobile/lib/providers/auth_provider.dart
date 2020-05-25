@@ -36,6 +36,7 @@ class AuthProvider extends ChangeNotifier {
     userId = '';
     _userModel = null;
     _profileUserModelList = null;
+    // TODO: Disable firebase analytics
     // if (isSignInWithGoogle) {
     //   _googleSignIn.signOut();
     //   AnalyticsUtil().logEvent(name: 'google_logout');
