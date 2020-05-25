@@ -1,3 +1,9 @@
+## [4.46.2](https://github.com/sentrei/sentrei/compare/v4.46.1...v4.46.2) (2020-05-25)
+
+### Bug Fixes
+
+- add runtime env ([2537f5c](https://github.com/sentrei/sentrei/commit/2537f5c31e9429a26811ab76c3ea99bee46384d7))
+
 ## [4.46.1](https://github.com/sentrei/sentrei/compare/v4.46.0...v4.46.1) (2020-05-25)
 
 ### Bug Fixes
