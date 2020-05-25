@@ -1,9 +1,14 @@
-# [4.44.0-beta.1](https://github.com/sentrei/sentrei/compare/v4.43.3...v4.44.0-beta.1) (2020-05-25)
+## [4.43.5](https://github.com/sentrei/sentrei/compare/v4.43.4...v4.43.5) (2020-05-25)
 
-### Features
+### Bug Fixes
 
-- 🎸 refactor core sentrei ([49c51f8](https://github.com/sentrei/sentrei/commit/49c51f8b8d4f8ede3ca0046e83923462ef67acef))
-- ignore engines yarn ([5329cf5](https://github.com/sentrei/sentrei/commit/5329cf51efec6b740d3a934140f8de62a97a961a))
+- **deps:** bump gatsby-plugin-mailchimp from 5.1.2 to 5.2.2 ([09280b9](https://github.com/sentrei/sentrei/commit/09280b96df55c5011462248f2655dff88afc3a93))
+
+## [4.43.4](https://github.com/sentrei/sentrei/compare/v4.43.3...v4.43.4) (2020-05-25)
+
+### Bug Fixes
+
+- **deps:** bump lerna from 3.21.0 to 3.22.0 ([c481105](https://github.com/sentrei/sentrei/commit/c481105be02a22dd902e32bbfcf5fa32c9299073))
 
 ## [4.43.3](https://github.com/sentrei/sentrei/compare/v4.43.2...v4.43.3) (2020-05-24)
 
