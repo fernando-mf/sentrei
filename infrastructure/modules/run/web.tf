@@ -24,6 +24,14 @@ resource "google_cloud_run_service" "sentrei_web" {
           name  = "FIREBASE_PRIVATE_KEY"
           value = var.firebase_private_key
         }
+        env {
+          name  = "SESSION_SECRET_CURRENT"
+          value = var.session_secret_current
+        }
+        env {
+          name  = "SESSION_SECRET_PREVIOUS"
+          value = var.session_secret_previous
+        }
         resources {
           limits = { "cpu" : "1000m", "memory" : "512Mi" }
         }
