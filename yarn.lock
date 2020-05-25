@@ -5834,11 +5834,11 @@
     qs "^6.6.0"
 
 "@vssue/vuepress-plugin-vssue@^1.4.3":
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/@vssue/vuepress-plugin-vssue/-/vuepress-plugin-vssue-1.4.5.tgz#58bb3366e5b1636836e395c9aa66fe83cf1f496a"
-  integrity sha512-MLm+9Tp+xI9qekaCvDVX6rDf/VW+5h6o5yw/q/r/avsLjOUm2d6kuZcW7aXZSGpF6r6KSAcJbdp73sqxyd5PPg==
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/@vssue/vuepress-plugin-vssue/-/vuepress-plugin-vssue-1.4.6.tgz#0a231095f58b29bbd64c9ea964fa73add909ccfd"
+  integrity sha512-oP63mMvue54ASrfMJVTpmT74is4eU2OeAqDqSOLYUytpqgba2AKPXnq6xhY8fua/+hxpttq0pOVajF6GL4WTgg==
   dependencies:
-    vssue "^1.4.5"
+    vssue "^1.4.6"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"
@@ -31448,10 +31448,10 @@ void-elements@^2.0.1:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
-vssue@^1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/vssue/-/vssue-1.4.5.tgz#ae2e9c193ddc61338c01f216a9ae2814ff869f9a"
-  integrity sha512-/DVQDeA9e9PFhjGIcIOFaTVuuQgUNjnt5zcRSuMWo+e3+2xaeGE9nZVqMT63eutogvHqjphhM7SGHqW6H09M1Q==
+vssue@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/vssue/-/vssue-1.4.6.tgz#2ce16373907dc04bb92d6908224f0dd7239454f6"
+  integrity sha512-s92qMIaI/9LzBQCUUaX0fpNlA3kRRGtm0hQxDN/YBziOB4NXTWgPvoimLreyjP75hRItHvVhKzkXiZ8bIMjy7A==
   dependencies:
     "@vssue/utils" "^1.4.0"
     github-markdown-css "^3.0.1"
