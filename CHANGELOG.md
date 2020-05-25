@@ -1,3 +1,9 @@
+## [4.43.4](https://github.com/sentrei/sentrei/compare/v4.43.3...v4.43.4) (2020-05-25)
+
+### Bug Fixes
+
+- **deps:** bump lerna from 3.21.0 to 3.22.0 ([c481105](https://github.com/sentrei/sentrei/commit/c481105be02a22dd902e32bbfcf5fa32c9299073))
+
 ## [4.43.3](https://github.com/sentrei/sentrei/compare/v4.43.2...v4.43.3) (2020-05-24)
 
 ### Bug Fixes
