@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {ServerStyleSheets as MaterialUiServerStyleSheets} from "@material-ui/core/styles";
-import {DocumentInitialProps} from "next/dist/next-server/lib/utils";
+import {get} from "lodash/object";
 import NextDocument, {
   DocumentContext,
   Html,
@@ -9,18 +9,24 @@ import NextDocument, {
   NextScript,
 } from "next/document";
 import React from "react";
-
 import {ServerStyleSheet as StyledComponentSheets} from "styled-components";
 
-import Theme from "@sentrei/ui/containers/Theme";
-
+import Props from "@sentrei/common/interfaces/Document";
+import SentreiMeta from "@sentrei/web/components/SentreiMeta";
 import "@sentrei/common/utils/sentry";
 import "@sentrei/common/utils/registerExceptionHandler";
 
-export default class Document extends NextDocument {
+// TODO: Generic type 'NextDocument<P>' requires between 0 and 1 type arguments.ts(2707)
+// @ts-ignore
+export default class Document extends NextDocument<Props, {}> {
   static async getInitialProps(
     ctx: DocumentContext,
-  ): Promise<DocumentInitialProps> {
+  ): Promise<{
+    AuthUserInfo: any;
+    styles: JSX.Element[];
+    html: string;
+    head?: (JSX.Element | null)[] | undefined;
+  }> {
     const styledComponentSheet = new StyledComponentSheets();
     const materialUiSheets = new MaterialUiServerStyleSheets();
     const originalRenderPage = ctx.renderPage;
@@ -36,8 +42,11 @@ export default class Document extends NextDocument {
 
       const initialProps = await NextDocument.getInitialProps(ctx);
 
+      const AuthUserInfo = get(ctx, "myCustomData.AuthUserInfo", null);
+
       return {
         ...initialProps,
+        AuthUserInfo,
         styles: [
           <React.Fragment key="styles">
             {initialProps.styles}
@@ -52,47 +61,22 @@ export default class Document extends NextDocument {
   }
 
   render(): JSX.Element {
+    // @ts-ignore
+    const {AuthUserInfo} = this.props;
+
     return (
       <Html lang="en">
         <Head>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:300,400,500,700&display=swap"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="images/apple-touch-icon.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="images/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="images/favicon-16x16.png"
-          />
-          <link rel="manifest" href="images/site.webmanifest" />
-          <link
-            rel="mask-icon"
-            href="images/safari-pinned-tab.svg"
-            color="#5bbad5"
-          />
-          <meta name="msapplication-TileColor" content="#da532c" />
-          <meta name="theme-color" content={Theme.palette.primary.main} />
+          <SentreiMeta />
           <script src="https://cdn.jsdelivr.net/npm/first-input-delay@0.1.3/dist/first-input-delay.min.js" />
+          <script
+            id="__MY_AUTH_USER_INFO"
+            type="application/json"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(AuthUserInfo, null, 2),
+            }}
+          />
         </Head>
         <body>
           <Main />

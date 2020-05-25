@@ -34,13 +34,13 @@ export default function Feature({
           alignItems="stretch"
           className={classes.container}
         >
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={4}>
             <FeatureCard img={imgOne} title={titleOne} subTitle={subTitleOne} />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={4}>
             <FeatureCard img={imgTwo} title={titleTwo} subTitle={subTitleTwo} />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={4}>
             <FeatureCard
               img={imgThree}
               title={titleThree}

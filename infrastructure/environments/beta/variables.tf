@@ -1,3 +1,1 @@
-variable "environment" {
-  type = string
-}
+../base/variables.tf
