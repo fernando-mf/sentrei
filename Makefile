@@ -44,6 +44,7 @@ nodeenv:
 	nodeenv --node=$(NODE_ENV_VERSION) -p
 
 yarn:
+	yarn config set ignore-engines true
 	yarn install --dev --upgrade latest
 	yarn run bootstrap
 
