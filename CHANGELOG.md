@@ -1,3 +1,9 @@
+## [4.46.1](https://github.com/sentrei/sentrei/compare/v4.46.0...v4.46.1) (2020-05-25)
+
+### Bug Fixes
+
+- 🐛 add cross env ([095f667](https://github.com/sentrei/sentrei/commit/095f6673f4a2db819e04dcdb1acc69c87a11d090))
+
 # [4.46.0](https://github.com/sentrei/sentrei/compare/v4.45.4...v4.46.0) (2020-05-25)
 
 ### Features
