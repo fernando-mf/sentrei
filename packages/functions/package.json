@@ -27,7 +27,7 @@
     "swap:alpha": "cp alpha.firebase.json firebase.json",
     "swap:beta": "cp beta.firebase.json firebase.json",
     "swap:master": "cp master.firebase.json firebase.json",
-    "typescript": "yarn run clean && tsc -b ."
+    "typescript": "yarn run clean --ignore-engines && tsc -b ."
   },
   "dependencies": {
     "firebase-admin": "^8.10.0",
