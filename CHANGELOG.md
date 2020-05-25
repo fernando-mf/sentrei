@@ -1,3 +1,9 @@
+## [4.43.5](https://github.com/sentrei/sentrei/compare/v4.43.4...v4.43.5) (2020-05-25)
+
+### Bug Fixes
+
+- **deps:** bump gatsby-plugin-mailchimp from 5.1.2 to 5.2.2 ([09280b9](https://github.com/sentrei/sentrei/commit/09280b96df55c5011462248f2655dff88afc3a93))
+
 ## [4.43.4](https://github.com/sentrei/sentrei/compare/v4.43.3...v4.43.4) (2020-05-25)
 
 ### Bug Fixes
