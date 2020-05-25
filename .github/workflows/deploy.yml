@@ -311,13 +311,13 @@ jobs:
             yarn-v1-${{ runner.os }}-
       - run: |
           yarn config set ignore-engines true && yarn install --frozen-lockfile
+      - run: |
+          yarn run typescript
       - working-directory: packages/functions
         run: |
           yarn run ${{ github.event.client_payload.task }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - run: |
-          yarn run typescript
       - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
