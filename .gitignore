@@ -72,6 +72,8 @@
 **/ui/__screenshots__
 
 # Web related.
+**/web/.env
+**/web/.env.local
 **/web/cypress/integration/*.d.ts
 **/web/cypress/integration/*.d.ts.map
 **/web/firebase.json

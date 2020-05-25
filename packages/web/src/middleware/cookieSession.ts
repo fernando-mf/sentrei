@@ -1,12 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 import cookieSession from "cookie-session";
 import {NextApiRequest, NextApiResponse} from "next";
+import getConfig from "next/config";
 
+const {publicRuntimeConfig} = getConfig();
 export const addSession = (req: any, res: any): any => {
   // Ensure that session secrets are set.
   if (
-    !(process.env.SESSION_SECRET_CURRENT && process.env.SESSION_SECRET_PREVIOUS)
+    !(
+      publicRuntimeConfig.SESSION_SECRET_CURRENT &&
+      publicRuntimeConfig.SESSION_SECRET_PREVIOUS
+    )
   ) {
     throw new Error(
       "Session secrets must be set as env vars `SESSION_SECRET_CURRENT` and `SESSION_SECRET_PREVIOUS`.",
@@ -17,8 +21,8 @@ export const addSession = (req: any, res: any): any => {
   // The first will be used to sign cookies, and the rest to validate them.
   // https://github.com/expressjs/cookie-session#keys
   const sessionSecrets = [
-    process.env.SESSION_SECRET_CURRENT,
-    process.env.SESSION_SECRET_PREVIOUS,
+    publicRuntimeConfig.SESSION_SECRET_CURRENT,
+    publicRuntimeConfig.SESSION_SECRET_PREVIOUS,
   ];
 
   // Example:
