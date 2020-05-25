@@ -1,3 +1,9 @@
+## [4.46.4](https://github.com/sentrei/sentrei/compare/v4.46.3...v4.46.4) (2020-05-25)
+
+### Bug Fixes
+
+- update replace replace(/\n/g, " "), ([58da331](https://github.com/sentrei/sentrei/commit/58da33104339e723b70e6b57f3209cfb745c12c8))
+
 ## [4.46.3](https://github.com/sentrei/sentrei/compare/v4.46.2...v4.46.3) (2020-05-25)
 
 ### Bug Fixes
