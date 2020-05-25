@@ -1,3 +1,9 @@
+## [4.45.1](https://github.com/sentrei/sentrei/compare/v4.45.0...v4.45.1) (2020-05-25)
+
+### Bug Fixes
+
+- **deps:** bump @vssue/vuepress-plugin-vssue from 1.4.5 to 1.4.6 ([5ac7aa6](https://github.com/sentrei/sentrei/commit/5ac7aa6ae3354a856bbc6a6586fcc3c18e86f3bc))
+
 ## [4.44.2](https://github.com/sentrei/sentrei/compare/v4.44.1...v4.44.2) (2020-05-25)
 
 ### Bug Fixes
