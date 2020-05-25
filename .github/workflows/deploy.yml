@@ -315,6 +315,11 @@ jobs:
           yarn run typescript
       - working-directory: packages/functions
         run: |
+          ./key.sh
+        env:
+          APP_SIGN_PWD: ${{ secrets.APP_SIGN_PWD }}
+      - working-directory: packages/functions
+        run: |
           yarn run ${{ github.event.client_payload.task }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
