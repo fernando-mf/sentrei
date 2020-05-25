@@ -1,3 +1,9 @@
+# [4.46.0](https://github.com/sentrei/sentrei/compare/v4.45.4...v4.46.0) (2020-05-25)
+
+### Features
+
+- 🎸 update run variables ([9807a31](https://github.com/sentrei/sentrei/commit/9807a3164355e118dd83ee62d563ce78b7316c75))
+
 ## [4.45.4](https://github.com/sentrei/sentrei/compare/v4.45.3...v4.45.4) (2020-05-25)
 
 ### Bug Fixes
