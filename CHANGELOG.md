@@ -1,3 +1,9 @@
+## [4.45.2](https://github.com/sentrei/sentrei/compare/v4.45.1...v4.45.2) (2020-05-25)
+
+### Bug Fixes
+
+- disable firebase analytics ([6e5bceb](https://github.com/sentrei/sentrei/commit/6e5bcebfe6326c51ecf2a7c03fd12d52d24a2eb4))
+
 ## [4.45.1](https://github.com/sentrei/sentrei/compare/v4.45.0...v4.45.1) (2020-05-25)
 
 ### Bug Fixes
