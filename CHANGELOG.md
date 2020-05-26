@@ -1,3 +1,9 @@
+# [4.48.0](https://github.com/sentrei/sentrei/compare/v4.47.0...v4.48.0) (2020-05-26)
+
+### Features
+
+- add copyright env ([655a6c1](https://github.com/sentrei/sentrei/commit/655a6c16b588c852bfac7fb42314176fb7b38f7f))
+
 # [4.47.0](https://github.com/sentrei/sentrei/compare/v4.46.6...v4.47.0) (2020-05-26)
 
 ### Features
