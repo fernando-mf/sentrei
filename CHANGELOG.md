@@ -1,3 +1,9 @@
+# [4.50.0-beta.4](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.3...v4.50.0-beta.4) (2020-05-26)
+
+### Bug Fixes
+
+- 🐛 add private keys ([a95176e](https://github.com/sentrei/sentrei/commit/a95176e7f85105b0eb7f7fd0846659b266ebe776))
+
 # [4.50.0-beta.3](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.2...v4.50.0-beta.3) (2020-05-26)
 
 ### Bug Fixes
