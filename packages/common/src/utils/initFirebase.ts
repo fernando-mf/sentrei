@@ -19,7 +19,7 @@ const firebaseConfig = {
 };
 
 export default function initFirebase(): void {
-  if (isBrowser && !firebase.apps.length) {
+  if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
     try {
       firebase.analytics();

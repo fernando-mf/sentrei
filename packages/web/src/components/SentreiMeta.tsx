@@ -5,6 +5,8 @@ import Theme from "@sentrei/ui/containers/Theme";
 const Meta = (): JSX.Element => {
   return (
     <>
+      <title>Sentrei</title>
+
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap"

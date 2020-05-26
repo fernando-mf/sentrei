@@ -90,9 +90,6 @@ export default function Auth({type}: Props): JSX.Element {
           firebase.auth().sendPasswordResetEmail(data.email);
           handleSuccess("Please check your email");
         } catch (err) {
-          // TODO: Temporary for now
-          // eslint-disable-next-line no-console
-          console.log(err);
           handleError(err);
         }
         break;
@@ -104,9 +101,6 @@ export default function Auth({type}: Props): JSX.Element {
           setOpen(false);
           Router.push("/");
         } catch (err) {
-          // TODO: Temporary for now
-          // eslint-disable-next-line no-console
-          console.log(err);
           handleError(err);
         }
         break;
@@ -118,9 +112,6 @@ export default function Auth({type}: Props): JSX.Element {
           setOpen(false);
           Router.push("/");
         } catch (err) {
-          // TODO: Temporary for now
-          // eslint-disable-next-line no-console
-          console.log(err);
           handleError(err);
         }
         break;
@@ -219,7 +210,7 @@ export default function Auth({type}: Props): JSX.Element {
         {type === authType.signin ? (
           <Grid container>
             <Grid item xs>
-              <Link href="/reset" variant="body2">
+              <Link href="/reset-password" variant="body2">
                 Forgot password?
               </Link>
             </Grid>

@@ -1,15 +1,17 @@
+import Box from "@material-ui/core/Box";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 import React from "react";
 
-import LoaderStyles from "./LoaderStyles";
-
 export default function Spacing(): JSX.Element {
-  const classes = LoaderStyles();
-
   return (
-    <div className={classes.root}>
-      <CircularProgress />
-    </div>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      minHeight="100vh"
+    >
+      <CircularProgress size={100} thickness={1} />
+    </Box>
   );
 }
