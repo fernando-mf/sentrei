@@ -13,6 +13,8 @@ export default function Copyright(): JSX.Element {
         {new Date().getFullYear()}.
       </Typography>
       <Typography variant="body2" color="textSecondary" align="center">
+        Environment: {process.env.SENTRY_ENVIRONMENT}
+        <br />
         Version: {process.env.SENTREI_VERSION}
       </Typography>
     </>
