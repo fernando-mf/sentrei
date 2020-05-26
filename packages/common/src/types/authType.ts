@@ -1,6 +1,6 @@
 enum authType {
   reset = "reset",
-  signin = "signin",
+  login = "login",
   signup = "signup",
 }
 

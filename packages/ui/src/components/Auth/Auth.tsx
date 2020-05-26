@@ -93,7 +93,7 @@ export default function Auth({type}: Props): JSX.Element {
           handleError(err);
         }
         break;
-      case authType.signin:
+      case authType.login:
         try {
           await firebase
             .auth()
@@ -130,12 +130,12 @@ export default function Auth({type}: Props): JSX.Element {
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           {type === authType.reset ? <MailOutlinedIcon /> : null}
-          {type === authType.signin ? <LockOutlinedIcon /> : null}
+          {type === authType.login ? <LockOutlinedIcon /> : null}
           {type === authType.signup ? <AccountCircleOutlinedIcon /> : null}
         </Avatar>
         <Typography component="h1" variant="h3">
           {type === authType.reset ? "Reset email" : null}
-          {type === authType.signin ? "Sign in" : null}
+          {type === authType.login ? "Sign in" : null}
           {type === authType.signup ? "Sign up" : null}
         </Typography>
         <form
@@ -166,7 +166,7 @@ export default function Auth({type}: Props): JSX.Element {
             control={control}
             defaultValue=""
           />
-          {type === authType.signin || type === authType.signup ? (
+          {type === authType.login || type === authType.signup ? (
             <Controller
               as={
                 <TextField
@@ -189,7 +189,7 @@ export default function Auth({type}: Props): JSX.Element {
               defaultValue=""
             />
           ) : null}
-          {type === authType.signin || type === authType.signup ? (
+          {type === authType.login || type === authType.signup ? (
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
@@ -203,11 +203,11 @@ export default function Auth({type}: Props): JSX.Element {
             className={classes.submit}
           >
             {type === authType.reset ? "Send reset email" : null}
-            {type === authType.signin ? "Sign in" : null}
+            {type === authType.login ? "Sign in" : null}
             {type === authType.signup ? "Sign up" : null}
           </Button>
         </form>
-        {type === authType.signin ? (
+        {type === authType.login ? (
           <Grid container>
             <Grid item xs>
               <Link href="/reset-password" variant="body2">
@@ -224,7 +224,7 @@ export default function Auth({type}: Props): JSX.Element {
         {type === authType.signup ? (
           <Grid container justify="center">
             <Grid item>
-              <Link href="/signin" variant="body2">
+              <Link href="/login" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>

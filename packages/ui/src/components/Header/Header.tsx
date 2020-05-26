@@ -27,7 +27,7 @@ export default function Header({
   logo,
   pricingText,
   productText,
-  signInText,
+  logInText,
   signUpText,
   sign = true,
   spy = true,
@@ -162,13 +162,13 @@ export default function Header({
               <Grid item>
                 {sign && (
                   <>
-                    <Link href="/signin">
+                    <Link href="/login">
                       <Button
                         color="primary"
                         variant="outlined"
                         className={classes.margin}
                       >
-                        <Typography>{signInText}</Typography>
+                        <Typography>{logInText}</Typography>
                       </Button>
                     </Link>
                     <Link href="/signup">

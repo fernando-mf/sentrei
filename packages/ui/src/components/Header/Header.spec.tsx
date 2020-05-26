@@ -12,7 +12,7 @@ describe("Header", () => {
         logo={<></>}
         pricingText=""
         productText=""
-        signInText=""
+        logInText=""
         signUpText=""
         spy
         testimonialText=""
