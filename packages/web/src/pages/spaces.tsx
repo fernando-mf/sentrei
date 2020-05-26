@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import {get} from "lodash";
@@ -9,11 +10,11 @@ import Router from "next/router";
 import PropTypes from "prop-types";
 import React from "react";
 
-import Link from "@sentrei/ui/components/Link";
+import Loader from "@sentrei/ui/components/Loader";
 import usePagination from "@sentrei/ui/hooks/usePagination";
 
-import withAuthUser from "@sentrei/web/components/HOC/withAuthUser";
-import withAuthUserInfo from "@sentrei/web/components/HOC/withAuthUserInfo";
+import withAuthUser from "../utils/pageWrappers/withAuthUser";
+import withAuthUserInfo from "../utils/pageWrappers/withAuthUserInfo";
 
 const Spaces = (props: any): any => {
   const {AuthUserInfo} = props;
@@ -39,12 +40,12 @@ const Spaces = (props: any): any => {
   return (
     <>
       {!authUser ? (
-        <></>
+        <Loader />
       ) : (
         <>
-          <Link href="/spaces/create">create</Link>
           <div>
-            {loading && <div>...</div>}
+            <Typography>Spaces</Typography>
+            {loading && <Loader />}
             {items.map((item: any) => (
               <p key={item.index}>
                 {JSON.stringify(item.data() || {}, null, 2)}

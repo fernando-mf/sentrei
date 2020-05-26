@@ -1,21 +1,25 @@
 import * as admin from "firebase-admin";
 import getConfig from "next/config";
-
-const {serverRuntimeConfig} = getConfig();
+// TODO: for production admin
+// const {serverRuntimeConfig} = getConfig();
 
 const verifyIdToken = (token: string): Promise<admin.auth.DecodedIdToken> => {
-  const cert = {
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    clientEmail: serverRuntimeConfig.FIREBASE_CLIENT_EMAIL,
-    privateKey: serverRuntimeConfig.FIREBASE_PRIVATE_KEY,
-  };
-
   if (!admin.apps.length) {
     admin.initializeApp({
-      credential: admin.credential.cert(cert),
+      credential: admin.credential.cert({
+        projectId: process.env.FIREBASE_PROJECT_ID,
+        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+        privateKey: process.env.FIREBASE_PRIVATE_KEY,
+      }),
       databaseURL: process.env.FIREBASE_DATABASE_URL,
     });
   }
+
+  const cert = {
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+    privateKey: process.env.FIREBASE_PRIVATE_KEY,
+  };
 
   return admin
     .auth()

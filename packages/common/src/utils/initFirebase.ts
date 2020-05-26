@@ -4,7 +4,6 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/analytics";
 import "firebase/performance";
-import isBrowser from "@sentrei/common/utils/isBrowser";
 import "@sentrei/common/utils/sentry";
 
 const firebaseConfig = {
@@ -19,7 +18,7 @@ const firebaseConfig = {
 };
 
 export default function initFirebase(): void {
-  if (isBrowser && !firebase.apps.length) {
+  if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
     try {
       firebase.analytics();

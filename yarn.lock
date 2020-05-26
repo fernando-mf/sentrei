@@ -4273,6 +4273,59 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
+"@sentrei/common@*":
+  version "4.49.0"
+  resolved "https://registry.yarnpkg.com/@sentrei/common/-/common-4.49.0.tgz#233e472d58ef6146149b190c74e15a0f0cea0f81"
+  integrity sha512-7NUUic/yW1fpU2/l1hPeItmpLqC6FKx3o+B9gBtjARIJIXKu6CbkNWKG41Fjrux7BlGjGOaeDuCgbKQtOzYbiQ==
+  dependencies:
+    "@sentry/browser" "^5.15.5"
+    "@types/isomorphic-fetch" "^0.0.35"
+    "@types/lodash" "^4.14.152"
+    firebase "^7.14.2"
+    firebase-admin "8.12.1"
+    i18next-icu "^1.3.1"
+    isomorphic-fetch "^2.2.1"
+    lodash "^4.17.15"
+    lodash.get "^4.4.2"
+    next "^9.3.6"
+    next-i18next "^5.0.0-beta.2"
+    nprogress "^0.2.0"
+    react-i18next "^11.4.0"
+
+"@sentrei/ui@*":
+  version "4.49.0"
+  resolved "https://registry.yarnpkg.com/@sentrei/ui/-/ui-4.49.0.tgz#4a08f19f5bf40066a9ccd99b1c824882ac13a103"
+  integrity sha512-INvESzH4EdLy8TJszPXu6XSrbujL9LD4RdXQuOQgT1ryEtjj778+A6GdNkF05qlOFO81uzSGyjeEzSF/EeJYcA==
+  dependencies:
+    "@material-ui/core" "^4.9.10"
+    "@material-ui/icons" "^4.9.1"
+    "@material-ui/lab" "^4.0.0-alpha.53"
+    "@sentrei/common" "*"
+    "@sentry/browser" "^5.15.5"
+    "@types/classnames" "^2.2.10"
+    "@types/next" "^9.0.0"
+    "@types/node" "^14.0.0"
+    "@types/react" "^16.9.34"
+    "@types/react-dom" "^16.9.6"
+    "@types/react-scrollspy" "^3.3.2"
+    "@types/styled-components" "^5.1.0"
+    "@types/yup" "^0.29.0"
+    classnames "^2.2.6"
+    clsx "^1.1.0"
+    firebase "^7.14.4"
+    next "^9.3.6"
+    prop-types "^15.7.2"
+    react "^16.13.1"
+    react-dom "^16.13.1"
+    react-hook-form "^5.7.2"
+    react-parallax-tilt "^1.3.42"
+    react-particles-js "^3.2.1"
+    react-scrollspy "^3.4.2"
+    react-typical "^0.1.3"
+    styled-components "^5.1.0"
+    typescript "^3.8.3"
+    yup "^0.29.0"
+
 "@sentry/browser@^5.15.5":
   version "5.15.5"
   resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-5.15.5.tgz#d9a51f1388581067b50d30ed9b1aed2cbb333a36"
@@ -13893,7 +13946,7 @@ findup-sync@^3.0.0:
     micromatch "^3.0.4"
     resolve-dir "^1.0.1"
 
-firebase-admin@8.12.1, firebase-admin@^8.10.0:
+firebase-admin@8.12.1, firebase-admin@^8.10.0, firebase-admin@^8.12.1:
   version "8.12.1"
   resolved "https://registry.yarnpkg.com/firebase-admin/-/firebase-admin-8.12.1.tgz#a380c43a9e6ba37dfbe42211a253dd890a442063"
   integrity sha512-DZ4Q7QQJYaO2BhnhZLrhL+mGRTCLS5WrxjbJtuKGmbKRBepwMhx++EQA5yhnGnIXgDHnp5SrZnVKygNdXtH8BQ==
@@ -15285,7 +15338,7 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-git-cz@^4.5.0:
+git-cz@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/git-cz/-/git-cz-4.6.0.tgz#1634d18b00719004f93bca5dfac725ba4c162cf8"
   integrity sha512-XBzvk9GJ2y6KELOIic5LAWQhapnupDZxLSV+CypXsE/In3oBWPFetnAvemlRlC3tM2McFQGoIeBgwv18y0Rl2g==
@@ -18317,6 +18370,14 @@ isomorphic-fetch@2.2.1, isomorphic-fetch@^2.1.1, isomorphic-fetch@^2.2.1:
   dependencies:
     node-fetch "^1.0.1"
     whatwg-fetch ">=0.10.0"
+
+isomorphic-unfetch@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/isomorphic-unfetch/-/isomorphic-unfetch-3.0.0.tgz#de6d80abde487b17de2c400a7ef9e5ecc2efb362"
+  integrity sha512-V0tmJSYfkKokZ5mgl0cmfQMTb7MLHsBMngTkbLY0eXvKqiVRRoZP04Ly+KhKrJfKtzC9E6Pp15Jo+bwh7Vi2XQ==
+  dependencies:
+    node-fetch "^2.2.0"
+    unfetch "^4.0.0"
 
 isstream@~0.1.2:
   version "0.1.2"
@@ -30578,7 +30639,7 @@ unescape@^1.0.1:
   dependencies:
     extend-shallow "^2.0.1"
 
-unfetch@^4.1.0:
+unfetch@^4.0.0, unfetch@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/unfetch/-/unfetch-4.1.0.tgz#6ec2dd0de887e58a4dee83a050ded80ffc4137db"
   integrity sha512-crP/n3eAPUJxZXM9T80/yv0YhkTEx2K1D3h7D1AJM6fzsWZrxdyRuLN0JH/dkZh1LNH8LxCnBzoPFCPbb2iGpg==

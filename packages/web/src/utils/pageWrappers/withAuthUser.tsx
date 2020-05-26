@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 /* eslint-disable global-require */
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -8,8 +7,8 @@ import {NextPageContext} from "next";
 import PropTypes from "prop-types";
 import React from "react";
 
-import {AuthUserInfoContext, useFirebaseAuth} from "../../utils/auth/hooks";
-import {createAuthUser, createAuthUserInfo} from "../../utils/auth/user";
+import {AuthUserInfoContext, useFirebaseAuth} from "../auth/hooks";
+import {createAuthUser, createAuthUserInfo} from "../auth/user";
 
 // Gets the authenticated user from the Firebase JS SDK, when client-side,
 // or from the request object, when server-side. Add the AuthUserInfo to
@@ -44,7 +43,7 @@ export default (ComposedComponent: any) => {
       // Don't include server middleware in the client JS bundle. See:
       // https://arunoda.me/blog/ssr-and-server-only-modules
 
-      const {addSession} = require("../../utils/middleware/cookieSession");
+      const {addSession} = require("../middleware/cookieSession");
       addSession(req, res);
       AuthUserInfo = createAuthUserInfo({
         firebaseUser: get(req, "session.decodedToken", null),

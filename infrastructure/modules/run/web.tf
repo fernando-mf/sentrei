@@ -17,14 +17,6 @@ resource "google_cloud_run_service" "sentrei_web" {
       containers {
         image = "gcr.io/sentrei-${var.environment}/sentrei:${var.environment}"
         env {
-          name  = "FIREBASE_CLIENT_EMAIL"
-          value = var.firebase_client_email
-        }
-        env {
-          name  = "FIREBASE_PRIVATE_KEY"
-          value = var.firebase_private_key
-        }
-        env {
           name  = "SESSION_SECRET_CURRENT"
           value = var.session_secret_current
         }

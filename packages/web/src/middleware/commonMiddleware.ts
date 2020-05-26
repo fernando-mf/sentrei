@@ -3,6 +3,4 @@
 import cookieSession from "@sentrei/web/middleware/cookieSession";
 import cookieSessionRefresh from "@sentrei/web/middleware/cookieSessionRefresh";
 
-export default function cookieMiddleware(handler: any): void {
-  cookieSession(cookieSessionRefresh(handler));
-}
+export default (handler: any) => cookieSession(cookieSessionRefresh(handler));
