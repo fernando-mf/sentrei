@@ -4,17 +4,15 @@ import getConfig from "next/config";
 const {serverRuntimeConfig} = getConfig();
 
 const verifyIdToken = (token: string): Promise<admin.auth.DecodedIdToken> => {
-  const cert = {
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    clientEmail: serverRuntimeConfig.FIREBASE_CLIENT_EMAIL,
-    privateKey: serverRuntimeConfig.FIREBASE_PRIVATE_KEY.replace(/\n/g, " "),
-  };
+  // TODO: Reenable dev certs
+  // const cert = {
+  //   projectId: process.env.FIREBASE_PROJECT_ID,
+  //   clientEmail: serverRuntimeConfig.FIREBASE_CLIENT_EMAIL,
+  //   privateKey: serverRuntimeConfig.FIREBASE_PRIVATE_KEY.replace(/\n/g, " "),
+  // };
 
   if (!admin.apps.length) {
-    admin.initializeApp({
-      credential: admin.credential.cert(cert),
-      databaseURL: process.env.FIREBASE_DATABASE_URL,
-    });
+    admin.initializeApp();
   }
 
   return admin
