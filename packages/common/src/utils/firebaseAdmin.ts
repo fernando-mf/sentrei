@@ -1,6 +1,10 @@
 import * as admin from "firebase-admin";
 
+import getConfig from "next/config";
+
 import isDev from "@sentrei/common/utils/isDev";
+
+const {serverRuntimeConfig} = getConfig();
 
 const verifyIdToken = (token: string) => {
   if (!admin.apps.length) {
@@ -15,17 +19,15 @@ const verifyIdToken = (token: string) => {
       });
     } else {
       admin.initializeApp({
-        credential: admin.credential.applicationDefault(),
+        credential: admin.credential.cert({
+          projectId: process.env.FIREBASE_PROJECT_ID,
+          clientEmail: serverRuntimeConfig.FIREBASE_CLIENT_EMAIL,
+          privateKey: serverRuntimeConfig.FIREBASE_PRIVATE_KEY,
+        }),
         databaseURL: process.env.FIREBASE_DATABASE_URL,
       });
     }
   }
-
-  const cert = {
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-    privateKey: process.env.FIREBASE_PRIVATE_KEY,
-  };
 
   return admin
     .auth()
