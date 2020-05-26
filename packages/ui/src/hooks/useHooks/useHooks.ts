@@ -2,9 +2,9 @@ import firebase from "firebase/app";
 import React, {useEffect, useState} from "react";
 
 import "firebase/auth";
-import setSession from "./firebaseSessionHandler";
-import initFirebase from "./initFirebase";
-import {createAuthUserInfo} from "./user";
+import setSession from "@sentrei/common/utils/firebaseSessionHandler";
+import initFirebase from "@sentrei/common/utils/initFirebase";
+import {createAuthUserInfo} from "@sentrei/common/utils/user";
 
 initFirebase();
 

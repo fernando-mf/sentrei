@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {NextApiRequest, NextApiResponse} from "next";
 
-import verifyIdToken from "../../utils/auth/firebaseAdmin";
-import commonMiddleware from "../../utils/middleware/commonMiddleware";
+import verifyIdToken from "@sentrei/common/utils/firebaseAdmin";
+
+import commonMiddleware from "@sentrei/web/middleware/commonMiddleware";
 
 // req type: CookieSession?
 const handler = async (req: any, res: NextApiResponse) => {
