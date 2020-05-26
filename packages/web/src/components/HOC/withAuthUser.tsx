@@ -9,7 +9,8 @@ import React from "react";
 
 import createAuthUser from "@sentrei/common/utils/auth/createAuthUser";
 import createAuthUserInfo from "@sentrei/common/utils/auth/createAuthUserInfo";
-import {AuthUserInfoContext, useFirebaseAuth} from "@sentrei/ui/hooks/useHooks";
+import AuthUserInfoContext from "@sentrei/ui/context/AuthUserInfoContext";
+import useFirebaseAuth from "@sentrei/ui/hooks/useFirebaseAuth";
 
 // Gets the authenticated user from the Firebase JS SDK, when client-side,
 // or from the request object, when server-side. Add the AuthUserInfo to

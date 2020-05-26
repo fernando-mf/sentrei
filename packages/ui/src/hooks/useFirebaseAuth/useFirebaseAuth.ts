@@ -1,25 +1,11 @@
 import firebase from "firebase/app";
-import React, {useEffect, useState} from "react";
+import React from "react";
 
 import "firebase/auth";
-import createAuthUserInfo from "@sentrei/common/utils/auth/createAuthUserInfo";
 import setSession from "@sentrei/common/utils/firebaseSessionHandler";
-import initFirebase from "@sentrei/common/utils/initFirebase";
 
-initFirebase();
-
-// https://benmcmahen.com/using-firebase-with-react-hooks/
-
-// Defaults to empty AuthUserInfo object.
-export const AuthUserInfoContext = React.createContext(createAuthUserInfo());
-
-export const useAuthUserInfo = () => {
-  return React.useContext(AuthUserInfoContext);
-};
-
-// Returns a Firebase JS SDK user object.
-export const useFirebaseAuth = () => {
-  const [state, setState] = useState(() => {
+const useFirebaseAuth = () => {
+  const [state, setState] = React.useState(() => {
     const user = firebase.auth().currentUser;
     return {
       initializing: !user,
@@ -34,7 +20,7 @@ export const useFirebaseAuth = () => {
     setSession(user);
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     // Listen for auth state changes.
     const unsubscribe = firebase.auth().onAuthStateChanged(onChange);
 
@@ -44,3 +30,5 @@ export const useFirebaseAuth = () => {
 
   return state;
 };
+
+export default useFirebaseAuth;
