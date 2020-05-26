@@ -12,10 +12,6 @@
   "workspaces": {
     "packages": [
       "packages/*"
-    ],
-    "nohoist": [
-      "**/@bahmutov/add-typescript-to-cypress",
-      "**/@bahmutov/add-typescript-to-cypress/**"
     ]
   },
   "scripts": {
