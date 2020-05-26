@@ -7,7 +7,8 @@ import {NextPageContext} from "next";
 import PropTypes from "prop-types";
 import React from "react";
 
-import {createAuthUser, createAuthUserInfo} from "@sentrei/common/utils/user";
+import createAuthUser from "@sentrei/common/utils/auth/createAuthUser";
+import createAuthUserInfo from "@sentrei/common/utils/auth/createAuthUserInfo";
 import {AuthUserInfoContext, useFirebaseAuth} from "@sentrei/ui/hooks/useHooks";
 
 // Gets the authenticated user from the Firebase JS SDK, when client-side,

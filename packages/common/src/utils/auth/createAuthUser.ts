@@ -1,7 +1,7 @@
 import {get, has} from "lodash";
 // having trouble getting types from lodash/object
 
-export const createAuthUser = (firebaseUser: firebase.User | null) => {
+const createAuthUser = (firebaseUser: firebase.User | null) => {
   if (!firebaseUser || !firebaseUser.uid) {
     return null;
   }
@@ -17,12 +17,4 @@ export const createAuthUser = (firebaseUser: firebase.User | null) => {
   };
 };
 
-export const createAuthUserInfo = ({
-  firebaseUser = null,
-  token = null,
-} = {}) => {
-  return {
-    AuthUser: createAuthUser(firebaseUser),
-    token,
-  };
-};
+export default createAuthUser;
