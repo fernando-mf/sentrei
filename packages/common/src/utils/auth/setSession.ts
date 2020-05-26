@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import fetch from "isomorphic-fetch";
+import fetch from "isomorphic-unfetch";
 
 const setSession = (user: firebase.User | null): any => {
   if (user) {
