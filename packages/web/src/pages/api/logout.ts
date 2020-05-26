@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {NextApiRequest, NextApiResponse} from "next";
 
-import commonMiddleware from "../../utils/middleware/commonMiddleware";
+import commonMiddleware from "@sentrei/web/middleware/commonMiddleware";
 
 // req type: CookieSession?
 const handler = (req: any, res: NextApiResponse) => {
