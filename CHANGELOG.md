@@ -1,3 +1,9 @@
+# [4.47.0](https://github.com/sentrei/sentrei/compare/v4.46.6...v4.47.0) (2020-05-26)
+
+### Features
+
+- add cloudrun auth ([22ad62e](https://github.com/sentrei/sentrei/commit/22ad62e2cef05338ef1220008e80653d56137a3f))
+
 ## [4.46.6](https://github.com/sentrei/sentrei/compare/v4.46.5...v4.46.6) (2020-05-26)
 
 ### Bug Fixes
