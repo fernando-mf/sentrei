@@ -44,7 +44,7 @@ export default (ComposedComponent: any) => {
       // Don't include server middleware in the client JS bundle. See:
       // https://arunoda.me/blog/ssr-and-server-only-modules
 
-      const {addSession} = require("../middleware/cookieSession");
+      const {addSession} = require("../../utils/middleware/cookieSession");
       addSession(req, res);
       AuthUserInfo = createAuthUserInfo({
         firebaseUser: get(req, "session.decodedToken", null),
