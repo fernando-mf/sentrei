@@ -5,7 +5,7 @@ import {NextPageContext} from "next";
 import PropTypes from "prop-types";
 import React from "react";
 
-import {AuthUserInfoContext} from "@sentrei/ui/hooks/useAuthUserInfo";
+import AuthUserInfoContext from "@sentrei/ui/context/AuthUserInfoContext";
 
 // Provides an AuthUserInfo prop to the composed component.
 export default (ComposedComponent: any) => {

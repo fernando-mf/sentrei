@@ -1,10 +1,10 @@
 import firebase from "firebase/app";
 import React from "react";
 
-const useFirebaseAuth = (): {
-  initializing: boolean;
-  user: firebase.User | null;
-} => {
+import "firebase/auth";
+import setSession from "@sentrei/common/utils/firebaseSessionHandler";
+
+const useFirebaseAuth = () => {
   const [state, setState] = React.useState(() => {
     const user = firebase.auth().currentUser;
     return {
@@ -13,13 +13,19 @@ const useFirebaseAuth = (): {
     };
   });
 
-  function onChange(user: firebase.User | null): void {
+  function onChange(user: firebase.User | null) {
     setState({initializing: false, user});
+
+    // Call server to update session.
+    setSession(user);
   }
 
   React.useEffect(() => {
+    // Listen for auth state changes.
     const unsubscribe = firebase.auth().onAuthStateChanged(onChange);
-    return (): void => unsubscribe();
+
+    // Unsubscribe to the listener when unmounting.
+    return () => unsubscribe();
   }, []);
 
   return state;
