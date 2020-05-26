@@ -1,3 +1,9 @@
+## [4.46.6](https://github.com/sentrei/sentrei/compare/v4.46.5...v4.46.6) (2020-05-26)
+
+### Bug Fixes
+
+- **deps:** bump styled-components from 5.1.0 to 5.1.1 ([02cfa16](https://github.com/sentrei/sentrei/commit/02cfa16a8e215c108a586df1dd253b50faf1e87e))
+
 ## [4.46.5](https://github.com/sentrei/sentrei/compare/v4.46.4...v4.46.5) (2020-05-25)
 
 ### Bug Fixes
