@@ -6,7 +6,7 @@ import createAuthUserInfo from "@sentrei/common/utils/auth/createAuthUserInfo";
 
 export const AuthUserInfoContext = React.createContext(createAuthUserInfo());
 
-const useAuthUserInfo = (): any => {
+const useAuthUserInfo = () => {
   return React.useContext(AuthUserInfoContext);
 };
 

@@ -4,7 +4,6 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/analytics";
 import "firebase/performance";
-import isBrowser from "@sentrei/common/utils/isBrowser";
 import "@sentrei/common/utils/sentry";
 
 const firebaseConfig = {

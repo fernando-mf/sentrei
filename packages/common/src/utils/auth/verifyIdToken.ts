@@ -15,6 +15,12 @@ const verifyIdToken = (token: string): Promise<admin.auth.DecodedIdToken> => {
     });
   }
 
+  const cert = {
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+    privateKey: process.env.FIREBASE_PRIVATE_KEY,
+  };
+
   return admin
     .auth()
     .verifyIdToken(token)

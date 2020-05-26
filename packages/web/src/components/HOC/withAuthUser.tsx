@@ -7,9 +7,8 @@ import {NextPageContext} from "next";
 import PropTypes from "prop-types";
 import React from "react";
 
-import createAuthUserInfo, {
-  createAuthUser,
-} from "@sentrei/common/utils/auth/createAuthUserInfo";
+import createAuthUser from "@sentrei/common/utils/auth/createAuthUser";
+import createAuthUserInfo from "@sentrei/common/utils/auth/createAuthUserInfo";
 import {AuthUserInfoContext} from "@sentrei/ui/hooks/useAuthUserInfo";
 import useFirebaseAuth from "@sentrei/ui/hooks/useFirebaseAuth";
 

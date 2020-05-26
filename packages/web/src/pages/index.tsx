@@ -6,8 +6,8 @@ import React from "react";
 import {withTranslation} from "@sentrei/common/i18n";
 import Footer from "@sentrei/ui/components/Footer";
 import Spacing from "@sentrei/ui/components/Spacing";
-import withAuthUser from "@sentrei/web/components/HOC/withAuthUser";
-import withAuthUserInfo from "@sentrei/web/components/HOC/withAuthUserInfo";
+// import withAuthUser from "@sentrei/web/components/HOC/withAuthUser";
+// import withAuthUserInfo from "@sentrei/web/components/HOC/withAuthUserInfo";
 import SentreiBanner from "@sentrei/web/components/SentreiBanner";
 import SentreiFaq from "@sentrei/web/components/SentreiFaq";
 import SentreiFeature from "@sentrei/web/components/SentreiFeature";
@@ -18,8 +18,8 @@ import SentreiScreen from "@sentrei/web/components/SentreiScreen";
 import SentreiSlider from "@sentrei/web/components/SentreiSlider";
 import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
 
-// import withAuthUser from "../utils/pageWrappers/withAuthUser";
-// import withAuthUserInfo from "../utils/pageWrappers/withAuthUserInfo";
+import withAuthUser from "../utils/pageWrappers/withAuthUser";
+import withAuthUserInfo from "../utils/pageWrappers/withAuthUserInfo";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Index({t}: any): JSX.Element {
