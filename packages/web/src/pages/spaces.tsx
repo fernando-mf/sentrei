@@ -18,7 +18,6 @@ import withAuthUserInfo from "@sentrei/web/components/HOC/withAuthUserInfo";
 const Spaces = (props: any): any => {
   const {AuthUserInfo} = props;
   const authUser = get(AuthUserInfo, "AuthUser");
-  console.log(authUser);
 
   React.useEffect(() => {
     if (!authUser) {
