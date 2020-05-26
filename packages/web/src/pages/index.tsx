@@ -6,6 +6,8 @@ import React from "react";
 import {withTranslation} from "@sentrei/common/i18n";
 import Footer from "@sentrei/ui/components/Footer";
 import Spacing from "@sentrei/ui/components/Spacing";
+import withAuthUser from "@sentrei/web/components/HOC/withAuthUser";
+import withAuthUserInfo from "@sentrei/web/components/HOC/withAuthUserInfo";
 import SentreiBanner from "@sentrei/web/components/SentreiBanner";
 import SentreiFaq from "@sentrei/web/components/SentreiFaq";
 import SentreiFeature from "@sentrei/web/components/SentreiFeature";
@@ -29,7 +31,7 @@ function Index({t}: any): JSX.Element {
         featuresText={t("headerFeatures")}
         pricingText={t("headerPricing")}
         productText={t("headerProduct")}
-        signInText={t("headerSignIn")}
+        logInText={t("headerLogIn")}
         signUpText={t("headerSignUp")}
         testimonialText={t("headerTestimonial")}
       />
@@ -143,4 +145,4 @@ Index.getInitialProps = (): {
   namespacesRequired: ["index"],
 });
 
-export default withTranslation()(Index);
+export default withAuthUser(withAuthUserInfo(withTranslation()(Index)));

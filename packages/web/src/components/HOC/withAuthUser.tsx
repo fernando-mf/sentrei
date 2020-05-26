@@ -1,26 +1,29 @@
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint react/jsx-props-no-spreading: 0 */
-
 import {get, set} from "lodash";
 import {NextPageContext} from "next";
 import PropTypes from "prop-types";
 import React from "react";
 
-import createAuthUserInfo, {
-  createAuthUser,
-} from "@sentrei/common/utils/auth/createAuthUserInfo";
-import useAuthUserInfo, {
-  AuthUserInfoContext,
-} from "@sentrei/ui/hooks/useAuthUserInfo";
+import createAuthUser from "@sentrei/common/utils/auth/createAuthUser";
+import createAuthUserInfo from "@sentrei/common/utils/auth/createAuthUserInfo";
+import AuthUserInfoContext from "@sentrei/ui/context/AuthUserInfoContext";
+import useFirebaseAuth from "@sentrei/ui/hooks/useFirebaseAuth";
 
 // Gets the authenticated user from the Firebase JS SDK, when client-side,
 // or from the request object, when server-side. Add the AuthUserInfo to
 // context.
-export default function WithAuthUser(ComposedComponent: any): any {
-  const WithAuthUserComp = (props: any): any => {
+export default (ComposedComponent: any) => {
+  const WithAuthUserComp = (props: any) => {
     const {AuthUserInfo, ...otherProps} = props;
 
-    const {user: firebaseUser} = useAuthUserInfo();
+    // We'll use the authed user from client-side auth (Firebase JS SDK)
+    // when available. On the server side, we'll use the authed user from
+    // the session. This allows us to server-render while also using Firebase's
+    // client-side auth functionality.
+    const {user: firebaseUser} = useFirebaseAuth();
     const AuthUserFromClient = createAuthUser(firebaseUser);
     const {AuthUser: AuthUserFromSession, token} = AuthUserInfo;
     const AuthUser = AuthUserFromClient || AuthUserFromSession || null;
@@ -32,11 +35,7 @@ export default function WithAuthUser(ComposedComponent: any): any {
     );
   };
 
-  WithAuthUserComp.getInitialProps = async (
-    ctx: NextPageContext,
-  ): Promise<{
-    AuthUserInfo: any;
-  }> => {
+  WithAuthUserComp.getInitialProps = async (ctx: NextPageContext) => {
     const {req, res} = ctx;
 
     // Get the AuthUserInfo object.
@@ -46,7 +45,6 @@ export default function WithAuthUser(ComposedComponent: any): any {
       // Don't include server middleware in the client JS bundle. See:
       // https://arunoda.me/blog/ssr-and-server-only-modules
 
-      // eslint-disable-next-line global-require, @typescript-eslint/no-var-requires
       const {addSession} = require("@sentrei/web/middleware/cookieSession");
       addSession(req, res);
       AuthUserInfo = createAuthUserInfo({
@@ -109,4 +107,4 @@ export default function WithAuthUser(ComposedComponent: any): any {
   WithAuthUserComp.defaultProps = {};
 
   return WithAuthUserComp;
-}
+};

@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import fetch from "isomorphic-fetch";
+// From:
+// https://github.com/zeit/next.js/blob/canary/examples/with-firebase-authentication/pages/index.js
 
-const setSession = (user: firebase.User | null): any => {
+import fetch from "isomorphic-unfetch";
+
+const setSession = (user: firebase.User | null) => {
+  // Log in.
   if (user) {
     return user.getIdToken().then((token: any) => {
       return fetch("/api/login", {
@@ -14,6 +18,7 @@ const setSession = (user: firebase.User | null): any => {
     });
   }
 
+  // Log out.
   return fetch("/api/logout", {
     method: "POST",
     credentials: "same-origin",

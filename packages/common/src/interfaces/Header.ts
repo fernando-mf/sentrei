@@ -4,7 +4,7 @@ export default interface Props {
   logo: JSX.Element;
   pricingText: string;
   productText: string;
-  signInText: string;
+  logInText: string;
   signUpText: string;
   sign?: boolean;
   spy?: boolean;

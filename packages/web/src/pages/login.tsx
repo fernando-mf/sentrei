@@ -17,11 +17,11 @@ function About({t}: any): JSX.Element {
         featuresText={t("headerFeatures")}
         pricingText={t("headerPricing")}
         productText={t("headerProduct")}
-        signInText={t("headerSignIn")}
+        logInText={t("headerLogIn")}
         signUpText={t("headerSignUp")}
         testimonialText={t("headerTestimonial")}
       />
-      <Auth type={authType.signin} />;
+      <Auth type={authType.login} />;
     </>
   );
 }

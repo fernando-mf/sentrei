@@ -9,7 +9,7 @@ Sentry.init({
   environment: process.env.SENTRY_ENVIRONMENT,
   release: process.env.SENTRY_RELEASE,
   beforeSend(event) {
-    if (isBrowser && event.exception) {
+    if (isBrowser() && event.exception) {
       Sentry.showReportDialog({eventId: event.event_id});
     }
     return event;
@@ -18,7 +18,7 @@ Sentry.init({
 
 Sentry.configureScope(scope => {
   scope.setTag("nodejs", process.version);
-  // scope.setTag("runtimeEngine", isBrowser ? "browser" : "server");
+  // scope.setTag("runtimeEngine", isBrowser() ? "browser" : "server");
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,3 +1,57 @@
+# [4.50.0-beta.7](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.6...v4.50.0-beta.7) (2020-05-26)
+
+### Bug Fixes
+
+- 🐛 change all to login (from signin) ([1acb47c](https://github.com/sentrei/sentrei/commit/1acb47c9757ce79b4766d60829321f7ff7c0c000))
+
+# [4.50.0-beta.6](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.5...v4.50.0-beta.6) (2020-05-26)
+
+### Bug Fixes
+
+- 🐛 add console log ([0b05134](https://github.com/sentrei/sentrei/commit/0b051340b919e255454591009c903be917f0a8d0))
+
+# [4.50.0-beta.5](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.4...v4.50.0-beta.5) (2020-05-26)
+
+### Bug Fixes
+
+- 🐛 add replace \\n ([3237ab0](https://github.com/sentrei/sentrei/commit/3237ab0ab3354e1460ddcb50ce74c85ee29b9259))
+
+# [4.50.0-beta.4](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.3...v4.50.0-beta.4) (2020-05-26)
+
+### Bug Fixes
+
+- 🐛 add private keys ([a95176e](https://github.com/sentrei/sentrei/commit/a95176e7f85105b0eb7f7fd0846659b266ebe776))
+
+# [4.50.0-beta.3](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.2...v4.50.0-beta.3) (2020-05-26)
+
+### Bug Fixes
+
+- 🐛 add proper cookie ([8aa65af](https://github.com/sentrei/sentrei/commit/8aa65afa0961dc213ceef755b4a0b621fe5f0964))
+
+# [4.50.0-beta.2](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.1...v4.50.0-beta.2) (2020-05-26)
+
+### Bug Fixes
+
+- complete api logout ([22ec8ca](https://github.com/sentrei/sentrei/commit/22ec8ca2c32dedb46e2f3cacebd5619d6efa8c94))
+
+### Features
+
+- 🎸 add refactor cookie ([e9841da](https://github.com/sentrei/sentrei/commit/e9841da0513f8baf74f8bd55b65503c6b83ce1ad))
+- 🎸 COMPLETE ([cdb1a30](https://github.com/sentrei/sentrei/commit/cdb1a300198fde6433ceb29251e7ed2039707a3f))
+- 🎸 perfectly working cookie dir ([fba4b07](https://github.com/sentrei/sentrei/commit/fba4b078fe7fb33a42ccee7084f100116a73cac8))
+
+# [4.50.0-beta.1](https://github.com/sentrei/sentrei/compare/v4.49.1-beta.1...v4.50.0-beta.1) (2020-05-26)
+
+### Features
+
+- add working cookie old ([3654de7](https://github.com/sentrei/sentrei/commit/3654de761b31a40e24155d03346fda4549642f0d))
+
+## [4.49.1-beta.1](https://github.com/sentrei/sentrei/compare/v4.49.0...v4.49.1-beta.1) (2020-05-26)
+
+### Bug Fixes
+
+- verify id token ([cd6fe96](https://github.com/sentrei/sentrei/commit/cd6fe96346e970ebdd6f86db83810c53b43c3d3b))
+
 # [4.49.0](https://github.com/sentrei/sentrei/compare/v4.48.1...v4.49.0) (2020-05-26)
 
 ### Features

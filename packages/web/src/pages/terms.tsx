@@ -21,7 +21,7 @@ function Terms({t}: any): JSX.Element {
         featuresText={t("features")}
         pricingText={t("pricing")}
         productText={t("product")}
-        signInText={t("signIn")}
+        logInText={t("logIn")}
         signUpText={t("signUp")}
         testimonialText={t("testimonial")}
       />
