@@ -1,3 +1,14 @@
+# [4.51.0-alpha.1](https://github.com/sentrei/sentrei/compare/v4.50.0...v4.51.0-alpha.1) (2020-05-26)
+
+### Bug Fixes
+
+- console log beta ([f6963d0](https://github.com/sentrei/sentrei/commit/f6963d01d93904401d8007b8fee7b24df47198a4))
+- upgrade build cmd ([8b245f2](https://github.com/sentrei/sentrei/commit/8b245f2a98a4a72bf7b96433c59094db00dcfb45))
+
+### Features
+
+- add auth v3 ([5cf5902](https://github.com/sentrei/sentrei/commit/5cf5902e3501b4c46701ec60e13b8199b6bec373))
+
 ## [4.50.1-beta.1](https://github.com/sentrei/sentrei/compare/v4.50.0...v4.50.1-beta.1) (2020-05-26)
 
 ### Bug Fixes
