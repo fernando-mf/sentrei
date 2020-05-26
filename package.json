@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/sentrei",
-  "version": "4.50.0",
+  "version": "4.51.0-alpha.1",
   "private": true,
   "homepage": "https://github.com/sentrei/sentrei",
   "repository": {
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build --stream",
+    "build": "lerna run build --stream --scope={@sentrei/blog,@sentrei/design,@sentrei/pioneer}",
     "clean": "lerna clean -y",
     "eclint:check": "eclint check $(git ls-files -- ':!*.jpeg' ':!:*.png' ':!:*.svg')",
     "eclint:fix": "eclint fix $(git ls-files -- ':!*.jpeg' ':!:*.png' ':!:*.svg')",
