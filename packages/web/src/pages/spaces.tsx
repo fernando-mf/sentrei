@@ -12,8 +12,8 @@ import React from "react";
 import Link from "@sentrei/ui/components/Link";
 import usePagination from "@sentrei/ui/hooks/usePagination";
 
-import withAuthUser from "@sentrei/web/components/HOC/withAuthUser";
-import withAuthUserInfo from "@sentrei/web/components/HOC/withAuthUserInfo";
+import withAuthUser from "../utils/pageWrappers/withAuthUser";
+import withAuthUserInfo from "../utils/pageWrappers/withAuthUserInfo";
 
 const Spaces = (props: any): any => {
   const {AuthUserInfo} = props;
