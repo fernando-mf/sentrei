@@ -72,8 +72,6 @@
 **/ui/__screenshots__
 
 # Web related.
-**/web/.env
-**/web/.env.local
 **/web/cypress/integration/*.d.ts
 **/web/cypress/integration/*.d.ts.map
 **/web/firebase.json
@@ -148,9 +146,6 @@ lib/generated_plugin_registrant.dart
 /test/tmp/
 /test/version_tmp/
 /tmp/
-
-# Used by dotenv library to load environment variables.
-# .env
 
 # Ignore Byebug command history file.
 .byebug_history
@@ -268,10 +263,6 @@ web_modules/
 
 # Yarn Integrity file
 .yarn-integrity
-
-# dotenv environment variables file
-.env
-.env.test
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -455,7 +446,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/

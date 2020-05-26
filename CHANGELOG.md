@@ -1,3 +1,33 @@
+# [4.49.0](https://github.com/sentrei/sentrei/compare/v4.48.1...v4.49.0) (2020-05-26)
+
+### Features
+
+- refactor docker ignore ([b968c5e](https://github.com/sentrei/sentrei/commit/b968c5eb42986e6cba31ce35b4e46efb9a57f8fd))
+
+## [4.48.1](https://github.com/sentrei/sentrei/compare/v4.48.0...v4.48.1) (2020-05-26)
+
+### Bug Fixes
+
+- remove docker ignore ([ee8a763](https://github.com/sentrei/sentrei/commit/ee8a7632d5f40e0304102fbcf5959279425d11c7))
+
+# [4.48.0](https://github.com/sentrei/sentrei/compare/v4.47.0...v4.48.0) (2020-05-26)
+
+### Features
+
+- add copyright env ([655a6c1](https://github.com/sentrei/sentrei/commit/655a6c16b588c852bfac7fb42314176fb7b38f7f))
+
+# [4.47.0](https://github.com/sentrei/sentrei/compare/v4.46.6...v4.47.0) (2020-05-26)
+
+### Features
+
+- add cloudrun auth ([22ad62e](https://github.com/sentrei/sentrei/commit/22ad62e2cef05338ef1220008e80653d56137a3f))
+
+## [4.46.6](https://github.com/sentrei/sentrei/compare/v4.46.5...v4.46.6) (2020-05-26)
+
+### Bug Fixes
+
+- **deps:** bump styled-components from 5.1.0 to 5.1.1 ([02cfa16](https://github.com/sentrei/sentrei/commit/02cfa16a8e215c108a586df1dd253b50faf1e87e))
+
 ## [4.46.5](https://github.com/sentrei/sentrei/compare/v4.46.4...v4.46.5) (2020-05-25)
 
 ### Bug Fixes
