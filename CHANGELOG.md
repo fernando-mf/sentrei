@@ -1,3 +1,9 @@
+## [4.49.1-beta.1](https://github.com/sentrei/sentrei/compare/v4.49.0...v4.49.1-beta.1) (2020-05-26)
+
+### Bug Fixes
+
+- verify id token ([cd6fe96](https://github.com/sentrei/sentrei/commit/cd6fe96346e970ebdd6f86db83810c53b43c3d3b))
+
 # [4.49.0](https://github.com/sentrei/sentrei/compare/v4.48.1...v4.49.0) (2020-05-26)
 
 ### Features
