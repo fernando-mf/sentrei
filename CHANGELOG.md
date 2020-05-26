@@ -1,3 +1,9 @@
+# [4.50.0-beta.5](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.4...v4.50.0-beta.5) (2020-05-26)
+
+### Bug Fixes
+
+- 🐛 add replace \\n ([3237ab0](https://github.com/sentrei/sentrei/commit/3237ab0ab3354e1460ddcb50ce74c85ee29b9259))
+
 # [4.50.0-beta.4](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.3...v4.50.0-beta.4) (2020-05-26)
 
 ### Bug Fixes
