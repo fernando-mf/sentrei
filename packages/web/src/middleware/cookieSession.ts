@@ -33,10 +33,6 @@ export const addSession = (req: any, res: any) => {
     ];
   }
 
-  // An array is useful for rotating secrets without invalidating old sessions.
-  // The first will be used to sign cookies, and the rest to validate them.
-  // https://github.com/expressjs/cookie-session#keys
-
   // Example:
   // https://github.com/billymoon/micro-cookie-session
   const includeSession = cookieSession({
