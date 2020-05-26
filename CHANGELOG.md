@@ -1,3 +1,9 @@
+# [4.50.0-beta.3](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.2...v4.50.0-beta.3) (2020-05-26)
+
+### Bug Fixes
+
+- 🐛 add proper cookie ([8aa65af](https://github.com/sentrei/sentrei/commit/8aa65afa0961dc213ceef755b4a0b621fe5f0964))
+
 # [4.50.0-beta.2](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.1...v4.50.0-beta.2) (2020-05-26)
 
 ### Bug Fixes
