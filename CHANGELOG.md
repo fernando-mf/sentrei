@@ -1,3 +1,9 @@
+# [4.49.0](https://github.com/sentrei/sentrei/compare/v4.48.1...v4.49.0) (2020-05-26)
+
+### Features
+
+- refactor docker ignore ([b968c5e](https://github.com/sentrei/sentrei/commit/b968c5eb42986e6cba31ce35b4e46efb9a57f8fd))
+
 ## [4.48.1](https://github.com/sentrei/sentrei/compare/v4.48.0...v4.48.1) (2020-05-26)
 
 ### Bug Fixes
