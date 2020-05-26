@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import React from "react";
 
-const useAuth = (): {
+const useFirebaseAuth = (): {
   initializing: boolean;
   user: firebase.User | null;
 } => {
@@ -25,4 +25,4 @@ const useAuth = (): {
   return state;
 };
 
-export default useAuth;
+export default useFirebaseAuth;

@@ -1,14 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import {NextApiRequest, NextApiResponse} from "next";
 
-import {NextApiResponse} from "next";
+import verifyIdToken from "../../utils/auth/firebaseAdmin";
+import commonMiddleware from "../../utils/middleware/commonMiddleware";
 
-import verifyIdToken from "@sentrei/common/utils/auth/verifyIdToken";
-import commonMiddleware from "@sentrei/web/middleware/commonMiddleware";
-
-const handler = async (
-  req: any,
-  res: NextApiResponse,
-): Promise<void | NextApiResponse<any>> => {
+// req type: CookieSession?
+const handler = async (req: any, res: NextApiResponse) => {
   if (!req.body) {
     return res.status(400);
   }
@@ -27,13 +24,14 @@ const handler = async (
   // However, in a serverless environment, we shouldn't rely on caching, so
   // it's possible Firebase's `verifySessionCookie` will make frequent network
   // requests in a serverless context.
-
   try {
     const decodedToken = await verifyIdToken(token);
     req.session.decodedToken = decodedToken;
     req.session.token = token;
     return res.status(200).json({status: true, decodedToken});
   } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(error);
     return res.status(500).json({error});
   }
 };

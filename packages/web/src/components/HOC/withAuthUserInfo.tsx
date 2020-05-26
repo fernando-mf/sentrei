@@ -8,12 +8,12 @@ import React from "react";
 import {AuthUserInfoContext} from "@sentrei/ui/hooks/useAuthUserInfo";
 
 // Provides an AuthUserInfo prop to the composed component.
-export default (ComposedComponent: any): any => {
-  const WithAuthUserInfoComp = (props: any): any => {
+export default (ComposedComponent: any) => {
+  const WithAuthUserInfoComp = (props: any) => {
     const {AuthUserInfo: AuthUserInfoFromSession, ...otherProps} = props;
     return (
       <AuthUserInfoContext.Consumer>
-        {(AuthUserInfo: any): JSX.Element => (
+        {AuthUserInfo => (
           <ComposedComponent
             {...otherProps}
             AuthUserInfo={AuthUserInfo || AuthUserInfoFromSession}
@@ -23,11 +23,7 @@ export default (ComposedComponent: any): any => {
     );
   };
 
-  WithAuthUserInfoComp.getInitialProps = async (
-    ctx: NextPageContext,
-  ): Promise<{
-    AuthUserInfo: any;
-  }> => {
+  WithAuthUserInfoComp.getInitialProps = async (ctx: NextPageContext) => {
     const AuthUserInfo = get(ctx, "myCustomData.AuthUserInfo", null);
 
     // Evaluate the composed component's getInitialProps().
@@ -45,6 +41,7 @@ export default (ComposedComponent: any): any => {
   WithAuthUserInfoComp.displayName = `WithAuthUserInfo(${ComposedComponent.displayName})`;
 
   WithAuthUserInfoComp.propTypes = {
+    // eslint-disable-next-line react/require-default-props
     AuthUserInfo: PropTypes.shape({
       AuthUser: PropTypes.shape({
         id: PropTypes.string.isRequired,
@@ -55,9 +52,7 @@ export default (ComposedComponent: any): any => {
     }),
   };
 
-  WithAuthUserInfoComp.defaultProps = {
-    AuthUserInfo: null,
-  };
+  WithAuthUserInfoComp.defaultProps = {};
 
   return WithAuthUserInfoComp;
 };

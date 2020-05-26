@@ -18,6 +18,9 @@ import SentreiScreen from "@sentrei/web/components/SentreiScreen";
 import SentreiSlider from "@sentrei/web/components/SentreiSlider";
 import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
 
+// import withAuthUser from "../utils/pageWrappers/withAuthUser";
+// import withAuthUserInfo from "../utils/pageWrappers/withAuthUserInfo";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Index({t}: any): JSX.Element {
   return (
