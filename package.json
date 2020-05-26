@@ -9,9 +9,15 @@
   },
   "license": "MIT",
   "author": "Shun Kakinoki",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@bahmutov/add-typescript-to-cypress",
+      "**/@bahmutov/add-typescript-to-cypress/**"
+    ]
+  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream",
