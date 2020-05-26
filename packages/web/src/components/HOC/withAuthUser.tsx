@@ -70,6 +70,8 @@ export default (ComposedComponent: any) => {
           AuthUserInfo = createAuthUserInfo();
         }
       } catch (e) {
+        // eslint-disable-next-line no-console
+        console.log(e);
         // If there's some error, use the default (unauthed) user info.
         AuthUserInfo = createAuthUserInfo();
       }

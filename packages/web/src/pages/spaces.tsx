@@ -13,15 +13,14 @@ import React from "react";
 import Loader from "@sentrei/ui/components/Loader";
 import usePagination from "@sentrei/ui/hooks/usePagination";
 
-import withAuthUser from "@sentrei/web/components/HOC/withAuthUser";
-import withAuthUserInfo from "@sentrei/web/components/HOC/withAuthUserInfo";
+import withAuthGuard from "@sentrei/web/components/HOC/withAuthGuard";
 
 const Spaces = (props: any): any => {
-  const {AuthUserInfo} = props;
-  const authUser = get(AuthUserInfo, "AuthUser");
+  // eslint-disable-next-line react/destructuring-assignment
+  const {user} = props.auth;
 
   React.useEffect(() => {
-    if (!authUser) {
+    if (!user) {
       Router.push("/");
     }
   });
@@ -30,7 +29,7 @@ const Spaces = (props: any): any => {
   const {loading, loadingMore, hasMore, items, loadMore} = usePagination(
     db
       .collection("spaces")
-      .where("uid", "==", authUser?.id || "")
+      .where("uid", "==", user?.id || "")
       .orderBy("spaceId", "asc"),
     {
       limit: 10,
@@ -39,7 +38,7 @@ const Spaces = (props: any): any => {
 
   return (
     <>
-      {!authUser ? (
+      {!user ? (
         <Loader />
       ) : (
         <>
@@ -76,4 +75,4 @@ Spaces.defaultProps = {
   AuthUserInfo: null,
 };
 
-export default withAuthUser(withAuthUserInfo(Spaces));
+export default withAuthGuard(Spaces);

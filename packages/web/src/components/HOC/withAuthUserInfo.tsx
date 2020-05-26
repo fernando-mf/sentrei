@@ -13,7 +13,7 @@ export default (ComposedComponent: any) => {
     const {AuthUserInfo: AuthUserInfoFromSession, ...otherProps} = props;
     return (
       <AuthUserInfoContext.Consumer>
-        {AuthUserInfo => (
+        {(AuthUserInfo: any) => (
           <ComposedComponent
             {...otherProps}
             AuthUserInfo={AuthUserInfo || AuthUserInfoFromSession}

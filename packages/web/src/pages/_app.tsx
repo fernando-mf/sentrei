@@ -1,18 +1,27 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
 import * as Sentry from "@sentry/browser";
+import whyDidYouRender from "@welldone-software/why-did-you-render";
+import {StoreProvider} from "easy-peasy";
 import * as firebase from "firebase/app";
 import get from "lodash.get";
 import NextApp from "next/app";
 import Head from "next/head";
 import React, {ErrorInfo} from "react";
+import {persistStore} from "redux-persist";
+import {PersistGate} from "redux-persist/integration/react";
 import {ThemeProvider as StyledThemeProvider} from "styled-components";
 
 import {appWithTranslation} from "@sentrei/common/i18n";
 import initFirebase from "@sentrei/common/utils/initFirebase";
 import isBrowser from "@sentrei/common/utils/isBrowser";
+import isDev from "@sentrei/common/utils/isDev";
+import Loader from "@sentrei/ui/components/Loader";
 import Theme from "@sentrei/ui/containers/Theme";
-
+import AuthUserInfoContext from "@sentrei/ui/context/AuthUserInfoContext";
+import withAuth from "@sentrei/web/components/HOC/withAuth";
+import {withReduxStore} from "@sentrei/web/components/HOC/withReduxStore";
 import "firebase/auth";
 import "firebase/analytics";
 import "firebase/performance";
@@ -22,15 +31,24 @@ import "@sentrei/common/utils/sentry";
 import "@sentrei/web/styles/global.scss";
 import "@sentrei/web/styles/nprogress.scss";
 
+if (isBrowser() && isDev()) whyDidYouRender(React);
+
 initFirebase();
 
-class App extends NextApp {
+class App extends NextApp<any, any> {
+  persistor: any;
+
+  constructor(props: any) {
+    super(props);
+    this.persistor = persistStore(props.reduxStore);
+  }
+
   componentDidMount(): void {
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles && jssStyles.parentNode) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
-    if (isBrowser && !firebase.apps.length) {
+    if (isBrowser() && !firebase.apps.length) {
       firebase.analytics().logEvent("_app");
       firebase.performance().trace("_app");
     }
@@ -46,7 +64,7 @@ class App extends NextApp {
   }
 
   render(): JSX.Element {
-    const {Component, pageProps} = this.props;
+    const {Component, pageProps, user, reduxStore} = this.props;
     const fileLabel = "pages/_app";
 
     Sentry.addBreadcrumb({
@@ -69,15 +87,21 @@ class App extends NextApp {
             content="minimum-scale=1, initial-scale=1, width=device-width"
           />
         </Head>
-        <StyledThemeProvider theme={Theme}>
-          <MaterialThemeProvider theme={Theme}>
-            <CssBaseline />
-            <Component {...pageProps} />
-          </MaterialThemeProvider>
-        </StyledThemeProvider>
+        <PersistGate loading={<Loader />} persistor={this.persistor}>
+          <StoreProvider store={reduxStore}>
+            <StyledThemeProvider theme={Theme}>
+              <MaterialThemeProvider theme={Theme}>
+                <CssBaseline />
+                <AuthUserInfoContext.Provider value={{user}}>
+                  <Component {...pageProps} auth={{user}} />
+                </AuthUserInfoContext.Provider>
+              </MaterialThemeProvider>
+            </StyledThemeProvider>
+          </StoreProvider>
+        </PersistGate>
       </>
     );
   }
 }
 
-export default appWithTranslation(App);
+export default withReduxStore(withAuth(appWithTranslation(App)));

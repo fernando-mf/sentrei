@@ -145,4 +145,4 @@ Index.getInitialProps = (): {
   namespacesRequired: ["index"],
 });
 
-export default withAuthUser(withAuthUserInfo(withTranslation()(Index)));
+export default withTranslation()(Index);

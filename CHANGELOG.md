@@ -1,3 +1,9 @@
+## [4.50.1-beta.1](https://github.com/sentrei/sentrei/compare/v4.50.0...v4.50.1-beta.1) (2020-05-26)
+
+### Bug Fixes
+
+- console log beta ([f6963d0](https://github.com/sentrei/sentrei/commit/f6963d01d93904401d8007b8fee7b24df47198a4))
+
 # [4.50.0](https://github.com/sentrei/sentrei/compare/v4.49.0...v4.50.0) (2020-05-26)
 
 ### Bug Fixes
