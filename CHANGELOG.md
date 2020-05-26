@@ -1,3 +1,9 @@
+## [4.48.1](https://github.com/sentrei/sentrei/compare/v4.48.0...v4.48.1) (2020-05-26)
+
+### Bug Fixes
+
+- remove docker ignore ([ee8a763](https://github.com/sentrei/sentrei/commit/ee8a7632d5f40e0304102fbcf5959279425d11c7))
+
 # [4.48.0](https://github.com/sentrei/sentrei/compare/v4.47.0...v4.48.0) (2020-05-26)
 
 ### Features
