@@ -1,3 +1,15 @@
+# [4.50.0-beta.2](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.1...v4.50.0-beta.2) (2020-05-26)
+
+### Bug Fixes
+
+- complete api logout ([22ec8ca](https://github.com/sentrei/sentrei/commit/22ec8ca2c32dedb46e2f3cacebd5619d6efa8c94))
+
+### Features
+
+- 🎸 add refactor cookie ([e9841da](https://github.com/sentrei/sentrei/commit/e9841da0513f8baf74f8bd55b65503c6b83ce1ad))
+- 🎸 COMPLETE ([cdb1a30](https://github.com/sentrei/sentrei/commit/cdb1a300198fde6433ceb29251e7ed2039707a3f))
+- 🎸 perfectly working cookie dir ([fba4b07](https://github.com/sentrei/sentrei/commit/fba4b078fe7fb33a42ccee7084f100116a73cac8))
+
 # [4.50.0-beta.1](https://github.com/sentrei/sentrei/compare/v4.49.1-beta.1...v4.50.0-beta.1) (2020-05-26)
 
 ### Features
