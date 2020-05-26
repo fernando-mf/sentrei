@@ -12,6 +12,8 @@ const handler = async (req: any, res: NextApiResponse) => {
   }
 
   const {token} = req.body;
+  // eslint-disable-next-line no-console
+  console.log(token);
 
   // Here, we decode the user's Firebase token and store it in a cookie. Use
   // express-session (or similar) to store the session data server-side.
@@ -27,9 +29,14 @@ const handler = async (req: any, res: NextApiResponse) => {
   // requests in a serverless context.
   try {
     const decodedToken = await verifyIdToken(token);
+    // eslint-disable-next-line no-console
+    console.log(decodedToken);
     req.session.decodedToken = decodedToken;
     req.session.token = token;
-    return res.status(200).json({status: true, decodedToken});
+    return res.status(200).json({
+      status: true,
+      decodedToken,
+    });
   } catch (error) {
     // eslint-disable-next-line no-console
     console.log(error);
