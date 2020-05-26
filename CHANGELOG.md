@@ -1,3 +1,9 @@
+# [4.50.0-beta.7](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.6...v4.50.0-beta.7) (2020-05-26)
+
+### Bug Fixes
+
+- 🐛 change all to login (from signin) ([1acb47c](https://github.com/sentrei/sentrei/commit/1acb47c9757ce79b4766d60829321f7ff7c0c000))
+
 # [4.50.0-beta.6](https://github.com/sentrei/sentrei/compare/v4.50.0-beta.5...v4.50.0-beta.6) (2020-05-26)
 
 ### Bug Fixes
