@@ -1,3 +1,9 @@
+# [4.50.0-beta.1](https://github.com/sentrei/sentrei/compare/v4.49.1-beta.1...v4.50.0-beta.1) (2020-05-26)
+
+### Features
+
+- add working cookie old ([3654de7](https://github.com/sentrei/sentrei/commit/3654de761b31a40e24155d03346fda4549642f0d))
+
 ## [4.49.1-beta.1](https://github.com/sentrei/sentrei/compare/v4.49.0...v4.49.1-beta.1) (2020-05-26)
 
 ### Bug Fixes
