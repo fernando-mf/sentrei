@@ -135,7 +135,7 @@ export default function Auth({type}: Props): JSX.Element {
         </Avatar>
         <Typography component="h1" variant="h3">
           {type === authType.reset ? "Reset email" : null}
-          {type === authType.login ? "Sign in" : null}
+          {type === authType.login ? "Log in" : null}
           {type === authType.signup ? "Sign up" : null}
         </Typography>
         <form
@@ -203,7 +203,7 @@ export default function Auth({type}: Props): JSX.Element {
             className={classes.submit}
           >
             {type === authType.reset ? "Send reset email" : null}
-            {type === authType.login ? "Sign in" : null}
+            {type === authType.login ? "Log in" : null}
             {type === authType.signup ? "Sign up" : null}
           </Button>
         </form>
@@ -225,7 +225,7 @@ export default function Auth({type}: Props): JSX.Element {
           <Grid container justify="center">
             <Grid item>
               <Link href="/login" variant="body2">
-                Already have an account? Sign in
+                Already have an account? Log in
               </Link>
             </Grid>
           </Grid>
