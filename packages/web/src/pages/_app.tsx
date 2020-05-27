@@ -31,7 +31,7 @@ if (isBrowser() && isDev()) whyDidYouRender(React);
 
 initFirebase();
 
-class App extends NextApp<any, any> {
+class App extends NextApp {
   componentDidMount(): void {
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles && jssStyles.parentNode) {
@@ -53,7 +53,7 @@ class App extends NextApp<any, any> {
   }
 
   render(): JSX.Element {
-    const {Component, pageProps, user, reduxStore} = this.props;
+    const {Component, pageProps, user} = this.props;
     const fileLabel = "pages/_app";
 
     Sentry.addBreadcrumb({
