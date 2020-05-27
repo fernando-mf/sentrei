@@ -2,7 +2,6 @@ import firebase from "firebase/app";
 import React from "react";
 
 import "firebase/auth";
-import setSession from "@sentrei/common/utils/firebaseSessionHandler";
 
 const useFirebaseAuth = () => {
   const [state, setState] = React.useState(() => {
@@ -15,9 +14,6 @@ const useFirebaseAuth = () => {
 
   function onChange(user: firebase.User | null) {
     setState({initializing: false, user});
-
-    // Call server to update session.
-    setSession(user);
   }
 
   React.useEffect(() => {
