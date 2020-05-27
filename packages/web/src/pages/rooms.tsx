@@ -1,14 +1,10 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 
 import Room from "@sentrei/ui/components/Room";
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 function Rooms({t}: any): JSX.Element {
-  return (
-    <>
-      <Room />
-    </>
-  );
+  return <Room />;
 }
 
 Rooms.getInitialProps = (): {
