@@ -23,7 +23,7 @@ import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
 import authType from "@sentrei/common/types/authType";
-import signInWithGoogle from "@sentrei/common/utils/auth/signinWithGoogle";
+import signInWithGoogle from "@sentrei/common/utils/auth/signInWithGoogle";
 import Link from "@sentrei/ui/components/Link";
 import Snackbar from "@sentrei/ui/components/Snackbar";
 

@@ -7,7 +7,7 @@ import React from "react";
 import Typical from "react-typical";
 
 import Props from "@sentrei/common/interfaces/Banner";
-import signInWithGoogle from "@sentrei/common/utils/auth/signinWithGoogle";
+import signInWithGoogle from "@sentrei/common/utils/auth/signInWithGoogle";
 import Link from "@sentrei/ui/components/Link";
 
 import BannerStyles from "./BannerStyles";
