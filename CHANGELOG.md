@@ -1,3 +1,9 @@
+# [4.53.0](https://github.com/sentrei/sentrei/compare/v4.52.1...v4.53.0) (2020-05-27)
+
+### Features
+
+- add rooms component ([95e2dcc](https://github.com/sentrei/sentrei/commit/95e2dcc593bab5068339d9366537b1cd843d2e19))
+
 ## [4.52.1](https://github.com/sentrei/sentrei/compare/v4.52.0...v4.52.1) (2020-05-27)
 
 ### Bug Fixes
