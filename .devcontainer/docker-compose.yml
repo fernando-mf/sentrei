@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+      - "5001:5001"
+      - "8080:8080"
     volumes:
       - ..:/workspace:cached
       - /var/run/docker.sock:/var/run/docker.sock
