@@ -8,10 +8,11 @@ const plugins = [
     },
   ],
 ];
+const presets = ["next/babel"];
 if (process.env.NODE_ENV !== "production") {
   plugins.push("istanbul");
 }
 module.exports = {
   plugins: plugins,
-  presets: ["next/babel"],
+  presets: presets,
 };

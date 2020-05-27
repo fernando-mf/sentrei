@@ -6,6 +6,7 @@
       "mode": "auto"
     }
   ],
+  "python.pythonPath": ".venv/bin/python",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#d04649",
     "activityBar.activeBorder": "#37cb34",
