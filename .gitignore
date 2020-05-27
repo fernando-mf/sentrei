@@ -80,7 +80,6 @@
 
 # Yarn related.
 .yarn
-.yarnrc
 
 # Firebase related.
 **/.firebase

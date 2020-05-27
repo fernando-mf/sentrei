@@ -35,7 +35,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn config set ignore-engines true && yarn install --frozen-lockfile
+          yarn install --frozen-lockfile
       - working-directory: packages/blog
         run: |
           yarn run ${{ github.event.client_payload.task }}
@@ -105,7 +105,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn config set ignore-engines true && yarn install --frozen-lockfile
+          yarn install --frozen-lockfile
       - working-directory: packages/design
         run: |
           yarn run ${{ github.event.client_payload.task }}
@@ -310,7 +310,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn config set ignore-engines true && yarn install --frozen-lockfile
+          yarn install --frozen-lockfile
       - run: |
           yarn run typescript
       - working-directory: packages/functions
@@ -373,7 +373,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn config set ignore-engines true && yarn install --frozen-lockfile
+          yarn install --frozen-lockfile
       - uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}
@@ -451,7 +451,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn config set ignore-engines true && yarn install --frozen-lockfile
+          yarn install --frozen-lockfile
       - working-directory: packages/pioneer
         run: |
           yarn run ${{ github.event.client_payload.task }}
@@ -521,7 +521,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn config set ignore-engines true && yarn install --frozen-lockfile
+          yarn install --frozen-lockfile
       - working-directory: packages/ui
         run: |
           yarn run ${{ github.event.client_payload.task }}
@@ -591,7 +591,7 @@ jobs:
           restore-keys: |
             yarn-v1-${{ runner.os }}-
       - run: |
-          yarn config set ignore-engines true && yarn install --frozen-lockfile
+          yarn install --frozen-lockfile
       - run: |
           yarn run typescript
       - working-directory: packages/web
