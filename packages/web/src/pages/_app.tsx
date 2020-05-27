@@ -31,7 +31,7 @@ if (isBrowser() && isDev()) whyDidYouRender(React);
 
 initFirebase();
 
-class App extends NextApp {
+class App extends NextApp<any, any> {
   componentDidMount(): void {
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles && jssStyles.parentNode) {
