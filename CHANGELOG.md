@@ -1,3 +1,9 @@
+# [4.54.0-beta.2](https://github.com/sentrei/sentrei/compare/v4.54.0-beta.1...v4.54.0-beta.2) (2020-05-27)
+
+### Features
+
+- 🎸 add privacy terms ([47ccfed](https://github.com/sentrei/sentrei/commit/47ccfed36fbec2affde0936b402fd9d9b6fcf468))
+
 # [4.54.0-beta.1](https://github.com/sentrei/sentrei/compare/v4.53.0...v4.54.0-beta.1) (2020-05-27)
 
 ### Bug Fixes
