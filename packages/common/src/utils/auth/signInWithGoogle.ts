@@ -1,20 +1,16 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 
-const signInWithGoogle = async () => {
+const signInWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
 
   try {
-    await firebase
+    firebase
       .auth()
-      .signInWithRedirect(provider)
-      .then(result => {
-        // eslint-disable-next-line no-console
-        console.log(result);
-      })
-      // eslint-disable-next-line no-console
-      .catch(e => console.log(e.message));
+      .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+      .then(() => {
+        firebase.auth().signInWithRedirect(provider);
+      });
   } catch (err) {
     // eslint-disable-next-line no-console
     console.log(err);
