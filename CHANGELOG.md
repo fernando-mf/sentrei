@@ -1,3 +1,9 @@
+# [4.52.0-beta.1](https://github.com/sentrei/sentrei/compare/v4.51.3...v4.52.0-beta.1) (2020-05-27)
+
+### Features
+
+- refactor cookie all ([cd1125e](https://github.com/sentrei/sentrei/commit/cd1125ee124b7a4320d529e7a2739e5a64a396a1))
+
 ## [4.51.3](https://github.com/sentrei/sentrei/compare/v4.51.2...v4.51.3) (2020-05-27)
 
 ### Bug Fixes
