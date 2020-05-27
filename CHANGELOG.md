@@ -1,3 +1,10 @@
+## [4.52.1](https://github.com/sentrei/sentrei/compare/v4.52.0...v4.52.1) (2020-05-27)
+
+### Bug Fixes
+
+- actual yarn refactoring ([4a85b2b](https://github.com/sentrei/sentrei/commit/4a85b2b2b459d6c246fd36fc10b3ab6621504a45))
+- ignore engines yarnrc ([3fc6d14](https://github.com/sentrei/sentrei/commit/3fc6d1478175c3c411b57fdcd9fc2fb8ad6b823a))
+
 # [4.52.0](https://github.com/sentrei/sentrei/compare/v4.51.3...v4.52.0) (2020-05-27)
 
 ### Features
