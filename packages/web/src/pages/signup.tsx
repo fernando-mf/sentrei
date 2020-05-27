@@ -5,9 +5,11 @@ import React from "react";
 import {withTranslation} from "@sentrei/common/i18n";
 import authType from "@sentrei/common/types/authType";
 import Auth from "@sentrei/ui/components/Auth";
+import withUserGuard from "@sentrei/web/components/HOC/withUserGuard";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function About({t}: any): JSX.Element {
+function SignUp({t}: any): JSX.Element {
   return (
     <>
       <SentreiHeader
@@ -26,10 +28,10 @@ function About({t}: any): JSX.Element {
   );
 }
 
-About.getInitialProps = (): {
+SignUp.getInitialProps = (): {
   namespacesRequired: string[];
 } => ({
   namespacesRequired: ["index"],
 });
 
-export default withTranslation()(About);
+export default withUserGuard(withTranslation()(SignUp));

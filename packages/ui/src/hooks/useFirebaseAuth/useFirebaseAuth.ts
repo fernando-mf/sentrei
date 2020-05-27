@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import firebase from "firebase/app";
 import React from "react";
 

@@ -7,6 +7,7 @@ import React from "react";
 import Typical from "react-typical";
 
 import Props from "@sentrei/common/interfaces/Banner";
+import signInWithGoogle from "@sentrei/common/utils/auth/signinWithGoogle";
 import Link from "@sentrei/ui/components/Link";
 
 import BannerStyles from "./BannerStyles";
@@ -75,8 +76,9 @@ export default function Banner({
           </Link>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Link href="/" className={classes.item}>
+          <div className={classes.item}>
             <Button
+              onClick={() => signInWithGoogle()}
               color="primary"
               variant="outlined"
               className={classes.button}
@@ -89,7 +91,7 @@ export default function Banner({
               />
               <Typography>{googleText}</Typography>
             </Button>
-          </Link>
+          </div>
         </Grid>
       </Grid>
     </Container>

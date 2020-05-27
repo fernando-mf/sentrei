@@ -4,7 +4,7 @@ import * as React from "react";
 
 import withAuthGuard from "@sentrei/web/components/HOC/withAuthGuard";
 
-const Page = (props: any): any => {
+const Dashboard = (props: any): any => {
   const {user} = props.auth;
 
   if (user) {
@@ -42,4 +42,4 @@ const Page = (props: any): any => {
   }
 };
 
-export default withAuthGuard(Page);
+export default withAuthGuard(Dashboard);

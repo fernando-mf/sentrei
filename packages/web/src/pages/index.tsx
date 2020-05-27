@@ -6,6 +6,7 @@ import React from "react";
 import {withTranslation} from "@sentrei/common/i18n";
 import Footer from "@sentrei/ui/components/Footer";
 import Spacing from "@sentrei/ui/components/Spacing";
+import withUserGuard from "@sentrei/web/components/HOC/withUserGuard";
 import SentreiBanner from "@sentrei/web/components/SentreiBanner";
 import SentreiFaq from "@sentrei/web/components/SentreiFaq";
 import SentreiFeature from "@sentrei/web/components/SentreiFeature";
@@ -142,4 +143,4 @@ Index.getInitialProps = (): {
   namespacesRequired: ["index"],
 });
 
-export default withTranslation()(Index);
+export default withUserGuard(withTranslation()(Index));
