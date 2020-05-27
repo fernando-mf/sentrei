@@ -1,3 +1,9 @@
+# [4.51.0-beta.2](https://github.com/sentrei/sentrei/compare/v4.51.0-beta.1...v4.51.0-beta.2) (2020-05-26)
+
+### Bug Fixes
+
+- upgrade build cmd ([8b245f2](https://github.com/sentrei/sentrei/commit/8b245f2a98a4a72bf7b96433c59094db00dcfb45))
+
 # [4.51.0-alpha.1](https://github.com/sentrei/sentrei/compare/v4.50.0...v4.51.0-alpha.1) (2020-05-26)
 
 ### Bug Fixes
