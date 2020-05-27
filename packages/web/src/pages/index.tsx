@@ -1,13 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable global-require */
 import Head from "next/head";
 import React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
 import Footer from "@sentrei/ui/components/Footer";
 import Spacing from "@sentrei/ui/components/Spacing";
-import withAuthUser from "@sentrei/web/components/HOC/withAuthUser";
-import withAuthUserInfo from "@sentrei/web/components/HOC/withAuthUserInfo";
 import SentreiBanner from "@sentrei/web/components/SentreiBanner";
 import SentreiFaq from "@sentrei/web/components/SentreiFaq";
 import SentreiFeature from "@sentrei/web/components/SentreiFeature";
@@ -18,7 +16,6 @@ import SentreiScreen from "@sentrei/web/components/SentreiScreen";
 import SentreiSlider from "@sentrei/web/components/SentreiSlider";
 import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Index({t}: any): JSX.Element {
   return (
     <>
