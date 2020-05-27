@@ -14,7 +14,6 @@ import {appWithTranslation} from "@sentrei/common/i18n";
 import initFirebase from "@sentrei/common/utils/initFirebase";
 import isBrowser from "@sentrei/common/utils/isBrowser";
 import isDev from "@sentrei/common/utils/isDev";
-import Loader from "@sentrei/ui/components/Loader";
 import Theme from "@sentrei/ui/containers/Theme";
 import AuthUserInfoContext from "@sentrei/ui/context/AuthUserInfoContext";
 import withAuth from "@sentrei/web/components/HOC/withAuth";
