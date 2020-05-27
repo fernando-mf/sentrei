@@ -1,3 +1,16 @@
+# [4.54.0](https://github.com/sentrei/sentrei/compare/v4.53.1...v4.54.0) (2020-05-27)
+
+### Bug Fixes
+
+- 🐛 correct typescript error ([8f98935](https://github.com/sentrei/sentrei/commit/8f98935ec2fdd3b91f6fed92b8dcd6bfe118503b))
+
+### Features
+
+- 🎸 add privacy terms ([47ccfed](https://github.com/sentrei/sentrei/commit/47ccfed36fbec2affde0936b402fd9d9b6fcf468))
+- add signin google ([4f637b3](https://github.com/sentrei/sentrei/commit/4f637b38d2a848f8c0dceb5c52a52084ae8f0a37))
+- add withUserGuard HOC ([fd1b6a3](https://github.com/sentrei/sentrei/commit/fd1b6a316af80ca8fd11340328e2aae9293edf93))
+- complete intial signin ([2d78903](https://github.com/sentrei/sentrei/commit/2d7890396ab829ebd087b44bd304313074ecc69f))
+
 # [4.54.0-beta.2](https://github.com/sentrei/sentrei/compare/v4.54.0-beta.1...v4.54.0-beta.2) (2020-05-27)
 
 ### Features
