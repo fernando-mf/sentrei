@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Avatar from "@material-ui/core/Avatar";
+import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import Container from "@material-ui/core/Container";
+import Divider from "@material-ui/core/Divider";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 import "@sentrei/common/utils/sentry";
@@ -12,8 +14,8 @@ import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import MailOutlinedIcon from "@material-ui/icons/MailOutlined";
 import firebase from "firebase/app";
-
 import Router from "next/router";
+
 import React from "react";
 import "firebase/auth";
 import {useForm, Controller} from "react-hook-form";
@@ -21,6 +23,7 @@ import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
 import authType from "@sentrei/common/types/authType";
+import signInWithGoogle from "@sentrei/common/utils/auth/signInWithGoogle";
 import Link from "@sentrei/ui/components/Link";
 import Snackbar from "@sentrei/ui/components/Snackbar";
 
@@ -99,7 +102,9 @@ export default function Auth({type}: Props): JSX.Element {
             .auth()
             .signInWithEmailAndPassword(data.email, data.password);
           setOpen(false);
-          Router.push("/");
+          Router.push({
+            pathname: "/",
+          });
         } catch (err) {
           handleError(err);
         }
@@ -110,7 +115,9 @@ export default function Auth({type}: Props): JSX.Element {
             .auth()
             .createUserWithEmailAndPassword(data.email, data.password);
           setOpen(false);
-          Router.push("/");
+          Router.push({
+            pathname: "/",
+          });
         } catch (err) {
           handleError(err);
         }
@@ -129,15 +136,36 @@ export default function Auth({type}: Props): JSX.Element {
       />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          {type === authType.reset ? <MailOutlinedIcon /> : null}
-          {type === authType.login ? <LockOutlinedIcon /> : null}
-          {type === authType.signup ? <AccountCircleOutlinedIcon /> : null}
+          {type === authType.reset && <MailOutlinedIcon />}
+          {type === authType.login && <LockOutlinedIcon />}
+          {type === authType.signup && <AccountCircleOutlinedIcon />}
         </Avatar>
         <Typography component="h1" variant="h3">
-          {type === authType.reset ? "Reset email" : null}
-          {type === authType.login ? "Log in" : null}
-          {type === authType.signup ? "Sign up" : null}
+          {type === authType.reset && "Reset email"}
+          {type === authType.login && "Log in"}
+          {type === authType.signup && "Sign up"}
         </Typography>
+        {type !== authType.reset && (
+          <>
+            <Button
+              onClick={() => signInWithGoogle()}
+              color="primary"
+              variant="outlined"
+              className={classes.button}
+            >
+              <img
+                width="20px"
+                alt="Google sign-in"
+                src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                style={{marginRight: "1em"}}
+              />
+              <Typography>Login with Google</Typography>
+            </Button>
+            <Box pt={5} />
+            <Divider flexItem className={classes.divider} />
+            <Box pb={3} />
+          </>
+        )}
         <form
           onSubmit={handleSubmit(onSubmit)}
           className={classes.form}
@@ -202,12 +230,12 @@ export default function Auth({type}: Props): JSX.Element {
             color="primary"
             className={classes.submit}
           >
-            {type === authType.reset ? "Send reset email" : null}
-            {type === authType.login ? "Log in" : null}
-            {type === authType.signup ? "Sign up" : null}
+            {type === authType.reset && "Send reset email"}
+            {type === authType.login && "Log in"}
+            {type === authType.signup && "Sign up"}
           </Button>
         </form>
-        {type === authType.login ? (
+        {type === authType.login && (
           <Grid container>
             <Grid item xs>
               <Link href="/reset-password" variant="body2">
@@ -220,8 +248,8 @@ export default function Auth({type}: Props): JSX.Element {
               </Link>
             </Grid>
           </Grid>
-        ) : null}
-        {type === authType.signup ? (
+        )}
+        {type === authType.signup && (
           <Grid container justify="center">
             <Grid item>
               <Link href="/login" variant="body2">
@@ -229,7 +257,7 @@ export default function Auth({type}: Props): JSX.Element {
               </Link>
             </Grid>
           </Grid>
-        ) : null}
+        )}
       </div>
     </Container>
   );
