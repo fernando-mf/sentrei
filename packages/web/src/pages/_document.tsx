@@ -15,7 +15,7 @@ import "@sentrei/common/utils/sentry";
 import "@sentrei/common/utils/registerExceptionHandler";
 
 export default class Document extends NextDocument {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(ctx: DocumentContext): Promise<any> {
     const styledComponentSheet = new StyledComponentSheets();
     const materialUiSheets = new MaterialUiServerStyleSheets();
     const originalRenderPage = ctx.renderPage;

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as admin from "firebase-admin";
 
 import getConfig from "next/config";
@@ -6,7 +7,7 @@ import isDev from "@sentrei/common/utils/isDev";
 
 const {serverRuntimeConfig} = getConfig();
 
-const verifyIdToken = (token: string) => {
+const verifyIdToken = (token: string): any => {
   if (!admin.apps.length) {
     if (isDev()) {
       admin.initializeApp({

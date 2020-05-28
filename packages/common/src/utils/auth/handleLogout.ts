@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* globals window */
 import firebase from "firebase/app";
 import "firebase/auth";
 import Router from "next/router";
 
-const handleLogout = async () => {
+const handleLogout = async (): Promise<any> => {
   try {
     await firebase.auth().signOut();
     Router.push({

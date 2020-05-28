@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 
 import AuthUserInfoContext from "@sentrei/ui/context/AuthUserInfoContext";
 
-const useAuthUserInfo = () => {
+const useAuthUserInfo = (): any => {
   return React.useContext(AuthUserInfoContext);
 };
 

@@ -78,7 +78,7 @@ export default function Banner({
         <Grid item xs={12} md={6}>
           <div className={classes.item}>
             <Button
-              onClick={() => signInWithGoogle()}
+              onClick={(): void => signInWithGoogle()}
               color="primary"
               variant="outlined"
               className={classes.button}

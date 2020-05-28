@@ -6,8 +6,8 @@ import "firebase/auth";
 // utils
 import loginRedirect from "@sentrei/common/utils/auth/loginRedirect";
 
-const withAuthGuard = (Component: any) => {
-  const WrappedComponent = (props: any) => {
+const withAuthGuard = (Component: any): any => {
+  const WrappedComponent = (props: any): any => {
     if (!props.auth.user) return loginRedirect();
     if (props.auth.user) return <Component {...props} />;
   };
