@@ -5,12 +5,11 @@ import MenuItem from "@material-ui/core/MenuItem";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import PersonIcon from "@material-ui/icons/Person";
 import SettingsIcon from "@material-ui/icons/Settings";
-
+import Router from "next/router";
 import React from "react";
 
 import Props from "@sentrei/common/interfaces/ProfileMenu";
 import handleLogout from "@sentrei/common/utils/auth/handleLogout";
-import Link from "@sentrei/ui/components/Link";
 
 export default function ProfileMenu({
   anchorEl,
@@ -28,19 +27,19 @@ export default function ProfileMenu({
         vertical: "top",
         horizontal: "center",
       }}
-      id="customized-menu"
+      id="profile-menu"
       keepMounted
       anchorEl={anchorEl}
       open={open}
       onClose={onClose}
     >
-      <MenuItem>
+      <MenuItem onClick={() => Router.push("/profile")}>
         <ListItemIcon>
           <PersonIcon fontSize="small" />
         </ListItemIcon>
         <ListItemText primary="Profile" />
       </MenuItem>
-      <MenuItem>
+      <MenuItem onClick={() => Router.push("/settings")}>
         <ListItemIcon>
           <SettingsIcon fontSize="small" />
         </ListItemIcon>

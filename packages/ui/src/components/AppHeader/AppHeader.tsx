@@ -8,6 +8,7 @@ import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import React from "react";
 
 import Props from "@sentrei/common/interfaces/AppHeader";
+import ListMenu from "@sentrei/ui/components/ListMenu";
 import Logo from "@sentrei/ui/components/Logo";
 import ProfileMenu from "@sentrei/ui/components/ProfileMenu";
 
@@ -15,6 +16,9 @@ import AppHeaderStyles from "./AppHeaderStyles";
 
 export default function AppHeader({logo}: Props): JSX.Element {
   const classes = AppHeaderStyles();
+  const [listAnchorEl, listSetAnchorEl] = React.useState<null | HTMLElement>(
+    null,
+  );
   const [
     profileAnchorEl,
     profileSetAnchorEl,
@@ -23,8 +27,12 @@ export default function AppHeader({logo}: Props): JSX.Element {
   const handleProfileClick = (event: React.MouseEvent<HTMLElement>) => {
     profileSetAnchorEl(event.currentTarget);
   };
+  const handleListClick = (event: React.MouseEvent<HTMLElement>) => {
+    listSetAnchorEl(event.currentTarget);
+  };
 
-  const handleProfileClose = () => {
+  const handleClose = () => {
+    listSetAnchorEl(null);
     profileSetAnchorEl(null);
   };
 
@@ -33,18 +41,25 @@ export default function AppHeader({logo}: Props): JSX.Element {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton
-            aria-controls="customized-menu"
+            edge="start"
+            aria-controls="list-menu"
             aria-haspopup="true"
+            onClick={handleListClick}
             className={classes.left}
           >
             <MenuIcon />
           </IconButton>
+          <ListMenu
+            anchorEl={listAnchorEl}
+            open={Boolean(listAnchorEl)}
+            onClose={handleClose}
+          />
           <Grid container alignItems="center" justify="center">
             <Logo logo={logo} />
           </Grid>
           <IconButton
             edge="end"
-            aria-label="customized-menu"
+            aria-label="profile-menu"
             aria-haspopup="true"
             onClick={handleProfileClick}
             className={classes.right}
@@ -54,7 +69,7 @@ export default function AppHeader({logo}: Props): JSX.Element {
           <ProfileMenu
             anchorEl={profileAnchorEl}
             open={Boolean(profileAnchorEl)}
-            onClose={handleProfileClose}
+            onClose={handleClose}
           />
         </Toolbar>
       </AppBar>
