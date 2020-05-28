@@ -33,13 +33,13 @@ export default function ProfileMenu({
       open={open}
       onClose={onClose}
     >
-      <MenuItem onClick={(): void => Router.push("/profile")}>
+      <MenuItem onClick={(): Promise<boolean> => Router.push("/profile")}>
         <ListItemIcon>
           <PersonIcon fontSize="small" />
         </ListItemIcon>
         <ListItemText primary="Profile" />
       </MenuItem>
-      <MenuItem onClick={(): void => Router.push("/settings")}>
+      <MenuItem onClick={(): Promise<boolean> => Router.push("/settings")}>
         <ListItemIcon>
           <SettingsIcon fontSize="small" />
         </ListItemIcon>
