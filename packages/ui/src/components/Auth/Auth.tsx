@@ -148,7 +148,7 @@ export default function Auth({type}: Props): JSX.Element {
         {type !== authType.reset && (
           <>
             <Button
-              onClick={() => signInWithGoogle()}
+              onClick={(): void => signInWithGoogle()}
               color="primary"
               variant="outlined"
               className={classes.button}

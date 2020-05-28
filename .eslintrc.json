@@ -35,6 +35,7 @@
         "@typescript-eslint/ban-ts-comment": 0,
         "@typescript-eslint/ban-types": 0,
         "@typescript-eslint/camelcase": 0,
+        "@typescript-eslint/explicit-function-return-type": 1,
         "@typescript-eslint/explicit-module-boundary-types": 0,
         "@typescript-eslint/naming-convention": 0,
         "@typescript-eslint/no-floating-promises": 0,

@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {get, has} from "lodash";
 // having trouble getting types from lodash/object
 
-const createAuthUser = (firebaseUser: firebase.User | null) => {
+const createAuthUser = (firebaseUser: firebase.User | null): any => {
   if (!firebaseUser || !firebaseUser.uid) {
     return null;
   }

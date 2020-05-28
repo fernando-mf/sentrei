@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 
-const signInWithGoogle = () => {
+const signInWithGoogle = (): void => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   try {

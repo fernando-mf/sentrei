@@ -30,7 +30,7 @@ export default function ListMenu({
       open={open}
       onClose={onClose}
     >
-      <MenuItem onClick={() => Router.push("/help")}>
+      <MenuItem onClick={(): void => Router.push("/help")}>
         <ListItemIcon>
           <AccessibilityNewIcon fontSize="small" />
         </ListItemIcon>

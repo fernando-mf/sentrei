@@ -24,14 +24,14 @@ export default function AppHeader({logo}: Props): JSX.Element {
     profileSetAnchorEl,
   ] = React.useState<null | HTMLElement>(null);
 
-  const handleProfileClick = (event: React.MouseEvent<HTMLElement>) => {
+  const handleProfileClick = (event: React.MouseEvent<HTMLElement>): void => {
     profileSetAnchorEl(event.currentTarget);
   };
-  const handleListClick = (event: React.MouseEvent<HTMLElement>) => {
+  const handleListClick = (event: React.MouseEvent<HTMLElement>): void => {
     listSetAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = (): void => {
     listSetAnchorEl(null);
     profileSetAnchorEl(null);
   };

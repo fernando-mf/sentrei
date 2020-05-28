@@ -5,7 +5,7 @@ import "firebase/auth";
 // utils
 import isBrowser from "@sentrei/common/utils/isBrowser";
 
-const loginRedirect = () => {
+const loginRedirect = (): firebase.User | null => {
   const user = firebase.auth().currentUser;
 
   if (isBrowser() && !user) {

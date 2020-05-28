@@ -4,8 +4,8 @@ import * as React from "react";
 import Loader from "@sentrei/ui/components/Loader";
 import useFirebaseAuth from "@sentrei/ui/hooks/useFirebaseAuth";
 
-const withAuth = (Component: any) => {
-  const WrappedComponent = (props: any) => {
+const withAuth = (Component: any): any => {
+  const WrappedComponent = (props: any): any => {
     const {initializing, user} = useFirebaseAuth();
 
     // user not available yet

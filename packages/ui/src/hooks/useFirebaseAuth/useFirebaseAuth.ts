@@ -4,7 +4,7 @@ import React from "react";
 
 import "firebase/auth";
 
-const useFirebaseAuth = () => {
+const useFirebaseAuth = (): any => {
   const [state, setState] = React.useState(() => {
     const user = firebase.auth().currentUser;
     return {
@@ -13,7 +13,7 @@ const useFirebaseAuth = () => {
     };
   });
 
-  function onChange(user: firebase.User | null) {
+  function onChange(user: firebase.User | null): void {
     setState({initializing: false, user});
   }
 
@@ -22,7 +22,7 @@ const useFirebaseAuth = () => {
     const unsubscribe = firebase.auth().onAuthStateChanged(onChange);
 
     // Unsubscribe to the listener when unmounting.
-    return () => unsubscribe();
+    return (): void => unsubscribe();
   }, []);
 
   return state;

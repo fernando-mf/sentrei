@@ -19,11 +19,12 @@ const imgs = [
   "https://drscdn.500px.org/photo/435236/q%3D80_m%3D1500/v2?webp=true&sig=67031bdff6f582f3e027311e2074be452203ab637c0bd21d89128844becf8e40",
 ];
 
-const calcX = (y: number, ly: number) =>
+const calcX = (y: number, ly: number): number =>
   -(y - ly - window.innerHeight / 2) / 20;
-const calcY = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 20;
+const calcY = (x: number, lx: number): number =>
+  (x - lx - window.innerWidth / 2) / 20;
 
-const wheel = (y: number) => {
+const wheel = (y: number): string => {
   const imgHeight = window.innerWidth * 0.3 - 20;
   return `translateY(${-imgHeight * (y < 0 ? 6 : 1) - (y % (imgHeight * 5))}px`;
 };
@@ -33,7 +34,7 @@ if (typeof window !== "undefined") {
   document.addEventListener("gesturechange", e => e.preventDefault());
 }
 
-function Room() {
+function Room(): JSX.Element {
   const domTarget = React.useRef(null);
   const [{x, y, rotateX, rotateY, rotateZ, zoom, scale}, set] = useSpring(
     () => ({

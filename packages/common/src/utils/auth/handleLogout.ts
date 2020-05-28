@@ -3,7 +3,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import Router from "next/router";
 
-const handleLogout = async () => {
+const handleLogout = async (): Promise<boolean> => {
   try {
     await firebase.auth().signOut();
     Router.push({
