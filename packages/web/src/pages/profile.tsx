@@ -3,6 +3,7 @@
 import * as React from "react";
 
 import {withTranslation} from "@sentrei/common/i18n";
+import Profile from "@sentrei/ui/components/Profile";
 import withAuthGuard from "@sentrei/web/components/HOC/withAuthGuard";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -22,6 +23,7 @@ const Dashboard = (props: any): any => {
           signUpText={t("headerSignUp")}
           testimonialText={t("headerTestimonial")}
         />
+        <Profile {...props} />
       </>
     );
   }
