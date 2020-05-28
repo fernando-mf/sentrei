@@ -250,13 +250,23 @@ export default function Auth({type}: Props): JSX.Element {
           </Grid>
         )}
         {type === authType.signup && (
-          <Grid container justify="center">
-            <Grid item>
-              <Link href="/login" variant="body2">
-                Already have an account? Log in
-              </Link>
+          <>
+            <Grid container justify="center">
+              <Grid item>
+                <Link href="/login" variant="body2">
+                  Already have an account? Log in
+                </Link>
+              </Grid>
             </Grid>
-          </Grid>
+            <Box p={3} />
+            <Grid container justify="center">
+              <Grid item>
+                <Link href="/terms" variant="body2">
+                  By signing up you agree to our Terms of Service
+                </Link>
+              </Grid>
+            </Grid>
+          </>
         )}
       </div>
     </Container>
