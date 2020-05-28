@@ -47,7 +47,7 @@ export default function AppHeader({logo}: Props): JSX.Element {
             onClick={handleListClick}
             className={classes.left}
           >
-            <MenuIcon />
+            {listAnchorEl ? <CloseIcon /> : <MenuIcon />}
           </IconButton>
           <ListMenu
             anchorEl={listAnchorEl}
