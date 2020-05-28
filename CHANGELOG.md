@@ -1,3 +1,9 @@
+# [4.55.0](https://github.com/sentrei/sentrei/compare/v4.54.3...v4.55.0) (2020-05-28)
+
+### Features
+
+- 🎸 add app header ([d206e09](https://github.com/sentrei/sentrei/commit/d206e0930ac6550cd60e4ad80820fdcc1a21766d))
+
 ## [4.54.3](https://github.com/sentrei/sentrei/compare/v4.54.2...v4.54.3) (2020-05-28)
 
 ### Bug Fixes
