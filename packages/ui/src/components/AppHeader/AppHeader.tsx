@@ -1,16 +1,20 @@
 import AppBar from "@material-ui/core/AppBar";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
-import Menu from "@material-ui/core/Menu";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import Menu, {MenuProps} from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Toolbar from "@material-ui/core/Toolbar";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import DraftsIcon from "@material-ui/icons/Drafts";
 import MenuIcon from "@material-ui/icons/Menu";
 
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import SendIcon from "@material-ui/icons/Send";
 import React from "react";
 
 import Props from "@sentrei/common/interfaces/AppHeader";
-import handleLogout from "@sentrei/common/utils/auth/handleLogout";
 import Logo from "@sentrei/ui/components/Logo";
 
 import AppHeaderStyles from "./AppHeaderStyles";
@@ -18,71 +22,26 @@ import AppHeaderStyles from "./AppHeaderStyles";
 export default function AppHeader({logo}: Props): JSX.Element {
   const classes = AppHeaderStyles();
   const [
-    sentreiAnchorEl,
-    setSentreiAnchorEl,
-  ] = React.useState<null | HTMLElement>(null);
-  const [
     profileAnchorEl,
-    setProfileAnchorEl,
+    profileSetAnchorEl,
   ] = React.useState<null | HTMLElement>(null);
 
-  const isSentreiMenuOpen = Boolean(sentreiAnchorEl);
-  const isProfileMenuOpen = Boolean(profileAnchorEl);
-
-  const handleSentreiMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setSentreiAnchorEl(event.currentTarget);
-  };
-  const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setProfileAnchorEl(event.currentTarget);
+  const handleProfileClick = (event: React.MouseEvent<HTMLElement>) => {
+    profileSetAnchorEl(event.currentTarget);
   };
 
-  const handleMenuClose = () => {
-    setSentreiAnchorEl(null);
-    setProfileAnchorEl(null);
+  const handleProfileClose = () => {
+    profileSetAnchorEl(null);
   };
-
-  const sentreiMenuId = "primary-search-sentrei-menu";
-  const renderSentreiMenu = (
-    <Menu
-      anchorEl={sentreiAnchorEl}
-      anchorOrigin={{vertical: "top", horizontal: "right"}}
-      id={sentreiMenuId}
-      keepMounted
-      transformOrigin={{vertical: "top", horizontal: "right"}}
-      open={isSentreiMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem>Profile</MenuItem>
-    </Menu>
-  );
-
-  const profileMenuId = "primary-search-profile-menu";
-  const renderProfileMenu = (
-    <Menu
-      anchorEl={profileAnchorEl}
-      anchorOrigin={{vertical: "top", horizontal: "right"}}
-      id={profileMenuId}
-      keepMounted
-      transformOrigin={{vertical: "top", horizontal: "right"}}
-      open={isProfileMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleLogout}>Logout</MenuItem>
-    </Menu>
-  );
 
   return (
     <div className={classes.grow}>
       <AppBar position="fixed" className={classes.appBar}>
-        {renderSentreiMenu}
         <Toolbar>
           <IconButton
-            edge="start"
-            aria-label="sentrei-menu"
+            aria-controls="customized-menu"
             aria-haspopup="true"
-            aria-controls={sentreiMenuId}
             className={classes.left}
-            onClick={handleSentreiMenuOpen}
           >
             <MenuIcon />
           </IconButton>
@@ -91,17 +50,50 @@ export default function AppHeader({logo}: Props): JSX.Element {
           </Grid>
           <IconButton
             edge="end"
-            aria-label="profile-menu"
+            aria-label="customized-menu"
             aria-haspopup="true"
-            aria-controls={profileMenuId}
+            onClick={handleProfileClick}
             className={classes.right}
-            onClick={handleProfileMenuOpen}
           >
             <AccountCircleIcon />
           </IconButton>
+          <Menu
+            getContentAnchorEl={null}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "center",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "center",
+            }}
+            id="customized-menu"
+            anchorEl={profileAnchorEl}
+            keepMounted
+            open={Boolean(profileAnchorEl)}
+            onClose={handleProfileClose}
+          >
+            <MenuItem>
+              <ListItemIcon>
+                <SendIcon fontSize="small" />
+              </ListItemIcon>
+              <ListItemText primary="Sent mail" />
+            </MenuItem>
+            <MenuItem>
+              <ListItemIcon>
+                <DraftsIcon fontSize="small" />
+              </ListItemIcon>
+              <ListItemText primary="Drafts" />
+            </MenuItem>
+            <MenuItem>
+              <ListItemIcon>
+                <InboxIcon fontSize="small" />
+              </ListItemIcon>
+              <ListItemText primary="Inbox" />
+            </MenuItem>
+          </Menu>
         </Toolbar>
       </AppBar>
-      {renderProfileMenu}
       <Toolbar />
     </div>
   );
