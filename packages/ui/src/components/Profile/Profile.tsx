@@ -1,4 +1,4 @@
-/* esTypographynt-disable @typescript-esTypographynt/no-expTypographycit-any */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
