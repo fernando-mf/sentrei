@@ -2,14 +2,26 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from "react";
 
+import {withTranslation} from "@sentrei/common/i18n";
 import withAuthGuard from "@sentrei/web/components/HOC/withAuthGuard";
+import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const Dashboard = (props: any): any => {
-  const {user} = props.auth;
+  const {auth, t} = props;
+  const {user} = auth;
 
   if (user) {
     return (
       <>
+        <SentreiAppHeader
+          faqText={t("headerFaq")}
+          featuresText={t("headerFeatures")}
+          pricingText={t("headerPricing")}
+          productText={t("headerProduct")}
+          logInText={t("headerLogIn")}
+          signUpText={t("headerSignUp")}
+          testimonialText={t("headerTestimonial")}
+        />
         <li
           style={{
             display: "flex",
@@ -42,4 +54,4 @@ const Dashboard = (props: any): any => {
   }
 };
 
-export default withAuthGuard(Dashboard);
+export default withAuthGuard(withTranslation()(Dashboard));

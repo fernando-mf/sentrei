@@ -18,6 +18,7 @@ import Scrollspy from "react-scrollspy";
 import {i18n} from "@sentrei/common/i18n";
 import Props from "@sentrei/common/interfaces/Header";
 import Link from "@sentrei/ui/components/Link";
+import Logo from "@sentrei/ui/components/Logo";
 
 import HeaderStyles from "./HeaderStyles";
 
@@ -118,12 +119,7 @@ export default function Header({
       <AppBar position="fixed" className={appBarClasses}>
         <Toolbar>
           <Grid container alignItems="center" justify="center">
-            <ButtonBase className={classes.logo}>
-              <Link href="/">{logo}</Link>
-              <Typography variant="h6" noWrap>
-                Sentrei
-              </Typography>
-            </ButtonBase>
+            <Logo logo={logo} />
             <div className={classes.spy}>
               <Grid item>
                 <Hidden smDown implementation="css">
