@@ -1,3 +1,11 @@
+# [4.56.0](https://github.com/sentrei/sentrei/compare/v4.55.0...v4.56.0) (2020-05-28)
+
+### Features
+
+- 🎸 add list menu ([bf027f3](https://github.com/sentrei/sentrei/commit/bf027f389f540c5e4d79bf55f6f183bf8f762f4d))
+- 🎸 add profile menu ([43d626f](https://github.com/sentrei/sentrei/commit/43d626f3a2c74604a33404a16d0b3bbca610f306))
+- 🎸 add profile menu ([cad82eb](https://github.com/sentrei/sentrei/commit/cad82eb2857e5ab34d8c8f63baa408aa00b990dc))
+
 # [4.55.0](https://github.com/sentrei/sentrei/compare/v4.54.3...v4.55.0) (2020-05-28)
 
 ### Features
