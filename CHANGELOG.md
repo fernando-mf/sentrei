@@ -1,3 +1,9 @@
+## [4.56.1](https://github.com/sentrei/sentrei/compare/v4.56.0...v4.56.1) (2020-05-28)
+
+### Bug Fixes
+
+- **deps:** bump firebase-functions from 3.6.1 to 3.6.2 ([8d56063](https://github.com/sentrei/sentrei/commit/8d560637b930a8fd5e5548522747c3dde96648aa))
+
 # [4.56.0](https://github.com/sentrei/sentrei/compare/v4.55.0...v4.56.0) (2020-05-28)
 
 ### Features
