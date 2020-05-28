@@ -179,6 +179,7 @@ export default function Header({
                   </>
                 )}
                 <IconButton
+                  edge="end"
                   aria-controls="customized-menu"
                   aria-haspopup="true"
                   onClick={handleClick}
