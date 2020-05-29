@@ -1,3 +1,10 @@
+# [4.59.0](https://github.com/sentrei/sentrei/compare/v4.58.1...v4.59.0) (2020-05-29)
+
+### Features
+
+- 🎸 add english complete ([ff908c1](https://github.com/sentrei/sentrei/commit/ff908c19bfd87bd214a7f76e1ac1ae2a0deb0c14))
+- 🎸 add rough notation and animation ([44b2cff](https://github.com/sentrei/sentrei/commit/44b2cff0efc4f12690d91299f5bb894a28c7a6f9))
+
 ## [4.58.1](https://github.com/sentrei/sentrei/compare/v4.58.0...v4.58.1) (2020-05-29)
 
 ### Bug Fixes
