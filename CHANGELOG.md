@@ -1,3 +1,9 @@
+# [4.58.0](https://github.com/sentrei/sentrei/compare/v4.57.0...v4.58.0) (2020-05-29)
+
+### Features
+
+- 🎸 add react rough notation observer ([6173a37](https://github.com/sentrei/sentrei/commit/6173a3755e4a8fa3a36e6ee52abe002df576493c))
+
 # [4.57.0](https://github.com/sentrei/sentrei/compare/v4.56.5...v4.57.0) (2020-05-29)
 
 ### Bug Fixes
