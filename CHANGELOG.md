@@ -1,3 +1,10 @@
+# [4.62.0](https://github.com/sentrei/sentrei/compare/v4.61.0...v4.62.0) (2020-05-29)
+
+### Features
+
+- 🎸 add functions ([1000962](https://github.com/sentrei/sentrei/commit/10009621a323e6c68e81d54ac91d0cfcac28017d))
+- 🎸 refactor signup login ([f22f460](https://github.com/sentrei/sentrei/commit/f22f4600e173ec64fd5f3a84d60ce61bf3d175b4))
+
 # [4.61.0](https://github.com/sentrei/sentrei/compare/v4.60.1...v4.61.0) (2020-05-29)
 
 ### Features
