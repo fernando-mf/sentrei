@@ -5,6 +5,7 @@ import * as React from "react";
 
 import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
 import Loader from "@sentrei/ui/components/Loader";
+import SpaceFab from "@sentrei/ui/components/SpaceFab";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const Dashboard = (props: any): any => {
@@ -32,6 +33,7 @@ const Dashboard = (props: any): any => {
             signUpText={t("headerSignUp")}
             testimonialText={t("headerTestimonial")}
           />
+          <SpaceFab />
         </>
       ) : (
         <Loader />
