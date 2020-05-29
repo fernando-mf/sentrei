@@ -1,7 +1,10 @@
 import React from "react";
 
+import {useInView} from "react-intersection-observer";
+
 import {i18n} from "@sentrei/common/i18n";
 import Original from "@sentrei/common/interfaces/Testimonial";
+import logEvent from "@sentrei/common/utils/logEvent";
 import Testimonial from "@sentrei/ui/components/Testimonial";
 import FocusPicture from "@sentrei/web/components/Picture/FocusPicture";
 
@@ -22,25 +25,35 @@ export default function SentreiTestimonial({
   occupationThree,
   titleThree,
 }: Props): JSX.Element {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+  React.useEffect(() => {
+    if (inView) {
+      logEvent("landing", {section: "testimonial"});
+    }
+  }, [inView]);
   return (
-    <Testimonial
-      key={i18n.language}
-      sectionTitle={sectionTitle}
-      authorOne={authorOne}
-      bodyOne={bodyOne}
-      imgOne={<FocusPicture />}
-      occupationOne={occupationOne}
-      titleOne={titleOne}
-      authorTwo={authorTwo}
-      bodyTwo={bodyTwo}
-      imgTwo={<FocusPicture />}
-      occupationTwo={occupationTwo}
-      titleTwo={titleTwo}
-      authorThree={authorThree}
-      bodyThree={bodyThree}
-      imgThree={<FocusPicture />}
-      occupationThree={occupationThree}
-      titleThree={titleThree}
-    />
+    <div ref={ref}>
+      <Testimonial
+        key={i18n.language}
+        sectionTitle={sectionTitle}
+        authorOne={authorOne}
+        bodyOne={bodyOne}
+        imgOne={<FocusPicture />}
+        occupationOne={occupationOne}
+        titleOne={titleOne}
+        authorTwo={authorTwo}
+        bodyTwo={bodyTwo}
+        imgTwo={<FocusPicture />}
+        occupationTwo={occupationTwo}
+        titleTwo={titleTwo}
+        authorThree={authorThree}
+        bodyThree={bodyThree}
+        imgThree={<FocusPicture />}
+        occupationThree={occupationThree}
+        titleThree={titleThree}
+      />
+    </div>
   );
 }

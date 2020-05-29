@@ -1,7 +1,9 @@
 import React from "react";
+import {useInView} from "react-intersection-observer";
 
 import {i18n} from "@sentrei/common/i18n";
 import Props from "@sentrei/common/interfaces/Faq";
+import logEvent from "@sentrei/common/utils/logEvent";
 import Faq from "@sentrei/ui/components/Faq";
 
 export default function SentreiFaq({
@@ -13,16 +15,26 @@ export default function SentreiFaq({
   titleThree,
   bodyThree,
 }: Props): JSX.Element {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+  React.useEffect(() => {
+    if (inView) {
+      logEvent("landing", {section: "faq"});
+    }
+  }, [inView]);
   return (
-    <Faq
-      key={i18n.language}
-      sectionTitle={sectionTitle}
-      titleOne={titleOne}
-      bodyOne={bodyOne}
-      titleTwo={titleTwo}
-      bodyTwo={bodyTwo}
-      titleThree={titleThree}
-      bodyThree={bodyThree}
-    />
+    <div ref={ref}>
+      <Faq
+        key={i18n.language}
+        sectionTitle={sectionTitle}
+        titleOne={titleOne}
+        bodyOne={bodyOne}
+        titleTwo={titleTwo}
+        bodyTwo={bodyTwo}
+        titleThree={titleThree}
+        bodyThree={bodyThree}
+      />
+    </div>
   );
 }
