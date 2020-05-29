@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import App from "next/app";
 import Router from "next/router";
 import * as React from "react";
 
@@ -17,6 +18,16 @@ const withUserGuard = (Component: any): any => {
     });
 
     return <>{user ? <Loader /> : <Component {...props} />}</>;
+  };
+
+  WrappedComponent.getInitialProps = async (
+    appContext: any,
+  ): Promise<{
+    pageProps: any;
+  }> => {
+    // calls page's `getInitialProps` and fills `appProps.pageProps`
+    const appProps = await App.getInitialProps(appContext);
+    return {...appProps};
   };
   return WrappedComponent;
 };
