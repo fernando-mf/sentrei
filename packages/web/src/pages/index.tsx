@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-var-requires */
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Router from "next/router";
 import React from "react";
@@ -8,7 +9,6 @@ import {useTranslation} from "@sentrei/common/i18n";
 import Footer from "@sentrei/ui/components/Footer";
 import Loader from "@sentrei/ui/components/Loader";
 import Spacing from "@sentrei/ui/components/Spacing";
-import SentreiBanner from "@sentrei/web/components/SentreiBanner";
 import SentreiFaq from "@sentrei/web/components/SentreiFaq";
 import SentreiFeature from "@sentrei/web/components/SentreiFeature";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
@@ -17,6 +17,13 @@ import SentreiProduct from "@sentrei/web/components/SentreiProduct";
 import SentreiScreen from "@sentrei/web/components/SentreiScreen";
 import SentreiSlider from "@sentrei/web/components/SentreiSlider";
 import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
+
+const SentreiBanner = dynamic(
+  () => import("@sentrei/web/components/SentreiBanner"),
+  {
+    loading: () => <Loader />,
+  },
+);
 
 function Index(props: any): JSX.Element {
   const {

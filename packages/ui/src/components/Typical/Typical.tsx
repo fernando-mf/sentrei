@@ -3,7 +3,6 @@ import {useInView} from "react-intersection-observer";
 import {useSpring, animated} from "react-spring";
 import Typical from "react-typical";
 
-import {i18n} from "@sentrei/common/i18n";
 import Props from "@sentrei/common/interfaces/Typical";
 
 import TypicalStyles from "./TypicalStyles";
@@ -23,7 +22,6 @@ export default function CustomTypical({
   return (
     <animated.span ref={ref} style={props}>
       <Typical
-        key={i18n.language}
         steps={[
           typicalOne,
           typicalDuration,

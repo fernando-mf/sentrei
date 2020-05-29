@@ -47,7 +47,7 @@ export default function Banner({
         />
         <br />
         {bannerBottom}
-        <RoughNotation color="primary" type="underline">
+        <RoughNotation initial color="primary" type="underline">
           <Typography
             component="h1"
             variant="h2"

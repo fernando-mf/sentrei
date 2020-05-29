@@ -4,6 +4,7 @@ export default interface Props {
   animationDuration?: number;
   children: JSX.Element;
   color: "primary" | "secondary";
+  initial?: boolean;
   type:
     | "underline"
     | "box"

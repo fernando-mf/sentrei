@@ -11,9 +11,10 @@ export default function CustomRoughNotation({
   animationDuration = 800,
   children,
   color,
+  initial = false,
   type,
 }: Props): JSX.Element {
-  const [show, setShow] = React.useState(false);
+  const [show, setShow] = React.useState(initial);
   const [ref, inView] = useInView({
     threshold: 0,
   });
