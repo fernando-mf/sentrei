@@ -2,9 +2,9 @@ export default interface Props {
   animate?: boolean;
   animationDelay?: number;
   animationDuration?: number;
-  children: JSX.Element;
   color: "primary" | "secondary";
   initial?: boolean;
+  text: string;
   type:
     | "underline"
     | "box"

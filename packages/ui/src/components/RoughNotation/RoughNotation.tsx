@@ -9,9 +9,9 @@ export default function CustomRoughNotation({
   animate = true,
   animationDelay = 0,
   animationDuration = 800,
-  children,
   color,
   initial = false,
+  text,
   type,
 }: Props): JSX.Element {
   const [show, setShow] = React.useState(initial);
@@ -36,7 +36,7 @@ export default function CustomRoughNotation({
         show={show}
         type={type}
       >
-        {children}
+        {text}
       </RoughNotation>
     </span>
   );

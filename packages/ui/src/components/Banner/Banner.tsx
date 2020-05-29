@@ -31,13 +31,7 @@ export default function Banner({
 
   return (
     <Container maxWidth="sm" component="main" className={classes.banner}>
-      <Typography
-        component="h1"
-        variant="h2"
-        align="center"
-        color="textPrimary"
-        gutterBottom
-      >
+      <Typography component="h1" variant="h2" align="center">
         {bannerTop}
         <br />
         <Typical
@@ -47,18 +41,12 @@ export default function Banner({
         />
         <br />
         {bannerBottom}
-        <RoughNotation initial color="primary" type="underline">
-          <Typography
-            component="h1"
-            variant="h2"
-            align="center"
-            color="textPrimary"
-            gutterBottom
-            display="inline"
-          >
-            {bannerBottomRough}
-          </Typography>
-        </RoughNotation>
+        <RoughNotation
+          initial
+          color="primary"
+          text={bannerBottomRough}
+          type="underline"
+        />
       </Typography>
       <Box p={1} />
       <Typography
@@ -80,18 +68,9 @@ export default function Banner({
           animationDelay={1000}
           animationDuration={3000}
           color="primary"
+          text={bannerTextRough}
           type="circle"
-        >
-          <Typography
-            variant="h5"
-            align="center"
-            color="textSecondary"
-            display="inline"
-            className={classes.text}
-          >
-            {bannerTextRough}
-          </Typography>
-        </RoughNotation>
+        />
       </Typography>
       <Typography
         variant="subtitle1"
