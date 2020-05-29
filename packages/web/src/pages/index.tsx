@@ -3,7 +3,7 @@
 import Head from "next/head";
 import React from "react";
 
-import {withTranslation} from "@sentrei/common/i18n";
+import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
 import Footer from "@sentrei/ui/components/Footer";
 import Spacing from "@sentrei/ui/components/Spacing";
 import withUserGuard from "@sentrei/web/components/HOC/withUserGuard";
@@ -17,7 +17,9 @@ import SentreiScreen from "@sentrei/web/components/SentreiScreen";
 import SentreiSlider from "@sentrei/web/components/SentreiSlider";
 import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
 
-function Index({t}: any): JSX.Element {
+function Index(): JSX.Element {
+  const {t} = useTranslation();
+
   return (
     <>
       <Head>
@@ -137,4 +139,12 @@ function Index({t}: any): JSX.Element {
   );
 }
 
-export default withUserGuard(withTranslation("index")(Index));
+Index.getInitialProps = (): {
+  namespacesRequired: string[];
+} => {
+  return {
+    namespacesRequired: includeDefaultNamespaces(["index"]),
+  };
+};
+
+export default withUserGuard(Index);

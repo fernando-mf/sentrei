@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import React from "react";
 import Typical from "react-typical";
 
+import {i18n} from "@sentrei/common/i18n";
 import Props from "@sentrei/common/interfaces/Banner";
 import signInWithGoogle from "@sentrei/common/utils/auth/signInWithGoogle";
 import Link from "@sentrei/ui/components/Link";
@@ -37,6 +38,7 @@ export default function Banner({
         {bannerTop}
         <br />
         <Typical
+          key={i18n.language}
           steps={[
             typicalOne,
             typicalDuration,

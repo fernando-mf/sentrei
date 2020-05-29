@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Router from "next/router";
 import * as React from "react";
