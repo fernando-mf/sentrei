@@ -46,7 +46,7 @@ export default function Banner({
           typicalThree={typicalThree}
         />
         <br />
-        {bannerBottom}{" "}
+        {bannerBottom}
         <RoughNotation color="primary" type="underline">
           <Typography
             component="h1"
@@ -75,7 +75,7 @@ export default function Banner({
         color="textSecondary"
         className={classes.text}
       >
-        {bannerTextTwo}{" "}
+        {bannerTextTwo}
         <RoughNotation
           animationDelay={1000}
           animationDuration={3000}
