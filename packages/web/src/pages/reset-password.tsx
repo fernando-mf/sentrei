@@ -2,12 +2,13 @@
 
 import React from "react";
 
-import {withTranslation} from "@sentrei/common/i18n";
+import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
 import authType from "@sentrei/common/types/authType";
 import Auth from "@sentrei/ui/components/Auth";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function About({t}: any): JSX.Element {
+function ResetPassword(): JSX.Element {
+  const {t} = useTranslation();
   return (
     <>
       <SentreiHeader
@@ -26,10 +27,12 @@ function About({t}: any): JSX.Element {
   );
 }
 
-About.getInitialProps = (): {
+ResetPassword.getInitialProps = (): {
   namespacesRequired: string[];
-} => ({
-  namespacesRequired: ["index"],
-});
+} => {
+  return {
+    namespacesRequired: includeDefaultNamespaces(["index"]),
+  };
+};
 
-export default withTranslation()(About);
+export default ResetPassword;

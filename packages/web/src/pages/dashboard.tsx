@@ -1,30 +1,51 @@
 /* eslint-disable consistent-return */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import Router from "next/router";
 import * as React from "react";
 
-import {withTranslation} from "@sentrei/common/i18n";
-import withAuthGuard from "@sentrei/web/components/HOC/withAuthGuard";
+import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
+import Loader from "@sentrei/ui/components/Loader";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const Dashboard = (props: any): any => {
-  const {auth, t} = props;
-  const {user} = auth;
+  const {
+    auth: {user},
+  } = props;
+  const {t} = useTranslation();
 
-  if (user) {
-    return (
-      <>
-        <SentreiAppHeader
-          faqText={t("headerFaq")}
-          featuresText={t("headerFeatures")}
-          pricingText={t("headerPricing")}
-          productText={t("headerProduct")}
-          logInText={t("headerLogIn")}
-          signUpText={t("headerSignUp")}
-          testimonialText={t("headerTestimonial")}
-        />
-      </>
-    );
-  }
+  React.useEffect(() => {
+    if (!user) {
+      Router.push("/");
+    }
+  });
+
+  return (
+    <>
+      {user ? (
+        <>
+          <SentreiAppHeader
+            faqText={t("headerFaq")}
+            featuresText={t("headerFeatures")}
+            pricingText={t("headerPricing")}
+            productText={t("headerProduct")}
+            logInText={t("headerLogIn")}
+            signUpText={t("headerSignUp")}
+            testimonialText={t("headerTestimonial")}
+          />
+        </>
+      ) : (
+        <Loader />
+      )}
+    </>
+  );
 };
 
-export default withAuthGuard(withTranslation()(Dashboard));
+Dashboard.getInitialProps = (): {
+  namespacesRequired: string[];
+} => {
+  return {
+    namespacesRequired: includeDefaultNamespaces(["index"]),
+  };
+};
+
+export default Dashboard;

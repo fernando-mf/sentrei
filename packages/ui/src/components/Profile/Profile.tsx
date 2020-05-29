@@ -3,37 +3,36 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 
+import Props from "@sentrei/common/interfaces/Profile";
 import Section from "@sentrei/ui/components/Section";
 
 import ProfileStyles from "./ProfileStyles";
 
-export default function Profile(props: any): JSX.Element {
+export default function Profile({userEmail}: Props): JSX.Element {
   const classes = ProfileStyles();
-  const {auth, t} = props;
-  const {user} = auth;
 
   return (
     <>
       <Container maxWidth="sm" component="main" className={classes.profile}>
         <Section title="Profile" subTitle="" />
         <Typography gutterBottom>
-          <span>Display Name:</span> {user.displayName}
+          <span>Display Name:</span>
         </Typography>
         <Typography gutterBottom>
-          <span>Email:</span> {user.email}
+          <span>Email:</span> {userEmail}
         </Typography>
         <Typography gutterBottom>
-          <span>Email Verification Status:</span>{" "}
-          {user.emailVerified === true ? "Verified" : "Not Verified"}
+          <span>Email Verification Status:</span>
+          {/* {user.emailVerified === true ? "Verified" : "Not Verified"} */}
         </Typography>
         <Typography gutterBottom>
-          <span>User ID:</span> {user.uid}
+          <span>User ID</span>
         </Typography>
         <Typography gutterBottom>
-          <span>Last Login:</span> {user.metadata.lastSignInTime}
+          <span>Last Login:</span>
         </Typography>
         <Typography gutterBottom>
-          <span>Date Joined:</span> {user.metadata.creationTime}
+          <span>Date Joined:</span>
         </Typography>
       </Container>
     </>

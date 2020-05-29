@@ -4,12 +4,12 @@ import Container from "@material-ui/core/Container";
 
 import React from "react";
 
-import {withTranslation} from "@sentrei/common/i18n";
+import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
 
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function Terms({t}: any): JSX.Element {
+function Privacy(): JSX.Element {
+  const {t} = useTranslation();
   return (
     <>
       <SentreiHeader
@@ -1132,10 +1132,12 @@ function Terms({t}: any): JSX.Element {
   );
 }
 
-Terms.getInitialProps = (): {
+Privacy.getInitialProps = (): {
   namespacesRequired: string[];
-} => ({
-  namespacesRequired: ["index"],
-});
+} => {
+  return {
+    namespacesRequired: includeDefaultNamespaces(["index"]),
+  };
+};
 
-export default withTranslation()(Terms);
+export default Privacy;
