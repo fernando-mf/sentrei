@@ -1,7 +1,10 @@
 import React from "react";
 
+import {useInView} from "react-intersection-observer";
+
 import {i18n} from "@sentrei/common/i18n";
 import Props from "@sentrei/common/interfaces/Banner";
+import logEvent from "@sentrei/common/utils/logEvent";
 import Banner from "@sentrei/ui/components/Banner";
 
 export default function SentreiBanner({
@@ -18,8 +21,16 @@ export default function SentreiBanner({
   typicalTwo,
   typicalThree,
 }: Props): JSX.Element {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+  React.useEffect(() => {
+    if (inView) {
+      logEvent("landing", {section: "banner"});
+    }
+  }, [inView]);
   return (
-    <>
+    <div ref={ref}>
       <Banner
         key={i18n.language}
         bannerBottom={bannerBottom}
@@ -35,6 +46,6 @@ export default function SentreiBanner({
         typicalTwo={typicalTwo}
         typicalThree={typicalThree}
       />
-    </>
+    </div>
   );
 }

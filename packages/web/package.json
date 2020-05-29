@@ -84,6 +84,7 @@
     "react-dom": "^16.13.1",
     "react-firebaseui": "^4.1.0",
     "react-helmet": "^6.0.0",
+    "react-intersection-observer": "^8.26.2",
     "react-scrollspy": "^3.4.2",
     "react-spring": "^9.0.0-rc.2",
     "react-use-gesture": "^7.0.15",
