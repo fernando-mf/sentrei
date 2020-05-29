@@ -12,8 +12,8 @@ export default function SentreiHeader({
   featuresText,
   pricingText,
   productText,
-  logInText,
-  signUpText,
+  loginText,
+  signupText,
   sign = true,
   spy = true,
   testimonialText,
@@ -25,8 +25,8 @@ export default function SentreiHeader({
       featuresText={featuresText}
       pricingText={pricingText}
       productText={productText}
-      logInText={logInText}
-      signUpText={signUpText}
+      loginText={loginText}
+      signupText={signupText}
       testimonialText={testimonialText}
       sign={sign}
       spy={spy}

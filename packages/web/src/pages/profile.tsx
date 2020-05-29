@@ -29,8 +29,8 @@ const Profile = (props: any): any => {
             featuresText={t("headerFeatures")}
             pricingText={t("headerPricing")}
             productText={t("headerProduct")}
-            logInText={t("headerLogIn")}
-            signUpText={t("headerSignUp")}
+            loginText={t("headerLogin")}
+            signupText={t("headerSignup")}
             testimonialText={t("headerTestimonial")}
           />
           <SentreiProfile userEmail={user.email} />

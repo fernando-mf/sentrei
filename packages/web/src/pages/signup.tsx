@@ -10,7 +10,7 @@ import Loader from "@sentrei/ui/components/Loader";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function SignUp(props: any): JSX.Element {
+function Signup(props: any): JSX.Element {
   const {
     auth: {user},
   } = props;
@@ -35,8 +35,8 @@ function SignUp(props: any): JSX.Element {
             featuresText={t("headerFeatures")}
             pricingText={t("headerPricing")}
             productText={t("headerProduct")}
-            logInText={t("headerLogIn")}
-            signUpText={t("headerSignUp")}
+            loginText={t("headerLogin")}
+            signupText={t("headerSignup")}
             testimonialText={t("headerTestimonial")}
           />
           <Auth type={authType.signup} />;
@@ -46,7 +46,7 @@ function SignUp(props: any): JSX.Element {
   );
 }
 
-SignUp.getInitialProps = (): {
+Signup.getInitialProps = (): {
   namespacesRequired: string[];
 } => {
   return {
@@ -54,4 +54,4 @@ SignUp.getInitialProps = (): {
   };
 };
 
-export default SignUp;
+export default Signup;

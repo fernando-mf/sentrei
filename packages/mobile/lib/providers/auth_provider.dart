@@ -46,7 +46,7 @@ class AuthProvider extends ChangeNotifier {
   }
 
   /// Alter select auth method, login and sign up page
-  void openSignUpPage() {
+  void openSignupPage() {
     authStatus = AuthStatus.not_logged_in;
     userId = '';
     notifyListeners();
