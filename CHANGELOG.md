@@ -1,3 +1,9 @@
+# [4.61.0](https://github.com/sentrei/sentrei/compare/v4.60.1...v4.61.0) (2020-05-29)
+
+### Features
+
+- 🎸 refactor rough notation ([078dcc8](https://github.com/sentrei/sentrei/commit/078dcc8ea63b3d6d55959fc5cc92c36704b2d02b))
+
 # [4.60.0](https://github.com/sentrei/sentrei/compare/v4.59.0...v4.60.0) (2020-05-29)
 
 ### Features
