@@ -2,6 +2,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import PersonIcon from "@material-ui/icons/Person";
 import SettingsIcon from "@material-ui/icons/Settings";
@@ -33,6 +34,12 @@ export default function ProfileMenu({
       open={open}
       onClose={onClose}
     >
+      <MenuItem onClick={(): Promise<boolean> => Router.push("/billing")}>
+        <ListItemIcon>
+          <AccountBalanceIcon fontSize="small" />
+        </ListItemIcon>
+        <ListItemText primary="Billing" />
+      </MenuItem>
       <MenuItem onClick={(): Promise<boolean> => Router.push("/profile")}>
         <ListItemIcon>
           <PersonIcon fontSize="small" />

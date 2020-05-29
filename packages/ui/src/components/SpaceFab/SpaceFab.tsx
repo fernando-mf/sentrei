@@ -1,6 +1,6 @@
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
-import NavigationIcon from "@material-ui/icons/Navigation";
+import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import React from "react";
 
 import SpaceFabStyles from "./SpaceFabStyles";
@@ -16,9 +16,9 @@ export default function SpaceFab(): JSX.Element {
           color="primary"
           aria-label="add"
           size="large"
-          className={classes.fab}
+          className={classes.space}
         >
-          <NavigationIcon className={classes.extendedIcon} />
+          <HomeWorkIcon className={classes.extendedIcon} />
           Extended
         </Fab>
       </div>

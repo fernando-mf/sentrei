@@ -13,9 +13,9 @@ const SpaceFabStyles = makeStyles((theme: Theme) =>
       },
     },
     extendedIcon: {
-      marginRight: theme.spacing(1),
+      marginRight: theme.spacing(3),
     },
-    fab: {
+    space: {
       top: "auto",
       bottom: theme.spacing(7),
       left: "50%",
