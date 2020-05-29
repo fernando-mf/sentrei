@@ -1,3 +1,9 @@
+## [4.56.5](https://github.com/sentrei/sentrei/compare/v4.56.4...v4.56.5) (2020-05-29)
+
+### Bug Fixes
+
+- **deps:** bump sass from 1.26.6 to 1.26.7 ([77e3e4f](https://github.com/sentrei/sentrei/commit/77e3e4fe0782f8bc6d867852c423affeb7a7cc29))
+
 ## [4.56.3](https://github.com/sentrei/sentrei/compare/v4.56.2...v4.56.3) (2020-05-28)
 
 ### Bug Fixes
