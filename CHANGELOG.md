@@ -1,3 +1,10 @@
+# [4.60.0](https://github.com/sentrei/sentrei/compare/v4.59.0...v4.60.0) (2020-05-29)
+
+### Features
+
+- 🎸 add landing tracking ([4362f41](https://github.com/sentrei/sentrei/commit/4362f41c63751d33bb00ace7760ffc8ccea34753))
+- 🎸 add loading sentrei banner component ([ea07974](https://github.com/sentrei/sentrei/commit/ea07974c94a4b883ba020f240c3707596b293eb1)), closes [#2000](https://github.com/sentrei/sentrei/issues/2000)
+
 # [4.59.0](https://github.com/sentrei/sentrei/compare/v4.58.1...v4.59.0) (2020-05-29)
 
 ### Features
