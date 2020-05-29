@@ -1,3 +1,13 @@
+# [4.57.0](https://github.com/sentrei/sentrei/compare/v4.56.5...v4.57.0) (2020-05-29)
+
+### Bug Fixes
+
+- 🐛 i18n ([e3c9b1d](https://github.com/sentrei/sentrei/commit/e3c9b1d3314813420bd2d1a457afafb6e1ac0e69))
+
+### Features
+
+- 🎸 add initial props for wrapped components ([c76b20a](https://github.com/sentrei/sentrei/commit/c76b20a325fb6d45642caeb11a4e6c76e39acdb4))
+
 ## [4.56.5](https://github.com/sentrei/sentrei/compare/v4.56.4...v4.56.5) (2020-05-29)
 
 ### Bug Fixes
