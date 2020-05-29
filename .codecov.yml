@@ -3,6 +3,10 @@ coverage:
     project: off
     patch: off
 flags:
+  functions:
+    paths:
+      - packages/functions/src
+    carryforward: true
   mobile:
     paths:
       - packages/mobile/lib

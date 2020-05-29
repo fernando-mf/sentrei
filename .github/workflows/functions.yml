@@ -30,4 +30,5 @@ jobs:
           yarn run typescript
       - working-directory: packages/functions
         run: |
+          yarn run setup
           yarn run test
