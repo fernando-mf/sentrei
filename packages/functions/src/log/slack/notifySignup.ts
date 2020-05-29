@@ -4,7 +4,7 @@ import * as functions from "firebase-functions";
 const url = process.env.SLACK_WEBHOOK_URL;
 const webhook = new IncomingWebhook(url);
 
-const notifyNewSignup = functions.auth.user().onCreate(event => {
+const notifySignup = functions.auth.user().onCreate(event => {
   const user = event.email;
   (async (): Promise<void> => {
     await webhook.send({
@@ -13,4 +13,4 @@ const notifyNewSignup = functions.auth.user().onCreate(event => {
   })();
 });
 
-export default notifyNewSignup;
+export default notifySignup;

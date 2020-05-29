@@ -1,7 +1,6 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable global-require */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import * as admin from "firebase-admin";
 
-import * as Log from "./log";
+admin.initializeApp();
 
-export const log = {...Log};
+export * from "./log/slack";
+export * from "./users";

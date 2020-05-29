@@ -9,8 +9,26 @@
     "rootDir": "src",
     "sourceMap": true,
     "strict": false,
-    "target": "es2017"
+    "target": "es2017",
+    "paths": {
+      "@sentrei/common/*": ["../common/dist/*"],
+      "@sentrei/functions/*": ["src/*"]
+    }
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "**/__tests__/*.ts",
+    "**/__tests__/*.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
+  ],
+  "references": [
+    {
+      "path": "../common"
+    },
+    {
+      "path": "../ui"
+    }
+  ]
 }
