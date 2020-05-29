@@ -7,7 +7,7 @@ resource "github_repository" "sentrei" {
   has_projects = false
   has_wiki     = false
 
-  topics = ["ios", "android", "nextjs", "react", "monorepo", "typescript", "firebase", "webapp", "flutter", "flutter-app", "flutter-ui"]
+  topics = ["ios", "android", "nextjs", "react", "material-ui", "monorepo", "typescript", "firebase", "webapp", "flutter", "flutter-app", "flutter-ui"]
 }
 
 resource "github_branch_protection" "alpha" {
@@ -22,7 +22,7 @@ resource "github_branch_protection" "alpha" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "mobile", "labeler", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "Terraform Cloud/sentrei/sentrei-alpha", "WIP"]
+    contexts = ["auto-approve", "functions", "mobile", "labeler", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "Terraform Cloud/sentrei/sentrei-alpha", "WIP"]
   }
 }
 
@@ -38,13 +38,13 @@ resource "github_branch_protection" "beta" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "mobile", "labeler", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "Terraform Cloud/sentrei/sentrei-beta", "WIP"]
+    contexts = ["auto-approve", "functions", "mobile", "labeler", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "Terraform Cloud/sentrei/sentrei-beta", "WIP"]
   }
 }
 
 resource "github_branch_protection" "master" {
-  repository      = github_repository.sentrei.name
-  branch          = "master"
+  repository     = github_repository.sentrei.name
+  branch         = "master"
   enforce_admins = true
 
   required_pull_request_reviews {
@@ -55,6 +55,6 @@ resource "github_branch_protection" "master" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "mobile", "labeler", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "Terraform Cloud/sentrei/sentrei-master", "WIP"]
+    contexts = ["auto-approve", "functions", "mobile", "labeler", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "Terraform Cloud/sentrei/sentrei-master", "WIP"]
   }
 }
