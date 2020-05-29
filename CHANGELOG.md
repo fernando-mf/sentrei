@@ -1,3 +1,9 @@
+## [4.58.1](https://github.com/sentrei/sentrei/compare/v4.58.0...v4.58.1) (2020-05-29)
+
+### Bug Fixes
+
+- **deps:** bump imagemin-mozjpeg from 8.0.0 to 9.0.0 ([f225be0](https://github.com/sentrei/sentrei/commit/f225be04ae4ed9f2744be98cc435fbaa79b0d677))
+
 # [4.58.0](https://github.com/sentrei/sentrei/compare/v4.57.0...v4.58.0) (2020-05-29)
 
 ### Features
