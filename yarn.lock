@@ -5769,7 +5769,7 @@
   dependencies:
     "@types/lodash" "*"
 
-"@types/lodash@*", "@types/lodash@^4.14.152", "@types/lodash@^4.14.53", "@types/lodash@^4.14.92":
+"@types/lodash@*", "@types/lodash@^4.14.104", "@types/lodash@^4.14.152", "@types/lodash@^4.14.53", "@types/lodash@^4.14.92":
   version "4.14.153"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.153.tgz#5cb7dded0649f1df97938ac5ffc4f134e9e9df98"
   integrity sha512-lYniGRiRfZf2gGAR9cfRC3Pi5+Q1ziJCKqPmjZocigrSJUVPWf7st1BtSJ8JOeK0FLXVndQ1IjUjTco9CXGo/Q==
@@ -14410,6 +14410,14 @@ firebase-admin@8.12.1, firebase-admin@^8.10.0, firebase-admin@^8.12.1:
   optionalDependencies:
     "@google-cloud/firestore" "^3.0.0"
     "@google-cloud/storage" "^4.1.2"
+
+firebase-functions-test@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/firebase-functions-test/-/firebase-functions-test-0.2.1.tgz#cdc23b6c7203d2c80cd79a273493f60fbd9b913b"
+  integrity sha512-+ZaNrDoRVy0ar4NGtrYbqVTsnitL3/Ud5yC7ElZUkX3956j+AzPCcrsCfa+5GJnpnVODXkMKpw9AySFJ/12nvA==
+  dependencies:
+    "@types/lodash" "^4.14.104"
+    lodash "^4.17.5"
 
 firebase-functions@^3.6.1:
   version "3.6.2"

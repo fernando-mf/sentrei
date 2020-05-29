@@ -1,0 +1,33 @@
+name: Functions
+on: pull_request
+jobs:
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.head_ref }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.3.0"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@master
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - run: |
+          yarn run typescript
+      - working-directory: packages/functions
+        run: |
+          yarn run test
