@@ -137,10 +137,4 @@ function Index({t}: any): JSX.Element {
   );
 }
 
-Index.getInitialProps = (): {
-  namespacesRequired: string[];
-} => ({
-  namespacesRequired: ["index"],
-});
-
-export default withUserGuard(withTranslation()(Index));
+export default withUserGuard(withTranslation("index")(Index));
