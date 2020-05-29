@@ -4,7 +4,7 @@ import Head from "next/head";
 import Router from "next/router";
 import React from "react";
 
-import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
+import {useTranslation} from "@sentrei/common/i18n";
 import Footer from "@sentrei/ui/components/Footer";
 import Loader from "@sentrei/ui/components/Loader";
 import Spacing from "@sentrei/ui/components/Spacing";
@@ -159,7 +159,7 @@ Index.getInitialProps = (): {
   namespacesRequired: string[];
 } => {
   return {
-    namespacesRequired: includeDefaultNamespaces(["index"]),
+    namespacesRequired: ["index"],
   };
 };
 
