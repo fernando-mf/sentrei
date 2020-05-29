@@ -35,8 +35,8 @@ function Login(props: any): JSX.Element {
             featuresText={t("headerFeatures")}
             pricingText={t("headerPricing")}
             productText={t("headerProduct")}
-            logInText={t("headerLogIn")}
-            signUpText={t("headerSignUp")}
+            loginText={t("headerLogin")}
+            signupText={t("headerSignup")}
             testimonialText={t("headerTestimonial")}
           />
           <Auth type={authType.login} />;

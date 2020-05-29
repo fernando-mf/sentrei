@@ -19,8 +19,8 @@ function Terms(): JSX.Element {
         featuresText={t("features")}
         pricingText={t("pricing")}
         productText={t("product")}
-        logInText={t("logIn")}
-        signUpText={t("signUp")}
+        loginText={t("login")}
+        signupText={t("signup")}
         testimonialText={t("testimonial")}
       />
       <Container maxWidth="sm">

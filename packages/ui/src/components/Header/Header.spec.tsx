@@ -12,8 +12,8 @@ describe("Header", () => {
         logo={<></>}
         pricingText=""
         productText=""
-        logInText=""
-        signUpText=""
+        loginText=""
+        signupText=""
         spy
         testimonialText=""
       />,

@@ -28,8 +28,8 @@ export default function Header({
   logo,
   pricingText,
   productText,
-  logInText,
-  signUpText,
+  loginText,
+  signupText,
   sign = true,
   spy = true,
   testimonialText,
@@ -164,7 +164,7 @@ export default function Header({
                         variant="outlined"
                         className={classes.margin}
                       >
-                        <Typography>{logInText}</Typography>
+                        <Typography>{loginText}</Typography>
                       </Button>
                     </Link>
                     <Link href="/signup">
@@ -173,7 +173,7 @@ export default function Header({
                         variant="contained"
                         className={classes.margin}
                       >
-                        <Typography>{signUpText}</Typography>
+                        <Typography>{signupText}</Typography>
                       </Button>
                     </Link>
                   </>
