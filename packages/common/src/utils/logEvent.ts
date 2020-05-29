@@ -2,9 +2,11 @@
 import * as firebase from "firebase/app";
 import "firebase/analytics";
 
+const analytics = firebase.analytics();
+
 export default function logEvent(
   eventName: string,
   eventParams?: {[key: string]: any},
 ): void {
-  firebase.analytics().logEvent(eventName, eventParams);
+  analytics.logEvent(eventName, eventParams);
 }
