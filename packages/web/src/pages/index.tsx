@@ -51,7 +51,11 @@ function Index(props: any): JSX.Element {
           />
           <SentreiBanner
             bannerBottom={t("bannerBannerBottom")}
-            bannerText={t("bannerBannerText")}
+            bannerBottomRough={t("bannerBannerBottomRough")}
+            bannerTextOne={t("bannerBannerTextOne")}
+            bannerTextTwo={t("bannerBannerTextTwo")}
+            bannerTextThree={t("bannerBannerTextThree")}
+            bannerTextRough={t("bannerBannerTextRough")}
             bannerTop={t("bannerBannerTop")}
             googleText={t("bannerGoogleText")}
             startText={t("bannerStartText")}

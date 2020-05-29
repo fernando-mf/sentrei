@@ -4,20 +4,22 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
-import {useInView} from "react-intersection-observer";
-
-import {RoughNotation} from "react-rough-notation";
 
 import Props from "@sentrei/common/interfaces/Banner";
 import signInWithGoogle from "@sentrei/common/utils/auth/signInWithGoogle";
 import Link from "@sentrei/ui/components/Link";
+import RoughNotation from "@sentrei/ui/components/RoughNotation";
 import Typical from "@sentrei/ui/components/Typical";
 
 import BannerStyles from "./BannerStyles";
 
 export default function Banner({
   bannerBottom,
-  bannerText,
+  bannerBottomRough,
+  bannerTextOne,
+  bannerTextTwo,
+  bannerTextThree,
+  bannerTextRough,
   bannerTop,
   googleText,
   startText,
@@ -26,7 +28,6 @@ export default function Banner({
   typicalThree,
 }: Props): JSX.Element {
   const classes = BannerStyles();
-  const [ref, inView] = useInView({});
 
   return (
     <Container maxWidth="sm" component="main" className={classes.banner}>
@@ -45,20 +46,62 @@ export default function Banner({
           typicalThree={typicalThree}
         />
         <br />
-        {bannerBottom}
+        {bannerBottom}{" "}
+        <RoughNotation color="primary" type="underline">
+          <Typography
+            component="h1"
+            variant="h2"
+            align="center"
+            color="textPrimary"
+            gutterBottom
+            display="inline"
+          >
+            {bannerBottomRough}
+          </Typography>
+        </RoughNotation>
       </Typography>
-      <RoughNotation type="underline">
-        <Typography>asdfasdf</Typography>
-      </RoughNotation>
+      <Box p={1} />
       <Typography
         variant="h5"
         align="center"
         color="textSecondary"
-        component="p"
-        gutterBottom
         className={classes.text}
       >
-        {bannerText}
+        {bannerTextOne}
+      </Typography>
+      <Typography
+        variant="h5"
+        align="center"
+        color="textSecondary"
+        className={classes.text}
+      >
+        {bannerTextTwo}{" "}
+        <RoughNotation
+          animationDelay={1000}
+          animationDuration={3000}
+          color="primary"
+          type="circle"
+        >
+          <Typography
+            variant="h5"
+            align="center"
+            color="textSecondary"
+            display="inline"
+            className={classes.text}
+          >
+            {bannerTextRough}
+          </Typography>
+        </RoughNotation>
+      </Typography>
+      <Typography
+        variant="subtitle1"
+        align="center"
+        color="textSecondary"
+        component="p"
+        noWrap
+        className={classes.text}
+      >
+        {bannerTextThree}
       </Typography>
       <Box pt={3} />
       <Grid container justify="center" direction="row" spacing={1}>

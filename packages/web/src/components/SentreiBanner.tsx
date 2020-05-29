@@ -6,7 +6,11 @@ import Banner from "@sentrei/ui/components/Banner";
 
 export default function SentreiBanner({
   bannerBottom,
-  bannerText,
+  bannerBottomRough,
+  bannerTextOne,
+  bannerTextTwo,
+  bannerTextThree,
+  bannerTextRough,
   bannerTop,
   googleText,
   startText,
@@ -19,7 +23,11 @@ export default function SentreiBanner({
       <Banner
         key={i18n.language}
         bannerBottom={bannerBottom}
-        bannerText={bannerText}
+        bannerBottomRough={bannerBottomRough}
+        bannerTextOne={bannerTextOne}
+        bannerTextTwo={bannerTextTwo}
+        bannerTextThree={bannerTextThree}
+        bannerTextRough={bannerTextRough}
         bannerTop={bannerTop}
         googleText={googleText}
         startText={startText}
