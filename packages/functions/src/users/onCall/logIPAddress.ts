@@ -2,7 +2,7 @@
 import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
-import adminDB from "@sentrei/common/utils/adminDB";
+const db = admin.firestore();
 
 const logIPAddress = functions.https.onCall(async (_, context) => {
   const uid = context.auth?.uid;
@@ -20,7 +20,7 @@ const logIPAddress = functions.https.onCall(async (_, context) => {
     ips,
     visited: admin.firestore.FieldValue.serverTimestamp(),
   };
-  const ref = await adminDB.collection(`users/${uid}/ipAddress`).add(reqData);
+  const ref = await db.collection(`users/${uid}/ipAddress`).add(reqData);
 
   return {id: ref.id};
 });

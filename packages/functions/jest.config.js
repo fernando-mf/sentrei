@@ -6,17 +6,13 @@ module.exports = {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-  testPathIgnorePatterns: [
-    "<rootDir>/.next/",
-    "<rootDir>/node_modules/",
-    "<rootDir>/src/__tests__/setupTests.ts",
-  ],
-  moduleFileExtensions: ["js", "ts"],
+  testPathIgnorePatterns: ["<rootDir>/node_modules/"],
+  automock: true,
+  moduleFileExtensions: ["js", "json", "ts"],
   moduleNameMapper: {
     "@sentrei/common/(.*)": "<rootDir>/../common/src/$1",
-    "@sentrei/ui/(.*)": "<rootDir>/src/$1",
+    "@sentrei/functions/(.*)": "<rootDir>/src/$1",
   },
-  setupFiles: ["<rootDir>/src/__tests__/setupTests.ts"],
   collectCoverage: true,
   verbose: true,
   collectCoverageFrom: [
