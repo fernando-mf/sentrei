@@ -23,7 +23,7 @@
     "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
     "deploy:functions": "firebase deploy --only functions --token ${FIREBASE_TOKEN}",
     "deploy:rules": "firebase deploy --only firestore:rules --token ${FIREBASE_TOKEN}",
-    "deploy:staging-functions": "firebase deploy --only functions --token ${FIREBASE_TOKEN}",
+    "deploy:staging-functions": "firebase deploy --only functions:staging --token ${FIREBASE_TOKEN}",
     "env:get": "firebase functions:config:get",
     "env:set": "test -f env.json && firebase functions:config:unset env && firebase functions:config:set env=\"$(cat env.json)\"",
     "log": "firebase functions:log",
