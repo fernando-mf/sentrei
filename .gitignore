@@ -56,10 +56,7 @@
 **/blog/public
 
 # Functions related.
-**/functions/**/functions-admin-alpha.json
-**/functions/**/functions-admin-beta.json
-**/functions/**/functions-admin-master.json
-
+**/functions/env.json
 **/functions/firebase.json
 
 # Mobile related.

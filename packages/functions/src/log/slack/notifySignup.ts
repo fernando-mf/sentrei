@@ -1,8 +1,9 @@
 import {IncomingWebhook} from "@slack/webhook";
 import * as functions from "firebase-functions";
 
-const url = process.env.SLACK_WEBHOOK_URL;
-const webhook = new IncomingWebhook(url);
+const config = functions.config().env;
+
+const webhook = new IncomingWebhook(config.slack.url);
 
 const notifySignup = functions.auth.user().onCreate(event => {
   const user = event.email;
