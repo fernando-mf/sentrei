@@ -1,3 +1,10 @@
+## [4.63.7](https://github.com/sentrei/sentrei/compare/v4.63.6...v4.63.7) (2020-05-30)
+
+### Bug Fixes
+
+- 🐛 add functions gha ([b2c1e5b](https://github.com/sentrei/sentrei/commit/b2c1e5b79c07d4d5ce0468e85ec802ccadc38b87))
+- **deps:** bump gatsby from 2.22.11 to 2.22.13 ([f3f20e7](https://github.com/sentrei/sentrei/commit/f3f20e79886443552669a13112a8fec1b5d1b106))
+
 ## [4.63.6](https://github.com/sentrei/sentrei/compare/v4.63.5...v4.63.6) (2020-05-30)
 
 ### Bug Fixes
