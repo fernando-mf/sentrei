@@ -1,3 +1,9 @@
+## [4.63.4](https://github.com/sentrei/sentrei/compare/v4.63.3...v4.63.4) (2020-05-30)
+
+### Bug Fixes
+
+- 🐛 add env functions ([d6c2a80](https://github.com/sentrei/sentrei/commit/d6c2a8008288f68f5a1726f0494c39e5b70007a9))
+
 ## [4.63.3](https://github.com/sentrei/sentrei/compare/v4.63.2...v4.63.3) (2020-05-30)
 
 ### Bug Fixes
