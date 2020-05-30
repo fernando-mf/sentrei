@@ -1,3 +1,21 @@
+## [4.63.3](https://github.com/sentrei/sentrei/compare/v4.63.2...v4.63.3) (2020-05-30)
+
+### Bug Fixes
+
+- **deps:** bump clsx from 1.1.0 to 1.1.1 ([44ccb01](https://github.com/sentrei/sentrei/commit/44ccb015a94e771572c990c4285e2b8e318f3f73))
+
+## [4.63.2](https://github.com/sentrei/sentrei/compare/v4.63.1...v4.63.2) (2020-05-30)
+
+### Bug Fixes
+
+- **deps:** bump @types/yup from 0.29.0 to 0.29.1 ([9b4c911](https://github.com/sentrei/sentrei/commit/9b4c9114cc19acb4f8571398e74d0d3ee413733c))
+
+## [4.63.1](https://github.com/sentrei/sentrei/compare/v4.63.0...v4.63.1) (2020-05-30)
+
+### Bug Fixes
+
+- **deps:** bump react-rough-notation from 0.0.5 to 0.0.6 ([061f975](https://github.com/sentrei/sentrei/commit/061f975d49f04e8ccfe1403cc36f0657b0958ca6))
+
 # [4.62.0](https://github.com/sentrei/sentrei/compare/v4.61.0...v4.62.0) (2020-05-29)
 
 ### Features
