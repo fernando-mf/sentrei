@@ -609,6 +609,7 @@ jobs:
           echo "::set-output name=version::${version}"
       - working-directory: packages/web
         run: |
+          echo '::add-mask::${{ steps.secrets.outputs.WEB_ENV }}'
           echo '${{ steps.secrets.outputs.WEB_ENV }}' > .env
       - working-directory: packages/web
         run: |
