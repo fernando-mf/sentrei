@@ -62,7 +62,7 @@ test("commit all changes to the database", async done => {
   const wrapped = testEnv.wrap(setupProfile);
   const req = await wrapped({email: "test@test.com", uid: "testUID"});
 
-  expect(setSpy).toHaveBeenCalledTimes(3);
+  expect(setSpy).toHaveBeenCalledTimes(2);
   expect(req).toBe(true);
   done();
 });

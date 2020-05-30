@@ -12,7 +12,6 @@ const setupProfile = functions.auth.user().onCreate(async user => {
   const batch = db.batch();
 
   const userInfo = {
-    bio: null,
     name: user.displayName || getNameFromEmail(user.email || user.uid),
     username: user.uid,
   };
