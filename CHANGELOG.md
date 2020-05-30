@@ -1,3 +1,9 @@
+## [4.63.8](https://github.com/sentrei/sentrei/compare/v4.63.7...v4.63.8) (2020-05-30)
+
+### Bug Fixes
+
+- **deps:** bump @types/lodash from 4.14.153 to 4.14.154 ([17d80ad](https://github.com/sentrei/sentrei/commit/17d80ade9c5f1f29fb7a662a9b658d1d1f091729))
+
 ## [4.63.7](https://github.com/sentrei/sentrei/compare/v4.63.6...v4.63.7) (2020-05-30)
 
 ### Bug Fixes
