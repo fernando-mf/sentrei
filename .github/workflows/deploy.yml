@@ -313,6 +313,16 @@ jobs:
           yarn install --frozen-lockfile
       - run: |
           yarn run typescript
+      - id: secrets
+        uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
+        with:
+          credentials: ${{ secrets.GCP_CREDENTIALS }}
+          secrets: |-
+            FUNCTIONS_ENV:sentrei-master/functions_${{ github.event.client_payload.base }}_env
+      - working-directory: packages/functions
+        run: |
+          echo '::add-mask::${{ steps.secrets.outputs.FUNCTIONS_ENV }}'
+          echo '${{ steps.secrets.outputs.FUNCTIONS_ENV }}' > env.json
       - working-directory: packages/functions
         run: |
           yarn run ${{ github.event.client_payload.task }}
