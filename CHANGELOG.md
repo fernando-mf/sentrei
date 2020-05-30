@@ -1,3 +1,9 @@
+## [4.64.1](https://github.com/sentrei/sentrei/compare/v4.64.0...v4.64.1) (2020-05-30)
+
+### Bug Fixes
+
+- **deps:** bump react-rough-notation from 0.0.6 to 0.0.7 ([3db8373](https://github.com/sentrei/sentrei/commit/3db8373162d43284ee3dab9747bf1f51ba947ae6))
+
 # [4.64.0](https://github.com/sentrei/sentrei/compare/v4.63.8...v4.64.0) (2020-05-30)
 
 ### Features
