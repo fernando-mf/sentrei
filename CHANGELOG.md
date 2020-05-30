@@ -1,3 +1,9 @@
+## [4.63.2](https://github.com/sentrei/sentrei/compare/v4.63.1...v4.63.2) (2020-05-30)
+
+### Bug Fixes
+
+- **deps:** bump @types/yup from 0.29.0 to 0.29.1 ([9b4c911](https://github.com/sentrei/sentrei/commit/9b4c9114cc19acb4f8571398e74d0d3ee413733c))
+
 ## [4.63.1](https://github.com/sentrei/sentrei/compare/v4.63.0...v4.63.1) (2020-05-30)
 
 ### Bug Fixes
