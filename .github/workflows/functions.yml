@@ -1,5 +1,9 @@
 name: Functions
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - "packages/common/**"
+      - "packages/functions/**"
 jobs:
   functions:
     runs-on: ubuntu-latest
