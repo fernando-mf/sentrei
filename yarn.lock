@@ -27630,10 +27630,10 @@ react-resize-detector@^2.3.0:
     prop-types "^15.6.0"
     resize-observer-polyfill "^1.5.0"
 
-react-rough-notation@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/react-rough-notation/-/react-rough-notation-0.0.6.tgz#59f1a28e31ca5b336c7465f3bd696f966e1f5282"
-  integrity sha512-RPV0mdnCPWNDzvgulGmZsSSLFuvI4mY4LhV/sY4Rltab2Z2pdLwb6652sAkI1tnx7sJxqH6UiGMVkHHGtgEndg==
+react-rough-notation@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/react-rough-notation/-/react-rough-notation-0.0.7.tgz#e1736655975bab52534e8dd7ee719d0d95652e86"
+  integrity sha512-qtq7L3dUYG0WvcCUVdZK7fgrciMksMwW+o3KRLRMxqgTemWdhYUcSQTIaCpdhX9uCPgaSz1MqPHNkDjRx55ObQ==
   dependencies:
     rough-notation "^0.2.0"
 
