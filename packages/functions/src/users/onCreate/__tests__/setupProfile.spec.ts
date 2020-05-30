@@ -1,0 +1,68 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import * as admin from "firebase-admin";
+import functions from "firebase-functions-test";
+import {when} from "jest-when";
+
+import setupProfile from "../setupProfile";
+
+const testEnv = functions();
+
+const db = admin.firestore();
+
+beforeAll(() => {
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  when(db.doc as any)
+    .calledWith("users/testUID")
+    .mockReturnValue({path: "users/testUID"})
+    .calledWith("profile/testUID")
+    .mockReturnValue({path: "profile/testUID"});
+});
+
+test("add the user info to their settings", async done => {
+  const spy = spyOn(db.batch(), "set");
+  const ref = db.doc("users/testUID");
+
+  const wrapped = testEnv.wrap(setupProfile);
+  await wrapped({email: "test@test.com", uid: "testUID"});
+
+  const userInfo = {
+    name: "test",
+    role: "viewer",
+    username: "testUID",
+  };
+
+  expect(spy).toHaveBeenCalledWith(ref, userInfo, {merge: true});
+  done();
+});
+
+test("add the user info to their profile", async done => {
+  const spy = spyOn(db.batch(), "set");
+  const ref = db.doc("profile/testUID");
+
+  const wrapped = testEnv.wrap(setupProfile);
+  await wrapped({
+    displayName: "user name",
+    email: "test@test.com",
+    uid: "testUID",
+  });
+
+  const userInfo = {
+    name: "user name",
+    username: "testUID",
+  };
+
+  expect(spy).toHaveBeenCalledWith(ref, userInfo, {merge: true});
+  done();
+});
+
+test("commit all changes to the database", async done => {
+  const setSpy = spyOn(db.batch(), "set");
+  spyOn(db.batch(), "commit").and.returnValue(true);
+
+  const wrapped = testEnv.wrap(setupProfile);
+  const req = await wrapped({email: "test@test.com", uid: "testUID"});
+
+  expect(setSpy).toHaveBeenCalledTimes(2);
+  expect(req).toBe(true);
+  done();
+});
