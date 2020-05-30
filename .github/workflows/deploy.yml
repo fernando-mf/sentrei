@@ -318,7 +318,7 @@ jobs:
         with:
           credentials: ${{ secrets.GCP_CREDENTIALS }}
           secrets: |-
-            FUNCTIONS_ENV:sentrei-master/functions_${{ matrix.branch }}_env
+            FUNCTIONS_ENV:sentrei-master/functions_${{ github.event.client_payload.base }}_env
       - working-directory: packages/functions
         run: |
           echo '::add-mask::${{ steps.secrets.outputs.FUNCTIONS_ENV }}'
