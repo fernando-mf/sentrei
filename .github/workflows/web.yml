@@ -40,6 +40,7 @@ jobs:
             WEB_ENV:sentrei-master/web_${{ github.event.pull_request.base.ref }}_env
       - working-directory: packages/web
         run: |
+          echo '::add-mask::${{ steps.secrets.outputs.WEB_ENV }}'
           echo '${{ steps.secrets.outputs.WEB_ENV }}' > .env
       - working-directory: packages/web
         run: |
