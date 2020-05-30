@@ -23,7 +23,7 @@
   {
     "command": "env",
     "permission": "admin",
-    "issue_type": "pull-request",
+    "issue_type": "both",
     "allow_edits": true,
     "event_type_suffix": "-cmd"
   },
