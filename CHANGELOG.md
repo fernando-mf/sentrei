@@ -1,3 +1,9 @@
+## [4.63.3](https://github.com/sentrei/sentrei/compare/v4.63.2...v4.63.3) (2020-05-30)
+
+### Bug Fixes
+
+- **deps:** bump clsx from 1.1.0 to 1.1.1 ([44ccb01](https://github.com/sentrei/sentrei/commit/44ccb015a94e771572c990c4285e2b8e318f3f73))
+
 ## [4.63.2](https://github.com/sentrei/sentrei/compare/v4.63.1...v4.63.2) (2020-05-30)
 
 ### Bug Fixes
