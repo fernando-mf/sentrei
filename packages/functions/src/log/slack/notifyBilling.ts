@@ -4,7 +4,7 @@ import * as functions from "firebase-functions";
 
 const config = functions.config().env;
 
-const webhook = new IncomingWebhook(config.slack.url);
+const webhook = new IncomingWebhook(config.slack.notifyBilling);
 
 const eventToBilling = (data: any): JSON => {
   return JSON.parse(Buffer.from(data, "base64").toString());
@@ -12,12 +12,13 @@ const eventToBilling = (data: any): JSON => {
 
 const createSlackMessage = (
   pubsubMessage: any,
+  context: any,
 ): {
   text: string;
   mrkdwn: boolean;
 } => {
   const message = {
-    text: `CostAmount: ${pubsubMessage.costAmount}`,
+    text: `Time: ${context.timestamp}\nProjectName: ${pubsubMessage.budgetDisplayName}\nCostAmount: ${pubsubMessage.costAmount}`,
     mrkdwn: true,
   };
   return message;
@@ -25,13 +26,14 @@ const createSlackMessage = (
 
 const notifyBilling = functions.pubsub
   .topic(`sentrei-${config.environment}-billing`)
-  .onPublish(event => {
-    const pubSubMessage = createSlackMessage(eventToBilling(event.data));
+  .onPublish((event, context) => {
+    const pubSubMessage = createSlackMessage(
+      eventToBilling(event.data),
+      context,
+    );
     (async (): Promise<void> => {
       await webhook.send(pubSubMessage);
     })();
-    // eslint-disable-next-line no-console
-    console.log(event.data);
   });
 
 export default notifyBilling;

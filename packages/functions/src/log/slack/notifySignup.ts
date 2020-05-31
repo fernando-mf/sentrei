@@ -3,13 +3,13 @@ import * as functions from "firebase-functions";
 
 const config = functions.config().env;
 
-const webhook = new IncomingWebhook(config.slack.url);
+const webhook = new IncomingWebhook(config.slack.notifySignup);
 
 const notifySignup = functions.auth.user().onCreate(event => {
   const user = event.email;
   (async (): Promise<void> => {
     await webhook.send({
-      text: `New Signup from ${user}`,
+      text: `Environment: ${config.environment}\nNew Signup from ${user}`,
     });
   })();
 });
