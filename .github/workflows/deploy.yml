@@ -143,6 +143,76 @@ jobs:
               repo: context.repo.repo,
               name: ['packages/design'],
             })
+  docs:
+    if: github.event.client_payload.event_name == 'docs'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}docs.sentrei.com
+          environment: "Docs ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.3.0"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@master
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - working-directory: packages/docs
+        run: |
+          yarn run ${{ github.event.client_payload.task }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}docs.sentrei.com
+      - if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}docs.sentrei.com
+      - if: github.event.client_payload.environment == 'staging'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ github.event.client_payload.comment_id }}
+          reaction-type: hooray
+      - if: github.event.client_payload.environment == 'staging'
+        uses: actions/github-script@v1
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          script: |
+            github.issues.removeLabel({
+              issue_number: ${{ github.event.client_payload.pull_request_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: ['packages/docs'],
+            })
   fastlane:
     if: github.event.client_payload.event_name == 'fastlane'
     runs-on: macos-latest
