@@ -80,14 +80,24 @@ function Index(props: any): JSX.Element {
           <div id="product">
             <SentreiProduct
               connectSubTitle={t("productConnectSubTitle")}
-              connectTitle={t("productConnectTitle")}
+              connectTitleOne={t("productConnectTitleOne")}
+              connectTitleTwo={t("productConnectTitleTwo")}
+              connectTitleThree={t("productConnectTitleThree")}
               dataSubTitle={t("productDataSubTitle")}
-              dataTitle={t("productDataTitle")}
+              dataTitleOne={t("productDataTitleOne")}
+              dataTitleTwo={t("productDataTitleTwo")}
+              dataTitleThree={t("productDataTitleThree")}
               videoSubTitle={t("productVideoSubTitle")}
-              videoTitle={t("productVideoTitle")}
+              videoTitleOne={t("productVideoTitleOne")}
+              videoTitleTwo={t("productVideoTitleTwo")}
+              videoTitleThree={t("productVideoTitleThree")}
             />
           </div>
-          <SentreiSlider sectionTitle={t("sliderSectionTitle")} />
+          <SentreiSlider
+            sectionTitleOne={t("sliderSectionTitleOne")}
+            sectionTitleTwo={t("sliderSectionTitleTwo")}
+            sectionTitleThree={t("sliderSectionTitleThree")}
+          />
           <Spacing />
           <div id="feature">
             <SentreiFeature

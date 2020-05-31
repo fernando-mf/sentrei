@@ -1,23 +1,26 @@
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import {Breakpoint} from "@material-ui/core/styles/createBreakpoints";
 import Typography from "@material-ui/core/Typography";
 import withWidth, {isWidthUp, isWidthDown} from "@material-ui/core/withWidth";
 import React from "react";
 
 import Tilt from "react-parallax-tilt";
 
+import Props from "@sentrei/common/interfaces/ProductCard";
+import RoughNotation from "@sentrei/ui/components/RoughNotation";
+
 import ProductStyles from "./ProductCardStyles";
 
-interface Props {
-  left: boolean;
-  img: JSX.Element;
-  subTitle: string;
-  title: string;
-  width: Breakpoint;
-}
-
-function ProductCard({left, img, subTitle, title, width}: Props): JSX.Element {
+function ProductCard({
+  left,
+  img,
+  subTitle,
+  titleOne,
+  titleTwo,
+  titleThree,
+  type,
+  width,
+}: Props): JSX.Element {
   const classes = ProductStyles();
 
   const Picture = (
@@ -48,7 +51,9 @@ function ProductCard({left, img, subTitle, title, width}: Props): JSX.Element {
           color="textPrimary"
           gutterBottom
         >
-          {title}
+          {titleOne}
+          <RoughNotation color="primary" text={titleTwo} type={type} />
+          {titleThree}
         </Typography>
         <Typography
           component="p"
