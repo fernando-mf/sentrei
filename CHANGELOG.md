@@ -1,3 +1,9 @@
+## [4.68.1](https://github.com/sentrei/sentrei/compare/v4.68.0...v4.68.1) (2020-05-31)
+
+### Bug Fixes
+
+- 🐛 add notify billing ([d1f4338](https://github.com/sentrei/sentrei/commit/d1f433867e4b2e26efea753892ea204558056ffe))
+
 ## [4.67.5](https://github.com/sentrei/sentrei/compare/v4.67.4...v4.67.5) (2020-05-31)
 
 ### Bug Fixes
