@@ -8,30 +8,30 @@
     "sentrei-alpha": {
       "hosting": {
         "web": [
-          "sentrei-alpha-web"
+          "sentrei-alpha"
         ],
         "staging-web": [
-          "sentrei-staging-alpha-web"
+          "sentrei-staging-alpha"
         ]
       }
     },
     "sentrei-beta": {
       "hosting": {
         "web": [
-          "sentrei-beta-web"
+          "sentrei-beta"
         ],
         "staging-web": [
-          "sentrei-staging-beta-web"
+          "sentrei-staging-beta"
         ]
       }
     },
     "sentrei-master": {
       "hosting": {
         "web": [
-          "sentrei-master-web"
+          "sentrei-master"
         ],
         "staging-web": [
-          "sentrei-staging-master-web"
+          "sentrei-staging-master"
         ]
       }
     }
