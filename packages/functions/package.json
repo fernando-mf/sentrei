@@ -62,8 +62,8 @@
     "jest": "^26.0.1",
     "jest-when": "^2.7.2",
     "rimraf": "^3.0.2",
-    "tscpaths": "^0.0.9",
     "ts-jest": "26.1.0",
+    "tscpaths": "^0.0.9",
     "tslint": "^6.1.1",
     "typescript": "^3.8.3"
   },
