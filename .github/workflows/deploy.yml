@@ -6,7 +6,6 @@ jobs:
   blog:
     if: github.event.client_payload.event_name == 'blog'
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -76,7 +75,6 @@ jobs:
   dartdoc:
     if: github.event.client_payload.event_name == 'dartdoc'
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -110,11 +108,11 @@ jobs:
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
-      - working-directory: packages/dartdoc
+      - working-directory: packages/mobile
         run: |
           flutter pub global activate dartdoc
           flutter pub global run dartdoc:dartdoc --exclude 'dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart:ui,dart:ffi,dart:html,dart:js,dart:js_util'
-      - working-directory: packages/dartdoc
+      - working-directory: packages/mobile
         run: |
           yarn run ${{ github.event.client_payload.task }}
         env:
@@ -154,7 +152,6 @@ jobs:
   design:
     if: github.event.client_payload.event_name == 'design'
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -384,7 +381,6 @@ jobs:
   functions:
     if: github.event.client_payload.event_name == 'functions'
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -463,7 +459,6 @@ jobs:
   pioneer:
     if: github.event.client_payload.event_name == 'pioneer'
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -533,7 +528,6 @@ jobs:
   typedoc:
     if: github.event.client_payload.event_name == 'typedoc'
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -603,7 +597,6 @@ jobs:
   ui:
     if: github.event.client_payload.event_name == 'ui'
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment
@@ -673,7 +666,6 @@ jobs:
   web:
     if: github.event.client_payload.event_name == 'web'
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: chrnorm/deployment-action@releases/v1
         id: deployment

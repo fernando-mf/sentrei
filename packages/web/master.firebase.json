@@ -39,7 +39,7 @@
         {
           "source": "**",
           "run": {
-            "serviceId": "sentrei-master",
+            "serviceId": "sentrei-master-web",
             "region": "us-central1"
           }
         }
@@ -54,7 +54,7 @@
         {
           "source": "**",
           "run": {
-            "serviceId": "sentrei-staging-master",
+            "serviceId": "sentrei-staging-master-web",
             "region": "us-central1"
           }
         }
