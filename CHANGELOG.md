@@ -1,3 +1,9 @@
+## [4.65.2](https://github.com/sentrei/sentrei/compare/v4.65.1...v4.65.2) (2020-05-31)
+
+### Bug Fixes
+
+- 🐛 add fastlane platform ([b63038b](https://github.com/sentrei/sentrei/commit/b63038baefa92539fb38883c807859a2b1145fd4))
+
 # [4.65.0](https://github.com/sentrei/sentrei/compare/v4.64.2...v4.65.0) (2020-05-31)
 
 ### Features
