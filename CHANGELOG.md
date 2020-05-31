@@ -1,3 +1,9 @@
+## [4.67.5](https://github.com/sentrei/sentrei/compare/v4.67.4...v4.67.5) (2020-05-31)
+
+### Bug Fixes
+
+- 🐛 json parse pubsub ([2114157](https://github.com/sentrei/sentrei/commit/2114157453cfb2b2ebe8aedf48dff46160e79587))
+
 ## [4.67.4](https://github.com/sentrei/sentrei/compare/v4.67.3...v4.67.4) (2020-05-31)
 
 ### Bug Fixes
