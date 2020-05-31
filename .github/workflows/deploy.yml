@@ -541,7 +541,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.event.client_payload.branch }}
           target_url: https://${{ github.event.client_payload.url_prefix }}typedoc.sentrei.com
-          environment: "typedoc ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+          environment: "Typedoc ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
