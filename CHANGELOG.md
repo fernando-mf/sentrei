@@ -1,3 +1,9 @@
+## [4.67.3](https://github.com/sentrei/sentrei/compare/v4.67.2...v4.67.3) (2020-05-31)
+
+### Bug Fixes
+
+- 🐛 remove staging functions ([7d0ac57](https://github.com/sentrei/sentrei/commit/7d0ac57139fbbf174d261ecdf46726d181a8345d))
+
 ## [4.67.2](https://github.com/sentrei/sentrei/compare/v4.67.1...v4.67.2) (2020-05-31)
 
 ### Bug Fixes
