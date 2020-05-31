@@ -1,3 +1,9 @@
+## [4.69.1](https://github.com/sentrei/sentrei/compare/v4.69.0...v4.69.1) (2020-05-31)
+
+### Bug Fixes
+
+- 🐛 add tscpaths ([e2152be](https://github.com/sentrei/sentrei/commit/e2152be2caf7f13948b6b1dd951f913730115fd0))
+
 # [4.69.0](https://github.com/sentrei/sentrei/compare/v4.68.4...v4.69.0) (2020-05-31)
 
 ### Features
