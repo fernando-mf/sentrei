@@ -58,11 +58,11 @@
 ### Web 🌐
 
 <!-- prettier-ignore-start -->
-| Version | Web |
-| ------- | --- |
-| alpha | https://alpha.sentrei.com |
-| beta | https://beta.sentrei.com |
-| master | https://sentrei.com |
+| Version | Web | Docs |
+| ------- | --- | ---- |
+| alpha | https://alpha.sentrei.com | https://alpha.docs.sentrei.com |
+| beta | https://beta.sentrei.com | https://beta.docs.sentrei.com |
+| master | https://sentrei.com | https://docs.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ## Contributors ✨
