@@ -1,3 +1,9 @@
+## [4.69.3](https://github.com/sentrei/sentrei/compare/v4.69.2...v4.69.3) (2020-05-31)
+
+### Bug Fixes
+
+- 🐛 add three env ([0be50d9](https://github.com/sentrei/sentrei/commit/0be50d9a50a1ba6fe405496a16705cb30c841011))
+
 ## [4.69.2](https://github.com/sentrei/sentrei/compare/v4.69.1...v4.69.2) (2020-05-31)
 
 ### Bug Fixes
