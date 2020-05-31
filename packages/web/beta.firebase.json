@@ -10,7 +10,7 @@
         {
           "source": "**",
           "run": {
-            "serviceId": "sentrei-beta",
+            "serviceId": "sentrei-beta-web",
             "region": "us-central1"
           }
         }
@@ -54,7 +54,7 @@
         {
           "source": "**",
           "run": {
-            "serviceId": "sentrei-staging-beta",
+            "serviceId": "sentrei-staging-beta-web",
             "region": "us-central1"
           }
         }
