@@ -13,8 +13,8 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.event.client_payload.branch }}
-          environment: "Blog ${{ github.event.client_payload.environment }}"
           target_url: https://${{ github.event.client_payload.url_prefix }}blog.sentrei.com
+          environment: "Blog ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
@@ -45,16 +45,16 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}blog.sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}blog.sentrei.com
       - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}blog.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}blog.sentrei.com
       - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
@@ -83,8 +83,8 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.event.client_payload.branch }}
-          environment: "Design ${{ github.event.client_payload.environment }}"
           target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
+          environment: "Design ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
@@ -115,16 +115,16 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
       - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}design.sentrei.com
       - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
@@ -154,6 +154,12 @@ jobs:
       matrix:
         platform: [android, ios]
     steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          environment: "Fastlane ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -267,6 +273,18 @@ jobs:
           asset_path: packages/mobile/ios/build/Runner/${{ github.event.client_payload.base }}.ipa
           asset_name: ${{ github.event.client_payload.base }}.ipa
           asset_content_type: application/octet-stream
+      - if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
@@ -290,6 +308,12 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          environment: "Design ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
@@ -328,6 +352,18 @@ jobs:
           yarn run ${{ github.event.client_payload.task }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
@@ -356,8 +392,8 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.event.client_payload.branch }}
-          environment: "Mobile ${{ github.event.client_payload.environment }}"
           target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
+          environment: "Mobile ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
@@ -396,16 +432,16 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
       - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
       - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
@@ -434,8 +470,8 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.event.client_payload.branch }}
-          environment: "Pioneer ${{ github.event.client_payload.environment }}"
           target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
+          environment: "Pioneer ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
@@ -466,16 +502,16 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
       - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}pioneer.sentrei.com
       - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
@@ -504,8 +540,8 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.event.client_payload.branch }}
-          environment: "UI ${{ github.event.client_payload.environment }}"
           target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
+          environment: "UI ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
@@ -536,16 +572,16 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
       - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          tar get_url: https://${{ github.event.client_payload.url_prefix }}ui.sentrei.com
       - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
@@ -574,8 +610,8 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.event.client_payload.branch }}
-          environment: "Web ${{ github.event.client_payload.environment }}"
           target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
+          environment: "Web ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
@@ -676,16 +712,16 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
       - if: failure()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}sentrei.com
       - if: github.event.client_payload.environment == 'staging'
         uses: peter-evans/create-or-update-comment@v1
         with:
