@@ -10,10 +10,10 @@
   "license": "MIT",
   "author": "Shun Kakinoki",
   "scripts": {
-    "docs": "firebase use master && yarn run deploy:docs",
     "build": "typedoc",
     "deploy:docs": "firebase deploy --only hosting:docs --token ${FIREBASE_TOKEN}",
     "deploy:staging-docs": "firebase deploy --only hosting:staging-docs --token ${FIREBASE_TOKEN}",
+    "docs": "firebase use master && yarn run deploy:docs",
     "staging:docs": "firebase use master && yarn run deploy:staging-docs"
   },
   "dependencies": {
