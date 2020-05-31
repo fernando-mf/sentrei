@@ -10,11 +10,18 @@
   "license": "MIT",
   "author": "Shun Kakinoki",
   "scripts": {
+    "alpha": "yarn run swap:alpha && firebase use alpha && yarn run deploy:docs",
+    "beta": "yarn run swap:beta && firebase use beta && yarn run deploy:docs",
     "build": "typedoc",
     "deploy:docs": "firebase deploy --only hosting:docs --token ${FIREBASE_TOKEN}",
     "deploy:staging-docs": "firebase deploy --only hosting:staging-docs --token ${FIREBASE_TOKEN}",
-    "docs": "firebase use master && yarn run deploy:docs",
-    "staging:docs": "firebase use master && yarn run deploy:staging-docs"
+    "master": "yarn run swap:master && firebase use master && yarn run deploy:docs",
+    "staging:alpha": "yarn run swap:alpha && firebase use alpha && yarn run deploy:staging-docs",
+    "staging:beta": "yarn run swap:beta && firebase use beta && yarn run deploy:staging-docs",
+    "staging:master": "yarn run swap:master && firebase use master && yarn run deploy:staging-docs",
+    "swap:alpha": "cp alpha.firebase.json firebase.json",
+    "swap:beta": "cp beta.firebase.json firebase.json",
+    "swap:master": "cp master.firebase.json firebase.json"
   },
   "dependencies": {
     "typedoc": "^0.17.7"
