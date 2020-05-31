@@ -1,3 +1,9 @@
+## [4.67.2](https://github.com/sentrei/sentrei/compare/v4.67.1...v4.67.2) (2020-05-31)
+
+### Bug Fixes
+
+- **deps:** bump @welldone-software/why-did-you-render ([40ac4bf](https://github.com/sentrei/sentrei/commit/40ac4bf0ceba075d6d09189e748a7657f8baf5c9))
+
 # [4.66.0](https://github.com/sentrei/sentrei/compare/v4.65.2...v4.66.0) (2020-05-31)
 
 ### Features
