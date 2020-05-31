@@ -62,7 +62,7 @@
 | ------- | --- | ---- |
 | alpha | https://alpha.sentrei.com | https://alpha.docs.sentrei.com |
 | beta | https://beta.sentrei.com | https://beta.docs.sentrei.com |
-| master | https://sentrei.com | https://docs.sentrei.com |
+| master | https://sentrei.com | https://master.docs.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ## Contributors ✨
