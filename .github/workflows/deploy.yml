@@ -159,7 +159,7 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.event.client_payload.branch }}
-          environment: "Fastlane ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+          environment: "Fastlane ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }} ${{ matrix.platform }}"
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
