@@ -1,5 +1,11 @@
 name: Yarn
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - "**.json"
+      - "**.md"
+      - "**.yml"
+      - "packages/**"
 jobs:
   yarn:
     runs-on: ubuntu-latest

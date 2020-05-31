@@ -2,6 +2,9 @@ name: Functions
 on:
   pull_request:
     paths:
+      - "package.json"
+      - "tsconfig.json"
+      - "yarn.lock"
       - "packages/common/**"
       - "packages/functions/**"
 jobs:
