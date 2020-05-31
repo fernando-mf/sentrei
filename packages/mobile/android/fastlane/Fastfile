@@ -52,20 +52,20 @@ platform :android do
       release_notes: ENV["GITHUB_RUN_NUMBER"],
       apk_path: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
     )
-    firebase_test_lab_android(
-      project_id: "sentrei-alpha",
-      gcloud_service_key_file: "key/test-lab-alpha.json",
-      type: "robo",
-      devices: [
-        {
-          model: "Pixel2",
-          version: "29"
-        }
-      ],
-      app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
-      firebase_test_lab_results_bucket: "sentrei-alpha-test-lab-results",
-      download_dir: "results",
-    )
+    # firebase_test_lab_android(
+    #   project_id: "sentrei-alpha",
+    #   gcloud_service_key_file: "key/test-lab-alpha.json",
+    #   type: "robo",
+    #   devices: [
+    #     {
+    #       model: "Pixel2",
+    #       version: "29"
+    #     }
+    #   ],
+    #   app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
+    #   firebase_test_lab_results_bucket: "sentrei-alpha-test-lab-results",
+    #   download_dir: "results",
+    # )
     if options[:release]
       bump_version_code()
       upload_to_play_store(
@@ -101,20 +101,20 @@ platform :android do
       release_notes: ENV["GITHUB_RUN_NUMBER"],
       apk_path: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
     )
-    firebase_test_lab_android(
-      project_id: "sentrei-beta",
-      gcloud_service_key_file: "key/test-lab-beta.json",
-      type: "robo",
-      devices: [
-        {
-          model: "Pixel2",
-          version: "29"
-        }
-      ],
-      app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
-      firebase_test_lab_results_bucket: "sentrei-beta-test-lab-results",
-      download_dir: "results",
-    )
+    # firebase_test_lab_android(
+    #   project_id: "sentrei-beta",
+    #   gcloud_service_key_file: "key/test-lab-beta.json",
+    #   type: "robo",
+    #   devices: [
+    #     {
+    #       model: "Pixel2",
+    #       version: "29"
+    #     }
+    #   ],
+    #   app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
+    #   firebase_test_lab_results_bucket: "sentrei-beta-test-lab-results",
+    #   download_dir: "results",
+    # )
     if options[:release]
       bump_version_code()
       upload_to_play_store(
@@ -146,20 +146,20 @@ platform :android do
       release_notes: ENV["GITHUB_RUN_NUMBER"],
       apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk",
     )
-    firebase_test_lab_android(
-      project_id: "sentrei-master",
-      gcloud_service_key_file: "key/test-lab-master.json",
-      type: "robo",
-      devices: [
-        {
-          model: "Pixel2",
-          version: "29"
-        }
-      ],
-      app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk",
-      firebase_test_lab_results_bucket: "sentrei-master-test-lab-results",
-      download_dir: "results",
-    )
+    # firebase_test_lab_android(
+    #   project_id: "sentrei-master",
+    #   gcloud_service_key_file: "key/test-lab-master.json",
+    #   type: "robo",
+    #   devices: [
+    #     {
+    #       model: "Pixel2",
+    #       version: "29"
+    #     }
+    #   ],
+    #   app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk",
+    #   firebase_test_lab_results_bucket: "sentrei-master-test-lab-results",
+    #   download_dir: "results",
+    # )
     if options[:release]
       bump_version_code()
       upload_to_play_store(
@@ -179,24 +179,24 @@ platform :android do
         flavor: "alpha",
         build_type: "Release"
       )
-      firebase_test_lab_android(
-        project_id: "sentrei-alpha",
-        gcloud_service_key_file: "key/test-lab-alpha.json",
-        type: "robo",
-        devices: [
-          {
-            model: "Pixel2",
-            version: "29"
-          }
-        ],
-        app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
-        firebase_test_lab_results_bucket: "sentrei-alpha-test-lab-results",
-        github_owner: "sentrei",
-        github_repository: "sentrei",
-        github_pr_number: ENV["PR_NUMBER"],
-        github_api_token: ENV["GITHUB_TOKEN"],
-        download_dir: "results",
-      )
+      # firebase_test_lab_android(
+      #   project_id: "sentrei-alpha",
+      #   gcloud_service_key_file: "key/test-lab-alpha.json",
+      #   type: "robo",
+      #   devices: [
+      #     {
+      #       model: "Pixel2",
+      #       version: "29"
+      #     }
+      #   ],
+      #   app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
+      #   firebase_test_lab_results_bucket: "sentrei-alpha-test-lab-results",
+      #   github_owner: "sentrei",
+      #   github_repository: "sentrei",
+      #   github_pr_number: ENV["PR_NUMBER"],
+      #   github_api_token: ENV["GITHUB_TOKEN"],
+      #   download_dir: "results",
+      # )
     end
     if options[:beta]
       gradle(
@@ -204,24 +204,24 @@ platform :android do
         flavor: "beta",
         build_type: "Release"
       )
-      firebase_test_lab_android(
-        project_id: "sentrei-beta",
-        gcloud_service_key_file: "key/test-lab-beta.json",
-        type: "robo",
-        devices: [
-          {
-            model: "Pixel2",
-            version: "29"
-          }
-        ],
-        app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
-        firebase_test_lab_results_bucket: "sentrei-beta-test-lab-results",
-        github_owner: "sentrei",
-        github_repository: "sentrei",
-        github_pr_number: ENV["PR_NUMBER"],
-        github_api_token: ENV["GITHUB_TOKEN"],
-        download_dir: "results",
-      )
+      # firebase_test_lab_android(
+      #   project_id: "sentrei-beta",
+      #   gcloud_service_key_file: "key/test-lab-beta.json",
+      #   type: "robo",
+      #   devices: [
+      #     {
+      #       model: "Pixel2",
+      #       version: "29"
+      #     }
+      #   ],
+      #   app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
+      #   firebase_test_lab_results_bucket: "sentrei-beta-test-lab-results",
+      #   github_owner: "sentrei",
+      #   github_repository: "sentrei",
+      #   github_pr_number: ENV["PR_NUMBER"],
+      #   github_api_token: ENV["GITHUB_TOKEN"],
+      #   download_dir: "results",
+      # )
     end
     if options[:master]
       gradle(
@@ -229,24 +229,24 @@ platform :android do
         flavor: "master",
         build_type: "Release"
       )
-      firebase_test_lab_android(
-        project_id: "sentrei-master",
-        gcloud_service_key_file: "key/test-lab-master.json",
-        type: "robo",
-        devices: [
-          {
-            model: "Pixel2",
-            version: "29"
-          }
-        ],
-        app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk",
-        firebase_test_lab_results_bucket: "sentrei-master-test-lab-results",
-        github_owner: "sentrei",
-        github_repository: "sentrei",
-        github_pr_number: ENV["PR_NUMBER"],
-        github_api_token: ENV["GITHUB_TOKEN"],
-        download_dir: "results",
-      )
+      # firebase_test_lab_android(
+      #   project_id: "sentrei-master",
+      #   gcloud_service_key_file: "key/test-lab-master.json",
+      #   type: "robo",
+      #   devices: [
+      #     {
+      #       model: "Pixel2",
+      #       version: "29"
+      #     }
+      #   ],
+      #   app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk",
+      #   firebase_test_lab_results_bucket: "sentrei-master-test-lab-results",
+      #   github_owner: "sentrei",
+      #   github_repository: "sentrei",
+      #   github_pr_number: ENV["PR_NUMBER"],
+      #   github_api_token: ENV["GITHUB_TOKEN"],
+      #   download_dir: "results",
+      # )
     end
   end
 
