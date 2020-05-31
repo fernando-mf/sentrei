@@ -1,3 +1,9 @@
+## [4.71.1](https://github.com/sentrei/sentrei/compare/v4.71.0...v4.71.1) (2020-05-31)
+
+### Bug Fixes
+
+- 🐛 invoke ([1e6a329](https://github.com/sentrei/sentrei/commit/1e6a32904b601289a6c72e90857b51f963d4c101))
+
 # [4.71.0](https://github.com/sentrei/sentrei/compare/v4.70.0...v4.71.0) (2020-05-31)
 
 ### Features
