@@ -1,0 +1,39 @@
+{
+  "projects": {
+    "alpha": "sentrei-alpha",
+    "beta": "sentrei-beta",
+    "master": "sentrei-master"
+  },
+  "targets": {
+    "sentrei-alpha": {
+      "hosting": {
+        "typedoc": [
+          "sentrei-alpha-typedoc"
+        ],
+        "staging-typedoc": [
+          "sentrei-staging-alpha-typedoc"
+        ]
+      }
+    },
+    "sentrei-beta": {
+      "hosting": {
+        "typedoc": [
+          "sentrei-beta-typedoc"
+        ],
+        "staging-typedoc": [
+          "sentrei-staging-beta-typedoc"
+        ]
+      }
+    },
+    "sentrei-master": {
+      "hosting": {
+        "typedoc": [
+          "sentrei-master-typedoc"
+        ],
+        "staging-typedoc": [
+          "sentrei-staging-master-typedoc"
+        ]
+      }
+    }
+  }
+}
