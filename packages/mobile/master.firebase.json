@@ -1,8 +1,8 @@
 {
   "hosting": [
     {
-      "site": "sentrei-master-mobile",
-      "target": "mobile",
+      "site": "sentrei-master-dartdoc",
+      "target": "dartdoc",
       "public": "doc/api",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
@@ -13,8 +13,8 @@
       ]
     },
     {
-      "site": "sentrei-staging-master-mobile",
-      "target": "staging-mobile",
+      "site": "sentrei-staging-master-dartdoc",
+      "target": "staging-dartdoc",
       "public": "doc/api",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [

@@ -105,6 +105,16 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "blog", "pull_request_number": "", "release": "true", "task": "blog", "tag": "blog", "url_prefix": ""}'
+  dartdoc:
+    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
+    runs-on: ubuntu-latest
+    needs: context
+    steps:
+      - uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: deploy-cmd
+          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "dartdoc", "pull_request_number": "", "release": "true", "task": "${{ needs.context.outputs.branch }}", "tag": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'
   design:
     if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: ubuntu-latest
@@ -115,16 +125,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "design", "pull_request_number": "", "release": "true", "task": "design", "tag": "design", "url_prefix": ""}'
-  docs:
-    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
-    runs-on: ubuntu-latest
-    needs: context
-    steps:
-      - uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: deploy-cmd
-          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "docs", "pull_request_number": "", "release": "true", "task": "${{ needs.context.outputs.branch }}", "tag": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'
   fastlane:
     if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: ubuntu-latest
@@ -148,16 +148,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "functions", "pull_request_number": "", "release": "true", "task": "${{ needs.context.outputs.branch }}", "tag": "${{ needs.context.outputs.branch }}", "url_prefix": ""}'
-  mobile:
-    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
-    runs-on: ubuntu-latest
-    needs: context
-    steps:
-      - uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          event-type: deploy-cmd
-          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "mobile", "pull_request_number": "", "release": "true", "task": "${{ needs.context.outputs.branch }}", "tag": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'
   pioneer:
     if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: ubuntu-latest
@@ -168,6 +158,16 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
           client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "pioneer", "pull_request_number": "", "release": "true", "task": "pioneer", "tag": "pioneer", "url_prefix": ""}'
+  typedoc:
+    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
+    runs-on: ubuntu-latest
+    needs: context
+    steps:
+      - uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: deploy-cmd
+          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "typedoc", "pull_request_number": "", "release": "true", "task": "${{ needs.context.outputs.branch }}", "tag": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'
   ui:
     if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: ubuntu-latest

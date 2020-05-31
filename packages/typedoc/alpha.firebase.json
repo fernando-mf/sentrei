@@ -1,8 +1,8 @@
 {
   "hosting": [
     {
-      "site": "sentrei-master-web-doc",
-      "target": "docs",
+      "site": "sentrei-typedoc",
+      "target": "typedoc",
       "public": "public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "predeploy": ["yarn run build"],
@@ -14,8 +14,8 @@
       ]
     },
     {
-      "site": "sentrei-staging-master-web-doc",
-      "target": "staging-docs",
+      "site": "sentrei-staging-typedoc",
+      "target": "staging-typedoc",
       "public": "public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "predeploy": ["yarn run build"],

@@ -73,6 +73,84 @@ jobs:
               repo: context.repo.repo,
               name: ['packages/blog'],
             })
+  dartdoc:
+    if: github.event.client_payload.event_name == 'dartdoc'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}dartdoc.sentrei.com
+          environment: "Dartdoc ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.3.0"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@master
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: ${{ env.flutter_channel }}
+          flutter-version: ${{ env.flutter_version }}
+      - working-directory: packages/dartdoc
+        run: |
+          flutter pub global activate dartdoc
+          flutter pub global run dartdoc:dartdoc --exclude 'dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart:ui,dart:ffi,dart:html,dart:js,dart:js_util'
+      - working-directory: packages/dartdoc
+        run: |
+          yarn run ${{ github.event.client_payload.task }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}dartdoc.sentrei.com
+      - if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}dartdoc.sentrei.com
+      - if: github.event.client_payload.environment == 'staging'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ github.event.client_payload.comment_id }}
+          reaction-type: hooray
+      - if: github.event.client_payload.environment == 'staging'
+        uses: actions/github-script@v1
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          script: |
+            github.issues.removeLabel({
+              issue_number: ${{ github.event.client_payload.pull_request_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: ['packages/design'],
+            })
   design:
     if: github.event.client_payload.event_name == 'design'
     runs-on: ubuntu-latest
@@ -142,76 +220,6 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               name: ['packages/design'],
-            })
-  docs:
-    if: github.event.client_payload.event_name == 'docs'
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    steps:
-      - uses: chrnorm/deployment-action@releases/v1
-        id: deployment
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${{ github.event.client_payload.branch }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}docs.sentrei.com
-          environment: "Docs ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.client_payload.branch }}
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "14.3.0"
-      - id: yarn-cache-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - id: cache
-        uses: actions/cache@master
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-            ${{ steps.yarn-cache-path.outputs.dir }}
-          key: |
-            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            yarn-v1-${{ runner.os }}-
-      - run: |
-          yarn install --frozen-lockfile
-      - working-directory: packages/docs
-        run: |
-          yarn run ${{ github.event.client_payload.task }}
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - if: success()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}docs.sentrei.com
-      - if: failure()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}docs.sentrei.com
-      - if: github.event.client_payload.environment == 'staging'
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.repository }}
-          comment-id: ${{ github.event.client_payload.comment_id }}
-          reaction-type: hooray
-      - if: github.event.client_payload.environment == 'staging'
-        uses: actions/github-script@v1
-        with:
-          github-token: ${{ secrets.ACCESS_TOKEN }}
-          script: |
-            github.issues.removeLabel({
-              issue_number: ${{ github.event.client_payload.pull_request_number }},
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              name: ['packages/docs'],
             })
   fastlane:
     if: github.event.client_payload.event_name == 'fastlane'
@@ -452,84 +460,6 @@ jobs:
               repo: context.repo.repo,
               name: ['packages/functions'],
             })
-  mobile:
-    if: github.event.client_payload.event_name == 'mobile'
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    steps:
-      - uses: chrnorm/deployment-action@releases/v1
-        id: deployment
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${{ github.event.client_payload.branch }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
-          environment: "Mobile ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.client_payload.branch }}
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "14.3.0"
-      - id: yarn-cache-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - id: cache
-        uses: actions/cache@master
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-            ${{ steps.yarn-cache-path.outputs.dir }}
-          key: |
-            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            yarn-v1-${{ runner.os }}-
-      - run: |
-          yarn install --frozen-lockfile
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: ${{ env.flutter_channel }}
-          flutter-version: ${{ env.flutter_version }}
-      - working-directory: packages/mobile
-        run: |
-          flutter pub global activate dartdoc
-          flutter pub global run dartdoc:dartdoc --exclude 'dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart:ui,dart:ffi,dart:html,dart:js,dart:js_util'
-      - working-directory: packages/mobile
-        run: |
-          yarn run ${{ github.event.client_payload.task }}
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - if: success()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
-      - if: failure()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          target_url: https://${{ github.event.client_payload.url_prefix }}mobile.sentrei.com
-      - if: github.event.client_payload.environment == 'staging'
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.repository }}
-          comment-id: ${{ github.event.client_payload.comment_id }}
-          reaction-type: hooray
-      - if: github.event.client_payload.environment == 'staging'
-        uses: actions/github-script@v1
-        with:
-          github-token: ${{ secrets.ACCESS_TOKEN }}
-          script: |
-            github.issues.removeLabel({
-              issue_number: ${{ github.event.client_payload.pull_request_number }},
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              name: ['packages/mobile'],
-            })
   pioneer:
     if: github.event.client_payload.event_name == 'pioneer'
     runs-on: ubuntu-latest
@@ -599,6 +529,76 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               name: ['packages/pioneer'],
+            })
+  typedoc:
+    if: github.event.client_payload.event_name == 'typedoc'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ github.event.client_payload.branch }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}typedoc.sentrei.com
+          environment: "typedoc ${{ github.event.client_payload.environment }} ${{ github.event.client_payload.branch }}"
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.3.0"
+      - id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - id: cache
+        uses: actions/cache@master
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
+      - run: |
+          yarn install --frozen-lockfile
+      - working-directory: packages/typedoc
+        run: |
+          yarn run ${{ github.event.client_payload.task }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}typedoc.sentrei.com
+      - if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          target_url: https://${{ github.event.client_payload.url_prefix }}typedoc.sentrei.com
+      - if: github.event.client_payload.environment == 'staging'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          comment-id: ${{ github.event.client_payload.comment_id }}
+          reaction-type: hooray
+      - if: github.event.client_payload.environment == 'staging'
+        uses: actions/github-script@v1
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          script: |
+            github.issues.removeLabel({
+              issue_number: ${{ github.event.client_payload.pull_request_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: ['packages/typedoc'],
             })
   ui:
     if: github.event.client_payload.event_name == 'ui'
