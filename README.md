@@ -48,21 +48,21 @@
 ### Mobile 📱
 
 <!-- prettier-ignore-start -->
-| Version | FAD (Android) | FAD (iOS) | Docs |
+| Version | FAD (Android) | FAD (iOS) | Dartdoc |
 | ------- | ------------- | --------- | ---- |
-| alpha | [LINK](https://appdistribution.firebase.dev/i/ecwjmtsh) | [LINK](https://appdistribution.firebase.dev/i/iCHEpULk) | https://alpha.mobile.sentrei.com |
-| beta | [LINK](https://appdistribution.firebase.dev/i/zk13ZGu1) | [LINK](https://appdistribution.firebase.dev/i/5rx5sRDi) | https://beta.mobile.sentrei.com |
-| master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.mobile.sentrei.com |
+| alpha | [LINK](https://appdistribution.firebase.dev/i/ecwjmtsh) | [LINK](https://appdistribution.firebase.dev/i/iCHEpULk) | https://alpha.dartdoc.sentrei.com |
+| beta | [LINK](https://appdistribution.firebase.dev/i/zk13ZGu1) | [LINK](https://appdistribution.firebase.dev/i/5rx5sRDi) | https://beta.dartdoc.sentrei.com |
+| master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.dartdoc.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ### Web 🌐
 
 <!-- prettier-ignore-start -->
-| Version | Web | Docs |
+| Version | Web | Typedoc |
 | ------- | --- | ---- |
-| alpha | https://alpha.sentrei.com | https://alpha.docs.sentrei.com |
-| beta | https://beta.sentrei.com | https://beta.docs.sentrei.com |
-| master | https://sentrei.com | https://master.docs.sentrei.com |
+| alpha | https://alpha.sentrei.com | https://alpha.typedoc.sentrei.com |
+| beta | https://beta.sentrei.com | https://beta.typedoc.sentrei.com |
+| master | https://sentrei.com | https://master.typedoc.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ## Contributors ✨
