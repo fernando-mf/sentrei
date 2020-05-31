@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "site": "sentrei-docs",
+      "site": "sentrei-web-docs",
       "target": "docs",
       "public": "public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "site": "sentrei-staging-docs",
+      "site": "sentrei-staging-web-docs",
       "target": "staging-docs",
       "public": "public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],

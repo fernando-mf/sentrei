@@ -6,10 +6,10 @@
     "sentrei-master": {
       "hosting": {
         "docs": [
-          "sentrei-docs"
+          "sentrei-web-docs"
         ],
         "staging-docs": [
-          "sentrei-staging-docs"
+          "sentrei-staging-web-docs"
         ]
       }
     }
