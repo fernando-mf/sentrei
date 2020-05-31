@@ -1,5 +1,6 @@
 /* eslint-disable import/first */
 import * as admin from "firebase-admin";
+import "module-alias/register";
 
 admin.initializeApp();
 

@@ -4,7 +4,9 @@ import * as functions from "firebase-functions";
 import Profile from "@sentrei/common/models/Profile";
 import User from "@sentrei/common/models/User";
 
-import getNameFromEmail from "@sentrei/functions/helpers/getNameFromEmail";
+// TODO: Fix module alias
+// import getNameFromEmail from "@sentrei/functions/helpers/getNameFromEmail";
+import getNameFromEmail from "../../helpers/getNameFromEmail";
 
 const db = admin.firestore();
 
