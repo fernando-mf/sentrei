@@ -7,8 +7,6 @@ import * as log from "./log";
 import * as usernames from "./usernames";
 import * as users from "./users";
 
-export const staging = {log, usernames, users};
-
 const v1 = {log, usernames, users};
 
 export default v1;
