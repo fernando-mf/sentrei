@@ -9,7 +9,7 @@ const notifySignup = functions.auth.user().onCreate(event => {
   const user = event.email;
   (async (): Promise<void> => {
     await webhook.send({
-      text: `Environment: ${config.environment}\nNew Signup from ${user}`,
+      text: `Environment: ${config.environment}\nSignup: ${user}`,
     });
   })();
 });
