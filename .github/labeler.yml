@@ -15,11 +15,13 @@ packages/docs:
 packages/functions:
   - packages/functions/**/*
 packages/fastlane:
-  - packages/mobile/**/*
+  - packages/fastlane/**/*
 packages/mobile:
   - packages/mobile/**/*
 packages/pioneer:
-  - packages/mobile/**/*
+  - packages/pioneer/**/*
+packages/typedoc:
+  - packages/typedoc/**/*
 packages/ui:
   - packages/common/**/*
   - packages/ui/**/*
