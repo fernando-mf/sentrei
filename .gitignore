@@ -55,6 +55,9 @@
 # Blog related.
 **/blog/public
 
+# Docs related.
+**/docs/firebase.json
+
 # Functions related.
 **/functions/env.json
 **/functions/alpha.env.json

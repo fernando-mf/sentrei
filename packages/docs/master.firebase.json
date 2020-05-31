@@ -1,0 +1,30 @@
+{
+  "hosting": [
+    {
+      "site": "sentrei-master-web-doc",
+      "target": "docs",
+      "public": "public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run build"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "site": "sentrei-staging-master-web-doc",
+      "target": "staging-docs",
+      "public": "public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "predeploy": ["yarn run build"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

@@ -124,7 +124,7 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: deploy-cmd
-          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "docs", "pull_request_number": "", "release": "true", "task": "docs", "tag": "docs", "url_prefix": ""}'
+          client-payload: '{"base": "${{ needs.context.outputs.branch }}", "branch": "${{ needs.context.outputs.branch }}", "comment_id": "", "environment": "production", "event_name": "mobile", "pull_request_number": "", "release": "true", "task": "${{ needs.context.outputs.branch }}", "tag": "${{ needs.context.outputs.branch }}", "url_prefix": "${{ needs.context.outputs.branch }}."}'
   fastlane:
     if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: ubuntu-latest
