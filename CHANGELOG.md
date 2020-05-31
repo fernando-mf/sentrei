@@ -1,3 +1,9 @@
+# [4.69.0](https://github.com/sentrei/sentrei/compare/v4.68.4...v4.69.0) (2020-05-31)
+
+### Features
+
+- 🎸 add docs package ([f81c41c](https://github.com/sentrei/sentrei/commit/f81c41c439a1498b64c32f58a75f4f4683415c94))
+
 ## [4.68.4](https://github.com/sentrei/sentrei/compare/v4.68.3...v4.68.4) (2020-05-31)
 
 ### Bug Fixes
