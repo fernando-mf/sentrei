@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "site": "sentrei-master-web",
+      "site": "sentrei-master",
       "appAssociation": "AUTO",
       "public": "public",
       "ignore": ["**/static/**"],
@@ -39,14 +39,14 @@
         {
           "source": "**",
           "run": {
-            "serviceId": "sentrei-master-web",
+            "serviceId": "sentrei-master",
             "region": "us-central1"
           }
         }
       ]
     },
     {
-      "site": "sentrei-staging-master-web",
+      "site": "sentrei-staging-master",
       "public": "public",
       "ignore": ["**/static/**"],
       "target": "staging-web",
@@ -54,7 +54,7 @@
         {
           "source": "**",
           "run": {
-            "serviceId": "sentrei-staging-master-web",
+            "serviceId": "sentrei-staging-master",
             "region": "us-central1"
           }
         }
