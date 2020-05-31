@@ -6,14 +6,21 @@ import "@sentrei/web/styles/slider.scss";
 import {useInView} from "react-intersection-observer";
 
 import logEvent from "@sentrei/common/utils/logEvent";
+import RoughNotation from "@sentrei/ui/components/RoughNotation";
 import KeioPicture from "@sentrei/web/components/Picture/KeioPicture";
 import UclPicture from "@sentrei/web/components/Picture/UclPicture";
 
 interface Props {
-  sectionTitle: string;
+  sectionTitleOne: string;
+  sectionTitleTwo: string;
+  sectionTitleThree: string;
 }
 
-export default function SentreiSlider({sectionTitle}: Props): JSX.Element {
+export default function SentreiSlider({
+  sectionTitleOne,
+  sectionTitleTwo,
+  sectionTitleThree,
+}: Props): JSX.Element {
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
@@ -27,7 +34,13 @@ export default function SentreiSlider({sectionTitle}: Props): JSX.Element {
       <Box p={4} />
       <Container maxWidth="md">
         <Typography align="center" variant="h4">
-          {sectionTitle}
+          {sectionTitleOne}
+          <RoughNotation
+            color="secondary"
+            text={sectionTitleTwo}
+            type="highlight"
+          />
+          {sectionTitleThree}
         </Typography>
       </Container>
       <Box p={3} />

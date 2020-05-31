@@ -2,6 +2,8 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 
+import RoughNotation from "@sentrei/ui/components/RoughNotation";
+
 import SectionStyles from "./SectionStyles";
 
 interface Props {
@@ -18,10 +20,9 @@ export default function Section({subTitle, title}: Props): JSX.Element {
         variant="h2"
         align="center"
         color="textPrimary"
-        className={classes.title}
         gutterBottom
       >
-        {title}
+        <RoughNotation color="primary" text={title} type="underline" />
       </Typography>
       <Typography
         variant="h5"

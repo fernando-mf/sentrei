@@ -12,11 +12,17 @@ import VideoPicture from "@sentrei/web/components/Picture/VideoPicture";
 type Props = Omit<Original, "connectImg" | "dataImg" | "videoImg">;
 
 export default function SentreiProduct({
-  connectTitle,
+  connectTitleOne,
+  connectTitleTwo,
+  connectTitleThree,
   connectSubTitle,
-  dataTitle,
+  dataTitleOne,
+  dataTitleTwo,
+  dataTitleThree,
   dataSubTitle,
-  videoTitle,
+  videoTitleOne,
+  videoTitleTwo,
+  videoTitleThree,
   videoSubTitle,
 }: Props): JSX.Element {
   const [ref, inView] = useInView({
@@ -32,13 +38,19 @@ export default function SentreiProduct({
       <Product
         key={i18n.language}
         connectImg={<ConnectPicture />}
-        connectTitle={connectTitle}
+        connectTitleOne={connectTitleOne}
+        connectTitleTwo={connectTitleTwo}
+        connectTitleThree={connectTitleThree}
         connectSubTitle={connectSubTitle}
         dataImg={<DataPicture />}
-        dataTitle={dataTitle}
+        dataTitleOne={dataTitleOne}
+        dataTitleTwo={dataTitleTwo}
+        dataTitleThree={dataTitleThree}
         dataSubTitle={dataSubTitle}
         videoImg={<VideoPicture />}
-        videoTitle={videoTitle}
+        videoTitleOne={videoTitleOne}
+        videoTitleTwo={videoTitleTwo}
+        videoTitleThree={videoTitleThree}
         videoSubTitle={videoSubTitle}
       />
     </div>

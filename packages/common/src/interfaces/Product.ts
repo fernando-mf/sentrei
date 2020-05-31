@@ -1,11 +1,17 @@
 export default interface Props {
   connectImg: JSX.Element;
-  connectTitle: string;
+  connectTitleOne: string;
+  connectTitleTwo: string;
+  connectTitleThree: string;
   connectSubTitle: string;
   dataImg: JSX.Element;
-  dataTitle: string;
+  dataTitleOne: string;
+  dataTitleTwo: string;
+  dataTitleThree: string;
   dataSubTitle: string;
   videoImg: JSX.Element;
-  videoTitle: string;
+  videoTitleOne: string;
+  videoTitleTwo: string;
+  videoTitleThree: string;
   videoSubTitle: string;
 }

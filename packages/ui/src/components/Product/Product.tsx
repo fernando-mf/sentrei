@@ -9,13 +9,19 @@ import ProductStyles from "./ProductStyles";
 
 export default function Product({
   connectImg,
-  connectTitle,
+  connectTitleOne,
+  connectTitleTwo,
+  connectTitleThree,
   connectSubTitle,
   dataImg,
-  dataTitle,
+  dataTitleOne,
+  dataTitleTwo,
+  dataTitleThree,
   dataSubTitle,
   videoImg,
-  videoTitle,
+  videoTitleOne,
+  videoTitleTwo,
+  videoTitleThree,
   videoSubTitle,
 }: Props): JSX.Element {
   const classes = ProductStyles();
@@ -26,21 +32,30 @@ export default function Product({
         left
         img={videoImg}
         subTitle={videoSubTitle}
-        title={videoTitle}
+        titleOne={videoTitleOne}
+        titleTwo={videoTitleTwo}
+        titleThree={videoTitleThree}
+        type="underline"
       />
       <Box py={3} />
       <ProductCard
         left={false}
         img={connectImg}
         subTitle={connectSubTitle}
-        title={connectTitle}
+        titleOne={connectTitleOne}
+        titleTwo={connectTitleTwo}
+        titleThree={connectTitleThree}
+        type="box"
       />
       <Box py={3} />
       <ProductCard
         left
         img={dataImg}
         subTitle={dataSubTitle}
-        title={dataTitle}
+        titleOne={dataTitleOne}
+        titleTwo={dataTitleTwo}
+        titleThree={dataTitleThree}
+        type="circle"
       />
     </Container>
   );
