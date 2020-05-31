@@ -1,3 +1,9 @@
+## [4.68.2](https://github.com/sentrei/sentrei/compare/v4.68.1...v4.68.2) (2020-05-31)
+
+### Bug Fixes
+
+- 🐛 refactor ([c64f719](https://github.com/sentrei/sentrei/commit/c64f719bafd73087c84fa12bf145a42700690fa3))
+
 ## [4.68.1](https://github.com/sentrei/sentrei/compare/v4.68.0...v4.68.1) (2020-05-31)
 
 ### Bug Fixes
