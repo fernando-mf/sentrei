@@ -1,3 +1,9 @@
+# [4.66.0](https://github.com/sentrei/sentrei/compare/v4.65.2...v4.66.0) (2020-05-31)
+
+### Features
+
+- 🎸 add pubsub billing ([48025c0](https://github.com/sentrei/sentrei/commit/48025c098b5c129a125ab73e1e3f73e0479811fb))
+
 ## [4.65.2](https://github.com/sentrei/sentrei/compare/v4.65.1...v4.65.2) (2020-05-31)
 
 ### Bug Fixes
