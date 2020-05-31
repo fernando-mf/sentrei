@@ -1,3 +1,9 @@
+## [4.67.4](https://github.com/sentrei/sentrei/compare/v4.67.3...v4.67.4) (2020-05-31)
+
+### Bug Fixes
+
+- 🐛 update correct name ([66b4710](https://github.com/sentrei/sentrei/commit/66b47104c70897249a2208d6594e9411365e82c4))
+
 ## [4.67.3](https://github.com/sentrei/sentrei/compare/v4.67.2...v4.67.3) (2020-05-31)
 
 ### Bug Fixes
