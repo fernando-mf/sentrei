@@ -63,7 +63,7 @@ jobs:
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
       - if: github.event.client_payload.environment == 'staging'
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v1
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
@@ -133,7 +133,7 @@ jobs:
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
       - if: github.event.client_payload.environment == 'staging'
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v1
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
@@ -293,7 +293,7 @@ jobs:
           comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
           reaction-type: hooray
       - if: github.event.client_payload.environment == 'staging'
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v1
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
@@ -372,7 +372,7 @@ jobs:
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
       - if: github.event.client_payload.environment == 'staging'
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v1
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
@@ -450,7 +450,7 @@ jobs:
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
       - if: github.event.client_payload.environment == 'staging'
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v1
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
@@ -520,7 +520,7 @@ jobs:
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
       - if: github.event.client_payload.environment == 'staging'
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v1
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
@@ -590,7 +590,7 @@ jobs:
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
       - if: github.event.client_payload.environment == 'staging'
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v1
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
@@ -730,7 +730,7 @@ jobs:
           comment-id: ${{ github.event.client_payload.comment_id }}
           reaction-type: hooray
       - if: github.event.client_payload.environment == 'staging'
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v1
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
