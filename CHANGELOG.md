@@ -1,3 +1,10 @@
+## [4.68.4](https://github.com/sentrei/sentrei/compare/v4.68.3...v4.68.4) (2020-05-31)
+
+### Bug Fixes
+
+- 🐛 add tscpaths for relative module alias on runtime ([24f35e2](https://github.com/sentrei/sentrei/commit/24f35e261afa60414a3ea5072f6b1fac1f31ada5))
+- 🐛 tmp fix for module alias ([291c75b](https://github.com/sentrei/sentrei/commit/291c75bb2ab69f0b544f048a0d94c613184474db))
+
 ## [4.68.2](https://github.com/sentrei/sentrei/compare/v4.68.1...v4.68.2) (2020-05-31)
 
 ### Bug Fixes
