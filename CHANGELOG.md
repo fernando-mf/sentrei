@@ -1,3 +1,9 @@
+## [4.69.2](https://github.com/sentrei/sentrei/compare/v4.69.1...v4.69.2) (2020-05-31)
+
+### Bug Fixes
+
+- 🐛 add docs invokation ([686cc26](https://github.com/sentrei/sentrei/commit/686cc2681cd154755b3bec33d6f88cdc99ed8481))
+
 ## [4.69.1](https://github.com/sentrei/sentrei/compare/v4.69.0...v4.69.1) (2020-05-31)
 
 ### Bug Fixes
