@@ -1,3 +1,9 @@
+## [4.69.4](https://github.com/sentrei/sentrei/compare/v4.69.3...v4.69.4) (2020-05-31)
+
+### Bug Fixes
+
+- 🐛 docs ([7cd38cd](https://github.com/sentrei/sentrei/commit/7cd38cd363cc02a55b50057b916e96949db5ebce))
+
 ## [4.69.3](https://github.com/sentrei/sentrei/compare/v4.69.2...v4.69.3) (2020-05-31)
 
 ### Bug Fixes
