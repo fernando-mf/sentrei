@@ -1,3 +1,9 @@
+# [4.65.0](https://github.com/sentrei/sentrei/compare/v4.64.2...v4.65.0) (2020-05-31)
+
+### Features
+
+- 🎸 refactor gha deployment ([5445074](https://github.com/sentrei/sentrei/commit/5445074e40b317664e281e08032610e3165663aa))
+
 ## [4.64.2](https://github.com/sentrei/sentrei/compare/v4.64.1...v4.64.2) (2020-05-31)
 
 ### Bug Fixes
