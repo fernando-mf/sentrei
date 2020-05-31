@@ -1,3 +1,9 @@
+# [4.71.0](https://github.com/sentrei/sentrei/compare/v4.70.0...v4.71.0) (2020-05-31)
+
+### Features
+
+- 🎸 web refactor dest ([d17fab4](https://github.com/sentrei/sentrei/commit/d17fab46498a5fe8d7fb1138161306d976a7f5d8))
+
 ## [4.69.4](https://github.com/sentrei/sentrei/compare/v4.69.3...v4.69.4) (2020-05-31)
 
 ### Bug Fixes
