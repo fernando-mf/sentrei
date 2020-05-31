@@ -57,6 +57,9 @@
 
 # Functions related.
 **/functions/env.json
+**/functions/alpha.env.json
+**/functions/beta.env.json
+**/functions/master.env.json
 **/functions/firebase.json
 
 # Mobile related.
