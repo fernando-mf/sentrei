@@ -42,7 +42,7 @@
     "swap:master": "cp master.firebase.json firebase.json",
     "swap:master:env": "cp master.env.json env.json",
     "test": "yarn start 'jest'",
-    "typescript": "yarn run clean && tsc -b .",
+    "typescript": "yarn run clean && tsc -b . && tscpaths -p tsconfig.json -s ./src -o ./dist",
     "watch": "tsc -b . -w --preserveWatchOutput"
   },
   "dependencies": {
@@ -63,6 +63,7 @@
     "jest-when": "^2.7.2",
     "rimraf": "^3.0.2",
     "ts-jest": "26.1.0",
+    "tscpaths": "^0.0.9",
     "tslint": "^6.1.1",
     "typescript": "^3.8.3"
   },
