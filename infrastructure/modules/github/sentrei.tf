@@ -24,6 +24,10 @@ resource "github_branch_protection" "alpha" {
     strict   = true
     contexts = ["auto-approve", "functions", "mobile", "labeler", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "Terraform Cloud/sentrei/sentrei-alpha", "WIP"]
   }
+
+  restrictions {
+    users = ["shunkakinoki"]
+  }
 }
 
 resource "github_branch_protection" "beta" {
@@ -39,6 +43,10 @@ resource "github_branch_protection" "beta" {
   required_status_checks {
     strict   = true
     contexts = ["auto-approve", "functions", "mobile", "labeler", "terraform (alpha)", "terraform (beta)", "terraform (master)", "ui", "yarn", "web", "Terraform Cloud/sentrei/sentrei-beta", "WIP"]
+  }
+
+  restrictions {
+    users = ["shunkakinoki"]
   }
 }
 

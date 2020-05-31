@@ -43,13 +43,12 @@ pipenv:
 nodeenv:
 	nodeenv --node=$(NODE_ENV_VERSION) -p
 
-yarn:
-	yarn config set ignore-engines true
-	yarn install --dev --upgrade latest
-	yarn run bootstrap
-
 yarn-eslint:
 	yarn add -D -W eslint-config-airbnb-typescript eslint-config-prettier eslint-plugin-prettier
 
 yarn-husky:
 	yarn add -D -W git-cz husky
+
+yarn-upgrade:
+	yarn install --dev --upgrade latest
+	yarn run bootstrap
