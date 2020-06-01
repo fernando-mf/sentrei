@@ -13,6 +13,7 @@
     "blog": "firebase use master && yarn run deploy:blog",
     "build": "gatsby build",
     "clean": "gatsby clean",
+    "deploy": "yarn run deploy:staging-blog && yarn run deploy:blog",
     "deploy:blog": "firebase deploy --only hosting:blog --token ${FIREBASE_TOKEN}",
     "deploy:staging-blog": "firebase deploy --only hosting:staging-blog --token ${FIREBASE_TOKEN}",
     "dev": "gatsby develop",
