@@ -26,7 +26,7 @@ resource "google_monitoring_alert_policy" "sentrei" {
     display_name = "Request Latency"
     condition_threshold {
       filter          = "metric.type=\"monitoring.googleapis.com/uptime_check/request_latency\" AND resource.type=\"uptime_url\" AND metric.label.\"check_id\"=\"${google_monitoring_uptime_check_config.sentrei.uptime_check_id}\""
-      duration        = "60s"
+      duration        = "0s"
       threshold_value = 1000
       comparison      = "COMPARISON_GT"
       aggregations {
