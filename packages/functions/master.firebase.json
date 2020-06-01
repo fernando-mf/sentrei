@@ -1,7 +1,7 @@
 {
   "emulators": {
     "firestore": {
-      "port": "8080"
+      "port": 8080
     },
     "ui": {
       "enabled": true,
@@ -9,7 +9,10 @@
       "port": 4000
     },
     "functions": {
-      "port": "5001"
+      "port": 5001
+    },
+    "pubsub": {
+      "port": 8085
     }
   },
   "firestore": {
