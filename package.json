@@ -22,6 +22,7 @@
     "eslint:fix": "eslint --fix . -c .eslintrc.json --ext .js,.ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
     "firebase:alpha": "lerna run firebase:alpha --stream --scope={@sentrei/functions,@sentrei/web}",
     "firebase:beta": "lerna run firebase:beta --stream --scope={@sentrei/functions,@sentrei/web}",
+    "firebase:login": "firebase login --no-localhost",
     "firebase:master": "lerna run firebase:master --stream --scope={@sentrei/functions,@sentrei/web}",
     "fix": "yarn eclint:fix && yarn eslint:fix && yarn prettier:fix && yarn sort-package-json:fix",
     "lint": "yarn eclint:check && yarn eslint:check && yarn prettier:check && yarn sort-package-json:check",
