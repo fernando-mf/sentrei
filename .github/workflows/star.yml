@@ -10,3 +10,4 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_STAR_LOG }}
           SLACK_MESSAGE: ${{ github.event.repository.stargazers_count }}
+          SLACK_TITLE: ${{ github.repository }}
