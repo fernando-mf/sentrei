@@ -29,10 +29,6 @@ resource "google_monitoring_alert_policy" "sentrei" {
       duration        = "60s"
       threshold_value = 1000
       comparison      = "COMPARISON_GT"
-      aggregations {
-        alignment_period   = "60s"
-        per_series_aligner = "ALIGN_RATE"
-      }
     }
   }
 }
