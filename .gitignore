@@ -55,9 +55,6 @@
 # Blog related.
 **/blog/public
 
-# Docs related.
-**/docs/firebase.json
-
 # Functions related.
 **/functions/env.json
 **/functions/alpha.env.json
@@ -67,6 +64,9 @@
 
 # Mobile related.
 **/mobile/firebase.json
+
+# Typedoc related.
+**/typedoc/firebase.json
 
 # UI related.
 **/ui/.reg
