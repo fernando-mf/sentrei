@@ -1,0 +1,12 @@
+name: Star
+on:
+  watch:
+    types: [started]
+jobs:
+  star:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: rtCamp/action-slack-notify@v2.0.2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_STAR_LOG }}
+          SLACK_MESSAGE: ${{ github.event.repository.stargazers_count }}
