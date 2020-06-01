@@ -1,3 +1,9 @@
+## [4.73.6](https://github.com/sentrei/sentrei/compare/v4.73.5...v4.73.6) (2020-06-01)
+
+### Bug Fixes
+
+- **deps:** bump @stripe/stripe-js from 1.5.0 to 1.6.0 ([af78e2e](https://github.com/sentrei/sentrei/commit/af78e2eee1b7d71285fabd0b47ce9c217ad70b51))
+
 ## [4.73.1](https://github.com/sentrei/sentrei/compare/v4.73.0...v4.73.1) (2020-06-01)
 
 ### Bug Fixes
