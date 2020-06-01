@@ -1,5 +1,6 @@
 resource "google_monitoring_uptime_check_config" "https" {
   display_name = "sentrei-uptime-check"
+  period       = "60s"
   timeout      = "60s"
 
   http_check {
