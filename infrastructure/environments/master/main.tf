@@ -19,6 +19,10 @@ module "iam" {
   environment = var.environment
 }
 
+module "monitoring" {
+  source = "../../modules/monitoring"
+}
+
 module "pubsub" {
   source      = "../../modules/pubsub"
   environment = var.environment
