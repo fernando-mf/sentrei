@@ -36,6 +36,7 @@
     "master": "yarn run swap:master && firebase use master && yarn run env:set && yarn run deploy:rules && yarn run deploy:functions",
     "master:local": "yarn run swap:master && firebase use master",
     "setup": "firebase setup:emulators:firestore",
+    "shell": "firebase functions:shell",
     "staging:alpha": "yarn run swap:alpha && firebase use alpha && yarn run test",
     "staging:beta": "yarn run swap:beta && firebase use beta && yarn run test",
     "staging:master": "yarn run swap:master && firebase use master && yarn run test",
