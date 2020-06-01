@@ -22,6 +22,12 @@ resource "google_project_iam_member" "terraform_cloud_scheduler_admin" {
   member  = "serviceAccount:${google_service_account.terraform.email}"
 }
 
+resource "google_project_iam_member" "terraform_monitoring_admin" {
+  project = "sentrei-${var.environment}"
+  role    = "roles/monitoring.admin"
+  member  = "serviceAccount:${google_service_account.terraform.email}"
+}
+
 resource "google_project_iam_member" "terraform_pubsub_admin" {
   project = "sentrei-${var.environment}"
   role    = "roles/pubsub.admin"
