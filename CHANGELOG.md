@@ -1,3 +1,9 @@
+## [4.73.1](https://github.com/sentrei/sentrei/compare/v4.73.0...v4.73.1) (2020-06-01)
+
+### Bug Fixes
+
+- **deps:** bump rough-notation from 0.2.0 to 0.2.2 ([3ce19e5](https://github.com/sentrei/sentrei/commit/3ce19e579a93d9c4fb9486046e65327b266db874))
+
 # [4.72.0](https://github.com/sentrei/sentrei/compare/v4.71.1...v4.72.0) (2020-06-01)
 
 ### Features
