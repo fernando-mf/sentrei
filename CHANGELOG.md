@@ -1,3 +1,9 @@
+# [4.72.0](https://github.com/sentrei/sentrei/compare/v4.71.1...v4.72.0) (2020-06-01)
+
+### Features
+
+- 🎸 add deploy withstaging ([4cde6a6](https://github.com/sentrei/sentrei/commit/4cde6a6a785990f36ad10fdcb705c374af2b23fe))
+
 ## [4.71.1](https://github.com/sentrei/sentrei/compare/v4.71.0...v4.71.1) (2020-05-31)
 
 ### Bug Fixes
