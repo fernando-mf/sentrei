@@ -2,7 +2,6 @@
   "projects": {
     "alpha": "sentrei-alpha",
     "beta": "sentrei-beta",
-    "master": "sentrei-master",
-    "default": "sentrei-master"
+    "master": "sentrei-master"
   }
 }
