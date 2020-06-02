@@ -51,6 +51,7 @@
     "swap:master": "cp master.firebase.json firebase.json",
     "swap:master:env": "cp master.env.json env.json",
     "test": "firebase emulators:exec --only firestore 'jest'",
+    "test:watch": "firebase emulators:exec --only firestore 'jest --watch'",
     "typescript": "yarn run clean && tsc -b . && tscpaths -p tsconfig.json -s ./src -o ./dist",
     "watch": "tsc -b . -w --preserveWatchOutput"
   },
