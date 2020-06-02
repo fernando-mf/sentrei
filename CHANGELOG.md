@@ -1,3 +1,9 @@
+## [4.74.3](https://github.com/sentrei/sentrei/compare/v4.74.2...v4.74.3) (2020-06-02)
+
+### Bug Fixes
+
+- **deps:** bump gatsby-plugin-manifest from 2.4.9 to 2.4.10 ([9e331e9](https://github.com/sentrei/sentrei/commit/9e331e996dbd2f07bdd26ddf6e0892c400c5167b))
+
 ## [4.74.2](https://github.com/sentrei/sentrei/compare/v4.74.1...v4.74.2) (2020-06-02)
 
 ### Bug Fixes
