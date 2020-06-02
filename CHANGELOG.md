@@ -1,3 +1,9 @@
+# [4.75.0](https://github.com/sentrei/sentrei/compare/v4.74.3...v4.75.0) (2020-06-02)
+
+### Features
+
+- 🎸 add model test ([5477498](https://github.com/sentrei/sentrei/commit/5477498b47afaff379152040111f3d11cee07c8b))
+
 ## [4.74.3](https://github.com/sentrei/sentrei/compare/v4.74.2...v4.74.3) (2020-06-02)
 
 ### Bug Fixes
