@@ -1,3 +1,9 @@
+# [4.74.0](https://github.com/sentrei/sentrei/compare/v4.73.10...v4.74.0) (2020-06-02)
+
+### Features
+
+- 🎸 add firestore jest ([1160ee2](https://github.com/sentrei/sentrei/commit/1160ee277a2b9634c4b28052d85d15f307c50f5b))
+
 ## [4.73.10](https://github.com/sentrei/sentrei/compare/v4.73.9...v4.73.10) (2020-06-02)
 
 ### Bug Fixes
