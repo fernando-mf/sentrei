@@ -14,8 +14,8 @@ beforeAll(() => {
   when(db.doc as any)
     .calledWith("users/testUID")
     .mockReturnValue({path: "users/testUID"})
-    .calledWith("profile/testUID")
-    .mockReturnValue({path: "profile/testUID"});
+    .calledWith("profiles/testUID")
+    .mockReturnValue({path: "profiles/testUID"});
 });
 
 test("Add the user info to their settings", async done => {
@@ -37,7 +37,7 @@ test("Add the user info to their settings", async done => {
 
 test("Add the user info to their profile", async done => {
   const spy = spyOn(db.batch(), "set");
-  const ref = db.doc("profile/testUID");
+  const ref = db.doc("profiles/testUID");
 
   const wrapped = testEnv.wrap(setupProfile);
   await wrapped({

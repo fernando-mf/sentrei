@@ -28,7 +28,7 @@ const setupProfile = functions.auth.user().onCreate(async user => {
   const userRef = db.doc(`users/${user.uid}`);
   batch.set(userRef, userData, {merge: true});
 
-  const profileRef = db.doc(`profile/${user.uid}`);
+  const profileRef = db.doc(`profiles/${user.uid}`);
   batch.set(profileRef, profileData, {merge: true});
 
   return batch.commit();

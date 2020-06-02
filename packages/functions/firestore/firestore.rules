@@ -14,6 +14,7 @@ service cloud.firestore {
       allow read: if request.auth.uid == userId;
       allow create, update: if
         request.auth.uid == userId
+        && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['name','role', 'username'])
       ;
     }
   }

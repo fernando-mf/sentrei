@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const firebaseDoc = {
   delete: jest.fn(),
   get: jest.fn().mockReturnValue({

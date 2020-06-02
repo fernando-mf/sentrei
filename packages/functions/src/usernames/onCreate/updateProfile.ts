@@ -9,7 +9,7 @@ const updateProfile = functions.firestore
   .document("usernames/{username}")
   .onCreate(snap => {
     const data = snap.data() as Username;
-    return db.doc(`profile/${data.uid}`).update({username: snap.id});
+    return db.doc(`profiles/${data.uid}`).update({username: snap.id});
   });
 
 export default updateProfile;
