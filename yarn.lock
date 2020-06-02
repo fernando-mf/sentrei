@@ -2120,6 +2120,17 @@
     "@firebase/util" "0.2.47"
     tslib "1.11.1"
 
+"@firebase/testing@^0.19.6":
+  version "0.19.6"
+  resolved "https://registry.yarnpkg.com/@firebase/testing/-/testing-0.19.6.tgz#1ea580b59280a7e04036f1673bb9355bc27f03db"
+  integrity sha512-LuOUDvHobZ7nAHZnmkiPLwzQAZtryrfQvyXggsVS+vC9URarLPUmgkYe1yyyt93kcmFEwebkVkBbmJMYCpVvsA==
+  dependencies:
+    "@firebase/logger" "0.2.4"
+    "@firebase/util" "0.2.47"
+    "@types/request" "2.48.4"
+    firebase "7.14.6"
+    request "2.88.2"
+
 "@firebase/util@0.2.47":
   version "0.2.47"
   resolved "https://registry.yarnpkg.com/@firebase/util/-/util-0.2.47.tgz#c5e02bbba7aa0786f29cc516b2e2ee17e0c1f4a4"
@@ -6077,6 +6088,11 @@
     "@types/connect" "*"
     "@types/node" "*"
 
+"@types/caseless@*":
+  version "0.12.2"
+  resolved "https://registry.yarnpkg.com/@types/caseless/-/caseless-0.12.2.tgz#f65d3d6389e01eeb458bd54dc8f52b95a9463bc8"
+  integrity sha512-6ckxMjBBD8URvjB6J3NcnuAn5Pkl7t3TizAg+xdlzzQGSPSmBcXf8KoIH0ua/i+tio+ZRUHEXp0HEmvaR4kt0w==
+
 "@types/chalk@^2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@types/chalk/-/chalk-2.2.0.tgz#b7f6e446f4511029ee8e3f43075fb5b73fbaa0ba"
@@ -6524,6 +6540,16 @@
     "@types/react" "*"
     "@types/styled-system" "*"
 
+"@types/request@2.48.4":
+  version "2.48.4"
+  resolved "https://registry.yarnpkg.com/@types/request/-/request-2.48.4.tgz#df3d43d7b9ed3550feaa1286c6eabf0738e6cf7e"
+  integrity sha512-W1t1MTKYR8PxICH+A4HgEIPuAC3sbljoEVfyZbeFJJDbr30guDspJri2XOaM2E+Un7ZjrihaDi7cf6fPa2tbgw==
+  dependencies:
+    "@types/caseless" "*"
+    "@types/node" "*"
+    "@types/tough-cookie" "*"
+    form-data "^2.5.0"
+
 "@types/retry@^0.12.0":
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
@@ -6696,6 +6722,11 @@
   version "0.0.33"
   resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.0.33.tgz#1073c4bc824754ae3d10cfab88ab0237ba964e4d"
   integrity sha1-EHPEvIJHVK49EM+riKsCN7qWTk0=
+
+"@types/tough-cookie@*":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-4.0.0.tgz#fef1904e4668b6e5ecee60c52cc6a078ffa6697d"
+  integrity sha512-I99sngh224D0M7XgW1s120zxCt3VYQ3IQsuw3P3jbq5GG4yc79+ZjyKznyOGIQrflfylLgcfekeZW/vk0yng6A==
 
 "@types/uglify-js@*":
   version "3.9.2"
@@ -15278,7 +15309,7 @@ firebase-tools@^8.0.2, firebase-tools@^8.3.0:
     winston "^3.0.0"
     ws "^7.2.3"
 
-firebase@^7.14.2, firebase@^7.14.4:
+firebase@7.14.6, firebase@^7.14.2, firebase@^7.14.4:
   version "7.14.6"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-7.14.6.tgz#5b82d9700faaf6b14fc8a6f9bc690139aecea76b"
   integrity sha512-W7nN57T+slfSYtUoCD7Jup/P+V8velhjbtJUlO4+gYXCG0TT83ah3B+89LlVwOrL3tVAl68GdA892vdXVsY6zQ==
@@ -28820,7 +28851,7 @@ request-promise@^4.2.1:
     stealthy-require "^1.1.1"
     tough-cookie "^2.3.3"
 
-request@^2.65.0, request@^2.81.0, request@^2.83.0, request@^2.87.0, request@^2.88.0, request@^2.88.2:
+request@2.88.2, request@^2.65.0, request@^2.81.0, request@^2.83.0, request@^2.87.0, request@^2.88.0, request@^2.88.2:
   version "2.88.2"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.2.tgz#d73c918731cb5a87da047e207234146f664d12b3"
   integrity sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
