@@ -1,3 +1,9 @@
+## [4.74.1](https://github.com/sentrei/sentrei/compare/v4.74.0...v4.74.1) (2020-06-02)
+
+### Bug Fixes
+
+- **deps:** bump gatsby-plugin-google-analytics from 2.3.2 to 2.3.3 ([e85ba67](https://github.com/sentrei/sentrei/commit/e85ba67310235e4b31a2df8d97392d99a1fc1f88))
+
 # [4.74.0](https://github.com/sentrei/sentrei/compare/v4.73.10...v4.74.0) (2020-06-02)
 
 ### Features
