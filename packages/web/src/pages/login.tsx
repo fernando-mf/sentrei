@@ -42,7 +42,7 @@ const Login: NextPage = () => {
         signupText={t("headerSignup")}
         testimonialText={t("headerTestimonial")}
       />
-      <Auth type={authType.login} />; ;{" "}
+      <Auth type={authType.login} />;
     </>
   );
 };

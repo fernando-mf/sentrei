@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import {LinearProgress} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
 import whyDidYouRender from "@welldone-software/why-did-you-render";
@@ -97,6 +98,7 @@ const App = ({Component, pageProps}: AppProps): JSX.Element => {
               user: userData,
             }}
           >
+            {user === undefined && <LinearProgress variant="query" />}
             <ErrorBoundary>
               <Component {...pageProps} />
             </ErrorBoundary>
