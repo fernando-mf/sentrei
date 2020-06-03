@@ -1,4 +1,4 @@
-NODE_ENV_VERSION = 14.3.0
+NODE_ENV_VERSION = 14.4.0
 
 gcr-clean-alpha:
 	gcloud container images list-tags gcr.io/sentrei-alpha/sentrei --filter='-tags:*' --format='get(digest)' --limit=unlimited | \
