@@ -1,3 +1,3 @@
 export default interface Props {
-  userEmail: string;
+  userEmail: string | null;
 }

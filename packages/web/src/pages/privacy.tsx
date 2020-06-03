@@ -1,15 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
-
+import {NextPage} from "next";
 import React from "react";
 
 import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
+import {analytics} from "@sentrei/common/utils/firebase";
 
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
-function Privacy(): JSX.Element {
+const Privacy: NextPage = () => {
   const {t} = useTranslation();
+
+  React.useEffect(() => {
+    analytics().setCurrentScreen("privacy");
+  }, []);
+
   return (
     <>
       <SentreiHeader
@@ -1130,7 +1136,7 @@ function Privacy(): JSX.Element {
       </Container>
     </>
   );
-}
+};
 
 Privacy.getInitialProps = (): {
   namespacesRequired: string[];

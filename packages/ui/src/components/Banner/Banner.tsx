@@ -3,10 +3,11 @@ import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import {useRouter} from "next/router";
 import React from "react";
 
 import Props from "@sentrei/common/interfaces/Banner";
-import signInWithGoogle from "@sentrei/common/utils/auth/signInWithGoogle";
+import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import Link from "@sentrei/ui/components/Link";
 import RoughNotation from "@sentrei/ui/components/RoughNotation";
 import Typical from "@sentrei/ui/components/Typical";
@@ -28,6 +29,17 @@ export default function Banner({
   typicalThree,
 }: Props): JSX.Element {
   const classes = BannerStyles();
+  const {push, query} = useRouter();
+
+  const redirect = (): void => {
+    if (query.redirect) {
+      push(String(query.redirect));
+    }
+  };
+
+  const google = (): void => {
+    signinWithGoogle().then(redirect);
+  };
 
   return (
     <Container maxWidth="sm" component="main" className={classes.banner}>
@@ -98,7 +110,7 @@ export default function Banner({
         <Grid item xs={12} md={6}>
           <div className={classes.item}>
             <Button
-              onClick={(): void => signInWithGoogle()}
+              onClick={(): void => google()}
               color="primary"
               variant="outlined"
               className={classes.button}

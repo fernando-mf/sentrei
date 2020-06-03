@@ -13,8 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import MailOutlinedIcon from "@material-ui/icons/MailOutlined";
-import firebase from "firebase/app";
-import Router from "next/router";
+import Router, {useRouter} from "next/router";
 
 import React from "react";
 import "firebase/auth";
@@ -22,8 +21,10 @@ import {useForm, Controller} from "react-hook-form";
 
 import * as Yup from "yup";
 
+import signin from "@sentrei/common/services/signin";
+import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import authType from "@sentrei/common/types/authType";
-import signInWithGoogle from "@sentrei/common/utils/auth/signInWithGoogle";
+import {auth} from "@sentrei/common/utils/firebase";
 import Link from "@sentrei/ui/components/Link";
 import Snackbar from "@sentrei/ui/components/Snackbar";
 
@@ -35,7 +36,6 @@ interface Props {
 
 export default function Auth({type}: Props): JSX.Element {
   const classes = AuthStyles();
-
   const AuthFormSchema = Yup.object().shape({
     email: Yup.string()
       .required("Email is required")
@@ -58,11 +58,22 @@ export default function Auth({type}: Props): JSX.Element {
     validationSchema: authType.reset ? ResetFormSchema : AuthFormSchema,
   });
 
+  const {push, query} = useRouter();
   const [open, setOpen] = React.useState<boolean>(false);
   const [message, setMessage] = React.useState<string>("");
   const [severity, setSeverity] = React.useState<
     "error" | "success" | "info" | "warning"
   >("info");
+
+  const redirect = (): void => {
+    if (query.redirect) {
+      push(String(query.redirect));
+    }
+  };
+
+  const google = (): void => {
+    signinWithGoogle().then(redirect);
+  };
 
   const handleClose = (event?: React.SyntheticEvent, reason?: string): void => {
     if (reason === "clickaway") {
@@ -90,7 +101,7 @@ export default function Auth({type}: Props): JSX.Element {
     switch (type) {
       case authType.reset:
         try {
-          firebase.auth().sendPasswordResetEmail(data.email);
+          await auth.sendPasswordResetEmail(data.email);
           handleSuccess("Please check your email");
         } catch (err) {
           handleError(err);
@@ -98,12 +109,10 @@ export default function Auth({type}: Props): JSX.Element {
         break;
       case authType.login:
         try {
-          await firebase
-            .auth()
-            .signInWithEmailAndPassword(data.email, data.password);
-          setOpen(false);
-          Router.push({
-            pathname: "/",
+          signin(data.email, data.password).then(() => {
+            if (query.redirect) {
+              push(String(query.redirect));
+            }
           });
         } catch (err) {
           handleError(err);
@@ -111,9 +120,7 @@ export default function Auth({type}: Props): JSX.Element {
         break;
       case authType.signup:
         try {
-          await firebase
-            .auth()
-            .createUserWithEmailAndPassword(data.email, data.password);
+          await auth.createUserWithEmailAndPassword(data.email, data.password);
           setOpen(false);
           Router.push({
             pathname: "/",
@@ -148,7 +155,7 @@ export default function Auth({type}: Props): JSX.Element {
         {type !== authType.reset && (
           <>
             <Button
-              onClick={(): void => signInWithGoogle()}
+              onClick={(): void => google()}
               color="primary"
               variant="outlined"
               className={classes.button}
