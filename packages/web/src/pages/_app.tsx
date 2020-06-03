@@ -1,9 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {LinearProgress} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
-import whyDidYouRender from "@welldone-software/why-did-you-render";
-import * as firebase from "firebase/app";
 import {AppProps} from "next/app";
 import Head from "next/head";
 import React from "react";
