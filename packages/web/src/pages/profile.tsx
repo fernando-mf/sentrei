@@ -1,24 +1,29 @@
-/* eslint-disable consistent-return */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import {NextPage} from "next";
 import Router from "next/router";
 import * as React from "react";
 
 import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
+import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
+import GlobalContext from "@sentrei/web/components/HOC/GlobalContext";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 import SentreiProfile from "@sentrei/web/components/SentreiProfile";
 
-const Profile = (props: any): any => {
-  const {
-    auth: {user},
-  } = props;
+const Profile: NextPage = () => {
+  const {user} = React.useContext(GlobalContext);
   const {t} = useTranslation();
 
   React.useEffect(() => {
-    if (!user) {
-      Router.push("/");
-    }
-  });
+    analytics().setCurrentScreen("login");
+  }, []);
+
+  if (user === undefined) {
+    return <Loader />;
+  }
+
+  if (user) {
+    Router.push("/dashboard");
+  }
 
   return (
     <>

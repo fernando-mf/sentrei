@@ -1,26 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
-import * as Sentry from "@sentry/browser";
 import whyDidYouRender from "@welldone-software/why-did-you-render";
 import * as firebase from "firebase/app";
-import get from "lodash.get";
-import NextApp from "next/app";
+import {AppProps} from "next/app";
 import Head from "next/head";
-import React, {ErrorInfo} from "react";
+import React from "react";
 import {ThemeProvider as StyledThemeProvider} from "styled-components";
 
 import {appWithTranslation} from "@sentrei/common/i18n";
-import initFirebase from "@sentrei/common/utils/initFirebase";
+import User from "@sentrei/common/models/User";
+import logIPAddress from "@sentrei/common/services/logIPAddress";
+import {auth, analytics, db, performance} from "@sentrei/common/utils/firebase";
 import isBrowser from "@sentrei/common/utils/isBrowser";
 import isDev from "@sentrei/common/utils/isDev";
+import ErrorBoundary from "@sentrei/ui/components/ErrorBoundary";
 import Theme from "@sentrei/ui/containers/Theme";
-import AuthUserInfoContext from "@sentrei/ui/context/AuthUserInfoContext";
-import withAuth from "@sentrei/web/components/HOC/withAuth";
-import "firebase/auth";
-import "firebase/analytics";
-import "firebase/performance";
 
+import GlobalContext from "@sentrei/web/components/HOC/GlobalContext";
 import "@sentrei/common/utils/nprogress";
 import "@sentrei/common/utils/sentry";
 import "@sentrei/web/styles/global.scss";
@@ -28,64 +25,85 @@ import "@sentrei/web/styles/nprogress.scss";
 
 if (isBrowser() && isDev()) whyDidYouRender(React);
 
-initFirebase();
+const App = ({Component, pageProps}: AppProps): JSX.Element => {
+  const [user, setUser] = React.useState<firebase.User | null | undefined>(
+    undefined,
+  );
+  const [userData, setUserData] = React.useState<User.Get | null | undefined>(
+    undefined,
+  );
 
-class App extends NextApp<any, any> {
-  componentDidMount(): void {
-    const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles && jssStyles.parentNode) {
-      jssStyles.parentNode.removeChild(jssStyles);
+  React.useEffect(() => {
+    auth.onAuthStateChanged(setUser);
+  }, []);
+
+  React.useEffect(() => {
+    let unsubscribe: firebase.Unsubscribe = () => {};
+
+    if (user) {
+      unsubscribe = db.doc(`users/${user.uid}`).onSnapshot(snap => {
+        if (snap && snap.data()) {
+          const firebaseUser = snap.data() as User.Response;
+
+          setUserData({
+            ...firebaseUser,
+            email: user.email,
+            uid: user.uid,
+          });
+
+          analytics().setUserProperties({
+            emailVerified: user.emailVerified,
+            role: firebaseUser.role,
+          });
+          analytics().setUserId(user.uid);
+        }
+      });
     }
-    if (isBrowser() && !firebase.apps.length) {
-      firebase.analytics().logEvent("_app");
-      firebase.performance().trace("_app");
+
+    if (user === null) {
+      setUserData(null);
     }
-  }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    Sentry.withScope(scope => {
-      Object.keys(errorInfo).forEach(key => scope.setExtra(key, errorInfo));
-      Sentry.captureException(error);
-    });
+    return (): void => {
+      unsubscribe();
+    };
+  }, [user]);
 
-    super.componentDidCatch(error, errorInfo);
-  }
+  React.useEffect(() => {
+    if (user) {
+      logIPAddress();
+    }
+  }, [user]);
 
-  render(): JSX.Element {
-    const {Component, pageProps, user} = this.props;
-    const fileLabel = "pages/_app";
+  React.useEffect(() => {
+    performance();
+  }, []);
 
-    Sentry.addBreadcrumb({
-      // See https://docs.sentry.io/enriching-error-data/breadcrumbs
-      category: fileLabel,
-      message: `Rendering app for Component "${get(
-        Component,
-        "name",
-        "unknown",
-      )}" (${isBrowser() ? "browser" : "server"})`,
-      level: Sentry.Severity.Debug,
-    });
+  return (
+    <>
+      <Head>
+        <title>Sentrei</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+      <StyledThemeProvider theme={Theme}>
+        <MaterialThemeProvider theme={Theme}>
+          <CssBaseline />
+          <GlobalContext.Provider
+            value={{
+              user: userData,
+            }}
+          >
+            <ErrorBoundary>
+              <Component {...pageProps} />
+            </ErrorBoundary>
+          </GlobalContext.Provider>
+        </MaterialThemeProvider>
+      </StyledThemeProvider>
+    </>
+  );
+};
 
-    return (
-      <>
-        <Head>
-          <title>Sentrei</title>
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width"
-          />
-        </Head>
-        <StyledThemeProvider theme={Theme}>
-          <MaterialThemeProvider theme={Theme}>
-            <CssBaseline />
-            <AuthUserInfoContext.Provider value={{user}}>
-              <Component {...pageProps} auth={{user}} />
-            </AuthUserInfoContext.Provider>
-          </MaterialThemeProvider>
-        </StyledThemeProvider>
-      </>
-    );
-  }
-}
-
-export default withAuth(appWithTranslation(App));
+export default appWithTranslation(App);

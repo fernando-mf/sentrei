@@ -1,50 +1,50 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
+import {NextPage} from "next";
 import Router from "next/router";
 import React from "react";
 
 import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
 import authType from "@sentrei/common/types/authType";
+import {analytics} from "@sentrei/common/utils/firebase";
 import Auth from "@sentrei/ui/components/Auth";
 import Loader from "@sentrei/ui/components/Loader";
+import GlobalContext from "@sentrei/web/components/HOC/GlobalContext";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function Login(props: any): JSX.Element {
-  const {
-    auth: {user},
-  } = props;
+const Login: NextPage = () => {
+  const {user} = React.useContext(GlobalContext);
   const {t} = useTranslation();
 
   React.useEffect(() => {
-    if (user) {
-      Router.push("/dashboard");
-    }
-  });
+    analytics().setCurrentScreen("login");
+  }, []);
+
+  if (user === undefined) {
+    return <Loader />;
+  }
+
+  if (user) {
+    Router.push("/dashboard");
+  }
 
   return (
     <>
-      {user ? (
-        <Loader />
-      ) : (
-        <>
-          <SentreiHeader
-            sign={false}
-            spy={false}
-            faqText={t("headerFaq")}
-            featuresText={t("headerFeatures")}
-            pricingText={t("headerPricing")}
-            productText={t("headerProduct")}
-            loginText={t("headerLogin")}
-            signupText={t("headerSignup")}
-            testimonialText={t("headerTestimonial")}
-          />
-          <Auth type={authType.login} />;
-        </>
-      )}
+      <SentreiHeader
+        sign={false}
+        spy={false}
+        faqText={t("headerFaq")}
+        featuresText={t("headerFeatures")}
+        pricingText={t("headerPricing")}
+        productText={t("headerProduct")}
+        loginText={t("headerLogin")}
+        signupText={t("headerSignup")}
+        testimonialText={t("headerTestimonial")}
+      />
+      <Auth type={authType.login} />; ;{" "}
     </>
   );
-}
+};
 
 Login.getInitialProps = (): {
   namespacesRequired: string[];

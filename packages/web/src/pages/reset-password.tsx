@@ -1,14 +1,19 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
+import {NextPage} from "next";
 import React from "react";
 
 import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
 import authType from "@sentrei/common/types/authType";
+import {analytics} from "@sentrei/common/utils/firebase";
 import Auth from "@sentrei/ui/components/Auth";
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function ResetPassword(): JSX.Element {
+
+const ResetPassword: NextPage = () => {
   const {t} = useTranslation();
+
+  React.useEffect(() => {
+    analytics().setCurrentScreen("reset-password");
+  }, []);
+
   return (
     <>
       <SentreiHeader
@@ -25,7 +30,7 @@ function ResetPassword(): JSX.Element {
       <Auth type={authType.reset} />;
     </>
   );
-}
+};
 
 ResetPassword.getInitialProps = (): {
   namespacesRequired: string[];
