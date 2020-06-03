@@ -67,8 +67,6 @@ const App = ({Component, pageProps}: AppProps): JSX.Element => {
   }, [user]);
 
   React.useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(user);
     if (user) {
       logIPAddress();
     }
