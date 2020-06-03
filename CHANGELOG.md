@@ -1,3 +1,9 @@
+## [4.76.6](https://github.com/sentrei/sentrei/compare/v4.76.5...v4.76.6) (2020-06-03)
+
+### Bug Fixes
+
+- **deps:** bump @sentry/browser from 5.16.0 to 5.16.1 ([02ecf13](https://github.com/sentrei/sentrei/commit/02ecf13f32e39371a3804045d69a970e200fc5ff))
+
 ## [4.76.3](https://github.com/sentrei/sentrei/compare/v4.76.2...v4.76.3) (2020-06-03)
 
 ### Bug Fixes
