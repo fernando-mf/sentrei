@@ -1,3 +1,9 @@
+## [4.75.1](https://github.com/sentrei/sentrei/compare/v4.75.0...v4.75.1) (2020-06-02)
+
+### Bug Fixes
+
+- 🐛 add storage rules ([ccffd83](https://github.com/sentrei/sentrei/commit/ccffd833dfa5a13293d7b68d2dcba9a638183caa))
+
 # [4.75.0](https://github.com/sentrei/sentrei/compare/v4.74.3...v4.75.0) (2020-06-02)
 
 ### Features
