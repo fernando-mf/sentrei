@@ -1,3 +1,9 @@
+## [4.76.3](https://github.com/sentrei/sentrei/compare/v4.76.2...v4.76.3) (2020-06-03)
+
+### Bug Fixes
+
+- 🐛 upgrade to 14.4.0 ([927a613](https://github.com/sentrei/sentrei/commit/927a6134029d657432b688c3db93a480bb511f87))
+
 ## [4.76.1](https://github.com/sentrei/sentrei/compare/v4.76.0...v4.76.1) (2020-06-03)
 
 ### Bug Fixes
