@@ -80,6 +80,10 @@ const Index: NextPage = () => {
     analytics().setCurrentScreen("home");
   }, []);
 
+  if (user === undefined) {
+    return <Loader />;
+  }
+
   if (user) {
     Router.push("/dashboard");
   }

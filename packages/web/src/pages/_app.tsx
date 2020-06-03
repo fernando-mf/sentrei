@@ -1,9 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {LinearProgress} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
-import whyDidYouRender from "@welldone-software/why-did-you-render";
-import * as firebase from "firebase/app";
 import {AppProps} from "next/app";
 import Head from "next/head";
 import React from "react";
@@ -14,8 +11,6 @@ import {appWithTranslation} from "@sentrei/common/i18n";
 import User from "@sentrei/common/models/User";
 import logIPAddress from "@sentrei/common/services/logIPAddress";
 import {auth, analytics, db, performance} from "@sentrei/common/utils/firebase";
-import isBrowser from "@sentrei/common/utils/isBrowser";
-import isDev from "@sentrei/common/utils/isDev";
 import ErrorBoundary from "@sentrei/ui/components/ErrorBoundary";
 import Theme from "@sentrei/ui/containers/Theme";
 
@@ -23,8 +18,6 @@ import "@sentrei/common/utils/nprogress";
 import "@sentrei/common/utils/sentry";
 import "@sentrei/web/styles/global.scss";
 import "@sentrei/web/styles/nprogress.scss";
-
-if (isBrowser() && isDev()) whyDidYouRender(React);
 
 const App = ({Component, pageProps}: AppProps): JSX.Element => {
   const [user, setUser] = React.useState<firebase.User | null | undefined>(
@@ -71,8 +64,6 @@ const App = ({Component, pageProps}: AppProps): JSX.Element => {
   }, [user]);
 
   React.useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(user);
     if (user) {
       logIPAddress();
     }
