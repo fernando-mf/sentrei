@@ -59,7 +59,8 @@
     "test:watch": "firebase emulators:exec --only firestore 'jest --watch'",
     "tscpaths": "tscpaths -p tsconfig.json -s ./src -o ./dist",
     "typescript": "yarn run clean && tsc -b . && yarn run tscpaths",
-    "watch": "tsc -b . -w --preserveWatchOutput & yarn run tscpaths"
+    "watch": "npm-run-all --parallel watch:tsc tscpaths",
+    "watch:tsc": "tsc -b . -w --preserveWatchOutput"
   },
   "dependencies": {
     "@firebase/testing": "^0.19.6",
@@ -79,6 +80,7 @@
     "firebase-functions-test": "0.2.1",
     "jest": "^26.0.1",
     "jest-when": "^2.7.2",
+    "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "ts-jest": "26.1.0",
     "tslint": "^6.1.1",
