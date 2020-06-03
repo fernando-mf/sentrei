@@ -58,8 +58,8 @@
     "test": "firebase emulators:exec --only firestore 'jest'",
     "test:watch": "firebase emulators:exec --only firestore 'jest --watch'",
     "tscpaths": "tscpaths -p tsconfig.json -s ./src -o ./dist",
-    "typescript": "yarn run clean && tsc -b . && yarn run tscpaths",
-    "watch": "tsc -b . -w --preserveWatchOutput && yarn run tscpaths"
+    "typescript": "yarn run clean && tsc -b . & yarn run tscpaths",
+    "watch": "tsc -b . -w --preserveWatchOutput & yarn run tscpaths"
   },
   "dependencies": {
     "@firebase/testing": "^0.19.6",

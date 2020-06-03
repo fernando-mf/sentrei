@@ -10,7 +10,7 @@ import Router from "next/router";
 import React from "react";
 
 import Props from "@sentrei/common/interfaces/ProfileMenu";
-import handleLogout from "@sentrei/common/utils/auth/handleLogout";
+import {auth} from "@sentrei/common/utils/firebase";
 
 export default function ProfileMenu({
   anchorEl,
@@ -52,7 +52,7 @@ export default function ProfileMenu({
         </ListItemIcon>
         <ListItemText primary="Settings" />
       </MenuItem>
-      <MenuItem onClick={handleLogout}>
+      <MenuItem onClick={(): Promise<void> => auth.signOut()}>
         <ListItemIcon>
           <ExitToAppIcon fontSize="small" />
         </ListItemIcon>

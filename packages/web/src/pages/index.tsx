@@ -4,35 +4,71 @@ import Head from "next/head";
 import Router from "next/router";
 import React from "react";
 
+import GlobalContext from "@sentrei/common/context/GlobalContext";
 import {useTranslation} from "@sentrei/common/i18n";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Footer from "@sentrei/ui/components/Footer";
 import Loader from "@sentrei/ui/components/Loader";
 import Spacing from "@sentrei/ui/components/Spacing";
-import GlobalContext from "@sentrei/web/components/HOC/GlobalContext";
-import SentreiFaq from "@sentrei/web/components/SentreiFaq";
-import SentreiFeature from "@sentrei/web/components/SentreiFeature";
-import SentreiPricing from "@sentrei/web/components/SentreiPricing";
-import SentreiProduct from "@sentrei/web/components/SentreiProduct";
-import SentreiSlider from "@sentrei/web/components/SentreiSlider";
-import SentreiTestimonial from "@sentrei/web/components/SentreiTestimonial";
 
 const SentreiHeader = dynamic(
   () => import("@sentrei/web/components/SentreiHeader"),
   {
     loading: () => <Loader />,
+    ssr: false,
   },
 );
 const SentreiBanner = dynamic(
   () => import("@sentrei/web/components/SentreiBanner"),
   {
     loading: () => <Loader />,
+    ssr: false,
+  },
+);
+const SentreiFeature = dynamic(
+  () => import("@sentrei/web/components/SentreiFeature"),
+  {
+    loading: () => <Loader />,
+    ssr: false,
+  },
+);
+const SentreiFaq = dynamic(() => import("@sentrei/web/components/SentreiFaq"), {
+  loading: () => <Loader />,
+  ssr: false,
+});
+const SentreiPricing = dynamic(
+  () => import("@sentrei/web/components/SentreiPricing"),
+  {
+    loading: () => <Loader />,
+    ssr: false,
+  },
+);
+const SentreiProduct = dynamic(
+  () => import("@sentrei/web/components/SentreiProduct"),
+  {
+    loading: () => <Loader />,
+    ssr: false,
+  },
+);
+const SentreiSlider = dynamic(
+  () => import("@sentrei/web/components/SentreiSlider"),
+  {
+    loading: () => <Loader />,
+    ssr: false,
   },
 );
 const SentreiScreen = dynamic(
   () => import("@sentrei/web/components/SentreiScreen"),
   {
     loading: () => <Loader />,
+    ssr: false,
+  },
+);
+const SentreiTestimonial = dynamic(
+  () => import("@sentrei/web/components/SentreiTestimonial"),
+  {
+    loading: () => <Loader />,
+    ssr: false,
   },
 );
 
@@ -43,10 +79,6 @@ const Index: NextPage = () => {
   React.useEffect(() => {
     analytics().setCurrentScreen("home");
   }, []);
-
-  if (user === undefined) {
-    return <Loader />;
-  }
 
   if (user) {
     Router.push("/dashboard");

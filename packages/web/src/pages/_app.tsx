@@ -8,6 +8,7 @@ import Head from "next/head";
 import React from "react";
 import {ThemeProvider as StyledThemeProvider} from "styled-components";
 
+import GlobalContext from "@sentrei/common/context/GlobalContext";
 import {appWithTranslation} from "@sentrei/common/i18n";
 import User from "@sentrei/common/models/User";
 import logIPAddress from "@sentrei/common/services/logIPAddress";
@@ -17,7 +18,6 @@ import isDev from "@sentrei/common/utils/isDev";
 import ErrorBoundary from "@sentrei/ui/components/ErrorBoundary";
 import Theme from "@sentrei/ui/containers/Theme";
 
-import GlobalContext from "@sentrei/web/components/HOC/GlobalContext";
 import "@sentrei/common/utils/nprogress";
 import "@sentrei/common/utils/sentry";
 import "@sentrei/web/styles/global.scss";
@@ -71,7 +71,8 @@ const App = ({Component, pageProps}: AppProps): JSX.Element => {
 
   React.useEffect(() => {
     if (user) {
-      logIPAddress();
+      console.log(user);
+      // logIPAddress();
     }
   }, [user]);
 

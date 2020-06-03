@@ -2,11 +2,12 @@ import {NextPage} from "next";
 import Router from "next/router";
 import * as React from "react";
 
+import GlobalContext from "@sentrei/common/context/GlobalContext";
 import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
 import SpaceFab from "@sentrei/ui/components/SpaceFab";
-import GlobalContext from "@sentrei/web/components/HOC/GlobalContext";
+
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const Dashboard: NextPage = () => {

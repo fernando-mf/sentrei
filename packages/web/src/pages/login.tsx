@@ -4,12 +4,13 @@ import {NextPage} from "next";
 import Router from "next/router";
 import React from "react";
 
+import GlobalContext from "@sentrei/common/context/GlobalContext";
 import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
 import authType from "@sentrei/common/types/authType";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Auth from "@sentrei/ui/components/Auth";
 import Loader from "@sentrei/ui/components/Loader";
-import GlobalContext from "@sentrei/web/components/HOC/GlobalContext";
+
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const Login: NextPage = () => {
