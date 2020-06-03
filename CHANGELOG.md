@@ -1,3 +1,9 @@
+# [4.76.0](https://github.com/sentrei/sentrei/compare/v4.75.1...v4.76.0) (2020-06-03)
+
+### Features
+
+- 🎸 complete refactor global ([24270d7](https://github.com/sentrei/sentrei/commit/24270d7801e985420ccc190736026d380172c86b))
+
 ## [4.75.1](https://github.com/sentrei/sentrei/compare/v4.75.0...v4.75.1) (2020-06-02)
 
 ### Bug Fixes
