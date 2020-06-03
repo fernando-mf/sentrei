@@ -48,7 +48,7 @@
     "staging:alpha": "yarn run swap:alpha && firebase use alpha && yarn run test",
     "staging:beta": "yarn run swap:beta && firebase use beta && yarn run test",
     "staging:master": "yarn run swap:master && firebase use master && yarn run test",
-    "start": "FIRESTORE_EMULATOR_HOST=localhost:8080 firebase emulators:start --only firestore,functions,pubsub --inspect-functions",
+    "start": "firebase emulators:start --only firestore,functions,pubsub --inspect-functions",
     "swap:alpha": "cp alpha.firebase.json firebase.json",
     "swap:alpha:env": "cp alpha.env.json env.json",
     "swap:beta": "cp beta.firebase.json firebase.json",
@@ -58,7 +58,7 @@
     "test": "firebase emulators:exec --only firestore 'jest'",
     "test:watch": "firebase emulators:exec --only firestore 'jest --watch'",
     "tscpaths": "tscpaths -p tsconfig.json -s ./src -o ./dist",
-    "typescript": "yarn run clean && tsc -b . & yarn run tscpaths",
+    "typescript": "yarn run clean && tsc -b . && yarn run tscpaths",
     "watch": "tsc -b . -w --preserveWatchOutput & yarn run tscpaths"
   },
   "dependencies": {
