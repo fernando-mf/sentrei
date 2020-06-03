@@ -1,3 +1,9 @@
+## [4.76.1](https://github.com/sentrei/sentrei/compare/v4.76.0...v4.76.1) (2020-06-03)
+
+### Bug Fixes
+
+- **deps:** bump node in /packages/web ([107f597](https://github.com/sentrei/sentrei/commit/107f5973f1d26fc24c6066459a1786d786c2d54f))
+
 # [4.76.0](https://github.com/sentrei/sentrei/compare/v4.75.1...v4.76.0) (2020-06-03)
 
 ### Features
