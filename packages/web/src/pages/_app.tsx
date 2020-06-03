@@ -14,8 +14,6 @@ import {appWithTranslation} from "@sentrei/common/i18n";
 import User from "@sentrei/common/models/User";
 import logIPAddress from "@sentrei/common/services/logIPAddress";
 import {auth, analytics, db, performance} from "@sentrei/common/utils/firebase";
-import isBrowser from "@sentrei/common/utils/isBrowser";
-import isDev from "@sentrei/common/utils/isDev";
 import ErrorBoundary from "@sentrei/ui/components/ErrorBoundary";
 import Theme from "@sentrei/ui/containers/Theme";
 
@@ -23,8 +21,6 @@ import "@sentrei/common/utils/nprogress";
 import "@sentrei/common/utils/sentry";
 import "@sentrei/web/styles/global.scss";
 import "@sentrei/web/styles/nprogress.scss";
-
-if (isBrowser() && isDev()) whyDidYouRender(React);
 
 const App = ({Component, pageProps}: AppProps): JSX.Element => {
   const [user, setUser] = React.useState<firebase.User | null | undefined>(
