@@ -110,22 +110,30 @@ export default function Auth({type}: Props): JSX.Element {
         break;
       case authType.login:
         try {
-          signin(data.email, data.password).then(() => {
-            if (query.redirect) {
-              push(String(query.redirect));
-            }
-          });
+          signin(data.email, data.password)
+            .then(() => {
+              if (query.redirect) {
+                push(String(query.redirect));
+              }
+            })
+            .catch(err => {
+              handleError(err);
+            });
         } catch (err) {
           handleError(err);
         }
         break;
       case authType.signup:
         try {
-          signup(data.email, data.password).then(() => {
-            if (query.redirect) {
-              push(String(query.redirect));
-            }
-          });
+          signup(data.email, data.password)
+            .then(() => {
+              if (query.redirect) {
+                push(String(query.redirect));
+              }
+            })
+            .catch(err => {
+              handleError(err);
+            });
         } catch (err) {
           handleError(err);
         }
