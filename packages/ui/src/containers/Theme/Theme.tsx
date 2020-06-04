@@ -1,6 +1,11 @@
 import {createMuiTheme, responsiveFontSizes} from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
+  palette: {
+    secondary: {
+      main: "#ffdbe2",
+    },
+  },
   typography: {
     fontFamily: [
       "Montserrat",
