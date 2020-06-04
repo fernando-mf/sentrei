@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import Profile from "@sentrei/common/models/Profile";
 
-namespace SpaceMember {
-  export interface Join {
+declare namespace Member {
+  export type Join = {
     joined: firebase.firestore.FieldValue;
-  }
+  };
 
   export type Setup = Profile.Response;
 
@@ -23,4 +23,4 @@ namespace SpaceMember {
   }
 }
 
-export default SpaceMember;
+export default Member;
