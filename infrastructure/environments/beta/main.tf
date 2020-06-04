@@ -2,10 +2,10 @@ provider "google" {
   region = "us-central1"
 }
 
-module "firebase" {
-  environment = var.environment
-  source      = "../../modules/firebase"
-}
+# module "firebase" {
+#   environment = var.environment
+#   source      = "../../modules/firebase"
+# }
 
 module "iam" {
   source      = "../../modules/iam"
