@@ -1,6 +1,7 @@
 import {Breakpoint} from "@material-ui/core/styles/createBreakpoints";
 
 export default interface Props {
+  color: string;
   left: boolean;
   img: JSX.Element;
   subTitle: string;

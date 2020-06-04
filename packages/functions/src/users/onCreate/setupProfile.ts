@@ -1,11 +1,17 @@
 import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
-import getNameFromEmail from "@sentrei/common/helpers/getNameFromEmail";
 import Profile from "@sentrei/common/models/Profile";
 import User from "@sentrei/common/models/User";
 
 const db = admin.firestore();
+
+function getNameFromEmail(email: string): string {
+  if (email.lastIndexOf("@") === -1) {
+    return email;
+  }
+  return email.substring(0, email.lastIndexOf("@"));
+}
 
 const setupProfile = functions.auth.user().onCreate(async user => {
   const batch = db.batch();

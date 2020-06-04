@@ -13,14 +13,14 @@ export default function CustomTypical({
   typicalThree,
 }: Props): JSX.Element {
   const classes = TypicalStyles();
-  const typicalDuration = 3000;
+  const typicalDuration = 4500;
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
   const props = useSpring({opacity: inView ? 1 : 0});
 
   return (
-    <animated.span ref={ref} style={props}>
+    <animated.span ref={ref} style={props} className={classes.spring}>
       <Typical
         steps={[
           typicalOne,
