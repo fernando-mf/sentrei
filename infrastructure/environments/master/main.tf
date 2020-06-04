@@ -10,6 +10,10 @@ module "dns" {
   source = "../../modules/dns"
 }
 
+module "firebase" {
+  source = "../../modules/firebase"
+}
+
 module "github" {
   source = "../../modules/github"
 }

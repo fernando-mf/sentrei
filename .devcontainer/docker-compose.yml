@@ -5,12 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-      - "4000:4000"
-      - "5001:5001"
-      - "8080:8080"
-      - "8085:8085"
-      - "9229:9229"
+      - "1-65535:1-65535"
     volumes:
       - ..:/workspace:cached
       - /var/run/docker.sock:/var/run/docker.sock
