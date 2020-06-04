@@ -11,7 +11,8 @@ module "dns" {
 }
 
 module "firebase" {
-  source = "../../modules/firebase"
+  environment = var.environment
+  source      = "../../modules/firebase"
 }
 
 module "github" {
