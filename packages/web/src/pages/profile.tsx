@@ -37,7 +37,6 @@ const Profile: NextPage = () => {
         signupText={t("headerSignup")}
         testimonialText={t("headerTestimonial")}
       />
-      <SentreiProfile userEmail={user.email} />
     </>
   );
 };

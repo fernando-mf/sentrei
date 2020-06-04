@@ -6,11 +6,9 @@ declare namespace Member {
     joined: firebase.firestore.FieldValue;
   };
 
-  export type Setup = Profile.Response;
+  export interface Request extends Join, Profile.Response {}
 
-  export interface Request extends Join, Setup {}
-
-  export interface Response extends Setup {
+  export interface Response extends Profile.Response {
     joined: firebase.firestore.Timestamp;
   }
 

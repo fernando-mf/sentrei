@@ -39,6 +39,8 @@
     "firebase:alpha": "yarn run alpha:local && yarn run env:get:local && yarn run start",
     "firebase:beta": "yarn run beta:local && yarn run env:get:local && yarn run start",
     "firebase:master": "yarn run master:local && yarn run env:get:local && yarn run start",
+    "firestore:export": "firebase emulators:export --force ./data",
+    "firestore:import": "firebase emulators:start --import=./data --only firestore",
     "indexes:get": "firebase firestore:indexes > firestore/firestore.indexes.json",
     "log": "firebase functions:log",
     "master": "yarn run swap:master && firebase use master && yarn run env:set && yarn run deploy:rules && yarn run deploy:functions",
