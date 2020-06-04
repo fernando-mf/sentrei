@@ -4,7 +4,7 @@ const logIPAddress = async (): Promise<
   firebase.functions.HttpsCallableResult
 > => {
   // eslint-disable-next-line no-return-await
-  return await functions.httpsCallable("default-users-logIPAddress")();
+  return await functions.httpsCallable("logIPAddress")();
 };
 
 export default logIPAddress;
