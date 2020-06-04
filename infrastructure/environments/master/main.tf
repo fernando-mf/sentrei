@@ -10,10 +10,10 @@ module "dns" {
   source = "../../modules/dns"
 }
 
-module "firebase" {
-  environment = var.environment
-  source      = "../../modules/firebase"
-}
+# module "firebase" {
+#   environment = var.environment
+#   source      = "../../modules/firebase"
+# }
 
 module "github" {
   source = "../../modules/github"
