@@ -3,7 +3,7 @@ import {useInView} from "react-intersection-observer";
 
 import {i18n} from "@sentrei/common/i18n";
 import Original from "@sentrei/common/interfaces/Feature";
-import logEvent from "@sentrei/common/utils/logEvent";
+import {analytics} from "@sentrei/common/utils/firebase";
 import Feature from "@sentrei/ui/components/Feature";
 import FocusPicture from "@sentrei/web/components/Picture/FocusPicture";
 import GoalPicture from "@sentrei/web/components/Picture/GoalPicture";
@@ -25,7 +25,7 @@ export default function SentreiFeature({
   });
   React.useEffect(() => {
     if (inView) {
-      logEvent("landing", {section: "feature"});
+      analytics().logEvent("landing", {section: "feature"});
     }
   }, [inView]);
   return (

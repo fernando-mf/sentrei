@@ -77,7 +77,7 @@ const Index: NextPage = () => {
   const {t} = useTranslation();
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("home");
+    analytics().setCurrentScreen("landing");
   }, []);
 
   if (user === undefined) {

@@ -4,7 +4,7 @@ import {useInView} from "react-intersection-observer";
 
 import {i18n} from "@sentrei/common/i18n";
 import Original from "@sentrei/common/interfaces/Testimonial";
-import logEvent from "@sentrei/common/utils/logEvent";
+import {analytics} from "@sentrei/common/utils/firebase";
 import Testimonial from "@sentrei/ui/components/Testimonial";
 import FocusPicture from "@sentrei/web/components/Picture/FocusPicture";
 
@@ -30,7 +30,7 @@ export default function SentreiTestimonial({
   });
   React.useEffect(() => {
     if (inView) {
-      logEvent("landing", {section: "testimonial"});
+      analytics().logEvent("landing", {section: "testimonial"});
     }
   }, [inView]);
   return (
