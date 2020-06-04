@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
@@ -8,7 +9,7 @@ import getNameFromEmail from "../../helpers/getNameFromEmail";
 
 const db = admin.firestore();
 
-const setupProfile = functions.auth.user().onCreate(async user => {
+export const setupProfile = functions.auth.user().onCreate(async user => {
   const batch = db.batch();
 
   const userInfo = {
@@ -33,5 +34,3 @@ const setupProfile = functions.auth.user().onCreate(async user => {
 
   return batch.commit();
 });
-
-export default setupProfile;
