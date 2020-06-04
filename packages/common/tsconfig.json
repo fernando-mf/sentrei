@@ -11,7 +11,7 @@
       "@sentrei/common/*": ["src/*"]
     }
   },
-  "include": ["src/**/*", "../ui/src/hooks/hooks.ts"],
+  "include": ["src/**/*"],
   "exclude": [
     "node_modules",
     "**/__tests__/*.ts",
