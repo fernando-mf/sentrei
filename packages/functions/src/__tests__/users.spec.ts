@@ -5,7 +5,7 @@ import {
   initializeFirebaseApp,
   loadFirestoreRules,
   removeApps,
-} from "../helpers/testHelpers";
+} from "./testHelpers";
 
 let admin: firebase.firestore.Firestore;
 let db: firebase.firestore.Firestore;

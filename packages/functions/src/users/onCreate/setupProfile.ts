@@ -1,15 +1,13 @@
-/* eslint-disable import/prefer-default-export */
 import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
+import getNameFromEmail from "@sentrei/common/helpers/getNameFromEmail";
 import Profile from "@sentrei/common/models/Profile";
 import User from "@sentrei/common/models/User";
 
-import getNameFromEmail from "../../helpers/getNameFromEmail";
-
 const db = admin.firestore();
 
-export const setupProfile = functions.auth.user().onCreate(async user => {
+const setupProfile = functions.auth.user().onCreate(async user => {
   const batch = db.batch();
 
   const userInfo = {
@@ -34,3 +32,5 @@ export const setupProfile = functions.auth.user().onCreate(async user => {
 
   return batch.commit();
 });
+
+export default setupProfile;
