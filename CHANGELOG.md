@@ -1,3 +1,9 @@
+## [4.77.2](https://github.com/sentrei/sentrei/compare/v4.77.1...v4.77.2) (2020-06-04)
+
+### Bug Fixes
+
+- 🐛 change to relative in functions module ([b7aed67](https://github.com/sentrei/sentrei/commit/b7aed67384f43ff12c4fd74d02f1bb225898fd35))
+
 ## [4.76.7](https://github.com/sentrei/sentrei/compare/v4.76.6...v4.76.7) (2020-06-03)
 
 ### Bug Fixes
