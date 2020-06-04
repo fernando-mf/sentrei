@@ -1,3 +1,9 @@
+# [4.78.0](https://github.com/sentrei/sentrei/compare/v4.77.2...v4.78.0) (2020-06-04)
+
+### Features
+
+- 🎸 upgrade functions system ([bd513a3](https://github.com/sentrei/sentrei/commit/bd513a3256e433ceba13dbb295ecef20e4d0a8e1))
+
 ## [4.77.2](https://github.com/sentrei/sentrei/compare/v4.77.1...v4.77.2) (2020-06-04)
 
 ### Bug Fixes
