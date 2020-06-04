@@ -3,7 +3,7 @@ import {useInView} from "react-intersection-observer";
 
 import {i18n} from "@sentrei/common/i18n";
 import Props from "@sentrei/common/interfaces/Faq";
-import logEvent from "@sentrei/common/utils/logEvent";
+import {analytics} from "@sentrei/common/utils/firebase";
 import Faq from "@sentrei/ui/components/Faq";
 
 export default function SentreiFaq({
@@ -20,7 +20,7 @@ export default function SentreiFaq({
   });
   React.useEffect(() => {
     if (inView) {
-      logEvent("landing", {section: "faq"});
+      analytics().logEvent("landing", {section: "faq"});
     }
   }, [inView]);
   return (

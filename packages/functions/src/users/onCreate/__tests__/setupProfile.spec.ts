@@ -3,7 +3,7 @@ import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 import {when} from "jest-when";
 
-import {setupProfile} from "../setupProfile";
+import setupProfile from "../setupProfile";
 
 const testEnv = functions();
 

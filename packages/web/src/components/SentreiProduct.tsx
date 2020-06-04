@@ -3,7 +3,7 @@ import {useInView} from "react-intersection-observer";
 
 import {i18n} from "@sentrei/common/i18n";
 import Original from "@sentrei/common/interfaces/Product";
-import logEvent from "@sentrei/common/utils/logEvent";
+import {analytics} from "@sentrei/common/utils/firebase";
 import Product from "@sentrei/ui/components/Product";
 import ConnectPicture from "@sentrei/web/components/Picture/ConnectPicture";
 import DataPicture from "@sentrei/web/components/Picture/DataPicture";
@@ -30,7 +30,7 @@ export default function SentreiProduct({
   });
   React.useEffect(() => {
     if (inView) {
-      logEvent("landing", {section: "product"});
+      analytics().logEvent("landing", {section: "product"});
     }
   }, [inView]);
   return (

@@ -3,7 +3,7 @@ import {useInView} from "react-intersection-observer";
 
 import {i18n} from "@sentrei/common/i18n";
 import Props from "@sentrei/common/interfaces/Pricing";
-import logEvent from "@sentrei/common/utils/logEvent";
+import {analytics} from "@sentrei/common/utils/firebase";
 import Pricing from "@sentrei/ui/components/Pricing";
 
 export default function SentreiPricing({
@@ -36,7 +36,7 @@ export default function SentreiPricing({
   });
   React.useEffect(() => {
     if (inView) {
-      logEvent("landing", {section: "pricing"});
+      analytics().logEvent("landing", {section: "pricing"});
     }
   }, [inView]);
   return (

@@ -6,7 +6,10 @@ module.exports = {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-  testPathIgnorePatterns: ["<rootDir>/node_modules/"],
+  testPathIgnorePatterns: [
+    "<rootDir>/node_modules/",
+    "<rootDir>/src/__tests__/testHelpers.ts",
+  ],
   moduleFileExtensions: ["js", "json", "ts"],
   moduleNameMapper: {
     "@sentrei/common/(.*)": "<rootDir>/../common/src/$1",

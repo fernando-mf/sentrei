@@ -5,7 +5,7 @@ import React from "react";
 import "@sentrei/web/styles/slider.scss";
 import {useInView} from "react-intersection-observer";
 
-import logEvent from "@sentrei/common/utils/logEvent";
+import {analytics} from "@sentrei/common/utils/firebase";
 import RoughNotation from "@sentrei/ui/components/RoughNotation";
 import KeioPicture from "@sentrei/web/components/Picture/KeioPicture";
 import UclPicture from "@sentrei/web/components/Picture/UclPicture";
@@ -26,7 +26,7 @@ export default function SentreiSlider({
   });
   React.useEffect(() => {
     if (inView) {
-      logEvent("landing", {section: "slider"});
+      analytics().logEvent("landing", {section: "slider"});
     }
   }, [inView]);
   return (
