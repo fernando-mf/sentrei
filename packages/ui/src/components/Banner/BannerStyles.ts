@@ -19,10 +19,6 @@ const BannerStyles = makeStyles((theme: Theme) =>
     text: {
       whiteSpace: "pre-line",
     },
-    typical: {
-      color: theme.palette.primary.main,
-      placeContent: "center",
-    },
   }),
 );
 
