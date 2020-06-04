@@ -3,7 +3,8 @@ provider "google" {
 }
 
 module "firebase" {
-  source = "../../modules/firebase"
+  environment = var.environment
+  source      = "../../modules/firebase"
 }
 
 module "iam" {
