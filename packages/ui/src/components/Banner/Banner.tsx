@@ -79,9 +79,9 @@ export default function Banner({
         <RoughNotation
           animationDelay={1000}
           animationDuration={3000}
-          color="primary"
+          color="secondary"
           text={bannerTextRough}
-          type="circle"
+          type="highlight"
         />
       </Typography>
       <Typography
