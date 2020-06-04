@@ -1,3 +1,9 @@
+## [4.79.1](https://github.com/sentrei/sentrei/compare/v4.79.0...v4.79.1) (2020-06-04)
+
+### Bug Fixes
+
+- 🐛 added secondary and color to roughnotation ([a50fb46](https://github.com/sentrei/sentrei/commit/a50fb4651ee8ddc4142b397ffa8fb9a876b1f2e2))
+
 # [4.79.0](https://github.com/sentrei/sentrei/compare/v4.78.5...v4.79.0) (2020-06-04)
 
 ### Bug Fixes
