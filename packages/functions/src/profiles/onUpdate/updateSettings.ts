@@ -1,7 +1,7 @@
 import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
-import getProfileChanges from "@sentrei/common/helpers/getProfileChanges";
+import getProfileChanges from "@sentrei/functions/helpers/getProfileChanges";
 
 const db = admin.firestore();
 
