@@ -1,3 +1,14 @@
+# [4.79.0](https://github.com/sentrei/sentrei/compare/v4.78.5...v4.79.0) (2020-06-04)
+
+### Bug Fixes
+
+- 🐛 change to analytics().logEvent ([3a4bdef](https://github.com/sentrei/sentrei/commit/3a4bdefec901d59cdb7e80cc25123f81ba9fd4fe))
+
+### Features
+
+- 🎸 add spaces models ([a2a4bc7](https://github.com/sentrei/sentrei/commit/a2a4bc7373415709d2cdaf1fdd4915c085d62e8d))
+- 🎸 refactor to v1 and helpers to common ([dc15b65](https://github.com/sentrei/sentrei/commit/dc15b65bc9a424f4feb78af7e9624234aeda7fc8))
+
 ## [4.78.4](https://github.com/sentrei/sentrei/compare/v4.78.3...v4.78.4) (2020-06-04)
 
 ### Bug Fixes
