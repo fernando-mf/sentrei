@@ -1,3 +1,11 @@
+## [4.79.3](https://github.com/sentrei/sentrei/compare/v4.79.2...v4.79.3) (2020-06-04)
+
+### Bug Fixes
+
+- 🐛 login error messagge ([12af487](https://github.com/sentrei/sentrei/commit/12af48736e2fe104282b8146c419d9c29974a2e5))
+- **deps:** bump typescript from 3.9.3 to 3.9.5 ([7ba1fb6](https://github.com/sentrei/sentrei/commit/7ba1fb6336df036f980dfefb831a4094f7d67437))
+- 🐛 signup analytics method ([50812ee](https://github.com/sentrei/sentrei/commit/50812ee3280e473752e55c0c7b41d88f9c22e13d))
+
 ## [4.79.2](https://github.com/sentrei/sentrei/compare/v4.79.1...v4.79.2) (2020-06-04)
 
 ### Bug Fixes
