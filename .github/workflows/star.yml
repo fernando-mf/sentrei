@@ -6,8 +6,11 @@ jobs:
   star:
     runs-on: ubuntu-latest
     steps:
-      - uses: rtCamp/action-slack-notify@v2.0.2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_STAR_LOG }}
-          SLACK_MESSAGE: ${{ github.event.repository.stargazers_count }}
-          SLACK_TITLE: ${{ github.repository }}
+      - uses: actions-ecosystem/action-slack-notifier@v1
+        with:
+          slack_token: ${{ secrets.SLACK_APP_TOKEN }}
+          message: |
+            ${{ github.event.repository.stargazers_count }}
+          channel: github-star-log
+          color: blue
+          verbose: true
