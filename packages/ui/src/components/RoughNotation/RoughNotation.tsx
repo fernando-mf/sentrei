@@ -29,9 +29,12 @@ export default function CustomRoughNotation({
         animationDelay={animationDelay}
         animationDuration={animationDuration}
         color={
+          // eslint-disable-next-line no-nested-ternary
           color === "primary"
             ? Theme.palette.primary.main
-            : Theme.palette.secondary.main
+            : color === "secondary"
+            ? Theme.palette.secondary.main
+            : color
         }
         show={show}
         type={type}

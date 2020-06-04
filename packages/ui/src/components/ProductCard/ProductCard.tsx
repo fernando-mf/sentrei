@@ -12,6 +12,7 @@ import RoughNotation from "@sentrei/ui/components/RoughNotation";
 import ProductStyles from "./ProductCardStyles";
 
 function ProductCard({
+  color,
   left,
   img,
   subTitle,
@@ -52,7 +53,7 @@ function ProductCard({
           gutterBottom
         >
           {titleOne}
-          <RoughNotation color="primary" text={titleTwo} type={type} />
+          <RoughNotation color={color} text={titleTwo} type={type} />
           {titleThree}
         </Typography>
         <Typography
