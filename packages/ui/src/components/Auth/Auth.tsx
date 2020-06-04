@@ -23,6 +23,7 @@ import * as Yup from "yup";
 
 import signin from "@sentrei/common/services/signin";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
+import signup from "@sentrei/common/services/signup";
 import authType from "@sentrei/common/types/authType";
 import {auth} from "@sentrei/common/utils/firebase";
 import Link from "@sentrei/ui/components/Link";
@@ -109,22 +110,30 @@ export default function Auth({type}: Props): JSX.Element {
         break;
       case authType.login:
         try {
-          signin(data.email, data.password).then(() => {
-            if (query.redirect) {
-              push(String(query.redirect));
-            }
-          });
+          signin(data.email, data.password)
+            .then(() => {
+              if (query.redirect) {
+                push(String(query.redirect));
+              }
+            })
+            .catch(err => {
+              handleError(err);
+            });
         } catch (err) {
           handleError(err);
         }
         break;
       case authType.signup:
         try {
-          await auth.createUserWithEmailAndPassword(data.email, data.password);
-          setOpen(false);
-          Router.push({
-            pathname: "/",
-          });
+          signup(data.email, data.password)
+            .then(() => {
+              if (query.redirect) {
+                push(String(query.redirect));
+              }
+            })
+            .catch(err => {
+              handleError(err);
+            });
         } catch (err) {
           handleError(err);
         }
