@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/functions",
-  "version": "4.80.0",
+  "version": "4.80.4",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -63,7 +63,7 @@
     "watch": "tsc -b . -w --preserveWatchOutput"
   },
   "dependencies": {
-    "@firebase/testing": "^0.19.6",
+    "@firebase/testing": "^0.20.0",
     "@sentrei/common": "*",
     "@slack/webhook": "^5.0.3",
     "@types/lodash": "^4.14.154",
