@@ -1,3 +1,9 @@
+## [4.80.6](https://github.com/sentrei/sentrei/compare/v4.80.5...v4.80.6) (2020-06-05)
+
+### Bug Fixes
+
+- **deps:** [security] bump websocket-extensions from 0.1.3 to 0.1.4 ([9211ef6](https://github.com/sentrei/sentrei/commit/9211ef6eeeb391afc5a5d790ac618f8757c73291))
+
 ## [4.80.5](https://github.com/sentrei/sentrei/compare/v4.80.4...v4.80.5) (2020-06-05)
 
 ### Bug Fixes
