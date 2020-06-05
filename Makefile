@@ -21,6 +21,9 @@ git-ls-files-755:
 git-ls-files-120:
 	git ls-files --stage | grep 120000
 
+functions-data-add:
+	pipenv run dvc add packages/functions/data
+
 pixelmator-add:
 	pipenv run dvc add design/pixelmator
 
