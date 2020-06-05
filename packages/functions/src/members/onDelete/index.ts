@@ -1,2 +1,2 @@
-export {default as spaceMemberMinus} from "./spaceMemberMinus";
+export {default as spaceMemberCountMinus} from "./spaceMemberCountMinus";
 export {default as userSpaceDelete} from "./userSpaceDelete";

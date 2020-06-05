@@ -2,20 +2,20 @@
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
-import spaceMemberMinus from "../spaceMemberMinus";
+import spaceMemberCountPlus from "../spaceMemberCountPlus";
 
 const testEnv = functions();
 const db = admin.firestore();
 
-test("On members delete, decrease the space member count", async done => {
+test("On members create, increase the space memberCount", async done => {
   spyOn(db.doc(""), "update").and.returnValue("updated");
 
   const params = {spaceId: "spaceId"};
-  const wrapped = testEnv.wrap(spaceMemberMinus);
+  const wrapped = testEnv.wrap(spaceMemberCountPlus);
   const req = await wrapped({}, {params});
 
   expect(req).toBe("updated");
   expect(db.doc).toHaveBeenCalledWith("spaces/spaceId");
-  expect(db.doc("").update).toHaveBeenCalledWith({count: -1});
+  expect(db.doc("").update).toHaveBeenCalledWith({memberCount: 1});
   done();
 });

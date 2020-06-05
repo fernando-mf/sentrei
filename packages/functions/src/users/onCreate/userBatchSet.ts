@@ -13,12 +13,20 @@ const userBatchSet = functions.auth.user().onCreate(async user => {
 
   const userInfo = {
     name: user.displayName || getNameFromEmail(user.email || user.uid),
+    photo: user.photoURL || null,
     username: user.uid,
   };
 
   const userData: User.Response = {
     ...userInfo,
+    email: user.email,
     role: "viewer",
+    notificationCount: 0,
+    notificationSettings: {
+      chat: ["app", "email"],
+      invitation: ["app", "email"],
+      update: ["app", "email"],
+    },
   };
 
   const profileData: Profile.Response = {

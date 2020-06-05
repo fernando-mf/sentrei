@@ -26,6 +26,14 @@ test("Add the user info to their settings", async done => {
   await wrapped({email: "test@test.com", uid: "testUID"});
 
   const userInfo = {
+    email: "test@test.com",
+    notificationCount: 0,
+    notificationSettings: {
+      chat: ["app", "email"],
+      invitation: ["app", "email"],
+      update: ["app", "email"],
+    },
+    photo: null,
     name: "test",
     role: "viewer",
     username: "testUID",
@@ -43,11 +51,13 @@ test("Add the user info to their profile", async done => {
   await wrapped({
     displayName: "user name",
     email: "test@test.com",
+    photoURL: "photo.png",
     uid: "testUID",
   });
 
   const userInfo = {
     name: "user name",
+    photo: "photo.png",
     username: "testUID",
   };
 
