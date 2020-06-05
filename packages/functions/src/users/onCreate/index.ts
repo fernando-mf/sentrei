@@ -1,2 +1,2 @@
 /* eslint-disable import/prefer-default-export */
-export {default as setupProfile} from "./setupProfile";
+export {default as setupProfile} from "./setupUser";

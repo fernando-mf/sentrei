@@ -3,7 +3,7 @@ import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 import {when} from "jest-when";
 
-import setupProfile from "../setupProfile";
+import setupUser from "../setupUser";
 
 const testEnv = functions();
 
@@ -22,7 +22,7 @@ test("Add the user info to their settings", async done => {
   const spy = spyOn(db.batch(), "set");
   const ref = db.doc("users/testUID");
 
-  const wrapped = testEnv.wrap(setupProfile);
+  const wrapped = testEnv.wrap(setupUser);
   await wrapped({email: "test@test.com", uid: "testUID"});
 
   const userInfo = {
@@ -39,7 +39,7 @@ test("Add the user info to their profile", async done => {
   const spy = spyOn(db.batch(), "set");
   const ref = db.doc("profiles/testUID");
 
-  const wrapped = testEnv.wrap(setupProfile);
+  const wrapped = testEnv.wrap(setupUser);
   await wrapped({
     displayName: "user name",
     email: "test@test.com",
@@ -59,7 +59,7 @@ test("Commit all changes to the database", async done => {
   const setSpy = spyOn(db.batch(), "set");
   spyOn(db.batch(), "commit").and.returnValue(true);
 
-  const wrapped = testEnv.wrap(setupProfile);
+  const wrapped = testEnv.wrap(setupUser);
   const req = await wrapped({email: "test@test.com", uid: "testUID"});
 
   expect(setSpy).toHaveBeenCalledTimes(2);
