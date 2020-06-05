@@ -1,6 +1,24 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    function isAdmin() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    function isModerator() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'moderator';
+    }
+
+    match /{category}/{categoryId}/members/{userId} {
+      allow get;
+      allow list: if request.query.limit <= 20;
+      allow create, delete: if request.auth.uid == userId;
+    }
+
+    match /admin/{id} {
+      allow get: if isAdmin();
+    }
+
     match /profiles/{createdById} {
       allow get;
       allow list: if request.query.limit == 1;
@@ -8,6 +26,36 @@ service cloud.firestore {
         if request.auth.uid == createdById
         && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['username'])
       ;
+    }
+
+    match /spaces/{id} {
+      allow get;
+      allow list: if request.query.limit <= 20;
+      allow create:
+        if request.auth.uid != null
+        && request.resource.data.comments == 0
+        && request.resource.data.createdAt == request.time
+        && isValidProfile('createdBy')
+        && request.resource.data.createdById == request.auth.uid
+        && request.resource.data.followers == 0
+        && (request.resource.data.photo == null || request.resource.data.photo is string)
+        && request.resource.data.updatedAt == request.time
+        && isValidProfile('updatedBy')
+        && request.resource.data.updatedById == request.auth.uid
+        && isValidLanguage()
+      ;
+      allow update:
+        if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['photo', 'updatedAt', 'updatedBy', 'updatedById'])
+        && request.resource.data.pinned.hasOnly(resource.data.pinned)
+        && (request.resource.data.photo == null || request.resource.data.photo is string)
+        && request.resource.data.updatedAt == request.time
+        && isValidProfile('updatedBy')
+        && request.resource.data.updatedById == request.auth.uid
+      ;
+      allow delete:
+        if isAdmin()
+        || isModerator()
+        || (request.auth.uid == resource.data.createdById && request.auth.uid == resource.data.updatedById);
     }
 
     match /usernames/{username} {
@@ -25,6 +73,9 @@ service cloud.firestore {
         request.auth.uid == userId
         && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['name','role', 'username'])
       ;
+      match /{subcollection}/{spaceId} {
+        allow read: if request.auth.uid == userId;
+      }
     }
   }
 }
