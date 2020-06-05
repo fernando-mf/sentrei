@@ -3,13 +3,13 @@ import * as functions from "firebase-functions";
 
 const db = admin.firestore();
 
-const spaceMemberCountPlus = functions.firestore
-  .document("spaces/{spaceId}/members/{userId}")
+const memberCountPlus = functions.firestore
+  .document("{collection}/{docId}/followers/{userId}")
   .onCreate((_, context) => {
-    const {spaceId} = context.params;
+    const {collection, docId} = context.params;
     return db
-      .doc(`spaces/${spaceId}`)
+      .doc(`${collection}/${docId}`)
       .update({memberCount: admin.firestore.FieldValue.increment(1)});
   });
 
-export default spaceMemberCountPlus;
+export default memberCountPlus;

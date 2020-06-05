@@ -2,7 +2,7 @@
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
-import spaceMemberCountPlus from "../spaceMemberCountPlus";
+import memberCountPlus from "../memberCountPlus";
 
 const testEnv = functions();
 const db = admin.firestore();
@@ -10,8 +10,8 @@ const db = admin.firestore();
 test("On members create, increase the space memberCount", async done => {
   spyOn(db.doc(""), "update").and.returnValue("updated");
 
-  const params = {spaceId: "spaceId"};
-  const wrapped = testEnv.wrap(spaceMemberCountPlus);
+  const params = {collection: "spaces", docId: "spaceId"};
+  const wrapped = testEnv.wrap(memberCountPlus);
   const req = await wrapped({}, {params});
 
   expect(req).toBe("updated");
