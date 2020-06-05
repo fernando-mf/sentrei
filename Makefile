@@ -21,23 +21,23 @@ git-ls-files-755:
 git-ls-files-120:
 	git ls-files --stage | grep 120000
 
+dvc-fetch:
+	pipenv run dvc fetch
+
+dvc-pull:
+	pipenv run dvc pull
+
+dvc-push:
+	pipenv run dvc push
+
+dvc-status:
+	pipenv run dvc status
+
 functions-data-add:
 	pipenv run dvc add packages/functions/data
 
 pixelmator-add:
 	pipenv run dvc add design/pixelmator
-
-pixelmator-fetch:
-	pipenv run dvc fetch
-
-pixelmator-pull:
-	pipenv run dvc pull
-
-pixelmator-push:
-	pipenv run dvc push
-
-pixelmator-status:
-	pipenv run dvc status
 
 pipenv:
 	pipenv install --dev
