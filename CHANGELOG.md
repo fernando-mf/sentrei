@@ -1,3 +1,13 @@
+# [4.80.0](https://github.com/sentrei/sentrei/compare/v4.79.3...v4.80.0) (2020-06-05)
+
+### Bug Fixes
+
+- 🐛 ditch emulator since it doesn't work ([4b30a31](https://github.com/sentrei/sentrei/commit/4b30a31a2bf9d993b4247f744a3ad9c572be2dd5))
+
+### Features
+
+- 🎸 add data dvc ([eef0a31](https://github.com/sentrei/sentrei/commit/eef0a31d84b247e60888d61c0a3ae948a812ee83))
+
 ## [4.79.3](https://github.com/sentrei/sentrei/compare/v4.79.2...v4.79.3) (2020-06-04)
 
 ### Bug Fixes
