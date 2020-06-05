@@ -8,27 +8,14 @@ const testEnv = functions();
 const db = admin.firestore();
 
 test("On members delete, update space to delete a user's spaces", async done => {
-  const space = {
-    title: "name",
-    updatedAt: "now",
-  };
-  spyOn(db.doc(""), "set").and.returnValue("updated");
-  spyOn(db.doc(""), "get").and.returnValue({data: () => space});
+  spyOn(db.doc(""), "delete").and.returnValue("deleted");
 
-  const params = {spaceId: "itemId", userId: "editorId"};
-  const data = {joined: "now"};
-  const snap = {
-    data: (): {
-      joined: string;
-    } => data,
-  };
+  const params = {spaceId: "spaceId", userId: "userId"};
   const wrapped = testEnv.wrap(userSpaceDelete);
-  const req = await wrapped(snap, {params});
-  const payload = {...space, id: "itemId", joined: "timestamp"};
+  const req = await wrapped({}, {params});
 
-  expect(req).toBe("updated");
-  expect(db.doc).toHaveBeenCalledWith("spaces/itemId");
-  expect(db.doc).toHaveBeenCalledWith("users/editorId/spaces/itemId");
-  expect(db.doc("").set).toHaveBeenCalledWith(payload);
+  expect(req).toBe("deleted");
+  expect(db.doc).toHaveBeenCalledWith("users/userId/spaces/spaceId");
+  expect(db.doc("").delete).toHaveBeenCalledTimes(1);
   done();
 });

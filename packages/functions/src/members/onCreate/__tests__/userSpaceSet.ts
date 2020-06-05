@@ -24,7 +24,7 @@ test("On members create, update space to set a user's spaces", async done => {
   };
   const wrapped = testEnv.wrap(userSpaceSet);
   const req = await wrapped(snap, {params});
-  const payload = {...space, id: "itemId", joined: "timestamp"};
+  const payload = {...space, spaceId: "itemId", joined: "timestamp"};
 
   expect(req).toBe("updated");
   expect(db.doc).toHaveBeenCalledWith("spaces/itemId");
