@@ -16,6 +16,6 @@ test("On delete, decrease the space member count", async done => {
 
   expect(req).toBe("updated");
   expect(db.doc).toHaveBeenCalledWith("spaces/spaceId");
-  expect(db.doc("").update).toHaveBeenCalledWith({members: -1});
+  expect(db.doc("").update).toHaveBeenCalledWith({count: -1});
   done();
 });
