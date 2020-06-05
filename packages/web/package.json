@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/web",
-  "version": "4.80.0",
+  "version": "4.80.3",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -73,7 +73,7 @@
     "imagemin-svgo": "^8.0.0",
     "isomorphic-fetch": "^2.2.1",
     "isomorphic-unfetch": "^3.0.0",
-    "jimp": "^0.12.0",
+    "jimp": "^0.13.0",
     "lodash": "^4.17.15",
     "lodash.get": "^4.4.2",
     "lqip-loader": "^2.2.0",
