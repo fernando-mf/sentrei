@@ -13,7 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import MailOutlinedIcon from "@material-ui/icons/MailOutlined";
-import Router, {useRouter} from "next/router";
+import {useRouter} from "next/router";
 
 import React from "react";
 import "firebase/auth";

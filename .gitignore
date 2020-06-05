@@ -57,6 +57,7 @@
 
 # Functions related.
 **/functions/.runtimeconfig.json
+**/functions/data
 **/functions/env.json
 **/functions/alpha.env.json
 **/functions/beta.env.json

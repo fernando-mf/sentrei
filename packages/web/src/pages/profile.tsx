@@ -22,28 +22,21 @@ const Profile: NextPage = () => {
     return <Loader />;
   }
 
-  if (user) {
-    Router.push("/dashboard");
+  if (!user) {
+    Router.push("/");
   }
 
   return (
     <>
-      {user ? (
-        <>
-          <SentreiAppHeader
-            faqText={t("headerFaq")}
-            featuresText={t("headerFeatures")}
-            pricingText={t("headerPricing")}
-            productText={t("headerProduct")}
-            loginText={t("headerLogin")}
-            signupText={t("headerSignup")}
-            testimonialText={t("headerTestimonial")}
-          />
-          <SentreiProfile userEmail={user.email} />
-        </>
-      ) : (
-        <Loader />
-      )}
+      <SentreiAppHeader
+        faqText={t("headerFaq")}
+        featuresText={t("headerFeatures")}
+        pricingText={t("headerPricing")}
+        productText={t("headerProduct")}
+        loginText={t("headerLogin")}
+        signupText={t("headerSignup")}
+        testimonialText={t("headerTestimonial")}
+      />
     </>
   );
 };

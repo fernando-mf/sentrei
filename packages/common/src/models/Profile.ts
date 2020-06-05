@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-namespace */
-namespace Profile {
-  export interface Response {
+declare namespace Profile {
+  export type Response = {
     name: string;
     username: string;
-  }
+  };
 
   export type Update = Partial<Response>;
 
-  export interface Get {
+  export type Get = {
     id: string;
     name: string;
     username: string;
-  }
+  };
 
   export interface Snapshot extends Get {
     snap: firebase.firestore.DocumentSnapshot;

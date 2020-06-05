@@ -2,17 +2,17 @@
 
 import Metadata from "@sentrei/common/models/Metadata";
 
-namespace Space {
-  export interface Summary {
+declare namespace Space {
+  export type Summary = {
     description: string;
     id: string;
     title: string;
-  }
+  };
 
-  export interface EditableFields {
+  export type EditableFields = {
     description: string;
     title: string;
-  }
+  };
 
   interface Fields extends EditableFields {
     members: number;

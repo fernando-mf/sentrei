@@ -7,8 +7,6 @@ import "firebase/functions";
 import "firebase/performance";
 import "firebase/storage";
 
-import isBrowser from "@sentrei/common/utils/isBrowser";
-
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
@@ -28,27 +26,8 @@ export const auth = firebase.auth();
 export const storage = firebase.storage();
 
 export const functions = firebase.functions();
-if (isBrowser() && location.hostname === "localhost") {
-  functions.useFunctionsEmulator("http://localhost:5001");
-} else if (isBrowser() && location.hostname === "127.0.0.1") {
-  functions.useFunctionsEmulator("http://127.0.0.1:5001");
-}
 
 export const db = firebase.firestore();
-db.settings({
-  ignoreUndefinedProperties: true,
-});
-if (isBrowser() && location.hostname === "localhost") {
-  db.settings({
-    host: "localhost:8080",
-    ssl: false,
-  });
-} else if (isBrowser() && location.hostname === "127.0.0.1") {
-  db.settings({
-    host: "127.0.0.1:8080",
-    ssl: false,
-  });
-}
 
 export const {analytics, performance} = firebase;
 

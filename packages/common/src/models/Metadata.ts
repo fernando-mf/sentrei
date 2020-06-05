@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import Profile from "@sentrei/common/models/Profile";
 
-namespace Metadata {
-  export interface Update {
+declare namespace Metadata {
+  export type Update = {
     updatedAt: firebase.firestore.FieldValue;
     updatedBy: Profile.Response;
     updatedById: string;
-  }
+  };
 
   export interface Create extends Update {
     createdAt: firebase.firestore.FieldValue;
