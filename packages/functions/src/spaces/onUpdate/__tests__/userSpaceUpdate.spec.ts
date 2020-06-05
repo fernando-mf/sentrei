@@ -2,7 +2,7 @@
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
-import updateUserSpace from "../updateUserSpace";
+import userSpaceUpdate from "../userSpaceUpdate";
 
 const testEnv = functions();
 const db = admin.firestore();
@@ -43,7 +43,7 @@ test("Update all user spaces on spaces update", async done => {
       id: "itemId",
     },
   };
-  const wrapped = testEnv.wrap(updateUserSpace);
+  const wrapped = testEnv.wrap(userSpaceUpdate);
   const req = await wrapped(change);
 
   expect(req).toBe("updated");

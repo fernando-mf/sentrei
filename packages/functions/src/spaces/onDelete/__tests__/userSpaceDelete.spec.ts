@@ -2,19 +2,19 @@
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
-import updateUserSpace from "../updateUserSpace";
+import userSpaceDelete from "../userSpaceDelete";
 
 const testEnv = functions();
 const db = admin.firestore();
 
-test("Delete user spaces on delete spaces", async done => {
+test("On delete, delete user spaces on delete spaces", async done => {
   const docs = [{id: "user1"}, {id: "user2"}];
   spyOn(Promise, "all").and.returnValue("updated");
   spyOn(db.collection(""), "get").and.returnValue({docs});
   spyOn(db.doc(""), "delete").and.returnValue("ref");
 
   const snap = {id: "itemId"};
-  const wrapped = testEnv.wrap(updateUserSpace);
+  const wrapped = testEnv.wrap(userSpaceDelete);
   const req = await wrapped(snap);
 
   expect(req).toBe("updated");

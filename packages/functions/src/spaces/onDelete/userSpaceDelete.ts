@@ -3,7 +3,7 @@ import * as functions from "firebase-functions";
 
 const db = admin.firestore();
 
-const updateUserSpace = functions.firestore
+const userSpaceDelete = functions.firestore
   .document("spaces/{id}")
   .onDelete(async snap => {
     const {id} = snap;
@@ -15,4 +15,4 @@ const updateUserSpace = functions.firestore
     return Promise.all(promises);
   });
 
-export default updateUserSpace;
+export default userSpaceDelete;

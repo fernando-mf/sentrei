@@ -1,2 +1,2 @@
 /* eslint-disable import/prefer-default-export */
-export {default as logIPAddress} from "./logIPAddress";
+export {default as ipAddressAdd} from "./ipAddressAdd";

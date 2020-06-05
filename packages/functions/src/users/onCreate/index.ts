@@ -1,2 +1,2 @@
 /* eslint-disable import/prefer-default-export */
-export {default as setupProfile} from "./setupUser";
+export {default as userBatchSet} from "./userBatchSet";

@@ -4,7 +4,7 @@ import * as functions from "firebase-functions";
 
 const db = admin.firestore();
 
-const deleteUser = functions.auth.user().onDelete(async user => {
+const userBatchDelete = functions.auth.user().onDelete(async user => {
   const batch: any[] = [];
   const profile = db.doc(`profiles/${user.uid}`);
   const userData = db.doc(`users/${user.uid}`);
@@ -15,4 +15,4 @@ const deleteUser = functions.auth.user().onDelete(async user => {
   return Promise.all(batch);
 });
 
-export default deleteUser;
+export default userBatchDelete;

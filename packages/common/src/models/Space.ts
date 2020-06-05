@@ -9,7 +9,7 @@ declare namespace Space {
   };
 
   interface Fields extends EditableFields {
-    members: number;
+    count: number;
   }
 
   export interface Create extends Fields, Metadata.Create {}

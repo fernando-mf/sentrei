@@ -5,7 +5,7 @@ import Space from "@sentrei/common/models/Space";
 
 const db = admin.firestore();
 
-const updateUserSpace = functions.firestore
+const userSpaceUpdate = functions.firestore
   .document("spaces/{id}")
   .onUpdate(async change => {
     const {id} = change.after;
@@ -17,4 +17,4 @@ const updateUserSpace = functions.firestore
     return Promise.all(promises);
   });
 
-export default updateUserSpace;
+export default userSpaceUpdate;
