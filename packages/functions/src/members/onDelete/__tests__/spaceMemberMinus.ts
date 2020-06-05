@@ -7,7 +7,7 @@ import spaceMemberMinus from "../spaceMemberMinus";
 const testEnv = functions();
 const db = admin.firestore();
 
-test("On delete, decrease the space member count", async done => {
+test("On members delete, decrease the space member count", async done => {
   spyOn(db.doc(""), "update").and.returnValue("updated");
 
   const params = {spaceId: "spaceId"};

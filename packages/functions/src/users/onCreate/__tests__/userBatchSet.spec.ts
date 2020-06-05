@@ -55,7 +55,7 @@ test("Add the user info to their profile", async done => {
   done();
 });
 
-test("Commit all changes to the database", async done => {
+test("On users create, batch commit all set changes to the database", async done => {
   const setSpy = spyOn(db.batch(), "set");
   spyOn(db.batch(), "commit").and.returnValue(true);
 

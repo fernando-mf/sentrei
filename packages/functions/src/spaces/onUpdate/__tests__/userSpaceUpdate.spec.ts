@@ -11,7 +11,7 @@ beforeAll(() => {
   spyOn(Promise, "all").and.returnValue("updated");
 });
 
-test("Update all user spaces on spaces update", async done => {
+test("On spaces update, update all user spaces on spaces update", async done => {
   const docs = [{id: "user1"}, {id: "user2"}];
   spyOn(db.collection(""), "get").and.returnValue({docs});
   spyOn(db.doc(""), "update").and.returnValue("ref");

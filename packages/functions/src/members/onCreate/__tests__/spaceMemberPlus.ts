@@ -7,7 +7,7 @@ import spaceMemberPlus from "../spaceMemberPlus";
 const testEnv = functions();
 const db = admin.firestore();
 
-test("On create, increase the space member count", async done => {
+test("On members create, increase the space member count", async done => {
   spyOn(db.doc(""), "update").and.returnValue("updated");
 
   const params = {spaceId: "spaceId"};

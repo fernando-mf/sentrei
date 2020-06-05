@@ -7,7 +7,7 @@ import userSpaceDelete from "../userSpaceDelete";
 const testEnv = functions();
 const db = admin.firestore();
 
-test("On delete, delete user spaces on delete spaces", async done => {
+test("On spaces delete, delete user spaces on delete spaces", async done => {
   const docs = [{id: "user1"}, {id: "user2"}];
   spyOn(Promise, "all").and.returnValue("updated");
   spyOn(db.collection(""), "get").and.returnValue({docs});

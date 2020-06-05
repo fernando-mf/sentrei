@@ -7,7 +7,7 @@ import userSpaceDelete from "../userSpaceDelete";
 const testEnv = functions();
 const db = admin.firestore();
 
-test("On delete, update space to delete a user's spaces", async done => {
+test("On members delete, update space to delete a user's spaces", async done => {
   const space = {
     title: "name",
     updatedAt: "now",

@@ -7,7 +7,7 @@ import userSpaceSet from "../userSpaceSet";
 const testEnv = functions();
 const db = admin.firestore();
 
-test("On create, update space to set a user's spaces", async done => {
+test("On members create, update space to set a user's spaces", async done => {
   const space = {
     title: "name",
     updatedAt: "now",
