@@ -43,15 +43,17 @@ service cloud.firestore {
         && request.resource.data.createdAt == request.time
         && isValidProfile('createdBy')
         && request.resource.data.createdById == request.auth.uid
-        && request.resource.data.members == 0
+        && request.resource.data.description is string
+        && request.resource.data.memberCount == 0
         && (request.resource.data.photo == null || request.resource.data.photo is string)
         && request.resource.data.updatedAt == request.time
         && isValidProfile('updatedBy')
         && request.resource.data.updatedById == request.auth.uid
       ;
       allow update:
-        if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['photo', 'updatedAt', 'updatedBy', 'updatedById'])
-        && request.resource.data.pinned.hasOnly(resource.data.pinned)
+        if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['description', 'photo', 'updatedAt', 'updatedBy', 'updatedById'])
+        && request.resource.data.description is string
+        && request.resource.data.description.size() <= 1000
         && (request.resource.data.photo == null || request.resource.data.photo is string)
         && request.resource.data.updatedAt == request.time
         && isValidProfile('updatedBy')

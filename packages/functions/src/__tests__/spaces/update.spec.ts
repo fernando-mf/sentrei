@@ -17,11 +17,11 @@ const profile = {
 };
 
 const data = {
-  comments: 0,
   createdAt: firebase.firestore.FieldValue.serverTimestamp(),
   createdBy: profile,
   createdById: "currentUser",
-  members: 0,
+  description: "content",
+  memberCount: 0,
   photo: null,
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
   updatedBy: profile,
@@ -70,7 +70,7 @@ test("CreatedById cannot be changed", async done => {
 });
 
 test("Members cannot be changed", async done => {
-  await firebase.assertFails(ref.update({...edit, members: 1}));
+  await firebase.assertFails(ref.update({...edit, memberCount: 1}));
   done();
 });
 

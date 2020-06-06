@@ -20,7 +20,7 @@ const data = {
   createdAt: firebase.firestore.FieldValue.serverTimestamp(),
   createdBy: profile,
   createdById: "currentUser",
-  members: 0,
+  memberCount: 0,
   photo: null,
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
   updatedBy: profile,
