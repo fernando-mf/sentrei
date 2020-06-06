@@ -20,6 +20,7 @@ const data = {
   createdAt: firebase.firestore.FieldValue.serverTimestamp(),
   createdBy: profile,
   createdById: "currentUser",
+  description: "content",
   memberCount: 0,
   photo: null,
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -82,8 +83,8 @@ test("CreatedById has the current user UID", async done => {
   done();
 });
 
-test("Members is set to 0", async done => {
-  await firebase.assertFails(ref.add({...data, members: 1}));
+test("MemberCount is set to 0", async done => {
+  await firebase.assertFails(ref.add({...data, memberCount: 1}));
   done();
 });
 
@@ -104,12 +105,6 @@ test("Photo can be null", async done => {
 test("UpdatedAt has a valid timestamp", async done => {
   await firebase.assertFails(ref.add({...data, updatedAt: "1452-10-01"}));
   await firebase.assertFails(ref.add({...data, updatedAt: new Date()}));
-  done();
-});
-
-test("UpdatedBy has a valid user bio", async done => {
-  const updatedBy = {...profile, bio: "invalid"};
-  await firebase.assertFails(ref.add({...data, updatedBy}));
   done();
 });
 
