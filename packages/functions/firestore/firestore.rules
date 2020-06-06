@@ -9,6 +9,13 @@ service cloud.firestore {
       return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'moderator';
     }
 
+    function isValidProfile(field) {
+      return get(/databases/$(database)/documents/profile/$(request.auth.uid)).data.name == request.resource.data[field].name
+        && get(/databases/$(database)/documents/profile/$(request.auth.uid)).data.photo == request.resource.data[field].photo
+        && get(/databases/$(database)/documents/profile/$(request.auth.uid)).data.username == request.resource.data[field].username
+      ;
+    }
+
     match /{category}/{categoryId}/members/{userId} {
       allow get;
       allow list: if request.query.limit <= 20;
@@ -33,7 +40,6 @@ service cloud.firestore {
       allow list: if request.query.limit <= 20;
       allow create:
         if request.auth.uid != null
-        && request.resource.data.comments == 0
         && request.resource.data.createdAt == request.time
         && isValidProfile('createdBy')
         && request.resource.data.createdById == request.auth.uid
@@ -42,7 +48,6 @@ service cloud.firestore {
         && request.resource.data.updatedAt == request.time
         && isValidProfile('updatedBy')
         && request.resource.data.updatedById == request.auth.uid
-        && isValidLanguage()
       ;
       allow update:
         if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['photo', 'updatedAt', 'updatedBy', 'updatedById'])
