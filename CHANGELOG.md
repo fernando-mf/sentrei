@@ -1,3 +1,9 @@
+# [4.81.0-beta.2](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.1...v4.81.0-beta.2) (2020-06-06)
+
+### Bug Fixes
+
+- 🐛 remove firebase token ([fefc4ee](https://github.com/sentrei/sentrei/commit/fefc4eedd57d06abe856fda7c3e86c61ac11e784))
+
 ## [4.80.6](https://github.com/sentrei/sentrei/compare/v4.80.5...v4.80.6) (2020-06-05)
 
 ### Bug Fixes
