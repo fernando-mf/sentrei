@@ -16,15 +16,20 @@ service cloud.firestore {
       ;
     }
 
+    match /{category}/{categoryId}/leaderboard/{createdById} {
+      allow get;
+      allow list: if request.query.limit <= 30;
+    }
+
     match /{category}/{categoryId}/members/{userId} {
       allow get;
-      allow list: if request.query.limit <= 20;
+      allow list: if request.query.limit <= 30;
       allow create, delete: if request.auth.uid == userId;
     }
 
     match /activity/{id} {
       allow get;
-      allow list: if request.query.limit <= 20;
+      allow list: if request.query.limit <= 30;
     }
 
     match /admin/{id} {
@@ -42,7 +47,7 @@ service cloud.firestore {
 
     match /spaces/{id} {
       allow get;
-      allow list: if request.query.limit <= 20;
+      allow list: if request.query.limit <= 30;
       allow create:
         if request.auth.uid != null
         && request.resource.data.createdAt == request.time
