@@ -1,3 +1,9 @@
+# [4.81.0-beta.3](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.2...v4.81.0-beta.3) (2020-06-06)
+
+### Bug Fixes
+
+- 🐛 add force deploy firebase functions ([8f56f14](https://github.com/sentrei/sentrei/commit/8f56f1481975476c38e686ee983cd2f2ed66646b))
+
 # [4.81.0-beta.2](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.1...v4.81.0-beta.2) (2020-06-06)
 
 ### Bug Fixes
