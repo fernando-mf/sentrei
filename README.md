@@ -32,37 +32,37 @@
 ### Company 🏢
 
 <!-- prettier-ignore-start -->
-| Version | Blog                     | Design                     | Pioneer                     |
-| ------- | ------------------------ | -------------------------- | --------------------------- |
-| master  | https://blog.sentrei.com | https://design.sentrei.com | https://pioneer.sentrei.com |
+| Version | Blog | Design | Pioneer |
+| ------- | ---- | ------ | ------- |
+| master | https://blog.sentrei.com | https://design.sentrei.com | https://pioneer.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ### Design 🎨
 
 <!-- prettier-ignore-start -->
-| Version | Const                                                           | Mobile                                                           | Web                                                           | UI                     |
-| ------- | --------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------- | ---------------------- |
-| master  | [LINK](https://www.figma.com/file/FcE7ACUUJAey0gspwpFN48/const) | [LINK](https://www.figma.com/file/0HJCBXV4H81774BKNzdTPs/mobile) | [LINK](https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web) | https://ui.sentrei.com |
+| Version | Const | Mobile | Web | UI |
+| ------- | ----- | ------ | --- | -- |
+| master | [LINK](https://www.figma.com/file/FcE7ACUUJAey0gspwpFN48/const) | [LINK](https://www.figma.com/file/0HJCBXV4H81774BKNzdTPs/mobile) | [LINK](https://www.figma.com/file/jHYqhmFQWXTUO1B0rcChya/web) | https://ui.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ### Mobile 📱
 
 <!-- prettier-ignore-start -->
-| Version | FAD (Android)                                           | FAD (iOS)                                               | Dartdoc                            |
-| ------- | ------------------------------------------------------- | ------------------------------------------------------- | ---------------------------------- |
-| alpha   | [LINK](https://appdistribution.firebase.dev/i/ecwjmtsh) | [LINK](https://appdistribution.firebase.dev/i/iCHEpULk) | https://alpha.dartdoc.sentrei.com  |
-| beta    | [LINK](https://appdistribution.firebase.dev/i/zk13ZGu1) | [LINK](https://appdistribution.firebase.dev/i/5rx5sRDi) | https://beta.dartdoc.sentrei.com   |
-| master  | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.dartdoc.sentrei.com |
+| Version | FAD (Android) | FAD (iOS) | Dartdoc |
+| ------- | ------------- | --------- | ------- |
+| alpha | [LINK](https://appdistribution.firebase.dev/i/ecwjmtsh) | [LINK](https://appdistribution.firebase.dev/i/iCHEpULk) | https://alpha.dartdoc.sentrei.com |
+| beta | [LINK](https://appdistribution.firebase.dev/i/zk13ZGu1) | [LINK](https://appdistribution.firebase.dev/i/5rx5sRDi) | https://beta.dartdoc.sentrei.com |
+| master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.dartdoc.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ### Web 🌐
 
 <!-- prettier-ignore-start -->
-| Version | Web                       | Typedoc                            |
-| ------- | ------------------------- | ---------------------------------- |
-| alpha   | https://alpha.sentrei.com | https://alpha.typedoc.sentrei.com  |
-| beta    | https://beta.sentrei.com  | https://beta.typedoc.sentrei.com   |
-| master  | https://sentrei.com       | https://master.typedoc.sentrei.com |
+| Version | Web | Typedoc |
+| ------- | --- | ------- |
+| alpha | https://alpha.sentrei.com | https://alpha.typedoc.sentrei.com |
+| beta | https://beta.sentrei.com | https://beta.typedoc.sentrei.com |
+| master | https://sentrei.com | https://master.typedoc.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ## Contributors ✨
