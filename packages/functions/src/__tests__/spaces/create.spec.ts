@@ -17,7 +17,6 @@ const profile = {
 };
 
 const data = {
-  comments: 0,
   createdAt: firebase.firestore.FieldValue.serverTimestamp(),
   createdBy: profile,
   createdById: "currentUser",

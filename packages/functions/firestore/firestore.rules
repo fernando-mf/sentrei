@@ -43,7 +43,7 @@ service cloud.firestore {
         && request.resource.data.createdAt == request.time
         && isValidProfile('createdBy')
         && request.resource.data.createdById == request.auth.uid
-        && request.resource.data.followers == 0
+        && request.resource.data.members == 0
         && (request.resource.data.photo == null || request.resource.data.photo is string)
         && request.resource.data.updatedAt == request.time
         && isValidProfile('updatedBy')
