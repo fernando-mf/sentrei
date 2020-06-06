@@ -34,7 +34,6 @@ jobs:
           yarn run typescript
       - working-directory: packages/functions
         run: |
-          yarn run ${{ github.event.pull_request.base.ref }}:local
           yarn run setup
           yarn run test
       - uses: codecov/codecov-action@v1
