@@ -1,5 +1,10 @@
 name: Fossa
-on: push
+on:
+  push:
+    branches:
+      - alpha
+      - beta
+      - master
 jobs:
   fossa:
     runs-on: ubuntu-latest
@@ -12,6 +17,14 @@ jobs:
         with:
           python-version: "3.8"
       - uses: dschep/install-pipenv-action@v1
+      - id: cache
+        uses: actions/cache@master
+        with:
+          path: .venv
+          key: |
+            pipenv-${{ hashFiles('**/Pipfile.lock') }}
+          restore-keys: |
+            pipenv-
       - run: |
           pipenv install --dev
       - run: |
