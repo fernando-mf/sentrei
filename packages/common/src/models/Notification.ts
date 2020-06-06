@@ -15,8 +15,6 @@ declare namespace Notification {
 
   export interface Create {
     activityId: string | null;
-    itemPath: string;
-    title: string;
     type: Type;
     updatedAt: firebase.firestore.FieldValue;
     user: Profile.Response;
