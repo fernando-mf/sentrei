@@ -43,8 +43,7 @@ test("Send a notification to all required users", async done => {
     });
 
   const data = {
-    action: "updated",
-    category: "posts",
+    type: "update",
     updatedAt: "timestamp",
     user: {name: "user name"},
   };
@@ -55,13 +54,11 @@ test("Send a notification to all required users", async done => {
   const expected = {
     ...data,
     activityId: "activityId",
-    type: "contentChanges",
+    type: "update",
   };
   const snap = {
     data: (): {
-      userNotification: string[];
-      action: string;
-      category: string;
+      type: string;
       updatedAt: string;
       user: {
         name: string;
