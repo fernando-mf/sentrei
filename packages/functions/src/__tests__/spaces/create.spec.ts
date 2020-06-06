@@ -21,11 +21,8 @@ const data = {
   createdAt: firebase.firestore.FieldValue.serverTimestamp(),
   createdBy: profile,
   createdById: "currentUser",
-  description: "content",
-  language: "en",
   members: 0,
   photo: null,
-  pinned: [],
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
   updatedBy: profile,
   updatedById: "currentUser",
@@ -36,7 +33,7 @@ beforeAll(async done => {
   db = initializeFirebaseApp({uid: "currentUser"});
   ref = db.collection("spaces");
   await loadFirestoreRules();
-  await admin.doc("profile/currentUser").set(profile);
+  await admin.doc("profiles/currentUser").set(profile);
   done();
 });
 
@@ -86,14 +83,6 @@ test("CreatedById has the current user UID", async done => {
   done();
 });
 
-test("Description is a string", async done => {
-  await firebase.assertFails(ref.add({...data, description: 123}));
-  await firebase.assertFails(ref.add({...data, description: true}));
-  await firebase.assertFails(ref.add({...data, description: {1: true}}));
-  await firebase.assertFails(ref.add({...data, description: ["test"]}));
-  done();
-});
-
 test("Members is set to 0", async done => {
   await firebase.assertFails(ref.add({...data, members: 1}));
   done();
@@ -110,23 +99,6 @@ test("Photo is a string", async done => {
 
 test("Photo can be null", async done => {
   await firebase.assertSucceeds(ref.add({...data, photo: null}));
-  done();
-});
-
-test("Pinned is an array", async done => {
-  await firebase.assertFails(ref.add({...data, pinned: "test"}));
-  await firebase.assertFails(ref.add({...data, pinned: 123}));
-  await firebase.assertFails(ref.add({...data, pinned: true}));
-  await firebase.assertFails(ref.add({...data, pinned: {1: true}}));
-  await firebase.assertSucceeds(ref.add({...data, pinned: []}));
-  done();
-});
-
-test("Title is a string", async done => {
-  await firebase.assertFails(ref.add({...data, title: 123}));
-  await firebase.assertFails(ref.add({...data, title: true}));
-  await firebase.assertFails(ref.add({...data, title: {1: true}}));
-  await firebase.assertFails(ref.add({...data, title: ["test"]}));
   done();
 });
 
