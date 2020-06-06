@@ -13,9 +13,10 @@ jobs:
           python-version: "3.8"
       - uses: dschep/install-pipenv-action@v1
       - run: |
+          pipenv install --dev
+      - run: |
           curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | bash
       - run: |
-          pipenv graph --json-tree
           fossa analyze
         env:
           FOSSA_API_KEY: ${{ secrets.FOSSA_API_KEY }}
