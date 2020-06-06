@@ -10,9 +10,9 @@ service cloud.firestore {
     }
 
     function isValidProfile(field) {
-      return get(/databases/$(database)/documents/profile/$(request.auth.uid)).data.name == request.resource.data[field].name
-        && get(/databases/$(database)/documents/profile/$(request.auth.uid)).data.photo == request.resource.data[field].photo
-        && get(/databases/$(database)/documents/profile/$(request.auth.uid)).data.username == request.resource.data[field].username
+      return get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.name == request.resource.data[field].name
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.photo == request.resource.data[field].photo
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.username == request.resource.data[field].username
       ;
     }
 
@@ -49,6 +49,7 @@ service cloud.firestore {
         && isValidProfile("createdBy")
         && request.resource.data.createdById == request.auth.uid
         && request.resource.data.description is string
+        && request.resource.data.description.size() <= 1000
         && request.resource.data.memberCount == 0
         && (request.resource.data.photo == null || request.resource.data.photo is string)
         && request.resource.data.updatedAt == request.time
