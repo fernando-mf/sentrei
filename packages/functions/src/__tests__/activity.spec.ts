@@ -48,13 +48,13 @@ test("Cannot get an activity", async done => {
 });
 
 test("Can list activities", async done => {
-  const ref = collection.limit(20);
+  const ref = collection.limit(30);
   await firebase.assertSucceeds(ref.get());
   done();
 });
 
-test("Cannot list more than 20 activities", async done => {
-  const ref = collection.limit(21);
+test("Cannot list more than 30 activities", async done => {
+  const ref = collection.limit(31);
   await firebase.assertFails(ref.get());
   done();
 });
