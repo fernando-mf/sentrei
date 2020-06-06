@@ -89,5 +89,9 @@ service cloud.firestore {
         allow read: if request.auth.uid == userId;
       }
     }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
   }
 }
