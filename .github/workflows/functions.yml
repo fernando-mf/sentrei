@@ -17,17 +17,17 @@ jobs:
           node-version: "14.4.0"
       - id: yarn-cache-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
-      # - id: cache
-      #   uses: actions/cache@master
-      #   with:
-      #     path: |
-      #       node_modules
-      #       */*/node_modules
-      #       ${{ steps.yarn-cache-path.outputs.dir }}
-      #     key: |
-      #       yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-      #     restore-keys: |
-      #       yarn-v1-${{ runner.os }}-
+      - id: cache
+        uses: actions/cache@master
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ${{ steps.yarn-cache-path.outputs.dir }}
+          key: |
+            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-v1-${{ runner.os }}-
       - run: |
           yarn install --frozen-lockfile
       - run: |
@@ -37,6 +37,8 @@ jobs:
           yarn run swap:${{ github.event.pull_request.base.ref }}
           yarn run setup
           yarn run test
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - uses: codecov/codecov-action@v1
         continue-on-error: true
         with:
