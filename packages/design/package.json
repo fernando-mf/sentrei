@@ -12,8 +12,8 @@
   "scripts": {
     "build": "vuepress build src",
     "deploy": "yarn run deploy:design && yarn run deploy:staging-design",
-    "deploy:design": "firebase deploy --only hosting:design --token ${FIREBASE_TOKEN}",
-    "deploy:staging-design": "firebase deploy --only hosting:staging-design --token ${FIREBASE_TOKEN}",
+    "deploy:design": "firebase deploy --only hosting:design",
+    "deploy:staging-design": "firebase deploy --only hosting:staging-design",
     "design": "firebase use master && yarn run deploy",
     "dev": "vuepress dev src",
     "staging:design": "firebase use master && yarn run deploy:staging-design"

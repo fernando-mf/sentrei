@@ -12,8 +12,8 @@
   "scripts": {
     "build": "vuepress build src",
     "deploy": "yarn run deploy:staging-pioneer && yarn run deploy:pioneer",
-    "deploy:pioneer": "firebase deploy --only hosting:pioneer --token ${FIREBASE_TOKEN}",
-    "deploy:staging-pioneer": "firebase deploy --only hosting:staging-pioneer --token ${FIREBASE_TOKEN}",
+    "deploy:pioneer": "firebase deploy --only hosting:pioneer",
+    "deploy:staging-pioneer": "firebase deploy --only hosting:staging-pioneer",
     "dev": "vuepress dev src",
     "pioneer": "firebase use master && yarn run deploy",
     "staging:pioneer": "firebase use master && yarn run deploy:staging-pioneer"
