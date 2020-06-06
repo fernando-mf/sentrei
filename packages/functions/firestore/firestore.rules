@@ -22,6 +22,11 @@ service cloud.firestore {
       allow create, delete: if request.auth.uid == userId;
     }
 
+    match /activity/{id} {
+      allow get;
+      allow list: if request.query.limit <= 20;
+    }
+
     match /admin/{id} {
       allow get: if isAdmin();
     }
