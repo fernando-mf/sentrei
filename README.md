@@ -86,6 +86,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
+## License 📃
+
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B15457%2Fgithub.com%2Fsentrei%2Fsentrei.svg?type=large)](https://app.fossa.com/projects/custom%2B15457%2Fgithub.com%2Fsentrei%2Fsentrei?ref=badge_large)
+
 ## Stargazers over time 📈
 
 [![Stargazers over time](https://starchart.cc/sentrei/sentrei.svg)](https://starchart.cc/sentrei/sentrei)
@@ -95,7 +99,3 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 [Schedule a meeting](https://calendly.com/shunkakinoki) with me for feedback, questions, or support.
 We would love to hear your feedback on Sentrei and how we can make it better for you.
 Anyone is welcome!
-
-## License 📃
-
-[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B15457%2Fgithub.com%2Fsentrei%2Fsentrei.svg?type=large)](https://app.fossa.com/projects/custom%2B15457%2Fgithub.com%2Fsentrei%2Fsentrei?ref=badge_large)
