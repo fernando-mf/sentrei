@@ -70,8 +70,8 @@ test("should update the profile for all collections", async done => {
   expect(db.collection).toHaveBeenCalledWith("spaces");
   expect(spy1).toHaveBeenCalledWith({createdBy: data});
   expect(spy2).toHaveBeenCalledWith({updatedBy: data});
-  expect(spy1).toHaveBeenCalledTimes(12);
-  expect(spy2).toHaveBeenCalledTimes(12);
+  expect(spy1).toHaveBeenCalledTimes(2);
+  expect(spy2).toHaveBeenCalledTimes(2);
   expect(Promise.all).toHaveBeenCalledWith(["doc1", "doc2"]);
   done();
 });
