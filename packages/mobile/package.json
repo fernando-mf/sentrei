@@ -24,7 +24,7 @@
     "swap:master": "cp master.firebase.json firebase.json"
   },
   "dependencies": {
-    "firebase-tools": "^8.0.2"
+    "firebase-tools": "^8.4.2"
   },
   "publishConfig": {
     "access": "public"
