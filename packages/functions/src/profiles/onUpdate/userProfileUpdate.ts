@@ -5,7 +5,7 @@ import getProfileChanges from "@sentrei/functions/helpers/getProfileChanges";
 
 const db = admin.firestore();
 
-const updateSettings = functions.firestore
+const userProfileUpdate = functions.firestore
   .document("profiles/{uid}")
   .onUpdate(async (change, context) => {
     const {uid} = context.params;
@@ -18,4 +18,4 @@ const updateSettings = functions.firestore
     return db.doc(`users/${uid}`).update(profileData);
   });
 
-export default updateSettings;
+export default userProfileUpdate;

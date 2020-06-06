@@ -1,2 +1,2 @@
 /* eslint-disable import/prefer-default-export */
-export {default as updateProfile} from "./updateProfile";
+export {default as profileUpdate} from "./profileUpdate";

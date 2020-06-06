@@ -4,7 +4,7 @@ import * as functions from "firebase-functions";
 
 const db = admin.firestore();
 
-const logIPAddress = functions.https.onCall(async (_, context) => {
+const ipAddressAdd = functions.https.onCall(async (_, context) => {
   const uid = context.auth?.uid;
   const {ip, ips} = context.rawRequest as any;
 
@@ -25,4 +25,4 @@ const logIPAddress = functions.https.onCall(async (_, context) => {
   return {id: ref.id};
 });
 
-export default logIPAddress;
+export default ipAddressAdd;

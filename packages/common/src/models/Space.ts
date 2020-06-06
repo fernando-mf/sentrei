@@ -3,19 +3,13 @@
 import Metadata from "@sentrei/common/models/Metadata";
 
 declare namespace Space {
-  export type Summary = {
-    description: string;
-    id: string;
-    title: string;
-  };
-
   export type EditableFields = {
     description: string;
-    title: string;
+    name: string;
   };
 
   interface Fields extends EditableFields {
-    members: number;
+    memberCount: number;
   }
 
   export interface Create extends Fields, Metadata.Create {}

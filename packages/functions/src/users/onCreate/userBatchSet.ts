@@ -8,17 +8,25 @@ import getNameFromEmail from "../../helpers/getNameFromEmail";
 
 const db = admin.firestore();
 
-const setupProfile = functions.auth.user().onCreate(async user => {
+const userBatchSet = functions.auth.user().onCreate(async user => {
   const batch = db.batch();
 
   const userInfo = {
     name: user.displayName || getNameFromEmail(user.email || user.uid),
+    photo: user.photoURL || null,
     username: user.uid,
   };
 
   const userData: User.Response = {
     ...userInfo,
+    email: user.email,
     role: "viewer",
+    notificationCount: 0,
+    notificationSettings: {
+      chat: ["app", "email"],
+      invitation: ["app", "email"],
+      update: ["app", "email"],
+    },
   };
 
   const profileData: Profile.Response = {
@@ -34,4 +42,4 @@ const setupProfile = functions.auth.user().onCreate(async user => {
   return batch.commit();
 });
 
-export default setupProfile;
+export default userBatchSet;

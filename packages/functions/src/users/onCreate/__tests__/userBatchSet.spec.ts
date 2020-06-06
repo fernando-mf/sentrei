@@ -1,16 +1,16 @@
+/* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 import {when} from "jest-when";
 
-import setupProfile from "../setupProfile";
+import userBatchSet from "../userBatchSet";
 
 const testEnv = functions();
 
 const db = admin.firestore();
 
 beforeAll(() => {
-  // eslint-disable-next-line @typescript-eslint/unbound-method
   when(db.doc as any)
     .calledWith("users/testUID")
     .mockReturnValue({path: "users/testUID"})
@@ -22,10 +22,18 @@ test("Add the user info to their settings", async done => {
   const spy = spyOn(db.batch(), "set");
   const ref = db.doc("users/testUID");
 
-  const wrapped = testEnv.wrap(setupProfile);
+  const wrapped = testEnv.wrap(userBatchSet);
   await wrapped({email: "test@test.com", uid: "testUID"});
 
   const userInfo = {
+    email: "test@test.com",
+    notificationCount: 0,
+    notificationSettings: {
+      chat: ["app", "email"],
+      invitation: ["app", "email"],
+      update: ["app", "email"],
+    },
+    photo: null,
     name: "test",
     role: "viewer",
     username: "testUID",
@@ -39,15 +47,17 @@ test("Add the user info to their profile", async done => {
   const spy = spyOn(db.batch(), "set");
   const ref = db.doc("profiles/testUID");
 
-  const wrapped = testEnv.wrap(setupProfile);
+  const wrapped = testEnv.wrap(userBatchSet);
   await wrapped({
     displayName: "user name",
     email: "test@test.com",
+    photoURL: "photo.png",
     uid: "testUID",
   });
 
   const userInfo = {
     name: "user name",
+    photo: "photo.png",
     username: "testUID",
   };
 
@@ -55,11 +65,11 @@ test("Add the user info to their profile", async done => {
   done();
 });
 
-test("Commit all changes to the database", async done => {
+test("On users create, batch commit all set changes to the database", async done => {
   const setSpy = spyOn(db.batch(), "set");
   spyOn(db.batch(), "commit").and.returnValue(true);
 
-  const wrapped = testEnv.wrap(setupProfile);
+  const wrapped = testEnv.wrap(userBatchSet);
   const req = await wrapped({email: "test@test.com", uid: "testUID"});
 
   expect(setSpy).toHaveBeenCalledTimes(2);
