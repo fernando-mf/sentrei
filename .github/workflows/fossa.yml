@@ -1,0 +1,10 @@
+name: Fossa
+on: push
+jobs:
+  fossa:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | bash
+      - run: |
+          FOSSSA_API_KEY=${{ secrets.FOSSA_API_KEY }} fossa analyze
