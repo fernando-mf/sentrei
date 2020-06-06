@@ -21,7 +21,7 @@ test("Update the username field in the profile collection", async done => {
   const req = await wrapped(snap);
 
   expect(req).toBe("updated");
-  expect(db.doc).toHaveBeenCalledWith("profile/userId");
+  expect(db.doc).toHaveBeenCalledWith("profiles/userId");
   expect(db.doc("").update).toHaveBeenCalledWith({username: "username"});
   done();
 });
