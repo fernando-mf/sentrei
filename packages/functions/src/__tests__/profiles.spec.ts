@@ -15,10 +15,10 @@ let doc: firebase.firestore.DocumentReference;
 beforeAll(async done => {
   admin = initializeAdminApp();
   db = initializeFirebaseApp({uid: "currentUser"});
-  collection = db.collection("profile");
+  collection = db.collection("profiles");
   doc = collection.doc("currentUser");
   await loadFirestoreRules();
-  await admin.doc("profile/currentUser").set({name: "current"});
+  await admin.doc("profiles/currentUser").set({name: "current"});
   done();
 });
 
