@@ -58,7 +58,6 @@
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "@types/react-scrollspy": "^3.3.2",
-    "@welldone-software/why-did-you-render": "^4.2.2",
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-source-maps": "^0.0.3",
     "babel-plugin-styled-components": "^1.10.7",

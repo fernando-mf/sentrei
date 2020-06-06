@@ -1,0 +1,22 @@
+name: Fossa
+on: push
+jobs:
+  fossa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.4.0"
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - uses: dschep/install-pipenv-action@v1
+      - run: |
+          pipenv install --dev
+      - run: |
+          curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | bash
+      - run: |
+          fossa analyze
+        env:
+          FOSSA_API_KEY: ${{ secrets.FOSSA_API_KEY }}

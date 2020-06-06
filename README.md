@@ -49,7 +49,7 @@
 
 <!-- prettier-ignore-start -->
 | Version | FAD (Android) | FAD (iOS) | Dartdoc |
-| ------- | ------------- | --------- | ---- |
+| ------- | ------------- | --------- | ------- |
 | alpha | [LINK](https://appdistribution.firebase.dev/i/ecwjmtsh) | [LINK](https://appdistribution.firebase.dev/i/iCHEpULk) | https://alpha.dartdoc.sentrei.com |
 | beta | [LINK](https://appdistribution.firebase.dev/i/zk13ZGu1) | [LINK](https://appdistribution.firebase.dev/i/5rx5sRDi) | https://beta.dartdoc.sentrei.com |
 | master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) | https://master.dartdoc.sentrei.com |
@@ -59,7 +59,7 @@
 
 <!-- prettier-ignore-start -->
 | Version | Web | Typedoc |
-| ------- | --- | ---- |
+| ------- | --- | ------- |
 | alpha | https://alpha.sentrei.com | https://alpha.typedoc.sentrei.com |
 | beta | https://beta.sentrei.com | https://beta.typedoc.sentrei.com |
 | master | https://sentrei.com | https://master.typedoc.sentrei.com |
@@ -95,3 +95,7 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 [Schedule a meeting](https://calendly.com/shunkakinoki) with me for feedback, questions, or support.
 We would love to hear your feedback on Sentrei and how we can make it better for you.
 Anyone is welcome!
+
+## License 📃
+
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B15457%2Fgithub.com%2Fsentrei%2Fsentrei.svg?type=large)](https://app.fossa.com/projects/custom%2B15457%2Fgithub.com%2Fsentrei%2Fsentrei?ref=badge_large)

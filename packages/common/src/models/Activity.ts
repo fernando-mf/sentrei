@@ -22,7 +22,7 @@ declare namespace Activity {
     category: C;
     categoryId: string;
     createdById: string;
-    topics: string[];
+    spaces: string[];
     updatedAt: firebase.firestore.FieldValue;
     user: Profile.Response;
     userNotification: string[];

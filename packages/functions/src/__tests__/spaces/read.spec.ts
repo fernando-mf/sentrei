@@ -26,13 +26,13 @@ test("Can get a single item", async done => {
 });
 
 test("Can list items", async done => {
-  const ref = db.collection("spaces").limit(20);
+  const ref = db.collection("spaces").limit(30);
   await firebase.assertSucceeds(ref.get());
   done();
 });
 
-test("Cannot list more than 20 items", async done => {
-  const ref = db.collection("spaces").limit(21);
+test("Cannot list more than 30 items", async done => {
+  const ref = db.collection("spaces").limit(31);
   await firebase.assertFails(ref.get());
   done();
 });

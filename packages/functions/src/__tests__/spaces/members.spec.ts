@@ -40,15 +40,15 @@ test("Can read", async done => {
   done();
 });
 
-test("Can list 20 users", async done => {
+test("Can list 30 users", async done => {
   const colRef = db.collection("spaces/spaceId/members");
-  await firebase.assertSucceeds(colRef.limit(20).get());
+  await firebase.assertSucceeds(colRef.limit(30).get());
   done();
 });
 
-test("Cannot list more than 20 users", async done => {
+test("Cannot list more than 30 users", async done => {
   const colRef = db.collection("spaces/spaceId/members");
-  await firebase.assertFails(colRef.limit(21).get());
+  await firebase.assertFails(colRef.limit(31).get());
   done();
 });
 
