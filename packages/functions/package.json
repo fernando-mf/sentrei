@@ -24,7 +24,7 @@
     "clean:dist": "rimraf dist",
     "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
     "config": "yarn run env:get:local && firebase functions:shell",
-    "deploy:functions": "firebase deploy --only functions",
+    "deploy:functions": "firebase deploy -f --only functions",
     "deploy:rules": "yarn run deploy:rules:firestore && yarn run deploy:rules:storage",
     "deploy:rules:firestore": "firebase deploy --only firestore",
     "deploy:rules:storage": "firebase deploy --only storage",
