@@ -1,3 +1,9 @@
+# [4.81.0-beta.7](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.6...v4.81.0-beta.7) (2020-06-07)
+
+### Bug Fixes
+
+- 🐛 uudpate profile path ([bd613fa](https://github.com/sentrei/sentrei/commit/bd613faf6ec551a35d9bbda55b85b7428b62b110))
+
 # [4.81.0-beta.6](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.5...v4.81.0-beta.6) (2020-06-07)
 
 ### Bug Fixes
