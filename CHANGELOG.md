@@ -1,3 +1,13 @@
+# [4.81.0-beta.6](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.5...v4.81.0-beta.6) (2020-06-07)
+
+### Bug Fixes
+
+- 🐛 change to score ([f49f098](https://github.com/sentrei/sentrei/commit/f49f098ceccab1faf53f8ba19574ea9f979fc8ab))
+
+### Features
+
+- 🎸 add analytics model ([e52adb2](https://github.com/sentrei/sentrei/commit/e52adb24e0fd1ec6d024dcd106fda7f1fbbcbf64))
+
 # [4.81.0-beta.5](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.4...v4.81.0-beta.5) (2020-06-07)
 
 ### Bug Fixes
