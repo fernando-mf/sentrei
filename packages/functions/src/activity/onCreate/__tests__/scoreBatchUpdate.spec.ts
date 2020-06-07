@@ -44,7 +44,7 @@ test("Increase score when a space is created", async done => {
   };
   const wrapped = testEnv.wrap(scoreBatchUpdate);
   const req = await wrapped(snap);
-  const payload = {createdById: "userId", xp: scoreActions.created_spaces};
+  const payload = {createdById: "userId", score: scoreActions.created_spaces};
 
   expect(req).toBe(true);
   expect(db.doc).toHaveBeenCalledWith("spaces/1/leaderboard/userId");
@@ -74,7 +74,7 @@ test("Increase score when a space is edited", async done => {
   };
   const wrapped = testEnv.wrap(scoreBatchUpdate);
   const req = await wrapped(snap);
-  const payload = {createdById: "userId", xp: scoreActions.updated_spaces};
+  const payload = {createdById: "userId", score: scoreActions.updated_spaces};
 
   expect(req).toBe(true);
   expect(db.doc).toHaveBeenCalledWith("spaces/1/leaderboard/userId");
@@ -104,7 +104,7 @@ test("Increase score when a space is deleted", async done => {
   };
   const wrapped = testEnv.wrap(scoreBatchUpdate);
   const req = await wrapped(snap);
-  const payload = {createdById: "userId", xp: scoreActions.deleted_spaces};
+  const payload = {createdById: "userId", score: scoreActions.deleted_spaces};
 
   expect(req).toBe(true);
   expect(db.doc).toHaveBeenCalledWith("spaces/1/leaderboard/userId");
@@ -135,7 +135,7 @@ test("Decrease score when a space is deleted by the author", async done => {
   };
   const wrapped = testEnv.wrap(scoreBatchUpdate);
   const req = await wrapped(snap);
-  const payload = {createdById: "userId", xp: -scoreActions.deleted_spaces};
+  const payload = {createdById: "userId", score: -scoreActions.deleted_spaces};
 
   expect(req).toBe(true);
   expect(db.doc).toHaveBeenCalledWith("spaces/1/leaderboard/userId");
@@ -165,7 +165,7 @@ test("Increase score for an unknown created action", async done => {
   };
   const wrapped = testEnv.wrap(scoreBatchUpdate);
   const req = await wrapped(snap);
-  const payload = {createdById: "userId", xp: 1};
+  const payload = {createdById: "userId", score: 1};
 
   expect(req).toBe(true);
   expect(db.doc).toHaveBeenCalledWith("spaces/1/leaderboard/userId");
@@ -195,7 +195,7 @@ test("Increase score for an unknown updated action", async done => {
   };
   const wrapped = testEnv.wrap(scoreBatchUpdate);
   const req = await wrapped(snap);
-  const payload = {createdById: "userId", xp: 1};
+  const payload = {createdById: "userId", score: 1};
 
   expect(req).toBe(true);
   expect(db.doc).toHaveBeenCalledWith("spaces/1/leaderboard/userId");
@@ -225,7 +225,7 @@ test("Increase score for an unknown deleted action", async done => {
   };
   const wrapped = testEnv.wrap(scoreBatchUpdate);
   const req = await wrapped(snap);
-  const payload = {createdById: "userId", xp: 1};
+  const payload = {createdById: "userId", score: 1};
 
   expect(req).toBe(true);
   expect(db.doc).toHaveBeenCalledWith("spaces/1/leaderboard/userId");
@@ -259,7 +259,7 @@ test("Decrease score for an unknown deleted action by the author", async done =>
   };
   const wrapped = testEnv.wrap(scoreBatchUpdate);
   const req = await wrapped(snap);
-  const payload = {createdById: "userId", xp: -1};
+  const payload = {createdById: "userId", score: -1};
 
   expect(req).toBe(true);
   expect(db.doc).toHaveBeenCalledWith("spaces/1/leaderboard/userId");

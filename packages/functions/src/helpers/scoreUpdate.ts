@@ -6,7 +6,7 @@ export type ContentTypes = Activity.Response;
 
 interface LeaderboardData {
   createdById: string;
-  xp: admin.firestore.FieldValue;
+  score: admin.firestore.FieldValue;
 }
 
 const scoreUpdate = (
@@ -22,7 +22,7 @@ const scoreUpdate = (
 
   const newData: LeaderboardData = {
     createdById: userId,
-    xp: scoreField,
+    score: scoreField,
   };
 
   data.spaces.forEach(space => {
