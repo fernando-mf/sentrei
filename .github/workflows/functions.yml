@@ -46,7 +46,7 @@ jobs:
           name: sentrei
           fail_ci_if_error: true
           flags: functions
-      - uses: actions/upload-release-asset@v2
+      - uses: actions/upload-artifact@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
