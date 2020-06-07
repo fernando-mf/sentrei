@@ -24,6 +24,7 @@ const activitySpaceCreate = functions.firestore
       categoryId: id,
       createdById: data.createdById,
       updatedAt: data.updatedAt,
+      spaces: [id],
       user: data.updatedBy,
       userNotification: [],
     };

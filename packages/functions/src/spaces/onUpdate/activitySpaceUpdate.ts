@@ -29,6 +29,7 @@ const activitySpaceUpdate = functions.firestore
       category: "spaces",
       categoryId: id,
       createdById: after.updatedById,
+      spaces: [id],
       updatedAt: after.updatedAt,
       user: after.updatedBy,
       userNotification:
