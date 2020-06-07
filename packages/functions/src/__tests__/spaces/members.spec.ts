@@ -17,7 +17,7 @@ const profile = {
   username: "test",
   bio: "test",
 };
-const data = {...profile, joined, xp: 1};
+const data = {...profile, joined, score: 1};
 
 beforeAll(async done => {
   admin = initializeAdminApp();

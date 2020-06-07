@@ -32,7 +32,7 @@ service cloud.firestore {
       allow list: if request.query.limit <= 30;
     }
 
-    match /admin/{id} {
+    match /analytics/{id} {
       allow get: if isAdmin();
     }
 
