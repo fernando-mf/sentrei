@@ -15,10 +15,10 @@ let doc: firebase.firestore.DocumentReference;
 beforeAll(async done => {
   admin = initializeAdminApp();
   db = initializeFirebaseApp({uid: "currentUser"});
-  collection = db.collection("admin");
+  collection = db.collection("analytics");
   doc = collection.doc("stats");
   await loadFirestoreRules();
-  await admin.doc("admin/stats").set({posts: 10});
+  await admin.doc("analytics/stats").set({posts: 10});
   done();
 });
 
@@ -43,16 +43,16 @@ test("Cannot delete an item", async done => {
 });
 
 test("Can read with admin access", async done => {
-  const adminApp = initializeFirebaseApp({uid: "adminUser"});
-  const adminDoc = adminApp.doc("admin/stats");
-  await admin.doc("users/adminUser").set({role: "admin"});
+  const adminApp = initializeFirebaseApp({uid: "analyticsUser"});
+  const adminDoc = adminApp.doc("analytics/stats");
+  await admin.doc("users/adminUser").set({role: "analytics"});
   await firebase.assertSucceeds(adminDoc.get());
   done();
 });
 
 test("Cannot read with moderator access", async done => {
   const adminApp = initializeFirebaseApp({uid: "modUser"});
-  const adminDoc = adminApp.doc("admin/stats");
+  const adminDoc = adminApp.doc("analytics/stats");
   await admin.doc("users/modUser").set({role: "moderator"});
   await firebase.assertFails(adminDoc.get());
   done();
@@ -60,7 +60,7 @@ test("Cannot read with moderator access", async done => {
 
 test("Cannot read with viewer access", async done => {
   const adminApp = initializeFirebaseApp({uid: "viewerUser"});
-  const adminDoc = adminApp.doc("admin/stats");
+  const adminDoc = adminApp.doc("analytics/stats");
   await admin.doc("users/viewerUser").set({role: "viewer"});
   await firebase.assertFails(adminDoc.get());
   done();
