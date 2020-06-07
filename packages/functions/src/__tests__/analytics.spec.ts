@@ -43,9 +43,9 @@ test("Cannot delete an item", async done => {
 });
 
 test("Can read with admin access", async done => {
-  const adminApp = initializeFirebaseApp({uid: "analyticsUser"});
+  const adminApp = initializeFirebaseApp({uid: "adminUser"});
   const adminDoc = adminApp.doc("analytics/stats");
-  await admin.doc("users/adminUser").set({role: "analytics"});
+  await admin.doc("users/adminUser").set({role: "admin"});
   await firebase.assertSucceeds(adminDoc.get());
   done();
 });
