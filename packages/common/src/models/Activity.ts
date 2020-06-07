@@ -2,11 +2,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import Profile from "@sentrei/common/models/Profile";
+import Room from "@sentrei/common/models/Room";
 import Space from "@sentrei/common/models/Space";
 
 export type UserAction = "created" | "updated" | "deleted";
 
-type EditableContent = "spaces";
+type EditableContent = "rooms" | "spaces";
 
 type EditableContentType = {
   [key in EditableContent]: any;
@@ -49,15 +50,18 @@ declare namespace Activity {
     after: null;
   }
 
+  export type CreateRoom = Create<Room.Response, "rooms">;
+  export type UpdateRoom = Update<Room.Response, "rooms">;
+  export type DeleteRoom = Delete<Room.Response, "rooms">;
   export type CreateSpace = Create<Space.Response, "spaces">;
   export type UpdateSpace = Update<Space.Response, "spaces">;
   export type DeleteSpace = Delete<Space.Response, "spaces">;
 
-  export type CreateActions = CreateSpace;
+  export type CreateActions = CreateRoom | CreateSpace;
 
-  export type UpdateActions = UpdateSpace;
+  export type UpdateActions = UpdateRoom | UpdateSpace;
 
-  export type DeleteActions = DeleteSpace;
+  export type DeleteActions = DeleteRoom | DeleteSpace;
 
   export type Response = Omit<
     CreateActions | UpdateActions | DeleteActions,

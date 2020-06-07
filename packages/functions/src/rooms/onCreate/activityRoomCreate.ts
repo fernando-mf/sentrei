@@ -2,29 +2,29 @@ import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
 import Activity from "@sentrei/common/models/Activity";
-import Space from "@sentrei/common/models/Space";
+import Room from "@sentrei/common/models/Room";
 
 const db = admin.firestore();
 
-const activitySpaceCreate = functions.firestore
-  .document("spaces/{id}")
+const activityRoomCreate = functions.firestore
+  .document("rooms/{id}")
   .onCreate(async (snap, context) => {
-    const data = snap.data() as Space.Response;
+    const data = snap.data() as Room.Response;
 
     if (!data.createdById) {
       return false;
     }
 
     const {id} = context.params;
-    const activity: Activity.CreateSpace = {
+    const activity: Activity.CreateRoom = {
       action: "created",
       before: null,
       after: data,
-      category: "spaces",
+      category: "rooms",
       categoryId: id,
       createdById: data.createdById,
-      updatedAt: data.updatedAt,
       spaces: [id],
+      updatedAt: data.updatedAt,
       user: data.updatedBy,
       userNotification: [],
     };
@@ -32,4 +32,4 @@ const activitySpaceCreate = functions.firestore
     return db.collection("activity").add(activity);
   });
 
-export default activitySpaceCreate;
+export default activityRoomCreate;

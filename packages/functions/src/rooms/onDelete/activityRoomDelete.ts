@@ -2,21 +2,21 @@ import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
 import Activity from "@sentrei/common/models/Activity";
-import Space from "@sentrei/common/models/Space";
+import Room from "@sentrei/common/models/Room";
 
 const db = admin.firestore();
 
-const activitySpaceDelete = functions.firestore
-  .document("spaces/{id}")
+const activityRoomDelete = functions.firestore
+  .document("rooms/{id}")
   .onDelete(async (snap, context) => {
     const {id} = context.params;
-    const data = snap.data() as Space.Response;
+    const data = snap.data() as Room.Response;
 
-    const activity: Activity.DeleteSpace = {
+    const activity: Activity.DeleteRoom = {
       action: "deleted",
       before: data,
       after: null,
-      category: "spaces",
+      category: "rooms",
       categoryId: id,
       createdById: data.updatedById,
       updatedAt: data.updatedAt,
@@ -29,4 +29,4 @@ const activitySpaceDelete = functions.firestore
     return db.collection("activity").add(activity);
   });
 
-export default activitySpaceDelete;
+export default activityRoomDelete;
