@@ -1,3 +1,9 @@
+# [4.81.0-beta.5](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.4...v4.81.0-beta.5) (2020-06-07)
+
+### Bug Fixes
+
+- 🐛 add lighthouse gha ([7b89dea](https://github.com/sentrei/sentrei/commit/7b89deaf1aa94a434bf1bfc279e228f2db1b5b2c))
+
 # [4.81.0-beta.3](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.2...v4.81.0-beta.3) (2020-06-06)
 
 ### Bug Fixes
