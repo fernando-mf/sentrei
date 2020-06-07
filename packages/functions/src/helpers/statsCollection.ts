@@ -1,3 +1,9 @@
-const statsCollection = ["users"];
+const statsCollection = [
+  "profiles",
+  "notifications",
+  "spaces",
+  "users",
+  "usernames",
+];
 
 export default statsCollection;

@@ -27,7 +27,7 @@ test("Decrease the profiles count", async done => {
 
   expect(req).toBe("updated");
   expect(db.doc).toHaveBeenCalledWith("analytics/stats");
-  expect(db.doc("").update).toHaveBeenCalledWith({profiles: 1});
+  expect(db.doc("").update).toHaveBeenCalledWith({profiles: -1});
   done();
 });
 
@@ -38,7 +38,7 @@ test("Decrease the notifications count", async done => {
 
   expect(req).toBe("updated");
   expect(db.doc).toHaveBeenCalledWith("analytics/stats");
-  expect(db.doc("").update).toHaveBeenCalledWith({notifications: 1});
+  expect(db.doc("").update).toHaveBeenCalledWith({notifications: -1});
   done();
 });
 
@@ -48,8 +48,8 @@ test("Decrease the spaces count", async done => {
   const req = await wrapped({}, context);
 
   expect(req).toBe("updated");
-  expect(db.doc).toHaveBeenCalledWith("analytics/spaces");
-  expect(db.doc("").update).toHaveBeenCalledWith({spaces: 1});
+  expect(db.doc).toHaveBeenCalledWith("analytics/stats");
+  expect(db.doc("").update).toHaveBeenCalledWith({spaces: -1});
   done();
 });
 
@@ -60,17 +60,17 @@ test("Decrease the users count", async done => {
 
   expect(req).toBe("updated");
   expect(db.doc).toHaveBeenCalledWith("analytics/stats");
-  expect(db.doc("").update).toHaveBeenCalledWith({users: 1});
+  expect(db.doc("").update).toHaveBeenCalledWith({users: -1});
   done();
 });
 
 test("Decrease the usernames count", async done => {
-  const context = {params: {collection: "users"}};
+  const context = {params: {collection: "usernames"}};
   const wrapped = testEnv.wrap(statsMinus);
   const req = await wrapped({}, context);
 
   expect(req).toBe("updated");
   expect(db.doc).toHaveBeenCalledWith("analytics/stats");
-  expect(db.doc("").update).toHaveBeenCalledWith({users: 1});
+  expect(db.doc("").update).toHaveBeenCalledWith({usernames: -1});
   done();
 });
