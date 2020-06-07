@@ -2,12 +2,12 @@
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
-import activitySpaceCreate from "../activitySpaceCreate";
+import activityRoomCreate from "../activityRoomCreate";
 
 const testEnv = functions();
 const db = admin.firestore();
 
-test("Send a request to add a new space to activities", async done => {
+test("Send a request to add a new room to activities", async done => {
   const profile = {name: "Joe", photo: "jeo.jpg"};
   const data = {
     createdById: "editorId",
@@ -33,7 +33,7 @@ test("Send a request to add a new space to activities", async done => {
     action: "created",
     before: null,
     after: data,
-    category: "spaces",
+    category: "rooms",
     categoryId: "itemId",
     createdById: "editorId",
     updatedAt: "today",
@@ -43,7 +43,7 @@ test("Send a request to add a new space to activities", async done => {
 
   spyOn(db.collection(""), "add").and.returnValue(true);
 
-  const wrapped = testEnv.wrap(activitySpaceCreate);
+  const wrapped = testEnv.wrap(activityRoomCreate);
   const req = await wrapped(snap, context);
 
   expect(req).toBe(true);

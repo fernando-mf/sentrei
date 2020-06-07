@@ -2,48 +2,50 @@
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
-import activitySpaceCreate from "../activitySpaceCreate";
+import activityRoomDelete from "../activityRoomDelete";
 
 const testEnv = functions();
 const db = admin.firestore();
 
-test("Send a request to add a new space to activities", async done => {
-  const profile = {name: "Joe", photo: "jeo.jpg"};
-  const data = {
-    createdById: "editorId",
-    title: "new item",
-    updatedAt: "today",
+test("Send a request to add a new delete to activities", async done => {
+  const profile = {name: "Leo", photo: "leo.jpg"};
+  const beforeData = {
+    createdById: "authorId",
+    description: "old description",
+    updatedAt: "timestamp",
     updatedBy: profile,
     updatedById: "editorId",
+    url: "old link",
   };
   const snap = {
     data: (): {
       createdById: string;
-      title: string;
+      description: string;
       updatedAt: string;
       updatedBy: {
         name: string;
         photo: string;
       };
       updatedById: string;
-    } => data,
+      url: string;
+    } => ({...beforeData}),
   };
   const context = {params: {id: "itemId"}};
   const expected = {
-    action: "created",
-    before: null,
-    after: data,
-    category: "spaces",
+    action: "deleted",
+    after: null,
+    before: beforeData,
+    category: "rooms",
     categoryId: "itemId",
     createdById: "editorId",
-    updatedAt: "today",
+    updatedAt: "timestamp",
     user: profile,
-    userNotification: [],
+    userNotification: ["authorId"],
   };
 
   spyOn(db.collection(""), "add").and.returnValue(true);
 
-  const wrapped = testEnv.wrap(activitySpaceCreate);
+  const wrapped = testEnv.wrap(activityRoomDelete);
   const req = await wrapped(snap, context);
 
   expect(req).toBe(true);

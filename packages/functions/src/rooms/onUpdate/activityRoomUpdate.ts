@@ -3,16 +3,16 @@ import * as functions from "firebase-functions";
 import {isEqual, pick} from "lodash";
 
 import Activity from "@sentrei/common/models/Activity";
-import Space from "@sentrei/common/models/Space";
+import Room from "@sentrei/common/models/Room";
 
 const db = admin.firestore();
 
-const activitySpaceUpdate = functions.firestore
-  .document("spaces/{id}")
+const activityRoomUpdate = functions.firestore
+  .document("rooms/{id}")
   .onUpdate(async (change, context) => {
     const {id} = context.params;
-    const before = change.before.data() as Space.Response;
-    const after = change.after.data() as Space.Response;
+    const before = change.before.data() as Room.Response;
+    const after = change.after.data() as Room.Response;
     const fieldsToTrack = ["description", "photo"];
     const beforeChanges = pick(before, fieldsToTrack);
     const afterChanges = pick(after, fieldsToTrack);
@@ -22,11 +22,11 @@ const activitySpaceUpdate = functions.firestore
       return false;
     }
 
-    const activity: Activity.UpdateSpace = {
+    const activity: Activity.UpdateRoom = {
       action: "updated",
       after,
       before,
-      category: "spaces",
+      category: "rooms",
       categoryId: id,
       createdById: after.updatedById,
       updatedAt: after.updatedAt,
@@ -38,4 +38,4 @@ const activitySpaceUpdate = functions.firestore
     return db.collection("activity").add(activity);
   });
 
-export default activitySpaceUpdate;
+export default activityRoomUpdate;

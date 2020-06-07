@@ -2,7 +2,7 @@
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
-import activitySpaceUpdate from "../activitySpaceUpdate";
+import activityRoomUpdate from "../activityRoomUpdate";
 
 const testEnv = functions();
 const db = admin.firestore();
@@ -38,7 +38,7 @@ test("Return when there are no changes", async done => {
   const changes = {after, before};
   const context = {params: {id: "itemId"}};
 
-  const wrapped = testEnv.wrap(activitySpaceUpdate);
+  const wrapped = testEnv.wrap(activityRoomUpdate);
   const req = await wrapped(changes, context);
 
   expect(req).toBe(false);
@@ -96,7 +96,7 @@ test("Send a request to add a new item to activities", async done => {
     action: "updated",
     after: afterData,
     before: beforeData,
-    category: "spaces",
+    category: "rooms",
     categoryId: "itemId",
     createdById: "editorId",
     updatedAt: "today",
@@ -106,7 +106,7 @@ test("Send a request to add a new item to activities", async done => {
 
   spyOn(db.collection(""), "add").and.returnValue(true);
 
-  const wrapped = testEnv.wrap(activitySpaceUpdate);
+  const wrapped = testEnv.wrap(activityRoomUpdate);
   const req = await wrapped(changes, context);
 
   expect(req).toBe(true);
