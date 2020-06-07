@@ -1,13 +1,110 @@
-rules_version = '2';
+rules_version = "2";
 service cloud.firestore {
   match /databases/{database}/documents {
+    function isAdmin() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin";
+    }
+
+    function isModerator() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "moderator";
+    }
+
+    function isValidProfile(field) {
+      return get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.name == request.resource.data[field].name
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.photo == request.resource.data[field].photo
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.username == request.resource.data[field].username
+      ;
+    }
+
+    match /{category}/{categoryId}/leaderboard/{createdById} {
+      allow get;
+      allow list: if request.query.limit <= 30;
+    }
+
+    match /{category}/{categoryId}/members/{userId} {
+      allow get;
+      allow list: if request.query.limit <= 30;
+      allow create, delete: if request.auth.uid == userId;
+    }
+
+    match /activity/{id} {
+      allow get;
+      allow list: if request.query.limit <= 30;
+    }
+
+    match /analytics/{id} {
+      allow get: if isAdmin();
+    }
+
     match /profiles/{createdById} {
       allow get;
       allow list: if request.query.limit == 1;
       allow update:
         if request.auth.uid == createdById
-        && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['username'])
+        && !request.resource.data.diff(resource.data).affectedKeys().hasAny(["username"])
       ;
+    }
+
+    match /rooms/{id} {
+      allow get;
+      allow list: if request.query.limit <= 30;
+      allow create:
+        if request.auth.uid != null
+        && request.resource.data.createdAt == request.time
+        && isValidProfile("createdBy")
+        && request.resource.data.createdById == request.auth.uid
+        && request.resource.data.description is string
+        && request.resource.data.description.size() <= 1000
+        && request.resource.data.memberCount == 0
+        && (request.resource.data.photo == null || request.resource.data.photo is string)
+        && request.resource.data.updatedAt == request.time
+        && isValidProfile("updatedBy")
+        && request.resource.data.updatedById == request.auth.uid
+      ;
+      allow update:
+        if request.resource.data.diff(resource.data).affectedKeys().hasOnly(["description", "photo", "updatedAt", "updatedBy", "updatedById"])
+        && request.resource.data.description is string
+        && request.resource.data.description.size() <= 1000
+        && (request.resource.data.photo == null || request.resource.data.photo is string)
+        && request.resource.data.updatedAt == request.time
+        && isValidProfile("updatedBy")
+        && request.resource.data.updatedById == request.auth.uid
+      ;
+      allow delete:
+        if isAdmin()
+        || isModerator()
+        || (request.auth.uid == resource.data.createdById && request.auth.uid == resource.data.updatedById);
+    }
+
+    match /spaces/{id} {
+      allow get;
+      allow list: if request.query.limit <= 30;
+      allow create:
+        if request.auth.uid != null
+        && request.resource.data.createdAt == request.time
+        && isValidProfile("createdBy")
+        && request.resource.data.createdById == request.auth.uid
+        && request.resource.data.description is string
+        && request.resource.data.description.size() <= 1000
+        && request.resource.data.memberCount == 0
+        && (request.resource.data.photo == null || request.resource.data.photo is string)
+        && request.resource.data.updatedAt == request.time
+        && isValidProfile("updatedBy")
+        && request.resource.data.updatedById == request.auth.uid
+      ;
+      allow update:
+        if request.resource.data.diff(resource.data).affectedKeys().hasOnly(["description", "photo", "updatedAt", "updatedBy", "updatedById"])
+        && request.resource.data.description is string
+        && request.resource.data.description.size() <= 1000
+        && (request.resource.data.photo == null || request.resource.data.photo is string)
+        && request.resource.data.updatedAt == request.time
+        && isValidProfile("updatedBy")
+        && request.resource.data.updatedById == request.auth.uid
+      ;
+      allow delete:
+        if isAdmin()
+        || isModerator()
+        || (request.auth.uid == resource.data.createdById && request.auth.uid == resource.data.updatedById);
     }
 
     match /usernames/{username} {
@@ -15,7 +112,7 @@ service cloud.firestore {
       allow create, update:
         if request.auth.uid != null
         && request.resource.data.uid == request.auth.uid
-        && username.matches('^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$')
+        && username.matches("^[a-z0-9][a-z0-9_]*([.][a-z0-9_]+)*$")
       ;
     }
 
@@ -23,8 +120,15 @@ service cloud.firestore {
       allow read: if request.auth.uid == userId;
       allow create, update: if
         request.auth.uid == userId
-        && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['name','role', 'username'])
+        && !request.resource.data.diff(resource.data).affectedKeys().hasAny(["name", "role", "username"])
       ;
+      match /{subcollection}/{spaceId} {
+        allow read: if request.auth.uid == userId;
+      }
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
     }
   }
 }

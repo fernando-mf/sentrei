@@ -15,7 +15,7 @@
       "@sentrei/functions/*": ["src/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/rooms/onCreate/.ts"],
   "exclude": [
     "node_modules",
     "**/__mocks__/**",

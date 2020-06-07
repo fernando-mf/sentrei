@@ -5232,6 +5232,73 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
+"@sentrei/common@*":
+  version "4.80.6"
+  resolved "https://registry.yarnpkg.com/@sentrei/common/-/common-4.80.6.tgz#3b967c62e0068e64a2f8bc94699df19e9bc53dd3"
+  integrity sha512-JONOGfVCPFUpNdcX6f9uxzY07AjC91mSHtCwgVwiALeyreS2J3JYv35oHiFqbEFKtEJQVNrIlgjNmO+X/1D4aQ==
+  dependencies:
+    "@firebase/testing" "^0.20.0"
+    "@material-ui/core" "^4.10.0"
+    "@sentry/browser" "^5.15.5"
+    "@types/isomorphic-fetch" "^0.0.35"
+    "@types/lodash" "^4.14.152"
+    dayjs "^1.8.28"
+    firebase "^7.14.2"
+    firebase-admin "^8.12.1"
+    firebase-functions "^3.6.2"
+    i18next-icu "^1.3.1"
+    isomorphic-fetch "^2.2.1"
+    isomorphic-unfetch "^3.0.0"
+    lodash "^4.17.15"
+    lodash.get "^4.4.2"
+    next "^9.3.6"
+    next-i18next "^5.0.0-beta.2"
+    nprogress "^0.2.0"
+    react "^16.13.1"
+    react-dom "^16.13.1"
+    react-i18next "^11.4.0"
+
+"@sentrei/ui@*":
+  version "4.80.6"
+  resolved "https://registry.yarnpkg.com/@sentrei/ui/-/ui-4.80.6.tgz#95a426f69703fb4a82701cf014eee82cb9f1533a"
+  integrity sha512-e5fggjXR7SoB8xQ03vve3mEBWQZnWOdHWvjbx96f/WlGNFhmUuXDiRyZODQ7VMN6KgxRhi8StkcFXe9AoEEE+Q==
+  dependencies:
+    "@material-ui/core" "^4.9.10"
+    "@material-ui/icons" "^4.9.1"
+    "@material-ui/lab" "^4.0.0-alpha.53"
+    "@sentrei/common" "*"
+    "@sentry/browser" "^5.15.5"
+    "@types/classnames" "^2.2.10"
+    "@types/next" "^9.0.0"
+    "@types/node" "^14.0.0"
+    "@types/react" "^16.9.34"
+    "@types/react-dom" "^16.9.6"
+    "@types/react-scrollspy" "^3.3.2"
+    "@types/styled-components" "^5.1.0"
+    "@types/yup" "^0.29.0"
+    classnames "^2.2.6"
+    clsx "^1.1.0"
+    firebase "^7.14.4"
+    firebase-admin "^8.12.1"
+    next "^9.3.6"
+    prop-types "^15.7.2"
+    react "^16.13.1"
+    react-dom "^16.13.1"
+    react-hook-form "^5.7.2"
+    react-intersection-observer "^8.26.2"
+    react-parallax-tilt "^1.3.42"
+    react-particles-js "^3.2.1"
+    react-rough-notation "^0.0.8"
+    react-scrollspy "^3.4.2"
+    react-spring "^9.0.0-rc.2"
+    react-typical "^0.1.3"
+    react-use-gesture "^7.0.15"
+    react-useanimations "^1.2.13"
+    rough-notation "^0.3.0"
+    styled-components "^5.1.0"
+    typescript "^3.8.3"
+    yup "^0.29.0"
+
 "@sentry/browser@^5.15.5":
   version "5.16.1"
   resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-5.16.1.tgz#7a5ad85d9002de1495b1f63c3a4edb688a27f644"
@@ -7449,13 +7516,6 @@
     strip-ansi "^4.0.0"
     text-table "^0.2.0"
     webpack-log "^1.1.2"
-
-"@welldone-software/why-did-you-render@^4.2.2":
-  version "4.2.5"
-  resolved "https://registry.yarnpkg.com/@welldone-software/why-did-you-render/-/why-did-you-render-4.2.5.tgz#005d06958d0c8a1ab3b92a3f4cfe3507b1806976"
-  integrity sha512-Uq4Gmi14bHDfWPGu1EuZKkdxlihXIyyfhAoP0nkA3qHTu8yit0iL1KO6Ldyno55otnjL3GHUY/MswMVvB5Ro8g==
-  dependencies:
-    lodash "^4"
 
 "@wry/equality@^0.1.2":
   version "0.1.11"
@@ -15350,7 +15410,7 @@ findup-sync@^3.0.0:
     micromatch "^3.0.4"
     resolve-dir "^1.0.1"
 
-firebase-admin@^8.10.0, firebase-admin@^8.12.1:
+firebase-admin@^8.12.1:
   version "8.12.1"
   resolved "https://registry.yarnpkg.com/firebase-admin/-/firebase-admin-8.12.1.tgz#a380c43a9e6ba37dfbe42211a253dd890a442063"
   integrity sha512-DZ4Q7QQJYaO2BhnhZLrhL+mGRTCLS5WrxjbJtuKGmbKRBepwMhx++EQA5yhnGnIXgDHnp5SrZnVKygNdXtH8BQ==
@@ -15364,7 +15424,7 @@ firebase-admin@^8.10.0, firebase-admin@^8.12.1:
     "@google-cloud/firestore" "^3.0.0"
     "@google-cloud/storage" "^4.1.2"
 
-firebase-functions-test@0.2.1:
+firebase-functions-test@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/firebase-functions-test/-/firebase-functions-test-0.2.1.tgz#cdc23b6c7203d2c80cd79a273493f60fbd9b913b"
   integrity sha512-+ZaNrDoRVy0ar4NGtrYbqVTsnitL3/Ud5yC7ElZUkX3956j+AzPCcrsCfa+5GJnpnVODXkMKpw9AySFJ/12nvA==
@@ -15372,7 +15432,7 @@ firebase-functions-test@0.2.1:
     "@types/lodash" "^4.14.104"
     lodash "^4.17.5"
 
-firebase-functions@^3.6.1, firebase-functions@^3.6.2:
+firebase-functions@^3.6.2:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/firebase-functions/-/firebase-functions-3.6.2.tgz#bafe642972ed75c19ddfeb55f9a56a0f3e259924"
   integrity sha512-KDLvWqSbOhbmMZpzS/gK3Q3n/Pp3vBArNs13aFqrS+p9itlpAvm29pgfLSw3/36YO7gBZ2ArqPU2uKsUZBGB5g==
@@ -15382,10 +15442,10 @@ firebase-functions@^3.6.1, firebase-functions@^3.6.2:
     express "^4.17.1"
     lodash "^4.17.14"
 
-firebase-tools@^8.0.2, firebase-tools@^8.3.0:
-  version "8.4.1"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-8.4.1.tgz#1f015c9496f4241a8a67a1f6376e68b1547d4d89"
-  integrity sha512-kiC5KXQdQ2ksRRJEZ5dXsLHRPGwR5Y1nEpTtJly91cs7mASIi4tzpVnX5pF1WXZsa323jXkY9elNUPw7fWvvog==
+firebase-tools@^8.4.2:
+  version "8.4.2"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-8.4.2.tgz#19f27ceea878e075cb45dde083bd232d3b739916"
+  integrity sha512-Kk3MKpM8+fZf1p+KzXBq1UDZxWBy+MWR6RFvj8L1xgoabsESMGbTgamJZfM1IWU3JJQFDH1fF8aPI5CvwXTr/A==
   dependencies:
     "@google-cloud/pubsub" "^1.7.0"
     JSONStream "^1.2.1"
@@ -22541,7 +22601,7 @@ lodash.without@~4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.without/-/lodash.without-4.4.0.tgz#3cd4574a00b67bae373a94b748772640507b7aac"
   integrity sha1-PNRXSgC2e643OpS3SHcmQFB7eqw=
 
-lodash@4.17.15, lodash@^4, lodash@^4.0.0, lodash@^4.0.1, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.12, lodash@~4.17.4:
+lodash@4.17.15, lodash@^4.0.0, lodash@^4.0.1, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.12, lodash@~4.17.4:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==

@@ -1,3 +1,47 @@
+# [4.81.0-beta.8](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.7...v4.81.0-beta.8) (2020-06-07)
+
+### Bug Fixes
+
+- 🐛 add space id ([8f98a43](https://github.com/sentrei/sentrei/commit/8f98a4305b7e57fc87015719bd23aba003535933))
+
+### Features
+
+- 🎸 add initial room model ([93b2342](https://github.com/sentrei/sentrei/commit/93b234203262f7e54070d31630d608e43367ea0d))
+
+# [4.81.0-beta.7](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.6...v4.81.0-beta.7) (2020-06-07)
+
+### Bug Fixes
+
+- 🐛 uudpate profile path ([bd613fa](https://github.com/sentrei/sentrei/commit/bd613faf6ec551a35d9bbda55b85b7428b62b110))
+
+# [4.81.0-beta.6](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.5...v4.81.0-beta.6) (2020-06-07)
+
+### Bug Fixes
+
+- 🐛 change to score ([f49f098](https://github.com/sentrei/sentrei/commit/f49f098ceccab1faf53f8ba19574ea9f979fc8ab))
+
+### Features
+
+- 🎸 add analytics model ([e52adb2](https://github.com/sentrei/sentrei/commit/e52adb24e0fd1ec6d024dcd106fda7f1fbbcbf64))
+
+# [4.81.0-beta.5](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.4...v4.81.0-beta.5) (2020-06-07)
+
+### Bug Fixes
+
+- 🐛 add lighthouse gha ([7b89dea](https://github.com/sentrei/sentrei/commit/7b89deaf1aa94a434bf1bfc279e228f2db1b5b2c))
+
+# [4.81.0-beta.3](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.2...v4.81.0-beta.3) (2020-06-06)
+
+### Bug Fixes
+
+- 🐛 add force deploy firebase functions ([8f56f14](https://github.com/sentrei/sentrei/commit/8f56f1481975476c38e686ee983cd2f2ed66646b))
+
+# [4.81.0-beta.2](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.1...v4.81.0-beta.2) (2020-06-06)
+
+### Bug Fixes
+
+- 🐛 remove firebase token ([fefc4ee](https://github.com/sentrei/sentrei/commit/fefc4eedd57d06abe856fda7c3e86c61ac11e784))
+
 ## [4.80.6](https://github.com/sentrei/sentrei/compare/v4.80.5...v4.80.6) (2020-06-05)
 
 ### Bug Fixes

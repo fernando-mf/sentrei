@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/blog",
-  "version": "4.80.6",
+  "version": "4.81.0-beta.8",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -14,8 +14,8 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "deploy": "yarn run deploy:staging-blog && yarn run deploy:blog",
-    "deploy:blog": "firebase deploy --only hosting:blog --token ${FIREBASE_TOKEN}",
-    "deploy:staging-blog": "firebase deploy --only hosting:staging-blog --token ${FIREBASE_TOKEN}",
+    "deploy:blog": "firebase deploy --only hosting:blog",
+    "deploy:staging-blog": "firebase deploy --only hosting:staging-blog",
     "dev": "gatsby develop",
     "staging:blog": "firebase use master && yarn run deploy:staging-blog"
   },

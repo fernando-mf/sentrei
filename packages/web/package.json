@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/web",
-  "version": "4.80.6",
+  "version": "4.81.0-beta.8",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -19,8 +19,8 @@
     "cypress": "cypress run",
     "cypress:install": "cypress install",
     "deploy": "yarn run deploy:staging-web && yarn run deploy:staging-web",
-    "deploy:staging-web": "firebase deploy --only hosting:staging-web --token ${FIREBASE_TOKEN}",
-    "deploy:web": "firebase deploy --only hosting:web --token ${FIREBASE_TOKEN}",
+    "deploy:staging-web": "firebase deploy --only hosting:staging-web",
+    "deploy:web": "firebase deploy --only hosting:web",
     "dev": "next",
     "export": "next export",
     "firebase:alpha": "yarn run alpha:local && yarn run dev",
@@ -58,7 +58,6 @@
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "@types/react-scrollspy": "^3.3.2",
-    "@welldone-software/why-did-you-render": "^4.2.2",
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-source-maps": "^0.0.3",
     "babel-plugin-styled-components": "^1.10.7",

@@ -12,9 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v1
         with:
           node-version: "14.4.0"
@@ -40,6 +37,8 @@ jobs:
           yarn run swap:${{ github.event.pull_request.base.ref }}
           yarn run setup
           yarn run test
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - uses: codecov/codecov-action@v1
         continue-on-error: true
         with:
@@ -47,3 +46,9 @@ jobs:
           name: sentrei
           fail_ci_if_error: true
           flags: functions
+      - uses: actions/upload-artifact@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: ruleCoverage.html
+          path: packages/functions/coverage/ruleCoverage.html

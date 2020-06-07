@@ -1,6 +1,6 @@
 {
   "name": "@sentrei/ui",
-  "version": "4.80.6",
+  "version": "4.81.0-beta.8",
   "homepage": "https://sentrei.com",
   "repository": {
     "type": "git",
@@ -21,8 +21,8 @@
     "clean:dist": "rimraf dist",
     "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
     "deploy": "yarn run deploy:staging-storybook && yarn run deploy:storybook",
-    "deploy:staging-storybook": "firebase deploy --only hosting:staging-ui --token ${FIREBASE_TOKEN}",
-    "deploy:storybook": "firebase deploy --only hosting:ui --token ${FIREBASE_TOKEN}",
+    "deploy:staging-storybook": "firebase deploy --only hosting:staging-ui",
+    "deploy:storybook": "firebase deploy --only hosting:ui",
     "dev": "start-storybook -p 6006",
     "jest": "jest --coverage",
     "reg": "reg-suit run",
