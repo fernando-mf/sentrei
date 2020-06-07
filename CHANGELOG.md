@@ -1,3 +1,13 @@
+# [4.81.0-beta.8](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.7...v4.81.0-beta.8) (2020-06-07)
+
+### Bug Fixes
+
+- 🐛 add space id ([8f98a43](https://github.com/sentrei/sentrei/commit/8f98a4305b7e57fc87015719bd23aba003535933))
+
+### Features
+
+- 🎸 add initial room model ([93b2342](https://github.com/sentrei/sentrei/commit/93b234203262f7e54070d31630d608e43367ea0d))
+
 # [4.81.0-beta.7](https://github.com/sentrei/sentrei/compare/v4.81.0-beta.6...v4.81.0-beta.7) (2020-06-07)
 
 ### Bug Fixes
