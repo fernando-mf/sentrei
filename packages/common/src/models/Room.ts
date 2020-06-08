@@ -3,13 +3,14 @@
 import Metadata from "@sentrei/common/models/Metadata";
 
 declare namespace Room {
-  export type Fields = {
-    memberCount: number;
-  };
-
-  interface EditableFields extends Fields {
+  export type EditableFields = {
     description: string;
     name: string;
+  };
+
+  interface Fields extends EditableFields {
+    memberCount: number;
+    spaceId: string;
   }
 
   export interface Create extends Fields, Metadata.Create {}
