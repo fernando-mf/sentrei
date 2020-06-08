@@ -1,12 +1,30 @@
 name: Zenhub
 on:
+  repository_dispatch:
+    types: [zenhub-cmd]
   schedule:
-    - cron: "0 15 * * *"
+    - cron: "0 0 * * *"
 jobs:
   zenhub:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - uses: dschep/install-pipenv-action@v1
+      - id: cache
+        uses: actions/cache@master
+        with:
+          path: .venv
+          key: |
+            pipenv-${{ hashFiles('**/Pipfile.lock') }}
+          restore-keys: |
+            pipenv-
+      - run: |
+          pipenv install --dev
+        env:
+          PIPENV_VENV_IN_PROJECT: true
       - id: day
         uses: JasonEtco/create-an-issue@v2
         env:
@@ -35,3 +53,10 @@ jobs:
         with:
           filename: .github/zenhub/night.md
           assignees: shunkakinoki
+      - run: |
+          pipenv run python .github/scripts/zenhub.py -a day -p 1 -i ${{ steps.day.outputs.number }}
+          pipenv run python .github/scripts/zenhub.py -a session -p 1 -d ${{ steps.day.outputs.number }} -i ${{ steps.morning.outputs.number }}
+          pipenv run python .github/scripts/zenhub.py -a session -p 2 -d ${{ steps.day.outputs.number }} -i ${{ steps.noon.outputs.number }}
+          pipenv run python .github/scripts/zenhub.py -a session -p 3 -d ${{ steps.day.outputs.number }} -i ${{ steps.night.outputs.number }}
+        env:
+          ZENHUB_API_TOKEN: ${{ secrets.ZENHUB_API_TOKEN }}
