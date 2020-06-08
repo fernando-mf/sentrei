@@ -1,6 +1,7 @@
 const statsCollection = [
   "profiles",
   "notifications",
+  "rooms",
   "spaces",
   "users",
   "usernames",
