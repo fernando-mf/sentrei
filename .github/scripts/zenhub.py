@@ -14,8 +14,8 @@ if __name__ == "__main__":
 
     parser.add_argument("-a", "--action", help="Action", type=str, required=True)
     parser.add_argument("-d", "--day", help="Day", type=int)
-    parser.add_argument("-i", "--issue", help="Issue", type=int)
-    parser.add_argument("-p", "--position", help="Position", type=int)
+    parser.add_argument("-i", "--issue", help="Issue", type=int, required=True)
+    parser.add_argument("-p", "--position", help="Position", type=int, required=True)
 
     args = parser.parse_args()
 
@@ -24,8 +24,7 @@ if __name__ == "__main__":
         "Content-Type": "application/json",
     }
 
-    if args.action == "day" and args.position is not None:
-        target_pipeline_id = pipeline_inbox_id
+    if args.action != "week":
         target_zh_issues_url = "%s/p1/repositories/%d/issues" % (
             zh_api_endpoint,
             target_repo_id,
@@ -39,7 +38,10 @@ if __name__ == "__main__":
             data=params,
         )
 
-    if args.action == "session" and args.day is not None and args.position is not None:
+    if args.action == "day":
+        target_pipeline_id = pipeline_inbox_id
+
+    if args.action == "session" and args.day is not None:
         target_pipeline_id = pipeline_doing_id
         target_zh_epics_url = "%s/p1/repositories/%d/epics" % (
             zh_api_endpoint,
