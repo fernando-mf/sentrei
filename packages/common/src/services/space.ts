@@ -2,9 +2,8 @@
 
 import Space from "@sentrei/common/models/Space";
 
-// TODO: Change space to upper case
-import serializeSpace from "@sentrei/common/serializers/space";
-import {analytics, db, timestamp} from "@sentrei/common/utils/firebase";
+import serializeSpace from "@sentrei/common/serializers/Space";
+import {analytics, db} from "@sentrei/common/utils/firebase";
 
 import {generateRandomId, generateSlug} from "@sentrei/common/utils/generate";
 
