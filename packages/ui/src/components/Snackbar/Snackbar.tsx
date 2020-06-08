@@ -4,36 +4,51 @@ import {TransitionProps} from "@material-ui/core/transitions";
 import MuiAlert from "@material-ui/lab/Alert";
 import React from "react";
 
+import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
+import {analytics} from "@sentrei/common/utils/firebase";
+
 function SlideTransition(props: TransitionProps): JSX.Element {
   return <Slide {...props} direction="down" />;
 }
 
 interface Props {
-  open: boolean;
-  message: string;
-  severity: "error" | "success" | "info" | "warning";
-  onClose: (event: React.SyntheticEvent<Element, Event>) => void;
+  action: SnackbarAction | null;
 }
+export default function Spacing({action}: Props): JSX.Element {
+  const [duration, setDuration] = React.useState<number | null>(null);
+  const [message, setMessage] = React.useState<string>();
 
-export default function Spacing({
-  open,
-  message,
-  severity,
-  onClose,
-}: Props): JSX.Element {
+  React.useEffect(() => {
+    if (!action) setDuration(null);
+  }, [action]);
+
+  React.useEffect(() => {
+    setMessage(action?.msg);
+  }, [action]);
+
+  React.useEffect(() => {
+    if (action?.type === "error" && action.log) {
+      analytics().logEvent("exception", {
+        ...action.log.opts,
+        description: action.log.description,
+        msg: action.msg,
+      });
+    }
+  }, [action]);
+
   return (
     <Snackbar
       anchorOrigin={{
         vertical: "top",
         horizontal: "center",
       }}
-      open={open}
-      autoHideDuration={3000}
+      open={Boolean(message)}
+      autoHideDuration={duration}
       TransitionComponent={SlideTransition}
-      onClose={onClose}
+      onClose={(): void => setMessage(undefined)}
     >
-      <MuiAlert onClose={onClose} variant="filled" severity={severity}>
-        {severity}: {message}
+      <MuiAlert variant="filled" severity={action?.type}>
+        {action?.type}: {message}
       </MuiAlert>
     </Snackbar>
   );

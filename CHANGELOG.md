@@ -1,3 +1,16 @@
+# [4.82.0-beta.2](https://github.com/sentrei/sentrei/compare/v4.82.0-beta.1...v4.82.0-beta.2) (2020-06-08)
+
+### Bug Fixes
+
+- 🐛 add zenhub api ([3f163be](https://github.com/sentrei/sentrei/commit/3f163bedfe06f899bf59f8554437356ea325839e))
+
+# [4.82.0-beta.1](https://github.com/sentrei/sentrei/compare/v4.81.2...v4.82.0-beta.1) (2020-06-08)
+
+### Features
+
+- 🎸 add proper serializers ([8f2892d](https://github.com/sentrei/sentrei/commit/8f2892d68e0e2cd63de1576d059d5769da7e70ff))
+- 🎸 refactor entire snackbar ([9fe97ed](https://github.com/sentrei/sentrei/commit/9fe97ede4e43fee4573083f85fdae4a2e53b92cb))
+
 # [4.81.0](https://github.com/sentrei/sentrei/compare/v4.80.6...v4.81.0) (2020-06-08)
 
 ### Bug Fixes
