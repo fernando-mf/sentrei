@@ -14,7 +14,11 @@ beforeEach(() => {
 test("On create, return when app notifications are disabled", async done => {
   const userData = {notificationSettings: {contentChanges: ["email"]}};
   const data = {type: "contentChanges"};
-  const snap = {data: () => data};
+  const snap = {
+    data: (): {
+      type: string;
+    } => data,
+  };
 
   spyOn(db, "doc").and.returnValue({
     get: jest.fn().mockReturnValue({data: () => userData}),
@@ -35,7 +39,11 @@ test("On create, return when app notifications are disabled", async done => {
 test("On create, increment notificationCount", async done => {
   const userData = {notificationSettings: {contentChanges: ["app"]}};
   const data = {type: "contentChanges"};
-  const snap = {data: () => data};
+  const snap = {
+    data: (): {
+      type: string;
+    } => data,
+  };
 
   spyOn(db, "doc").and.returnValue({
     get: jest.fn().mockReturnValue({data: () => userData}),
