@@ -4,10 +4,14 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+black = "==19.10b0"
+flake8 = "*"
+isort = "*"
 
 [packages]
 dvc = {extras = ["gs"],version = "*"}
 nodeenv = "*"
+requests = "*"
 
 [requires]
 python_version = "3.8"
