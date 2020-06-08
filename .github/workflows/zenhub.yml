@@ -1,0 +1,17 @@
+name: Zenhub
+on:
+  push:
+  repository_dispatch:
+    types: [zenhub-cmd]
+  schedule:
+    - cron: "0 0,8,16 * * *"
+jobs:
+  zenhub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/zenhub/day.md
+          assignees: shunkakinoki
