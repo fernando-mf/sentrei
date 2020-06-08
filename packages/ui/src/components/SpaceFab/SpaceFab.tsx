@@ -3,9 +3,21 @@ import AddIcon from "@material-ui/icons/Add";
 import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import React from "react";
 
+import {listSpaces} from "@sentrei/common/services/spaces";
+
 import SpaceFabStyles from "./SpaceFabStyles";
 
-export default function SpaceFab(): JSX.Element {
+interface SpaceListProps {
+  allowLoadMore?: boolean;
+  limit?: number;
+  userId?: string;
+}
+
+export default function SpaceFab({
+  allowLoadMore,
+  limit = 10,
+  userId,
+}: SpaceListProps): JSX.Element {
   const classes = SpaceFabStyles();
 
   return (

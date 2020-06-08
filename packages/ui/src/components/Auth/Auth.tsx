@@ -21,11 +21,13 @@ import {useForm, Controller} from "react-hook-form";
 
 import * as Yup from "yup";
 
+import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
 import signin from "@sentrei/common/services/signin";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
 import authType from "@sentrei/common/types/authType";
 import {auth} from "@sentrei/common/utils/firebase";
+import firebaseError from "@sentrei/common/utils/firebaseError";
 import Link from "@sentrei/ui/components/Link";
 import Snackbar from "@sentrei/ui/components/Snackbar";
 
@@ -60,11 +62,7 @@ export default function Auth({type}: Props): JSX.Element {
   });
 
   const {push, query} = useRouter();
-  const [open, setOpen] = React.useState<boolean>(false);
-  const [message, setMessage] = React.useState<string>("");
-  const [severity, setSeverity] = React.useState<
-    "error" | "success" | "info" | "warning"
-  >("info");
+  const [snackbar, setSnackbar] = React.useState<SnackbarAction | null>(null);
 
   const redirect = (): void => {
     if (query.redirect) {
@@ -76,29 +74,19 @@ export default function Auth({type}: Props): JSX.Element {
     signinWithGoogle().then(redirect);
   };
 
-  const handleClose = (event?: React.SyntheticEvent, reason?: string): void => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpen(false);
-  };
-
   const handleError = (err: Error): void => {
-    setMessage(`${err.name}\n${err.message}`);
-    setSeverity("error");
-    setOpen(true);
+    setSnackbar({msg: err.message, type: "error"});
   };
 
-  const handleSuccess = (mes: string): void => {
-    setMessage(mes);
-    setSeverity("success");
-    setOpen(true);
+  const handleFirebaseError = (err: firebase.FirebaseError): void => {
+    setSnackbar(firebaseError(err, "login"));
+  };
+
+  const handleSuccess = (msg: string): void => {
+    setSnackbar({msg, type: "success"});
   };
 
   const onSubmit = async (data: any): Promise<void> => {
-    setMessage("");
-    setSeverity("info");
-    setOpen(false);
     switch (type) {
       case authType.reset:
         try {
@@ -117,7 +105,7 @@ export default function Auth({type}: Props): JSX.Element {
               }
             })
             .catch(err => {
-              handleError(err);
+              handleFirebaseError(err);
             });
         } catch (err) {
           handleError(err);
@@ -132,7 +120,7 @@ export default function Auth({type}: Props): JSX.Element {
               }
             })
             .catch(err => {
-              handleError(err);
+              handleFirebaseError(err);
             });
         } catch (err) {
           handleError(err);
@@ -144,12 +132,7 @@ export default function Auth({type}: Props): JSX.Element {
 
   return (
     <Container component="main" maxWidth="xs">
-      <Snackbar
-        open={open}
-        message={message}
-        severity={severity}
-        onClose={handleClose}
-      />
+      <Snackbar action={snackbar} />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           {type === authType.reset && <MailOutlinedIcon />}
