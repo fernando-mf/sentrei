@@ -1,18 +1,37 @@
 name: Zenhub
 on:
-  push:
-  repository_dispatch:
-    types: [zenhub-cmd]
   schedule:
-    - cron: "0 0,8,16 * * *"
+    - cron: "0 15 * * *"
 jobs:
   zenhub:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: JasonEtco/create-an-issue@v2
+      - id: day
+        uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           filename: .github/zenhub/day.md
+          assignees: shunkakinoki
+      - id: morning
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/zenhub/morning.md
+          assignees: shunkakinoki
+      - id: noon
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/zenhub/noon.md
+          assignees: shunkakinoki
+      - id: night
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/zenhub/night.md
           assignees: shunkakinoki
