@@ -10,6 +10,7 @@ if __name__ == "__main__":
 
     parser.add_argument("-t", "--token", help="Zenhub API Token", type=str)
     parser.add_argument("-i", "--issue", help="Issue", type=int)
+    parser.add_argument("operation", help="Choose Zenhub Operation", default="epic")
 
     args = parser.parse_args()
 

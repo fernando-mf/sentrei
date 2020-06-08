@@ -51,6 +51,7 @@ jobs:
           filename: .github/zenhub/night.md
           assignees: shunkakinoki
       - run: |
+          pipenv shell
           python3 .github/zenhub/epic.py -t {{ secrets.ZENHUB_API_TOKEN }} -i ${{ steps.day.outputs.number }}
           python3 .github/zenhub/epic.py -t {{ secrets.ZENHUB_API_TOKEN }} -i ${{ steps.morning.outputs.number }}
           python3 .github/zenhub/epic.py -t {{ secrets.ZENHUB_API_TOKEN }} -i ${{ steps.noon.outputs.number }}
