@@ -22,6 +22,7 @@ const v1 = {
   members,
   notifications,
   profiles,
+  rooms,
   spaces,
   usernames,
   users,
