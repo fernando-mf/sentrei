@@ -1,3 +1,9 @@
+# [4.82.0-beta.2](https://github.com/sentrei/sentrei/compare/v4.82.0-beta.1...v4.82.0-beta.2) (2020-06-08)
+
+### Bug Fixes
+
+- 🐛 add zenhub api ([3f163be](https://github.com/sentrei/sentrei/commit/3f163bedfe06f899bf59f8554437356ea325839e))
+
 # [4.82.0-beta.1](https://github.com/sentrei/sentrei/compare/v4.81.2...v4.82.0-beta.1) (2020-06-08)
 
 ### Features
