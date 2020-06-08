@@ -42,6 +42,17 @@ test("Decrease the notifications count", async done => {
   done();
 });
 
+test("Decrease the rooms count", async done => {
+  const context = {params: {collection: "rooms"}};
+  const wrapped = testEnv.wrap(statsMinus);
+  const req = await wrapped({}, context);
+
+  expect(req).toBe("updated");
+  expect(db.doc).toHaveBeenCalledWith("analytics/stats");
+  expect(db.doc("").update).toHaveBeenCalledWith({rooms: -1});
+  done();
+});
+
 test("Decrease the spaces count", async done => {
   const context = {params: {collection: "spaces"}};
   const wrapped = testEnv.wrap(statsMinus);

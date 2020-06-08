@@ -10,6 +10,7 @@ declare namespace Room {
 
   interface Fields extends EditableFields {
     memberCount: number;
+    spaceId: string;
   }
 
   export interface Create extends Fields, Metadata.Create {}
