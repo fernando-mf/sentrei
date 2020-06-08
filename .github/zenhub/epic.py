@@ -1,6 +1,7 @@
 import argparse
 import requests
 import json
+import os
 
 zh_api_endpoint = "https://api.zenhub.com"
 target_repo_id = 249660786
@@ -8,7 +9,6 @@ target_repo_id = 249660786
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="my math script")
 
-    parser.add_argument("-t", "--token", help="Zenhub API Token", type=str)
     parser.add_argument("-a", "--action", help="Action", type=str)
     parser.add_argument("-d", "--day", help="Day", type=int)
     parser.add_argument("-i", "--issue", help="Issue", type=int)
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     zenhub_headers = {
-        "X-Authentication-Token": "%s" % args.token,
+        "X-Authentication-Token": "%s" % os.environ["ZENHUB_API_TOKEN"],
         "Content-Type": "application/json",
     }
     target_zh_issues_url = "%s/p1/repositories/%d/issues" % (
