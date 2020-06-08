@@ -22,6 +22,8 @@ jobs:
             pipenv-
       - run: |
           pipenv install --dev
+        env:
+          PIPENV_VENV_IN_PROJECT: true
       - id: day
         uses: JasonEtco/create-an-issue@v2
         env:
