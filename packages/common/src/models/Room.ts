@@ -21,7 +21,7 @@ declare namespace Room {
     joined?: firebase.firestore.Timestamp;
   }
 
-  export interface Get extends Fields {
+  export interface Get extends Fields, Metadata.Get {
     joined: string | null;
     id: string;
   }
