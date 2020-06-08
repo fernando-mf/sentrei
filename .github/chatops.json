@@ -61,5 +61,12 @@
     "issue_type": "pull-request",
     "allow_edits": true,
     "event_type_suffix": "-cmd"
+  },
+  {
+    "command": "zenhub",
+    "permission": "admin",
+    "issue_type": "issue",
+    "allow_edits": true,
+    "event_type_suffix": "-cmd"
   }
 ]

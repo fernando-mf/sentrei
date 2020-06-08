@@ -1,5 +1,7 @@
 name: Zenhub
 on:
+  repository_dispatch:
+    types: [zenhub-cmd]
   schedule:
     - cron: "0 16 * * *"
 jobs:
@@ -52,9 +54,9 @@ jobs:
           filename: .github/zenhub/night.md
           assignees: shunkakinoki
       - run: |
-          pipenv run python .github/zenhub/epic.py -i ${{ steps.day.outputs.number }}
-          pipenv run python .github/zenhub/epic.py -a session -d ${{ steps.day.outputs.number }} -i ${{ steps.morning.outputs.number }}
-          pipenv run python .github/zenhub/epic.py -a session -d ${{ steps.day.outputs.number }} -i ${{ steps.noon.outputs.number }}
-          pipenv run python .github/zenhub/epic.py -a session -d ${{ steps.day.outputs.number }} -i ${{ steps.night.outputs.number }}
+          pipenv run python .github/scripts/zenhub.py -a day -i ${{ steps.day.outputs.number }}
+          pipenv run python .github/scripts/zenhub.py -a session -d ${{ steps.day.outputs.number }} -i ${{ steps.morning.outputs.number }}
+          pipenv run python .github/scripts/zenhub.py -a session -d ${{ steps.day.outputs.number }} -i ${{ steps.noon.outputs.number }}
+          pipenv run python .github/scripts/zenhub.py -a session -d ${{ steps.day.outputs.number }} -i ${{ steps.night.outputs.number }}
         env:
           ZENHUB_API_TOKEN: ${{ secrets.ZENHUB_API_TOKEN }}
