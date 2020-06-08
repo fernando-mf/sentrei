@@ -1,10 +1,9 @@
 name: Zenhub
 on:
-  push:
   repository_dispatch:
     types: [zenhub-cmd]
   schedule:
-    - cron: "0 16 * * *"
+    - cron: "0 0 * * *"
 jobs:
   zenhub:
     runs-on: ubuntu-latest
