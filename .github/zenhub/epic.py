@@ -38,10 +38,10 @@ if __name__ == "__main__":
             target_repo_id,
         )
         params = json.dumps(
-            {"add_issues": [{"repo_id": target_repo_id, "issue_number": args.day}]}
+            {"add_issues": [{"repo_id": target_repo_id, "issue_number": args.issue}]}
         )
         requests.post(
-            target_zh_epics_url + "/%s/update_issues" % args.issue,
+            target_zh_epics_url + "/%s/update_issues" % args.day,
             headers=zenhub_headers,
             data=params,
         )
