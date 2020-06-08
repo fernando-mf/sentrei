@@ -1,3 +1,3 @@
 ---
-title: Day Sprint {{ date | date('dddd, MMMM Do') }}
+title: Day Sprint {{ date | date('YYYY/MM/DD') }}
 ---
