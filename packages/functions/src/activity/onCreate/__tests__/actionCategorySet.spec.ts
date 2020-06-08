@@ -22,7 +22,7 @@ test("Send a request to add action category", async done => {
     } => data,
   };
   const expected = {
-    created_topic: 1,
+    created_space: 1,
   };
 
   spyOn(db.doc(""), "set").and.returnValue(true);
