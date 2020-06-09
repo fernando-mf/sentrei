@@ -1,3 +1,9 @@
+## [4.82.1](https://github.com/sentrei/sentrei/compare/v4.82.0...v4.82.1) (2020-06-09)
+
+### Bug Fixes
+
+- **deps:** [security] bump graphql-playground-html from 1.6.19 to 1.6.25 ([4eacbf0](https://github.com/sentrei/sentrei/commit/4eacbf0753f5f9521e44786195839cdc9858b1ad))
+
 # [4.82.0](https://github.com/sentrei/sentrei/compare/v4.81.5...v4.82.0) (2020-06-08)
 
 ### Bug Fixes
