@@ -1,7 +1,5 @@
 name: Zenhub
 on:
-  repository_dispatch:
-    types: [zenhub-cmd]
   schedule:
     - cron: "0 0 * * *"
 jobs:
