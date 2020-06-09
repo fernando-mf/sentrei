@@ -1,0 +1,19 @@
+name: Milestone
+on:
+  pull_request:
+    types:
+      - opened
+jobs:
+  Milestone:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v2
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          script: |
+            github.issues.updateIssue({
+              issue_number: ${{ github.event.client_payload.pull_request.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              milestone: 7
+            })

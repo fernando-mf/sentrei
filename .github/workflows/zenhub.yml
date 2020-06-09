@@ -1,6 +1,5 @@
 name: Zenhub
 on:
-  push:
   repository_dispatch:
     types: [zenhub-cmd]
   schedule:
@@ -26,12 +25,6 @@ jobs:
           pipenv install --dev
         env:
           PIPENV_VENV_IN_PROJECT: true
-      - if: github.event.client_payload.slash_command.arg1 == 'release'
-        run: |
-          pipenv run python .github/scripts/zenhub.py -a release
-          exit 1
-        env:
-          ZENHUB_API_TOKEN: ${{ secrets.ZENHUB_API_TOKEN }}
       - id: day
         uses: JasonEtco/create-an-issue@v2
         env:
