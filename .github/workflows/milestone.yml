@@ -1,5 +1,11 @@
 name: Milestone
-on: [pull_request, issues]
+on:
+  issues:
+    types:
+      - opened
+  pull_request:
+    types:
+      - opened
 jobs:
   milestone:
     runs-on: ubuntu-latest
