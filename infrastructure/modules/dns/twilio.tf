@@ -4,7 +4,7 @@ resource "google_dns_record_set" "url5448_sentrei_com_CNAME" {
   type         = "CNAME"
   ttl          = 300
 
-  rrdatas = ["sendgrid.net"]
+  rrdatas = ["sendgrid.net."]
 }
 
 resource "google_dns_record_set" "n16943103_sentrei_com_CNAME" {
@@ -13,7 +13,7 @@ resource "google_dns_record_set" "n16943103_sentrei_com_CNAME" {
   type         = "CNAME"
   ttl          = 300
 
-  rrdatas = ["sendgrid.net"]
+  rrdatas = ["sendgrid.net."]
 }
 
 resource "google_dns_record_set" "em260_sentrei_com_CNAME" {
@@ -22,7 +22,7 @@ resource "google_dns_record_set" "em260_sentrei_com_CNAME" {
   type         = "CNAME"
   ttl          = 300
 
-  rrdatas = ["u16943103.wl104.sendgrid.net"]
+  rrdatas = ["u16943103.wl104.sendgrid.net."]
 }
 
 resource "google_dns_record_set" "s1_domainkey_sentrei_com_CNAME" {
@@ -31,7 +31,7 @@ resource "google_dns_record_set" "s1_domainkey_sentrei_com_CNAME" {
   type         = "CNAME"
   ttl          = 300
 
-  rrdatas = ["s1.domainkey.u16943103.wl104.sendgrid.net"]
+  rrdatas = ["s1.domainkey.u16943103.wl104.sendgrid.net."]
 }
 
 resource "google_dns_record_set" "s2_domainkey_sentrei_com_CNAME" {
@@ -40,5 +40,5 @@ resource "google_dns_record_set" "s2_domainkey_sentrei_com_CNAME" {
   type         = "CNAME"
   ttl          = 300
 
-  rrdatas = ["s2.domainkey.u16943103.wl104.sendgrid.net"]
+  rrdatas = ["s2.domainkey.u16943103.wl104.sendgrid.net."]
 }
