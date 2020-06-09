@@ -6,7 +6,7 @@ jobs:
   clear:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v1
+      - uses: actions/github-script@v2
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           script: |
