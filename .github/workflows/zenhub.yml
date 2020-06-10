@@ -89,3 +89,9 @@ jobs:
         with:
           filename: .github/zenhub/week.md
           assignees: shunkakinoki
+      - id: current-time
+        uses: gerred/actions/current-time@master
+      - run: |
+          echo $TIME
+        env:
+          TIME: ${{ steps.current-time.outputs.time }}
