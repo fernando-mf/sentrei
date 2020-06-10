@@ -6,6 +6,7 @@ on:
     - cron: "0 0 * * *"
 jobs:
   day:
+    if: github.event.client_payload.slash_command != null || github.event.client_payload.slash_command.arg1 == "day"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -60,3 +61,31 @@ jobs:
           pipenv run python .github/scripts/zenhub.py -a session -p 3 -d ${{ steps.day.outputs.number }} -i ${{ steps.night.outputs.number }}
         env:
           ZENHUB_API_TOKEN: ${{ secrets.ZENHUB_API_TOKEN }}
+  week:
+    if: github.event.client_payload.slash_command.arg1 == "week"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - uses: dschep/install-pipenv-action@v1
+      - id: cache
+        uses: actions/cache@master
+        with:
+          path: .venv
+          key: |
+            pipenv-${{ hashFiles('**/Pipfile.lock') }}
+          restore-keys: |
+            pipenv-
+      - run: |
+          pipenv install --dev
+        env:
+          PIPENV_VENV_IN_PROJECT: true
+      - id: week
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        with:
+          filename: .github/zenhub/week.md
+          assignees: shunkakinoki
