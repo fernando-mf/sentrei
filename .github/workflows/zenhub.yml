@@ -91,10 +91,6 @@ jobs:
           assignees: shunkakinoki
       - id: current-time
         uses: gerred/actions/current-time@master
-      - run: |
-          echo $TIME
-        env:
-          TIME: ${{ steps.current-time.outputs.time }}
       - uses: actions/github-script@v2
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
@@ -102,5 +98,8 @@ jobs:
             github.issues.createMilestone({
               issue_number: context.issue.number,
               owner: context.repo.owner,
-              repo: context.repo.repo,
+              title: "Pioneer Week",
+              due_on: $TIME
             })
+        env:
+          TIME: ${{ steps.current-time.outputs.time }}
