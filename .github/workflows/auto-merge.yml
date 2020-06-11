@@ -16,8 +16,7 @@ jobs:
   auto-merge:
     runs-on: ubuntu-latest
     steps:
-      - name: automerge
-        uses: pascalgn/automerge-action@master
+      - uses: pascalgn/automerge-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MERGE_LABELS: "ready-to-merge,sentrei-auto-pr,!packages/functions,!packages/ui,!packages/web"
