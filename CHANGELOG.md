@@ -1,3 +1,9 @@
+## [4.82.15](https://github.com/sentrei/sentrei/compare/v4.82.14...v4.82.15) (2020-06-11)
+
+### Bug Fixes
+
+- **deps:** bump @vuepress/plugin-active-header-links from 1.5.0 to 1.5.1 ([f2125b8](https://github.com/sentrei/sentrei/commit/f2125b8789f89a348adcbb369f26cfec5b5b8c64))
+
 ## [4.82.8](https://github.com/sentrei/sentrei/compare/v4.82.7...v4.82.8) (2020-06-10)
 
 ### Bug Fixes
