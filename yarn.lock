@@ -18501,9 +18501,9 @@ i18next-http-middleware@^1.0.0:
   integrity sha512-jKzaCx/W/a7SV+fafNhgQ1QcMu8TChiytGVZP/CTzdWKWJZ7drS+V40pDsNWw8i3Ciw9GZCCnxrNiIbkwBczLw==
 
 i18next-icu@^1.3.1:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/i18next-icu/-/i18next-icu-1.4.0.tgz#9b76d89f61528955c09e208162890a435688e8e5"
-  integrity sha512-MwPrFymi/AcyMm9DotgmA0Hh9taHvwI1nblN7oAcO3pwZqRgoos0++maSizI2F5zVYvxmXDVq7BlOSC6zfG5Kw==
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/i18next-icu/-/i18next-icu-1.4.2.tgz#2b79d1ac2c2d542725219beac34a74db15cd2ff9"
+  integrity sha512-EqHafx/sL8eoEowwqi5P6cXtLrzJXBKI4RmV+UaMXlpIJNfckVsq873F2KkMKkApxiw2ATj46C8MurmhMsHQGw==
   dependencies:
     intl-messageformat "2.2.0"
 
