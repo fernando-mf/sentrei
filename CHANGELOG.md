@@ -1,3 +1,9 @@
+## [4.83.1](https://github.com/sentrei/sentrei/compare/v4.83.0...v4.83.1) (2020-06-12)
+
+### Bug Fixes
+
+- 🐛 delete analytics action ([29020db](https://github.com/sentrei/sentrei/commit/29020dbf3702f73a0563ba500ed5e44ff5e84e57))
+
 ## [4.82.15](https://github.com/sentrei/sentrei/compare/v4.82.14...v4.82.15) (2020-06-11)
 
 ### Bug Fixes
