@@ -3,7 +3,7 @@ on:
   repository_dispatch:
     types: [zenhub-cmd]
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 0 * * *"
 jobs:
   day:
     if: github.event.client_payload.slash_command == null || github.event.client_payload.slash_command.arg1 == 'day'
