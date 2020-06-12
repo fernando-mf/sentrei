@@ -5,7 +5,7 @@ import statsUpdate from "../../helpers/statsUpdate";
 
 const statsMinus = functions.firestore
   .document("{collection}/{doc}")
-  .onCreate((snap, context) => {
+  .onDelete((snap, context) => {
     const {collection} = context.params;
 
     if (!statsCollection.includes(collection)) {
