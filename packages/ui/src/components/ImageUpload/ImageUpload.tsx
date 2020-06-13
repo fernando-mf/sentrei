@@ -61,11 +61,9 @@ const ImageUpload = ({
           <AddAPhoto />
         </Avatar>
       )}
-
       {img && !hideImg && (
         <img src={img} alt="photo_uploaded" style={{width: "150px"}} />
       )}
-
       <input
         accept="image/*"
         style={{display: "none"}}
@@ -82,7 +80,6 @@ const ImageUpload = ({
           <Typography variant="caption">photo_suggested_size size</Typography>
         )}
       </label>
-
       <Snackbar action={snackbar} />
     </Grid>
   );

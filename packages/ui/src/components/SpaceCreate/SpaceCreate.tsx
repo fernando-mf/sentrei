@@ -52,7 +52,7 @@ export default function SpaceCreate(): JSX.Element | null {
       await createSpace({
         name: data.name,
         description: data.description,
-        photo: data.description,
+        photo: data.photo ?? null,
         createdAt: timestamp,
         createdBy: profile,
         createdById: user?.uid,

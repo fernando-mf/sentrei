@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import {Grid, TextField, Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import {useRouter} from "next/router";
@@ -10,19 +12,23 @@ import Props from "@sentrei/common/interfaces/SpaceForm";
 
 import ImageUpload from "@sentrei/ui/components/ImageUpload";
 
-const SpaceForm = ({data, onSubmit}: Props): JSX.Element => {
-  const [photo, setPhoto] = React.useState<string | null>(data?.photo || null);
-
+const SpaceForm = ({onSubmit}: Props): JSX.Element => {
   const SpaceFormSchema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
     description: Yup.string(),
     photo: Yup.string(),
   });
 
-  const {control, register, errors, handleSubmit} = useForm({
+  const {control, register, errors, handleSubmit, setValue, watch} = useForm({
     reValidateMode: "onBlur",
     validationSchema: SpaceFormSchema,
   });
+
+  const photoValue = watch("photo");
+  const handlePhoto = (url: string): void => setValue("photo", url);
+  React.useEffect(() => {
+    register({name: "photo"});
+  }, [register]);
 
   const {back} = useRouter();
 
@@ -56,7 +62,6 @@ const SpaceForm = ({data, onSubmit}: Props): JSX.Element => {
           <Controller
             as={
               <TextField
-                autoFocus
                 fullWidth
                 multiline
                 rows={3}
@@ -83,7 +88,11 @@ const SpaceForm = ({data, onSubmit}: Props): JSX.Element => {
           <Typography variant="body2" color="textSecondary" gutterBottom>
             Cover
           </Typography>
-          <ImageUpload id="add-cover-img" img={photo} onSave={setPhoto} />
+          <ImageUpload
+            id="add-cover-img"
+            img={photoValue}
+            onSave={handlePhoto}
+          />
         </Grid>
         <Grid item xs={12}>
           <Button type="submit" fullWidth variant="contained" color="primary">
