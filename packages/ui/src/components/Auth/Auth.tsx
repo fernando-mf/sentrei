@@ -86,7 +86,7 @@ export default function Auth({type}: Props): JSX.Element {
     setSnackbar({msg, type: "success"});
   };
 
-  const onSubmit = async (data: any): Promise<void> => {
+  const onSubmit = async (data: Record<string, any>): Promise<void> => {
     switch (type) {
       case authType.reset:
         try {

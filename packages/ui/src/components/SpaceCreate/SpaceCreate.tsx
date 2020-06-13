@@ -45,11 +45,14 @@ export default function SpaceCreate(): JSX.Element | null {
     return null;
   }
 
-  const onSubmit = async (data: Space.EditableFields): Promise<void> => {
+  const handleSubmit = async (data: Record<string, any>): Promise<void> => {
     setSnackbar({type: "info", msg: "saving"});
+
     try {
       await createSpace({
-        ...data,
+        name: data.name,
+        description: data.description,
+        photo: data.description,
         createdAt: timestamp,
         createdBy: profile,
         createdById: user?.uid,
@@ -60,7 +63,7 @@ export default function SpaceCreate(): JSX.Element | null {
       })
         .then(id => {
           handleSuccess("Success");
-          push("/spaces/[id]", `/spaces/${id}`);
+          push("/[id]", `/${id}`);
         })
         .catch(err => handleFirebaseError(err));
     } catch (err) {
@@ -79,7 +82,7 @@ export default function SpaceCreate(): JSX.Element | null {
           Create Space
         </Typography>
         <Box pb={3} />
-        <SpaceForm onSubmit={onSubmit} />
+        <SpaceForm onSubmit={handleSubmit} />
       </div>
     </Container>
   );

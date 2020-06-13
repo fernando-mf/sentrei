@@ -3,50 +3,80 @@ import Button from "@material-ui/core/Button";
 import {useRouter} from "next/router";
 import React from "react";
 
+import {useForm, Controller} from "react-hook-form";
+import * as Yup from "yup";
+
 import Props from "@sentrei/common/interfaces/SpaceForm";
 
 import ImageUpload from "@sentrei/ui/components/ImageUpload";
 
 const SpaceForm = ({data, onSubmit}: Props): JSX.Element => {
-  const [name, setName] = React.useState<string>(data?.name || "");
-  const [description, setDescription] = React.useState<string>(
-    data?.description || "",
-  );
   const [photo, setPhoto] = React.useState<string | null>(data?.photo || null);
+
+  const SpaceFormSchema = Yup.object().shape({
+    name: Yup.string().required("Name is required"),
+    description: Yup.string(),
+    photo: Yup.string(),
+  });
+
+  const {control, register, errors, handleSubmit} = useForm({
+    reValidateMode: "onBlur",
+    validationSchema: SpaceFormSchema,
+  });
 
   const {back} = useRouter();
 
-  const descriptionMax = 1000;
-
   return (
-    <form onSubmit={(): void => onSubmit({description, photo, name})}>
+    <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <TextField
-            value={name}
-            onChange={(e): void => setName(e.target.value)}
-            variant="outlined"
-            fullWidth
-            id="space-name"
-            label="Name"
+          <Controller
+            as={
+              <TextField
+                autoFocus
+                fullWidth
+                id="space-name"
+                label="Name"
+                margin="normal"
+                name="name"
+                required
+                variant="outlined"
+                error={!!errors.name}
+                inputRef={register}
+                helperText={errors.name ? errors.name.message : ""}
+                type="text"
+              />
+            }
             name="name"
-            required
-            type="text"
+            control={control}
+            defaultValue=""
           />
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            multiline
-            rows={3}
-            value={description}
-            onChange={(e): void => setDescription(e.target.value)}
-            variant="outlined"
-            fullWidth
-            id="space-description"
-            label="Description"
-            helperText={`${description.length} / ${descriptionMax}`}
-            error={description.length > descriptionMax}
+          <Controller
+            as={
+              <TextField
+                autoFocus
+                fullWidth
+                multiline
+                rows={3}
+                id="space-description"
+                label="Description"
+                margin="normal"
+                name="description"
+                required
+                variant="outlined"
+                error={!!errors.description}
+                inputRef={register}
+                helperText={
+                  errors.description ? errors.description.message : ""
+                }
+                type="text"
+              />
+            }
             name="description"
+            control={control}
+            defaultValue=""
           />
         </Grid>
         <Grid item xs={12}>

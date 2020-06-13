@@ -9,8 +9,6 @@ import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 const Spaces = (props: any): any => {
   const {t} = useTranslation();
 
-  Router.push("/");
-
   return (
     <>
       <SentreiAppHeader
