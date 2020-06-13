@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import Avatar from "@material-ui/core/Avatar";
+import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import "@sentrei/common/utils/sentry";
 import Typography from "@material-ui/core/Typography";
@@ -77,6 +78,7 @@ export default function SpaceCreate(): JSX.Element | null {
         <Typography component="h1" variant="h3">
           Create Space
         </Typography>
+        <Box pb={3} />
         <SpaceForm onSubmit={onSubmit} />
       </div>
     </Container>

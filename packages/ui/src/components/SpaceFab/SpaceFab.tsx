@@ -39,28 +39,18 @@ export default function SpaceFab({
 
   React.useEffect(() => {
     if (error) {
-      setSnackbar(firebaseError(error, "groups_list"));
+      setSnackbar(firebaseError(error, "spaces_list"));
     }
   }, [error]);
 
-  // if (items.length === 0 && loading === false) {
-  //   return <p>create</p>;
-  // }
+  if (items.length === 0 && loading === false) {
+    return <p>create</p>;
+  }
 
   return (
     <div>
       <div>
         <Snackbar action={snackbar} />
-        <Fab
-          variant="extended"
-          color="primary"
-          aria-label="add"
-          size="large"
-          className={classes.space}
-        >
-          <HomeWorkIcon className={classes.extendedIcon} />
-          Extended
-        </Fab>
       </div>
       <div>
         <Fab

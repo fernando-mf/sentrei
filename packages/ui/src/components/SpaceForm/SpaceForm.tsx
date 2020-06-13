@@ -1,28 +1,22 @@
 import {Grid, TextField, Typography} from "@material-ui/core";
-
+import Button from "@material-ui/core/Button";
+import {useRouter} from "next/router";
 import React from "react";
 
-import Space from "@sentrei/common/models/Space";
+import Props from "@sentrei/common/interfaces/SpaceForm";
 
 import ImageUpload from "@sentrei/ui/components/ImageUpload";
 
-interface SpaceFormProps {
-  data?: Space.Get;
-  onSubmit: (data: Space.EditableFields) => void;
-}
-
-const SpaceForm = ({data, onSubmit}: SpaceFormProps): JSX.Element => {
+const SpaceForm = ({data, onSubmit}: Props): JSX.Element => {
   const [name, setName] = React.useState<string>(data?.name || "");
   const [description, setDescription] = React.useState<string>(
     data?.description || "",
   );
   const [photo, setPhoto] = React.useState<string | null>(data?.photo || null);
 
+  const {back} = useRouter();
+
   const descriptionMax = 1000;
-  const valid =
-    name.length > 0 &&
-    description.length > 0 &&
-    description.length <= descriptionMax;
 
   return (
     <form onSubmit={(): void => onSubmit({description, photo, name})}>
@@ -60,6 +54,22 @@ const SpaceForm = ({data, onSubmit}: SpaceFormProps): JSX.Element => {
             Cover
           </Typography>
           <ImageUpload id="add-cover-img" img={photo} onSave={setPhoto} />
+        </Grid>
+        <Grid item xs={12}>
+          <Button type="submit" fullWidth variant="contained" color="primary">
+            Create
+          </Button>
+        </Grid>
+        <Grid item xs={12}>
+          <Button
+            type="reset"
+            fullWidth
+            variant="outlined"
+            color="primary"
+            onClick={back}
+          >
+            Cancel
+          </Button>
         </Grid>
       </Grid>
     </form>

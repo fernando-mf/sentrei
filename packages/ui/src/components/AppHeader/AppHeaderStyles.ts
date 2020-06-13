@@ -9,9 +9,6 @@ const AppHeaderStyles = makeStyles((theme: Theme) =>
       color: theme.palette.common.white,
       width: "100%",
     },
-    grow: {
-      flexGrow: 1,
-    },
     left: {
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(3),

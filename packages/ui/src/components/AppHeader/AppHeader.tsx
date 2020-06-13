@@ -37,8 +37,8 @@ export default function AppHeader({logo}: Props): JSX.Element {
   };
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="fixed" className={classes.appBar}>
+    <>
+      <AppBar className={classes.appBar}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -74,6 +74,6 @@ export default function AppHeader({logo}: Props): JSX.Element {
         </Toolbar>
       </AppBar>
       <Toolbar />
-    </div>
+    </>
   );
 }
