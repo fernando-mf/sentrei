@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import AddIcon from "@material-ui/icons/Add";
 import HomeWorkIcon from "@material-ui/icons/HomeWork";
+import {useRouter} from "next/router";
 import React from "react";
 
 import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
@@ -25,13 +26,9 @@ export default function SpaceList({
 }: Props): JSX.Element {
   const classes = SpaceListStyles();
   const [snackbar, setSnackbar] = React.useState<SnackbarAction | null>(null);
-  const {error, get, items, lastVisible, loading} = useLoadMore<Space.Snapshot>(
-    limit,
-  );
+  const {error, get, items, loading} = useLoadMore<Space.Snapshot>(limit);
 
-  const loadMore = (): void => {
-    get({data: listSpaces(lastVisible, userId, limit)});
-  };
+  const {push} = useRouter();
 
   React.useEffect(() => {
     get({data: listSpaces(undefined, userId, limit)});
@@ -42,6 +39,10 @@ export default function SpaceList({
       setSnackbar(firebaseError(error, "spaces_list"));
     }
   }, [error]);
+
+  if (items.length !== 0) {
+    push("/[id]", `/${items[0].id}`);
+  }
 
   if (items.length === 0 && loading === false) {
     return (
@@ -87,9 +88,7 @@ export default function SpaceList({
 
   return (
     <div>
-      <div>
-        <Snackbar action={snackbar} />
-      </div>
+      <Snackbar action={snackbar} />
     </div>
   );
 }
