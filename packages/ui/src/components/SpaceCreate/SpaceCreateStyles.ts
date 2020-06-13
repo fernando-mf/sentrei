@@ -1,6 +1,6 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const AuthStyles = makeStyles((theme: Theme) =>
+const SpaceCreateStyles = makeStyles((theme: Theme) =>
   createStyles({
     avatar: {
       margin: theme.spacing(1),
@@ -33,4 +33,4 @@ const AuthStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default AuthStyles;
+export default SpaceCreateStyles;

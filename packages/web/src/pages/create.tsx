@@ -1,48 +1,34 @@
 import {NextPage} from "next";
-import dynamic from "next/dynamic";
 import Router from "next/router";
-import React from "react";
+import * as React from "react";
 
 import GlobalContext from "@sentrei/common/context/GlobalContext";
 import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
-import authType from "@sentrei/common/types/authType";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
 
-const Auth = dynamic(() => import("@sentrei/ui/components/Auth"), {
-  loading: () => <Loader />,
-  ssr: false,
-});
+import SpaceCreate from "@sentrei/ui/components/SpaceCreate";
+import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
-const SentreiHeader = dynamic(
-  () => import("@sentrei/web/components/SentreiHeader"),
-  {
-    loading: () => <Loader />,
-    ssr: false,
-  },
-);
-
-const Signup: NextPage = () => {
+const Create: NextPage = () => {
   const {user} = React.useContext(GlobalContext);
   const {t} = useTranslation();
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("signup");
+    analytics().setCurrentScreen("dashboard");
   }, []);
 
   if (user === undefined) {
     return <Loader />;
   }
 
-  if (user) {
-    Router.push("/dashboard");
+  if (!user) {
+    Router.push("/");
   }
 
   return (
     <>
-      <SentreiHeader
-        sign={false}
-        spy={false}
+      <SentreiAppHeader
         faqText={t("headerFaq")}
         featuresText={t("headerFeatures")}
         pricingText={t("headerPricing")}
@@ -51,12 +37,12 @@ const Signup: NextPage = () => {
         signupText={t("headerSignup")}
         testimonialText={t("headerTestimonial")}
       />
-      <Auth type={authType.signup} />;
+      <SpaceCreate />
     </>
   );
 };
 
-Signup.getInitialProps = (): {
+Create.getInitialProps = (): {
   namespacesRequired: string[];
 } => {
   return {
@@ -64,4 +50,4 @@ Signup.getInitialProps = (): {
   };
 };
 
-export default Signup;
+export default Create;

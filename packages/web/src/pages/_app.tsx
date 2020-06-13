@@ -87,6 +87,14 @@ const App = ({Component, pageProps}: AppProps): JSX.Element => {
           <CssBaseline />
           <GlobalContext.Provider
             value={{
+              profile: userData
+                ? {
+                    id: userData.uid,
+                    name: userData.name,
+                    photo: userData.photo,
+                    username: userData.username,
+                  }
+                : null,
               user: userData,
             }}
           >

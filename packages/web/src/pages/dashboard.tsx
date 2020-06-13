@@ -15,7 +15,7 @@ const Dashboard: NextPage = () => {
   const {t} = useTranslation();
 
   React.useEffect(() => {
-    analytics().setCurrentScreen("home");
+    analytics().setCurrentScreen("dashboard");
   }, []);
 
   if (user === undefined) {
@@ -37,7 +37,6 @@ const Dashboard: NextPage = () => {
         signupText={t("headerSignup")}
         testimonialText={t("headerTestimonial")}
       />
-      <SpaceFab />
     </>
   );
 };

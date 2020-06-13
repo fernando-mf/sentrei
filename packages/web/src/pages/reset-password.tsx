@@ -1,11 +1,24 @@
 import {NextPage} from "next";
+import dynamic from "next/dynamic";
 import React from "react";
 
 import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
 import authType from "@sentrei/common/types/authType";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Auth from "@sentrei/ui/components/Auth";
-import SentreiHeader from "@sentrei/web/components/SentreiHeader";
+import Loader from "@sentrei/ui/components/Loader";
+
+const Auth = dynamic(() => import("@sentrei/ui/components/Auth"), {
+  loading: () => <Loader />,
+  ssr: false,
+});
+
+const SentreiHeader = dynamic(
+  () => import("@sentrei/web/components/SentreiHeader"),
+  {
+    loading: () => <Loader />,
+    ssr: false,
+  },
+);
 
 const ResetPassword: NextPage = () => {
   const {t} = useTranslation();
