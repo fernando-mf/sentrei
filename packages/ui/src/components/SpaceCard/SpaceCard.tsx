@@ -1,5 +1,6 @@
 import Avatar from "@material-ui/core/Avatar";
 import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -25,54 +26,52 @@ export default function SpaceCard({loading, space}: Props): JSX.Element {
   const classes = SpaceCardStyles();
 
   return (
-    <Link href="/[id]" as={`/${space?.id}`}>
-      <Card className={classes.card}>
-        <CardHeader
-          action={
-            loading ? null : (
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
-            )
-          }
-          title={
-            loading ? (
-              <Skeleton
-                animation="wave"
-                height={10}
-                width="80%"
-                style={{marginBottom: 6}}
-              />
-            ) : (
-              space?.name
-            )
-          }
-        />
-        {loading ? (
-          <Skeleton animation="wave" variant="rect" className={classes.media} />
-        ) : (
-          <CardMedia
-            className={classes.media}
-            image={space?.photo ?? "https://picsum.photos/200/300?grayscale"}
-          />
-        )}
-        <CardContent>
-          {loading ? (
-            <>
-              <Skeleton
-                animation="wave"
-                height={10}
-                style={{marginBottom: 6}}
-              />
-              <Skeleton animation="wave" height={10} width="80%" />
-            </>
+    <Card className={classes.card}>
+      <CardHeader
+        action={
+          loading ? null : (
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          )
+        }
+        title={
+          loading ? (
+            <Skeleton
+              animation="wave"
+              height={10}
+              width="80%"
+              style={{marginBottom: 6}}
+            />
           ) : (
-            <Typography variant="body2" color="textSecondary" component="p">
-              {space?.description}
-            </Typography>
-          )}
-        </CardContent>
-      </Card>
-    </Link>
+            space?.name
+          )
+        }
+      />
+      {loading ? (
+        <Skeleton animation="wave" variant="rect" className={classes.media} />
+      ) : (
+        <CardActionArea>
+          <Link href="/[id]" as={`/${space?.id}`}>
+            <CardMedia
+              className={classes.media}
+              image={space?.photo ?? "https://picsum.photos/200/300?grayscale"}
+            />
+          </Link>
+        </CardActionArea>
+      )}
+      <CardContent>
+        {loading ? (
+          <>
+            <Skeleton animation="wave" height={10} style={{marginBottom: 6}} />
+            <Skeleton animation="wave" height={10} width="80%" />
+          </>
+        ) : (
+          <Typography variant="body2" color="textSecondary" component="p">
+            {space?.description}
+          </Typography>
+        )}
+      </CardContent>
+    </Card>
   );
 }
