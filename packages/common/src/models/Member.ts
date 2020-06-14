@@ -2,6 +2,8 @@
 import Profile from "@sentrei/common/models/Profile";
 
 declare namespace Member {
+  export type Collections = "spaces" | "rooms";
+
   export type Join = {
     joined: firebase.firestore.FieldValue;
   };
