@@ -27,6 +27,7 @@ const StyledTypist = styled(Typist)`
     }
   }
 `;
+
 export default function CustomTypical({
   typicalOne,
   typicalTwo,
@@ -49,9 +50,9 @@ export default function CustomTypical({
     <animated.span ref={ref} style={props} className={classes.spring}>
       {count && (
         <StyledTypist
-          avgTypingDelay={90}
+          avgTypingDelay={70}
           stdTypingDelay={30}
-          startDelay={1000}
+          startDelay={300}
           onTypingDone={(): void => setCount(0)}
           className={classes.typical}
         >

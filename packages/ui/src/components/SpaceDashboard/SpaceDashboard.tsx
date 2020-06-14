@@ -64,19 +64,6 @@ export default function SpaceDashboard({
           spacing={1}
           className={classes.grid}
         >
-          {loading && (
-            <>
-              <Grid item xs={12} sm={4}>
-                <SpaceCard loading={loading} />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <SpaceCard loading={loading} />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <SpaceCard loading={loading} />
-              </Grid>
-            </>
-          )}
           {items.map(space => (
             <Grid item key={space.id} xs={12} sm={4}>
               <SpaceCard space={space} />
