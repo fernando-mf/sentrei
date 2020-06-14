@@ -1,7 +1,7 @@
 import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import {useRouter} from "next/router";
 import React from "react";
 
 import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
@@ -14,17 +14,12 @@ import SpaceCard from "@sentrei/ui/components/SpaceCard";
 import SpaceNone from "@sentrei/ui/components/SpaceNone";
 import useLoadMore from "@sentrei/ui/hooks/useLoadMore";
 
-import SpaceDashboardStyles from "./SpaceDashboardStyles";
-
 export default function SpaceDashboard({
   limit = 10,
   userId,
 }: Props): JSX.Element {
-  const classes = SpaceDashboardStyles();
   const [snackbar, setSnackbar] = React.useState<SnackbarAction | null>(null);
   const {error, get, items, loading} = useLoadMore<Space.Snapshot>(limit);
-
-  const {push} = useRouter();
 
   React.useEffect(() => {
     get({data: listSpaces(undefined, userId, limit)});
@@ -43,7 +38,7 @@ export default function SpaceDashboard({
   return (
     <div>
       <Snackbar action={snackbar} />
-      <Box p={1}>
+      <Box mb={9}>
         <Typography
           variant="h3"
           align="center"
@@ -53,13 +48,15 @@ export default function SpaceDashboard({
           Your spaces
         </Typography>
       </Box>
-      <Grid container alignItems="center" justify="center" spacing={3}>
-        {items.map(space => (
-          <Grid item key={space.id} xs={12} sm={4}>
-            <SpaceCard space={space} />
-          </Grid>
-        ))}
-      </Grid>
+      <Container maxWidth="lg" component="main">
+        <Grid container alignItems="center" justify="center" spacing={3}>
+          {items.map(space => (
+            <Grid item key={space.id} xs={12} sm={6} md={4}>
+              <SpaceCard space={space} />
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
     </div>
   );
 }
