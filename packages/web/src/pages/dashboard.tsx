@@ -6,7 +6,7 @@ import GlobalContext from "@sentrei/common/context/GlobalContext";
 import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
-import SpaceList from "@sentrei/ui/components/SpaceList";
+import SpaceDashboard from "@sentrei/ui/components/SpaceDashboard";
 
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
@@ -37,7 +37,7 @@ const Dashboard: NextPage = () => {
         signupText={t("headerSignup")}
         testimonialText={t("headerTestimonial")}
       />
-      <SpaceList redirect />
+      <SpaceDashboard />
     </>
   );
 };

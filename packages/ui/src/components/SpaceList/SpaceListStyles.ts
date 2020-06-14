@@ -2,7 +2,7 @@ import {createStyles, Theme, makeStyles} from "@material-ui/core/styles";
 
 const SpaceListStyles = makeStyles((theme: Theme) =>
   createStyles({
-    container: {
+    grid: {
       minHeight: "100vh",
     },
   }),
