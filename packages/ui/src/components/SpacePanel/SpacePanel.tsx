@@ -3,6 +3,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import AvatarGroup from "@material-ui/lab/AvatarGroup";
+import Skeleton from "@material-ui/lab/Skeleton";
 import React from "react";
 
 import Props from "@sentrei/common/interfaces/SpacePanel";
@@ -14,7 +15,7 @@ import SpacePanelStyles from "./SpacePanelStyles";
 
 export default function SpacePanel({space, limit = 30}: Props): JSX.Element {
   const classes = SpacePanelStyles();
-  const {get, items} = useLoadMore<Member.Snapshot>(limit);
+  const {get, items, loading} = useLoadMore<Member.Snapshot>(limit);
 
   React.useEffect(() => {
     get({
@@ -49,6 +50,15 @@ export default function SpacePanel({space, limit = 30}: Props): JSX.Element {
             {space.id}
           </Typography>
           <Typography>Members</Typography>
+          {loading && (
+            <Skeleton>
+              <AvatarGroup max={3}>
+                <Avatar />
+                <Avatar />
+                <Avatar />
+              </AvatarGroup>
+            </Skeleton>
+          )}
           <AvatarGroup max={3}>
             {items.map(member => (
               <Avatar key={member.username} src={member.photo || undefined} />
