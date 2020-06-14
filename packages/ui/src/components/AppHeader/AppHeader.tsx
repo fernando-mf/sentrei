@@ -38,7 +38,7 @@ export default function AppHeader({logo}: Props): JSX.Element {
 
   return (
     <>
-      <AppBar className={classes.appBar}>
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <IconButton
             edge="start"

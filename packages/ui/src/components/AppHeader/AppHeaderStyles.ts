@@ -17,6 +17,14 @@ const AppHeaderStyles = makeStyles((theme: Theme) =>
       marginLeft: theme.spacing(3),
       marginRight: theme.spacing(1),
     },
+    toolbar: {
+      width: "180px",
+      height: "180px",
+      [theme.breakpoints.down("md")]: {
+        width: "120px",
+        height: "120px",
+      },
+    },
   }),
 );
 
