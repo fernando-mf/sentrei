@@ -1,7 +1,3 @@
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import {useRouter} from "next/router";
 import React from "react";
 
@@ -19,6 +15,7 @@ import SpaceListStyles from "./SpaceListStyles";
 export default function SpaceList({
   allowLoadMore,
   limit = 10,
+  redirect = false,
   userId,
 }: Props): JSX.Element {
   const classes = SpaceListStyles();
@@ -43,7 +40,7 @@ export default function SpaceList({
     }
   }, [error]);
 
-  if (items.length !== 0) {
+  if (items.length !== 0 && redirect) {
     push("/[id]", `/${items[0].id}`);
   }
 

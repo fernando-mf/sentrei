@@ -37,7 +37,7 @@ const Dashboard: NextPage = () => {
         signupText={t("headerSignup")}
         testimonialText={t("headerTestimonial")}
       />
-      <SpaceList />
+      <SpaceList redirect />
     </>
   );
 };
