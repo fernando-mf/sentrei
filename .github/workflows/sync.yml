@@ -19,8 +19,8 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
       - if: matrix.branch != 'master'
         run: |
-          git config --global user.name 'Shun Kakinoki'
-          git config --global user.email 'shunkakinoki@users.noreply.github.com'
+          git config --local user.name 'github-actions[bot]'
+          git config --local user.email 'github-actions[bot]@users.noreply.github.com'
           git fetch --quiet && git merge --ff-only origin/master && git push || true
       - if: matrix.branch == 'master'
         uses: pixta-dev/repository-mirroring-action@v1

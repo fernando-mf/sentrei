@@ -29,10 +29,6 @@ export default function SpaceDashboard({
     }
   }, [error]);
 
-  if (items.length !== 0) {
-    push("/[id]", `/${items[0].id}`);
-  }
-
   if (items.length === 0 && loading === false) {
     return <SpaceNone />;
   }
