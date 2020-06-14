@@ -55,7 +55,7 @@ export default function AppHeader({logo}: Props): JSX.Element {
             onClose={handleClose}
           />
           <Grid container alignItems="center" justify="center">
-            <Logo logo={logo} />
+            <Logo logo={logo} root={false} />
           </Grid>
           <IconButton
             edge="end"

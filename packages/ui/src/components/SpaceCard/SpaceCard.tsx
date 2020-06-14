@@ -23,7 +23,7 @@ export default function SpaceCard({space}: Props): JSX.Element {
   const classes = SpaceCardStyles();
 
   return (
-    <Card className={classes.card}>
+    <Card>
       <CardHeader
         action={
           <IconButton aria-label="settings">

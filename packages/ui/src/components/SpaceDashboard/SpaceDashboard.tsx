@@ -1,5 +1,4 @@
 import Box from "@material-ui/core/Box";
-import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import {useRouter} from "next/router";
@@ -54,23 +53,13 @@ export default function SpaceDashboard({
           Your spaces
         </Typography>
       </Box>
-      <Container maxWidth="lg" component="main">
-        <Grid
-          container
-          alignItems="center"
-          alignContent="center"
-          direction="row"
-          justify="center"
-          spacing={1}
-          className={classes.grid}
-        >
-          {items.map(space => (
-            <Grid item key={space.id} xs={12} sm={4}>
-              <SpaceCard space={space} />
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+      <Grid container alignItems="center" justify="center" spacing={3}>
+        {items.map(space => (
+          <Grid item key={space.id} xs={12} sm={4}>
+            <SpaceCard space={space} />
+          </Grid>
+        ))}
+      </Grid>
     </div>
   );
 }
