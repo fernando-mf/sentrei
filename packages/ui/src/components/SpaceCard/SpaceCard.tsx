@@ -12,37 +12,60 @@ import React from "react";
 import Space from "@sentrei/common/models/Space";
 
 import Link from "@sentrei/ui/components/Link";
+import MemberMenu from "@sentrei/ui/components/MemberMenu";
 
 import SpaceCardStyles from "./SpaceCardStyles";
 
 interface Props {
-  space?: Space.Get;
+  space: Space.Get;
+  userId: string;
 }
 
-export default function SpaceCard({space}: Props): JSX.Element {
+export default function SpaceCard({space, userId}: Props): JSX.Element {
   const classes = SpaceCardStyles();
+  const [menuAnchorEl, menuSetAnchorEl] = React.useState<null | HTMLElement>(
+    null,
+  );
+
+  const handleMenuClick = (event: React.MouseEvent<HTMLElement>): void => {
+    menuSetAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = (): void => {
+    menuSetAnchorEl(null);
+  };
 
   return (
     <Card>
       <CardHeader
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
+          <>
+            <IconButton aria-label="settings" onClick={handleMenuClick}>
+              <MoreVertIcon />
+            </IconButton>
+            <MemberMenu
+              anchorEl={menuAnchorEl}
+              open={Boolean(menuAnchorEl)}
+              onClose={handleClose}
+              collection="spaces"
+              id={space.id}
+              userId={userId}
+            />
+          </>
         }
-        title={space?.name}
+        title={space.name}
       />
       <CardActionArea>
-        <Link href="/[id]" as={`/${space?.id}`}>
+        <Link href="/[id]" as={`/${space.id}`}>
           <CardMedia
             className={classes.media}
-            image={space?.photo ?? "https://picsum.photos/200/300?grayscale"}
+            image={space.photo ?? "https://picsum.photos/200/300?grayscale"}
           />
         </Link>
       </CardActionArea>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {space?.description}
+          {space.description}
         </Typography>
       </CardContent>
     </Card>

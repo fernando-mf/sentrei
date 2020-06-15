@@ -52,7 +52,7 @@ export default function SpaceDashboard({
         <Grid container alignItems="center" justify="center" spacing={3}>
           {items.map(space => (
             <Grid item key={space.id} xs={12} sm={6} md={4}>
-              <SpaceCard space={space} />
+              <SpaceCard space={space} userId={userId} />
             </Grid>
           ))}
         </Grid>
