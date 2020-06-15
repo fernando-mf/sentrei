@@ -9,9 +9,6 @@ const AppHeaderStyles = makeStyles((theme: Theme) =>
       color: theme.palette.common.white,
       width: "100%",
     },
-    grow: {
-      flexGrow: 1,
-    },
     left: {
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(3),
@@ -19,6 +16,14 @@ const AppHeaderStyles = makeStyles((theme: Theme) =>
     right: {
       marginLeft: theme.spacing(3),
       marginRight: theme.spacing(1),
+    },
+    toolbar: {
+      width: "180px",
+      height: "180px",
+      [theme.breakpoints.down("md")]: {
+        width: "120px",
+        height: "120px",
+      },
     },
   }),
 );

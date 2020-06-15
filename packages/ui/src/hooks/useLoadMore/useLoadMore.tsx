@@ -11,7 +11,8 @@ interface GetAction<T> {
   replace?: boolean;
 }
 
-function useLoadMore<T>(limit = 10): any {
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+function useLoadMore<T>(limit = 10) {
   const [getFn, get] = React.useState<GetAction<T>>();
   const [loading, setLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<firebase.FirebaseError>();

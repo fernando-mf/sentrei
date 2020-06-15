@@ -1,4 +1,5 @@
 import {NextPage} from "next";
+import dynamic from "next/dynamic";
 import Router from "next/router";
 import React from "react";
 
@@ -6,10 +7,20 @@ import GlobalContext from "@sentrei/common/context/GlobalContext";
 import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
 import authType from "@sentrei/common/types/authType";
 import {analytics} from "@sentrei/common/utils/firebase";
-import Auth from "@sentrei/ui/components/Auth";
 import Loader from "@sentrei/ui/components/Loader";
 
-import SentreiHeader from "@sentrei/web/components/SentreiHeader";
+const Auth = dynamic(() => import("@sentrei/ui/components/Auth"), {
+  loading: () => <Loader />,
+  ssr: false,
+});
+
+const SentreiHeader = dynamic(
+  () => import("@sentrei/web/components/SentreiHeader"),
+  {
+    loading: () => <Loader />,
+    ssr: false,
+  },
+);
 
 const Signup: NextPage = () => {
   const {user} = React.useContext(GlobalContext);

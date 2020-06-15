@@ -37,8 +37,8 @@ export default function AppHeader({logo}: Props): JSX.Element {
   };
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="fixed" className={classes.appBar}>
+    <>
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -55,7 +55,7 @@ export default function AppHeader({logo}: Props): JSX.Element {
             onClose={handleClose}
           />
           <Grid container alignItems="center" justify="center">
-            <Logo logo={logo} />
+            <Logo logo={logo} root={false} />
           </Grid>
           <IconButton
             edge="end"
@@ -74,6 +74,6 @@ export default function AppHeader({logo}: Props): JSX.Element {
         </Toolbar>
       </AppBar>
       <Toolbar />
-    </div>
+    </>
   );
 }

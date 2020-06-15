@@ -1,6 +1,6 @@
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const SigninStyles = makeStyles((theme: Theme) =>
+const AuthStyles = makeStyles((theme: Theme) =>
   createStyles({
     avatar: {
       margin: theme.spacing(1),
@@ -33,4 +33,4 @@ const SigninStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default SigninStyles;
+export default AuthStyles;

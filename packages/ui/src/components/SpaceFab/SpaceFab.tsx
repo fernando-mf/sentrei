@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
-import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import React from "react";
 
 import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
@@ -39,28 +40,18 @@ export default function SpaceFab({
 
   React.useEffect(() => {
     if (error) {
-      setSnackbar(firebaseError(error, "groups_list"));
+      setSnackbar(firebaseError(error, "spaces_list"));
     }
   }, [error]);
 
-  // if (items.length === 0 && loading === false) {
-  //   return <p>create</p>;
-  // }
+  if (items.length === 0 && loading === false) {
+    return <p>create</p>;
+  }
 
   return (
     <div>
       <div>
         <Snackbar action={snackbar} />
-        <Fab
-          variant="extended"
-          color="primary"
-          aria-label="add"
-          size="large"
-          className={classes.space}
-        >
-          <HomeWorkIcon className={classes.extendedIcon} />
-          Extended
-        </Fab>
       </div>
       <div>
         <Fab

@@ -4,8 +4,9 @@ import Metadata from "@sentrei/common/models/Metadata";
 
 declare namespace Space {
   export type EditableFields = {
-    description: string;
+    description: string | null;
     name: string;
+    photo: string | null;
   };
 
   interface Fields extends EditableFields {
