@@ -1,3 +1,9 @@
+## [4.84.8](https://github.com/sentrei/sentrei/compare/v4.84.7...v4.84.8) (2020-06-15)
+
+### Bug Fixes
+
+- **deps:** bump @vuepress/plugin-google-analytics from 1.5.1 to 1.5.2 ([4cac15b](https://github.com/sentrei/sentrei/commit/4cac15b794b811844d314dd0128ab83d99384e71))
+
 ## [4.84.1](https://github.com/sentrei/sentrei/compare/v4.84.0...v4.84.1) (2020-06-15)
 
 ### Bug Fixes
