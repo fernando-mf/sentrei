@@ -1,3 +1,9 @@
+## [4.84.9](https://github.com/sentrei/sentrei/compare/v4.84.8...v4.84.9) (2020-06-15)
+
+### Bug Fixes
+
+- **deps:** bump @vuepress/plugin-nprogress from 1.5.1 to 1.5.2 ([481ff8c](https://github.com/sentrei/sentrei/commit/481ff8ce2321700a540fb00c06306d7ce1bba719))
+
 ## [4.84.8](https://github.com/sentrei/sentrei/compare/v4.84.7...v4.84.8) (2020-06-15)
 
 ### Bug Fixes
