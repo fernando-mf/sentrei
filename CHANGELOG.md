@@ -1,3 +1,17 @@
+# [4.84.0](https://github.com/sentrei/sentrei/compare/v4.83.6...v4.84.0) (2020-06-15)
+
+### Bug Fixes
+
+- 🐛 perfect react typical (typist) ([4b7c2bf](https://github.com/sentrei/sentrei/commit/4b7c2bf8ee1e06ccb208c5eba185fe9abc36ca9d))
+- 🐛 test lint fix ([8135d0a](https://github.com/sentrei/sentrei/commit/8135d0a24b736094be935d5a65c92be5e70492bb))
+- 🐛 typing animation stutter ([c14eb13](https://github.com/sentrei/sentrei/commit/c14eb1361246977eadb48dd58689a39e105d015d))
+- 🐛 working member menu and dialog ([fdd30c6](https://github.com/sentrei/sentrei/commit/fdd30c62c8477fd0e24b352df4b2394402473d3c))
+
+### Features
+
+- 🎸 add space create ([0563093](https://github.com/sentrei/sentrei/commit/0563093200856f948a64e5f084ac46b0e0a4b31f))
+- 🎸 complete space create flow ([f1a37f3](https://github.com/sentrei/sentrei/commit/f1a37f30fc7089bb7cbba992577190610746b40e))
+
 ## [4.83.6](https://github.com/sentrei/sentrei/compare/v4.83.5...v4.83.6) (2020-06-12)
 
 ### Bug Fixes
