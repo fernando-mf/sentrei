@@ -92,7 +92,6 @@ jobs:
           branch: create-pull-request/${{ needs.context.outputs.branch }}
           title: "chore: [sentrei-auto-pr]"
           commit-message: "chore: [sentrei-auto-pr]"
-          committer: Shun Kakinoki <shunkakinoki@users.noreply.github.com>
         env:
           HUSKY_SKIP_HOOKS: 1
   blog:
