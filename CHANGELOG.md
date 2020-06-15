@@ -1,3 +1,9 @@
+## [4.84.1](https://github.com/sentrei/sentrei/compare/v4.84.0...v4.84.1) (2020-06-15)
+
+### Bug Fixes
+
+- 🐛 remove shunkakinoki commiter ([e91d05e](https://github.com/sentrei/sentrei/commit/e91d05e7cc6603e0bb23dc489b120f7ab1818186))
+
 # [4.84.0](https://github.com/sentrei/sentrei/compare/v4.83.6...v4.84.0) (2020-06-15)
 
 ### Bug Fixes
