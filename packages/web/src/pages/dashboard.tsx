@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 import {NextPage} from "next";
 import Router from "next/router";
 import * as React from "react";
@@ -37,7 +39,7 @@ const Dashboard: NextPage = () => {
         signupText={t("headerSignup")}
         testimonialText={t("headerTestimonial")}
       />
-      <SpaceDashboard />
+      <SpaceDashboard userId={user!.uid} />
     </>
   );
 };

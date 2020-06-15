@@ -1,9 +1,9 @@
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import {createStyles, makeStyles} from "@material-ui/core/styles";
 
-const SpaceNoneStyles = makeStyles((theme: Theme) =>
+const SpaceNoneStyles = makeStyles(() =>
   createStyles({
     grid: {
-      minHeight: "100vh",
+      minHeight: "70vh",
     },
   }),
 );

@@ -6,7 +6,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import {useTheme} from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-
+import Router from "next/router";
 import React from "react";
 
 import Props from "@sentrei/common/interfaces/MemberDialog";
@@ -25,6 +25,7 @@ export default function MemberDialog({
 
   const handleUnfollow = (): void => {
     unfollow(collection, id, userId);
+    Router.reload();
   };
 
   return (

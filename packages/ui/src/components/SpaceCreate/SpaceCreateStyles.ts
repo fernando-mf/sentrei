@@ -22,7 +22,6 @@ const SpaceCreateStyles = makeStyles((theme: Theme) =>
       marginTop: theme.spacing(1),
     },
     paper: {
-      marginTop: theme.spacing(8),
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
