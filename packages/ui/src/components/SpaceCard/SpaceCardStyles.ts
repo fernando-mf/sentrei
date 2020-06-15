@@ -1,6 +1,6 @@
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import {createStyles, makeStyles} from "@material-ui/core/styles";
 
-const SpaceCardStyles = makeStyles((theme: Theme) =>
+const SpaceCardStyles = makeStyles(() =>
   createStyles({
     media: {
       height: 190,

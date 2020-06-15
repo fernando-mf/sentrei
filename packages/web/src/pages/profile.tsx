@@ -8,7 +8,6 @@ import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
 
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
-import SentreiProfile from "@sentrei/web/components/SentreiProfile";
 
 const Profile: NextPage = () => {
   const {user} = React.useContext(GlobalContext);

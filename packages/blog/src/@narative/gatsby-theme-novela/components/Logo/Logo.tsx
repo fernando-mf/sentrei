@@ -7,6 +7,7 @@ import React from "react";
 // This should be the black color, but the difference not noticable, so I avoided shadowing a component.
 // fill="#231f20"
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Logo = ({fill = "#fff"}: {fill?: string}): any => (
   <LogoContainer>
     <svg

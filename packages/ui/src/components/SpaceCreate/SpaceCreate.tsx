@@ -13,7 +13,6 @@ import "firebase/auth";
 
 import GlobalContext from "@sentrei/common/context/GlobalContext";
 import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
-import Space from "@sentrei/common/models/Space";
 import {createSpace} from "@sentrei/common/services/spaces";
 import {timestamp} from "@sentrei/common/utils/firebase";
 import firebaseError from "@sentrei/common/utils/firebaseError";

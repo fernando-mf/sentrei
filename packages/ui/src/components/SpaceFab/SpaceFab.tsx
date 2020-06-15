@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
-import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import React from "react";
 
 import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
