@@ -144,7 +144,7 @@ export default function Auth({type}: Props): JSX.Element {
           {type === authType.signup && <AccountCircleOutlinedIcon />}
         </Avatar>
         <Typography component="h1" variant="h3">
-          {type === authType.reset && "Reset email"}
+          {type === authType.reset && t("title")}
           {type === authType.login && "Log in"}
           {type === authType.signup && "Sign up"}
         </Typography>
