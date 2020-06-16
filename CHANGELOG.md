@@ -1,3 +1,21 @@
+## [4.84.10](https://github.com/sentrei/sentrei/compare/v4.84.9...v4.84.10) (2020-06-15)
+
+### Bug Fixes
+
+- **deps:** bump @narative/gatsby-theme-novela from 0.16.1 to 0.16.2 ([0eea5ee](https://github.com/sentrei/sentrei/commit/0eea5ee23b067e760cb4de47b159867b6655c746))
+
+## [4.84.9](https://github.com/sentrei/sentrei/compare/v4.84.8...v4.84.9) (2020-06-15)
+
+### Bug Fixes
+
+- **deps:** bump @vuepress/plugin-nprogress from 1.5.1 to 1.5.2 ([481ff8c](https://github.com/sentrei/sentrei/commit/481ff8ce2321700a540fb00c06306d7ce1bba719))
+
+## [4.84.8](https://github.com/sentrei/sentrei/compare/v4.84.7...v4.84.8) (2020-06-15)
+
+### Bug Fixes
+
+- **deps:** bump @vuepress/plugin-google-analytics from 1.5.1 to 1.5.2 ([4cac15b](https://github.com/sentrei/sentrei/commit/4cac15b794b811844d314dd0128ab83d99384e71))
+
 ## [4.84.1](https://github.com/sentrei/sentrei/compare/v4.84.0...v4.84.1) (2020-06-15)
 
 ### Bug Fixes
