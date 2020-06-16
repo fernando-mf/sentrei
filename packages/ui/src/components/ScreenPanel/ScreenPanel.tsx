@@ -31,7 +31,6 @@ export default function ScreenPanel(props: ScreenPanelProps): JSX.Element {
               reset
               scale={1.1}
               transitionSpeed={1000}
-              tiltEnable={false}
               className={classes.tilt}
             >
               {children}
