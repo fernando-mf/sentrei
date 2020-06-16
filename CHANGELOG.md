@@ -1,3 +1,14 @@
+# [4.85.0](https://github.com/sentrei/sentrei/compare/v4.84.10...v4.85.0) (2020-06-16)
+
+### Bug Fixes
+
+- 🐛 tilt ([0b610f2](https://github.com/sentrei/sentrei/commit/0b610f230366b22bf937cbf1a268297a25a6eeda))
+
+### Features
+
+- 🎸 add i18n ally This is amazing wow ([8bc5cd6](https://github.com/sentrei/sentrei/commit/8bc5cd6e31cfb075ed3f4c523cdbb00b99f50a05))
+- 🎸 i18n complete refactoring ([0f6ece9](https://github.com/sentrei/sentrei/commit/0f6ece937e13e66d592435f6cc679663ad6bd44c))
+
 ## [4.84.10](https://github.com/sentrei/sentrei/compare/v4.84.9...v4.84.10) (2020-06-15)
 
 ### Bug Fixes
