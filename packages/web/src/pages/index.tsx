@@ -5,7 +5,7 @@ import Router from "next/router";
 import React from "react";
 
 import GlobalContext from "@sentrei/common/context/GlobalContext";
-import {useTranslation} from "@sentrei/common/i18n";
+import {useTranslation, withTranslation} from "@sentrei/common/i18n";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Footer from "@sentrei/ui/components/Footer";
 import Loader from "@sentrei/ui/components/Loader";
@@ -33,41 +33,35 @@ const SentreiFeature = dynamic(
   },
 );
 const SentreiFaq = dynamic(() => import("@sentrei/web/components/SentreiFaq"), {
-  loading: () => <Loader />,
   ssr: false,
 });
 const SentreiPricing = dynamic(
   () => import("@sentrei/web/components/SentreiPricing"),
   {
-    loading: () => <Loader />,
     ssr: false,
   },
 );
 const SentreiProduct = dynamic(
   () => import("@sentrei/web/components/SentreiProduct"),
   {
-    loading: () => <Loader />,
     ssr: false,
   },
 );
 const SentreiSlider = dynamic(
   () => import("@sentrei/web/components/SentreiSlider"),
   {
-    loading: () => <Loader />,
     ssr: false,
   },
 );
 const SentreiScreen = dynamic(
   () => import("@sentrei/web/components/SentreiScreen"),
   {
-    loading: () => <Loader />,
     ssr: false,
   },
 );
 const SentreiTestimonial = dynamic(
   () => import("@sentrei/web/components/SentreiTestimonial"),
   {
-    loading: () => <Loader />,
     ssr: false,
   },
 );
@@ -225,8 +219,8 @@ Index.getInitialProps = (): {
   namespacesRequired: string[];
 } => {
   return {
-    namespacesRequired: ["index"],
+    namespacesRequired: ["index", "common"],
   };
 };
 
-export default Index;
+export default withTranslation()(Index);

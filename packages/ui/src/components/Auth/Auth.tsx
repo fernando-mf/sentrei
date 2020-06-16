@@ -21,6 +21,8 @@ import {useForm, Controller} from "react-hook-form";
 
 import * as Yup from "yup";
 
+import {useTranslation} from "@sentrei/common/i18n";
+
 import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
 import signin from "@sentrei/common/services/signin";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
@@ -39,6 +41,8 @@ interface Props {
 
 export default function Auth({type}: Props): JSX.Element {
   const classes = AuthStyles();
+  const {t} = useTranslation();
+
   const AuthFormSchema = Yup.object().shape({
     email: Yup.string()
       .required("Email is required")
@@ -140,7 +144,7 @@ export default function Auth({type}: Props): JSX.Element {
           {type === authType.signup && <AccountCircleOutlinedIcon />}
         </Avatar>
         <Typography component="h1" variant="h3">
-          {type === authType.reset && "Reset email"}
+          {type === authType.reset && t("title")}
           {type === authType.login && "Log in"}
           {type === authType.signup && "Sign up"}
         </Typography>

@@ -17,7 +17,8 @@
     "ms-vsonline.vsonline",
     "oderwat.indent-rainbow",
     "timonwong.shellcheck",
-    "VisualStudioExptTeam.vscodeintellicode"
+    "VisualStudioExptTeam.vscodeintellicode",
+    "antfu.i18n-ally"
   ],
   "runServices": [],
   "postCreateCommand": "uname -a",

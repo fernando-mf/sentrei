@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import {LinearProgress} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider as MaterialThemeProvider} from "@material-ui/core/styles";
-import {AppProps} from "next/app";
+import App, {AppProps} from "next/app";
 import Head from "next/head";
 import React from "react";
 import {ThemeProvider as StyledThemeProvider} from "styled-components";
@@ -19,7 +21,7 @@ import "@sentrei/common/utils/sentry";
 import "@sentrei/web/styles/global.scss";
 import "@sentrei/web/styles/nprogress.scss";
 
-const App = ({Component, pageProps}: AppProps): JSX.Element => {
+const CustomApp = ({Component, pageProps}: AppProps): JSX.Element => {
   const [user, setUser] = React.useState<firebase.User | null | undefined>(
     undefined,
   );
@@ -109,4 +111,13 @@ const App = ({Component, pageProps}: AppProps): JSX.Element => {
   );
 };
 
-export default appWithTranslation(App);
+CustomApp.getInitialProps = async (
+  appContext: any,
+): Promise<{
+  pageProps: any;
+}> => {
+  const appProps = await App.getInitialProps(appContext);
+  return {...appProps};
+};
+
+export default appWithTranslation(CustomApp);
