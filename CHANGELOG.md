@@ -1,3 +1,9 @@
+## [4.88.1](https://github.com/sentrei/sentrei/compare/v4.88.0...v4.88.1) (2020-06-17)
+
+### Bug Fixes
+
+- **deps:** bump @types/react from 16.9.36 to 16.9.37 ([31f56bc](https://github.com/sentrei/sentrei/commit/31f56bcf64928bc498e9ee9df7e6e181554dc103))
+
 # [4.88.0](https://github.com/sentrei/sentrei/compare/v4.87.2...v4.88.0) (2020-06-17)
 
 ### Features
