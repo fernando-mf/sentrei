@@ -28,15 +28,7 @@ const Create: NextPage = () => {
 
   return (
     <>
-      <SentreiAppHeader
-        faqText={t("headerFaq")}
-        featuresText={t("headerFeatures")}
-        pricingText={t("headerPricing")}
-        productText={t("headerProduct")}
-        loginText={t("headerLogin")}
-        signupText={t("headerSignup")}
-        testimonialText={t("headerTestimonial")}
-      />
+      <SentreiAppHeader />
       <SpaceCreate />
     </>
   );
