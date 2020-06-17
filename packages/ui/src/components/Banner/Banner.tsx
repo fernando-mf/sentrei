@@ -67,7 +67,7 @@ export default function Banner(): JSX.Element {
         <RoughNotation
           animationDelay={1000}
           animationDuration={3000}
-          color="secondary"
+          color="secondary-light"
           text={t("banner.bannerTextRough")}
           type="highlight"
         />

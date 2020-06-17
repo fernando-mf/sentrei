@@ -20,7 +20,7 @@ export default function Product({
     <Container maxWidth="lg" component="main" className={classes.product}>
       <ProductCard
         left
-        color="secondary"
+        color="secondary-light"
         img={videoImg}
         subTitle={t("product.videoSubTitle")}
         titleOne={t("product.videoTitleOne")}
@@ -31,18 +31,18 @@ export default function Product({
       <Box py={3} />
       <ProductCard
         left={false}
-        color="primary"
+        color="secondary-light"
         img={connectImg}
         subTitle={t("product.connectSubTitle")}
         titleOne={t("product.connectTitleOne")}
         titleTwo={t("product.connectTitleTwo")}
         titleThree={t("product.connectTitleThree")}
-        type="box"
+        type="highlight"
       />
       <Box py={3} />
       <ProductCard
         left
-        color="secondary"
+        color="secondary-light"
         img={dataImg}
         subTitle={t("product.dataSubTitle")}
         titleOne={t("product.dataTitleOne")}
