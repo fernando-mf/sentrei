@@ -92,7 +92,7 @@ export default function Auth({type}: Props): JSX.Element {
       case authType.reset:
         try {
           await auth.sendPasswordResetEmail(data.email);
-          handleSuccess("Please check your email");
+          handleSuccess(t("auth.email.check"));
         } catch (err) {
           handleError(err);
         }
@@ -159,7 +159,7 @@ export default function Auth({type}: Props): JSX.Element {
                 src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
                 style={{marginRight: "1em"}}
               />
-              <Typography>Login with Google</Typography>
+              <Typography>{t("login.google")}</Typography>
             </Button>
             <Box pt={5} />
             <Divider flexItem className={classes.divider} />
