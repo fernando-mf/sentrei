@@ -94,20 +94,7 @@ const Index: NextPage = () => {
       <SentreiScreen />
       <Spacing />
       <div id="product">
-        <SentreiProduct
-          connectSubTitle={t("productConnectSubTitle")}
-          connectTitleOne={t("productConnectTitleOne")}
-          connectTitleTwo={t("productConnectTitleTwo")}
-          connectTitleThree={t("productConnectTitleThree")}
-          dataSubTitle={t("productDataSubTitle")}
-          dataTitleOne={t("productDataTitleOne")}
-          dataTitleTwo={t("productDataTitleTwo")}
-          dataTitleThree={t("productDataTitleThree")}
-          videoSubTitle={t("productVideoSubTitle")}
-          videoTitleOne={t("productVideoTitleOne")}
-          videoTitleTwo={t("productVideoTitleTwo")}
-          videoTitleThree={t("productVideoTitleThree")}
-        />
+        <SentreiProduct />
       </div>
       <SentreiSlider
         sectionTitleOne={t("sliderSectionTitleOne")}
