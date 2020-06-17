@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: Blank
+    url: https://github.com/sentrei/sentrei/issues/new
+    about: blank
   - name: Chatops
     url: https://github.com/sentrei/sentrei/issues/368#partial-timeline
     about: chatops
