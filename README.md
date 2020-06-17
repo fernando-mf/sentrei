@@ -62,7 +62,7 @@
 | ------- | --- | ------- |
 | alpha | https://alpha.sentrei.com | https://alpha.typedoc.sentrei.com |
 | beta | https://beta.sentrei.com | https://beta.typedoc.sentrei.com |
-| master | https://sentrei.com | https://master.typedoc.sentrei.com |
+| master | https://master.sentrei.com | https://master.typedoc.sentrei.com |
 <!-- prettier-ignore-end -->
 
 ## Contributors ✨
