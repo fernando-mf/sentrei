@@ -21,8 +21,13 @@ export const nextI18next = new NextI18next({
   use,
 });
 
-export const includeDefaultNamespaces = (namespaces?: string[]): string[] =>
-  ["index"].concat(namespaces ?? "");
+export const includeDefaultNamespaces = (namespaces?: string[]): string[] => {
+  const defaultNamespaces = ["index"];
+  if (namespaces) {
+    return defaultNamespaces.concat(namespaces);
+  }
+  return defaultNamespaces;
+};
 
 export const {
   appWithTranslation,
