@@ -27,6 +27,7 @@ import signin from "@sentrei/common/services/signin";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
 import authType from "@sentrei/common/types/authType";
+import Props from "@sentrei/common/types/components/Auth";
 import SnackbarAction from "@sentrei/common/types/components/SnackbarAction";
 import {auth} from "@sentrei/common/utils/firebase";
 import firebaseError from "@sentrei/common/utils/firebaseError";
@@ -34,10 +35,6 @@ import Link from "@sentrei/ui/components/Link";
 import Snackbar from "@sentrei/ui/components/Snackbar";
 
 import AuthStyles from "./AuthStyles";
-
-interface Props {
-  type: authType;
-}
 
 export default function Auth({type}: Props): JSX.Element {
   const classes = AuthStyles();
@@ -144,9 +141,9 @@ export default function Auth({type}: Props): JSX.Element {
           {type === authType.signup && <AccountCircleOutlinedIcon />}
         </Avatar>
         <Typography component="h1" variant="h3">
-          {type === authType.reset && t("title")}
-          {type === authType.login && "Log in"}
-          {type === authType.signup && "Sign up"}
+          {type === authType.reset && t("reset-password.title")}
+          {type === authType.login && t("login.title")}
+          {type === authType.signup && t("signup.title")}
         </Typography>
         {type !== authType.reset && (
           <>
@@ -223,7 +220,7 @@ export default function Auth({type}: Props): JSX.Element {
           {type === authType.login || type === authType.signup ? (
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label={t("auth.remember-me")}
             />
           ) : null}
           <Button
@@ -233,21 +230,21 @@ export default function Auth({type}: Props): JSX.Element {
             color="primary"
             className={classes.submit}
           >
-            {type === authType.reset && "Send reset email"}
-            {type === authType.login && "Log in"}
-            {type === authType.signup && "Sign up"}
+            {type === authType.reset && t("reset-password.button")}
+            {type === authType.login && t("login.button")}
+            {type === authType.signup && t("signup.button")}
           </Button>
         </form>
         {type === authType.login && (
           <Grid container>
             <Grid item xs>
               <Link href="/reset-password" variant="body2">
-                Forgot password?
+                {t("login.forgot-password")}
               </Link>
             </Grid>
             <Grid item>
               <Link href="/signup" variant="body2">
-                Dont have an account? Sign Up
+                {t("login.dont-have-signup")}
               </Link>
             </Grid>
           </Grid>
@@ -257,7 +254,7 @@ export default function Auth({type}: Props): JSX.Element {
             <Grid container justify="center">
               <Grid item>
                 <Link href="/login" variant="body2">
-                  Already have an account? Log in
+                  {t("signup.already-have-login")}
                 </Link>
               </Grid>
             </Grid>
@@ -265,7 +262,7 @@ export default function Auth({type}: Props): JSX.Element {
             <Grid container justify="center">
               <Grid item>
                 <Link href="/terms" variant="body2">
-                  By signing up you agree to our Terms of Service
+                  {t("signup.by-agree-terms")}
                 </Link>
               </Grid>
             </Grid>

@@ -121,7 +121,6 @@ function reducer(state: StateType, action: ActionType): StateType {
 }
 
 interface PaginationOptions {
-  // how many documents should we fetch at a time?
   limit?: number;
 }
 
@@ -131,7 +130,6 @@ export default function usePaginateQuery(
 ): any {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // when "after" changes, we update our query
   useEffect(() => {
     const fn = query.limit(state.limit || limit);
 
@@ -142,7 +140,6 @@ export default function usePaginateQuery(
     return (): void => unsubscribe();
   }, [state.after]);
 
-  // trigger firebase to load more
   function loadMore(): void {
     dispatch({type: "LOAD-MORE"});
   }

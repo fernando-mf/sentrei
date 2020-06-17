@@ -5,13 +5,9 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 
-import FeatureCardStyles from "./FeatureCardStyles";
+import Props from "@sentrei/common/types/components/FeatureCard";
 
-interface Props {
-  img: JSX.Element;
-  subTitle: string;
-  title: string;
-}
+import FeatureCardStyles from "./FeatureCardStyles";
 
 export default function FeatureCard({
   img,

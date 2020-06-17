@@ -9,17 +9,11 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 import React from "react";
 
-import Space from "@sentrei/common/models/Space";
-
+import Props from "@sentrei/common/types/components/SpaceCard";
 import Link from "@sentrei/ui/components/Link";
 import MemberMenu from "@sentrei/ui/components/MemberMenu";
 
 import SpaceCardStyles from "./SpaceCardStyles";
-
-interface Props {
-  space: Space.Get;
-  userId: string;
-}
 
 export default function SpaceCard({space, userId}: Props): JSX.Element {
   const classes = SpaceCardStyles();

@@ -4,17 +4,14 @@ import {TransitionProps} from "@material-ui/core/transitions";
 import MuiAlert from "@material-ui/lab/Alert";
 import React from "react";
 
-import SnackbarAction from "@sentrei/common/types/components/SnackbarAction";
+import Props from "@sentrei/common/types/components/Snackbar";
 import {analytics} from "@sentrei/common/utils/firebase";
 
 function SlideTransition(props: TransitionProps): JSX.Element {
   return <Slide {...props} direction="down" />;
 }
 
-interface Props {
-  action: SnackbarAction | null;
-}
-export default function Spacing({action}: Props): JSX.Element {
+export default function CustomSnackbar({action}: Props): JSX.Element {
   const [duration, setDuration] = React.useState<number | null>(null);
   const [message, setMessage] = React.useState<string>();
 

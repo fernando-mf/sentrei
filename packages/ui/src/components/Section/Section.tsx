@@ -2,14 +2,11 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 
+import Props from "@sentrei/common/types/components/Section";
 import RoughNotation from "@sentrei/ui/components/RoughNotation";
 
 import SectionStyles from "./SectionStyles";
 
-interface Props {
-  subTitle: string;
-  title: string;
-}
 export default function Section({subTitle, title}: Props): JSX.Element {
   const classes = SectionStyles();
 
