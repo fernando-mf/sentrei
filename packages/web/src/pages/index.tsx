@@ -128,15 +128,7 @@ const Index: NextPage = () => {
       />
       <Spacing />
       <div id="feature">
-        <SentreiFeature
-          sectionTitle={t("featureSectionTitle")}
-          titleOne={t("featureTitleOne")}
-          subTitleOne={t("featureSubTitleOne")}
-          titleTwo={t("featureTitleTwo")}
-          subTitleTwo={t("featureSubTitleTwo")}
-          titleThree={t("featureTitleThree")}
-          subTitleThree={t("featureSubTitleThree")}
-        />
+        <SentreiFeature />
       </div>
       <Spacing />
       <div id="testimonial">

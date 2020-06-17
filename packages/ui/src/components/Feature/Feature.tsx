@@ -2,6 +2,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import React from "react";
 
+import {useTranslation} from "@sentrei/common/i18n";
 import Props from "@sentrei/common/types/components/Feature";
 import FeatureCard from "@sentrei/ui/components/FeatureCard";
 import Section from "@sentrei/ui/components/Section";
@@ -9,22 +10,16 @@ import Section from "@sentrei/ui/components/Section";
 import FeatureStyles from "./FeatureStyles";
 
 export default function Feature({
-  sectionTitle,
   imgOne,
-  titleOne,
-  subTitleOne,
   imgTwo,
-  titleTwo,
-  subTitleTwo,
   imgThree,
-  titleThree,
-  subTitleThree,
 }: Props): JSX.Element {
   const classes = FeatureStyles();
+  const {t} = useTranslation();
 
   return (
     <>
-      <Section title={sectionTitle} subTitle="" />
+      <Section title={t("feature.sectionTitle")} subTitle="" />
       <Container maxWidth="md" component="main">
         <Grid
           container
@@ -35,16 +30,24 @@ export default function Feature({
           className={classes.container}
         >
           <Grid item xs={12} sm={4}>
-            <FeatureCard img={imgOne} title={titleOne} subTitle={subTitleOne} />
+            <FeatureCard
+              img={imgOne}
+              title={t("feature.titleOne")}
+              subTitle={t("feature.subTitleOne")}
+            />
           </Grid>
           <Grid item xs={12} sm={4}>
-            <FeatureCard img={imgTwo} title={titleTwo} subTitle={subTitleTwo} />
+            <FeatureCard
+              img={imgTwo}
+              title={t("feature.titleTwo")}
+              subTitle={t("feature.subTitleTwo")}
+            />
           </Grid>
           <Grid item xs={12} sm={4}>
             <FeatureCard
               img={imgThree}
-              title={titleThree}
-              subTitle={subTitleThree}
+              title={t("feature.titleThree")}
+              subTitle={t("feature.subTitleThree")}
             />
           </Grid>
         </Grid>

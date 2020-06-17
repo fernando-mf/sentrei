@@ -23,13 +23,13 @@
     "titleTwo": "Is the video communication encrypted?"
   },
   "feature": {
-    "featureSectionTitle": "Feature",
-    "featureSubTitleOne": "Everyone can access the workspace anytime they like",
-    "featureSubTitleThree": "Track daily analytics spent on the virtual workspace to achieve your personal goals",
-    "featureSubTitleTwo": "We provide focus oriented features so that you will not get distracted easily",
-    "featureTitleOne": "Unlimited Time",
-    "featureTitleThree": "Meet personal goals",
-    "featureTitleTwo": "Focus Oriented"
+    "sectionTitle": "Feature",
+    "subTitleOne": "Everyone can access the workspace anytime they like",
+    "subTitleThree": "Track daily analytics spent on the virtual workspace to achieve your personal goals",
+    "subTitleTwo": "We provide focus oriented features so that you will not get distracted easily",
+    "titleOne": "Unlimited Time",
+    "titleThree": "Meet personal goals",
+    "titleTwo": "Focus Oriented"
   },
   "header": {
     "faq": "FAQ",
