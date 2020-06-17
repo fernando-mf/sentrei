@@ -31,6 +31,14 @@
     "titleThree": "Meet personal goals",
     "titleTwo": "Focus Oriented"
   },
+  "footer": {
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "product": "Product",
+    "releases": "Releases",
+    "social": "Social",
+    "terms": "Terms and Conditions"
+  },
   "header": {
     "faq": "FAQ",
     "features": "Features",
@@ -52,16 +60,16 @@
     "description2Three": "Unlimited users & workspaces",
     "description2Two": "Unlimited users",
     "description3One": "Help center access",
-    "description3Three": "Designated success team",
+    "description3Three": "",
     "description3Two": "Help center access",
     "priceMonth": "/mo",
     "priceOne": "$0",
-    "priceThree": "$10",
+    "priceThree": "",
     "priceTwo": "$3",
     "sectionTitle": "Pricing",
     "subTitleTwo": "Most popular",
     "titleOne": "Free",
-    "titleThree": "Enterprise",
+    "titleThree": "",
     "titleTwo": "Pro"
   },
   "product": {

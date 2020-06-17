@@ -60,6 +60,7 @@
     "react-spring": "^9.0.0-rc.2",
     "react-typist": "^2.0.5",
     "react-use-gesture": "^7.0.15",
+    "react-useanimations": "^1.2.13",
     "styled-components": "^5.1.0",
     "typescript": "^3.8.3",
     "yup": "^0.29.0"

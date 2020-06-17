@@ -31,6 +31,14 @@
     "titleThree": "目標を達成",
     "titleTwo": "フォーカス指向"
   },
+  "footer": {
+    "legal": "法律関係",
+    "privacy": "個人情報保護方針",
+    "product": "プロダクト",
+    "releases": "リリース一覧",
+    "social": "SNS",
+    "terms": "利用規約"
+  },
   "header": {
     "faq": "FAQ",
     "features": "特徴",
@@ -56,13 +64,16 @@
     "description2Three": "制限のないユーザーとワークスペース",
     "description2Two": "無制限のユーザー",
     "description3One": "ヘルプセンターへのアクセス",
+    "description3Three": "",
     "description3Two": "ヘルプセンターへのアクセス",
     "priceMonth": "/月",
     "priceOne": "0円",
+    "priceThree": "",
     "priceTwo": "300円",
     "sectionTitle": "Pricing",
     "subTitleTwo": "最も人気のある",
     "titleOne": "無料",
+    "titleThree": "",
     "titleTwo": "プロフェッショナル"
   },
   "product": {
