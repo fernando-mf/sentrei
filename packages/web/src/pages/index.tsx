@@ -97,20 +97,7 @@ const Index: NextPage = () => {
         signupText={t("headerSignup")}
         testimonialText={t("headerTestimonial")}
       />
-      <SentreiBanner
-        bannerBottom={t("bannerBannerBottom")}
-        bannerBottomRough={t("bannerBannerBottomRough")}
-        bannerTextOne={t("bannerBannerTextOne")}
-        bannerTextTwo={t("bannerBannerTextTwo")}
-        bannerTextThree={t("bannerBannerTextThree")}
-        bannerTextRough={t("bannerBannerTextRough")}
-        bannerTop={t("bannerBannerTop")}
-        googleText={t("bannerGoogleText")}
-        startText={t("bannerStartText")}
-        typicalOne={t("bannerTypicalOne")}
-        typicalTwo={t("bannerTypicalTwo")}
-        typicalThree={t("bannerTypicalThree")}
-      />
+      <SentreiBanner />
       <Spacing />
       <SentreiScreen
         labelOne={t("screenLabelOne")}
