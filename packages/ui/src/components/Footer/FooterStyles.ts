@@ -19,6 +19,10 @@ const FeatureStyles = makeStyles((theme: Theme) =>
           ? theme.palette.grey[200]
           : theme.palette.grey[800],
     },
+    social: {
+      width: theme.spacing(7),
+      height: theme.spacing(7),
+    },
   }),
 );
 
