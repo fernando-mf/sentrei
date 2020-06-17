@@ -1,3 +1,9 @@
+## [4.88.7](https://github.com/sentrei/sentrei/compare/v4.88.6...v4.88.7) (2020-06-17)
+
+### Bug Fixes
+
+- **deps:** bump webpack-stats-plugin from 0.3.1 to 0.3.2 ([3c386f9](https://github.com/sentrei/sentrei/commit/3c386f9f93cb80ed3cbb1e1b1c38b3e97e6d5dc0))
+
 ## [4.88.6](https://github.com/sentrei/sentrei/compare/v4.88.5...v4.88.6) (2020-06-17)
 
 ### Bug Fixes
