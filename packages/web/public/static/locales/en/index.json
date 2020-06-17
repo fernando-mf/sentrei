@@ -1,4 +1,18 @@
 {
+  "banner": {
+    "bannerBottom": "do ",
+    "bannerBottomRough": "great work",
+    "bannerTextOne": "A unified virtual workspace",
+    "bannerTextTwo": "that ",
+    "bannerTextThree": "- instantly accessible from anywhere with a protected link -",
+    "bannerTextRough": "never disappears",
+    "bannerTop": "Where",
+    "googleText": "Sign up with Google",
+    "startText": "Get Started Now (Beta)",
+    "typicalOne": "remote teams",
+    "typicalTwo": "workforces",
+    "typicalThree": "classmates"
+  },
   "headerFaq": "FAQ",
   "headerFeatures": "Features",
   "headerPricing": "Pricing",
