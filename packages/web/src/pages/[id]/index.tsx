@@ -33,8 +33,6 @@ export const getStaticProps: GetStaticProps<SpacePageProps> = async ({
 const Spaces = ({
   space,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const {t} = useTranslation();
-
   const {isFallback} = useRouter();
 
   if (!space && isFallback) return <Loader />;
