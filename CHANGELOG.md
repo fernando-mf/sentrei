@@ -1,3 +1,9 @@
+# [4.87.0](https://github.com/sentrei/sentrei/compare/v4.86.0...v4.87.0) (2020-06-17)
+
+### Features
+
+- 🎸 add footer section ([d6b059e](https://github.com/sentrei/sentrei/commit/d6b059ed1be0acbf5a9c50efb3364b25ea629762))
+
 # [4.86.0](https://github.com/sentrei/sentrei/compare/v4.85.3...v4.86.0) (2020-06-17)
 
 ### Bug Fixes
