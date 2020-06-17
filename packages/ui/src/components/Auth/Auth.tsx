@@ -38,23 +38,23 @@ import AuthStyles from "./AuthStyles";
 
 export default function Auth({type}: Props): JSX.Element {
   const classes = AuthStyles();
-  const {t} = useTranslation();
+  const {t} = useTranslation(["auth"]);
 
   const AuthFormSchema = Yup.object().shape({
     email: Yup.string()
-      .required("Email is required")
-      .email("Please enter a valid email"),
-    password: Yup.string().required("Please enter a valid password"),
+      .required(t("auth.email.required"))
+      .email(t("auth.email.valid")),
+    password: Yup.string().required(t("auth.password.valid")),
     passwordConfirmation: Yup.string().oneOf(
       [Yup.ref("password")],
-      "Passwords must match",
+      t("auth.password.match"),
     ),
   });
 
   const ResetFormSchema = Yup.object().shape({
     email: Yup.string()
-      .required("Email is required")
-      .email("Please enter a valid email"),
+      .required(t("auth.email.required"))
+      .email(t("auth.email.valid")),
   });
 
   const {control, register, errors, handleSubmit} = useForm({
@@ -92,7 +92,7 @@ export default function Auth({type}: Props): JSX.Element {
       case authType.reset:
         try {
           await auth.sendPasswordResetEmail(data.email);
-          handleSuccess("Please check your email");
+          handleSuccess(t("auth.email.check"));
         } catch (err) {
           handleError(err);
         }
@@ -159,7 +159,7 @@ export default function Auth({type}: Props): JSX.Element {
                 src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
                 style={{marginRight: "1em"}}
               />
-              <Typography>Login with Google</Typography>
+              <Typography>{t("login.google")}</Typography>
             </Button>
             <Box pt={5} />
             <Divider flexItem className={classes.divider} />
