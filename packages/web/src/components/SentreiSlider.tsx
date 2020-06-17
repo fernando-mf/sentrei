@@ -30,7 +30,7 @@ export default function SentreiSlider(): JSX.Element {
         <Typography align="center" variant="h4">
           {t("slider.titleOne")}
           <RoughNotation
-            color="secondary"
+            color="secondary-light"
             text={t("slider.titleTwo")}
             type="highlight"
           />

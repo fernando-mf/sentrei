@@ -50,10 +50,6 @@
     "title": "セントレイ"
   },
   "pricing": {
-    "Description3Three": "専任ヘルプチーム",
-    "PriceThree": "1000円",
-    "SubTitleThree": "",
-    "TitleThree": "企業",
     "buttonTextOne": "無料でお申し込み頂けます",
     "buttonTextThree": "お問い合わせ",
     "buttonTextTwo": "始めましょう",
@@ -64,16 +60,16 @@
     "description2Three": "制限のないユーザーとワークスペース",
     "description2Two": "無制限のユーザー",
     "description3One": "ヘルプセンターへのアクセス",
-    "description3Three": "",
+    "description3Three": "専任ヘルプチーム",
     "description3Two": "ヘルプセンターへのアクセス",
     "priceMonth": "/月",
     "priceOne": "0円",
-    "priceThree": "",
+    "priceThree": "1000円",
     "priceTwo": "300円",
     "sectionTitle": "Pricing",
     "subTitleTwo": "最も人気のある",
     "titleOne": "無料",
-    "titleThree": "",
+    "titleThree": "企業",
     "titleTwo": "プロフェッショナル"
   },
   "product": {

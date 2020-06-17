@@ -47,7 +47,8 @@
         "@typescript-eslint/restrict-template-expressions": 0,
         "react/display-name": 0,
         "react/jsx-props-no-spreading": 0,
-        "spaced-comment": 2,
+        "no-nested-ternary": 0,
+        "spaced-comment": 1,
         "import/no-extraneous-dependencies": [
           "error",
           {
