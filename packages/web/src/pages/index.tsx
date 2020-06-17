@@ -91,11 +91,7 @@ const Index: NextPage = () => {
       <SentreiHeader />
       <SentreiBanner />
       <Spacing />
-      <SentreiScreen
-        labelOne={t("screenLabelOne")}
-        labelTwo={t("screenLabelTwo")}
-        labelThree={t("screenLabelThree")}
-      />
+      <SentreiScreen />
       <Spacing />
       <div id="product">
         <SentreiProduct
