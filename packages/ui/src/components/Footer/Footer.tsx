@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import React from "react";
 import UseAnimations from "react-useanimations";
 
+import {useTranslation} from "@sentrei/common/i18n";
 import Copyright from "@sentrei/ui/components/Copyright";
 import Link from "@sentrei/ui/components/Link";
 
@@ -14,6 +15,7 @@ import FooterStyles from "./FooterStyles";
 
 export default function Footer(): JSX.Element {
   const classes = FooterStyles();
+  const {t} = useTranslation();
 
   return (
     <footer className={classes.footer}>
@@ -21,26 +23,26 @@ export default function Footer(): JSX.Element {
         <Grid container justify="space-evenly">
           <Grid item spacing={3} xs={12} sm={4}>
             <Typography variant="h6" gutterBottom>
-              Product
+              {t("footer.product")}
             </Typography>
             <MuiLink href="https://github.com/sentrei/sentrei/releases">
-              <Typography gutterBottom>Releases</Typography>
+              <Typography gutterBottom>{t("footer.releases")}</Typography>
             </MuiLink>
           </Grid>
           <Grid item spacing={3} xs={12} sm={4}>
             <Typography variant="h6" gutterBottom>
-              Legal
+              {t("footer.legal")}
             </Typography>
             <Link href="/privacy">
-              <Typography gutterBottom>Privacy Policy</Typography>
+              <Typography gutterBottom>{t("footer.privacy")}</Typography>
             </Link>
             <Link href="/terms">
-              <Typography gutterBottom>Terms and Conditions</Typography>
+              <Typography gutterBottom>{t("footer.terms")}</Typography>
             </Link>
           </Grid>
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" gutterBottom>
-              Social
+              {t("footer.social")}
             </Typography>
             <Grid container direction="row" spacing={3}>
               <Grid item>
