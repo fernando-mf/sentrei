@@ -1,3 +1,14 @@
+# [4.86.0](https://github.com/sentrei/sentrei/compare/v4.85.3...v4.86.0) (2020-06-17)
+
+### Bug Fixes
+
+- 🐛 complete banner section ([132f9ae](https://github.com/sentrei/sentrei/commit/132f9ae6a41b362731c8a89a19e92ae5fc89b46f))
+
+### Features
+
+- 🎸 complete i18n refactor ([173101e](https://github.com/sentrei/sentrei/commit/173101e78e38fd4898c171d9199bdbb9779e1195))
+- 🎸 refactor interfaces to types/components ([ce1b68f](https://github.com/sentrei/sentrei/commit/ce1b68f4400d9d0f08e839c7f6d7335530fa35d7))
+
 ## [4.85.3](https://github.com/sentrei/sentrei/compare/v4.85.2...v4.85.3) (2020-06-17)
 
 ### Bug Fixes
