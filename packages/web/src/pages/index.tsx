@@ -186,15 +186,7 @@ const Index: NextPage = () => {
       </div>
       <Spacing />
       <div id="faq">
-        <SentreiFaq
-          sectionTitle={t("faqSectionTitle")}
-          titleOne={t("faqTitleOne")}
-          bodyOne={t("faqBodyOne")}
-          titleTwo={t("faqTitleTwo")}
-          bodyTwo={t("faqBodyTwo")}
-          titleThree={t("faqTitleThree")}
-          bodyThree={t("faqBodyThree")}
-        />
+        <SentreiFaq />
       </div>
       <Spacing />
       <Footer />

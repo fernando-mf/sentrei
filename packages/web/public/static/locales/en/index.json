@@ -13,6 +13,15 @@
     "typicalTwo": "workforces",
     "typicalThree": "classmates"
   },
+  "faq": {
+    "sectionTitle": "FAQ",
+    "titleOne": "Does the virtual workspace really come with unlimited time?",
+    "bodyOne": "Yes, it comes with unlimited time for anyone - as long as you don't have simultaneously three people on the workspace. In that case, you will have to create a seperate workspace for free (which supports up to 3 people) or upgrade to the Pro version.",
+    "titleTwo": "Is the video communication encrypted?",
+    "bodyTwo": "Yes, the video communication is encrypted under the industry standard Web RTC protocols.",
+    "titleThree": "What's the motivation behind the product?",
+    "bodyThree": "The dominant competitors on the market are premised on the fact that we will simultaneously communicate at all times, which hardly recreates the real needs for virtual workspaces. That's where we are here to help."
+  },
   "headerFaq": "FAQ",
   "headerFeatures": "Features",
   "headerPricing": "Pricing",
@@ -93,12 +102,5 @@
   "pricingDescription3Three": "Designated success team",
   "pricingPriceThree": "$10",
   "pricingTitleThree": "Enterprise",
-  "pricingSubTitleThree": "",
-  "faqSectionTitle": "FAQ",
-  "faqTitleOne": "Does the virtual workspace really come with unlimited time?",
-  "faqBodyOne": "Yes, it comes with unlimited time for anyone - as long as you don't have simultaneously three people on the workspace. In that case, you will have to create a seperate workspace for free (which supports up to 3 people) or upgrade to the Pro version.",
-  "faqTitleTwo": "Is the video communication encrypted?",
-  "faqBodyTwo": "Yes, the video communication is encrypted under the industry standard Web RTC protocols.",
-  "faqTitleThree": "What's the motivation behind the product?",
-  "faqBodyThree": "The dominant competitors on the market are premised on the fact that we will simultaneously communicate at all times, which hardly recreates the real needs for virtual workspaces. That's where we are here to help."
+  "pricingSubTitleThree": ""
 }
