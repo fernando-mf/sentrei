@@ -5,7 +5,7 @@ import Router from "next/router";
 import React from "react";
 
 import GlobalContext from "@sentrei/common/context/GlobalContext";
-import {useTranslation, withTranslation} from "@sentrei/common/i18n";
+import {includeDefaultNamespaces} from "@sentrei/common/i18n";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Footer from "@sentrei/ui/components/Footer";
 import Loader from "@sentrei/ui/components/Loader";
@@ -68,7 +68,6 @@ const SentreiTestimonial = dynamic(
 
 const Index: NextPage = () => {
   const {user} = React.useContext(GlobalContext);
-  const {t} = useTranslation();
 
   React.useEffect(() => {
     analytics().setCurrentScreen("landing");
@@ -123,8 +122,8 @@ Index.getInitialProps = (): {
   namespacesRequired: string[];
 } => {
   return {
-    namespacesRequired: ["index", "common"],
+    namespacesRequired: includeDefaultNamespaces(),
   };
 };
 
-export default withTranslation()(Index);
+export default Index;

@@ -39,7 +39,7 @@ Dashboard.getInitialProps = (): {
   namespacesRequired: string[];
 } => {
   return {
-    namespacesRequired: includeDefaultNamespaces(["index"]),
+    namespacesRequired: includeDefaultNamespaces(),
   };
 };
 
