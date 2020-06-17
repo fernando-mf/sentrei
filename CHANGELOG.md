@@ -1,3 +1,9 @@
+## [4.88.2](https://github.com/sentrei/sentrei/compare/v4.88.1...v4.88.2) (2020-06-17)
+
+### Bug Fixes
+
+- 🐛 add auth namespace ([64232b5](https://github.com/sentrei/sentrei/commit/64232b5b43323a3ee3ee2aa62e1aff78be1d8390))
+
 ## [4.88.1](https://github.com/sentrei/sentrei/compare/v4.88.0...v4.88.1) (2020-06-17)
 
 ### Bug Fixes
