@@ -6,9 +6,9 @@ import AvatarGroup from "@material-ui/lab/AvatarGroup";
 import Skeleton from "@material-ui/lab/Skeleton";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/SpacePanel";
 import Member from "@sentrei/common/models/Member";
 import {getMembers} from "@sentrei/common/services/members";
+import Props from "@sentrei/common/types/components/SpacePanel";
 import useLoadMore from "@sentrei/ui/hooks/useLoadMore";
 
 import SpacePanelStyles from "./SpacePanelStyles";

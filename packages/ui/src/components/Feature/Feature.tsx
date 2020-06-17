@@ -2,7 +2,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/Feature";
+import Props from "@sentrei/common/types/components/Feature";
 import FeatureCard from "@sentrei/ui/components/FeatureCard";
 import Section from "@sentrei/ui/components/Section";
 

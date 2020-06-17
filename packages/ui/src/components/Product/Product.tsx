@@ -2,7 +2,7 @@ import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/Product";
+import Props from "@sentrei/common/types/components/Product";
 import ProductCard from "@sentrei/ui/components/ProductCard";
 
 import ProductStyles from "./ProductStyles";

@@ -3,7 +3,7 @@ import React from "react";
 import {useInView} from "react-intersection-observer";
 
 import {i18n} from "@sentrei/common/i18n";
-import Original from "@sentrei/common/interfaces/Screen";
+import Original from "@sentrei/common/types/components/Screen";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Screen from "@sentrei/ui/components/Screen";
 import ConnectPicture from "@sentrei/web/components/Picture/ConnectPicture";

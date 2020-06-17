@@ -7,7 +7,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/Screen";
+import Props from "@sentrei/common/types/components/Screen";
 import ScreenPanel from "@sentrei/ui/components/ScreenPanel";
 
 function a11yProps(

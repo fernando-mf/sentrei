@@ -3,7 +3,7 @@ import React from "react";
 import {useInView} from "react-intersection-observer";
 
 import {i18n} from "@sentrei/common/i18n";
-import Original from "@sentrei/common/interfaces/Testimonial";
+import Original from "@sentrei/common/types/components/Testimonial";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Testimonial from "@sentrei/ui/components/Testimonial";
 import FocusPicture from "@sentrei/web/components/Picture/FocusPicture";

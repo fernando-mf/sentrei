@@ -2,7 +2,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/Pricing";
+import Props from "@sentrei/common/types/components/Pricing";
 import PricingCard from "@sentrei/ui/components/PricingCard";
 import Section from "@sentrei/ui/components/Section";
 

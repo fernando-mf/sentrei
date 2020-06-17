@@ -1,7 +1,7 @@
 import React from "react";
 
 import {i18n} from "@sentrei/common/i18n";
-import Original from "@sentrei/common/interfaces/Header";
+import Original from "@sentrei/common/types/components/Header";
 import Header from "@sentrei/ui/components/Header";
 import LogoPicture from "@sentrei/web/components/Picture/LogoPicture";
 

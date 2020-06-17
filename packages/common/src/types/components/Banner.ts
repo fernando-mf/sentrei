@@ -1,4 +1,4 @@
-import Original from "@sentrei/common/interfaces/Typical";
+import Original from "@sentrei/common/types/components/Typical";
 
 export default interface Props extends Original {
   bannerBottom: string;

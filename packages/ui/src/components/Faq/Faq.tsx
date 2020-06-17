@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/Faq";
+import Props from "@sentrei/common/types/components/Faq";
 import Section from "@sentrei/ui/components/Section";
 
 import FaqStyles from "./FaqStyles";

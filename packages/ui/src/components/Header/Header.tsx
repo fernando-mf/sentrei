@@ -15,7 +15,7 @@ import React from "react";
 import Scrollspy from "react-scrollspy";
 
 import {i18n} from "@sentrei/common/i18n";
-import Props from "@sentrei/common/interfaces/Header";
+import Props from "@sentrei/common/types/components/Header";
 import Link from "@sentrei/ui/components/Link";
 import Logo from "@sentrei/ui/components/Logo";
 

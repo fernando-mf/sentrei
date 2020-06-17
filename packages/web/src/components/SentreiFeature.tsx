@@ -2,7 +2,7 @@ import React from "react";
 import {useInView} from "react-intersection-observer";
 
 import {i18n} from "@sentrei/common/i18n";
-import Original from "@sentrei/common/interfaces/Feature";
+import Original from "@sentrei/common/types/components/Feature";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Feature from "@sentrei/ui/components/Feature";
 import FocusPicture from "@sentrei/web/components/Picture/FocusPicture";

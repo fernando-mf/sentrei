@@ -2,7 +2,7 @@ import React from "react";
 import {useInView} from "react-intersection-observer";
 import {RoughNotation} from "react-rough-notation";
 
-import Props from "@sentrei/common/interfaces/RoughNotation";
+import Props from "@sentrei/common/types/components/RoughNotation";
 import Theme from "@sentrei/ui/containers/Theme";
 
 export default function CustomRoughNotation({

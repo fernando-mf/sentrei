@@ -3,7 +3,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/Profile";
+import Props from "@sentrei/common/types/components/Profile";
 import Section from "@sentrei/ui/components/Section";
 
 import ProfileStyles from "./ProfileStyles";

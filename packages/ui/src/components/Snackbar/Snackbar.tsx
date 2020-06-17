@@ -4,7 +4,7 @@ import {TransitionProps} from "@material-ui/core/transitions";
 import MuiAlert from "@material-ui/lab/Alert";
 import React from "react";
 
-import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
+import SnackbarAction from "@sentrei/common/types/components/SnackbarAction";
 import {analytics} from "@sentrei/common/utils/firebase";
 
 function SlideTransition(props: TransitionProps): JSX.Element {

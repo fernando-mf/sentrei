@@ -2,7 +2,7 @@ import React from "react";
 import {useInView} from "react-intersection-observer";
 
 import {i18n} from "@sentrei/common/i18n";
-import Props from "@sentrei/common/interfaces/Faq";
+import Props from "@sentrei/common/types/components/Faq";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Faq from "@sentrei/ui/components/Faq";
 

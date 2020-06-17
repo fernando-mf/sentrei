@@ -12,8 +12,8 @@ import React from "react";
 import "firebase/auth";
 
 import GlobalContext from "@sentrei/common/context/GlobalContext";
-import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
 import {createSpace} from "@sentrei/common/services/spaces";
+import SnackbarAction from "@sentrei/common/types/components/SnackbarAction";
 import {timestamp} from "@sentrei/common/utils/firebase";
 import firebaseError from "@sentrei/common/utils/firebaseError";
 import Snackbar from "@sentrei/ui/components/Snackbar";

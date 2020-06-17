@@ -9,9 +9,8 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Router from "next/router";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/MemberDialog";
-
 import {unfollow} from "@sentrei/common/services/members";
+import Props from "@sentrei/common/types/components/MemberDialog";
 
 export default function MemberDialog({
   open,

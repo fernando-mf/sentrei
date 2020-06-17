@@ -3,7 +3,7 @@ import React from "react";
 import {useInView} from "react-intersection-observer";
 
 import {i18n} from "@sentrei/common/i18n";
-import Props from "@sentrei/common/interfaces/Banner";
+import Props from "@sentrei/common/types/components/Banner";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Banner from "@sentrei/ui/components/Banner";
 

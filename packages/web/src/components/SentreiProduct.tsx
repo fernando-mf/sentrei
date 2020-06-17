@@ -2,7 +2,7 @@ import React from "react";
 import {useInView} from "react-intersection-observer";
 
 import {i18n} from "@sentrei/common/i18n";
-import Original from "@sentrei/common/interfaces/Product";
+import Original from "@sentrei/common/types/components/Product";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Product from "@sentrei/ui/components/Product";
 import ConnectPicture from "@sentrei/web/components/Picture/ConnectPicture";

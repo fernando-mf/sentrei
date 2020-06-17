@@ -6,8 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import {useRouter} from "next/router";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/Banner";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
+import Props from "@sentrei/common/types/components/Banner";
 import Link from "@sentrei/ui/components/Link";
 import RoughNotation from "@sentrei/ui/components/RoughNotation";
 import Typical from "@sentrei/ui/components/Typical";

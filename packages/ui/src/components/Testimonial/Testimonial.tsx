@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/Testimonial";
+import Props from "@sentrei/common/types/components/Testimonial";
 import Section from "@sentrei/ui/components/Section";
 import TestimonialCard from "@sentrei/ui/components/TestimonialCard";
 
