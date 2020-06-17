@@ -86,9 +86,9 @@
     "labelTwo": "分享爱"
   },
   "slider": {
-    "sectionTitleOne": "这些团队的人",
-    "sectionTitleThree": " Sentrei",
-    "sectionTitleTwo": "都喜欢"
+    "titleOne": "这些团队的人",
+    "titleThree": " Sentrei",
+    "titleTwo": "都喜欢"
   },
   "testimonial": {
     "authorOne": "中野信树",

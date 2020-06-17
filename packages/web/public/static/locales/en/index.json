@@ -86,9 +86,9 @@
     "labelTwo": "Share Love"
   },
   "slider": {
-    "sectionTitleOne": "The people from these teams are ",
-    "sectionTitleThree": " Sentrei",
-    "sectionTitleTwo": "loving"
+    "titleOne": "The people from these teams are ",
+    "titleThree": " Sentrei",
+    "titleTwo": "loving"
   },
   "testinominal": {
     "authorOne": "Shun Kakinoki",

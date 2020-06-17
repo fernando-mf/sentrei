@@ -86,9 +86,9 @@
     "labelTwo": "Share Love"
   },
   "slider": {
-    "sectionTitleOne": "これらのチームの人々はSentreiを日々 ",
-    "sectionTitleThree": " しております",
-    "sectionTitleTwo": "愛用"
+    "titleOne": "これらのチームの人々はSentreiを日々 ",
+    "titleThree": " しております",
+    "titleTwo": "愛用"
   },
   "testimonial": {
     "authorOne": "Shun Kakinoki",

@@ -96,11 +96,7 @@ const Index: NextPage = () => {
       <div id="product">
         <SentreiProduct />
       </div>
-      <SentreiSlider
-        sectionTitleOne={t("sliderSectionTitleOne")}
-        sectionTitleTwo={t("sliderSectionTitleTwo")}
-        sectionTitleThree={t("sliderSectionTitleThree")}
-      />
+      <SentreiSlider />
       <Spacing />
       <div id="feature">
         <SentreiFeature />
