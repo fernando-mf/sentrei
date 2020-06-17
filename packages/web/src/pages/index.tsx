@@ -103,49 +103,11 @@ const Index: NextPage = () => {
       </div>
       <Spacing />
       <div id="testimonial">
-        <SentreiTestimonial
-          sectionTitle={t("testimonialSectionTitle")}
-          authorOne={t("testimonialAuthorOne")}
-          bodyOne={t("testimonialBodyOne")}
-          occupationOne={t("testimonialOccupationOne")}
-          titleOne={t("testimonialTitleOne")}
-          authorTwo={t("testimonialAuthorTwo")}
-          bodyTwo={t("testimonialBodyTwo")}
-          occupationTwo={t("testimonialOccupationTwo")}
-          titleTwo={t("testimonialTitleTwo")}
-          authorThree={t("testimonialAuthorThree")}
-          bodyThree={t("testimonialBodyThree")}
-          occupationThree={t("testimonialOccupationThree")}
-          titleThree={t("testimonialTitleThree")}
-        />
+        <SentreiTestimonial />
       </div>
       <Spacing />
       <div id="pricing">
-        <SentreiPricing
-          sectionTitle={t("pricingSectionTitle")}
-          priceMonth={t("pricingPriceMonth")}
-          buttonTextOne={t("pricingButtonTextOne")}
-          description1One={t("pricingDescription1One")}
-          description2One={t("pricingDescription2One")}
-          description3One={t("pricingDescription3One")}
-          priceOne={t("pricingPriceOne")}
-          titleOne={t("pricingTitleOne")}
-          subTitleOne={t("pricingSubTitleOne")}
-          buttonTextTwo={t("pricingButtonTextTwo")}
-          description1Two={t("pricingDescription1Two")}
-          description2Two={t("pricingDescription2Two")}
-          description3Two={t("pricingDescription3Two")}
-          priceTwo={t("pricingPriceTwo")}
-          titleTwo={t("pricingTitleTwo")}
-          subTitleTwo={t("pricingSubTitleTwo")}
-          buttonTextThree={t("pricingButtonTextThree")}
-          description1Three={t("pricingDescription1Three")}
-          description2Three={t("pricingDescription2Three")}
-          description3Three={t("pricingDescription3Three")}
-          priceThree={t("pricingPriceThree")}
-          titleThree={t("pricingTitleThree")}
-          subTitleThree={t("pricingSubTitleThree")}
-        />
+        <SentreiPricing />
       </div>
       <Spacing />
       <div id="faq">

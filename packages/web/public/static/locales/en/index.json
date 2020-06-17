@@ -59,8 +59,6 @@
     "priceThree": "$10",
     "priceTwo": "$3",
     "sectionTitle": "Pricing",
-    "subTitleOne": "",
-    "subTitleThree": "",
     "subTitleTwo": "Most popular",
     "titleOne": "Free",
     "titleThree": "Enterprise",
@@ -90,7 +88,7 @@
     "titleThree": " Sentrei",
     "titleTwo": "loving"
   },
-  "testinominal": {
+  "testimonial": {
     "authorOne": "Shun Kakinoki",
     "authorThree": "Shun Kakinoki",
     "authorTwo": "Shun Kakinoki",
