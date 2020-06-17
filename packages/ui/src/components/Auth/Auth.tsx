@@ -38,23 +38,23 @@ import AuthStyles from "./AuthStyles";
 
 export default function Auth({type}: Props): JSX.Element {
   const classes = AuthStyles();
-  const {t} = useTranslation();
+  const {t} = useTranslation(["auth"]);
 
   const AuthFormSchema = Yup.object().shape({
     email: Yup.string()
-      .required("Email is required")
-      .email("Please enter a valid email"),
-    password: Yup.string().required("Please enter a valid password"),
+      .required(t("auth.email.required"))
+      .email(t("auth.email.valid")),
+    password: Yup.string().required(t("auth.password.valid")),
     passwordConfirmation: Yup.string().oneOf(
       [Yup.ref("password")],
-      "Passwords must match",
+      t("auth.password.match"),
     ),
   });
 
   const ResetFormSchema = Yup.object().shape({
     email: Yup.string()
-      .required("Email is required")
-      .email("Please enter a valid email"),
+      .required(t("auth.email.required"))
+      .email(t("auth.email.valid")),
   });
 
   const {control, register, errors, handleSubmit} = useForm({
