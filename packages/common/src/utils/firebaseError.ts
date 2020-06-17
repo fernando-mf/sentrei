@@ -1,4 +1,4 @@
-import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
+import SnackbarAction from "@sentrei/common/types/components/SnackbarAction";
 
 const firebaseError = (
   err: firebase.FirebaseError,

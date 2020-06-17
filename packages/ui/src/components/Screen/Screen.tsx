@@ -7,7 +7,8 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/Screen";
+import {useTranslation} from "@sentrei/common/i18n";
+import Props from "@sentrei/common/types/components/Screen";
 import ScreenPanel from "@sentrei/ui/components/ScreenPanel";
 
 function a11yProps(
@@ -22,14 +23,9 @@ function a11yProps(
   };
 }
 
-export default function Screen({
-  imgOne,
-  imgTwo,
-  imgThree,
-  labelOne,
-  labelTwo,
-  labelThree,
-}: Props): JSX.Element {
+export default function Screen({imgOne, imgTwo, imgThree}: Props): JSX.Element {
+  const {t} = useTranslation();
+
   const [value, setValue] = React.useState<number>(0);
 
   const handleChange = (
@@ -50,9 +46,21 @@ export default function Screen({
           variant="scrollable"
           scrollButtons="auto"
         >
-          <Tab label={labelOne} icon={<HomeWorkIcon />} {...a11yProps(0)} />
-          <Tab label={labelTwo} icon={<FavoriteIcon />} {...a11yProps(1)} />
-          <Tab label={labelThree} icon={<AssessmentIcon />} {...a11yProps(2)} />
+          <Tab
+            label={t("screen.labelOne")}
+            icon={<HomeWorkIcon />}
+            {...a11yProps(0)}
+          />
+          <Tab
+            label={t("screen.labelTwo")}
+            icon={<FavoriteIcon />}
+            {...a11yProps(1)}
+          />
+          <Tab
+            label={t("screen.labelThree")}
+            icon={<AssessmentIcon />}
+            {...a11yProps(2)}
+          />
         </Tabs>
       </Grid>
       <ScreenPanel value={value} index={0}>

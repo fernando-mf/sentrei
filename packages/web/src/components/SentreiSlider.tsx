@@ -5,42 +5,36 @@ import React from "react";
 import "@sentrei/web/styles/slider.scss";
 import {useInView} from "react-intersection-observer";
 
+import {useTranslation} from "@sentrei/common/i18n";
 import {analytics} from "@sentrei/common/utils/firebase";
 import RoughNotation from "@sentrei/ui/components/RoughNotation";
 import KeioPicture from "@sentrei/web/components/Picture/KeioPicture";
 import UclPicture from "@sentrei/web/components/Picture/UclPicture";
 
-interface Props {
-  sectionTitleOne: string;
-  sectionTitleTwo: string;
-  sectionTitleThree: string;
-}
-
-export default function SentreiSlider({
-  sectionTitleOne,
-  sectionTitleTwo,
-  sectionTitleThree,
-}: Props): JSX.Element {
+export default function SentreiSlider(): JSX.Element {
+  const {t} = useTranslation();
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
+
   React.useEffect(() => {
     if (inView) {
       analytics().logEvent("landing", {section: "slider"});
     }
   }, [inView]);
+
   return (
     <div ref={ref}>
       <Box p={4} />
       <Container maxWidth="md">
         <Typography align="center" variant="h4">
-          {sectionTitleOne}
+          {t("slider.titleOne")}
           <RoughNotation
             color="secondary"
-            text={sectionTitleTwo}
+            text={t("slider.titleTwo")}
             type="highlight"
           />
-          {sectionTitleThree}
+          {t("slider.titleThree")}
         </Typography>
       </Container>
       <Box p={3} />

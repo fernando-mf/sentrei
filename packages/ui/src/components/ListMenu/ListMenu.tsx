@@ -6,7 +6,7 @@ import AccessibilityNewIcon from "@material-ui/icons/AccessibilityNew";
 import Router from "next/router";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/ListMenu";
+import Props from "@sentrei/common/types/components/ListMenu";
 
 export default function ListMenu({
   anchorEl,

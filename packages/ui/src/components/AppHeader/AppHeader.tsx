@@ -7,7 +7,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/AppHeader";
+import Props from "@sentrei/common/types/components/AppHeader";
 import ListMenu from "@sentrei/ui/components/ListMenu";
 import Logo from "@sentrei/ui/components/Logo";
 import ProfileMenu from "@sentrei/ui/components/ProfileMenu";

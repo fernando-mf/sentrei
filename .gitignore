@@ -1,3 +1,51 @@
+# Blog related.
+**/blog/public
+
+# Dvc related.
+**/.dvc/config.local
+**/.dvc/updater
+**/.dvc/lock
+**/.dvc/updater.lock
+**/.dvc/tmp
+**/.dvc/state-journal
+**/.dvc/state-wal
+**/.dvc/state
+**/.dvc/cache
+
+# Functions related.
+**/functions/.runtimeconfig.json
+**/functions/data
+**/functions/env.json
+**/functions/alpha.env.json
+**/functions/beta.env.json
+**/functions/master.env.json
+**/functions/firebase.json
+
+# Mobile related.
+**/mobile/firebase.json
+
+# Typedoc related.
+**/typedoc/firebase.json
+
+# UI related.
+**/ui/.reg
+**/ui/lib
+**/ui/out
+**/ui/__screenshots__
+
+# Web related.
+**/web/cypress/integration/*.d.ts
+**/web/cypress/integration/*.d.ts.map
+**/web/firebase.json
+**/web/out
+**/web/cypress/videos
+
+# Yarn related.
+.yarn
+
+# Firebase related.
+**/.firebase
+
 # Android related
 **/android/**/gradle-wrapper.jar
 **/android/.bundle
@@ -51,43 +99,6 @@
 !**/ios/**/default.mode2v3
 !**/ios/**/default.pbxuser
 !**/ios/**/default.perspectivev3
-
-# Blog related.
-**/blog/public
-
-# Functions related.
-**/functions/.runtimeconfig.json
-**/functions/data
-**/functions/env.json
-**/functions/alpha.env.json
-**/functions/beta.env.json
-**/functions/master.env.json
-**/functions/firebase.json
-
-# Mobile related.
-**/mobile/firebase.json
-
-# Typedoc related.
-**/typedoc/firebase.json
-
-# UI related.
-**/ui/.reg
-**/ui/lib
-**/ui/out
-**/ui/__screenshots__
-
-# Web related.
-**/web/cypress/integration/*.d.ts
-**/web/cypress/integration/*.d.ts.map
-**/web/firebase.json
-**/web/out
-**/web/cypress/videos
-
-# Yarn related.
-.yarn
-
-# Firebase related.
-**/.firebase
 
 # Miscellaneous
 *.class

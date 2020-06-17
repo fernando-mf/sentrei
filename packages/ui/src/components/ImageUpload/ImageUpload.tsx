@@ -4,10 +4,10 @@ import {AddAPhoto} from "@material-ui/icons";
 import React from "react";
 
 import {maxFileSize} from "@sentrei/common/const";
-import Props from "@sentrei/common/interfaces/ImageUpload";
-import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
-
 import upload from "@sentrei/common/services/upload";
+import Props from "@sentrei/common/types/components/ImageUpload";
+import SnackbarAction from "@sentrei/common/types/components/SnackbarAction";
+
 import firebaseError from "@sentrei/common/utils/firebaseError";
 
 import Snackbar from "@sentrei/ui/components/Snackbar";

@@ -5,7 +5,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/MemberMenu";
+import Props from "@sentrei/common/types/components/MemberMenu";
 import MemberDialog from "@sentrei/ui/components/MemberDialog";
 
 export default function MemberMenu({

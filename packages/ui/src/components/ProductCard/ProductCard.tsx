@@ -6,7 +6,7 @@ import React from "react";
 
 import Tilt from "react-parallax-tilt";
 
-import Props from "@sentrei/common/interfaces/ProductCard";
+import Props from "@sentrei/common/types/components/ProductCard";
 import RoughNotation from "@sentrei/ui/components/RoughNotation";
 
 import ProductStyles from "./ProductCardStyles";

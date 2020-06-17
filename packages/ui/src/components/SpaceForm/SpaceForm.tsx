@@ -8,7 +8,7 @@ import React from "react";
 import {useForm, Controller} from "react-hook-form";
 import * as Yup from "yup";
 
-import Props from "@sentrei/common/interfaces/SpaceForm";
+import Props from "@sentrei/common/types/components/SpaceForm";
 
 import ImageUpload from "@sentrei/ui/components/ImageUpload";
 

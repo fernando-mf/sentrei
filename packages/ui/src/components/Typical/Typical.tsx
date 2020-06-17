@@ -4,7 +4,7 @@ import {useSpring, animated} from "react-spring";
 import Typist from "react-typist";
 import styled from "styled-components";
 
-import Props from "@sentrei/common/interfaces/Typical";
+import Props from "@sentrei/common/types/components/Typical";
 
 import TypicalStyles from "./TypicalStyles";
 

@@ -6,7 +6,7 @@ import React from "react";
 import {withTranslation} from "@sentrei/common/i18n";
 import Copyright from "@sentrei/ui/components/Copyright";
 import Link from "@sentrei/ui/components/Link";
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 function Custom404(): JSX.Element {
   return (
     <Container maxWidth="sm">

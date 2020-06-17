@@ -5,7 +5,6 @@ import Error from "next/error";
 import {useRouter} from "next/router";
 import * as React from "react";
 
-import {useTranslation} from "@sentrei/common/i18n";
 import Space from "@sentrei/common/models/Space";
 import {getSpace, listSpaces} from "@sentrei/common/services/spaces";
 import Loader from "@sentrei/ui/components/Loader";
@@ -33,8 +32,6 @@ export const getStaticProps: GetStaticProps<SpacePageProps> = async ({
 const Spaces = ({
   space,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const {t} = useTranslation();
-
   const {isFallback} = useRouter();
 
   if (!space && isFallback) return <Loader />;
@@ -42,15 +39,7 @@ const Spaces = ({
 
   return (
     <>
-      <SentreiAppHeader
-        faqText={t("headerFaq")}
-        featuresText={t("headerFeatures")}
-        pricingText={t("headerPricing")}
-        productText={t("headerProduct")}
-        loginText={t("headerLogin")}
-        signupText={t("headerSignup")}
-        testimonialText={t("headerTestimonial")}
-      />
+      <SentreiAppHeader />
       <SpaceList space={space} />
     </>
   );

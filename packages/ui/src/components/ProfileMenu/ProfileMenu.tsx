@@ -9,7 +9,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import Router from "next/router";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/ProfileMenu";
+import Props from "@sentrei/common/types/components/ProfileMenu";
 import {auth} from "@sentrei/common/utils/firebase";
 
 export default function ProfileMenu({

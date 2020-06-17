@@ -6,25 +6,18 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import React from "react";
 
-import Props from "@sentrei/common/interfaces/Faq";
+import {useTranslation} from "@sentrei/common/i18n";
 import Section from "@sentrei/ui/components/Section";
 
 import FaqStyles from "./FaqStyles";
 
-export default function Faq({
-  sectionTitle,
-  titleOne,
-  bodyOne,
-  titleTwo,
-  bodyTwo,
-  titleThree,
-  bodyThree,
-}: Props): JSX.Element {
+export default function Faq(): JSX.Element {
   const classes = FaqStyles();
+  const {t} = useTranslation();
 
   return (
     <>
-      <Section title={sectionTitle} subTitle="" />
+      <Section title={t("faq.sectionTitle")} subTitle="" />
       <Container maxWidth="md" component="main">
         <ExpansionPanel>
           <ExpansionPanelSummary
@@ -33,11 +26,11 @@ export default function Faq({
             id="panel1a-header"
           >
             <Typography variant="h6" className={classes.heading}>
-              {titleOne}
+              {t("faq.titleOne")}
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>{bodyOne}</Typography>
+            <Typography>{t("faq.bodyOne")}</Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel>
@@ -47,11 +40,11 @@ export default function Faq({
             id="panel2a-header"
           >
             <Typography variant="h6" className={classes.heading}>
-              {titleTwo}
+              {t("faq.titleTwo")}
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>{bodyTwo}</Typography>
+            <Typography>{t("faq.bodyTwo")}</Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel>
@@ -61,15 +54,14 @@ export default function Faq({
             id="panel3a-header"
           >
             <Typography variant="h6" className={classes.heading}>
-              {titleThree}
+              {t("faq.titleThree")}
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>{bodyThree}</Typography>
+            <Typography>{t("faq.bodyThree")}</Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </Container>
-      <Section title="" subTitle="" />
     </>
   );
 }

@@ -23,11 +23,11 @@ import * as Yup from "yup";
 
 import {useTranslation} from "@sentrei/common/i18n";
 
-import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
 import signin from "@sentrei/common/services/signin";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
 import authType from "@sentrei/common/types/authType";
+import SnackbarAction from "@sentrei/common/types/components/SnackbarAction";
 import {auth} from "@sentrei/common/utils/firebase";
 import firebaseError from "@sentrei/common/utils/firebaseError";
 import Link from "@sentrei/ui/components/Link";

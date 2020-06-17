@@ -4,9 +4,9 @@ import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import React from "react";
 
-import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
 import Space from "@sentrei/common/models/Space";
 import {listSpaces} from "@sentrei/common/services/spaces";
+import SnackbarAction from "@sentrei/common/types/components/SnackbarAction";
 import firebaseError from "@sentrei/common/utils/firebaseError";
 import Snackbar from "@sentrei/ui/components/Snackbar";
 import useLoadMore from "@sentrei/ui/hooks/useLoadMore";

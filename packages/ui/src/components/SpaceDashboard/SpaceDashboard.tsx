@@ -4,10 +4,10 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 
-import SnackbarAction from "@sentrei/common/interfaces/SnackbarAction";
-import Props from "@sentrei/common/interfaces/SpaceDashboard";
 import Space from "@sentrei/common/models/Space";
 import {listSpaces} from "@sentrei/common/services/spaces";
+import SnackbarAction from "@sentrei/common/types/components/SnackbarAction";
+import Props from "@sentrei/common/types/components/SpaceDashboard";
 import firebaseError from "@sentrei/common/utils/firebaseError";
 import Snackbar from "@sentrei/ui/components/Snackbar";
 import SpaceCard from "@sentrei/ui/components/SpaceCard";

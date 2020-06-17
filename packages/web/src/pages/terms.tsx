@@ -4,31 +4,19 @@ import Container from "@material-ui/core/Container";
 import {NextPage} from "next";
 import React from "react";
 
-import {includeDefaultNamespaces, useTranslation} from "@sentrei/common/i18n";
+import {includeDefaultNamespaces} from "@sentrei/common/i18n";
 import {analytics} from "@sentrei/common/utils/firebase";
 
 import SentreiHeader from "@sentrei/web/components/SentreiHeader";
 
 const Terms: NextPage = () => {
-  const {t} = useTranslation();
-
   React.useEffect(() => {
     analytics().setCurrentScreen("terms");
   }, []);
 
   return (
     <>
-      <SentreiHeader
-        sign={false}
-        spy={false}
-        faqText={t("faq")}
-        featuresText={t("features")}
-        pricingText={t("pricing")}
-        productText={t("product")}
-        loginText={t("login")}
-        signupText={t("signup")}
-        testimonialText={t("testimonial")}
-      />
+      <SentreiHeader sign={false} spy={false} />
       <Container maxWidth="sm">
         <Box p={3} />
         <div>
@@ -1130,7 +1118,7 @@ Terms.getInitialProps = (): {
   namespacesRequired: string[];
 } => {
   return {
-    namespacesRequired: includeDefaultNamespaces(["index"]),
+    namespacesRequired: includeDefaultNamespaces(),
   };
 };
 

@@ -21,7 +21,7 @@
     "deploy": "yarn run deploy:staging-web && yarn run deploy:staging-web",
     "deploy:staging-web": "firebase deploy --only hosting:staging-web",
     "deploy:web": "firebase deploy --only hosting:web",
-    "dev": "next",
+    "dev": "nodemon --exec next dev",
     "export": "next export",
     "firebase:alpha": "yarn run alpha:local && yarn run dev",
     "firebase:beta": "yarn run beta:local && yarn run dev",
@@ -86,6 +86,7 @@
     "babel-plugin-istanbul": "^6.0.0",
     "cross-env": "^7.0.2",
     "cypress": "^4.4.1",
+    "nodemon": "^2.0.4",
     "start-server-and-test": "^1.11.0",
     "ts-loader": "^7.0.5"
   },

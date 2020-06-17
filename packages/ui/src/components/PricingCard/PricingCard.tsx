@@ -17,7 +17,7 @@ interface Props {
   description3: string;
   price: string;
   priceMonth: string;
-  subTitle: string;
+  subTitle?: string;
   title: string;
 }
 
