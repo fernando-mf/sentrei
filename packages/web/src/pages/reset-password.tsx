@@ -36,7 +36,7 @@ ResetPassword.getInitialProps = (): {
   namespacesRequired: string[];
 } => {
   return {
-    namespacesRequired: includeDefaultNamespaces(),
+    namespacesRequired: includeDefaultNamespaces(["auth"]),
   };
 };
 
