@@ -27,6 +27,7 @@ import signin from "@sentrei/common/services/signin";
 import signinWithGoogle from "@sentrei/common/services/signinWithGoogle";
 import signup from "@sentrei/common/services/signup";
 import authType from "@sentrei/common/types/authType";
+import Props from "@sentrei/common/types/components/Auth";
 import SnackbarAction from "@sentrei/common/types/components/SnackbarAction";
 import {auth} from "@sentrei/common/utils/firebase";
 import firebaseError from "@sentrei/common/utils/firebaseError";
@@ -34,10 +35,6 @@ import Link from "@sentrei/ui/components/Link";
 import Snackbar from "@sentrei/ui/components/Snackbar";
 
 import AuthStyles from "./AuthStyles";
-
-interface Props {
-  type: authType;
-}
 
 export default function Auth({type}: Props): JSX.Element {
   const classes = AuthStyles();

@@ -3,15 +3,11 @@ import Grow from "@material-ui/core/Grow";
 import React from "react";
 import Tilt from "react-parallax-tilt";
 
+import Props from "@sentrei/common/types/components/ScreenPanel";
+
 import ScreenPanelStyles from "./ScreenPanelStyles";
 
-interface ScreenPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
-export default function ScreenPanel(props: ScreenPanelProps): JSX.Element {
+export default function ScreenPanel(props: Props): JSX.Element {
   const classes = ScreenPanelStyles();
   const {children, value, index, ...other} = props;
 
