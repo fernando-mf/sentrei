@@ -1,3 +1,10 @@
+## [4.87.2](https://github.com/sentrei/sentrei/compare/v4.87.1...v4.87.2) (2020-06-17)
+
+### Bug Fixes
+
+- 🐛 add secondary light ([c8eb605](https://github.com/sentrei/sentrei/commit/c8eb605f628888d2896f7f724378052e6fe80e51))
+- 🐛 default namespaces bug ([b338760](https://github.com/sentrei/sentrei/commit/b3387603cf2e910f4c6ce1e268d600f733b61231))
+
 ## [4.87.1](https://github.com/sentrei/sentrei/compare/v4.87.0...v4.87.1) (2020-06-17)
 
 ### Bug Fixes
