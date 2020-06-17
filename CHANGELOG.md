@@ -1,3 +1,9 @@
+## [4.87.1](https://github.com/sentrei/sentrei/compare/v4.87.0...v4.87.1) (2020-06-17)
+
+### Bug Fixes
+
+- 🐛 add blank issue ([28fde0e](https://github.com/sentrei/sentrei/commit/28fde0eec48da02e35c7572919f68c9cee66d30e))
+
 # [4.87.0](https://github.com/sentrei/sentrei/compare/v4.86.0...v4.87.0) (2020-06-17)
 
 ### Features
