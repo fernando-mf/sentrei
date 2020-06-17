@@ -1,3 +1,15 @@
+## [4.85.3](https://github.com/sentrei/sentrei/compare/v4.85.2...v4.85.3) (2020-06-17)
+
+### Bug Fixes
+
+- **deps:** bump @narative/gatsby-theme-novela from 0.16.2 to 0.16.3 ([5775676](https://github.com/sentrei/sentrei/commit/57756764b73125ddc316c3b4cfbb1b9278508ff3))
+
+## [4.85.2](https://github.com/sentrei/sentrei/compare/v4.85.1...v4.85.2) (2020-06-17)
+
+### Bug Fixes
+
+- **deps:** bump react-parallax-tilt from 1.4.51 to 1.4.52 ([7cfca4e](https://github.com/sentrei/sentrei/commit/7cfca4e99ca83911afb17fca0b82c44cd9b4ddef))
+
 ## [4.85.1](https://github.com/sentrei/sentrei/compare/v4.85.0...v4.85.1) (2020-06-17)
 
 ### Bug Fixes

@@ -4452,9 +4452,9 @@
     glob-to-regexp "^0.3.0"
 
 "@narative/gatsby-theme-novela@^0.16.0":
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/@narative/gatsby-theme-novela/-/gatsby-theme-novela-0.16.2.tgz#18bab1a16260f4eb35dc61d55f93b4ca430744de"
-  integrity sha512-zZ+ESP57rs9ggR5hhvrTBVlQHjhhXUNxk25DLZTlSzFAK2iJdv1zE2us3B5XvUtcEv4S6VaF4QCuhaFLDZvtUw==
+  version "0.16.3"
+  resolved "https://registry.yarnpkg.com/@narative/gatsby-theme-novela/-/gatsby-theme-novela-0.16.3.tgz#27cdb0d4822bb7eaa638eb70fa021736993e1334"
+  integrity sha512-fSw5GHXhO4enbYwTwMnKV/sL6BfcRnC1schTxteFVAF8f23D9+YOCZVRED4EA3J8NOUcAqH1/sp8m9o8SHRJEw==
   dependencies:
     "@blocks/kit" "^0.0.28"
     "@emotion/core" "^10.0.14"
@@ -27233,9 +27233,9 @@ react-outside-click-handler@^1.2.4:
     prop-types "^15.7.2"
 
 react-parallax-tilt@^1.4.51:
-  version "1.4.51"
-  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.4.51.tgz#d4593b0717f2a1a88517e7a3848455ffa3fac037"
-  integrity sha512-Hv0B2KdS7LQSu4bloatfVauHL9dtAdj/KhezAdRXsI2wuY6dNvayHPhkIHWfU+TY9oH6fvTseGC1mVoFH7/4yw==
+  version "1.4.52"
+  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.4.52.tgz#ff30499a65d110ae66fef51cdedd74840f0de11d"
+  integrity sha512-HEV3v9hvTX8gYhrnjeg415rhyGZVzCZo3Ygf14iFeOxDKdMxte0PpaZNIzXUTahq5/axT0uNLRr6H5O9hkadXw==
 
 react-particles-js@^3.2.1:
   version "3.2.1"
