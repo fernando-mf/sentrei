@@ -1,3 +1,10 @@
+# [4.88.0](https://github.com/sentrei/sentrei/compare/v4.87.2...v4.88.0) (2020-06-17)
+
+### Features
+
+- 🎸 add i18n auth ([7c444fc](https://github.com/sentrei/sentrei/commit/7c444fcbb9d93ca98be82581abc201a30880a166))
+- 🎸 refactor ([837e3fb](https://github.com/sentrei/sentrei/commit/837e3fb911522add8c8b0d6e501cdea1385cc980))
+
 ## [4.87.2](https://github.com/sentrei/sentrei/compare/v4.87.1...v4.87.2) (2020-06-17)
 
 ### Bug Fixes
