@@ -5,7 +5,6 @@ import Error from "next/error";
 import {useRouter} from "next/router";
 import * as React from "react";
 
-import {useTranslation} from "@sentrei/common/i18n";
 import Space from "@sentrei/common/models/Space";
 import {getSpace, listSpaces} from "@sentrei/common/services/spaces";
 import Loader from "@sentrei/ui/components/Loader";

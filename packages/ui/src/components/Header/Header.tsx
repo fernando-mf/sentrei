@@ -14,7 +14,8 @@ import classNames from "classnames";
 import React from "react";
 import Scrollspy from "react-scrollspy";
 
-import {i18n} from "@sentrei/common/i18n";
+import {useTranslation, i18n} from "@sentrei/common/i18n";
+
 import Props from "@sentrei/common/types/components/Header";
 import Link from "@sentrei/ui/components/Link";
 import Logo from "@sentrei/ui/components/Logo";
@@ -22,19 +23,12 @@ import Logo from "@sentrei/ui/components/Logo";
 import HeaderStyles from "./HeaderStyles";
 
 export default function Header({
-  faqText,
-  featuresText,
   logo,
-  pricingText,
-  productText,
-  loginText,
-  signupText,
   sign = true,
   spy = true,
-  testimonialText,
 }: Props): JSX.Element {
   const classes = HeaderStyles();
-
+  const {t} = useTranslation();
   const mobileMenuId = "primary-search-account-menu-mobile";
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -134,19 +128,16 @@ export default function Header({
                       currentClassName="scroll-active-button"
                     >
                       <Button href="#product" className={classes.button}>
-                        <Typography>{productText}</Typography>
-                      </Button>
-                      <Button href="#feature" className={classes.button}>
-                        <Typography>{featuresText}</Typography>
+                        <Typography>{t("header.product")}</Typography>
                       </Button>
                       <Button href="#testimonial" className={classes.button}>
-                        <Typography>{testimonialText}</Typography>
+                        <Typography>{t("header.testimonial")}</Typography>
                       </Button>
                       <Button href="#pricing" className={classes.button}>
-                        <Typography>{pricingText}</Typography>
+                        <Typography>{t("header.pricing")}</Typography>
                       </Button>
                       <Button href="#faq" className={classes.button}>
-                        <Typography>{faqText}</Typography>
+                        <Typography>{t("header.faq")}</Typography>
                       </Button>
                     </Scrollspy>
                   )}
@@ -163,7 +154,7 @@ export default function Header({
                         variant="outlined"
                         className={classes.margin}
                       >
-                        <Typography>{loginText}</Typography>
+                        <Typography>{t("header.login")}</Typography>
                       </Button>
                     </Link>
                     <Link href="/signup">
@@ -172,7 +163,7 @@ export default function Header({
                         variant="contained"
                         className={classes.margin}
                       >
-                        <Typography>{signupText}</Typography>
+                        <Typography>{t("header.signup")}</Typography>
                       </Button>
                     </Link>
                   </>

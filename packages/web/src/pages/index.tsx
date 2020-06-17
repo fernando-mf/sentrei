@@ -88,15 +88,7 @@ const Index: NextPage = () => {
         <title>Sentrei</title>
         <meta name="Description" content="Sentrei landing page" />
       </Head>
-      <SentreiHeader
-        faqText={t("headerFaq")}
-        featuresText={t("headerFeatures")}
-        pricingText={t("headerPricing")}
-        productText={t("headerProduct")}
-        loginText={t("headerLogin")}
-        signupText={t("headerSignup")}
-        testimonialText={t("headerTestimonial")}
-      />
+      <SentreiHeader />
       <SentreiBanner />
       <Spacing />
       <SentreiScreen
