@@ -1,3 +1,9 @@
+## [4.88.3](https://github.com/sentrei/sentrei/compare/v4.88.2...v4.88.3) (2020-06-17)
+
+### Bug Fixes
+
+- 🐛 auth i18n issue ([50255ad](https://github.com/sentrei/sentrei/commit/50255adcf54afaf4cbdc5765ded6dabdeb236ab1))
+
 ## [4.88.2](https://github.com/sentrei/sentrei/compare/v4.88.1...v4.88.2) (2020-06-17)
 
 ### Bug Fixes
