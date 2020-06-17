@@ -1,3 +1,10 @@
+## [4.85.1](https://github.com/sentrei/sentrei/compare/v4.85.0...v4.85.1) (2020-06-17)
+
+### Bug Fixes
+
+- 🐛 depcheck remove unused ([b74b9aa](https://github.com/sentrei/sentrei/commit/b74b9aa2a9f37a3d200d0237f26594710f67f06c))
+- 🐛 remove unused deps ([d171796](https://github.com/sentrei/sentrei/commit/d17179655d6419d65db44a643e33578fd9cba552))
+
 # [4.85.0](https://github.com/sentrei/sentrei/compare/v4.84.10...v4.85.0) (2020-06-16)
 
 ### Bug Fixes
