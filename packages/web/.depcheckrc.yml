@@ -10,5 +10,5 @@ ignores:
     "@cypress/*",
     "@istanbuljs/*",
   ]
-skip-missing: true
 ignore-path: .gitignore
+skip-missing: true
