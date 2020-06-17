@@ -1,3 +1,9 @@
+## [4.88.4](https://github.com/sentrei/sentrei/compare/v4.88.3...v4.88.4) (2020-06-17)
+
+### Bug Fixes
+
+- **deps:** bump requests from 2.23.0 to 2.24.0 ([f2a880b](https://github.com/sentrei/sentrei/commit/f2a880bddbbcc8914502da8bb05ab06d288a5b9b))
+
 ## [4.88.3](https://github.com/sentrei/sentrei/compare/v4.88.2...v4.88.3) (2020-06-17)
 
 ### Bug Fixes
