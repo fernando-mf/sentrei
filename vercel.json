@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "builds": [{"src": "packages/web/package.json", "use": "@vercel/next"}],
+  "builds": [{"src": "packages/web/next.config.js", "use": "@vercel/next"}],
   "config": {
     "includeFiles": "public/**"
   }
