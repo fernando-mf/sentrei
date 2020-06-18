@@ -15,7 +15,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           ref: ${{ github.head_ref }}
           fetch-depth: 0
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2.0.0
         with:
           node-version: "14.4.0"
       - id: yarn-cache-path
