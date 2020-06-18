@@ -1,3 +1,9 @@
+## [4.90.6](https://github.com/sentrei/sentrei/compare/v4.90.5...v4.90.6) (2020-06-18)
+
+### Bug Fixes
+
+- **deps:** bump react-i18next from 11.5.1 to 11.6.0 ([b4616fc](https://github.com/sentrei/sentrei/commit/b4616fcba67bf5b57bef09adf5dfdc733e24d202))
+
 ## [4.90.1](https://github.com/sentrei/sentrei/compare/v4.90.0...v4.90.1) (2020-06-18)
 
 ### Bug Fixes
