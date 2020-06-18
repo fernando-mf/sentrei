@@ -1,3 +1,14 @@
+# [4.89.0](https://github.com/sentrei/sentrei/compare/v4.88.7...v4.89.0) (2020-06-18)
+
+### Bug Fixes
+
+- 🐛 add .vercel ignore ([11c1c06](https://github.com/sentrei/sentrei/commit/11c1c063635d44eb8d2efa70438727066e875f76))
+
+### Features
+
+- 🎸 add vercel env ([b2e4f73](https://github.com/sentrei/sentrei/commit/b2e4f7370b5dc59fff57ec908aac5743b955d39d))
+- 🎸 introduce serverless trace ([6351e91](https://github.com/sentrei/sentrei/commit/6351e91d7de2865127a1ac1733f7355e178276d9))
+
 ## [4.88.7](https://github.com/sentrei/sentrei/compare/v4.88.6...v4.88.7) (2020-06-17)
 
 ### Bug Fixes
