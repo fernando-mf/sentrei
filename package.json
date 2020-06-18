@@ -47,7 +47,6 @@
   },
   "dependencies": {
     "lerna": "^3.22.0",
-    "next": "9.4.4",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
@@ -70,8 +69,7 @@
     "husky": "^4.2.5",
     "prettier": "^2.0.4",
     "semantic-release": "^17.0.8",
-    "sort-package-json": "^1.43.0",
-    "vercel": "^19.1.1"
+    "sort-package-json": "^1.43.0"
   },
   "engines": {
     "npm": "please_use_yarn_instead"
