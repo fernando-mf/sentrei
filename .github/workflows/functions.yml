@@ -39,7 +39,7 @@ jobs:
           yarn run test
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - uses: codecov/codecov-action@v1
+      - uses: codecov/codecov-action@v1.0.7
         continue-on-error: true
         with:
           file: packages/functions/coverage/lcov.info
