@@ -239,7 +239,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.event.client_payload.branch }}
-      - uses: actions/setup-ruby@v1
+      - uses: actions/setup-ruby@v1.1.1
         with:
           ruby-version: "2.x"
       - uses: actions/setup-java@v1
