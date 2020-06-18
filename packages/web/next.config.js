@@ -51,6 +51,7 @@ const aliases = {
 };
 
 const nextConfig = {
+  target: "serverless",
   publicRuntimeConfig: {
     SESSION_SECRET_CURRENT: process.env.SESSION_SECRET_CURRENT,
     SESSION_SECRET_PREVIOUS: process.env.SESSION_SECRET_PREVIOUS,
