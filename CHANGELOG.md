@@ -1,3 +1,9 @@
+## [4.90.1](https://github.com/sentrei/sentrei/compare/v4.90.0...v4.90.1) (2020-06-18)
+
+### Bug Fixes
+
+- 🐛 add zero config ([67d7f60](https://github.com/sentrei/sentrei/commit/67d7f60367ffb3df39cbecd5632eb22aec506592))
+
 # [4.90.0](https://github.com/sentrei/sentrei/compare/v4.89.1...v4.90.0) (2020-06-18)
 
 ### Bug Fixes
