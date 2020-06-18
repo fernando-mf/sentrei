@@ -43,6 +43,9 @@
 # Yarn related.
 .yarn
 
+# Vercel related.
+.vercel
+
 # Firebase related.
 **/.firebase
 
