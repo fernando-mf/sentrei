@@ -1,3 +1,17 @@
+# [4.90.0](https://github.com/sentrei/sentrei/compare/v4.89.1...v4.90.0) (2020-06-18)
+
+### Bug Fixes
+
+- 🐛 add public include files ([309bf21](https://github.com/sentrei/sentrei/commit/309bf21440b073b457e4061ad014869585b00257))
+- 🐛 remove unnecessary variables.tf ([b9cf6b4](https://github.com/sentrei/sentrei/commit/b9cf6b4c03524774a4c14df9f06506f17bd0ab20))
+- 🐛 update vscode localespath ([0420cf3](https://github.com/sentrei/sentrei/commit/0420cf31058f76b147f635d056d4bbbb95ab683b))
+
+### Features
+
+- 🎸 add symdir locales ([bcdb1bf](https://github.com/sentrei/sentrei/commit/bcdb1bf0b445bfd84da5fc8a25415c43a044675c))
+- 🎸 refactor i18n architecture ([22ff153](https://github.com/sentrei/sentrei/commit/22ff153d05acf9bd6f8295d554596a98dc596eec))
+- 🎸 symdir link locales ([06e15f1](https://github.com/sentrei/sentrei/commit/06e15f14d91c88f2fe2cccc46b65c1235a9cac07))
+
 ## [4.89.1](https://github.com/sentrei/sentrei/compare/v4.89.0...v4.89.1) (2020-06-18)
 
 ### Bug Fixes
