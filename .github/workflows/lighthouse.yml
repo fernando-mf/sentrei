@@ -18,6 +18,8 @@ jobs:
         with:
           slack_token: ${{ secrets.SLACK_APP_TOKEN }}
           message: |
+            ${{ steps.lighthouse.outputs.resultsPath }}
+            ${{ steps.lighthouse.outputs.links }}
             ${{ steps.lighthouse.outputs.assertionResults }}
           channel: lighthouse
           color: yellow
