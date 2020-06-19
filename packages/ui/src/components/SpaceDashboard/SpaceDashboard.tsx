@@ -46,7 +46,6 @@ export default function SpaceDashboard({
       <Container maxWidth="lg" component="main">
         <Grid container alignItems="center" justify="center" spacing={3}>
           {!data &&
-            !error &&
             [...Array(3)].map(i => (
               <Grid key={i} item xs={12} sm={6} md={4}>
                 <Skeleton>
