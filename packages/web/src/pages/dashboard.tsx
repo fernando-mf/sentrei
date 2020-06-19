@@ -15,7 +15,7 @@ import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const Dashboard: NextPage = () => {
   const {user} = React.useContext(GlobalContext);
-  const {data, error} = useSWR(user ? listSpaces : null);
+  const {data, error} = useSWR(() => user!.uid, listSpaces);
 
   React.useEffect(() => {
     analytics().setCurrentScreen("dashboard");
