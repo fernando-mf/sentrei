@@ -31,10 +31,6 @@ export default function SpaceCard({space, userId, img}: Props): JSX.Element {
     menuSetAnchorEl(null);
   };
 
-  if (skeleton) {
-    return <Card />;
-  }
-
   return (
     <Card className={classes.root}>
       <CardActionArea>
