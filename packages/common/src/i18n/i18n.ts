@@ -14,11 +14,18 @@ use.push(icu);
 
 export const nextI18next = new NextI18next({
   browserLanguageDetection: true,
-  defaultLanguage: "en",
   defaultNS: "index",
-  fallbackLng: "en",
+  defaultLanguage: "en",
+  ignoreRoutes: ["/_next/", "/static/", "/public/", "/api/"],
   otherLanguages: ["ja", "zh"],
+  localePath: "src/locales",
+  localeStructure: "{{lng}}/{{ns}}",
+  localeSubpaths: {},
+  serverLanguageDetection: true,
+  strictMode: true,
+  shallowRender: false,
   use,
+  fallbackLng: "en",
 });
 
 export const includeDefaultNamespaces = (namespaces?: string[]): string[] => {
