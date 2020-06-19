@@ -1,4 +1,5 @@
 const readDayFileList = require("./scripts/day.js");
+const readSusFileList = require("./scripts/sus.js");
 const readWeekFileList = require("./scripts/week.js");
 
 module.exports = {
@@ -59,6 +60,11 @@ module.exports = {
     sidebar: [
       ["/mission/", "Mission"],
       ["/project/", "Project"],
+      {
+        title: "2020 Startup School",
+        collapsable: true,
+        children: readSusFileList("2020"),
+      },
       {
         title: "2020 Week",
         collapsable: true,

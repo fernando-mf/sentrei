@@ -15,7 +15,7 @@
 [![Uptime Robot](https://img.shields.io/uptimerobot/ratio/m784815116-8a053f04f101965fe947849c)](https://uptimerobot.com/dashboard#784815116)
 [![relativeCI](https://badges.relative-ci.com/badges/C976Uvwm2P3DB7ZwroUw?branch=master)](https://app.relative-ci.com/projects/C976Uvwm2P3DB7ZwroUw)
 [![Firebase](https://img.shields.io/badge/developed%20with-firebase-green)](https://console.firebase.google.com/project/sentrei-master)
-[![Startup School](https://img.shields.io/badge/managed%20with-Startup%20School-orange)](https://www.startupschool.org/)
+[![Startup School](https://img.shields.io/badge/managed%20with-Startup%20School-orange)](https://www.startupschool.org/companies/sentrei)
 [![Pioneer](https://img.shields.io/badge/competing%20on-pioneer.app-yellow)](https://pioneer.app/join/shunkakinoki)
 [![Sentry](https://img.shields.io/badge/hosted%20with-Sentry-red)](https://sentry.io/organizations/sentrei/projects/)
 [![ZenHub](https://img.shields.io/badge/managed_with-ZenHub-5e60ba)](https://app.zenhub.com/workspace/o/sentrei/sentrei/boards)
