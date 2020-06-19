@@ -1,5 +1,5 @@
 const readDayFileList = require("./scripts/day.js");
-const readSusFileList = require("./scripts/week.js");
+const readSusFileList = require("./scripts/sus.js");
 const readWeekFileList = require("./scripts/week.js");
 
 module.exports = {
