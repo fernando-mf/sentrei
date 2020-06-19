@@ -18,7 +18,6 @@ updates:
       prefix: "fix"
       prefix-development: "chore"
       include: "scope"
-    versioning-strategy: increase
   - package-ecosystem: "docker"
     directory: "/.devcontainer"
     schedule:
@@ -28,7 +27,6 @@ updates:
       prefix: "fix"
       prefix-development: "chore"
       include: "scope"
-    versioning-strategy: increase
   - package-ecosystem: "docker"
     directory: "/packages/web"
     schedule:
