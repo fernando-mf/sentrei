@@ -1,9 +1,7 @@
 import Box from "@material-ui/core/Box";
-import Card from "@material-ui/core/Card";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Skeleton from "@material-ui/lab/Skeleton";
 import React from "react";
 
 import SnackbarAction from "@sentrei/common/types/components/SnackbarAction";
@@ -45,14 +43,6 @@ export default function SpaceDashboard({
       </Box>
       <Container maxWidth="lg" component="main">
         <Grid container alignItems="center" justify="center" spacing={3}>
-          {!data &&
-            [...Array(3)].map(i => (
-              <Grid key={i} item xs={12} sm={6} md={4}>
-                <Skeleton>
-                  <Card />
-                </Skeleton>
-              </Grid>
-            ))}
           {data?.map(space => (
             <Grid item key={space.id} xs={12} sm={6} md={4}>
               <SpaceCard space={space} userId={userId} img={placeholderImg} />
