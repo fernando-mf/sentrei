@@ -1,3 +1,11 @@
+# [4.93.0](https://github.com/sentrei/sentrei/compare/v4.92.1...v4.93.0) (2020-06-19)
+
+### Features
+
+- 🎸 fix i18n locales ([3e6047b](https://github.com/sentrei/sentrei/commit/3e6047b7b24583fba3035714c671abc6ef0e5159))
+- 🎸 integrate swr firestore ([f6c14ec](https://github.com/sentrei/sentrei/commit/f6c14eca40b9dbed2d32f7142094d90a3f80c623))
+- 🎸 successfully integrated useswr ([4ab087c](https://github.com/sentrei/sentrei/commit/4ab087c40421eda539967b100773b3d567d8aefe))
+
 ## [4.92.1](https://github.com/sentrei/sentrei/compare/v4.92.0...v4.92.1) (2020-06-19)
 
 ### Bug Fixes
