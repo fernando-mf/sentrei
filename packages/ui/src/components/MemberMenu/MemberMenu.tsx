@@ -4,6 +4,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import Router from "next/router";
 import React from "react";
 
 import {deleteSpace} from "@sentrei/common/services/spaces";
@@ -30,7 +31,9 @@ export default function MemberMenu({
   };
 
   const handleDelete = (): void => {
-    deleteSpace(id);
+    deleteSpace(id).then(() => {
+      Router.reload();
+    });
   };
 
   return (
