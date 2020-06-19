@@ -15,7 +15,7 @@ import MemberMenu from "@sentrei/ui/components/MemberMenu";
 
 import SpaceCardStyles from "./SpaceCardStyles";
 
-export default function SpaceCard({space, userId}: Props): JSX.Element {
+export default function SpaceCard({space, userId, img}: Props): JSX.Element {
   const classes = SpaceCardStyles();
   const [menuAnchorEl, menuSetAnchorEl] = React.useState<null | HTMLElement>(
     null,
@@ -51,10 +51,11 @@ export default function SpaceCard({space, userId}: Props): JSX.Element {
       />
       <CardActionArea>
         <Link href="/[id]" as={`/${space.id}`}>
-          <CardMedia
-            className={classes.media}
-            image={space.photo ?? "https://picsum.photos/200/300?grayscale"}
-          />
+          {space.photo ? (
+            <CardMedia className={classes.media} image={space.photo} />
+          ) : (
+            <CardMedia className={classes.media}>{img}</CardMedia>
+          )}
         </Link>
       </CardActionArea>
       <CardContent>
