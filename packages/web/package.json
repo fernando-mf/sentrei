@@ -71,6 +71,7 @@
     "responsive-loader": "^1.2.0",
     "sass": "^1.26.5",
     "styled-components": "^5.1.0",
+    "swr": "0.2.3",
     "svg-sprite-loader": "^5.0.0",
     "url-loader": "^4.1.0",
     "webp-loader": "^0.6.0",
