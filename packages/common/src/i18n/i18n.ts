@@ -17,7 +17,7 @@ export const nextI18next = new NextI18next({
   defaultNS: "index",
   defaultLanguage: "en",
   otherLanguages: ["ja", "zh"],
-  localePath: "src/locales",
+  localePath: "locales",
   fallbackLng: "en",
   use,
 });
