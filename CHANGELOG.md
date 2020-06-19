@@ -1,3 +1,9 @@
+## [4.92.1](https://github.com/sentrei/sentrei/compare/v4.92.0...v4.92.1) (2020-06-19)
+
+### Bug Fixes
+
+- 🐛 add sus pioneer ([1fa3efe](https://github.com/sentrei/sentrei/commit/1fa3efe8f598862d1e756ba30eebfb5074a76735))
+
 # [4.92.0](https://github.com/sentrei/sentrei/compare/v4.91.1...v4.92.0) (2020-06-19)
 
 ### Features
