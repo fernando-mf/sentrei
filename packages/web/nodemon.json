@@ -1,6 +1,6 @@
 {
   "verbose": true,
   "ignore": ["node_modules", ".next", "out"],
-  "watch": ["src/locales/**/*"],
+  "watch": ["locales/**/*"],
   "ext": "json"
 }
