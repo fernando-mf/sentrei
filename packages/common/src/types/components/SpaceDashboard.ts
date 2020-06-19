@@ -1,5 +1,8 @@
+import Space from "@sentrei/common/models/Space";
+
 export default interface Props {
-  allowLoadMore?: boolean;
-  limit?: number;
+  data: Space.Snapshot[] | undefined;
+  error: Error;
   userId: string;
+  placeholderImg: JSX.Element;
 }
