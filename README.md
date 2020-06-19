@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/github/license/sentrei/sentrei)](https://github.com/sentrei/sentrei/blob/master/LICENSE.md)
 [![mergify-status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei)](https://dashboard.mergify.io/installation/7539741/repositories)
-[![dependabot-status](https://api.dependabot.com/badges/status?host=github&repo=sentrei/sentrei)](https://app.dependabot.com/accounts/sentrei/repos/249660786)
+[![dependabot-status](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://github.com/sentrei/sentrei/network/updates)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://ui.sentrei.com)
