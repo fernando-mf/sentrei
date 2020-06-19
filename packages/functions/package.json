@@ -58,7 +58,7 @@
     "watch": "tsc -b . -w --preserveWatchOutput"
   },
   "dependencies": {
-    "@firebase/testing": "^0.20.0",
+    "@firebase/testing": "^0.20.2",
     "@sentrei/common": "*",
     "@slack/webhook": "^5.0.3",
     "@types/lodash": "^4.14.154",
