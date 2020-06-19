@@ -1,3 +1,9 @@
+## [4.91.1](https://github.com/sentrei/sentrei/compare/v4.91.0...v4.91.1) (2020-06-19)
+
+### Bug Fixes
+
+- **deps:** bump @firebase/testing from 0.20.1 to 0.20.2 ([dcd225f](https://github.com/sentrei/sentrei/commit/dcd225f9191c521fbc5dc60b129b62bd6c106899))
+
 ## [4.90.6](https://github.com/sentrei/sentrei/compare/v4.90.5...v4.90.6) (2020-06-18)
 
 ### Bug Fixes
