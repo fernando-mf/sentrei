@@ -16,16 +16,10 @@ export const nextI18next = new NextI18next({
   browserLanguageDetection: true,
   defaultNS: "index",
   defaultLanguage: "en",
-  ignoreRoutes: ["/_next/", "/static/", "/public/", "/api/"],
   otherLanguages: ["ja", "zh"],
   localePath: "src/locales",
-  localeStructure: "{{lng}}/{{ns}}",
-  localeSubpaths: {},
-  serverLanguageDetection: true,
-  strictMode: true,
-  shallowRender: false,
-  use,
   fallbackLng: "en",
+  use,
 });
 
 export const includeDefaultNamespaces = (namespaces?: string[]): string[] => {

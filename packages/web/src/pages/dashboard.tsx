@@ -3,17 +3,19 @@
 import {NextPage} from "next";
 import Router from "next/router";
 import * as React from "react";
+import useSWR from "swr";
 
 import GlobalContext from "@sentrei/common/context/GlobalContext";
 import {includeDefaultNamespaces} from "@sentrei/common/i18n";
+import {listSpaces} from "@sentrei/common/services/spaces";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
 import SpaceDashboard from "@sentrei/ui/components/SpaceDashboard";
-
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const Dashboard: NextPage = () => {
   const {user} = React.useContext(GlobalContext);
+  const {data, error} = useSWR(user ? listSpaces : null);
 
   React.useEffect(() => {
     analytics().setCurrentScreen("dashboard");
@@ -30,7 +32,7 @@ const Dashboard: NextPage = () => {
   return (
     <>
       <SentreiAppHeader />
-      <SpaceDashboard userId={user!.uid} />
+      <SpaceDashboard data={data} error={error} userId={user!.uid} />
     </>
   );
 };

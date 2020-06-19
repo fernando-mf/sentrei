@@ -62,6 +62,7 @@
     "react-use-gesture": "^7.0.15",
     "react-useanimations": "^1.2.13",
     "styled-components": "^5.1.0",
+    "swr": "0.2.3",
     "typescript": "^3.8.3",
     "yup": "^0.29.0"
   },
