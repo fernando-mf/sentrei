@@ -1,3 +1,10 @@
+# [4.92.0](https://github.com/sentrei/sentrei/compare/v4.91.1...v4.92.0) (2020-06-19)
+
+### Features
+
+- 🎸 completely refactor locales and assets/images ([471a3dc](https://github.com/sentrei/sentrei/commit/471a3dcd96895a3b08f4519a3757991e5189ac6d))
+- 🎸 i18n commit settings ([09169b1](https://github.com/sentrei/sentrei/commit/09169b17c0cf21581c4cb57362eb557cbf172ae6))
+
 ## [4.91.1](https://github.com/sentrei/sentrei/compare/v4.91.0...v4.91.1) (2020-06-19)
 
 ### Bug Fixes
