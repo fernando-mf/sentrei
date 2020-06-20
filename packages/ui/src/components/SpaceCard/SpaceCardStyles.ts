@@ -1,12 +1,15 @@
-import {createStyles, makeStyles} from "@material-ui/core/styles";
+import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-const SpaceCardStyles = makeStyles(() =>
+const SpaceCardStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       flexGrow: 1,
     },
     media: {
-      height: 190,
+      height: theme.spacing(30),
+    },
+    placeholder: {
+      backgroundColor: theme.palette.grey[300],
     },
     root: {
       boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",

@@ -11,7 +11,6 @@ import {listUserSpaces} from "@sentrei/common/services/spaces";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
 import SpaceDashboard from "@sentrei/ui/components/SpaceDashboard";
-import LogoPicture from "@sentrei/web/components/Picture/LogoPicture";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const Dashboard: NextPage = () => {
@@ -33,12 +32,7 @@ const Dashboard: NextPage = () => {
   return (
     <>
       <SentreiAppHeader />
-      <SpaceDashboard
-        data={data}
-        error={error}
-        userId={user!.uid}
-        placeholderImg={LogoPicture()}
-      />
+      <SpaceDashboard data={data} error={error} userId={user!.uid} />
     </>
   );
 };
