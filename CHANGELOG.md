@@ -1,3 +1,14 @@
+# [4.94.0](https://github.com/sentrei/sentrei/compare/v4.93.0...v4.94.0) (2020-06-20)
+
+### Bug Fixes
+
+- 🐛 add functions delete ([069ab90](https://github.com/sentrei/sentrei/commit/069ab902a2822df6541e4c8564de89db287b8397))
+
+### Features
+
+- 🎸 add space fab ([88ca1f8](https://github.com/sentrei/sentrei/commit/88ca1f8313991cb97945b8ff425a9f1a9ded4c17))
+- 🎸 refactor spaces working proper dashboard ([ebdb96e](https://github.com/sentrei/sentrei/commit/ebdb96e6077bb1d13c74ea84186b97d7eefdba89))
+
 # [4.93.0](https://github.com/sentrei/sentrei/compare/v4.92.1...v4.93.0) (2020-06-19)
 
 ### Features
