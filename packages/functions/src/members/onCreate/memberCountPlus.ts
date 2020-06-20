@@ -4,7 +4,7 @@ import * as functions from "firebase-functions";
 const db = admin.firestore();
 
 const memberCountPlus = functions.firestore
-  .document("{collection}/{docId}/followers/{userId}")
+  .document("{collection}/{docId}/members/{userId}")
   .onCreate((_, context) => {
     const {collection, docId} = context.params;
     return db

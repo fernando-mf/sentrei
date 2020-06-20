@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 const firebaseDoc = {
   delete: jest.fn(),
   get: jest.fn().mockReturnValue({
@@ -34,6 +33,7 @@ const auth = jest.fn().mockReturnValue({
   updateUser: jest.fn(),
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const firestore: any = jest.fn().mockReturnValue({
   batch: jest.fn().mockReturnValue({
     commit: jest.fn(),

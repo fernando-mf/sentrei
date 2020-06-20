@@ -7,16 +7,15 @@ import useSWR from "swr";
 
 import GlobalContext from "@sentrei/common/context/GlobalContext";
 import {includeDefaultNamespaces} from "@sentrei/common/i18n";
-import {listSpaces} from "@sentrei/common/services/spaces";
+import {listUserSpaces} from "@sentrei/common/services/spaces";
 import {analytics} from "@sentrei/common/utils/firebase";
 import Loader from "@sentrei/ui/components/Loader";
 import SpaceDashboard from "@sentrei/ui/components/SpaceDashboard";
-import LogoPicture from "@sentrei/web/components/Picture/LogoPicture";
 import SentreiAppHeader from "@sentrei/web/components/SentreiAppHeader";
 
 const Dashboard: NextPage = () => {
   const {user} = React.useContext(GlobalContext);
-  const {data, error} = useSWR(() => user!.uid, listSpaces);
+  const {data, error} = useSWR(() => user!.uid, listUserSpaces);
 
   React.useEffect(() => {
     analytics().setCurrentScreen("dashboard");
@@ -33,12 +32,7 @@ const Dashboard: NextPage = () => {
   return (
     <>
       <SentreiAppHeader />
-      <SpaceDashboard
-        data={data}
-        error={error}
-        userId={user!.uid}
-        placeholderImg={LogoPicture()}
-      />
+      <SpaceDashboard data={data} error={error} userId={user!.uid} />
     </>
   );
 };

@@ -4,5 +4,4 @@ export default interface Props {
   data: Space.Snapshot[] | undefined;
   error: Error;
   userId: string;
-  placeholderImg: JSX.Element;
 }

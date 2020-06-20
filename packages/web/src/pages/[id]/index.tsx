@@ -16,7 +16,7 @@ interface SpacePageProps {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const spaces = await listSpaces();
+  const spaces = await listSpaces({});
   const paths = spaces.map(space => ({params: {id: space.id}}));
   return {paths, fallback: true};
 };

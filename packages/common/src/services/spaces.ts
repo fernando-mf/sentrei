@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import Space from "@sentrei/common/models/Space";
-
 import serializeSpace from "@sentrei/common/serializers/Space";
+import SpaceQuery from "@sentrei/common/types/services/SpaceQuery";
 import {analytics, db} from "@sentrei/common/utils/firebase";
 
 import {generateRandomId, generateSlug} from "@sentrei/common/utils/generate";
@@ -70,11 +70,11 @@ export const getSpaceLive = (
     });
 };
 
-export const listSpaces = async (
-  startAfter?: firebase.firestore.DocumentSnapshot,
-  userId?: string,
-  limit = 12,
-): Promise<Space.Snapshot[]> => {
+const spacesQuery = ({
+  limit = 10,
+  last,
+  userId,
+}: SpaceQuery): firebase.firestore.Query<Space.Get> => {
   const collection = userId ? `users/${userId}/spaces` : "spaces";
   let ref = db
     .collection(collection)
@@ -82,12 +82,21 @@ export const listSpaces = async (
     .orderBy("updatedAt", "desc")
     .limit(limit);
 
-  if (startAfter) {
-    ref = ref.startAfter(startAfter);
+  if (last) {
+    ref = ref.startAfter(last);
   }
 
-  const snap = await ref.get();
-  return snap.docs.map(item => {
-    return {...item.data(), snap: item};
-  });
+  return ref;
+};
+
+export const listSpaces = async (query: SpaceQuery): Promise<Space.Get[]> => {
+  const ref = await spacesQuery(query).get();
+  return ref.docs.map(doc => doc.data());
+};
+
+export const listUserSpaces = async (
+  userId: string,
+): Promise<Space.Snapshot[]> => {
+  const ref = await spacesQuery({userId}).get();
+  return ref.docs.map(snap => ({...snap.data(), snap}));
 };
