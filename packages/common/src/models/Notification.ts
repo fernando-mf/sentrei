@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
 import Profile from "@sentrei/common/models/Profile";
 import User from "@sentrei/common/models/User";
 

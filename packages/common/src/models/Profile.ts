@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
-
 declare namespace Profile {
   export type Response = {
     name: string;

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
-
 import Metadata from "@sentrei/common/models/Metadata";
 
 declare namespace Space {
