@@ -53,8 +53,9 @@
     "swap:master:env": "cp master.env.json env.json",
     "test": "firebase emulators:exec --only firestore 'jest --silent && yarn run coverage:rules'",
     "test:watch": "firebase emulators:exec --only firestore 'jest --watch && yarn run coverage:rules'",
+    "tsc": "tsc -b . ",
     "tscpaths": "tscpaths -p tsconfig.json -s ./src -o ./dist",
-    "typescript": "yarn run clean && tsc -b .",
+    "typescript": "yarn run clean && yarn run tsc && yarn run tscpaths",
     "watch": "tsc -b . -w --preserveWatchOutput"
   },
   "dependencies": {
