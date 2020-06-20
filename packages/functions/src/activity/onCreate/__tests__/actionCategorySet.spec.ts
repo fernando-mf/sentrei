@@ -3,24 +3,24 @@
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
+import Activity from "@sentrei/common/models/Activity";
+
 import actionCategorySet from "../actionCategorySet";
 
 const testEnv = functions();
 const db = admin.firestore();
 
 test("Send a request to add action category", async done => {
-  const data = {
+  const data: Activity.Response = {
     action: "created",
-    category: "space",
+    category: "spaces",
     createdById: "editorId",
   };
+
   const snap = {
-    data: (): {
-      action: string;
-      category: string;
-      createdById: string;
-    } => data,
+    data: (): Activity.Response => data,
   };
+
   const expected = {
     created_space: 1,
   };
