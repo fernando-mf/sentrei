@@ -1,3 +1,9 @@
+## [4.94.1](https://github.com/sentrei/sentrei/compare/v4.94.0...v4.94.1) (2020-06-20)
+
+### Bug Fixes
+
+- 🐛 add proper unfollow ([ca8c616](https://github.com/sentrei/sentrei/commit/ca8c616a735ca4bd03d6d0090cd1a4b25e9e5533))
+
 # [4.94.0](https://github.com/sentrei/sentrei/compare/v4.93.0...v4.94.0) (2020-06-20)
 
 ### Bug Fixes
