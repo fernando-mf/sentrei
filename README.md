@@ -9,7 +9,6 @@
 [![Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![Github Version](https://img.shields.io/github/v/tag/sentrei/sentrei)](https://github.com/sentrei/sentrei/releases)
 [![Docker](https://img.shields.io/docker/pulls/sentrei/sentrei.svg)](https://hub.docker.com/repository/docker/sentrei/sentrei)
-[![Star on GitHub](https://img.shields.io/github/stars/sentrei/sentrei.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/sentrei/sentrei)
 [![codecov](https://codecov.io/gh/sentrei/sentrei/branch/master/graph/badge.svg)](https://codecov.io/gh/sentrei/sentrei)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/33af9b285c934b3fa958d85c6638aefb)](https://www.codacy.com/gh/sentrei/sentrei?utm_source=github.com&utm_medium=referral&utm_content=sentrei/sentrei&utm_campaign=Badge_Grade)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/sentrei/sentrei.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sentrei/sentrei/alerts/)
