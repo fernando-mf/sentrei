@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 import * as functions from "firebase-functions";
 
 import Activity from "@sentrei/common/models/Activity";
@@ -6,6 +7,9 @@ import Activity from "@sentrei/common/models/Activity";
 import scoreActions from "../../helpers/scoreActions";
 import scoreUpdate from "../../helpers/scoreUpdate";
 
+/**
+ * Batch update scores for each activity
+ */
 const scoreBatchUpdate = functions.firestore
   .document("activity/{editId}")
   .onCreate(snap => {

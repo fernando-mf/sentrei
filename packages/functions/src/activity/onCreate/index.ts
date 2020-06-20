@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export {default as actionCategorySet} from "./actionCategorySet";
 export {default as activityBatchSet} from "./activityBatchSet";
 export {default as scoreBatchUpdate} from "./scoreBatchUpdate";
