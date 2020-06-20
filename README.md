@@ -5,6 +5,7 @@
 [![mergify-status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei)](https://dashboard.mergify.io/installation/7539741/repositories)
 [![dependabot-status](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://github.com/sentrei/sentrei/network/updates)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B15457%2Fgithub.com%2Fsentrei%2Fsentrei.svg?type=shield)](https://app.fossa.com/projects/custom%2B15457%2Fgithub.com%2Fsentrei%2Fsentrei?ref=badge_shield)
 [![Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![Github Version](https://img.shields.io/github/v/tag/sentrei/sentrei)](https://github.com/sentrei/sentrei/releases)
 [![Docker](https://img.shields.io/docker/pulls/sentrei/sentrei.svg)](https://hub.docker.com/repository/docker/sentrei/sentrei)
