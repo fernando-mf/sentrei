@@ -4,8 +4,8 @@
 
 [![mergify-status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei)](https://dashboard.mergify.io/installation/7539741/repositories)
 [![dependabot-status](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://github.com/sentrei/sentrei/network/updates)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![FOSSA Status](https://app.fossa.com/api/projects/custom%2B15457%2Fgithub.com%2Fsentrei%2Fsentrei.svg?type=shield)](https://app.fossa.com/projects/custom%2B15457%2Fgithub.com%2Fsentrei%2Fsentrei?ref=badge_shield)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![Github Version](https://img.shields.io/github/v/tag/sentrei/sentrei)](https://github.com/sentrei/sentrei/releases)
 [![Docker](https://img.shields.io/docker/pulls/sentrei/sentrei.svg)](https://hub.docker.com/repository/docker/sentrei/sentrei)
@@ -16,7 +16,7 @@
 [![Uptime Robot](https://img.shields.io/uptimerobot/ratio/m784815116-8a053f04f101965fe947849c)](https://uptimerobot.com/dashboard#784815116)
 [![relativeCI](https://badges.relative-ci.com/badges/C976Uvwm2P3DB7ZwroUw?branch=master)](https://app.relative-ci.com/projects/C976Uvwm2P3DB7ZwroUw)
 [![Firebase](https://img.shields.io/badge/developed%20with-firebase-green)](https://console.firebase.google.com/project/sentrei-master)
-[![Startup School](https://img.shields.io/badge/managed%20with-Startup%20School-orange)](https://www.startupschool.org/companies/sentrei)
+[![Startup School](https://img.shields.io/badge/join%20on-Startup%20School-orange)](https://www.startupschool.org/companies/sentrei)
 [![Pioneer](https://img.shields.io/badge/competing%20on-pioneer.app-yellow)](https://pioneer.app/join/shunkakinoki)
 [![Sentry](https://img.shields.io/badge/hosted%20with-Sentry-red)](https://sentry.io/organizations/sentrei/projects/)
 [![ZenHub](https://img.shields.io/badge/managed_with-ZenHub-5e60ba)](https://app.zenhub.com/workspace/o/sentrei/sentrei/boards)
