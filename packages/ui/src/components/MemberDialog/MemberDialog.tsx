@@ -20,11 +20,18 @@ export default function MemberDialog({
   userId,
 }: Props): JSX.Element {
   const theme = useTheme();
+  const [loading, setLoading] = React.useState<boolean>(false);
+
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleUnfollow = (): void => {
-    unfollow(collection, id, userId);
-    Router.reload();
+    setLoading(true);
+    unfollow(collection, id, userId)
+      .then(() => {
+        setLoading(false);
+        Router.reload();
+      })
+      .catch(() => setLoading(false));
   };
 
   return (
@@ -44,7 +51,12 @@ export default function MemberDialog({
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleUnfollow} color="primary">
+          <Button
+            autoFocus
+            disabled={loading}
+            onClick={handleUnfollow}
+            color="primary"
+          >
             Delete
           </Button>
         </DialogActions>
