@@ -26,7 +26,7 @@ test("On spaces create, add the space creator to the member list", async done =>
   };
 
   expect(req).toBe("updated");
-  expect(db.doc).toHaveBeenCalledWith("spaces/itemId/members/userId");
+  expect(db.doc).toHaveBeenCalledWith("spaces/spaceId/members/userId");
   expect(db.doc("").set).toHaveBeenCalledWith(expected);
   done();
 });

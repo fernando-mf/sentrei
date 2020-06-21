@@ -18,8 +18,6 @@ test("Send a request to add a new delete to activities", async done => {
 
   spyOn(db.collection(""), "add").and.returnValue(true);
 
-  spyOn(db.collection(""), "add").and.returnValue(true);
-
   const wrapped = testEnv.wrap(activitySpaceDelete);
   const req = await wrapped(snap, context);
 

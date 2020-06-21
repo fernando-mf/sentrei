@@ -30,6 +30,7 @@ export const activitySpaceResponseUpdated: Activity.Response = {
   action: "updated",
   category: "spaces",
   categoryId: "spaceId",
+  createdById: "spaceUser",
 };
 
 export const activitySpaceResponseDeleted: Activity.Response = {

@@ -5,6 +5,9 @@ import Username from "@sentrei/common/models/Username";
 
 const db = admin.firestore();
 
+/**
+ * Update profile on create
+ */
 const profileUpdate = functions.firestore
   .document("usernames/{username}")
   .onCreate(snap => {

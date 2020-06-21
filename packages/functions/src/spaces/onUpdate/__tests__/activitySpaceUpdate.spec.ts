@@ -30,7 +30,7 @@ test("Return when there are no changes", async done => {
   done();
 });
 
-test("Send a request to add a new item to activities", async done => {
+test("Send a request to add a new space to activities", async done => {
   const afterData = {
     ...spaceResponse,
     description: "new",

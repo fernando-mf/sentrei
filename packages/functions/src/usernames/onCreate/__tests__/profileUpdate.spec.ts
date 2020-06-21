@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/unbound-method */
-
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
