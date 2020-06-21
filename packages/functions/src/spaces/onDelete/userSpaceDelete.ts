@@ -3,6 +3,9 @@ import * as functions from "firebase-functions";
 
 const db = admin.firestore();
 
+/**
+ * Delete spaces from user
+ */
 const userSpaceDelete = functions.firestore
   .document("spaces/{id}")
   .onDelete(async snap => {
