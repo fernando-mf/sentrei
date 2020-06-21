@@ -23,7 +23,7 @@ const activityRoomDelete = functions.firestore
       categoryId: id,
       createdById: data.updatedById,
       updatedAt: data.updatedAt,
-      spaceId: id,
+      spaceId: data.spaceId,
       user: data.updatedBy,
       userNotification:
         data.createdById === data.updatedById ? [] : [data.createdById],
