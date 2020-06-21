@@ -24,6 +24,7 @@ test("On rooms update, update all user rooms on rooms update", async done => {
   };
   const before = {
     data: (): Room.Response => roomResponse,
+    id: "roomId",
   };
   const changes = {after, before};
   const wrapped = testEnv.wrap(userSpaceUpdate);
