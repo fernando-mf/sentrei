@@ -67,12 +67,12 @@
     "firebase-functions": "^3.6.2",
     "firebase-functions-test": "^0.2.1",
     "firebase-tools": "^8.4.2",
+    "jest": "^26.0.1",
+    "jest-when": "^2.7.2",
     "lodash": "^4.17.15",
     "tscpaths": "^0.0.9"
   },
   "devDependencies": {
-    "jest": "^26.0.1",
-    "jest-when": "^2.7.2",
     "rimraf": "^3.0.2",
     "ts-jest": "26.1.0"
   },
