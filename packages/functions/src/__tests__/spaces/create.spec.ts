@@ -4,7 +4,7 @@ import Profile from "@sentrei/common/models/Profile";
 import Space from "@sentrei/common/models/Space";
 
 import {profileGet} from "../../__dummy__/Profile";
-// import {spaceResponse} from "../../__dummy__/Space";
+import {spaceCreate} from "../../__dummy__/Space";
 
 import {
   initializeAdminApp,
@@ -18,6 +18,7 @@ let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.CollectionReference;
 
 const data: Space.Create = {
+  ...spaceCreate,
   createdAt: firebase.firestore.FieldValue.serverTimestamp(),
   createdBy: profileGet,
   createdById: "userId",
