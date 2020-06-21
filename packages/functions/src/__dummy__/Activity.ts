@@ -1,15 +1,17 @@
+import * as firebase from "@firebase/testing";
+
 import Activity from "@sentrei/common/models/Activity";
 import {profileGet} from "@sentrei/functions/__dummy__/Profile";
 import {roomResponse} from "@sentrei/functions/__dummy__/Room";
 import {spaceResponse} from "@sentrei/functions/__dummy__/Space";
 
-import {firestore} from "../__mocks__/firebase-admin";
-
 export const activityResponseBase = {
   categoryId: "categoryId",
   createdById: "userId",
   spaceId: "spaceId",
-  updatedAt: firestore.Timestamp,
+  updatedAt: firebase.firestore.Timestamp.fromDate(
+    new Date(`2020/01/01 00:00:00`),
+  ),
   user: profileGet,
   userNotification: [],
 };
