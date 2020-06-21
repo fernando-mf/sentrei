@@ -1,3 +1,17 @@
+# [4.95.0](https://github.com/sentrei/sentrei/compare/v4.94.1...v4.95.0) (2020-06-21)
+
+### Bug Fixes
+
+- 🐛 upgrade eslintrc rules ([7727d9f](https://github.com/sentrei/sentrei/commit/7727d9f7d8244e860f80da1d80e3ba866d428b5e))
+
+### Features
+
+- 🎸 complete refactor functions ([03d9d10](https://github.com/sentrei/sentrei/commit/03d9d10349c5cc80ecfe6763d800ab1c7de57f93))
+- 🎸 finish room functions complete refactoring ([9ca2491](https://github.com/sentrei/sentrei/commit/9ca2491d4c1a7b4a395e47717f287f1db296cb7f))
+- 🎸 finish user upgrade ([6253d16](https://github.com/sentrei/sentrei/commit/6253d16f08398bc1aa8a08d1b6022d883384a6ff))
+- 🎸 initialize **dummy** and refactor ([c664502](https://github.com/sentrei/sentrei/commit/c664502f7bf371523a10e27ac2d152aad55344b3))
+- 🎸 refactor space to spaceId ([02ead42](https://github.com/sentrei/sentrei/commit/02ead4242ad01b14ebbeae67449e9f5d00ea360d))
+
 ## [4.94.1](https://github.com/sentrei/sentrei/compare/v4.94.0...v4.94.1) (2020-06-20)
 
 ### Bug Fixes
