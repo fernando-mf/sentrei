@@ -3,10 +3,7 @@ import functions from "firebase-functions-test";
 
 import Room from "@sentrei/common/models/Room";
 
-import {
-  activityRoomResponseUpdated,
-  activityRoomResponseCreated,
-} from "../../../__dummy__/Activity";
+import {activityRoomResponseUpdated} from "../../../__dummy__/Activity";
 import {roomResponse} from "../../../__dummy__/Room";
 
 import activityRoomUpdate from "../activityRoomUpdate";
