@@ -13,18 +13,18 @@ const db = admin.firestore();
 beforeAll(() => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   when(db.doc as any)
-    .calledWith("users/testUID")
-    .mockReturnValue({path: "users/testUID"})
-    .calledWith("profiles/testUID")
-    .mockReturnValue({path: "profiles/testUID"});
+    .calledWith("users/userId")
+    .mockReturnValue({path: "users/userId"})
+    .calledWith("profiles/userId")
+    .mockReturnValue({path: "profiles/userId"});
 });
 
 test("Add the user info to their settings", async done => {
   const spy = spyOn(db.batch(), "set");
-  const ref = db.doc("users/testUID");
+  const ref = db.doc("users/userId");
 
   const wrapped = testEnv.wrap(userBatchSet);
-  await wrapped({email: "test@test.com", uid: "testUID"});
+  await wrapped({email: "user@sentrei.com", uid: "userId"});
 
   expect(spy).toHaveBeenCalledWith(ref, userResponse, {merge: true});
   done();
@@ -32,14 +32,14 @@ test("Add the user info to their settings", async done => {
 
 test("Add the user info to their profile", async done => {
   const spy = spyOn(db.batch(), "set");
-  const ref = db.doc("profiles/testUID");
+  const ref = db.doc("profiles/userId");
 
   const wrapped = testEnv.wrap(userBatchSet);
   await wrapped({
     displayName: "user name",
     email: "test@test.com",
     photoURL: "photo.png",
-    uid: "testUID",
+    uid: "userId",
   });
 
   expect(spy).toHaveBeenCalledWith(ref, profileResponse, {merge: true});
@@ -51,7 +51,7 @@ test("On users create, batch commit all set changes to the database", async done
   spyOn(db.batch(), "commit").and.returnValue(true);
 
   const wrapped = testEnv.wrap(userBatchSet);
-  const req = await wrapped({email: "test@test.com", uid: "testUID"});
+  const req = await wrapped({email: "user@sentrei.com", uid: "userId"});
 
   expect(setSpy).toHaveBeenCalledTimes(2);
   expect(req).toBe(true);
