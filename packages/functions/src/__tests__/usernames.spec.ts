@@ -1,6 +1,5 @@
 import * as firebase from "@firebase/testing";
 
-import {username} from "../__dummy__/Username";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -15,11 +14,11 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp(username);
+  db = initializeFirebaseApp({uid: "userId"});
   collection = db.collection("usernames");
-  doc = collection.doc("userId");
+  doc = collection.doc("sentrei");
   await loadFirestoreRules();
-  await admin.doc("usernames/userId").set(username);
+  await admin.doc("usernames/sentrei").set({uid: "otherUserId"});
   done();
 });
 
@@ -39,7 +38,7 @@ test("Cannot list usernames", async done => {
 });
 
 test("Can create", async done => {
-  const ref = collection.doc("userId");
+  const ref = collection.doc("newuser");
   await firebase.assertSucceeds(ref.set({uid: "userId"}));
   done();
 });

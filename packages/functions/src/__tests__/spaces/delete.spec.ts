@@ -40,10 +40,10 @@ test("Authors can delete", async done => {
 });
 
 test("UpdatedById has the current user UID", async done => {
-  const data = {createdById: "spaceUser", updatedById: "otherUserId"};
-  const ref = db.doc("spaces/otherUserId");
+  const data = {createdById: "spaceUser", updatedById: "otherUser"};
+  const ref = db.doc("spaces/otherUser");
   await admin.doc("users/spaceUser").set({role: "viewer"});
-  await admin.doc("spaces/otherUserId").set(data);
+  await admin.doc("spaces/otherUser").set(data);
   await firebase.assertFails(ref.delete());
   done();
 });
@@ -51,7 +51,7 @@ test("UpdatedById has the current user UID", async done => {
 test("Admins can delete", async done => {
   const ref = db.doc("spaces/adminDoc");
   await admin.doc("users/spaceUser").set({role: "admin"});
-  await admin.doc("spaces/adminDoc").set({updatedById: "otherUserId"});
+  await admin.doc("spaces/adminDoc").set({updatedById: "otherUser"});
   await firebase.assertSucceeds(ref.delete());
   done();
 });
@@ -59,7 +59,7 @@ test("Admins can delete", async done => {
 test("Moderators can delete", async done => {
   const ref = db.doc("spaces/moderatorDoc");
   await admin.doc("users/spaceUser").set({role: "moderator"});
-  await admin.doc("spaces/moderatorDoc").set({updatedById: "otherUserId"});
+  await admin.doc("spaces/moderatorDoc").set({updatedById: "otherUser"});
   await firebase.assertSucceeds(ref.delete());
   done();
 });

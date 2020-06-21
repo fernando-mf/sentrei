@@ -25,7 +25,7 @@ beforeAll(async done => {
   ref = db.doc("spaces/spaceId/members/spaceUser");
   await loadFirestoreRules();
   await admin.doc("profile/spaceUser").set(profile);
-  await admin.doc("profile/otherUserId").set(profile);
+  await admin.doc("profile/otherUser").set(profile);
   done();
 });
 
@@ -59,8 +59,8 @@ test("Users can join a space", async done => {
 });
 
 test("Cannot join a space using a fake UID", async done => {
-  const docRef = db.doc("spaces/spaceId/members/otherUserId");
-  await admin.doc("spaces/spaceId/members/otherUserId").delete();
+  const docRef = db.doc("spaces/spaceId/members/otherUser");
+  await admin.doc("spaces/spaceId/members/otherUser").delete();
   await firebase.assertFails(docRef.set(data));
   done();
 });
@@ -71,7 +71,7 @@ test("Users can leave a space", async done => {
 });
 
 test("Cannot leave a space using a fake UID", async done => {
-  const docRef = db.doc("spaces/spaceId/members/otherUserId");
+  const docRef = db.doc("spaces/spaceId/members/otherUser");
   await firebase.assertFails(docRef.delete());
   done();
 });
