@@ -25,7 +25,7 @@ beforeAll(async done => {
   ref = db.doc("rooms/roomId/members/roomUser");
   await loadFirestoreRules();
   await admin.doc("profile/roomUser").set(profile);
-  await admin.doc("profile/otherUser").set(profile);
+  await admin.doc("profile/otherUserId").set(profile);
   done();
 });
 
@@ -59,8 +59,8 @@ test("Users can join a room", async done => {
 });
 
 test("Cannot join a room using a fake UID", async done => {
-  const docRef = db.doc("rooms/roomId/members/otherUser");
-  await admin.doc("rooms/roomId/members/otherUser").delete();
+  const docRef = db.doc("rooms/roomId/members/otherUserId");
+  await admin.doc("rooms/roomId/members/otherUserId").delete();
   await firebase.assertFails(docRef.set(data));
   done();
 });
@@ -71,7 +71,7 @@ test("Users can leave a room", async done => {
 });
 
 test("Cannot leave a room using a fake UID", async done => {
-  const docRef = db.doc("rooms/roomId/members/otherUser");
+  const docRef = db.doc("rooms/roomId/members/otherUserId");
   await firebase.assertFails(docRef.delete());
   done();
 });

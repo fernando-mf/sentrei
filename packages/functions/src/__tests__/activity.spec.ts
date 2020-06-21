@@ -14,11 +14,11 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "currentUser"});
+  db = initializeFirebaseApp({uid: "userId"});
   collection = db.collection("activity");
-  doc = collection.doc("itemId");
+  doc = collection.doc("activityId");
   await loadFirestoreRules();
-  await admin.doc("activity/itemId").set({title: "new activity"});
+  await admin.doc("activity/activityId").set({title: "new"});
   done();
 });
 
@@ -28,12 +28,12 @@ afterAll(async done => {
 });
 
 test("Cannot create a new activity", async done => {
-  await firebase.assertFails(collection.add({title: "new item"}));
+  await firebase.assertFails(collection.add({title: "new"}));
   done();
 });
 
 test("Cannot update activity", async done => {
-  await firebase.assertFails(doc.update({title: "updated!"}));
+  await firebase.assertFails(doc.update({title: "update"}));
   done();
 });
 

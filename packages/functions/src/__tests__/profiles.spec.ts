@@ -14,11 +14,11 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "currentUser"});
+  db = initializeFirebaseApp({uid: "profileId"});
   collection = db.collection("profiles");
-  doc = collection.doc("currentUser");
+  doc = collection.doc("profileId");
   await loadFirestoreRules();
-  await admin.doc("profiles/currentUser").set({name: "current"});
+  await admin.doc("profiles/profileId").set({name: "current"});
   done();
 });
 
@@ -28,18 +28,18 @@ afterAll(async done => {
 });
 
 test("Cannot create", async done => {
-  await firebase.assertFails(collection.add({name: "new user"}));
+  await firebase.assertFails(collection.add({name: "new"}));
   done();
 });
 
 test("Users can update their own data", async done => {
-  await firebase.assertSucceeds(doc.update({name: "current user"}));
+  await firebase.assertSucceeds(doc.update({name: "current"}));
   done();
 });
 
 test("Cannot update data from other users", async done => {
-  const ref = db.doc("profiles/otherUser");
-  await admin.doc("profiles/otherUser").set({name: "other"});
+  const ref = db.doc("profiles/otherUserId");
+  await admin.doc("profiles/otherUserId").set({name: "other"});
   await firebase.assertFails(ref.update({name: "changed"}));
   done();
 });

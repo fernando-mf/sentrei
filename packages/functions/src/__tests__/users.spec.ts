@@ -14,14 +14,14 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "testUser"});
+  db = initializeFirebaseApp({uid: "userId"});
   collection = db.collection("users");
-  doc = collection.doc("testUser");
+  doc = collection.doc("userId");
   await loadFirestoreRules();
-  await admin.doc("users/testUser").set({
+  await admin.doc("users/userId").set({
     role: "viewer",
   });
-  await admin.doc("users/otherTestUser").set({bio: "other"});
+  await admin.doc("users/otherUserId").set({bio: "other"});
   done();
 });
 
@@ -36,7 +36,7 @@ test("Users can read their own data", async done => {
 });
 
 test("Users cannot read data from others", async done => {
-  const ref = db.doc("users/otherTestUser");
+  const ref = db.doc("users/otherUserId");
   await firebase.assertFails(ref.get());
   done();
 });
@@ -47,7 +47,7 @@ test("Users can update their own data", async done => {
 });
 
 test("Users cannot update data from others", async done => {
-  const ref = db.doc("users/otherTestUser");
+  const ref = db.doc("users/otherUserId");
   await firebase.assertFails(ref.update({notifications: 0}));
   done();
 });
@@ -58,7 +58,7 @@ test("Cannot delete an item", async done => {
 });
 
 test("Cannot change the name field", async done => {
-  await firebase.assertFails(doc.update({name: "my name"}));
+  await firebase.assertFails(doc.update({name: "name"}));
   done();
 });
 

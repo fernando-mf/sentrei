@@ -14,7 +14,7 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "currentUser"});
+  db = initializeFirebaseApp({uid: "userId"});
   collection = db.collection("analytics");
   doc = collection.doc("stats");
   await loadFirestoreRules();
@@ -28,12 +28,12 @@ afterAll(async done => {
 });
 
 test("Cannot create an item", async done => {
-  await firebase.assertFails(collection.add({test: "new item"}));
+  await firebase.assertFails(collection.add({test: "new"}));
   done();
 });
 
 test("Cannot update an item", async done => {
-  await firebase.assertFails(doc.update({test: "updated item"}));
+  await firebase.assertFails(doc.update({test: "updated"}));
   done();
 });
 
