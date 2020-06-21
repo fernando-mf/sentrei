@@ -3,7 +3,10 @@ import functions from "firebase-functions-test";
 
 import Room from "@sentrei/common/models/Room";
 
-import {activityRoomResponseUpdated} from "../../../__dummy__/Activity";
+import {
+  activityRoomResponseUpdated,
+  activityRoomResponseCreated,
+} from "../../../__dummy__/Activity";
 import {roomResponse} from "../../../__dummy__/Room";
 
 import activityRoomUpdate from "../activityRoomUpdate";
@@ -33,13 +36,13 @@ test("Return when there are no changes", async done => {
 test("Send a request to add a new item to activities", async done => {
   const afterData = {
     ...roomResponse,
-    description: "new description",
-    photo: "new_photo.png",
+    description: "new",
+    photo: "new.png",
   };
   const beforeData = {
     ...roomResponse,
-    description: "old description",
-    photo: "old_photo.jpg",
+    description: "old",
+    photo: "old.jpg",
   };
   const after = {
     data: (): Room.Response => afterData,
@@ -50,6 +53,11 @@ test("Send a request to add a new item to activities", async done => {
 
   const changes = {after, before};
   const context = {params: {id: "roomId"}};
+  const expected = {
+    ...activityRoomResponseUpdated,
+    description: "new",
+    photo: "new.png",
+  };
 
   spyOn(db.collection(""), "add").and.returnValue(true);
 
@@ -58,8 +66,6 @@ test("Send a request to add a new item to activities", async done => {
 
   expect(req).toBe(true);
   expect(db.collection).toHaveBeenCalledWith("activity");
-  expect(db.collection("").add).toHaveBeenCalledWith(
-    activityRoomResponseUpdated,
-  );
+  expect(db.collection("").add).toHaveBeenCalledWith(expected);
   done();
 });
