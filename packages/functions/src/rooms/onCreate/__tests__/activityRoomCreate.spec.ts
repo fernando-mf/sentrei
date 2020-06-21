@@ -14,8 +14,7 @@ test("Send a request to add a new room to activities", async done => {
   const snap = {
     data: (): Room.Response => roomResponse,
   };
-  const context = {params: {id: "space"}};
-  const expected = activityRoomResponseCreated;
+  const context = {params: {id: "roomId"}};
 
   spyOn(db.collection(""), "add").and.returnValue(true);
 
@@ -24,6 +23,8 @@ test("Send a request to add a new room to activities", async done => {
 
   expect(req).toBe(true);
   expect(db.collection).toHaveBeenCalledWith("activity");
-  expect(db.collection("").add).toHaveBeenCalledWith(expected);
+  expect(db.collection("").add).toHaveBeenCalledWith(
+    activityRoomResponseCreated,
+  );
   done();
 });
