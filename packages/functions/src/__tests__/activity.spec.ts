@@ -1,5 +1,6 @@
 import * as firebase from "@firebase/testing";
 
+import {activityResponseBase} from "../__dummy__/Activity";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -18,7 +19,7 @@ beforeAll(async done => {
   collection = db.collection("activity");
   doc = collection.doc("activityId");
   await loadFirestoreRules();
-  await admin.doc("activity/activityId").set({title: "new"});
+  await admin.doc("activity/activityId").set(activityResponseBase);
   done();
 });
 
@@ -28,12 +29,12 @@ afterAll(async done => {
 });
 
 test("Cannot create a new activity", async done => {
-  await firebase.assertFails(collection.add({title: "new"}));
+  await firebase.assertFails(collection.add(activityResponseBase));
   done();
 });
 
 test("Cannot update activity", async done => {
-  await firebase.assertFails(doc.update({title: "update"}));
+  await firebase.assertFails(doc.update(activityResponseBase));
   done();
 });
 
