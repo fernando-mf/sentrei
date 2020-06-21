@@ -11,6 +11,6 @@
       "@sentrei/common/*": ["src/*"]
     }
   },
-  "include": ["src/**/*", "../functions/src/__mocks__/templates"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
