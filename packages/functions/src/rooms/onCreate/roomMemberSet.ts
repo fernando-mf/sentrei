@@ -6,6 +6,9 @@ import Room from "@sentrei/common/models/Room";
 
 const db = admin.firestore();
 
+/**
+ * Set member on room create
+ */
 const roomMemberSet = functions.firestore
   .document("rooms/{id}")
   .onCreate(snap => {
