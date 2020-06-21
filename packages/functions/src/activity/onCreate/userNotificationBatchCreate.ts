@@ -21,6 +21,7 @@ const userNotificationBatchCreate = functions.firestore
     }
 
     const notification: Notification.Create = {
+      action: data.action,
       activityId: id,
       type: "update",
       updatedAt: admin.firestore.FieldValue.serverTimestamp(),
