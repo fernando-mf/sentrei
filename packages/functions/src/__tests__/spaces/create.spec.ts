@@ -1,5 +1,6 @@
 import * as firebase from "@firebase/testing";
 
+import {profileResponse} from "../../__dummy__/Profile";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -10,21 +11,16 @@ import {
 let admin: firebase.firestore.Firestore;
 let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.CollectionReference;
-const profile = {
-  name: "name",
-  photo: "user.png",
-  username: "username",
-};
 
 const data = {
   createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-  createdBy: profile,
+  createdBy: profileResponse,
   createdById: "currentUser",
   description: "content",
   memberCount: 0,
   photo: null,
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
-  updatedBy: profile,
+  updatedBy: profileResponse,
   updatedById: "currentUser",
 };
 
@@ -33,7 +29,7 @@ beforeAll(async done => {
   db = initializeFirebaseApp({uid: "currentUser"});
   ref = db.collection("spaces");
   await loadFirestoreRules();
-  await admin.doc("profiles/currentUser").set(profile);
+  await admin.doc("profiles/currentUser").set(profileResponse);
   done();
 });
 
@@ -61,19 +57,19 @@ test("CreatedAt has a valid timestamp", async done => {
 });
 
 test("CreatedBy has a valid user name", async done => {
-  const createdBy = {...profile, name: "invalid"};
+  const createdBy = {...profileResponse, name: "invalid"};
   await firebase.assertFails(ref.add({...data, createdBy}));
   done();
 });
 
 test("CreatedBy has a valid user photo", async done => {
-  const createdBy = {...profile, photo: "invalid"};
+  const createdBy = {...profileResponse, photo: "invalid"};
   await firebase.assertFails(ref.add({...data, createdBy}));
   done();
 });
 
 test("CreatedBy has a valid username", async done => {
-  const createdBy = {...profile, username: "invalid"};
+  const createdBy = {...profileResponse, username: "invalid"};
   await firebase.assertFails(ref.add({...data, createdBy}));
   done();
 });
@@ -109,19 +105,19 @@ test("UpdatedAt has a valid timestamp", async done => {
 });
 
 test("UpdatedBy has a valid user name", async done => {
-  const updatedBy = {...profile, name: "invalid"};
+  const updatedBy = {...profileResponse, name: "invalid"};
   await firebase.assertFails(ref.add({...data, updatedBy}));
   done();
 });
 
 test("UpdatedBy has a valid user photo", async done => {
-  const updatedBy = {...profile, photo: "invalid"};
+  const updatedBy = {...profileResponse, photo: "invalid"};
   await firebase.assertFails(ref.add({...data, updatedBy}));
   done();
 });
 
 test("UpdatedBy has a valid username", async done => {
-  const updatedBy = {...profile, username: "invalid"};
+  const updatedBy = {...profileResponse, username: "invalid"};
   await firebase.assertFails(ref.add({...data, updatedBy}));
   done();
 });
