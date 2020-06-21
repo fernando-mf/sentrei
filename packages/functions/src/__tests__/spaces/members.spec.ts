@@ -1,5 +1,6 @@
 import * as firebase from "@firebase/testing";
 
+import {profileResponse} from "../../__dummy__/Profile";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -12,21 +13,16 @@ let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.DocumentReference;
 
 const joined = firebase.firestore.FieldValue.serverTimestamp();
-const profile = {
-  name: "leo",
-  photo: "pic.png",
-  username: "test",
-  bio: "test",
-};
-const data = {...profile, joined, score: 1};
+
+const data = {...profileResponse, joined, score: 1};
 
 beforeAll(async done => {
   admin = initializeAdminApp();
   db = initializeFirebaseApp({uid: "spaceUser"});
   ref = db.doc("spaces/spaceId/members/spaceUser");
   await loadFirestoreRules();
-  await admin.doc("profile/spaceUser").set(profile);
-  await admin.doc("profile/otherUser").set(profile);
+  await admin.doc("profileResponse/spaceUser").set(profileResponse);
+  await admin.doc("profileResponse/otherUser").set(profileResponse);
   done();
 });
 
