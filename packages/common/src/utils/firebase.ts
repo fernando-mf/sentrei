@@ -22,6 +22,7 @@ if (!firebase.apps.length) {
 }
 
 export const auth = firebase.auth();
+
 export const storage = firebase.storage();
 
 export const functions = firebase.functions();
@@ -31,6 +32,7 @@ export const db = firebase.firestore();
 export const {analytics, performance} = firebase;
 
 export const {arrayRemove, arrayUnion} = firebase.firestore.FieldValue;
+
 export const timestamp = firebase.firestore.FieldValue.serverTimestamp();
 
 export default firebase;
