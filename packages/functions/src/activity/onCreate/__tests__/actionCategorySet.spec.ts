@@ -25,7 +25,7 @@ test("Send a request to add action category", async done => {
   const req = await wrapped(snap);
 
   expect(req).toBe(true);
-  expect(db.doc).toHaveBeenCalledWith("actions/userId");
+  expect(db.doc).toHaveBeenCalledWith("actions/spaceUser");
   expect(db.doc("").set).toHaveBeenCalledWith(expected, {merge: true});
   done();
 });
