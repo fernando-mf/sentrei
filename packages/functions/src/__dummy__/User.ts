@@ -7,7 +7,7 @@ export const userResponse: User.Response = {
   name: "user",
   role: "viewer",
   photo: null,
-  username: "user",
+  username: "userId",
 };
 
 export const userResponseApp: User.Response = {

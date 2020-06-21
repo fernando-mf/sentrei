@@ -36,9 +36,9 @@ test("Add the user info to their profile", async done => {
 
   const wrapped = testEnv.wrap(userBatchSet);
   await wrapped({
-    displayName: "user name",
-    email: "test@test.com",
-    photoURL: "photo.png",
+    displayName: "profileUser",
+    email: "user@sentrei.com",
+    photoURL: null,
     uid: "userId",
   });
 
