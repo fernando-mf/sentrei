@@ -19,15 +19,7 @@ let ref: firebase.firestore.CollectionReference;
 
 const data: Space.Create = {
   ...spaceCreate,
-  createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-  createdBy: profileGet,
   createdById: "userId",
-  description: "content",
-  memberCount: 0,
-  photo: null,
-  name: "space",
-  updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
-  updatedBy: profileGet,
   updatedById: "userId",
 };
 
