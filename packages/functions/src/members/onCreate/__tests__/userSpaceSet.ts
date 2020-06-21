@@ -1,6 +1,7 @@
-/* eslint-disable @typescript-eslint/unbound-method */
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
+
+import {spaceResponse} from "../../../__dummy__/Space";
 
 import userSpaceSet from "../userSpaceSet";
 
@@ -8,14 +9,10 @@ const testEnv = functions();
 const db = admin.firestore();
 
 test("On members create, update space to set a user's spaces", async done => {
-  const space = {
-    title: "name",
-    updatedAt: "now",
-  };
   spyOn(db.doc(""), "set").and.returnValue("updated");
-  spyOn(db.doc(""), "get").and.returnValue({data: () => space});
+  spyOn(db.doc(""), "get").and.returnValue({data: () => spaceResponse});
 
-  const params = {spaceId: "itemId", userId: "editorId"};
+  const params = {spaceId: "spaceId", userId: "userId"};
   const data = {joined: "now"};
   const snap = {
     data: (): {
@@ -24,11 +21,11 @@ test("On members create, update space to set a user's spaces", async done => {
   };
   const wrapped = testEnv.wrap(userSpaceSet);
   const req = await wrapped(snap, {params});
-  const payload = {...space, spaceId: "itemId", joined: "timestamp"};
+  const payload = {...spaceResponse, spaceId: "spaceId", joined: "timestamp"};
 
   expect(req).toBe("updated");
-  expect(db.doc).toHaveBeenCalledWith("spaces/itemId");
-  expect(db.doc).toHaveBeenCalledWith("users/editorId/spaces/itemId");
+  expect(db.doc).toHaveBeenCalledWith("spaces/spaceId");
+  expect(db.doc).toHaveBeenCalledWith("users/userId/spaces/spaceId");
   expect(db.doc("").set).toHaveBeenCalledWith(payload);
   done();
 });
