@@ -25,7 +25,7 @@ test("Send a request to update a user's profile and claims", async done => {
   const wrapped = testEnv.wrap(sdkProfileUpdate);
   const req = await wrapped(change, {params});
   const user = {displayName: "profileUser", photoURL: null};
-  const claims = {username: "profile"};
+  const claims = {username: "userId"};
 
   expect(req).toBe("updated");
   expect(auth.updateUser).toHaveBeenCalledWith("userId", user);

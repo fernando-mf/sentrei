@@ -3,7 +3,7 @@ import functions from "firebase-functions-test";
 import {when} from "jest-when";
 
 import {profileResponse} from "../../../__dummy__/Profile";
-import {userResponse} from "../../../__dummy__/User";
+import {userResponseAll} from "../../../__dummy__/User";
 import userBatchSet from "../userBatchSet";
 
 const testEnv = functions();
@@ -26,7 +26,7 @@ test("Add the user info to their settings", async done => {
   const wrapped = testEnv.wrap(userBatchSet);
   await wrapped({email: "user@sentrei.com", uid: "userId"});
 
-  expect(spy).toHaveBeenCalledWith(ref, userResponse, {merge: true});
+  expect(spy).toHaveBeenCalledWith(ref, userResponseAll, {merge: true});
   done();
 });
 

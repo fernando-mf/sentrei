@@ -23,3 +23,12 @@ export const userResponseEmail: User.Response = {
     update: ["email"],
   },
 };
+
+export const userResponseAll: User.Response = {
+  ...userResponse,
+  notificationSettings: {
+    chat: ["app", "email"],
+    invitation: ["app", "email"],
+    update: ["app", "email"],
+  },
+};
