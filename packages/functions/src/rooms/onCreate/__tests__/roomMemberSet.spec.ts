@@ -1,7 +1,10 @@
-/* eslint-disable @typescript-eslint/unbound-method */
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
+import Room from "@sentrei/common/models/Room";
+
+import {memberResponse} from "../../../__dummy__/Member";
+import {roomResponse} from "../../../__dummy__/Room";
 import roomMemberSet from "../roomMemberSet";
 
 const testEnv = functions();
@@ -10,24 +13,15 @@ const db = admin.firestore();
 test("On rooms create, add the room creator to the member list", async done => {
   spyOn(db.doc(""), "set").and.returnValue("updated");
 
-  const profile = {name: "name"};
-  const data = {createdAt: "now", createdBy: profile, createdById: "userId"};
   const snap = {
-    data: (): {
-      createdAt: string;
-      createdBy: {
-        name: string;
-      };
-      createdById: string;
-    } => data,
-    id: "itemId",
+    data: (): Room.Response => roomResponse,
+    id: "roomId",
   };
   const wrapped = testEnv.wrap(roomMemberSet);
   const req = await wrapped(snap);
-  const payload = {...profile, joined: "now"};
 
   expect(req).toBe("updated");
-  expect(db.doc).toHaveBeenCalledWith("rooms/itemId/members/userId");
-  expect(db.doc("").set).toHaveBeenCalledWith(payload);
+  expect(db.doc).toHaveBeenCalledWith("rooms/roomId/members/userId");
+  expect(db.doc("").set).toHaveBeenCalledWith(memberResponse);
   done();
 });
