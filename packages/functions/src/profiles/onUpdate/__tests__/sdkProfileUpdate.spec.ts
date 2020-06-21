@@ -1,7 +1,9 @@
-/* eslint-disable @typescript-eslint/unbound-method */
-
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
+
+import Profile from "@sentrei/common/models/Profile";
+
+import {profileResponse} from "../../../__dummy__/Profile";
 
 import sdkProfileUpdate from "../sdkProfileUpdate";
 
@@ -15,11 +17,7 @@ test("Send a request to update a user's profile and claims", async done => {
 
   const change = {
     after: {
-      data: (): {
-        name: string;
-        photo: string;
-        username: string;
-      } => ({name: "user", photo: "photo.png", username: "test"}),
+      data: (): Profile.Response => profileResponse,
     },
   };
   const params = {id: "userId"};
