@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/unbound-method */
-
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 import {when} from "jest-when";
@@ -11,6 +8,9 @@ import {
   activitySpaceResponseDeleted,
   activitySpaceResponseUpdated,
 } from "@sentrei/functions/__dummy__/Activity";
+import {profileGet} from "@sentrei/functions/__dummy__/Profile";
+
+import {firestore} from "../../../__mocks__/firebase-admin";
 
 import activityBatchSet from "../activityBatchSet";
 
@@ -31,6 +31,8 @@ test("Do not send a request to update when an item was deleted", async done => {
 
 test("Send a request to update the updatedAt field", async done => {
   spyOn(db.batch(), "commit").and.returnValue(true);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   when(db.doc as any)
     .calledWith("spaces/space")
     .mockReturnValue("spaceRef");
@@ -41,8 +43,8 @@ test("Send a request to update the updatedAt field", async done => {
   const wrapped = testEnv.wrap(activityBatchSet);
   const req = await wrapped(snap);
   const expected = {
-    updatedAt: "today",
-    updatedBy: {name: "user"},
+    updatedAt: firestore.Timestamp,
+    updatedBy: profileGet,
     updatedById: "editorId",
   };
 
