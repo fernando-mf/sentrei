@@ -5,19 +5,21 @@ import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 import {when} from "jest-when";
 
+import Activity from "@sentrei/common/models/Activity";
+
+import {
+  activitySpaceResponseDeleted,
+  activitySpaceResponseUpdated,
+} from "@sentrei/functions/__dummy__/Activity";
+
 import activityBatchSet from "../activityBatchSet";
 
 const testEnv = functions();
 const db = admin.firestore();
 
-test("do not send a request to update when an item was deleted", async done => {
-  const data = {
-    action: "deleted",
-  };
+test("Do not send a request to update when an item was deleted", async done => {
   const snap = {
-    data: (): {
-      action: string;
-    } => data,
+    data: (): Activity.Response => activitySpaceResponseDeleted,
   };
   const wrapped = testEnv.wrap(activityBatchSet);
   const req = await wrapped(snap);
@@ -27,29 +29,14 @@ test("do not send a request to update when an item was deleted", async done => {
   done();
 });
 
-test("send a request to update the updatedAt field", async done => {
+test("Send a request to update the updatedAt field", async done => {
   spyOn(db.batch(), "commit").and.returnValue(true);
   when(db.doc as any)
-    .calledWith("spaces/space1")
-    .mockReturnValue("space1Ref")
-    .calledWith("spaces/space2")
-    .mockReturnValue("space2Ref");
+    .calledWith("spaces/space")
+    .mockReturnValue("spaceRef");
 
-  const data = {
-    createdById: "editorId",
-    spaces: ["space1", "space2"],
-    updatedAt: "today",
-    user: {name: "user"},
-  };
   const snap = {
-    data: (): {
-      createdById: string;
-      spaces: string[];
-      updatedAt: string;
-      user: {
-        name: string;
-      };
-    } => data,
+    data: (): Activity.Response => activitySpaceResponseUpdated,
   };
   const wrapped = testEnv.wrap(activityBatchSet);
   const req = await wrapped(snap);
@@ -60,12 +47,8 @@ test("send a request to update the updatedAt field", async done => {
   };
 
   expect(req).toBe(true);
-  expect(db.doc).toHaveBeenCalledWith("spaces/space1");
-  expect(db.doc).toHaveBeenCalledWith("spaces/space2");
-  expect(db.batch().set).toHaveBeenCalledWith("space1Ref", expected, {
-    merge: true,
-  });
-  expect(db.batch().set).toHaveBeenCalledWith("space2Ref", expected, {
+  expect(db.doc).toHaveBeenCalledWith("spaces/space");
+  expect(db.batch().set).toHaveBeenCalledWith("spaceRef", expected, {
     merge: true,
   });
   done();

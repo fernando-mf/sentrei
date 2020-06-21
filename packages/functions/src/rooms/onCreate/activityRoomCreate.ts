@@ -23,7 +23,7 @@ const activityRoomCreate = functions.firestore
       category: "rooms",
       categoryId: id,
       createdById: data.createdById,
-      spaces: [id],
+      space: id,
       updatedAt: data.updatedAt,
       user: data.updatedBy,
       userNotification: [],

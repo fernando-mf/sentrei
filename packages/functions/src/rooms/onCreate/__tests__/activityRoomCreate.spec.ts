@@ -36,7 +36,7 @@ test("Send a request to add a new room to activities", async done => {
     category: "rooms",
     categoryId: "itemId",
     createdById: "editorId",
-    spaces: ["itemId"],
+    space: "itemId",
     updatedAt: "today",
     user: profile,
     userNotification: [],

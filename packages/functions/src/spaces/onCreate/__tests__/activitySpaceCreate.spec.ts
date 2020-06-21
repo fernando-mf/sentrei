@@ -37,7 +37,7 @@ test("Send a request to add a new space to activities", async done => {
     categoryId: "itemId",
     createdById: "editorId",
     updatedAt: "today",
-    spaces: ["itemId"],
+    space: "itemId",
     user: profile,
     userNotification: [],
   };
