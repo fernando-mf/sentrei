@@ -8,6 +8,9 @@ import getNameFromEmail from "../../helpers/getNameFromEmail";
 
 const db = admin.firestore();
 
+/**
+ * Setup profile on user create
+ */
 const userBatchSet = functions.auth.user().onCreate(async user => {
   const batch = db.batch();
 
