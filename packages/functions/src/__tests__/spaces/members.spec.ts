@@ -10,6 +10,7 @@ import {
 let admin: firebase.firestore.Firestore;
 let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.DocumentReference;
+
 const joined = firebase.firestore.FieldValue.serverTimestamp();
 const profile = {
   name: "leo",

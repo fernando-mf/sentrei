@@ -10,6 +10,7 @@ import {
 let admin: firebase.firestore.Firestore;
 let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.DocumentReference;
+
 const profile = {
   name: "name",
   photo: "user.png",
