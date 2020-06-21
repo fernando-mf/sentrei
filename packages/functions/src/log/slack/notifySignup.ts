@@ -5,11 +5,13 @@ const config = functions.config().env;
 
 const webhook = new IncomingWebhook(config.slack.notifySignup);
 
+/**
+ * Notify signup to slack
+ */
 const notifySignup = functions.auth.user().onCreate(event => {
-  const user = event.email;
   (async (): Promise<void> => {
     await webhook.send({
-      text: `Environment: ${config.environment}\nSignup: ${user}`,
+      text: `Environment: ${config.environment}\nSignup: ${event.email}\nMetadata: ${event.metadata}`,
     });
   })();
 });

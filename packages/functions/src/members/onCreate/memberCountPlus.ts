@@ -3,6 +3,9 @@ import * as functions from "firebase-functions";
 
 const db = admin.firestore();
 
+/**
+ * Increase member count to arbitrary collection
+ */
 const memberCountPlus = functions.firestore
   .document("{collection}/{docId}/members/{userId}")
   .onCreate((_, context) => {

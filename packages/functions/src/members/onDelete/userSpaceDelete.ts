@@ -3,6 +3,9 @@ import * as functions from "firebase-functions";
 
 const db = admin.firestore();
 
+/**
+ * Delete space for user
+ */
 const userSpaceDelete = functions.firestore
   .document("spaces/{spaceId}/members/{userId}")
   .onDelete((_, context) => {

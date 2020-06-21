@@ -1,3 +1,4 @@
+import {UserAction} from "@sentrei/common/models/Activity";
 import Profile from "@sentrei/common/models/Profile";
 import User from "@sentrei/common/models/User";
 
@@ -13,7 +14,9 @@ declare namespace Notification {
   }
 
   export interface Create {
+    action: UserAction;
     activityId: string | null;
+    title: string;
     type: Type;
     updatedAt: firebase.firestore.FieldValue;
     user: Profile.Response;
