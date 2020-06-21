@@ -25,7 +25,7 @@ const activityBatchSet = functions.firestore
       updatedById: data.createdById,
     };
 
-    const spaceRef = db.doc(`spaces/${data.space}`);
+    const spaceRef = db.doc(`spaces/${data.spaceId}`);
     batch.set(spaceRef, spaceData, {merge: true});
 
     return batch.commit();

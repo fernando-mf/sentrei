@@ -38,7 +38,7 @@ test("Send a request to add a new delete to activities", async done => {
     category: "rooms",
     categoryId: "itemId",
     createdById: "editorId",
-    space: "itemId",
+    spaceId: "itemId",
     updatedAt: "timestamp",
     user: profile,
     userNotification: ["authorId"],

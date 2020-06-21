@@ -22,7 +22,7 @@ beforeEach(() => {
   spyOn(batch, "commit").and.returnValue(true);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   when(db.doc as any)
-    .calledWith("spaces/space/leaderboard/userId")
+    .calledWith("spaces/spaceId/leaderboard/userId")
     .mockReturnValue("space1Ref");
 });
 
@@ -35,7 +35,7 @@ test("Increase score when a space is created", async done => {
   const payload = {createdById: "userId", score: scoreActions.created_spaces};
 
   expect(req).toBe(true);
-  expect(db.doc).toHaveBeenCalledWith("spaces/space/leaderboard/userId");
+  expect(db.doc).toHaveBeenCalledWith("spaces/spaceId/leaderboard/userId");
   expect(db.doc).toHaveBeenCalledTimes(1);
   expect(batch.set).toHaveBeenCalledWith("space1Ref", payload, {merge});
   done();
@@ -50,7 +50,7 @@ test("Increase score when a space is updated", async done => {
   const payload = {createdById: "userId", score: scoreActions.updated_spaces};
 
   expect(req).toBe(true);
-  expect(db.doc).toHaveBeenCalledWith("spaces/space/leaderboard/userId");
+  expect(db.doc).toHaveBeenCalledWith("spaces/spaceId/leaderboard/userId");
   expect(db.doc).toHaveBeenCalledTimes(1);
   expect(batch.set).toHaveBeenCalledWith("space1Ref", payload, {merge});
   done();
@@ -65,7 +65,7 @@ test("Decrease score when a space is deleted", async done => {
   const payload = {createdById: "userId", score: scoreActions.deleted_spaces};
 
   expect(req).toBe(true);
-  expect(db.doc).toHaveBeenCalledWith("spaces/space/leaderboard/userId");
+  expect(db.doc).toHaveBeenCalledWith("spaces/spaceId/leaderboard/userId");
   expect(db.doc).toHaveBeenCalledTimes(1);
   expect(batch.set).toHaveBeenCalledWith("space1Ref", payload, {merge});
   done();

@@ -34,7 +34,7 @@ test("Send a request to update the updatedAt field", async done => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   when(db.doc as any)
-    .calledWith("spaces/space")
+    .calledWith("spaces/spaceId")
     .mockReturnValue("spaceRef");
 
   const snap = {
@@ -49,7 +49,7 @@ test("Send a request to update the updatedAt field", async done => {
   };
 
   expect(req).toBe(true);
-  expect(db.doc).toHaveBeenCalledWith("spaces/space");
+  expect(db.doc).toHaveBeenCalledWith("spaces/spaceId");
   expect(db.batch().set).toHaveBeenCalledWith("spaceRef", expected, {
     merge: true,
   });

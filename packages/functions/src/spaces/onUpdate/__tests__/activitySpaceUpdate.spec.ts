@@ -99,7 +99,7 @@ test("Send a request to add a new item to activities", async done => {
     category: "spaces",
     categoryId: "itemId",
     createdById: "editorId",
-    space: "itemId",
+    spaceId: "itemId",
     updatedAt: "today",
     user: profile,
     userNotification: ["authorId"],
