@@ -1,3 +1,9 @@
+## [4.95.1](https://github.com/sentrei/sentrei/compare/v4.95.0...v4.95.1) (2020-06-21)
+
+### Bug Fixes
+
+- 🐛 tsconfig lint json ([6cd4252](https://github.com/sentrei/sentrei/commit/6cd4252fc379f264f26517b154ea79dde66af095))
+
 # [4.95.0](https://github.com/sentrei/sentrei/compare/v4.94.1...v4.95.0) (2020-06-21)
 
 ### Bug Fixes
