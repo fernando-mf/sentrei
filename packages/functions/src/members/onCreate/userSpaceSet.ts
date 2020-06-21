@@ -5,6 +5,9 @@ import Space from "@sentrei/common/models/Space";
 
 const db = admin.firestore();
 
+/**
+ * Set space for user
+ */
 const userSpaceSet = functions.firestore
   .document("spaces/{spaceId}/members/{userId}")
   .onCreate(async (snap, context) => {

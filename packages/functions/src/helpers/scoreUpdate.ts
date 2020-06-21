@@ -25,10 +25,8 @@ const scoreUpdate = (
     score: scoreField,
   };
 
-  data.spaces.forEach(space => {
-    const topicRef = db.doc(`spaces/${space}/leaderboard/${userId}`);
-    batch.set(topicRef, newData, {merge: true});
-  });
+  const topicRef = db.doc(`spaces/${data.spaceId}/leaderboard/${userId}`);
+  batch.set(topicRef, newData, {merge: true});
 
   return batch.commit();
 };

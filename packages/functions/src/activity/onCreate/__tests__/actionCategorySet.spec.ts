@@ -1,7 +1,9 @@
-/* eslint-disable @typescript-eslint/unbound-method */
-
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
+
+import Activity from "@sentrei/common/models/Activity";
+
+import {activitySpaceResponseUpdated} from "@sentrei/functions/__dummy__/Activity";
 
 import actionCategorySet from "../actionCategorySet";
 
@@ -9,20 +11,12 @@ const testEnv = functions();
 const db = admin.firestore();
 
 test("Send a request to add action category", async done => {
-  const data = {
-    action: "created",
-    category: "space",
-    createdById: "editorId",
-  };
   const snap = {
-    data: (): {
-      action: string;
-      category: string;
-      createdById: string;
-    } => data,
+    data: (): Activity.Response => activitySpaceResponseUpdated,
   };
+
   const expected = {
-    created_space: 1,
+    updated_spaces: 1,
   };
 
   spyOn(db.doc(""), "set").and.returnValue(true);
@@ -31,7 +25,7 @@ test("Send a request to add action category", async done => {
   const req = await wrapped(snap);
 
   expect(req).toBe(true);
-  expect(db.doc).toHaveBeenCalledWith("actions/editorId");
+  expect(db.doc).toHaveBeenCalledWith("actions/spaceUser");
   expect(db.doc("").set).toHaveBeenCalledWith(expected, {merge: true});
   done();
 });

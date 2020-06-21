@@ -5,6 +5,9 @@ import Profile from "@sentrei/common/models/Profile";
 
 const auth = admin.auth();
 
+/**
+ * Update sdk from profile
+ */
 const sdkProfileUpdate = functions.firestore
   .document("profiles/{id}")
   .onUpdate((change, context) => {

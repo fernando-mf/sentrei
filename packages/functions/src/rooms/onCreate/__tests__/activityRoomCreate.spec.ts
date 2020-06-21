@@ -1,46 +1,20 @@
-/* eslint-disable @typescript-eslint/unbound-method */
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
+import Room from "@sentrei/common/models/Room";
+
+import {activityRoomResponseCreated} from "../../../__dummy__/Activity";
+import {roomResponse} from "../../../__dummy__/Room";
 import activityRoomCreate from "../activityRoomCreate";
 
 const testEnv = functions();
 const db = admin.firestore();
 
 test("Send a request to add a new room to activities", async done => {
-  const profile = {name: "Joe", photo: "jeo.jpg"};
-  const data = {
-    createdById: "editorId",
-    title: "new item",
-    updatedAt: "today",
-    updatedBy: profile,
-    updatedById: "editorId",
-  };
   const snap = {
-    data: (): {
-      createdById: string;
-      title: string;
-      updatedAt: string;
-      updatedBy: {
-        name: string;
-        photo: string;
-      };
-      updatedById: string;
-    } => data,
+    data: (): Room.Response => roomResponse,
   };
-  const context = {params: {id: "itemId"}};
-  const expected = {
-    action: "created",
-    before: null,
-    after: data,
-    category: "rooms",
-    categoryId: "itemId",
-    createdById: "editorId",
-    spaces: ["itemId"],
-    updatedAt: "today",
-    user: profile,
-    userNotification: [],
-  };
+  const context = {params: {id: "roomId"}};
 
   spyOn(db.collection(""), "add").and.returnValue(true);
 
@@ -49,6 +23,8 @@ test("Send a request to add a new room to activities", async done => {
 
   expect(req).toBe(true);
   expect(db.collection).toHaveBeenCalledWith("activity");
-  expect(db.collection("").add).toHaveBeenCalledWith(expected);
+  expect(db.collection("").add).toHaveBeenCalledWith(
+    activityRoomResponseCreated,
+  );
   done();
 });

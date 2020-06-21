@@ -24,6 +24,9 @@ const createSlackMessage = (
   return message;
 };
 
+/**
+ * Notify billing to slack for project
+ */
 const notifyBilling = functions.pubsub
   .topic(`sentrei-${config.environment}-billing`)
   .onPublish((event, context) => {

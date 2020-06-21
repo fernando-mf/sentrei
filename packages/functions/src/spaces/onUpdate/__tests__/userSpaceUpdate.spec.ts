@@ -1,6 +1,9 @@
-/* eslint-disable @typescript-eslint/unbound-method */
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
+
+import Space from "@sentrei/common/models/Space";
+
+import {spaceResponse} from "../../../__dummy__/Space";
 
 import userSpaceUpdate from "../userSpaceUpdate";
 
@@ -12,45 +15,25 @@ beforeAll(() => {
 });
 
 test("On spaces update, update all user spaces on spaces update", async done => {
-  const docs = [{id: "user1"}, {id: "user2"}];
+  const docs = [{id: "user1"}, {id: "user2"}, {id: "user3"}];
   spyOn(db.collection(""), "get").and.returnValue({docs});
   spyOn(db.doc(""), "update").and.returnValue("ref");
 
-  const before = {
-    description: "old",
-    name: "old",
-    updatedAt: "old",
-  };
-  const after = {
-    description: "new",
-    name: "new",
-    updatedAt: "now",
-  };
-  const change = {
-    before: {
-      data: (): {
-        description: string;
-        name: string;
-        updatedAt: string;
-      } => before,
-    },
-    after: {
-      data: (): {
-        description: string;
-        name: string;
-        updatedAt: string;
-      } => after,
-      id: "itemId",
-    },
+  const after = spaceResponse;
+  const before = spaceResponse;
+  const changes = {
+    before: {data: (): Space.Response => before},
+    after: {data: (): Space.Response => after, id: "spaceId"},
   };
   const wrapped = testEnv.wrap(userSpaceUpdate);
-  const req = await wrapped(change);
+  const req = await wrapped(changes);
 
   expect(req).toBe("updated");
-  expect(db.collection).toHaveBeenCalledWith("spaces/itemId/members");
-  expect(db.doc).toHaveBeenCalledWith("users/user1/spaces/itemId");
-  expect(db.doc).toHaveBeenCalledWith("users/user2/spaces/itemId");
+  expect(db.collection).toHaveBeenCalledWith("spaces/spaceId/members");
+  expect(db.doc).toHaveBeenCalledWith("users/user1/spaces/spaceId");
+  expect(db.doc).toHaveBeenCalledWith("users/user2/spaces/spaceId");
+  expect(db.doc).toHaveBeenCalledWith("users/user3/spaces/spaceId");
   expect(db.doc("").update).toHaveBeenCalledWith(after);
-  expect(Promise.all).toHaveBeenCalledWith(["ref", "ref"]);
+  expect(Promise.all).toHaveBeenCalledWith(["ref", "ref", "ref"]);
   done();
 });

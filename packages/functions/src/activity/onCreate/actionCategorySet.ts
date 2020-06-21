@@ -5,6 +5,9 @@ import Activity from "@sentrei/common/models/Activity";
 
 const db = admin.firestore();
 
+/**
+ * Add actions and category to activity
+ */
 const actionCategorySet = functions.firestore
   .document("activity/{editId}")
   .onCreate(snap => {

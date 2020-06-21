@@ -1,8 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as functions from "firebase-functions";
 
 import {getProfileChanges, updateProfile} from "../../helpers";
 
+/**
+ * Add profiles to each collection
+ */
 const collectionProfileUpdate = functions.firestore
   .document("profiles/{uid}")
   .onUpdate(async (change, context) => {
@@ -14,6 +16,7 @@ const collectionProfileUpdate = functions.firestore
 
     const {uid} = context.params;
     const collections = ["spaces"];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const promises: any[] = [];
 
     collections.forEach(item => {

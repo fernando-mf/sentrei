@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import Profile from "@sentrei/common/models/Profile";
 import Room from "@sentrei/common/models/Room";
 import Space from "@sentrei/common/models/Space";
@@ -10,6 +7,7 @@ export type UserAction = "created" | "updated" | "deleted";
 type EditableContent = "rooms" | "spaces";
 
 type EditableContentType = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key in EditableContent]: any;
 };
 
@@ -23,7 +21,7 @@ declare namespace Activity {
     category: C;
     categoryId: string;
     createdById: string;
-    spaces: string[];
+    spaceId: string;
     updatedAt: firebase.firestore.FieldValue;
     user: Profile.Response;
     userNotification: string[];

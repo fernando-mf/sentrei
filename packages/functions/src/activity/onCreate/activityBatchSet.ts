@@ -2,9 +2,13 @@ import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
 import Activity from "@sentrei/common/models/Activity";
+import Metadata from "@sentrei/common/models/Metadata";
 
 const db = admin.firestore();
 
+/**
+ * Batch set activity for spaces
+ */
 const activityBatchSet = functions.firestore
   .document("activity/{editId}")
   .onCreate(snap => {
@@ -15,16 +19,14 @@ const activityBatchSet = functions.firestore
     }
 
     const batch = db.batch();
-    const spaceData = {
+    const spaceData: Metadata.Update = {
       updatedAt: data.updatedAt,
       updatedBy: data.user,
       updatedById: data.createdById,
     };
 
-    data.spaces.forEach(item => {
-      const spaceRef = db.doc(`spaces/${item}`);
-      batch.set(spaceRef, spaceData, {merge: true});
-    });
+    const spaceRef = db.doc(`spaces/${data.spaceId}`);
+    batch.set(spaceRef, spaceData, {merge: true});
 
     return batch.commit();
   });

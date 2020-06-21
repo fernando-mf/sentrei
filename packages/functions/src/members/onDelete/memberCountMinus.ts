@@ -3,6 +3,9 @@ import * as functions from "firebase-functions";
 
 const db = admin.firestore();
 
+/**
+ * Decrease member count to arbitrary collection
+ */
 const memberCountMinus = functions.firestore
   .document("{collection}/{docId}/members/{userId}")
   .onDelete((_, context) => {

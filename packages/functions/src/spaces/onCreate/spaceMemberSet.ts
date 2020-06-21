@@ -6,6 +6,9 @@ import Space from "@sentrei/common/models/Space";
 
 const db = admin.firestore();
 
+/**
+ * Set member on space create
+ */
 const spaceMemberSet = functions.firestore
   .document("spaces/{id}")
   .onCreate(snap => {

@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-namespace */
-
 import Metadata from "@sentrei/common/models/Metadata";
 
 declare namespace Room {
   export type EditableFields = {
     description: string;
     name: string;
+    photo: string | null;
   };
 
   interface Fields extends EditableFields {

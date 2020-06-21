@@ -1,7 +1,10 @@
-/* eslint-disable @typescript-eslint/unbound-method */
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
+import Notification from "@sentrei/common/models/Notification";
+
+import {notificationResponse} from "../../../__dummy__/Notification";
+import {userResponseApp, userResponseEmail} from "../../../__dummy__/User";
 import notificationCountUpdate from "../notificationCountUpdate";
 
 const testEnv = functions();
@@ -12,16 +15,12 @@ beforeEach(() => {
 });
 
 test("On create, return when app notifications are disabled", async done => {
-  const userData = {notificationSettings: {contentChanges: ["email"]}};
-  const data = {type: "contentChanges"};
   const snap = {
-    data: (): {
-      type: string;
-    } => data,
+    data: (): Notification.Response => notificationResponse,
   };
 
   spyOn(db, "doc").and.returnValue({
-    get: jest.fn().mockReturnValue({data: () => userData}),
+    get: jest.fn().mockReturnValue({data: () => userResponseEmail}),
     update: jest.fn().mockReturnValue("updated"),
   });
 
@@ -37,16 +36,12 @@ test("On create, return when app notifications are disabled", async done => {
 });
 
 test("On create, increment notificationCount", async done => {
-  const userData = {notificationSettings: {contentChanges: ["app"]}};
-  const data = {type: "contentChanges"};
   const snap = {
-    data: (): {
-      type: string;
-    } => data,
+    data: (): Notification.Response => notificationResponse,
   };
 
   spyOn(db, "doc").and.returnValue({
-    get: jest.fn().mockReturnValue({data: () => userData}),
+    get: jest.fn().mockReturnValue({data: () => userResponseApp}),
     update: jest.fn().mockReturnValue("updated"),
   });
 

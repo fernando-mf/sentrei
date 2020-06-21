@@ -7,6 +7,9 @@ import Room from "@sentrei/common/models/Room";
 
 const db = admin.firestore();
 
+/**
+ * Create room activity on update
+ */
 const activityRoomUpdate = functions.firestore
   .document("rooms/{id}")
   .onUpdate(async (change, context) => {
@@ -29,7 +32,7 @@ const activityRoomUpdate = functions.firestore
       category: "rooms",
       categoryId: id,
       createdById: after.updatedById,
-      spaces: [id],
+      spaceId: after.spaceId,
       updatedAt: after.updatedAt,
       user: after.updatedBy,
       userNotification:

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
-
 import Profile from "@sentrei/common/models/Profile";
 
 declare namespace User {

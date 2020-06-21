@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-namespace */
+import {UserAction} from "@sentrei/common/models/Activity";
 import Profile from "@sentrei/common/models/Profile";
 import User from "@sentrei/common/models/User";
 
@@ -14,6 +14,7 @@ declare namespace Notification {
   }
 
   export interface Create {
+    action: UserAction;
     activityId: string | null;
     type: Type;
     updatedAt: firebase.firestore.FieldValue;

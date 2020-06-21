@@ -11,12 +11,6 @@
       "@sentrei/common/*": ["src/*"]
     }
   },
-  "include": ["src/**/*"],
-  "exclude": [
-    "node_modules",
-    "**/__tests__/*.ts",
-    "**/__tests__/*.tsx",
-    "**/*.spec.ts",
-    "**/*.spec.tsx"
-  ]
+  "include": ["src/**/*", "../functions/src/__mocks__/templates"],
+  "exclude": ["node_modules"]
 }

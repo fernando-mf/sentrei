@@ -6,6 +6,9 @@ import Space from "@sentrei/common/models/Space";
 
 const db = admin.firestore();
 
+/**
+ * Create space activity on delete
+ */
 const activitySpaceDelete = functions.firestore
   .document("spaces/{id}")
   .onDelete(async (snap, context) => {
@@ -20,7 +23,7 @@ const activitySpaceDelete = functions.firestore
       categoryId: id,
       createdById: data.updatedById,
       updatedAt: data.updatedAt,
-      spaces: [id],
+      spaceId: id,
       user: data.updatedBy,
       userNotification:
         data.createdById === data.updatedById ? [] : [data.createdById],

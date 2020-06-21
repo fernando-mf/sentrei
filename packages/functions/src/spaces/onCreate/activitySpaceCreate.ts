@@ -6,6 +6,9 @@ import Space from "@sentrei/common/models/Space";
 
 const db = admin.firestore();
 
+/**
+ * Create space activity on create
+ */
 const activitySpaceCreate = functions.firestore
   .document("spaces/{id}")
   .onCreate(async (snap, context) => {
@@ -24,7 +27,7 @@ const activitySpaceCreate = functions.firestore
       categoryId: id,
       createdById: data.createdById,
       updatedAt: data.updatedAt,
-      spaces: [id],
+      spaceId: id,
       user: data.updatedBy,
       userNotification: [],
     };

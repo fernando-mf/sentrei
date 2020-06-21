@@ -9,21 +9,15 @@
     "rootDir": "src",
     "sourceMap": true,
     "strict": false,
-    "target": "es2017",
+    "target": "es2018",
+    "lib": ["ES2018"],
     "paths": {
       "@sentrei/common/*": ["../common/dist/*"],
       "@sentrei/functions/*": ["src/*"]
     }
   },
-  "include": ["src/**/*", "src/rooms/onCreate/.ts"],
-  "exclude": [
-    "node_modules",
-    "**/__mocks__/**",
-    "**/__tests__/*.ts",
-    "**/__tests__/*.tsx",
-    "**/*.spec.ts",
-    "**/*.spec.tsx"
-  ],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
   "references": [
     {
       "path": "../common"

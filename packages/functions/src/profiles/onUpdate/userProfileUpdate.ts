@@ -5,6 +5,9 @@ import getProfileChanges from "../../helpers/getProfileChanges";
 
 const db = admin.firestore();
 
+/**
+ * Update profile of user
+ */
 const userProfileUpdate = functions.firestore
   .document("profiles/{uid}")
   .onUpdate(async (change, context) => {

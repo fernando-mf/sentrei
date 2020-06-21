@@ -1,24 +1,19 @@
-/* eslint-disable @typescript-eslint/unbound-method */
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
+
+import Profile from "@sentrei/common/models/Profile";
+
+import {profileResponse} from "../../../__dummy__/Profile";
 
 import collectionProfileUpdate from "../collectionProfileUpdate";
 
 const testEnv = functions();
 const db = admin.firestore();
 
-const data = {
-  name: "Leo",
-  photo: "davinci.jpg",
-};
-
 const change = {
   before: {data: (): {} => ({})},
   after: {
-    data: (): {
-      name: string;
-      photo: string;
-    } => data,
+    data: (): Profile.Response => profileResponse,
   },
 };
 
@@ -29,16 +24,10 @@ afterEach(() => {
 test("Return when the data did not change", async done => {
   const noChange = {
     before: {
-      data: (): {
-        name: string;
-        photo: string;
-      } => ({name: "Leo", photo: "davinci.jpg"}),
+      data: (): Profile.Response => profileResponse,
     },
     after: {
-      data: (): {
-        name: string;
-        photo: string;
-      } => ({name: "Leo", photo: "davinci.jpg"}),
+      data: (): Profile.Response => profileResponse,
     },
   };
 
@@ -49,7 +38,7 @@ test("Return when the data did not change", async done => {
   done();
 });
 
-test("should update the profile for all collections", async done => {
+test("Should update the profile for all collections", async done => {
   spyOn(Promise, "all").and.returnValue("updated");
   spyOn(db.collection("").where("", "==", ""), "get").and.returnValue({
     docs: [
@@ -68,8 +57,8 @@ test("should update the profile for all collections", async done => {
 
   expect(req).toBe("updated");
   expect(db.collection).toHaveBeenCalledWith("spaces");
-  expect(spy1).toHaveBeenCalledWith({createdBy: data});
-  expect(spy2).toHaveBeenCalledWith({updatedBy: data});
+  expect(spy1).toHaveBeenCalledWith({createdBy: profileResponse});
+  expect(spy2).toHaveBeenCalledWith({updatedBy: profileResponse});
   expect(spy1).toHaveBeenCalledTimes(2);
   expect(spy2).toHaveBeenCalledTimes(2);
   expect(Promise.all).toHaveBeenCalledWith(["doc1", "doc2"]);

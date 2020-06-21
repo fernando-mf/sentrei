@@ -6,6 +6,9 @@ import Notification from "@sentrei/common/models/Notification";
 
 const db = admin.firestore();
 
+/**
+ * Batch create notifications for each user
+ */
 const userNotificationBatchCreate = functions.firestore
   .document("activity/{id}")
   .onCreate((snap, context) => {
@@ -18,6 +21,7 @@ const userNotificationBatchCreate = functions.firestore
     }
 
     const notification: Notification.Create = {
+      action: data.action,
       activityId: id,
       type: "update",
       updatedAt: admin.firestore.FieldValue.serverTimestamp(),

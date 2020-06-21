@@ -6,6 +6,9 @@ import Room from "@sentrei/common/models/Room";
 
 const db = admin.firestore();
 
+/**
+ * Create room activity on create
+ */
 const activityRoomCreate = functions.firestore
   .document("rooms/{id}")
   .onCreate(async (snap, context) => {
@@ -23,7 +26,7 @@ const activityRoomCreate = functions.firestore
       category: "rooms",
       categoryId: id,
       createdById: data.createdById,
-      spaces: [id],
+      spaceId: data.spaceId,
       updatedAt: data.updatedAt,
       user: data.updatedBy,
       userNotification: [],

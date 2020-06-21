@@ -5,6 +5,9 @@ import Username from "@sentrei/common/models/Username";
 
 const db = admin.firestore();
 
+/**
+ * Delete old usernames on create
+ */
 const usernameBatchDelete = functions.firestore
   .document("usernames/{username}")
   .onCreate(async snap => {

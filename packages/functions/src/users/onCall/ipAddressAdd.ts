@@ -1,11 +1,14 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
 
 const db = admin.firestore();
 
+/**
+ * Log IP Address on call
+ */
 const ipAddressAdd = functions.https.onCall(async (_, context) => {
   const uid = context.auth?.uid;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const {ip, ips} = context.rawRequest as any;
 
   if (!uid) {

@@ -1,23 +1,25 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/unbound-method */
-
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 import {when} from "jest-when";
+
+import Activity from "@sentrei/common/models/Activity";
+
+import {
+  activitySpaceResponseDeleted,
+  activitySpaceResponseUpdated,
+} from "@sentrei/functions/__dummy__/Activity";
+import {profileGet} from "@sentrei/functions/__dummy__/Profile";
+
+import {firestore} from "../../../__mocks__/firebase-admin";
 
 import activityBatchSet from "../activityBatchSet";
 
 const testEnv = functions();
 const db = admin.firestore();
 
-test("do not send a request to update when an item was deleted", async done => {
-  const data = {
-    action: "deleted",
-  };
+test("Do not send a request to update when an item was deleted", async done => {
   const snap = {
-    data: (): {
-      action: string;
-    } => data,
+    data: (): Activity.Response => activitySpaceResponseDeleted,
   };
   const wrapped = testEnv.wrap(activityBatchSet);
   const req = await wrapped(snap);
@@ -27,45 +29,28 @@ test("do not send a request to update when an item was deleted", async done => {
   done();
 });
 
-test("send a request to update the updatedAt field", async done => {
+test("Send a request to update the updatedAt field", async done => {
   spyOn(db.batch(), "commit").and.returnValue(true);
-  when(db.doc as any)
-    .calledWith("spaces/space1")
-    .mockReturnValue("space1Ref")
-    .calledWith("spaces/space2")
-    .mockReturnValue("space2Ref");
 
-  const data = {
-    createdById: "editorId",
-    spaces: ["space1", "space2"],
-    updatedAt: "today",
-    user: {name: "user"},
-  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  when(db.doc as any)
+    .calledWith("spaces/spaceId")
+    .mockReturnValue("spaceRef");
+
   const snap = {
-    data: (): {
-      createdById: string;
-      spaces: string[];
-      updatedAt: string;
-      user: {
-        name: string;
-      };
-    } => data,
+    data: (): Activity.Response => activitySpaceResponseUpdated,
   };
   const wrapped = testEnv.wrap(activityBatchSet);
   const req = await wrapped(snap);
   const expected = {
-    updatedAt: "today",
-    updatedBy: {name: "user"},
-    updatedById: "editorId",
+    updatedAt: firestore.Timestamp,
+    updatedBy: profileGet,
+    updatedById: "spaceUser",
   };
 
   expect(req).toBe(true);
-  expect(db.doc).toHaveBeenCalledWith("spaces/space1");
-  expect(db.doc).toHaveBeenCalledWith("spaces/space2");
-  expect(db.batch().set).toHaveBeenCalledWith("space1Ref", expected, {
-    merge: true,
-  });
-  expect(db.batch().set).toHaveBeenCalledWith("space2Ref", expected, {
+  expect(db.doc).toHaveBeenCalledWith("spaces/spaceId");
+  expect(db.batch().set).toHaveBeenCalledWith("spaceRef", expected, {
     merge: true,
   });
   done();
