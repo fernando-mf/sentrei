@@ -1,6 +1,5 @@
 import * as firebase from "@firebase/testing";
 
-import {profileResponse} from "../../__dummy__/Profile";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -11,28 +10,27 @@ import {
 let admin: firebase.firestore.Firestore;
 let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.DocumentReference;
-
-// const profileResponse = {
-//   name: "name",
-//   photo: "user.png",
-//   username: "username",
-// };
+const profile = {
+  name: "name",
+  photo: "user.png",
+  username: "username",
+};
 
 const data = {
   createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-  createdBy: profileResponse,
+  createdBy: profile,
   createdById: "currentUser",
   description: "content",
   memberCount: 0,
   photo: null,
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
-  updatedBy: profileResponse,
+  updatedBy: profile,
   updatedById: "currentUser",
 };
 
 const edit = {
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
-  updatedBy: profileResponse,
+  updatedBy: profile,
   updatedById: "currentUser",
 };
 
@@ -41,7 +39,7 @@ beforeAll(async done => {
   db = initializeFirebaseApp({uid: "currentUser"});
   ref = db.doc("spaces/itemId");
   await loadFirestoreRules();
-  await admin.doc("profileResponse/currentUser").set(profileResponse);
+  await admin.doc("profile/currentUser").set(profile);
   await admin.doc("spaces/itemId").set(data);
   await admin.doc("users/currentUser/spaces/itemId").set({});
   done();
@@ -97,19 +95,19 @@ test("UpdatedAt has a valid timestamp", async done => {
 });
 
 test("UpdatedBy has a valid user name", async done => {
-  const updatedBy = {...profileResponse, name: "invalid"};
+  const updatedBy = {...profile, name: "invalid"};
   await firebase.assertFails(ref.update({...edit, updatedBy}));
   done();
 });
 
 test("UpdatedBy has a valid user photo", async done => {
-  const updatedBy = {...profileResponse, photo: "invalid"};
+  const updatedBy = {...profile, photo: "invalid"};
   await firebase.assertFails(ref.update({...edit, updatedBy}));
   done();
 });
 
 test("UpdatedBy has a valid username", async done => {
-  const updatedBy = {...profileResponse, username: "invalid"};
+  const updatedBy = {...profile, username: "invalid"};
   await firebase.assertFails(ref.update({...edit, updatedBy}));
   done();
 });
