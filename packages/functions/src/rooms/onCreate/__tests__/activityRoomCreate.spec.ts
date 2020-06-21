@@ -14,7 +14,7 @@ test("Send a request to add a new room to activities", async done => {
   const snap = {
     data: (): Room.Response => roomResponse,
   };
-  const context = {params: {id: "roomId"}};
+  const context = {params: {id: "spaceId"}};
 
   spyOn(db.collection(""), "add").and.returnValue(true);
 

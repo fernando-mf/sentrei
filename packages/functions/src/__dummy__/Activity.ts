@@ -47,7 +47,7 @@ export const activityRoomResponseCreated: Activity.Response = {
   after: roomResponse,
   action: "created",
   category: "rooms",
-  categoryId: "roomId",
+  categoryId: "spaceId",
 };
 
 export const activityRoomResponseUpdated: Activity.Response = {
@@ -56,7 +56,7 @@ export const activityRoomResponseUpdated: Activity.Response = {
   after: roomResponse,
   action: "updated",
   category: "rooms",
-  categoryId: "roomId",
+  categoryId: "spaceId",
 };
 
 export const activityRoomResponseDeleted: Activity.Response = {
@@ -65,5 +65,5 @@ export const activityRoomResponseDeleted: Activity.Response = {
   after: null,
   action: "deleted",
   category: "rooms",
-  categoryId: "roomId",
+  categoryId: "spaceId",
 };
