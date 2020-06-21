@@ -7,6 +7,9 @@ import Space from "@sentrei/common/models/Space";
 
 const db = admin.firestore();
 
+/**
+ * Create space activity on update
+ */
 const activitySpaceUpdate = functions.firestore
   .document("spaces/{id}")
   .onUpdate(async (change, context) => {

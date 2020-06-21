@@ -5,6 +5,9 @@ import Room from "@sentrei/common/models/Room";
 
 const db = admin.firestore();
 
+/**
+ * Update rooms on users
+ */
 const userRoomUpdate = functions.firestore
   .document("rooms/{id}")
   .onUpdate(async change => {

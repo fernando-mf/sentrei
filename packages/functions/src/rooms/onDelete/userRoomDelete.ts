@@ -4,7 +4,7 @@ import * as functions from "firebase-functions";
 const db = admin.firestore();
 
 /**
- * Delete rooms from user
+ * Delete rooms from users
  */
 const userRoomDelete = functions.firestore
   .document("rooms/{id}")

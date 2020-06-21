@@ -1,6 +1,10 @@
-/* eslint-disable @typescript-eslint/unbound-method */
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
+
+import Space from "@sentrei/common/models/Space";
+
+import {activitySpaceResponseUpdated} from "../../../__dummy__/Activity";
+import {spaceResponse} from "../../../__dummy__/Space";
 
 import activitySpaceUpdate from "../activitySpaceUpdate";
 
@@ -8,35 +12,14 @@ const testEnv = functions();
 const db = admin.firestore();
 
 test("Return when there are no changes", async done => {
-  const data = {
-    description: "description",
-    photo: "photo.jpg",
-    title: "topic name",
-  };
-  const beforeData = {
-    ...data,
-    updatedAt: "old",
-  };
-  const afterData = {
-    ...data,
+  const after = {
+    data: (): Space.Response => spaceResponse,
   };
   const before = {
-    data: (): {
-      updatedAt: string;
-      description: string;
-      photo: string;
-      title: string;
-    } => beforeData,
-  };
-  const after = {
-    data: (): {
-      description: string;
-      photo: string;
-      title: string;
-    } => afterData,
+    data: (): Space.Response => spaceResponse,
   };
   const changes = {after, before};
-  const context = {params: {id: "itemId"}};
+  const context = {params: {id: "spaceId"}};
 
   const wrapped = testEnv.wrap(activitySpaceUpdate);
   const req = await wrapped(changes, context);
@@ -48,61 +31,29 @@ test("Return when there are no changes", async done => {
 });
 
 test("Send a request to add a new item to activities", async done => {
-  const profile = {name: "Poe", photo: "Poe.jpg"};
-  const data = {
-    createdById: "authorId",
-    updatedBy: profile,
-    updatedById: "editorId",
+  const afterData = {
+    ...spaceResponse,
+    description: "new",
+    photo: "new.png",
   };
   const beforeData = {
-    ...data,
-    description: "old description",
-    photo: "old_photo.jpg",
-  };
-  const afterData = {
-    ...data,
-    description: "new description",
-    photo: "new_photo.png",
-    updatedAt: "today",
-  };
-  const before = {
-    data: (): {
-      description: string;
-      photo: string;
-      createdById: string;
-      updatedBy: {
-        name: string;
-        photo: string;
-      };
-      updatedById: string;
-    } => beforeData,
+    ...spaceResponse,
+    description: "old",
+    photo: "old.jpg",
   };
   const after = {
-    data: (): {
-      description: string;
-      photo: string;
-      updatedAt: string;
-      createdById: string;
-      updatedBy: {
-        name: string;
-        photo: string;
-      };
-      updatedById: string;
-    } => afterData,
+    data: (): Space.Response => afterData,
   };
+  const before = {
+    data: (): Space.Response => beforeData,
+  };
+
   const changes = {after, before};
-  const context = {params: {id: "itemId"}};
+  const context = {params: {id: "spaceId"}};
   const expected = {
-    action: "updated",
+    ...activitySpaceResponseUpdated,
     after: afterData,
     before: beforeData,
-    category: "spaces",
-    categoryId: "itemId",
-    createdById: "editorId",
-    spaceId: "itemId",
-    updatedAt: "today",
-    user: profile,
-    userNotification: ["authorId"],
   };
 
   spyOn(db.collection(""), "add").and.returnValue(true);

@@ -4,7 +4,7 @@ import * as functions from "firebase-functions";
 const db = admin.firestore();
 
 /**
- * Delete spaces from user
+ * Delete spaces from users
  */
 const userSpaceDelete = functions.firestore
   .document("spaces/{id}")
