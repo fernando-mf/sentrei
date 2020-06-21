@@ -31,5 +31,6 @@ export const db = firebase.firestore();
 export const {analytics, performance} = firebase;
 
 export const {arrayRemove, arrayUnion} = firebase.firestore.FieldValue;
+export const timestamp = firebase.firestore.FieldValue.serverTimestamp();
 
 export default firebase;
