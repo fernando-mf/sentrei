@@ -1,6 +1,8 @@
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
+import Username from "@sentrei/common/models/Username";
+
 import profileUpdate from "../profileUpdate";
 
 const testEnv = functions();
@@ -11,9 +13,7 @@ test("Update the username field in the profile collection", async done => {
 
   const snap = {
     id: "username",
-    data: (): {
-      uid: string;
-    } => ({uid: "userId"}),
+    data: (): Username => ({uid: "userId"}),
   };
   const wrapped = testEnv.wrap(profileUpdate);
   const req = await wrapped(snap);

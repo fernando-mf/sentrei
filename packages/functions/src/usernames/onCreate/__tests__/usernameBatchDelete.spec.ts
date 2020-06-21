@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/unbound-method */
-
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
+
+import Username from "@sentrei/common/models/Username";
 
 import usernameBatchDelete from "../usernameBatchDelete";
 
@@ -22,9 +22,7 @@ test("Remove all older usernames from the database", async done => {
 
   const snap = {
     id: "2",
-    data: (): {
-      uid: string;
-    } => ({uid: "userId"}),
+    data: (): Username => ({uid: "userId"}),
   };
   const wrapped = testEnv.wrap(usernameBatchDelete);
   const req = await wrapped(snap);
