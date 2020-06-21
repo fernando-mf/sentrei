@@ -32,7 +32,7 @@ const activityRoomUpdate = functions.firestore
       category: "rooms",
       categoryId: id,
       createdById: after.updatedById,
-      spaceId: id,
+      spaceId: after.spaceId,
       updatedAt: after.updatedAt,
       user: after.updatedBy,
       userNotification:

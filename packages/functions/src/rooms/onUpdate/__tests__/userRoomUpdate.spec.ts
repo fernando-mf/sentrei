@@ -19,14 +19,12 @@ test("On rooms update, update all user rooms on rooms update", async done => {
   spyOn(db.collection(""), "get").and.returnValue({docs});
   spyOn(db.doc(""), "update").and.returnValue("ref");
 
-  const after = {
-    data: (): Room.Response => roomResponse,
-    id: "roomId",
+  const after = roomResponse;
+  const before = roomResponse;
+  const changes = {
+    before: {data: (): Room.Response => before},
+    after: {data: (): Room.Response => after, id: "roomId"},
   };
-  const before = {
-    data: (): Room.Response => roomResponse,
-  };
-  const changes = {after, before};
   const wrapped = testEnv.wrap(userSpaceUpdate);
   const req = await wrapped(changes);
 

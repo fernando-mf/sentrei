@@ -19,9 +19,13 @@ test("On rooms create, add the room creator to the member list", async done => {
   };
   const wrapped = testEnv.wrap(roomMemberSet);
   const req = await wrapped(snap);
+  const expected = {
+    ...memberResponse,
+    id: "profile",
+  };
 
   expect(req).toBe("updated");
   expect(db.doc).toHaveBeenCalledWith("rooms/roomId/members/userId");
-  expect(db.doc("").set).toHaveBeenCalledWith(memberResponse);
+  expect(db.doc("").set).toHaveBeenCalledWith(expected);
   done();
 });

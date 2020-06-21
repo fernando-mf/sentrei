@@ -52,8 +52,8 @@ test("Send a request to add a new item to activities", async done => {
   const context = {params: {id: "roomId"}};
   const expected = {
     ...activityRoomResponseUpdated,
-    description: "new",
-    photo: "new.png",
+    after: afterData,
+    before: beforeData,
   };
 
   spyOn(db.collection(""), "add").and.returnValue(true);
