@@ -1,4 +1,3 @@
-import * as firebase from "@firebase/testing";
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 import {when} from "jest-when";
@@ -10,6 +9,8 @@ import {
   activitySpaceResponseUpdated,
 } from "@sentrei/functions/__dummy__/Activity";
 import {profileGet} from "@sentrei/functions/__dummy__/Profile";
+
+import {timestamp} from "../../../__mocks__/firebase-testing";
 
 import activityBatchSet from "../activityBatchSet";
 
@@ -42,9 +43,7 @@ test("Send a request to update the updatedAt field", async done => {
   const wrapped = testEnv.wrap(activityBatchSet);
   const req = await wrapped(snap);
   const expected = {
-    updatedAt: firebase.firestore.Timestamp.fromDate(
-      new Date(`2020/01/01 00:00:00`),
-    ),
+    updatedAt: timestamp,
     updatedBy: profileGet,
     updatedById: "spaceUser",
   };
