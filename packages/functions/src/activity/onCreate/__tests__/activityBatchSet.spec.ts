@@ -45,7 +45,7 @@ test("Send a request to update the updatedAt field", async done => {
   const expected = {
     updatedAt: firestore.Timestamp,
     updatedBy: profileGet,
-    updatedById: "userId",
+    updatedById: "spaceUser",
   };
 
   expect(req).toBe(true);

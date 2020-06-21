@@ -21,6 +21,7 @@ export const activitySpaceResponseCreated: Activity.Response = {
   action: "created",
   category: "spaces",
   categoryId: "spaceId",
+  createdById: "spaceUser",
 };
 
 export const activitySpaceResponseUpdated: Activity.Response = {
@@ -40,6 +41,7 @@ export const activitySpaceResponseDeleted: Activity.Response = {
   action: "deleted",
   category: "spaces",
   categoryId: "spaceId",
+  createdById: "spaceUser",
 };
 
 export const activityRoomResponseCreated: Activity.Response = {
