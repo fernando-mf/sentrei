@@ -1,5 +1,6 @@
 import * as firebase from "@firebase/testing";
 
+import {notificationResponse} from "../__dummy__/Notification";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -18,7 +19,9 @@ beforeAll(async done => {
   collection = db.collection("users/userId/notifications");
   doc = collection.doc("notificationId");
   await loadFirestoreRules();
-  await admin.doc("users/userId/notifications/notificationId").set({id: "new"});
+  await admin
+    .doc("users/userId/notifications/notificationId")
+    .set(notificationResponse);
   done();
 });
 
@@ -50,7 +53,7 @@ test("Cannot list notifications from other users", async done => {
 });
 
 test("Cannot update a notification", async done => {
-  await firebase.assertFails(doc.update({title: "new"}));
+  await firebase.assertFails(doc.update(notificationResponse));
   done();
 });
 

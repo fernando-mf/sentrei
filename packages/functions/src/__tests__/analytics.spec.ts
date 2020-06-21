@@ -1,5 +1,6 @@
 import * as firebase from "@firebase/testing";
 
+import {analyticsStats} from "../__dummy__/Analytics";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -18,7 +19,7 @@ beforeAll(async done => {
   collection = db.collection("analytics");
   doc = collection.doc("stats");
   await loadFirestoreRules();
-  await admin.doc("analytics/stats").set({posts: 10});
+  await admin.doc("analytics/stats").set(analyticsStats);
   done();
 });
 
@@ -28,12 +29,12 @@ afterAll(async done => {
 });
 
 test("Cannot create an item", async done => {
-  await firebase.assertFails(collection.add({test: "new"}));
+  await firebase.assertFails(collection.add(analyticsStats));
   done();
 });
 
 test("Cannot update an item", async done => {
-  await firebase.assertFails(doc.update({test: "updated"}));
+  await firebase.assertFails(doc.update(analyticsStats));
   done();
 });
 

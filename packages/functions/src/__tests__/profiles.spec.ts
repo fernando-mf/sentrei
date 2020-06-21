@@ -1,5 +1,6 @@
 import * as firebase from "@firebase/testing";
 
+import {profileResponse} from "../__dummy__/Profile";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -18,7 +19,7 @@ beforeAll(async done => {
   collection = db.collection("profiles");
   doc = collection.doc("profileId");
   await loadFirestoreRules();
-  await admin.doc("profiles/profileId").set({name: "current"});
+  await admin.doc("profiles/profileId").set(profileResponse);
   done();
 });
 
@@ -28,24 +29,24 @@ afterAll(async done => {
 });
 
 test("Cannot create", async done => {
-  await firebase.assertFails(collection.add({name: "new"}));
+  await firebase.assertFails(collection.add(profileResponse));
   done();
 });
 
 test("Users can update their own data", async done => {
-  await firebase.assertSucceeds(doc.update({name: "current"}));
+  await firebase.assertSucceeds(doc.update(profileResponse));
   done();
 });
 
 test("Cannot update data from other users", async done => {
   const ref = db.doc("profiles/otherUserId");
-  await admin.doc("profiles/otherUserId").set({name: "other"});
-  await firebase.assertFails(ref.update({name: "changed"}));
+  await admin.doc("profiles/otherUserId").set(profileResponse);
+  await firebase.assertFails(ref.update(profileResponse));
   done();
 });
 
 test("Cannot update the username field", async done => {
-  await firebase.assertFails(doc.update({username: "new"}));
+  await firebase.assertFails(doc.update(profileResponse));
   done();
 });
 
