@@ -1,7 +1,7 @@
-import * as firebase from "@firebase/testing";
-
 import Room from "@sentrei/common/models/Room";
 import {profileGet} from "@sentrei/functions/__dummy__/Profile";
+
+import {timestamp} from "../__mocks__/firebase-testing";
 
 // eslint-disable-next-line import/prefer-default-export
 export const roomResponse: Room.Response = {
@@ -9,17 +9,11 @@ export const roomResponse: Room.Response = {
   name: "room",
   photo: null,
   description: "room",
-  joined: firebase.firestore.Timestamp.fromDate(
-    new Date(`2020/01/01 00:00:00`),
-  ),
-  createdAt: firebase.firestore.Timestamp.fromDate(
-    new Date(`2020/01/01 00:00:00`),
-  ),
+  joined: timestamp,
+  createdAt: timestamp,
   createdBy: profileGet,
   createdById: "userId",
-  updatedAt: firebase.firestore.Timestamp.fromDate(
-    new Date(`2020/01/01 00:00:00`),
-  ),
+  updatedAt: timestamp,
   updatedBy: profileGet,
   updatedById: "userId",
   spaceId: "spaceId",

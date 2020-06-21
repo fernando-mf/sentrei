@@ -1,6 +1,6 @@
-import * as firebase from "@firebase/testing";
-
 import Notification from "@sentrei/common/models/Notification";
+
+import {timestamp} from "../__mocks__/firebase-testing";
 
 import {profileResponse} from "./Profile";
 
@@ -8,9 +8,7 @@ import {profileResponse} from "./Profile";
 export const notificationResponse: Notification.Response = {
   action: "created",
   activityId: "notificationId",
-  updatedAt: firebase.firestore.Timestamp.fromDate(
-    new Date(`2020/01/01 00:00:00`),
-  ),
+  updatedAt: timestamp,
   type: "chat",
   user: profileResponse,
 };

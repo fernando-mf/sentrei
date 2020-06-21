@@ -1,7 +1,7 @@
-import * as firebase from "@firebase/testing";
-
 import Space from "@sentrei/common/models/Space";
 import {profileGet} from "@sentrei/functions/__dummy__/Profile";
+
+import {timestamp} from "../__mocks__/firebase-testing";
 
 // eslint-disable-next-line import/prefer-default-export
 export const spaceResponse: Space.Response = {
@@ -9,17 +9,11 @@ export const spaceResponse: Space.Response = {
   name: "space",
   photo: null,
   description: "space",
-  joined: firebase.firestore.Timestamp.fromDate(
-    new Date(`2020/01/01 00:00:00`),
-  ),
-  createdAt: firebase.firestore.Timestamp.fromDate(
-    new Date(`2020/01/01 00:00:00`),
-  ),
+  joined: timestamp,
+  createdAt: timestamp,
   createdBy: profileGet,
   createdById: "spaceUser",
-  updatedAt: firebase.firestore.Timestamp.fromDate(
-    new Date(`2020/01/01 00:00:00`),
-  ),
+  updatedAt: timestamp,
   updatedBy: profileGet,
   updatedById: "spaceUser",
 };
