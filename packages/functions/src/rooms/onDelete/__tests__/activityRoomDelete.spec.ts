@@ -1,48 +1,20 @@
-/* eslint-disable @typescript-eslint/unbound-method */
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
 
+import Room from "@sentrei/common/models/Room";
+
+import {activityRoomResponseDeleted} from "../../../__dummy__/Activity";
+import {roomResponse} from "../../../__dummy__/Room";
 import activityRoomDelete from "../activityRoomDelete";
 
 const testEnv = functions();
 const db = admin.firestore();
 
 test("Send a request to add a new delete to activities", async done => {
-  const profile = {name: "Leo", photo: "leo.jpg"};
-  const beforeData = {
-    createdById: "authorId",
-    description: "old description",
-    updatedAt: "timestamp",
-    updatedBy: profile,
-    updatedById: "editorId",
-    url: "old link",
-  };
   const snap = {
-    data: (): {
-      createdById: string;
-      description: string;
-      updatedAt: string;
-      updatedBy: {
-        name: string;
-        photo: string;
-      };
-      updatedById: string;
-      url: string;
-    } => ({...beforeData}),
+    data: (): Room.Response => roomResponse,
   };
-  const context = {params: {id: "itemId"}};
-  const expected = {
-    action: "deleted",
-    after: null,
-    before: beforeData,
-    category: "rooms",
-    categoryId: "itemId",
-    createdById: "editorId",
-    spaceId: "itemId",
-    updatedAt: "timestamp",
-    user: profile,
-    userNotification: ["authorId"],
-  };
+  const context = {params: {id: "roomId"}};
 
   spyOn(db.collection(""), "add").and.returnValue(true);
 
@@ -51,6 +23,8 @@ test("Send a request to add a new delete to activities", async done => {
 
   expect(req).toBe(true);
   expect(db.collection).toHaveBeenCalledWith("activity");
-  expect(db.collection("").add).toHaveBeenCalledWith(expected);
+  expect(db.collection("").add).toHaveBeenCalledWith(
+    activityRoomResponseDeleted,
+  );
   done();
 });

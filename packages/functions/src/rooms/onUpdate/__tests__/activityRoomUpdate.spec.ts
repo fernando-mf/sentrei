@@ -1,6 +1,10 @@
-/* eslint-disable @typescript-eslint/unbound-method */
 import * as admin from "firebase-admin";
 import functions from "firebase-functions-test";
+
+import Room from "@sentrei/common/models/Room";
+
+import {activityRoomResponseUpdated} from "../../../__dummy__/Activity";
+import {roomResponse} from "../../../__dummy__/Room";
 
 import activityRoomUpdate from "../activityRoomUpdate";
 
@@ -8,35 +12,14 @@ const testEnv = functions();
 const db = admin.firestore();
 
 test("Return when there are no changes", async done => {
-  const data = {
-    description: "description",
-    photo: "photo.jpg",
-    title: "topic name",
-  };
-  const beforeData = {
-    ...data,
-    updatedAt: "old",
-  };
-  const afterData = {
-    ...data,
+  const after = {
+    data: (): Room.Response => roomResponse,
   };
   const before = {
-    data: (): {
-      updatedAt: string;
-      description: string;
-      photo: string;
-      title: string;
-    } => beforeData,
-  };
-  const after = {
-    data: (): {
-      description: string;
-      photo: string;
-      title: string;
-    } => afterData,
+    data: (): Room.Response => roomResponse,
   };
   const changes = {after, before};
-  const context = {params: {id: "itemId"}};
+  const context = {params: {id: "roomId"}};
 
   const wrapped = testEnv.wrap(activityRoomUpdate);
   const req = await wrapped(changes, context);
@@ -48,62 +31,25 @@ test("Return when there are no changes", async done => {
 });
 
 test("Send a request to add a new item to activities", async done => {
-  const profile = {name: "Poe", photo: "Poe.jpg"};
-  const data = {
-    createdById: "authorId",
-    updatedBy: profile,
-    updatedById: "editorId",
+  const afterData = {
+    ...roomResponse,
+    description: "new description",
+    photo: "new_photo.png",
   };
   const beforeData = {
-    ...data,
+    ...roomResponse,
     description: "old description",
     photo: "old_photo.jpg",
   };
-  const afterData = {
-    ...data,
-    description: "new description",
-    photo: "new_photo.png",
-    updatedAt: "today",
+  const after = {
+    data: (): Room.Response => afterData,
   };
   const before = {
-    data: (): {
-      description: string;
-      photo: string;
-      createdById: string;
-      updatedBy: {
-        name: string;
-        photo: string;
-      };
-      updatedById: string;
-    } => beforeData,
+    data: (): Room.Response => beforeData,
   };
-  const after = {
-    data: (): {
-      description: string;
-      photo: string;
-      updatedAt: string;
-      createdById: string;
-      updatedBy: {
-        name: string;
-        photo: string;
-      };
-      updatedById: string;
-    } => afterData,
-  };
+
   const changes = {after, before};
-  const context = {params: {id: "itemId"}};
-  const expected = {
-    action: "updated",
-    after: afterData,
-    before: beforeData,
-    category: "rooms",
-    categoryId: "itemId",
-    createdById: "editorId",
-    spaceId: "itemId",
-    updatedAt: "today",
-    user: profile,
-    userNotification: ["authorId"],
-  };
+  const context = {params: {id: "roomId"}};
 
   spyOn(db.collection(""), "add").and.returnValue(true);
 
@@ -112,6 +58,8 @@ test("Send a request to add a new item to activities", async done => {
 
   expect(req).toBe(true);
   expect(db.collection).toHaveBeenCalledWith("activity");
-  expect(db.collection("").add).toHaveBeenCalledWith(expected);
+  expect(db.collection("").add).toHaveBeenCalledWith(
+    activityRoomResponseUpdated,
+  );
   done();
 });

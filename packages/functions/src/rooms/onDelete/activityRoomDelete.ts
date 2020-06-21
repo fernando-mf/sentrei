@@ -6,6 +6,9 @@ import Room from "@sentrei/common/models/Room";
 
 const db = admin.firestore();
 
+/**
+ * Create room activity on delete
+ */
 const activityRoomDelete = functions.firestore
   .document("rooms/{id}")
   .onDelete(async (snap, context) => {
