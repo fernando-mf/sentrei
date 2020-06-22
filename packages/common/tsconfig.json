@@ -4,9 +4,11 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "composite": true,
+    "module": "commonjs",
     "noEmit": false,
     "outDir": "dist",
     "rootDir": "src",
+    "target": "ES2018",
     "paths": {
       "@sentrei/common/*": ["src/*"]
     }

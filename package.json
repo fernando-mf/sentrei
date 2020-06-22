@@ -9,9 +9,14 @@
   },
   "license": "MIT",
   "author": "Shun Kakinoki",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "@sentrei/common"
+    ]
+  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream --scope={@sentrei/blog,@sentrei/design,@sentrei/pioneer}",
