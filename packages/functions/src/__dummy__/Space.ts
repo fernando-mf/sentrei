@@ -1,40 +1,31 @@
 import Space from "@sentrei/common/models/Space";
-import {profileGet} from "@sentrei/functions/__dummy__/Profile";
 
-import {timestamp, timestampNow} from "../__mocks__/firebase-testing";
+import {metadataCreate, metadataResponse, metadataUpdate} from "./Metadata";
 
-export const spaceCreate: Space.Create = {
-  memberCount: 0,
+export const spaceBase = {
   name: "space",
   photo: null,
   description: "space",
-  createdAt: timestampNow,
-  createdBy: profileGet,
+};
+
+export const spaceCreate: Space.Create = {
+  ...spaceBase,
+  ...metadataCreate,
+  memberCount: 0,
   createdById: "spaceUser",
-  updatedAt: timestampNow,
-  updatedBy: profileGet,
   updatedById: "spaceUser",
 };
 
 export const spaceResponse: Space.Response = {
+  ...spaceBase,
+  ...metadataResponse,
   memberCount: 0,
-  name: "space",
-  photo: null,
-  description: "space",
-  joined: timestamp,
-  createdAt: timestamp,
-  createdBy: profileGet,
   createdById: "spaceUser",
-  updatedAt: timestamp,
-  updatedBy: profileGet,
   updatedById: "spaceUser",
 };
 
 export const spaceUpdate: Space.Update = {
-  name: "space",
-  photo: null,
-  description: "space",
-  updatedAt: timestamp,
-  updatedBy: profileGet,
+  ...spaceBase,
+  ...metadataUpdate,
   updatedById: "spaceUser",
 };
