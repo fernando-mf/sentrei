@@ -9,7 +9,7 @@
     "rootDir": "src",
     "sourceMap": true,
     "strict": false,
-    "target": "es2017",
+    "target": "es2018",
     "paths": {
       "@sentrei/common/*": ["../common/dist/*"],
       "@sentrei/functions/*": ["src/*"]
