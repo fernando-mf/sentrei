@@ -49,11 +49,11 @@ const edit: Metadata.Update = {
 beforeAll(async done => {
   admin = initializeAdminApp();
   db = initializeFirebaseApp({uid: "currentUser"});
-  ref = db.doc("spaces/itemId");
+  ref = db.doc("spaces/spaceId");
   await loadFirestoreRules();
   await admin.doc("profile/currentUser").set(profile);
-  await admin.doc("spaces/itemId").set(data);
-  await admin.doc("users/currentUser/spaces/itemId").set({});
+  await admin.doc("spaces/spaceId").set(data);
+  await admin.doc("users/currentUser/spaces/spaceId").set({});
   done();
 });
 
