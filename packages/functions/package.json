@@ -39,7 +39,7 @@
     "log": "firebase functions:log",
     "master": "yarn run swap:master && firebase use master && yarn run env:set && yarn run deploy:rules && yarn run deploy:functions",
     "master:local": "yarn run swap:master && firebase use master",
-    "pack": "if [ -d ../common ]; then npm pack ../common && mv $(npm pack ../common | tail -n 1) package.tgz; fi",
+    "pack": "if [ -d ../common ]; then npm pack ../common && mv $(npm pack ../common | tail -n 1) sentrei-common.tgz; fi",
     "setup": "firebase setup:emulators:firestore",
     "shell": "firebase functions:shell",
     "staging:alpha": "yarn run swap:alpha && firebase use alpha && yarn run test",
@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "@firebase/testing": "^0.20.2",
-    "@sentrei/common": "file:package.tgz",
+    "@sentrei/common": "file:./sentrei-common.tgz",
     "@slack/webhook": "^5.0.3",
     "@types/lodash": "^4.14.154",
     "firebase-admin": "^8.12.1",

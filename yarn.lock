@@ -5209,6 +5209,10 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
+"@sentrei/common@file:packages/functions/sentrei-common.tgz":
+  version "0.0.0"
+  resolved "file:packages/functions/sentrei-common.tgz#da39a3ee5e6b4b0d3255bfef95601890afd80709"
+
 "@sentry/browser@^5.15.5":
   version "5.17.0"
   resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-5.17.0.tgz#0c3796cb02df3ec8db13341564fae0bc83e148c5"
