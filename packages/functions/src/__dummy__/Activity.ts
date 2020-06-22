@@ -3,13 +3,13 @@ import {profileGet} from "@sentrei/functions/__dummy__/Profile";
 import {roomResponse} from "@sentrei/functions/__dummy__/Room";
 import {spaceResponse} from "@sentrei/functions/__dummy__/Space";
 
-import {firestore} from "../__mocks__/firebase-admin";
+import {timestamp} from "../__mocks__/firebase-testing";
 
 export const activityResponseBase = {
   categoryId: "categoryId",
   createdById: "userId",
   spaceId: "spaceId",
-  updatedAt: firestore.Timestamp,
+  updatedAt: timestamp,
   user: profileGet,
   userNotification: [],
 };

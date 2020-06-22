@@ -1,5 +1,11 @@
 import * as firebase from "@firebase/testing";
 
+import Profile from "@sentrei/common/models/Profile";
+import Space from "@sentrei/common/models/Space";
+
+import {profileGet} from "../../__dummy__/Profile";
+import {spaceCreate} from "../../__dummy__/Space";
+
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -10,30 +16,19 @@ import {
 let admin: firebase.firestore.Firestore;
 let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.CollectionReference;
-const profile = {
-  name: "name",
-  photo: "user.png",
-  username: "username",
-};
 
-const data = {
-  createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-  createdBy: profile,
-  createdById: "currentUser",
-  description: "content",
-  memberCount: 0,
-  photo: null,
-  updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
-  updatedBy: profile,
-  updatedById: "currentUser",
+const data: Space.Create = {
+  ...spaceCreate,
+  createdById: "userId",
+  updatedById: "userId",
 };
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "currentUser"});
+  db = initializeFirebaseApp({uid: "userId"});
   ref = db.collection("spaces");
   await loadFirestoreRules();
-  await admin.doc("profiles/currentUser").set(profile);
+  await admin.doc("profiles/userId").set(profileGet);
   done();
 });
 
@@ -43,7 +38,7 @@ afterAll(async done => {
 });
 
 test("Authenticated users can create", async done => {
-  await firebase.assertSucceeds(ref.add(data));
+  await firebase.assertSucceeds(ref.add(<Space.Response>data));
   done();
 });
 
@@ -61,35 +56,41 @@ test("CreatedAt has a valid timestamp", async done => {
 });
 
 test("CreatedBy has a valid user name", async done => {
-  const createdBy = {...profile, name: "invalid"};
-  await firebase.assertFails(ref.add({...data, createdBy}));
+  const createdBy: Profile.Get = {...profileGet, name: "invalid"};
+  await firebase.assertFails(ref.add(<Space.Response>{...data, createdBy}));
   done();
 });
 
 test("CreatedBy has a valid user photo", async done => {
-  const createdBy = {...profile, photo: "invalid"};
-  await firebase.assertFails(ref.add({...data, createdBy}));
+  const createdBy: Profile.Get = {...profileGet, photo: "invalid"};
+  await firebase.assertFails(ref.add(<Space.Response>{...data, createdBy}));
   done();
 });
 
 test("CreatedBy has a valid username", async done => {
-  const createdBy = {...profile, username: "invalid"};
-  await firebase.assertFails(ref.add({...data, createdBy}));
+  const createdBy: Profile.Get = {...profileGet, username: "invalid"};
+  await firebase.assertFails(ref.add(<Space.Response>{...data, createdBy}));
   done();
 });
 
 test("CreatedById has the current user UID", async done => {
-  await firebase.assertFails(ref.add({...data, createdById: "other"}));
+  await firebase.assertFails(
+    ref.add(<Space.Response>{...data, createdById: "other"}),
+  );
   done();
 });
 
 test("MemberCount is set to 0", async done => {
-  await firebase.assertFails(ref.add({...data, memberCount: 1}));
+  await firebase.assertFails(
+    ref.add(<Space.Response>{...data, memberCount: 1}),
+  );
   done();
 });
 
 test("Photo is a string", async done => {
-  await firebase.assertSucceeds(ref.add({...data, photo: "photo.svg"}));
+  await firebase.assertSucceeds(
+    ref.add(<Space.Response>{...data, photo: "photo.svg"}),
+  );
   await firebase.assertFails(ref.add({...data, photo: 123}));
   await firebase.assertFails(ref.add({...data, photo: true}));
   await firebase.assertFails(ref.add({...data, photo: {1: true}}));
@@ -98,7 +99,9 @@ test("Photo is a string", async done => {
 });
 
 test("Photo can be null", async done => {
-  await firebase.assertSucceeds(ref.add({...data, photo: null}));
+  await firebase.assertSucceeds(
+    ref.add(<Space.Response>{...data, photo: null}),
+  );
   done();
 });
 
@@ -109,24 +112,26 @@ test("UpdatedAt has a valid timestamp", async done => {
 });
 
 test("UpdatedBy has a valid user name", async done => {
-  const updatedBy = {...profile, name: "invalid"};
+  const updatedBy: Profile.Get = {...profileGet, name: "invalid"};
   await firebase.assertFails(ref.add({...data, updatedBy}));
   done();
 });
 
 test("UpdatedBy has a valid user photo", async done => {
-  const updatedBy = {...profile, photo: "invalid"};
+  const updatedBy: Profile.Get = {...profileGet, photo: "invalid"};
   await firebase.assertFails(ref.add({...data, updatedBy}));
   done();
 });
 
 test("UpdatedBy has a valid username", async done => {
-  const updatedBy = {...profile, username: "invalid"};
+  const updatedBy: Profile.Get = {...profileGet, username: "invalid"};
   await firebase.assertFails(ref.add({...data, updatedBy}));
   done();
 });
 
 test("UpdatedById has the current user UID", async done => {
-  await firebase.assertFails(ref.add({...data, updatedById: "other"}));
+  await firebase.assertFails(
+    ref.add(<Space.Response>{...data, updatedById: "other"}),
+  );
   done();
 });

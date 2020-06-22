@@ -24,10 +24,7 @@ declare namespace User {
     snap: firebase.firestore.DocumentSnapshot;
   }
 
-  export interface Update {
-    notifications?: number;
-    notificationSettings?: NotificationSettings;
-  }
+  export type Update = Partial<Response>;
 }
 
 export default User;

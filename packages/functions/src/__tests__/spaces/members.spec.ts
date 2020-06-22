@@ -1,5 +1,9 @@
 import * as firebase from "@firebase/testing";
 
+import Username from "@sentrei/common/models/Username";
+
+import {profileResponse} from "../../__dummy__/Profile";
+import {timestamp} from "../../__mocks__/firebase-testing";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -10,22 +14,16 @@ import {
 let admin: firebase.firestore.Firestore;
 let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.DocumentReference;
-const joined = firebase.firestore.FieldValue.serverTimestamp();
-const profile = {
-  name: "leo",
-  photo: "pic.png",
-  username: "test",
-  bio: "test",
-};
-const data = {...profile, joined, score: 1};
+
+const data = {...profileResponse, timestamp, score: 1};
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "spaceUser"});
-  ref = db.doc("spaces/spaceId/members/spaceUser");
+  db = initializeFirebaseApp(<Username>{uid: "spaceUserId"});
+  ref = db.doc("spaces/spaceId/members/spaceUserId");
   await loadFirestoreRules();
-  await admin.doc("profile/spaceUser").set(profile);
-  await admin.doc("profile/otherUser").set(profile);
+  await admin.doc("profiles/spaceUserId").set(profileResponse);
+  await admin.doc("profiles/otherUserId").set(profileResponse);
   done();
 });
 
@@ -53,14 +51,14 @@ test("Cannot list more than 30 users", async done => {
 });
 
 test("Users can join a space", async done => {
-  await admin.doc("spaces/spaceId/members/spaceUser").delete();
+  await admin.doc("spaces/spaceId/members/spaceUserId").delete();
   await firebase.assertSucceeds(ref.set(data));
   done();
 });
 
 test("Cannot join a space using a fake UID", async done => {
-  const docRef = db.doc("spaces/spaceId/members/otherUser");
-  await admin.doc("spaces/spaceId/members/otherUser").delete();
+  const docRef = db.doc("spaces/spaceId/members/otherUserId");
+  await admin.doc("spaces/spaceId/members/otherUserId").delete();
   await firebase.assertFails(docRef.set(data));
   done();
 });
@@ -71,13 +69,13 @@ test("Users can leave a space", async done => {
 });
 
 test("Cannot leave a space using a fake UID", async done => {
-  const docRef = db.doc("spaces/spaceId/members/otherUser");
+  const docRef = db.doc("spaces/spaceId/members/otherUserId");
   await firebase.assertFails(docRef.delete());
   done();
 });
 
 test("Cannot update", async done => {
-  await admin.doc("spaces/spaceId/members/spaceUser").set(data);
-  await firebase.assertFails(ref.update({joined}));
+  await admin.doc("spaces/spaceId/members/spaceUserId").set(data);
+  await firebase.assertFails(ref.update({timestamp}));
   done();
 });

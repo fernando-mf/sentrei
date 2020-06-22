@@ -10,7 +10,7 @@ import {
 } from "@sentrei/functions/__dummy__/Activity";
 import {profileGet} from "@sentrei/functions/__dummy__/Profile";
 
-import {firestore} from "../../../__mocks__/firebase-admin";
+import {timestamp} from "../../../__mocks__/firebase-testing";
 
 import activityBatchSet from "../activityBatchSet";
 
@@ -43,7 +43,7 @@ test("Send a request to update the updatedAt field", async done => {
   const wrapped = testEnv.wrap(activityBatchSet);
   const req = await wrapped(snap);
   const expected = {
-    updatedAt: firestore.Timestamp,
+    updatedAt: timestamp,
     updatedBy: profileGet,
     updatedById: "spaceUser",
   };

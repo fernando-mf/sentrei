@@ -1,6 +1,11 @@
 import * as firebase from "@firebase/testing";
 
 import {
+  activitySpaceResponseCreated,
+  activitySpaceResponseUpdated,
+} from "../__dummy__/Activity";
+import {username} from "../__dummy__/Username";
+import {
   initializeAdminApp,
   initializeFirebaseApp,
   loadFirestoreRules,
@@ -14,11 +19,11 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "currentUser"});
+  db = initializeFirebaseApp(username);
   collection = db.collection("activity");
-  doc = collection.doc("itemId");
+  doc = collection.doc("activityId");
   await loadFirestoreRules();
-  await admin.doc("activity/itemId").set({title: "new activity"});
+  await admin.doc("activity/activityId").set(activitySpaceResponseCreated);
   done();
 });
 
@@ -28,12 +33,12 @@ afterAll(async done => {
 });
 
 test("Cannot create a new activity", async done => {
-  await firebase.assertFails(collection.add({title: "new item"}));
+  await firebase.assertFails(collection.add(activitySpaceResponseCreated));
   done();
 });
 
 test("Cannot update activity", async done => {
-  await firebase.assertFails(doc.update({title: "updated!"}));
+  await firebase.assertFails(doc.update(activitySpaceResponseUpdated));
   done();
 });
 

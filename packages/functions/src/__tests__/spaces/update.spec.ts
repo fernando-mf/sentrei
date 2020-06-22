@@ -1,5 +1,13 @@
 import * as firebase from "@firebase/testing";
 
+// import Metadata from "@sentrei/common/models/Metadata";
+import Metadata from "@sentrei/common/models/Metadata";
+import Profile from "@sentrei/common/models/Profile";
+import Space from "@sentrei/common/models/Space";
+
+// import {metadataUpdate} from "../../__dummy__/Metadata";
+import {profileGet} from "../../__dummy__/Profile";
+
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -10,38 +18,42 @@ import {
 let admin: firebase.firestore.Firestore;
 let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.DocumentReference;
-const profile = {
+
+const profile: Profile.Get = {
+  ...profileGet,
+  id: "spaceId",
   name: "name",
   photo: "user.png",
   username: "username",
 };
 
-const data = {
+const data: Space.Create = {
   createdAt: firebase.firestore.FieldValue.serverTimestamp(),
   createdBy: profile,
-  createdById: "currentUser",
+  createdById: "userId",
   description: "content",
   memberCount: 0,
+  name: "space",
   photo: null,
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
   updatedBy: profile,
-  updatedById: "currentUser",
+  updatedById: "userId",
 };
 
-const edit = {
+const edit: Metadata.Update = {
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
   updatedBy: profile,
-  updatedById: "currentUser",
+  updatedById: "userId",
 };
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "currentUser"});
-  ref = db.doc("spaces/itemId");
+  db = initializeFirebaseApp({uid: "userId"});
+  ref = db.doc("spaces/spaceId");
   await loadFirestoreRules();
-  await admin.doc("profile/currentUser").set(profile);
-  await admin.doc("spaces/itemId").set(data);
-  await admin.doc("users/currentUser/spaces/itemId").set({});
+  await admin.doc("profiles/userId").set(profile);
+  await admin.doc("spaces/spaceId").set(data);
+  await admin.doc("users/userId/spaces/spaceId").set({});
   done();
 });
 
@@ -75,7 +87,9 @@ test("Members cannot be changed", async done => {
 });
 
 test("Photo is a string", async done => {
-  await firebase.assertSucceeds(ref.update({...edit, photo: "photo.svg"}));
+  await firebase.assertSucceeds(
+    ref.update(<Space.Update>{...edit, photo: "photo.svg"}),
+  );
   await firebase.assertFails(ref.update({...edit, photo: 123}));
   await firebase.assertFails(ref.update({...edit, photo: true}));
   await firebase.assertFails(ref.update({...edit, photo: {1: true}}));
@@ -84,7 +98,9 @@ test("Photo is a string", async done => {
 });
 
 test("Photo can be null", async done => {
-  await firebase.assertSucceeds(ref.update({...edit, photo: null}));
+  await firebase.assertSucceeds(
+    ref.update(<Space.Update>{...edit, photo: null}),
+  );
   done();
 });
 
@@ -95,19 +111,19 @@ test("UpdatedAt has a valid timestamp", async done => {
 });
 
 test("UpdatedBy has a valid user name", async done => {
-  const updatedBy = {...profile, name: "invalid"};
+  const updatedBy: Profile.Response = {...profile, name: "invalid"};
   await firebase.assertFails(ref.update({...edit, updatedBy}));
   done();
 });
 
 test("UpdatedBy has a valid user photo", async done => {
-  const updatedBy = {...profile, photo: "invalid"};
+  const updatedBy: Profile.Response = {...profile, photo: "invalid"};
   await firebase.assertFails(ref.update({...edit, updatedBy}));
   done();
 });
 
 test("UpdatedBy has a valid username", async done => {
-  const updatedBy = {...profile, username: "invalid"};
+  const updatedBy: Profile.Response = {...profile, username: "invalid"};
   await firebase.assertFails(ref.update({...edit, updatedBy}));
   done();
 });
