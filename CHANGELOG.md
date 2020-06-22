@@ -1,3 +1,9 @@
+## [4.97.2](https://github.com/sentrei/sentrei/compare/v4.97.1...v4.97.2) (2020-06-22)
+
+### Bug Fixes
+
+- 🐛 package tgz release ([63f52e2](https://github.com/sentrei/sentrei/commit/63f52e21056aa3d7da09f236ecc84d37a4cd82a1))
+
 ## [4.97.1](https://github.com/sentrei/sentrei/compare/v4.97.0...v4.97.1) (2020-06-22)
 
 ### Bug Fixes
