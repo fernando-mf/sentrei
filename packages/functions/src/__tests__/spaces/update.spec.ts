@@ -1,12 +1,13 @@
 import * as firebase from "@firebase/testing";
 
-// import Metadata from "@sentrei/common/models/Metadata";
 import Metadata from "@sentrei/common/models/Metadata";
+
 import Profile from "@sentrei/common/models/Profile";
 import Space from "@sentrei/common/models/Space";
 
-// import {metadataUpdate} from "../../__dummy__/Metadata";
+import {metadataUpdate} from "../../__dummy__/Metadata";
 import {profileGet} from "../../__dummy__/Profile";
+import {spaceCreate} from "../../__dummy__/Space";
 
 import {
   initializeAdminApp,
@@ -28,20 +29,15 @@ const profile: Profile.Get = {
 };
 
 const data: Space.Create = {
-  createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+  ...spaceCreate,
   createdBy: profile,
   createdById: "userId",
-  description: "content",
-  memberCount: 0,
-  name: "space",
-  photo: null,
-  updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
   updatedBy: profile,
   updatedById: "userId",
 };
 
 const edit: Metadata.Update = {
-  updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+  ...metadataUpdate,
   updatedBy: profile,
   updatedById: "userId",
 };

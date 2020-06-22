@@ -4,6 +4,7 @@ import Space from "@sentrei/common/models/Space";
 import User from "@sentrei/common/models/User";
 import Username from "@sentrei/common/models/Username";
 
+import {spaceResponse} from "../../__dummy__/Space";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -37,7 +38,11 @@ test("Viewers cannot delete", async done => {
 });
 
 test("Authors can delete", async done => {
-  const data = {createdById: "spaceUser", updatedById: "spaceUser"};
+  const data: Space.Response = {
+    ...spaceResponse,
+    createdById: "spaceUser",
+    updatedById: "spaceUser",
+  };
   const ref = db.doc("spaces/authorDoc");
   await admin.doc("users/spaceUser").set(<User.Update>{role: "viewer"});
   await admin.doc("spaces/authorDoc").set(data);
@@ -46,7 +51,11 @@ test("Authors can delete", async done => {
 });
 
 test("UpdatedById has the current user UID", async done => {
-  const data = {createdById: "spaceUser", updatedById: "otherUser"};
+  const data: Space.Response = {
+    ...spaceResponse,
+    createdById: "spaceUser",
+    updatedById: "otherUser",
+  };
   const ref = db.doc("spaces/otherUser");
   await admin.doc("users/spaceUser").set(<User.Update>{role: "viewer"});
   await admin.doc("spaces/otherUser").set(data);
