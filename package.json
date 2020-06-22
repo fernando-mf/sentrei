@@ -33,6 +33,7 @@
     "firebase:master": "lerna run firebase:master --stream --scope={@sentrei/functions,@sentrei/web}",
     "fix": "yarn run eclint:fix && yarn run eslint:fix && yarn run prettier:fix && yarn run sort-package-json:fix",
     "lint": "yarn run eclint:check && yarn run eslint:check && yarn run prettier:check && yarn run sort-package-json:check",
+    "preinstall": "lerna run preinstall --stream --parallel",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "publish:lerna": "lerna publish from-package --yes --dist-tag ${DIST_TAG}",
