@@ -1,5 +1,7 @@
 import * as firebase from "@firebase/testing";
 
+import Username from "@sentrei/common/models/Username";
+
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -14,7 +16,7 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "userId"});
+  db = initializeFirebaseApp(<Username>{uid: "userId"});
   collection = db.collection("users/userId/spaces");
   doc = collection.doc("spaceId");
   await loadFirestoreRules();
