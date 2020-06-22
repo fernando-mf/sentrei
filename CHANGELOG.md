@@ -1,3 +1,9 @@
+## [4.97.1](https://github.com/sentrei/sentrei/compare/v4.97.0...v4.97.1) (2020-06-22)
+
+### Bug Fixes
+
+- 🐛 remove preinstall script ([c7b8be3](https://github.com/sentrei/sentrei/commit/c7b8be30001f99b4139e233e559f348e57822079))
+
 ## [4.96.2](https://github.com/sentrei/sentrei/compare/v4.96.1...v4.96.2) (2020-06-22)
 
 ### Bug Fixes
