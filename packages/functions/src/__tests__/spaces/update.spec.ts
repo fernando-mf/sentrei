@@ -20,25 +20,17 @@ let admin: firebase.firestore.Firestore;
 let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.DocumentReference;
 
-const profile: Profile.Get = {
-  ...profileGet,
-  id: "spaceId",
-  name: "name",
-  photo: "user.png",
-  username: "username",
-};
-
 const data: Space.Create = {
   ...spaceCreate,
-  createdBy: profile,
+  createdBy: profileGet,
   createdById: "userId",
-  updatedBy: profile,
+  updatedBy: profileGet,
   updatedById: "userId",
 };
 
 const edit: Metadata.Update = {
   ...metadataUpdate,
-  updatedBy: profile,
+  updatedBy: profileGet,
   updatedById: "userId",
 };
 
@@ -47,7 +39,7 @@ beforeAll(async done => {
   db = initializeFirebaseApp({uid: "userId"});
   ref = db.doc("spaces/spaceId");
   await loadFirestoreRules();
-  await admin.doc("profiles/userId").set(profile);
+  await admin.doc("profileGets/userId").set(profileGet);
   await admin.doc("spaces/spaceId").set(data);
   await admin.doc("users/userId/spaces/spaceId").set({});
   done();
@@ -83,20 +75,10 @@ test("Members cannot be changed", async done => {
 });
 
 test("Photo is a string", async done => {
-  await firebase.assertSucceeds(
-    ref.update(<Space.Update>{...edit, photo: "photo.svg"}),
-  );
   await firebase.assertFails(ref.update({...edit, photo: 123}));
   await firebase.assertFails(ref.update({...edit, photo: true}));
   await firebase.assertFails(ref.update({...edit, photo: {1: true}}));
   await firebase.assertFails(ref.update({...edit, photo: ["test"]}));
-  done();
-});
-
-test("Photo can be null", async done => {
-  await firebase.assertSucceeds(
-    ref.update(<Space.Update>{...edit, photo: null}),
-  );
   done();
 });
 
@@ -107,19 +89,19 @@ test("UpdatedAt has a valid timestamp", async done => {
 });
 
 test("UpdatedBy has a valid user name", async done => {
-  const updatedBy: Profile.Response = {...profile, name: "invalid"};
+  const updatedBy: Profile.Response = {...profileGet, name: "invalid"};
   await firebase.assertFails(ref.update({...edit, updatedBy}));
   done();
 });
 
 test("UpdatedBy has a valid user photo", async done => {
-  const updatedBy: Profile.Response = {...profile, photo: "invalid"};
+  const updatedBy: Profile.Response = {...profileGet, photo: "invalid"};
   await firebase.assertFails(ref.update({...edit, updatedBy}));
   done();
 });
 
 test("UpdatedBy has a valid username", async done => {
-  const updatedBy: Profile.Response = {...profile, username: "invalid"};
+  const updatedBy: Profile.Response = {...profileGet, username: "invalid"};
   await firebase.assertFails(ref.update({...edit, updatedBy}));
   done();
 });
