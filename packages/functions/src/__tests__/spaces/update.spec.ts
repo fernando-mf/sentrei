@@ -30,30 +30,30 @@ const profile: Profile.Get = {
 const data: Space.Create = {
   createdAt: firebase.firestore.FieldValue.serverTimestamp(),
   createdBy: profile,
-  createdById: "currentUser",
+  createdById: "userId",
   description: "content",
   memberCount: 0,
   name: "space",
   photo: null,
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
   updatedBy: profile,
-  updatedById: "currentUser",
+  updatedById: "userId",
 };
 
 const edit: Metadata.Update = {
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
   updatedBy: profile,
-  updatedById: "currentUser",
+  updatedById: "userId",
 };
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "currentUser"});
+  db = initializeFirebaseApp({uid: "userId"});
   ref = db.doc("spaces/spaceId");
   await loadFirestoreRules();
-  await admin.doc("profile/currentUser").set(profile);
+  await admin.doc("profiles/userId").set(profile);
   await admin.doc("spaces/spaceId").set(data);
-  await admin.doc("users/currentUser/spaces/spaceId").set({});
+  await admin.doc("users/userId/spaces/spaceId").set({});
   done();
 });
 
