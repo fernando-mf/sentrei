@@ -6,7 +6,7 @@ import Profile from "@sentrei/common/models/Profile";
 import Space from "@sentrei/common/models/Space";
 
 // import {metadataUpdate} from "../../__dummy__/Metadata";
-import {profileResponse} from "../../__dummy__/Profile";
+import {profileGet} from "../../__dummy__/Profile";
 
 import {
   initializeAdminApp,
@@ -19,14 +19,15 @@ let admin: firebase.firestore.Firestore;
 let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.DocumentReference;
 
-const profile: Profile.Response = {
-  ...profileResponse,
+const profile: Profile.Get = {
+  ...profileGet,
+  id: "spaceId",
   name: "name",
   photo: "user.png",
   username: "username",
 };
 
-const data = {
+const data: Space.Create = {
   createdAt: firebase.firestore.FieldValue.serverTimestamp(),
   createdBy: profile,
   createdById: "currentUser",
