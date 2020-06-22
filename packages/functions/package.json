@@ -56,12 +56,12 @@
     "test:watch": "firebase emulators:exec --only firestore 'jest --watch && yarn run coverage:rules'",
     "tsc": "tsc -b . ",
     "tscpaths": "tscpaths -p tsconfig.json -s ./src -o ./dist",
-    "typescript": "yarn run clean && yarn run tsc && yarn run tscpaths",
+    "typescript": "yarn run clean && yarn run tsc && yarn run pack",
     "watch": "tsc -b . -w --preserveWatchOutput"
   },
   "dependencies": {
     "@firebase/testing": "^0.20.2",
-    "@sentrei/common": "*",
+    "@sentrei/common": "file:sentrei-common-4.96.2.tgz",
     "@slack/webhook": "^5.0.3",
     "@types/lodash": "^4.14.154",
     "firebase-admin": "^8.12.1",
