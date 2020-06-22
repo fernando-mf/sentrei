@@ -52,6 +52,7 @@ jobs:
           yarn install --frozen-lockfile
       - run: |
           yarn run typescript
+          git reset packages/functions/package.tgz
       - run: |
           yarn run release
         env:
@@ -84,8 +85,6 @@ jobs:
           SENTRY_ORG: ${{ github.repository_owner }}
           SENTRY_ENVIRONMENT: ${{ needs.context.outputs.branch }}
           SENTRY_RELEASE: ${{ steps.version.outputs.release }}
-      - run: |
-          yarn install --frozen-lockfile
       - run: |
           yarn run fix
       - uses: peter-evans/create-pull-request@v2
