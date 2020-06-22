@@ -98,7 +98,9 @@ test("Photo is a string", async done => {
 });
 
 test("Photo can be null", async done => {
-  await firebase.assertSucceeds(ref.update({...edit, photo: null}));
+  await firebase.assertSucceeds(
+    ref.update(<Space.Update>{...edit, photo: null}),
+  );
   done();
 });
 
