@@ -1,3 +1,9 @@
+## [4.96.1](https://github.com/sentrei/sentrei/compare/v4.96.0...v4.96.1) (2020-06-22)
+
+### Bug Fixes
+
+- 🐛 add spaces update ([b7b7f5a](https://github.com/sentrei/sentrei/commit/b7b7f5a7bb41d841c0130d1df5491e2fb22b434c))
+
 # [4.96.0](https://github.com/sentrei/sentrei/compare/v4.95.2...v4.96.0) (2020-06-22)
 
 ### Bug Fixes
