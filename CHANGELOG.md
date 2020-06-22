@@ -1,3 +1,9 @@
+## [4.95.2](https://github.com/sentrei/sentrei/compare/v4.95.1...v4.95.2) (2020-06-22)
+
+### Bug Fixes
+
+- **deps:** bump dvc from 0.94.0 to 1.0.0 ([a990441](https://github.com/sentrei/sentrei/commit/a9904419a06847973fc21e21f3747811e8788c56))
+
 ## [4.95.1](https://github.com/sentrei/sentrei/compare/v4.95.0...v4.95.1) (2020-06-21)
 
 ### Bug Fixes
