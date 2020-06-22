@@ -14,11 +14,11 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "currentUser"});
-  collection = db.collection("users/currentUser/spaces");
-  doc = collection.doc("itemId");
+  db = initializeFirebaseApp({uid: "userId"});
+  collection = db.collection("users/userId/spaces");
+  doc = collection.doc("spaceId");
   await loadFirestoreRules();
-  await admin.doc("users/currentUser/spaces/itemId").set({});
+  await admin.doc("users/userId/spaces/spaceId").set({});
   done();
 });
 
@@ -48,7 +48,7 @@ test("Users can read a space", async done => {
 });
 
 test("Users cannot read a space from another user", async done => {
-  const ref = db.doc("users/other/spaces/spaceId");
+  const ref = db.doc("users/otherUserId/spaces/spaceId");
   await firebase.assertFails(ref.get());
   done();
 });
@@ -59,7 +59,7 @@ test("Users can list their own spaces", async done => {
 });
 
 test("Cannot list spaces from other users", async done => {
-  const ref = db.collection("users/other/spaces");
+  const ref = db.collection("users/otherUserId/spaces");
   await firebase.assertFails(ref.get());
   done();
 });

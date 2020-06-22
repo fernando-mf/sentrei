@@ -1,6 +1,9 @@
 import * as firebase from "@firebase/testing";
 
+import Username from "@sentrei/common/models/Username";
+
 import {profileResponse} from "../../__dummy__/Profile";
+import {timestamp} from "../../__mocks__/firebase-testing";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -12,13 +15,11 @@ let admin: firebase.firestore.Firestore;
 let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.DocumentReference;
 
-const joined = firebase.firestore.FieldValue.serverTimestamp();
-
-const data = {...profileResponse, joined, score: 1};
+const data = {...profileResponse, timestamp, score: 1};
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "spaceUser"});
+  db = initializeFirebaseApp(<Username>{uid: "spaceUser"});
   ref = db.doc("spaces/spaceId/members/spaceUser");
   await loadFirestoreRules();
   await admin.doc("profileResponse/spaceUser").set(profileResponse);
@@ -75,6 +76,6 @@ test("Cannot leave a space using a fake UID", async done => {
 
 test("Cannot update", async done => {
   await admin.doc("spaces/spaceId/members/spaceUser").set(data);
-  await firebase.assertFails(ref.update({joined}));
+  await firebase.assertFails(ref.update({timestamp}));
   done();
 });
