@@ -53,8 +53,6 @@ jobs:
       - run: |
           yarn run typescript
       - run: |
-          yarn install --dev
-      - run: |
           yarn run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
