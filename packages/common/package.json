@@ -19,7 +19,6 @@
     "clean": "yarn run clean:dist && yarn run clean:tsbuildinfo",
     "clean:dist": "rimraf dist",
     "clean:tsbuildinfo": "rimraf tsconfig*tsbuildinfo",
-    "preinstall": "mkdir dist",
     "jest": "jest --coverage",
     "test": "yarn run jest",
     "typescript": "yarn run clean && tsc -b .",
