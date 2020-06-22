@@ -1,3 +1,9 @@
+## [4.96.2](https://github.com/sentrei/sentrei/compare/v4.96.1...v4.96.2) (2020-06-22)
+
+### Bug Fixes
+
+- 🐛 cloud functions ([8f09783](https://github.com/sentrei/sentrei/commit/8f0978313fc7a5824d862803f34443ad8d6ed103))
+
 ## [4.96.1](https://github.com/sentrei/sentrei/compare/v4.96.0...v4.96.1) (2020-06-22)
 
 ### Bug Fixes
