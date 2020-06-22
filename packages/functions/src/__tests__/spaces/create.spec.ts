@@ -131,7 +131,7 @@ test("UpdatedBy has a valid username", async done => {
 
 test("UpdatedById has the current user UID", async done => {
   await firebase.assertFails(
-    ref.add(<Space.Response>(<Space.Response>{...data, updatedById: "other"})),
+    ref.add(<Space.Response>{...data, updatedById: "other"}),
   );
   done();
 });

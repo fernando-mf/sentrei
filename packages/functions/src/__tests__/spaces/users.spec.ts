@@ -1,5 +1,6 @@
 import * as firebase from "@firebase/testing";
 
+import Space from "@sentrei/common/models/Space";
 import Username from "@sentrei/common/models/Username";
 
 import {
@@ -30,12 +31,12 @@ afterAll(async done => {
 });
 
 test("Cannot add a new space", async done => {
-  await firebase.assertFails(collection.add({title: "test"}));
+  await firebase.assertFails(collection.add(<Space.Update>{name: "space"}));
   done();
 });
 
 test("Cannot update spaces", async done => {
-  await firebase.assertFails(doc.update({title: "test"}));
+  await firebase.assertFails(doc.update(<Space.Update>{name: "space"}));
   done();
 });
 
