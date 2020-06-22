@@ -29,3 +29,12 @@ export const spaceResponse: Space.Response = {
   updatedBy: profileGet,
   updatedById: "spaceUser",
 };
+
+export const spaceUpdate: Space.Update = {
+  name: "space",
+  photo: null,
+  description: "space",
+  updatedAt: timestamp,
+  updatedBy: profileGet,
+  updatedById: "spaceUser",
+};

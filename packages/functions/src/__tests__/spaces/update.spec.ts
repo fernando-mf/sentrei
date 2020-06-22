@@ -1,6 +1,12 @@
 import * as firebase from "@firebase/testing";
 
+// import Metadata from "@sentrei/common/models/Metadata";
+import Metadata from "@sentrei/common/models/Metadata";
 import Profile from "@sentrei/common/models/Profile";
+import Space from "@sentrei/common/models/Space";
+
+// import {metadataUpdate} from "../../__dummy__/Metadata";
+import {profileResponse} from "../../__dummy__/Profile";
 
 import {
   initializeAdminApp,
@@ -13,7 +19,8 @@ let admin: firebase.firestore.Firestore;
 let db: firebase.firestore.Firestore;
 let ref: firebase.firestore.DocumentReference;
 
-const profile = {
+const profile: Profile.Response = {
+  ...profileResponse,
   name: "name",
   photo: "user.png",
   username: "username",
@@ -25,13 +32,14 @@ const data = {
   createdById: "currentUser",
   description: "content",
   memberCount: 0,
+  name: "space",
   photo: null,
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
   updatedBy: profile,
   updatedById: "currentUser",
 };
 
-const edit = {
+const edit: Metadata.Update = {
   updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
   updatedBy: profile,
   updatedById: "currentUser",
@@ -78,7 +86,9 @@ test("Members cannot be changed", async done => {
 });
 
 test("Photo is a string", async done => {
-  await firebase.assertSucceeds(ref.update({...edit, photo: "photo.svg"}));
+  await firebase.assertSucceeds(
+    ref.update(<Space.Update>{...edit, photo: "photo.svg"}),
+  );
   await firebase.assertFails(ref.update({...edit, photo: 123}));
   await firebase.assertFails(ref.update({...edit, photo: true}));
   await firebase.assertFails(ref.update({...edit, photo: {1: true}}));
