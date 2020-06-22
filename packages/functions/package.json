@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "@firebase/testing": "^0.20.2",
-    "@sentrei/common": "file:../common/dist",
+    "@sentrei/common": "file:../common",
     "@slack/webhook": "^5.0.3",
     "@types/lodash": "^4.14.154",
     "firebase-admin": "^8.12.1",
