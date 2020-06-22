@@ -32,7 +32,6 @@
     "firebase:login": "firebase login --no-localhost",
     "firebase:master": "lerna run firebase:master --stream --scope={@sentrei/functions,@sentrei/web}",
     "fix": "yarn run eclint:fix && yarn run eslint:fix && yarn run prettier:fix && yarn run sort-package-json:fix",
-    "preinstall": "lerna run preinstall --stream --parallel",
     "lint": "yarn run eclint:check && yarn run eslint:check && yarn run prettier:check && yarn run sort-package-json:check",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
