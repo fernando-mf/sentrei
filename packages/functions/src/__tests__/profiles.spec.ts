@@ -1,6 +1,10 @@
 import * as firebase from "@firebase/testing";
 
+import Profile from "@sentrei/common/models/Profile";
+import Username from "@sentrei/common/models/Username";
+
 import {profileResponse} from "../__dummy__/Profile";
+import {username} from "../__dummy__/Username";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -15,7 +19,7 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "profileId"});
+  db = initializeFirebaseApp(<Username>{...username, uid: "profileId"});
   collection = db.collection("profiles");
   doc = collection.doc("profileId");
   await loadFirestoreRules();
@@ -34,7 +38,7 @@ test("Cannot create", async done => {
 });
 
 test("Users can update their own data", async done => {
-  await firebase.assertSucceeds(doc.update({name: "current"}));
+  await firebase.assertSucceeds(doc.update(<Profile.Update>{name: "current"}));
   done();
 });
 

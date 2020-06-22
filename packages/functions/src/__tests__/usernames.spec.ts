@@ -1,5 +1,8 @@
 import * as firebase from "@firebase/testing";
 
+import Username from "@sentrei/common/models/Username";
+
+import {username} from "../__dummy__/Username";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -14,11 +17,13 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "userId"});
+  db = initializeFirebaseApp(username);
   collection = db.collection("usernames");
   doc = collection.doc("sentrei");
   await loadFirestoreRules();
-  await admin.doc("usernames/sentrei").set({uid: "otherUserId"});
+  await admin
+    .doc("usernames/sentrei")
+    .set(<Username>{...username, uid: "otherUserId"});
   done();
 });
 
@@ -39,7 +44,7 @@ test("Cannot list usernames", async done => {
 
 test("Can create", async done => {
   const ref = collection.doc("newuser");
-  await firebase.assertSucceeds(ref.set({uid: "userId"}));
+  await firebase.assertSucceeds(ref.set(username));
   done();
 });
 
@@ -91,7 +96,7 @@ test("Cannot have uppercase characters", async done => {
 
 test("Can have numbers", async done => {
   const ref = collection.doc("myuser89");
-  await firebase.assertSucceeds(ref.set({uid: "userId"}));
+  await firebase.assertSucceeds(ref.set(username));
   done();
 });
 

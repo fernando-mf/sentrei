@@ -1,5 +1,8 @@
 import * as firebase from "@firebase/testing";
 
+import User from "@sentrei/common/models/User";
+
+import {username} from "../__dummy__/Username";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -14,14 +17,14 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "userId"});
+  db = initializeFirebaseApp(username);
   collection = db.collection("users");
   doc = collection.doc("userId");
   await loadFirestoreRules();
-  await admin.doc("users/userId").set({
+  await admin.doc("users/userId").set(<User.Update>{
     role: "viewer",
   });
-  await admin.doc("users/otherUserId").set({bio: "other"});
+  await admin.doc("users/otherUserId").set(<User.Update>{name: "other"});
   done();
 });
 
@@ -42,7 +45,7 @@ test("Users cannot read data from others", async done => {
 });
 
 test("Users can update their own data", async done => {
-  await firebase.assertSucceeds(doc.update({notifications: 0}));
+  await firebase.assertSucceeds(doc.update(<User.Update>{notifications: 0}));
   done();
 });
 

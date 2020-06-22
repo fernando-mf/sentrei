@@ -1,6 +1,10 @@
 import * as firebase from "@firebase/testing";
 
+import User from "@sentrei/common/models/User";
+import Username from "@sentrei/common/models/Username";
+
 import {analyticsStats} from "../__dummy__/Analytics";
+import {username} from "../__dummy__/Username";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -15,7 +19,7 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "userId"});
+  db = initializeFirebaseApp(username);
   collection = db.collection("analytics");
   doc = collection.doc("stats");
   await loadFirestoreRules();
@@ -44,25 +48,25 @@ test("Cannot delete an item", async done => {
 });
 
 test("Can read with admin access", async done => {
-  const adminApp = initializeFirebaseApp({uid: "adminUser"});
+  const adminApp = initializeFirebaseApp(<Username>{uid: "adminUser"});
   const adminDoc = adminApp.doc("analytics/stats");
-  await admin.doc("users/adminUser").set({role: "admin"});
+  await admin.doc("users/adminUser").set(<User.Update>{role: "admin"});
   await firebase.assertSucceeds(adminDoc.get());
   done();
 });
 
 test("Cannot read with moderator access", async done => {
-  const adminApp = initializeFirebaseApp({uid: "modUser"});
+  const adminApp = initializeFirebaseApp(<Username>{uid: "modUser"});
   const adminDoc = adminApp.doc("analytics/stats");
-  await admin.doc("users/modUser").set({role: "moderator"});
+  await admin.doc("users/modUser").set(<User.Update>{role: "moderator"});
   await firebase.assertFails(adminDoc.get());
   done();
 });
 
 test("Cannot read with viewer access", async done => {
-  const adminApp = initializeFirebaseApp({uid: "viewerUser"});
+  const adminApp = initializeFirebaseApp(<Username>{uid: "viewerUser"});
   const adminDoc = adminApp.doc("analytics/stats");
-  await admin.doc("users/viewerUser").set({role: "viewer"});
+  await admin.doc("users/viewerUser").set(<User.Update>{role: "viewer"});
   await firebase.assertFails(adminDoc.get());
   done();
 });

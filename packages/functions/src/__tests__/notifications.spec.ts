@@ -1,6 +1,7 @@
 import * as firebase from "@firebase/testing";
 
 import {notificationResponse} from "../__dummy__/Notification";
+import {username} from "../__dummy__/Username";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -15,7 +16,7 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "userId"});
+  db = initializeFirebaseApp(username);
   collection = db.collection("users/userId/notifications");
   doc = collection.doc("notificationId");
   await loadFirestoreRules();

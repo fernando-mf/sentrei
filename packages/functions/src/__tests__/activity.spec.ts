@@ -4,6 +4,7 @@ import {
   activitySpaceResponseCreated,
   activitySpaceResponseUpdated,
 } from "../__dummy__/Activity";
+import {username} from "../__dummy__/Username";
 import {
   initializeAdminApp,
   initializeFirebaseApp,
@@ -18,7 +19,7 @@ let doc: firebase.firestore.DocumentReference;
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "userId"});
+  db = initializeFirebaseApp(username);
   collection = db.collection("activity");
   doc = collection.doc("activityId");
   await loadFirestoreRules();
