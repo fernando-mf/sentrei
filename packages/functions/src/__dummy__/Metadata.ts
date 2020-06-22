@@ -15,3 +15,11 @@ export const metadataCreate: Metadata.Create = {
   createdBy: profileGet,
   createdById: "userId",
 };
+
+export const metadataResponse: Metadata.Response = {
+  ...metadataCreate,
+  createdAt: timestamp,
+  createdBy: profileGet,
+  createdById: "userId",
+  updatedAt: timestamp,
+};

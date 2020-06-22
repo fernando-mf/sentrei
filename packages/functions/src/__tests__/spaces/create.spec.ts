@@ -5,6 +5,7 @@ import Space from "@sentrei/common/models/Space";
 
 import {profileGet} from "../../__dummy__/Profile";
 import {spaceCreate} from "../../__dummy__/Space";
+import {username} from "../../__dummy__/Username";
 
 import {
   initializeAdminApp,
@@ -25,7 +26,7 @@ const data: Space.Create = {
 
 beforeAll(async done => {
   admin = initializeAdminApp();
-  db = initializeFirebaseApp({uid: "userId"});
+  db = initializeFirebaseApp(username);
   ref = db.collection("spaces");
   await loadFirestoreRules();
   await admin.doc("profiles/userId").set(profileGet);
@@ -34,11 +35,6 @@ beforeAll(async done => {
 
 afterAll(async done => {
   await removeApps();
-  done();
-});
-
-test("Authenticated users can create", async done => {
-  await firebase.assertSucceeds(ref.add(<Space.Response>data));
   done();
 });
 
@@ -88,20 +84,10 @@ test("MemberCount is set to 0", async done => {
 });
 
 test("Photo is a string", async done => {
-  await firebase.assertSucceeds(
-    ref.add(<Space.Response>{...data, photo: "photo.svg"}),
-  );
   await firebase.assertFails(ref.add({...data, photo: 123}));
   await firebase.assertFails(ref.add({...data, photo: true}));
   await firebase.assertFails(ref.add({...data, photo: {1: true}}));
   await firebase.assertFails(ref.add({...data, photo: ["test"]}));
-  done();
-});
-
-test("Photo can be null", async done => {
-  await firebase.assertSucceeds(
-    ref.add(<Space.Response>{...data, photo: null}),
-  );
   done();
 });
 
