@@ -51,7 +51,7 @@ test("Users can update their own data", async done => {
 
 test("Users cannot update data from others", async done => {
   const ref = db.doc("users/otherUserId");
-  await firebase.assertFails(ref.update({notifications: 0}));
+  await firebase.assertFails(ref.update(<User.Update>{notifications: 0}));
   done();
 });
 
@@ -61,17 +61,17 @@ test("Cannot delete an item", async done => {
 });
 
 test("Cannot change the name field", async done => {
-  await firebase.assertFails(doc.update({name: "name"}));
+  await firebase.assertFails(doc.update(<User.Update>{name: "name"}));
   done();
 });
 
 test("Cannot change the role field", async done => {
-  await firebase.assertFails(doc.update({role: "moderator"}));
-  await firebase.assertFails(doc.update({role: "admin"}));
+  await firebase.assertFails(doc.update(<User.Update>{role: "moderator"}));
+  await firebase.assertFails(doc.update(<User.Update>{role: "admin"}));
   done();
 });
 
 test("Cannot change the username field", async done => {
-  await firebase.assertFails(doc.update({username: "new"}));
+  await firebase.assertFails(doc.update(<User.Update>{username: "new"}));
   done();
 });

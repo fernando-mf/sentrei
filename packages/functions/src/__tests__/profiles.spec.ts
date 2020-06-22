@@ -33,7 +33,7 @@ afterAll(async done => {
 });
 
 test("Cannot create", async done => {
-  await firebase.assertFails(collection.add({name: "new"}));
+  await firebase.assertFails(collection.add(<Profile.Update>{name: "new"}));
   done();
 });
 
@@ -44,13 +44,15 @@ test("Users can update their own data", async done => {
 
 test("Cannot update data from other users", async done => {
   const ref = db.doc("profiles/otherProfileId");
-  await admin.doc("profiles/otherProfileId").set({name: "other"});
-  await firebase.assertFails(ref.update({name: "changed"}));
+  await admin
+    .doc("profiles/otherProfileId")
+    .set(<Profile.Update>{name: "other"});
+  await firebase.assertFails(ref.update(<Profile.Update>{name: "changed"}));
   done();
 });
 
 test("Cannot update the username field", async done => {
-  await firebase.assertFails(doc.update({username: "new"}));
+  await firebase.assertFails(doc.update(<Profile.Update>{username: "new"}));
   done();
 });
 

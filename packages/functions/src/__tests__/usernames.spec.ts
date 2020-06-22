@@ -51,36 +51,36 @@ test("Can create", async done => {
 test("Anonymous users cannot create", async done => {
   const app = initializeFirebaseApp(undefined);
   const ref = app.collection("usernames");
-  await firebase.assertFails(ref.add({uid: null}));
+  await firebase.assertFails(ref.add(<Username>{uid: null}));
   done();
 });
 
 test("Cannot create using the UID of other users", async done => {
-  await firebase.assertFails(collection.add({uid: "otherUserId"}));
+  await firebase.assertFails(collection.add(<Username>{uid: "otherUserId"}));
   done();
 });
 
 test("Cannot have a dot (.) at the beginning", async done => {
   const ref = collection.doc(".myuser");
-  await firebase.assertFails(ref.set({uid: "userId"}));
+  await firebase.assertFails(ref.set(<Username>{uid: "userId"}));
   done();
 });
 
 test("Cannot have a dot (.) at the end", async done => {
   const ref = collection.doc("myuser.");
-  await firebase.assertFails(ref.set({uid: "userId"}));
+  await firebase.assertFails(ref.set(<Username>{uid: "userId"}));
   done();
 });
 
 test("Cannot have two dots (..) in a row", async done => {
   const ref = collection.doc("my..user");
-  await firebase.assertFails(ref.set({uid: "userId"}));
+  await firebase.assertFails(ref.set(<Username>{uid: "userId"}));
   done();
 });
 
 test("Cannot have an underscore (_) at the beginning", async done => {
   const ref = collection.doc("_myuser");
-  await firebase.assertFails(ref.set({uid: "userId"}));
+  await firebase.assertFails(ref.set(<Username>{uid: "userId"}));
   done();
 });
 
@@ -88,9 +88,9 @@ test("Cannot have uppercase characters", async done => {
   const start = collection.doc("Myuser");
   const middle = collection.doc("myUser");
   const end = collection.doc("myuseR");
-  await firebase.assertFails(start.set({uid: "userId"}));
-  await firebase.assertFails(middle.set({uid: "userId"}));
-  await firebase.assertFails(end.set({uid: "userId"}));
+  await firebase.assertFails(start.set(<Username>{uid: "userId"}));
+  await firebase.assertFails(middle.set(<Username>{uid: "userId"}));
+  await firebase.assertFails(end.set(<Username>{uid: "userId"}));
   done();
 });
 
@@ -106,16 +106,16 @@ test("Cannot have special characters", async done => {
   const til = collection.doc("anão");
   const exclamation = collection.doc("test!");
   const question = collection.doc("test?");
-  await firebase.assertFails(comma.set({uid: "userId"}));
-  await firebase.assertFails(cedil.set({uid: "userId"}));
-  await firebase.assertFails(til.set({uid: "userId"}));
-  await firebase.assertFails(exclamation.set({uid: "userId"}));
-  await firebase.assertFails(question.set({uid: "userId"}));
+  await firebase.assertFails(comma.set(<Username>{uid: "userId"}));
+  await firebase.assertFails(cedil.set(<Username>{uid: "userId"}));
+  await firebase.assertFails(til.set(<Username>{uid: "userId"}));
+  await firebase.assertFails(exclamation.set(<Username>{uid: "userId"}));
+  await firebase.assertFails(question.set(<Username>{uid: "userId"}));
   done();
 });
 
 test("Cannot update using the UID of other users", async done => {
-  await firebase.assertFails(doc.update({uid: "otherUserId"}));
+  await firebase.assertFails(doc.update(<Username>{uid: "otherUserId"}));
   done();
 });
 
