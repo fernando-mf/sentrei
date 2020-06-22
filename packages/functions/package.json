@@ -55,7 +55,7 @@
     "test:watch": "firebase emulators:exec --only firestore 'jest --watch && yarn run coverage:rules'",
     "tsc": "tsc -b . ",
     "tscpaths": "tscpaths -p tsconfig.json -s ./src -o ./dist",
-    "typescript": "yarn run clean && yarn run tsc && yarn run tscpaths",
+    "typescript": "yarn run clean && yarn run tsc",
     "watch": "tsc -b . -w --preserveWatchOutput"
   },
   "dependencies": {
