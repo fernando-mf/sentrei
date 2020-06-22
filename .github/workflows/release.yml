@@ -52,7 +52,8 @@ jobs:
           yarn install --frozen-lockfile
       - run: |
           yarn run typescript
-          git reset packages/functions/package.tgz
+      - run: |
+          yarn install --dev
       - run: |
           yarn run release
         env:
