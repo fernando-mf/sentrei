@@ -37,7 +37,6 @@
     "firestore:export": "firebase emulators:export --force ./data --only firestore",
     "indexes:get": "firebase firestore:indexes > firestore/firestore.indexes.json",
     "preinstall": "touch package.tgz",
-    "postinstall": "touch package.tgz",
     "log": "firebase functions:log",
     "master": "yarn run swap:master && firebase use master && yarn run env:set && yarn run deploy:rules && yarn run deploy:functions",
     "master:local": "yarn run swap:master && firebase use master",
