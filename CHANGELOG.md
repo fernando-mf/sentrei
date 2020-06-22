@@ -1,3 +1,17 @@
+# [4.96.0](https://github.com/sentrei/sentrei/compare/v4.95.2...v4.96.0) (2020-06-22)
+
+### Bug Fixes
+
+- 🐛 chore ([d5c9cc8](https://github.com/sentrei/sentrei/commit/d5c9cc8773a3e26369e55602b0f797d1bd7fbdfd))
+- 🐛 upgrade ([21789d9](https://github.com/sentrei/sentrei/commit/21789d9925ed432eb6f2a323385eb497db9601dc))
+
+### Features
+
+- 🎸 complete initial refactor ([6a4ffde](https://github.com/sentrei/sentrei/commit/6a4ffdec439a8e13efd3a59dbd633e5365813736))
+- 🎸 complete refactor ([d7df0c5](https://github.com/sentrei/sentrei/commit/d7df0c5e48b56d62fff95cf2cd100ec52363d4e5))
+- 🎸 complete refactor tests ([017216e](https://github.com/sentrei/sentrei/commit/017216eb87d4b0e57010c8fcef9c09caedb01488))
+- 🎸 upgrade to firebase testing ([3d010df](https://github.com/sentrei/sentrei/commit/3d010df6394c2e61d521b3d66044a0b0ab008112))
+
 ## [4.95.2](https://github.com/sentrei/sentrei/compare/v4.95.1...v4.95.2) (2020-06-22)
 
 ### Bug Fixes
