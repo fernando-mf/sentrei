@@ -40,7 +40,7 @@
     "master": "yarn run swap:master && firebase use master && yarn run env:set && yarn run deploy:rules && yarn run deploy:functions",
     "master:local": "yarn run swap:master && firebase use master",
     "pack": "if [ -d ../common ]; then npm pack ../common && mv $(npm pack ../common | tail -n 1) package.tgz; fi",
-    "postinstall": "touch package.tgz",
+    "preinstall": "touch package.tgz",
     "setup": "firebase setup:emulators:firestore",
     "shell": "firebase functions:shell",
     "staging:alpha": "yarn run swap:alpha && firebase use alpha && yarn run test",
