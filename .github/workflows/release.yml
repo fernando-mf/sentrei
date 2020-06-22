@@ -85,6 +85,8 @@ jobs:
           SENTRY_ENVIRONMENT: ${{ needs.context.outputs.branch }}
           SENTRY_RELEASE: ${{ steps.version.outputs.release }}
       - run: |
+          yarn install --frozen-lockfile
+      - run: |
           yarn run fix
       - uses: peter-evans/create-pull-request@v2
         with:
