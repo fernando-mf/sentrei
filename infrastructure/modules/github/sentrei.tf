@@ -1,11 +1,16 @@
 resource "github_repository" "sentrei" {
-  name         = "sentrei"
-  description  = "Official sentrei app"
-  homepage_url = "https://sentrei.com"
-  private      = false
-  has_issues   = true
-  has_projects = false
-  has_wiki     = false
+  name                   = "sentrei"
+  description            = "Official sentrei app"
+  homepage_url           = "https://sentrei.com"
+  private                = false
+  has_issues             = true
+  has_projects           = false
+  has_wiki               = false
+  is_template            = false
+  allow_merge_commit     = true
+  allow_squash_merge     = false
+  allow_rebase_merge     = false
+  delete_branch_on_merge = true
 
   topics = ["ios", "android", "nextjs", "react", "material-ui", "monorepo", "typescript", "firebase", "webapp", "flutter", "flutter-app", "flutter-ui", "saas", "serverless", "oss"]
 }
