@@ -69,7 +69,7 @@
     "git-cz": "^4.6.2",
     "husky": "^4.2.5",
     "prettier": "^2.0.4",
-    "semantic-release": "^17.0.8",
+    "semantic-release": "^17.1.0",
     "sort-package-json": "^1.43.0"
   },
   "engines": {
