@@ -61,7 +61,7 @@
     "watch": "tsc -b . -w --preserveWatchOutput"
   },
   "dependencies": {
-    "@firebase/testing": "^0.20.2",
+    "@firebase/testing": "^0.20.4",
     "@sentrei/common": "file:package.tgz",
     "@slack/webhook": "^5.0.3",
     "@types/lodash": "^4.14.154",
@@ -76,7 +76,7 @@
   },
   "devDependencies": {
     "rimraf": "^3.0.2",
-    "ts-jest": "26.1.0"
+    "ts-jest": "26.1.1"
   },
   "engines": {
     "node": "10"
