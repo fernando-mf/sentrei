@@ -53,7 +53,7 @@
     "react-dom": "^16.13.1",
     "react-hook-form": "^5.7.2",
     "react-intersection-observer": "^8.26.2",
-    "react-parallax-tilt": "^1.4.51",
+    "react-parallax-tilt": "^1.4.53",
     "react-particles-js": "^3.2.1",
     "react-rough-notation": "^0.0.11",
     "react-scrollspy": "^3.4.2",
