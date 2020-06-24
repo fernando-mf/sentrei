@@ -27040,10 +27040,10 @@ react-outside-click-handler@^1.2.4:
     object.values "^1.1.0"
     prop-types "^15.7.2"
 
-react-parallax-tilt@^1.4.51:
-  version "1.4.52"
-  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.4.52.tgz#ff30499a65d110ae66fef51cdedd74840f0de11d"
-  integrity sha512-HEV3v9hvTX8gYhrnjeg415rhyGZVzCZo3Ygf14iFeOxDKdMxte0PpaZNIzXUTahq5/axT0uNLRr6H5O9hkadXw==
+react-parallax-tilt@^1.4.53:
+  version "1.4.53"
+  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.4.53.tgz#00c82f7459c7be31ddce28aca8e1adbdc8951836"
+  integrity sha512-8wgM1PQIsrmhtduCAGFIRmthwAE/kpqYt8ymoLsD1uxPtsfbhYt3W2mjZCdBYgelkd21MG/CggcMQq1wzwwQRw==
 
 react-particles-js@^3.2.1:
   version "3.2.1"
